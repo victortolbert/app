@@ -1,25 +1,5 @@
-# Node artifact files
-node_modules/
-dist/
-
-# Compiled Java class files
-*.class
-
-# Compiled Python bytecode
-*.py[cod]
-
 # Log files
 *.log
-
-# Package files
-*.jar
-
-# Maven
-target/
-dist/
-
-# JetBrains IDE
-.idea/
 
 # Unit test reports
 TEST*.xml
@@ -39,6 +19,26 @@ Thumbs.db
 *.mp4
 *.tiff
 *.avi
-*.flv
+*.flvcd
 *.mov
 *.wmv
+
+*.bak
+
+# misc
+TODO
+dist/
+node_modules/
+stories/
+vendor/
+.configs/
+.json/
+.nuxt/
+.schema/
+.scratch/
+.sql/
+.tmp/
+.vscode/
+.env
+.eslintcache
+.php_cs.cache
