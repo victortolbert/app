@@ -2,7 +2,7 @@
   <div>
     <!-- <PageHeading :page="page" class="p-8 bg-gray-800" /> -->
 
-    <section class="p-8 max-w-prose">
+    <section class="p-8 prose">
       <NuxtContent :document="page" />
     </section>
   </div>

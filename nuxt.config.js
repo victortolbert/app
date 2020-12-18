@@ -3,7 +3,7 @@ import path from 'path'
 export default {
   env: {
     baseUrl: process.env.BASE_URL || 'http://localhost:3000',
-    apiUrl: process.env.API_URL || 'http://localhost.3000/api',
+    apiUrl: process.env.API_URL || 'http://localhost:3000/api',
     assetsUrl: process.env.ASSETS_URL || 'http://localhost:3000',
   },
 
@@ -26,6 +26,11 @@ export default {
         href:
           'https://fonts.googleapis.com/css?family=Inter:400,500,600&display=swap',
       },
+      {
+        rel: 'stylesheet',
+        href:
+          'https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Lato&display=swap',
+      },
     ],
     script: [
       {
@@ -36,10 +41,17 @@ export default {
     ],
   },
 
-  modules: ['@nuxt/content', '@nuxtjs/axios', '@nuxtjs/sentry', 'nuxt-i18n'],
+  modules: [
+    '@nuxt/content',
+    '@nuxtjs/axios',
+    '@nuxtjs/sentry',
+    'nuxt-i18n',
+    '@nuxtjs/sitemap',
+  ],
 
   buildModules: [
     '@nuxtjs/color-mode',
+    '@nuxtjs/composition-api',
     '@nuxtjs/eslint-module',
     '@nuxtjs/google-analytics',
     '@nuxtjs/svg',
@@ -50,6 +62,7 @@ export default {
   plugins: [
     '@/plugins/portal-vue',
     '@/plugins/vue-content-placeholders',
+    '@/plugins/i18n.client.js',
     // '@/plugins/vue-feather-icons',
   ],
 
@@ -72,8 +85,12 @@ export default {
     credentials: true,
   },
 
+  // colorMode: {
+  //   preference: 'system',
+  // },
+
   colorMode: {
-    preference: 'system',
+    classSuffix: '',
   },
 
   content: {
@@ -94,6 +111,11 @@ export default {
   },
 
   i18n: {
+    // locales: [
+    //   {code: 'en', iso: 'en-US', file: 'en.js'},
+    //   {code: 'fr', iso: 'fr-FR', file: 'fr.js'},
+    //   {code: 'es', iso: 'es-ES', file: 'es.js'},
+    // ],
     locales: [
       {
         code: 'es',

@@ -1,5 +1,8 @@
 <template>
-  <div v-if="error" class="page-wrapper">
+  <div
+    v-if="error"
+    class="flex flex-col items-center justify-center min-h-screen"
+  >
     <h1>{{ error.statusCode }}</h1>
     <h2>{{ error.message }}</h2>
 
@@ -12,6 +15,7 @@
 
 <script>
 export default {
+  layout: 'plain',
   props: {
     error: {
       type: Object,

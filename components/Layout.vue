@@ -1,12 +1,10 @@
 <template>
-  <div class="flex flex-col w-full min-h-screen">
+  <div class="flex flex-col w-full min-h-screen bg-primary-200">
     <header v-if="hasHeaderSlot">
       <slot name="header"></slot>
     </header>
 
-    <main class="flex-1 w-full">
-      <slot />
-    </main>
+    <slot />
 
     <footer v-if="hasFooterSlot">
       <slot name="footer"></slot>

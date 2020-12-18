@@ -1,6 +1,11 @@
 ---
 title: About Promiserves
 subtitle: Caring for Vulnerable Children
+address:
+  street: 19 Holcomb Bridge Road
+  city: Norcross
+  state: GA
+  zip_code: 30017
 description:
   We mobilize church communities to care for vulnerable children by equipping churches to support
   foster families and adoptive families.

@@ -21,6 +21,22 @@ module.exports = {
         //   900: '#495b1e',
         // },
         primary: colors.coolGray,
+
+        danger: 'var(--color-danger)',
+        warning: 'var(--color-warning)',
+        success: 'var(--color-success)',
+        info: 'var(--color-info)',
+        email: 'var(--color-emailer)',
+        emailer: 'var(--color-emailer)',
+        sms: 'var(--color-sms)',
+        copy: 'var(--color-copy)',
+        brand: '#1B2A60',
+        facebook: '#3b5998',
+        twitter: '#1da1f2',
+        instagram: '#E4405F',
+        linkedin: '#0077b5',
+        github: '#181717',
+        codepen: '#000000',
       },
       animation: {
         wiggle: 'wiggle 1s infinite',
@@ -75,6 +91,11 @@ module.exports = {
     require('@tailwindcss/typography'),
     require('@tailwindcss/aspect-ratio'),
   ],
+  configViewer: {
+    themeReplacements: {
+      'var(--color-black)': '#000000',
+    },
+  },
   purge: {
     enabled: process.env.NODE_ENV === 'production',
     content: [
@@ -85,4 +106,5 @@ module.exports = {
       'nuxt.config.js',
     ],
   },
+  darkMode: 'class',
 }

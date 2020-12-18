@@ -1,5 +1,8 @@
 # Promise Serves Software
 
+JAMstack is a method for building fast, lightweight web applications using mostly JavaScript, APIs, and markup (HTML/CSS).
+https://www.cloudflare.com/learning/performance/what-is-jamstack/
+
 [![Netlify Status](https://api.netlify.com/api/v1/badges/3a55808c-d683-49a9-aac0-15636665f4b9/deploy-status)](https://app.netlify.com/sites/promise-serves/deploys)
 
 ## Dev Environments
@@ -8,7 +11,9 @@
 | :-: | ----------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 |  1  | PSV1        | Legacy application integration<br><https://psv1.vticonsulting.com><br><https://bitbucket.org/promise-serves/psv1>                                                                |
 |  2  | [APP][2]    | Frontend/UI experimentation and app prototypes (Vue.js, React, dev notes, documentation, i18n) <br> <https://app.vticonsulting.com><br> <http://bitbucket.org/victortolbert/app> |
-|  3  | [LAB][3]    | CodeIgniter 3 development (HTML, CSS, and JavaScript) and data modelling<br><https://lab.vticonsulting.com> <br> <https://bitbucket.org/victortolbert/lab>                       |
+|  3  | [LAB][3]    | CodeIgniter 3 development (HTML, CSS, and JavaScript) and data modeling<br><https://lab.vticonsulting.com> <br> <https://bitbucket.org/victortolbert/lab>                        |
+|  4  | [TD][4]     | Statamic||
+|  5  | [SPS][5]    | Kirby||
 
 <details>
 <summary>CodeIgniter Sandbox Page Links</summary>
@@ -192,3 +197,5 @@
 [2]: http://promise-lab.netlify.app
 [2]: http://app.vticonsulting.com
 [3]: http://lab.vticonsulting.com
+[4]: http://td.vticonsulting.com
+[5]: http://sps.vticonsulting.com

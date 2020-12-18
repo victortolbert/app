@@ -1,6 +1,22 @@
-@tailwind base;
+/* @tailwind base;
 @tailwind components;
-@tailwind utilities;
+@tailwind utilities; */
+
+@import 'tailwindcss/base';
+@import './base.css';
+
+/* @import './fonts.pcss';
+@import './base/typography.css'; */
+
+@import 'tailwindcss/components';
+/* @import './components.pcss';
+@import './transitions.pcss';
+@import './components/glide.pcss';
+@import './components/timeline.pcss';
+@import './components/tooltips.pcss';
+@import './components/twentytwenty.pcss'; */
+@import 'tailwindcss/utilities';
+
 
 @layer components {
   .create-story {
