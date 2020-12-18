@@ -146,6 +146,10 @@ export default {
     },
   },
 
+  sitemap: {
+    hostname: process.env.baseUrl || 'http://localhost:3000',
+  },
+
   storybook: {
     stories: [
       '~/components/**/*.stories.mdx',
