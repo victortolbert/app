@@ -23,7 +23,11 @@ export default {
       >
         <h2 class="text-xl font-bold">{{ $t('calendar_title') }}</h2>
 
-        <button class="button">Bottom</button>
+        <button
+          class="relative w-40 h-10 overflow-hidden text-lg font-semibold rounded shadow button bg-primary-100"
+        >
+          Button
+        </button>
 
         <div
           class="mt-4 overflow-hidden border-b border-gray-200 shadow sm:rounded-lg"
@@ -216,17 +220,6 @@ export default {
 </template>
 
 <style>
-.button {
-  position: relative;
-  overflow: hidden;
-  width: 150px;
-  height: 50px;
-  color: hsla(234, 56, 43, 0.85);
-  background: #d9d9f3;
-  font-size: 18px;
-  font-weight: 600;
-}
-
 .button:hover::after {
   transform: scale(1);
   transform: scale(1, 1);

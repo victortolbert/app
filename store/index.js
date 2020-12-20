@@ -8,10 +8,6 @@ export const state = () => ({
   projects: ['app', 'cms', 'lab', 'psv1', 'tdx'],
   categories: {},
   releases: [],
-  affiliate: {
-    name: 'Promise Serves',
-    slug: 'promise-serves',
-  },
 })
 
 export const mutations = {

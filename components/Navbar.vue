@@ -195,7 +195,7 @@ export default {
           <button
             class="flex-shrink-0 p-1 ml-auto text-gray-400 bg-white rounded-full hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500"
           >
-            <span class="sr-only">{{ $t('View notifications') }}</span>
+            <span class="sr-only">{{ $t('view_notifications') }}</span>
             <svg
               class="w-6 h-6"
               x-description="Heroicon name: bell"

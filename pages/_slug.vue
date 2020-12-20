@@ -10,13 +10,11 @@
 
 <script>
 export default {
-  async asyncData({$content, params}) {
+  async asyncData({$content, params, error}) {
     const page = await $content(params.slug || 'index')
       .fetch()
-      .catch(err => {
-        console.log(err)
-        // eslint-disable-next-line no-undef
-        error({statusCode: 404, message: 'Page not found'})
+      .catch(_ => {
+        error({statusCode: 404, message: 'Page Not Found'})
       })
 
     return {page}

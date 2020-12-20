@@ -3,7 +3,20 @@
     v-if="error"
     class="flex flex-col items-center justify-center min-h-screen"
   >
-    <h1>{{ error.statusCode }}</h1>
+    <h1 class="font-black text-9xl">{{ error.statusCode }}</h1>
+
+    <div
+      class="w-full max-w-sm mx-auto my-4 space-y-4"
+      v-if="error.statusCode === 500"
+    >
+      <p class="text-xl">
+        Sorry, something went wrong on our end. We are currently trying to fix
+        the problem.
+      </p>
+
+      <p>In the meantime, you can...</p>
+    </div>
+
     <h2>{{ error.message }}</h2>
 
     <img
@@ -13,7 +26,7 @@
 
     <div class="error-navigation">
       <a href="#" @click="$router.push(-1)"> Back </a>
-      <nuxt-link to="/"> Main Page </nuxt-link>
+      <NuxtLink :to="localePath('/')"> Main Page </NuxtLink>
     </div>
   </div>
 </template>

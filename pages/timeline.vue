@@ -10,10 +10,7 @@
 </template>
 
 <script>
-import Timeline from '@/components/Timeline'
-
 export default {
-  components: {Timeline},
   head() {
     const title = 'My Timeline'
     const metaDescription =
