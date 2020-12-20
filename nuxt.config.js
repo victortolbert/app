@@ -61,10 +61,10 @@ export default {
     '@nuxtjs/color-mode',
     '@nuxtjs/composition-api',
     '@nuxtjs/eslint-module',
-    '@nuxtjs/google-analytics',
+    // '@nuxtjs/google-analytics',
     '@nuxtjs/svg',
     '@nuxtjs/tailwindcss',
-    'nuxt-ackee',
+    // 'nuxt-ackee',
     '@nuxt/typescript-build',
     // '@nuxtjs/netlify-files',
     // 'nuxt-svg-loader',
@@ -100,12 +100,12 @@ export default {
     linkExactActiveClass: 'is-exact-active',
   },
 
-  ackee: {
-    server: 'https://cranky-borg.herokuapp.com',
-    domainId: '601bbeb1-8a0a-4d5d-ba1f-a75ce1cefda3',
-    ignoreLocalhost: true,
-    detailed: true,
-  },
+  // ackee: {
+  //   server: 'https://cranky-borg.herokuapp.com',
+  //   domainId: '601bbeb1-8a0a-4d5d-ba1f-a75ce1cefda3',
+  //   ignoreLocalhost: true,
+  //   detailed: true,
+  // },
 
   axios: {
     baseURL: process.env.apiUrl || 'https://api.vticonsulting.com/',
@@ -128,9 +128,9 @@ export default {
       },
     },
     nestedProperties: ['author.name', 'categories.slug'],
-    googleAnalytics: {
-      id: process.env.GOOGLE_ANALYTICS_ID || 'UA-76464598-4',
-    },
+    // googleAnalytics: {
+    //   id: process.env.GOOGLE_ANALYTICS_ID || 'UA-76464598-4',
+    // },
   },
 
   feed: [
