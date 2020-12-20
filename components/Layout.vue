@@ -1,5 +1,7 @@
 <template>
-  <div class="flex flex-col w-full min-h-screen bg-primary-200">
+  <div
+    class="flex flex-col w-full min-h-screen bg-primary-200 dark:bg-primary-800 dark:text-primary-100"
+  >
     <header v-if="hasHeaderSlot">
       <slot name="header"></slot>
     </header>

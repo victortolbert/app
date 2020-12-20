@@ -39,6 +39,7 @@ vendor/
 .sql/
 .tmp/
 .vscode/
+.yml/
 .env
 .eslintcache
 .php_cs.cache

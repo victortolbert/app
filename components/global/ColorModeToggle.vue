@@ -5,9 +5,9 @@
       stroke="currentColor"
       stroke-linecap="round"
       stroke-linejoin="round"
-      stroke-width="2"
+      stroke-width="1"
       viewBox="0 0 24 24"
-      class="w-8 h-8"
+      class="w-6 h-6"
     >
       <path
         v-if="$colorMode.preference === 'light'"

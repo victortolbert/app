@@ -10,17 +10,22 @@ export default {
 
 <template>
   <nav
-    class="flex items-center justify-between p-1 px-8 text-xs leading-loose text-white uppercase bg-gray-800"
+    class="flex items-center justify-between p-1 px-8 text-xs leading-loose text-white uppercase bg-gray-800 dark:text-primary-800 dark:bg-gray-100"
   >
-    <b>Dev Tools</b>
-
-    <div class="flex space-x-3">
-      <b>env</b>
+    <div class="flex items-center space-x-4">
+      <b>Dev Tools</b>
       <b>debug</b>
+      <b>component explorer</b>
+      <b>css utility reference</b>
+
+      <a href="http://promise-lab.test/resumes/1"> Résumé </a>
+    </div>
+
+    <div class="flex space-x-4">
       <a
         :href="`https://${project}.vticonsulting.com?ref=developer-toolbar`"
         target="_app"
-        class="text-gray-100 hover:text-white"
+        class=""
         v-for="project in projects"
         :key="project"
       >

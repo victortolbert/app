@@ -25,18 +25,27 @@
 <script>
 export default {
   name: 'DefaultLayout',
+  // head() {
+  //   return {
+  //     title: '',
+  //     titleTemplate: chunk => {
+  //       if (chunk) {
+  //         return `${chunk} - Lab`
+  //       }
+  //       return 'Lab'
+  //     },
+  //     bodyAttrs: {
+  //       // class: ['bg-gray-100 dark:bg-gray-800 antialiased'],
+  //     },
+  //   }
+  // },
+
   head() {
+    const baseUrl = process.env.baseUrl
+    const {path} = this.$route
+    const pathWithSlash = path.endsWith('/') ? path : `${path}/`
     return {
-      title: '',
-      titleTemplate: chunk => {
-        if (chunk) {
-          return `${chunk} - Lab`
-        }
-        return 'Lab'
-      },
-      bodyAttrs: {
-        // class: ['bg-gray-100 dark:bg-gray-800 antialiased'],
-      },
+      link: [{rel: 'canonical', href: `${baseUrl}${pathWithSlash}`}],
     }
   },
 }

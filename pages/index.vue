@@ -14,17 +14,86 @@ export default {
 
 <template>
   <section
-    class="flex flex-col items-center justify-center flex-1 w-full min-h-screen p-8 border"
+    class="flex flex-col items-center justify-center flex-1 w-full min-h-screen p-8"
   >
     <!-- class="grid grid-flow-row-dense grid-cols-2 grid-rows-3 gap-4 auto-cols-min" -->
-    <div class="grid w-full grid-cols-3 gap-4">
+    <div class="grid w-full grid-cols-1 gap-4 lg:grid-cols-3">
       <div
-        class="col-span-2 p-4 pr-6 space-y-2 bg-white border-l-8 border-transparent rounded-md shadow-md"
+        class="col-span-2 p-4 pr-6 space-y-2 bg-white border-l-8 border-transparent rounded-md shadow-md dark:bg-gray-900"
       >
-        {{ $t('calendar_title') }}
+        <h2 class="text-xl font-bold">{{ $t('calendar_title') }}</h2>
+
+        <button class="button">Bottom</button>
+
+        <div
+          class="mt-4 overflow-hidden border-b border-gray-200 shadow sm:rounded-lg"
+        >
+          <table class="min-w-full divide-y divide-gray-200">
+            <thead class="bg-gray-50 dark:bg-black">
+              <tr>
+                <th
+                  scope="col"
+                  class="px-6 py-3 text-xs font-medium tracking-wider text-left uppercase"
+                >
+                  code
+                </th>
+                <th
+                  scope="col"
+                  class="px-6 py-3 text-xs font-medium tracking-wider text-left uppercase"
+                >
+                  Name
+                </th>
+                <th
+                  scope="col"
+                  class="px-6 py-3 text-xs font-medium tracking-wider text-left uppercase"
+                >
+                  Status
+                </th>
+                <th scope="col" class="relative px-6 py-3">
+                  <span class="sr-only">Edit</span>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="bg-white dark:bg-black dark:text-white">
+                <td class="px-6 py-4 text-sm font-medium whitespace-nowrap">
+                  ema
+                </td>
+                <td class="px-6 py-4 text-sm font-medium whitespace-nowrap">
+                  Every Mother's Advocate
+                </td>
+                <td class="px-6 py-4 text-sm whitespace-nowrap">Active</td>
+                <td
+                  class="px-6 py-4 text-sm font-medium text-right whitespace-nowrap"
+                >
+                  <div>
+                    <button
+                      type="button"
+                      class="inline-flex items-center px-2.5 py-1.5 border border-transparent text-xs font-medium rounded focus:outline-none focus:ring-2 focus:ring-offset-2"
+                    >
+                      <svg
+                        class="w-5 h-5 mr-1"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                          clip-rule="evenodd"
+                        ></path>
+                      </svg>
+                      {{ $t('actions') }}
+                    </button>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
       <div
-        class="p-4 pr-6 space-y-2 bg-white border-l-8 border-transparent rounded-md shadow-md"
+        class="p-4 pr-6 space-y-2 bg-white border-l-8 border-transparent rounded-md shadow-md dark:bg-gray-900"
       >
         <h2 class="text-lg font-semibold leading-6">
           {{ $t('cases_title') }}
@@ -58,7 +127,7 @@ export default {
 
       <!-- Upcoming Items -->
       <div
-        class="p-4 pr-6 space-y-2 bg-white border-l-8 border-teal-400 rounded-md shadow-md"
+        class="p-4 pr-6 space-y-2 bg-white border-l-8 rounded-md shadow-md border-brand dark:bg-gray-900"
       >
         <h2 class="text-lg font-bold leading-6">
           {{ $t('upcoming_items_title') }}
@@ -134,7 +203,7 @@ export default {
       </div>
       <!-- SteppedProgress -->
       <div
-        class="col-span-2 p-4 pr-6 space-y-2 bg-white border-l-8 border-transparent rounded-md shadow-md"
+        class="col-span-2 p-4 pr-6 space-y-2 bg-white border-l-8 border-transparent rounded-md shadow-md dark:bg-gray-900"
       >
         <stepped-progress></stepped-progress>
 
@@ -145,3 +214,35 @@ export default {
     </div>
   </section>
 </template>
+
+<style>
+.button {
+  position: relative;
+  overflow: hidden;
+  width: 150px;
+  height: 50px;
+  color: hsla(234, 56, 43, 0.85);
+  background: #d9d9f3;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.button:hover::after {
+  transform: scale(1);
+  transform: scale(1, 1);
+}
+
+.button::after {
+  content: '';
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 4px;
+  background: #49416d;
+  transition: transform 0.45s;
+  transform: scale(0, 1);
+  transform-origin: 0% 100%;
+}
+</style>

@@ -36,7 +36,7 @@ export default {
     this.$slots.default
       .filter(slot => Boolean(slot.componentOptions))
       .map(slot => {
-        this.tabs.push({
+        return this.tabs.push({
           label: slot.componentOptions.propsData.label,
           elm: null,
         })
@@ -57,7 +57,7 @@ export default {
   methods: {
     switchTab(i) {
       this.tabs.map(tab => {
-        tab.elm.classList.remove('active')
+        return tab.elm.classList.remove('active')
       })
       this.tabs[i].elm.classList.add('active')
     },

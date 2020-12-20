@@ -1,16 +1,24 @@
 import path from 'path'
+// eslint-disable-next-line import/named
+import {utils} from './config'
 
 export default {
+  // modern: !utils.isDev && 'client',
   env: {
-    baseUrl: process.env.BASE_URL || 'http://localhost:3000',
-    apiUrl: process.env.API_URL || 'http://localhost:3000/api',
-    assetsUrl: process.env.ASSETS_URL || 'http://localhost:3000',
+    baseUrl: process.env.BASE_URL || 'https://app.vticonsulting.com/',
+    apiUrl: process.env.API_URL || 'https://api.vticonsulting.com/',
+    assetsUrl: process.env.ASSETS_URL || 'https://app.vticonsulting.com/',
+    stripePublicKey: utils.isDev
+      ? 'pk_test_9hUFtiNMcseCbvLBySY7D8P6'
+      : process.env.STRIPE_PUBLIC_KEY || '',
   },
 
   components: true,
   loading: false,
-  ssr: false,
   target: 'static',
+  ssr: false,
+
+  watch: ['~/config/*'],
 
   head: {
     title: 'Lab',
@@ -57,18 +65,37 @@ export default {
     '@nuxtjs/svg',
     '@nuxtjs/tailwindcss',
     'nuxt-ackee',
+    '@nuxt/typescript-build',
+    // '@nuxtjs/netlify-files',
+    // 'nuxt-svg-loader',
+    // '@nuxtjs/pwa',
+    // '@nuxt/http',
+    // '@nuxtjs/sitemap'
+
+    // Doc: https://github.com/nuxt-community/moment-module
+    '@nuxtjs/moment',
   ],
 
   plugins: [
+    '@/plugins/i18n.client',
+    '@/plugins/polyfills.client',
     '@/plugins/portal-vue',
     '@/plugins/vue-content-placeholders',
-    '@/plugins/i18n.client.js',
+    '@/plugins/vue-scroll-reveal.client',
+
+    '@/plugins/markdown',
+    '@/plugins/init',
+    '@/plugins/vue-scrollactive',
+    '@/plugins/menu.client',
+
     // '@/plugins/vue-feather-icons',
   ],
 
   serverMiddleware: ['@/server'],
 
   router: {
+    middleware: ['visits', 'user-agent'],
+    // trailingSlash: true,
     linkActiveClass: 'is-active',
     linkExactActiveClass: 'is-exact-active',
   },
@@ -81,7 +108,7 @@ export default {
   },
 
   axios: {
-    baseURL: process.env.apiUrl || 'http://localhost:3000/api',
+    baseURL: process.env.apiUrl || 'https://api.vticonsulting.com/',
     credentials: true,
   },
 
@@ -106,9 +133,46 @@ export default {
     },
   },
 
+  feed: [
+    // A default feed configuration object
+    {
+      path: '/feed.xml', // The route to your feed.
+      async create(feed) {}, // The create function (see below)
+      cacheTime: 1000 * 60 * 15, // How long should the feed be cached
+      type: 'rss2', // Can be: rss2, atom1, json1
+      data: ['Some additional data'], // Will be passed as 2nd argument to `create` function
+    },
+  ],
+
+  // fetch: {
+  //   client: false,
+  //   server: false,
+  // },
+
+  // features: {
+  //   store: false,
+  //   middleware: false,
+  //   deprecations: false,
+  //   validate: false,
+  //   asyncData: false,
+  //   fetch: false,
+  //   componentAliases: false,
+  // },
+
   googleAnalytics: {
     id: process.env.GOOGLE_ANALYTICS_ID,
   },
+
+  // googleAnalytics: {
+  //   id: 'UA-62902757-11',
+  //   disabled: () => document.cookie.includes('ga_optout=true'),
+  //   debug: {
+  //     sendHitTask: !utils.isDev
+  //   },
+  //   set: [
+  //     { field: 'anonymizeIp', value: true }
+  //   ]
+  // },
 
   i18n: {
     // locales: [
@@ -147,8 +211,25 @@ export default {
   },
 
   sitemap: {
-    hostname: process.env.baseUrl || 'http://localhost:3000',
+    hostname: process.env.baseUrl || 'https://app.vticonsulting.com/',
   },
+
+  // sitemap: {
+  //   hostname: utils.baseUrl,
+  //   trailingSlash: true,
+  //   exclude: ['/privacy', '/legal'],
+  //   defaults: {
+  //     changefreq: 'daily',
+  //     priority: 1,
+  //     lastmodrealtime: true,
+  //   },
+  // },
+
+  // pwa: {
+  //   icon: {
+  //     source: 'static/img/me@2x.jpg'
+  //   }
+  // },
 
   storybook: {
     stories: [
@@ -166,8 +247,26 @@ export default {
   },
 
   tailwindcss: {
+    // configPath: '@/config/tailwind.config.js',
+    // cssPath: '@/assets/styles/app.pcss',
     exposeConfig: true,
   },
+
+  netlifyFiles: {
+    existingFilesDirectory: './netlify',
+  },
+
+  // http: {
+  //   https: !utils.isDev,
+  //   prefix: '/.netlify/functions/',
+  //   proxy: utils.isDev
+  // },
+
+  // proxy: {
+  //   '/.netlify/functions/': {
+  //     target: 'http://localhost:9000'
+  //   }
+  // },
 
   build: {
     extend(config, ctx) {},
@@ -185,7 +284,9 @@ export default {
       stage: 1,
     },
   },
-
+  eslint: {
+    cache: false,
+  },
   purgeCSS: {
     whitelist: ['dark-mode'],
     whitelistPatternsChildren: [/^token/, /^pre/, /^code/, /^nuxt-content/],
@@ -195,7 +296,9 @@ export default {
     interval: 2000,
     fallback: true,
 
-    // fallback: '404.html',
+    // fallback: '404.html', // for Netlify
+    // routes: ['/'] // give the first url to start crawling
+
     // async routes() {
     //   const {$content} = require('@nuxt/content')
     //   const files = await $content('blog').fetch()

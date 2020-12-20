@@ -1,186 +1,172 @@
+<template>
+  <ul class="w-full pt-4 leading-snug text-gray-600 md:pt-0">
+    <TimelineItem
+      period
+      title="Joined the Nuxt.js Core Team"
+      when="September 2018"
+    >
+      Since the beginning of 2018, Nuxt.js was my framework of choice to fulfill
+      a variety of tasks. After getting in touch with the community, I couldn't
+      let it go! Contributing meaningful parts to such an awesome and large
+      project felt great. Over time I dug into the internals of Nuxt and got
+      used to the code base, also thanks to the other core maintainers. At VueJs
+      London, where I met the Chopin brothers, who are the originators of Nuxt,
+      the first time, they surprisingly announced two new core team members. I
+      was one of them.
+    </TimelineItem>
+
+    <TimelineItem title="Created my own blog" when="August 2018">
+      That was a long term goal I wanted to achieve. Building my own blog system
+      with the tools I use in daily work and finally write about interesting
+      technical stuff (and maybe other topics as well)! After working towards
+      this goal (when I had time) for half a year, I eventually launched the
+      blog. On
+      <a
+        class="text-gray-700 hover:text-gray"
+        href="https://blog.lichter.io/?ref=lichter.io-tl"
+        rel="noopener"
+        target="_blank"
+        >blog.Lichter.io</a
+      >
+      you can find posts about Javascript, PHP, Nuxt.js, Vue.js, Laravel,
+      meta-topics (related to programming) and many other subjects! I highly
+      recommend to check it out.<br /><br />
+      <b>Used Technologies</b><br />
+      Nuxt.js, Tailwind, Laravel
+    </TimelineItem>
+
+    <TimelineItem title="Held my first talk" when="December 2017">
+      After talking with a lot of people about my choice of programming
+      languages, I decided to work on a talk about PHP, it's flaws and
+      advantages, as well as the upcoming future of the language.<br />
+      I named it "<span
+        class="font-semibold text-indigo-600"
+        v-text="'PHP is dead - Long live PHP!'"
+      />". The talk marks the starting point of my
+      <NuxtLink
+        class="text-gray-800 underline hover:text-gray-500"
+        to="/speaking/"
+        rel="noreferrer noopener"
+        v-text="'speaking journey'"
+      />!<br /><br />
+      <b>Used Technologies</b><br />
+      Tailwind, Webpack, Reveal.js
+    </TimelineItem>
+
+    <TimelineItem title="Release of Lichter.io" when="November 2017">
+      Before applying to companies all over the world for my upcoming semester
+      abroad in 2018, I wanted to have a unique way of displaying my CV. So why
+      not creating an adapted version online?
+      <br /><br />
+      <b>Used Technologies</b><br />
+      Vue.js, Tailwind, SCSS, Webpack
+    </TimelineItem>
+
+    <TimelineItem title="Contribution to Laravel" when="October 2017">
+      Yeah, I
+      <a
+        class="text-gray-700 hover:text-gray"
+        href="https://github.com/laravel/framework/pull/21745"
+        rel="noreferrer noopener"
+        target="_blank"
+        v-text="'did it'"
+      />! After using Laravel for quite a while in almost all my company and
+      side projects, I finally contributed to the well-known PHP framework.
+    </TimelineItem>
+
+    <TimelineItem title="Internship at ITC AG" when="October 2016">
+      As part of my study, a group of four students (including me) had the
+      chance to work on a project contracted by ITC AG. The task was to create a
+      converter for measured data of various formats as a full-stack web app.
+      <br /><br />
+      <b>Used Technologies</b><br />
+      Java (Spring), SQL, jQuery, Git
+    </TimelineItem>
+
+    <TimelineItem
+      title="Started studying CS at the TU Dresden"
+      when="October 2015"
+    >
+      Without a big break, I applied for the Diploma Computer Science course at
+      the TU Dresden, moved there and started to study.
+    </TimelineItem>
+
+    <TimelineItem period title="Founded Developmint" when="August 2015">
+      Not even a month after finishing my Abitur, I founded my own company
+      together with two friends.
+      <a
+        class="developmint"
+        href="https://www.developmint.de?ref=lichter.io"
+        rel="noopener"
+        target="_blank"
+        v-text="'Developmint'"
+      />
+      <small class="text-xs text-gray-900" v-text="'(fancy, eh?)'" />
+      fulfills contract work for mid-sized businesses as well as single persons.
+      Our core competencies are web apps, websites and MacOS/iOS apps. We have
+      done a range of work by now, ranging from simple but good-looking
+      portfolio pages to complex business tools.<br /><br />
+      <strong>Interested?</strong>
+      <a
+        class="text-gray-900 underline hover:text-black"
+        href="mailto:inquiry@lichter.io?subject=Inquiry&body=Hey%20Alex!%0D%0AI've%20seen%20your%20website%20and%20would%20like%20to%20talk%20to%20you%20about%20......."
+        >Drop me a line!</a
+      ><span v-text="'😉'" />
+    </TimelineItem>
+
+    <TimelineItem title="Graduated school - Abitur (1,9)" when="July 2015">
+      In 2015 I finished school and did my Abitur (the German A-Levels) at the
+      <em>Europäisches Gymnasium Waldenburg</em> with a final grade of
+      <strong>1.9</strong>
+    </TimelineItem>
+
+    <TimelineItem title="Received Cambridge certificate" when="December 2014">
+      After spending time abroad in Dublin and Kent (UK), I took my
+      <em>Cambridge: Advanced English</em>
+      certificate, which is targeted at CEFR Level C1.
+    </TimelineItem>
+
+    <TimelineItem title="First internship" when="November 11, 2011">
+      In the 9th grade, we had to fulfill a work experience at a company of our
+      choice. Of course, we must apply for that internship regularly. I first
+      thought of working at a computer repair company to gain knowledge about
+      the hardware, but then I applied at a smaller software company in my town
+      and they accepted my application!
+      <br /><br />
+      My first task was testing their current system and trying to break it.
+      After reporting the found bugs and caveats they noticed that my
+      understanding was quite good for a 15-year-old guy, so the follow-up tasks
+      were more complex and deep, like creating configs and setting up the
+      database.
+      <br /><br />
+      <b>Used Technologies</b><br />
+      Redmine, MySQL, YAML, PHP (Symfony)
+    </TimelineItem>
+
+    <TimelineItem title="Used a computer the first time" when="1999">
+      Yeah, that's no joke! I played a Mario clone on my grandpa's PC.
+    </TimelineItem>
+
+    <TimelineItem period title="I was born 🤰🏼👶🏼" />
+  </ul>
+</template>
+
 <script>
-export default {}
+import TimelineItem from '~/components/TimelineItem.vue'
+
+export default {
+  name: 'Timeline',
+  components: {TimelineItem},
+}
 </script>
 
-<template>
-  <section>
-    <header class="flex items-center justify-between mt-16 mb-8">
-      <h2 class="text-3xl font-extrabold tracking-tight text-gray-900">
-        Latest Updates
-      </h2>
-      <a href="https://blog.tailwindcss.com" class="font-medium text-gray-900"
-        >View all the latest updates</a
-      >
-    </header>
-    <ul class="p-2 bg-gray-50 rounded-3xl sm:p-5 xl:p-6">
-      <li>
-        <article>
-          <a
-            href="https://blog.tailwindcss.com/tailwindcss-v2"
-            class="relative grid items-start p-3 overflow-hidden md:grid-cols-8 xl:grid-cols-9 rounded-xl sm:p-5 xl:p-6 hover:bg-white"
-          >
-            <h3
-              class="mb-1 font-semibold text-gray-900 md:col-start-3 md:col-span-6 xl:col-start-3 xl:col-span-7 ml-9 md:ml-0"
-            >
-              Tailwind CSS v2.0
-            </h3>
-            <time
-              datetime="2020-11-18T17:45:00.000Z"
-              class="flex items-center row-start-1 mb-1 font-medium md:col-start-1 md:col-span-2 md:row-end-3 md:mb-0"
-              ><svg
-                viewBox="0 0 12 12"
-                class="w-3 h-3 mr-6 overflow-visible text-cyan-400"
-              >
-                <circle cx="6" cy="6" r="6" fill="currentColor"></circle>
-                <circle
-                  cx="6"
-                  cy="6"
-                  r="11"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                ></circle>
-                <path
-                  d="M 6 18 V 500"
-                  fill="none"
-                  stroke-width="2"
-                  stroke="currentColor"
-                  class="text-gray-200"
-                ></path></svg
-              >Nov 18, 2020</time
-            >
-            <p class="md:col-start-3 md:col-span-6 xl:col-span-7 ml-9 md:ml-0">
-              Today we're finally releasing Tailwind CSS v2.0, including an
-              all-new color palette, dark mode support, and tons more!
-            </p>
-          </a>
-        </article>
-      </li>
-      <li>
-        <article>
-          <a
-            href="https://blog.tailwindcss.com/tailwindcss-1-9"
-            class="relative grid items-start p-3 overflow-hidden md:grid-cols-8 xl:grid-cols-9 rounded-xl sm:p-5 xl:p-6 hover:bg-white"
-          >
-            <h3
-              class="mb-1 font-semibold text-gray-900 md:col-start-3 md:col-span-6 xl:col-start-3 xl:col-span-7 ml-9 md:ml-0"
-            >
-              Tailwind CSS v1.9.0
-            </h3>
-            <time
-              datetime="2020-10-13T18:30:00.000Z"
-              class="flex items-center row-start-1 mb-1 font-medium md:col-start-1 md:col-span-2 md:row-end-3 md:mb-0"
-              ><svg
-                viewBox="0 0 12 12"
-                class="w-3 h-3 mr-6 overflow-visible text-gray-300"
-              >
-                <circle cx="6" cy="6" r="6" fill="currentColor"></circle>
-                <path
-                  d="M 6 -6 V -30"
-                  fill="none"
-                  stroke-width="2"
-                  stroke="currentColor"
-                  class="text-gray-200"
-                ></path>
-                <path
-                  d="M 6 18 V 500"
-                  fill="none"
-                  stroke-width="2"
-                  stroke="currentColor"
-                  class="text-gray-200"
-                ></path></svg
-              >Oct 13, 2020</time
-            >
-            <p class="md:col-start-3 md:col-span-6 xl:col-span-7 ml-9 md:ml-0">
-              We just released Tailwind CSS v1.9 which adds support for
-              configuration presets, useful new CSS grid utilities, extended
-              border radius, rotate, and skew scales, helpful accessibility
-              improvements, and more!
-            </p>
-          </a>
-        </article>
-      </li>
-      <li>
-        <article>
-          <a
-            href="https://blog.tailwindcss.com/introducing-tailwind-play"
-            class="relative grid items-start p-3 overflow-hidden md:grid-cols-8 xl:grid-cols-9 rounded-xl sm:p-5 xl:p-6 hover:bg-white"
-          >
-            <h3
-              class="mb-1 font-semibold text-gray-900 md:col-start-3 md:col-span-6 xl:col-start-3 xl:col-span-7 ml-9 md:ml-0"
-            >
-              Introducing Tailwind Play
-            </h3>
-            <time
-              datetime="2020-10-07T13:00:00.000Z"
-              class="flex items-center row-start-1 mb-1 font-medium md:col-start-1 md:col-span-2 md:row-end-3 md:mb-0"
-              ><svg
-                viewBox="0 0 12 12"
-                class="w-3 h-3 mr-6 overflow-visible text-gray-300"
-              >
-                <circle cx="6" cy="6" r="6" fill="currentColor"></circle>
-                <path
-                  d="M 6 -6 V -30"
-                  fill="none"
-                  stroke-width="2"
-                  stroke="currentColor"
-                  class="text-gray-200"
-                ></path>
-                <path
-                  d="M 6 18 V 500"
-                  fill="none"
-                  stroke-width="2"
-                  stroke="currentColor"
-                  class="text-gray-200"
-                ></path></svg
-              >Oct 7, 2020</time
-            >
-            <p class="md:col-start-3 md:col-span-6 xl:col-span-7 ml-9 md:ml-0">
-              Today we're excited to release the first version of Tailwind Play,
-              an advanced online playground for Tailwind CSS that lets you use
-              all of Tailwind's build-time features directly in the browser.
-            </p>
-          </a>
-        </article>
-      </li>
-      <li>
-        <article>
-          <a
-            href="https://blog.tailwindcss.com/headless-ui-unstyled-accessible-ui-components"
-            class="relative grid items-start p-3 overflow-hidden md:grid-cols-8 xl:grid-cols-9 rounded-xl sm:p-5 xl:p-6 hover:bg-white"
-          >
-            <h3
-              class="mb-1 font-semibold text-gray-900 md:col-start-3 md:col-span-6 xl:col-start-3 xl:col-span-7 ml-9 md:ml-0"
-            >
-              Headless UI: Unstyled, Accessible UI Components
-            </h3>
-            <time
-              datetime="2020-10-06T18:30:00.000Z"
-              class="flex items-center row-start-1 mb-1 font-medium md:col-start-1 md:col-span-2 md:row-end-3 md:mb-0"
-              ><svg
-                viewBox="0 0 12 12"
-                class="w-3 h-3 mr-6 overflow-visible text-gray-300"
-              >
-                <circle cx="6" cy="6" r="6" fill="currentColor"></circle>
-                <path
-                  d="M 6 -6 V -30"
-                  fill="none"
-                  stroke-width="2"
-                  stroke="currentColor"
-                  class="text-gray-200"
-                ></path></svg
-              >Oct 6, 2020</time
-            >
-            <p class="md:col-start-3 md:col-span-6 xl:col-span-7 ml-9 md:ml-0">
-              Headless UI is a set of completely unstyled, fully accessible UI
-              components for React, Vue, and Alpine.js that make it easy to
-              build fully accessible custom UI components, without sacrificing
-              the ability to style them from scratch with simple utility
-              classes.
-            </p>
-          </a>
-        </article>
-      </li>
-    </ul>
-  </section>
-</template>
+<style lang="postcss">
+.developmint {
+  color: #15831d;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+</style>
