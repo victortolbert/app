@@ -18,7 +18,7 @@
           clip-rule="evenodd"
         ></path>
       </svg>
-      {{ $t('Actions') }}
+      {{ $t('actions') }}
     </button>
   </div>
 </template>

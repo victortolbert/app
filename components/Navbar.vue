@@ -13,29 +13,29 @@ export default {
       return [
         {
           label: this.$t('affiliates'),
-          path: 'affiliates',
+          path: '/affiliates',
         },
         {
           label: 'Ema',
-          path: 'ema',
+          path: '/ema',
           isHighlighted: true,
           id: 1,
         },
         {
           label: this.$t('people'),
-          path: 'people',
+          path: '/people',
         },
         {
           label: this.$t('events'),
-          path: 'events',
+          path: '/events',
         },
         {
           label: this.$t('needs'),
-          path: 'needs',
+          path: '/needs',
         },
         {
           label: this.$t('resources'),
-          path: 'resources',
+          path: '/resources',
         },
       ]
     },
@@ -113,7 +113,10 @@ export default {
 
           <!-- Branding_container -->
           <div class="flex items-center flex-shrink-0 h-8 px-4">
-            <NuxtLink class="flex items-center flex-shrink-0" to="/">
+            <NuxtLink
+              class="flex items-center flex-shrink-0"
+              :to="localePath('/')"
+            >
               <svg
                 class="h-8 text-blue-900"
                 viewBox="0 0 60 24"
@@ -136,7 +139,7 @@ export default {
 
           <div class="items-center hidden h-8 px-4 space-x-4 md:flex">
             <NuxtLink
-              :to="link.path"
+              :to="localePath(link.path)"
               :class="{
                 'text-primary-500 font-bold border-b-2 border-primary-700':
                   link.isHighlighted,

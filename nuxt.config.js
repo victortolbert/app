@@ -61,7 +61,7 @@ export default {
     '@nuxtjs/color-mode',
     '@nuxtjs/composition-api',
     '@nuxtjs/eslint-module',
-    // '@nuxtjs/google-analytics',
+    '@nuxtjs/google-analytics',
     '@nuxtjs/svg',
     '@nuxtjs/tailwindcss',
     // 'nuxt-ackee',
@@ -95,7 +95,7 @@ export default {
 
   router: {
     middleware: ['visits', 'user-agent'],
-    // trailingSlash: true,
+    trailingSlash: true,
     linkActiveClass: 'is-active',
     linkExactActiveClass: 'is-exact-active',
   },
@@ -159,20 +159,18 @@ export default {
   //   componentAliases: false,
   // },
 
-  googleAnalytics: {
-    id: process.env.GOOGLE_ANALYTICS_ID,
-  },
-
   // googleAnalytics: {
-  //   id: 'UA-62902757-11',
-  //   disabled: () => document.cookie.includes('ga_optout=true'),
-  //   debug: {
-  //     sendHitTask: !utils.isDev
-  //   },
-  //   set: [
-  //     { field: 'anonymizeIp', value: true }
-  //   ]
+  //   id: process.env.GOOGLE_ANALYTICS_ID,
   // },
+
+  googleAnalytics: {
+    id: process.env.GOOGLE_ANALYTICS_ID || 'UA-76464598-5',
+    disabled: () => document.cookie.includes('ga_optout=true'),
+    debug: {
+      sendHitTask: !utils.isDev,
+    },
+    set: [{field: 'anonymizeIp', value: true}],
+  },
 
   i18n: {
     // locales: [
@@ -294,10 +292,10 @@ export default {
 
   generate: {
     interval: 2000,
-    fallback: true,
+    // fallback: true,
 
-    // fallback: '404.html', // for Netlify
-    // routes: ['/'] // give the first url to start crawling
+    fallback: '404.html', // for Netlify
+    routes: ['/'], // give the first url to start crawling
 
     // async routes() {
     //   const {$content} = require('@nuxt/content')

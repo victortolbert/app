@@ -37,18 +37,13 @@ export default {
   props: {
     error: {
       type: Object,
-      default: () => {},
+      required: true,
     },
   },
   head() {
     return {
-      title: '404 - Not found',
+      title: this.error.message || 'Error Page',
     }
   },
-  // head() {
-  //   return {
-  //     title: this.error.message || 'Error Page',
-  //   }
-  // },
 }
 </script>
