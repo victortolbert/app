@@ -1,7 +1,6 @@
 <template>
   <Layout>
     <template #header>
-      <DeveloperToolbar />
       <Navbar class="text-gray-600 bg-white dark:bg-gray-900 dark:text-white" />
     </template>
 
@@ -10,7 +9,7 @@
         {{ $t('You are offline') }}
       </div>
 
-      <aside
+      <!-- <aside
         class="fixed inset-0 z-30 w-full mt-16 bg-white lg:w-1/5 lg:block lg:relative lg:mt-0 dark:bg-gray-900 lg:bg-transparent"
         :class="{block: menu, hidden: !menu}"
       >
@@ -87,17 +86,15 @@
             </li>
           </ul>
         </div>
-      </aside>
+      </aside> -->
 
-      <Nuxt class="w-full lg:w-4/5" keep-alive :key="$route.params.id" />
+      <Nuxt class="w-full" keep-alive :key="$route.params.id" />
     </main>
 
     <template #footer>
-      <Footer />
-
       <TheFooter />
+      <DeveloperToolbar />
     </template>
-
     <PortalTarget name="modals" />
     <SvgSprite />
   </Layout>
