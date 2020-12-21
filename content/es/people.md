@@ -1,6 +1,6 @@
 ---
-title: Staff
-team:
+title: Ciudadanos
+staff:
   - first_name: Olivia B.
     last_name: Alston
     suffix: MSW
@@ -246,4 +246,6 @@ team:
       volunteers his time with CURE Childhood Cancer. Patrick and his wife,
       Tiffany, have five children, including two who are adopted – a son from
       Ethiopia, and most recently a daughter from China.
+volunteers:
+advocates:
 ---

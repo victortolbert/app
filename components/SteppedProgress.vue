@@ -1,14 +1,12 @@
 <template>
-  <article class="overflow-hidden bg-white rounded-lg">
+  <article class="overflow-hidden rounded-lg">
     <header class="px-4 sm:p-6">
       <div class="px-4 py-5 border-b border-gray-200 sm:px-6">
         <div
           class="flex flex-wrap items-center justify-between -mt-2 -ml-4 sm:flex-nowrap"
         >
           <div class="mt-2 ml-4">
-            <h3
-              class="flex items-center text-2xl font-medium leading-6 text-gray-900"
-            >
+            <h3 class="flex items-center text-2xl font-medium leading-6">
               <svg
                 class="w-10 h-10 mr-1 text-primary-600"
                 fill="currentColor"

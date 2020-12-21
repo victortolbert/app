@@ -16,7 +16,7 @@ export default {
           path: '/affiliates',
         },
         {
-          label: 'Ema',
+          label: this.$t('organizations'),
           path: '/ema',
           isHighlighted: true,
           id: 1,
@@ -44,12 +44,34 @@ export default {
         ${this.person.firstName.charAt(0)} ${this.person.firstName.charAt(0)}
       `.toUpperCase()
     },
+
+    menu: {
+      get() {
+        return this.$store.state.menu.open
+      },
+      set(val) {
+        this.$store.commit('menu/toggle', val)
+      },
+    },
+    lastRelease() {
+      return this.$store.state.releases[0]
+    },
+  },
+  methods: {
+    scrollToTop() {
+      if (window.innerWidth >= 1280) {
+        return
+      }
+      window.scrollTo(0, 0)
+    },
+    noop() {},
   },
 }
 </script>
 
 <template>
-  <nav class="shadow-lg">
+  <nav @click="scrollToTop" class="shadow-lg">
+    <!-- fixed top-0 z-40 w-full border-b dark:border-gray-800 bg-white dark:bg-gray-900 -->
     <!-- Desktop_view -->
     <div class="px-4 mx-auto sm:px-6 lg:px-8">
       <!-- Navbar_O1_navbar_links_container -->
@@ -117,7 +139,7 @@ export default {
               class="flex items-center flex-shrink-0"
               :to="localePath('/')"
             >
-              <svg
+              <!-- <svg
                 class="h-8 text-blue-900"
                 viewBox="0 0 60 24"
                 fill="none"
@@ -131,8 +153,8 @@ export default {
                   d="M1.56485 3.78884C1.33072 3.7354 1.04457 3.60849 0.862464 3.4749C0.673859 3.33463 0.212103 2.53308 0.140563 2.21914C0.0560163 1.84509 0.3877 1.73822 1.93556 1.63134C3.66552 1.51111 5.2459 1.27065 6.89781 0.863194C7.29453 0.769681 7.89287 0.62941 8.23105 0.555935C8.56924 0.489139 9.29114 0.33551 9.82444 0.221957C10.5593 0.061648 10.9886 0.00821156 11.5479 0.001532C12.2568 -0.00514755 12.3153 0.001532 12.7185 0.201919C13.3624 0.522537 13.6421 0.763001 13.7851 1.13038C13.8827 1.3842 13.8892 1.45767 13.8242 1.49775C13.6291 1.61798 10.9951 2.09223 8.55624 2.43957C6.96285 2.66667 5.51255 2.96057 4.03623 3.36135C2.97614 3.64857 1.8315 3.84895 1.56485 3.78884Z"
                   fill="currentColor"
                 />
-              </svg>
-
+              </svg> -->
+              Logo
               <!-- <span class="ml-2"> Every Mother's Advocate </span> -->
             </NuxtLink>
           </div>
@@ -154,6 +176,8 @@ export default {
 
         <!-- Secondary_navbar_links -->
         <div class="hidden md:ml-6 md:flex md:items-center md:space-x-2">
+          <SearchInput />
+          <GivingButton class="mr-8" />
           <ColorModeToggle />
           <LanguageSwitcher />
         </div>

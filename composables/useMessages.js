@@ -44,7 +44,6 @@ export default function useMessages() {
 
   function markAllRead() {
     messages.value.forEach(message => (message.hasBeenRead = true))
-    console.log(messages)
   }
 
   function checkAll() {

@@ -8,9 +8,11 @@
         class="prose max-w-none lg:px-8"
         :class="{'prose-dark': $colorMode.value === 'dark'}"
       >
-        <h1>{{ doc.title }}</h1>
-        <nuxt-content :document="doc" />
+        <h1>{{ $t(doc.title) }}</h1>
+
+        <NuxtContent :document="doc" />
       </article>
+
       <EditOnGithub :document="doc" />
       <ArticlePrevNext :prev="prev" :next="next" class="mt-4 lg:px-8" />
     </div>

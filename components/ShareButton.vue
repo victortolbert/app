@@ -9,7 +9,10 @@
     >
       <FontAwesomeIcon icon="link" class="text-2xl pointer-events-none" />
       <!-- eslint-disable -->
-      <span class="hidden pointer-events-none lg:inline" v-html="lang.copy_and_share_button" />
+      <span
+        class="hidden pointer-events-none lg:inline"
+        v-html="lang.copy_and_share_button"
+      />
     </button>
     <span class="text-sm lg:hidden" v-html="lang.copy_and_share_button" />
 

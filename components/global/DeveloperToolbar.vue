@@ -5,6 +5,11 @@ export default {
       projects: ['app', 'cms', 'lab', 'psv1', 'tdx'],
     }
   },
+  computed: {
+    environment() {
+      return process.env.NODE_ENV
+    },
+  },
 }
 </script>
 
@@ -13,11 +18,11 @@ export default {
     class="flex items-center justify-between p-1 px-8 text-xs leading-loose text-white uppercase bg-gray-800 dark:text-primary-800 dark:bg-gray-100"
   >
     <div class="flex items-center space-x-4">
-      <b>Dev {{ $t('toolbar') }}</b>
-      <b>debug</b>
-      <b>{{ $t('component_explorer') }} v</b>
-      <b>css {{ $t('utilities_reference') }}</b>
-
+      <!-- <b>debug</b> -->
+      <!-- <b>{{ $t('component_explorer') }} v</b> -->
+      <!-- <b>Dev {{ $t('toolbar') }}</b> -->
+      <!-- <span>css {{ $t('utilities_reference') }}</span> -->
+      <b>{{ environment }}</b>
       <a href="http://promise-lab.test/resumes/1"> {{ $t('resume') }}</a>
     </div>
 

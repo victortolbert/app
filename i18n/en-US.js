@@ -26,6 +26,7 @@ export default {
   actions: 'Actions',
   cases_title: 'Cases',
   cases_description: 'Cases',
+  donate: 'Donate',
   training_courses: 'Training Courses',
   training: 'Training',
   module: 'Module',
@@ -75,7 +76,9 @@ export default {
   projects: 'Projects',
   prototypes: 'Prototypes',
   resources: 'Resources',
+  organizations: 'Organizations',
   email_link: 'Email',
+  staff: 'Staff',
   share_email_template: {
     subject: 'Share email template subject',
     body: 'Share email template body',

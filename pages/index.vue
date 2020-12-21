@@ -23,12 +23,6 @@ export default {
       >
         <h2 class="text-xl font-bold">{{ $t('calendar_title') }}</h2>
 
-        <button
-          class="relative w-40 h-10 overflow-hidden text-lg font-semibold rounded shadow button bg-primary-100"
-        >
-          Button
-        </button>
-
         <div
           class="mt-4 overflow-hidden border-b border-gray-200 shadow sm:rounded-lg"
         >
@@ -205,9 +199,10 @@ export default {
           </li>
         </ul>
       </div>
+
       <!-- SteppedProgress -->
       <div
-        class="col-span-2 p-4 pr-6 space-y-2 bg-white border-l-8 border-transparent rounded-md shadow-md dark:bg-gray-900"
+        class="col-span-2 space-y-2 bg-white border-l-8 border-white rounded-md shadow-md dark:border-gray-900 dark:bg-gray-900"
       >
         <stepped-progress></stepped-progress>
 
@@ -218,24 +213,3 @@ export default {
     </div>
   </section>
 </template>
-
-<style>
-.button:hover::after {
-  transform: scale(1);
-  transform: scale(1, 1);
-}
-
-.button::after {
-  content: '';
-  position: absolute;
-  z-index: 1;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  height: 4px;
-  background: #49416d;
-  transition: transform 0.45s;
-  transform: scale(0, 1);
-  transform-origin: 0% 100%;
-}
-</style>

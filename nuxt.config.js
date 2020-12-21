@@ -5,11 +5,12 @@ import {utils} from './config'
 export default {
   // modern: !utils.isDev && 'client',
   env: {
+    nodeEnv: process.env.NODE_ENV,
     baseUrl: process.env.BASE_URL || 'https://app.vticonsulting.com/',
     apiUrl: process.env.API_URL || 'https://api.vticonsulting.com/',
     assetsUrl: process.env.ASSETS_URL || 'https://app.vticonsulting.com/',
     stripePublicKey: utils.isDev
-      ? 'pk_test_9hUFtiNMcseCbvLBySY7D8P6'
+      ? 'pk_test_HHvO5elQXBUhbNuZWt0ngNLx'
       : process.env.STRIPE_PUBLIC_KEY || '',
   },
 
@@ -37,7 +38,7 @@ export default {
       {
         rel: 'stylesheet',
         href:
-          'https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Lato&display=swap',
+          'https://fonts.googleapis.com/css2?family=Caveat:wght@400;430&family=Markazi+Text&display=swap',
       },
     ],
     script: [
@@ -248,6 +249,14 @@ export default {
     // configPath: '@/config/tailwind.config.js',
     // cssPath: '@/assets/styles/app.pcss',
     exposeConfig: true,
+  },
+
+  typescript: {
+    typeCheck: {
+      eslint: {
+        files: './**/*.{ts,js,vue}',
+      },
+    },
   },
 
   netlifyFiles: {
