@@ -49,7 +49,7 @@ export default {
       },
     ],
   },
-
+  css: ['~/assets/css/content.css'],
   modules: [
     '@nuxt/content',
     '@nuxtjs/axios',

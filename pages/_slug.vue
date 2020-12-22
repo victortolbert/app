@@ -1,12 +1,12 @@
 <template>
   <div class="flex flex-wrap-reverse mx-8">
     <div
-      class="w-full py-4 lg:pt-8 lg:pb-4 dark:border-gray-800 lg:border-l lg:border-r"
+      class="w-full py-4 lg:pt-8 lg:pb-4 dark:border-gray-800 dark:text-white lg:border-l lg:border-r"
       :class="{'': doc.toc && doc.toc.length, 'lg:w-3/4': !doc.fullscreen}"
     >
       <article
         class="prose max-w-none lg:px-8"
-        :class="{'prose-dark': $colorMode.value === 'dark'}"
+        :class="{'prose-dark dark': $colorMode.value === 'dark'}"
       >
         <h1>{{ $t(doc.title) }}</h1>
 

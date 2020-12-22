@@ -5,12 +5,19 @@
     <div
       class="container flex items-center justify-between w-full h-full px-4 mx-auto lg:px-8"
     >
-      <div class="flex items-end">
-        <span class="mr-2 text-sm leading-none"
-          >© {{ new Date().getFullYear() }}</span
+      <div class="flex items-center">
+        <span class="mr-2 text-sm leading-none">
+          © {{ new Date().getFullYear() }}
+        </span>
+        <a
+          href="https://vticonsulting.com"
+          target="_blank"
+          rel="noopener"
+          class="flex items-center space-x-1"
         >
-        <a href="https://nuxtjs.org" target="_blank" rel="noopener">
-          <IconNuxt class="h-4" />
+          <IconTolbertDesign class="h-4" />
+          <span class="text-sm">VTi Consulting (Victor Tolbert)</span>
+          <!-- <IconPromiseServes class="h-4" /> -->
         </a>
       </div>
       <div class="flex">

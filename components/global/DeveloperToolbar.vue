@@ -27,6 +27,7 @@ export default {
     </div>
 
     <div class="flex space-x-4">
+      <b>Previews</b>
       <a
         :href="`https://${project}.vticonsulting.com?ref=developer-toolbar`"
         target="_app"
