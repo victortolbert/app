@@ -1,5 +1,7 @@
 ---
-title: PHP Notes
+title: PHP
+category: Snippets
+position: 12
 ---
 
 ```php

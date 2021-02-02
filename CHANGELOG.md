@@ -8,6 +8,17 @@ and this project adheres to
 
 ## [Unreleased][unreleased]
 
+- Add Laravel Mix managed Vue 3 Single Page App
+- Document components and templates using Nuxt.js (Vue 2 w/Composition API)
+- Customize Tailwind, Oruga, Full Calendar, Easy Appointments, Bootstrap 3
+  components
+- create role constants
+- Add Demo controllers
+- Design Tokens (Color, Spacing, more...)
+- Elements (Button, Icon, Logo, Tag)
+- Patterns (Modal, Navbar, Table, Slideover)
+- Templates (Login, Register, Dashboard)
+
 ## [0.1.0] - 2020-12-16
 
 ### Added

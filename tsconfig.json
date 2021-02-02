@@ -3,34 +3,25 @@
     "target": "ES2018",
     "module": "ESNext",
     "moduleResolution": "Node",
-    "lib": [
-      "ESNext",
-      "ESNext.AsyncIterable",
-      "DOM"
-    ],
+    "lib": ["ESNext", "ESNext.AsyncIterable", "DOM"],
     "esModuleInterop": true,
     "allowJs": true,
     "sourceMap": true,
     "strict": true,
     "noEmit": true,
+    "resolveJsonModule": true,
     "baseUrl": ".",
     "paths": {
-      "~/*": [
-        "./*"
-      ],
-      "@/*": [
-        "./*"
-      ]
+      "~/*": ["./*"],
+      "@/*": ["./*"]
     },
     "types": [
       "@types/node",
       "@nuxt/content",
       "@nuxt/types",
       "nuxt-i18n",
+      "testing-library__jest-dom"
     ]
   },
-  "exclude": [
-    "node_modules",
-    ".nuxt"
-  ]
+  "exclude": ["node_modules", ".nuxt"]
 }

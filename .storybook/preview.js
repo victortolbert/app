@@ -9,8 +9,8 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 
 import {withA11y} from '@storybook/addon-a11y'
-import {withTests} from '@storybook/addon-jest'
-import results from '../.jest-test-results.json'
+// import {withTests} from '@storybook/addon-jest'
+// import results from '../.jest-test-results.json'
 
 Vue.use(Vuex)
 
@@ -22,12 +22,25 @@ addParameters({
     inlineStories: true,
     iframeHeight: '60px',
   },
+  html: {
+    // root: '#my-custom-wrapper', // default: #root
+    // removeEmptyComments: true, // default: false
+    prettier: {
+      tabWidth: 4,
+      useTabs: false,
+      htmlWhitespaceSensitivity: 'strict',
+    },
+
+    // highlighter: {
+    //   showLineNumbers: true, // default: false
+    //   wrapLines: false, // default: true
+    // },
+  },
 })
 
 addDecorator(withA11y)
 addDecorator(withKnobs)
-addDecorator(
-  withTests({
-    results,
-  }),
-)
+addDecorator()
+// withTests({
+//   results,
+// }),

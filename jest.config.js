@@ -17,5 +17,6 @@ module.exports = {
     '<rootDir>/pages/**/*.vue',
   ],
   snapshotSerializers: ['<rootDir>/node_modules/jest-serializer-vue-tjw'],
-  setupFilesAfterEnv: ['./jest.setup.js'],
+  // setupFilesAfterEnv: ['./jest.setup.js'],
+  setupFilesAfterEnv: ['@testing-library/jest-dom/extend-expect'],
 }

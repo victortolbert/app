@@ -6,3 +6,5 @@ const postgreSQL = fs.readFileSync('./schema.sql', 'utf-8')
 
 // generate DBML from PostgreSQL script
 const dbml = importer.import(postgreSQL, 'postgres')
+
+module.export = dbml

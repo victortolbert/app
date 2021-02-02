@@ -3,6 +3,7 @@ module.exports = {
   env: {
     browser: true,
     node: true,
+    // jest: true,
   },
   parserOptions: {
     parser: 'babel-eslint',
@@ -15,6 +16,8 @@ module.exports = {
     'plugin:nuxt/recommended',
     'plugin:cypress/recommended',
     // '@nuxtjs/eslint-config-typescript',
+    // 'plugin:testing-library/vue',
+    // 'plugin:jest-dom/recommended',
   ],
   plugins: ['prettier'],
   // add your custom rules here
@@ -31,4 +34,12 @@ module.exports = {
   globals: {
     $nuxt: true,
   },
+  overrides: [
+    {
+      files: ['**/*.test.js'],
+      env: {
+        jest: true,
+      },
+    },
+  ],
 }

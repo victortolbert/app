@@ -1,9 +1,11 @@
 <template>
-  <div>
-    <nuxt-link to="/articles">Articles</nuxt-link>
+  <main class="flex-1 p-8 prose dark:prose-dark">
+    <NuxtLink to="/articles/">Articles</NuxtLink>
+
     <h2>{{ article.title }}</h2>
-    <nuxt-content :document="article" />
-  </div>
+
+    <NuxtContent :document="article" />
+  </main>
 </template>
 
 <script>

@@ -2,9 +2,7 @@
   <footer
     class="w-full h-20 bg-white border-t dark:border-gray-800 dark:bg-gray-900"
   >
-    <div
-      class="container flex items-center justify-between w-full h-full px-4 mx-auto lg:px-8"
-    >
+    <div class="flex items-center justify-between w-full h-full px-8 mx-auto">
       <div class="flex items-center">
         <span class="mr-2 text-sm leading-none">
           © {{ new Date().getFullYear() }}

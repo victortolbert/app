@@ -20,6 +20,7 @@ import {defineComponent} from '@nuxtjs/composition-api'
 import useMessages from '@/composables/useMessages'
 
 export default defineComponent({
+  nuxtI18n: false,
   setup(props, context) {
     const {
       messages,

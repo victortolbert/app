@@ -79,9 +79,9 @@
                   <span class="text-xs font-semibold tracking-wide uppercase"
                     >{{ $t('training_module') }} 1</span
                   >
-                  <span class="text-sm text-gray-500"
-                    >Vitae sed mi luctus laoreet.</span
-                  >
+                  <span class="text-sm text-gray-500">
+                    Vitae sed mi luctus laoreet.
+                  </span>
                 </span>
               </a>
             </li>

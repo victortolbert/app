@@ -1,27 +1,8 @@
-<script>
-export default {
-  // layout: 'plain',
-  computed: {
-    username() {
-      // We will see what `params` is shortly
-      return this.$route.params.username
-    },
-  },
-  methods: {
-    goBack() {
-      window.history.length > 1 ? this.$router.go(-1) : this.$router.push('/')
-    },
-  },
-}
-</script>
-
 <template>
   <section
     class="flex flex-col items-center justify-center flex-1 min-h-screen bg-gray-100"
   >
-    <div
-      class="flex items-center justify-center w-full min-h-screen bg-primary-500"
-    >
+    <div class="flex items-center justify-center w-full min-h-screen">
       <div class="flex-1 p-8">
         <!-- class="grid grid-flow-row-dense grid-cols-2 grid-rows-3 gap-4 auto-cols-min" -->
         <div class="grid grid-cols-3 gap-4">
@@ -30,111 +11,94 @@ export default {
             class="col-span-2 p-4 pr-6 space-y-2 bg-white border-l-8 border-transparent rounded-md shadow-md dark:text-white dark:bg-gray-800"
           >
             <header class="flex items-center justify-between">
-              <h2 class="text-xl font-bold">{{ $t('dashboard') }}</h2>
-
-              <!-- DateRangeButtonGroup -->
-              <span class="relative z-0 inline-flex rounded-md shadow-sm">
-                <button
-                  type="button"
-                  class="relative inline-flex items-center px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-l-md hover:bg-gray-50 focus:z-10 focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500"
-                >
-                  Years
-                </button>
-                <button
-                  type="button"
-                  class="relative inline-flex items-center px-4 py-2 -ml-px text-sm font-medium text-gray-700 bg-white border border-gray-300 hover:bg-gray-50 focus:z-10 focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500"
-                >
-                  Months
-                </button>
-                <button
-                  type="button"
-                  class="relative inline-flex items-center px-4 py-2 -ml-px text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-r-md hover:bg-gray-50 focus:z-10 focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500"
-                >
-                  Days
-                </button>
-              </span>
+              <h2 class="text-xl font-bold">{{ $t('calendar') }}</h2>
+              <ButtonGroupDateRange />
             </header>
 
-            {{ $t('calendar') }}
+            <MediaObject>
+              <div
+                class="flex flex-col w-20 h-20 overflow-hidden border rounded shadow"
+              >
+                <span
+                  class="flex items-center justify-center py-1 text-xs font-semibold tracking-wide uppercase bg-red-500 text-primary-50"
+                >
+                  Jan
+                </span>
+                <span
+                  class="flex items-center justify-center flex-1 text-2xl font-semibold text-gray-700"
+                >
+                  12
+                </span>
+              </div>
+            </MediaObject>
 
-            <h2>Affiliate</h2>
+            <VueSlickCarousel v-bind="slickOptions">
+              <div v-for="i in 5" :key="i" class="img-wrapper">
+                <img :src="`/img/photos/promise_serves/${i}.jpeg`" />
+              </div>
+            </VueSlickCarousel>
 
-            <h3 class="font-bold">Roles</h3>
-            <ul class="flex space-x-2">
-              <li>Staff</li>
-              <li>Advocate</li>
-              <li>Admin</li>
-              <li>Community Volunteer</li>
-              <li>Prospect</li>
-              <li>Church</li>
-              <li>Community</li>
-              <li>Super Admin</li>
-            </ul>
+            <article class="prose-sm prose">
+              <h3 class="font-bold">Roles</h3>
+              <ul>
+                <li>{{ $t('affiliate') }}</li>
+                <li>{{ $t('staff') }}</li>
+                <li>{{ $t('advocate') }}</li>
+                <li>{{ $t('admin') }}</li>
+                <li>{{ $t('community_volunteer') }}</li>
+                <li>{{ $t('prospect') }}</li>
+                <li>{{ $t('church') }}</li>
+                <li>{{ $t('community') }}</li>
+                <li>{{ $t('super_admin') }}</li>
+              </ul>
+            </article>
+          </div>
+
+          <div
+            class="p-4 bg-white border-transparent rounded-md shadow-md dark:text-white dark:bg-gray-800"
+          >
+            <ProgressMeter :first-meter="42" />
           </div>
 
           <div
             class="p-4 pr-6 space-y-2 bg-white border-l-8 border-transparent rounded-md shadow-md"
           >
-            <h2 class="text-lg font-semibold leading-6">Cases</h2>
+            <h2 class="text-lg font-semibold leading-6">{{ $t('cases') }}</h2>
 
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas
-              atque temporibus sit sed ut perspiciatis neque quisquam
+              {{ $t('about_cases') }}
             </p>
 
-            <!-- Getting Started Section -->
-            <section>
-              <h2 class="text-lg font-semibold leading-6">Getting started</h2>
-
-              <p>
-                Everything you need to know to get started and get to work in
-                Promise Serves.
-              </p>
-            </section>
+            <SectionGettingStarted />
+            <CardPoster />
+            <SelectCountry />
+            <TimelineTraining />
+            <MediaObject />
 
             <div>
-              <button
-                type="button"
-                class="inline-flex items-center px-2.5 py-1.5 border border-transparent text-xs font-medium rounded text-primary-700 bg-primary-100 hover:bg-primary-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500"
-              >
-                <svg
-                  class="w-5 h-5 mr-1"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                    clip-rule="evenodd"
-                  ></path>
-                </svg>
-                Actions
-              </button>
+              <ButtonAction />
             </div>
           </div>
 
           <div
             class="p-4 pr-6 space-y-2 bg-white border-l-8 border-teal-400 rounded-md shadow-md"
           >
-            <h2 class="text-lg font-bold leading-6">Next Action Steps</h2>
+            <h2 class="text-lg font-bold leading-6">
+              {{ $t('next_action_steps') }}
+            </h2>
 
-            <p>No relevant upcoming items in the next 30 days</p>
+            <p>{{ $t('no_upcoming_items') }}</p>
 
-            <details>
-              <summary>
-                I have keys but no doors. I have space but no room. You can
-                enter but can’t leave. What am I?
-              </summary>
-              A keyboard.
-            </details>
+            <ExampleSummaryDetail />
           </div>
 
           <div
             class="p-4 pr-6 space-y-2 bg-white border-l-8 border-teal-400 rounded-md shadow-md"
           >
-            <h2 class="text-lg font-bold leading-6">Upcoming Items</h2>
-            <p>No relevant upcoming items in the next 30 days</p>
+            <h2 class="text-lg font-bold leading-6">
+              {{ $t('upcoming_items') }}
+            </h2>
+            <p>{{ $t('no_upcoming_items') }}</p>
           </div>
           <div
             class="p-4 pr-6 space-y-2 bg-white border-l-8 border-transparent rounded-md shadow-md"
@@ -145,8 +109,6 @@ export default {
       </div>
     </div>
     <div class="grid gap-8 px-8 lg:grid-cols-1">
-      <TrainingStepProgress />
-
       <!--  3u_vIdnJYLc
             CruddyByDesign: MF0jFKvS4SI
       -->
@@ -163,3 +125,75 @@ export default {
     </div>
   </section>
 </template>
+
+<script>
+import VueSlickCarousel from 'vue-slick-carousel'
+import 'vue-slick-carousel/dist/vue-slick-carousel.css'
+import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css'
+
+export default {
+  // layout: 'plain',
+  components: {VueSlickCarousel},
+  data() {
+    return {
+      slickOptions: {
+        initialSlide: 0,
+        slidesToShow: 4,
+        slidesToScroll: 4,
+        arrows: false,
+        dots: true,
+        dotsClass: 'slick-dots custom-dot-class',
+        edgeFriction: 0.35,
+        fade: true,
+        focusOnSelect: true,
+        infinite: true,
+        speed: 500,
+        touchThreshold: 5,
+        autoplay: true,
+        autoplaySpeed: 2000,
+        cssEase: 'linear',
+        pauseOnDotsHover: true,
+        pauseOnFocus: true,
+        pauseOnHover: true,
+        responsive: [
+          {
+            breakpoint: 1024,
+            settings: {
+              slidesToShow: 3,
+              slidesToScroll: 3,
+              infinite: true,
+              dots: true,
+            },
+          },
+          {
+            breakpoint: 600,
+            settings: {
+              slidesToShow: 2,
+              slidesToScroll: 2,
+              initialSlide: 2,
+            },
+          },
+          {
+            breakpoint: 480,
+            settings: {
+              slidesToShow: 1,
+              slidesToScroll: 1,
+            },
+          },
+        ],
+      },
+    }
+  },
+  computed: {
+    username() {
+      // We will see what `params` is shortly
+      return this.$route.params.username
+    },
+  },
+  methods: {
+    goBack() {
+      window.history.length > 1 ? this.$router.go(-1) : this.$router.push('/')
+    },
+  },
+}
+</script>

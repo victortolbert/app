@@ -1,5 +1,6 @@
 ---
 title: Staff
+category: Promise Serves
 team:
   - first_name: Olivia B.
     last_name: Alston
@@ -247,3 +248,7 @@ team:
       Tiffany, have five children, including two who are adopted – a son from
       Ethiopia, and most recently a daughter from China.
 ---
+
+## Team
+
+<people-list v-bind:people="team"></people-list>

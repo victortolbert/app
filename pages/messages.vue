@@ -21,6 +21,6 @@
 <script>
 export default {
   //   layout: 'plain',
-  name: 'MessagesPage',
+  nuxtI18n: false,
 }
 </script>

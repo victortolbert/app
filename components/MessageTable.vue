@@ -6,7 +6,7 @@
       <input
         class="w-5 h-5 text-gray-500 form-checkbox"
         type="checkbox"
-        @click="checkAll()"
+        @click="checkAll"
         v-model="isCheckAll"
       />
 
@@ -61,7 +61,7 @@
               @change="updateCheckAll"
             />
 
-            <NuxtLink class="pl-2" :to="`/messages/${message.id}`">
+            <NuxtLink class="pl-2" :to="`/messages/${message.id}/`">
               {{ message.sender }}
             </NuxtLink>
           </td>
@@ -75,19 +75,19 @@
             >
               {{ tag }}
             </span>
-            <NuxtLink class="font-bold" :to="`/messages/${message.id}`">
+            <NuxtLink class="font-bold" :to="`/messages/${message.id}/`">
               {{ message.subject }}
             </NuxtLink>
             <NuxtLink
               class="hidden md:inline-block"
-              :to="`/messages/${message.id}`"
+              :to="`/messages/${message.id}/`"
             >
               {{ truncate(message.body) }}
             </NuxtLink>
           </td>
 
           <td class="py-2 text-sm text-right whitespace-no-wrap align-top">
-            <NuxtLink :to="`/messages/${message.id}`">
+            <NuxtLink :to="`/messages/${message.id}/`">
               {{ formatDate(message.date) }}
             </NuxtLink>
           </td>

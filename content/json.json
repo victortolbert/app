@@ -1,5 +1,11 @@
 {
   "title": "JSON",
   "description": "This is a .json file",
-  "body": "Hello *Markdown*"
+  "body": "Hello *Markdown*",
+  "articles": [
+    {
+      "id": 1,
+      "title": "Article Title"
+    }
+  ]
 }

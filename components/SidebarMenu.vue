@@ -2,7 +2,7 @@
   <div class="space-y-1">
     <NuxtLink
       exact
-      to="/messages"
+      to="/messages/"
       @click.native="closeMenu"
       class="nav-link inbox"
     >
@@ -11,7 +11,7 @@
     </NuxtLink>
     <NuxtLink
       exact
-      :to="`/messages/tags/${tag}`"
+      :to="`/messages/tags/${tag}/`"
       v-for="(count, tag) in tags"
       :key="tag"
       :class="tag"
@@ -58,7 +58,7 @@ export default defineComponent({
 
 <style lang="postcss">
 .nav-link {
-  @apply flex rounded-r-full py-1 pl-6 flex items-center px-2 py-2 font-medium text-gray-900 transition duration-150 ease-in-out  rounded-md group focus:outline-none focus:bg-gray-50;
+  @apply flex rounded-r-full pl-6 items-center px-2 py-2 font-medium text-gray-900 transition duration-150 ease-in-out  rounded-md group focus:outline-none focus:bg-gray-50;
 }
 
 .nav-link:hover {

@@ -1,11 +1,11 @@
 <template>
-  <div class="flex flex-wrap-reverse mx-8">
+  <div class="flex">
     <div
-      class="w-full py-4 lg:pt-8 lg:pb-4 dark:border-gray-800 dark:text-white lg:border-l lg:border-r"
+      class="w-full py-4 lg:pt-8 lg:pb-4 dark:border-gray-800 lg:border-l lg:border-r"
       :class="{'': doc.toc && doc.toc.length, 'lg:w-3/4': !doc.fullscreen}"
     >
       <article
-        class="prose max-w-none lg:px-8"
+        class="prose lg:px-8 dark:prose-dark max-w-none"
         :class="{'prose-dark dark': $colorMode.value === 'dark'}"
       >
         <h1>{{ $t(doc.title) }}</h1>
@@ -16,7 +16,7 @@
       <EditOnGithub :document="doc" />
       <ArticlePrevNext :prev="prev" :next="next" class="mt-4 lg:px-8" />
     </div>
-    <ArticleToc v-if="doc.toc && doc.toc.length" :toc="doc.toc" />
+    <SidebarToc v-if="doc.toc && doc.toc.length" :toc="doc.toc" />
   </div>
 </template>
 
@@ -25,6 +25,7 @@ import Clipboard from 'clipboard'
 
 export default {
   name: 'PageSlug',
+  layout: 'docs',
   middleware({params, redirect}) {
     if (params.slug === 'index') {
       redirect('/')

@@ -2,9 +2,7 @@ export async function init({app, store, error, isClient}) {
   if (isClient) return
 
   try {
-    const messages = await app.$axios.$get(
-      `${process.env.baseURL}/api/messages`,
-    )
+    const messages = await app.$axios.$get(`${process.env.apiUrl}/messages`)
     store.commit('INIT', messages)
   } catch (err) {
     store.commit('INIT', [])

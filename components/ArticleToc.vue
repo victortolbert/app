@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full py-4 lg:w-1/4 lg:p-8">
+  <div class="w-full py-4 lg:p-8">
     <div class="lg:sticky lg:top-0 lg:pt-24 lg:-mt-24">
       <h3
         class="mb-3 text-sm font-bold tracking-wide text-gray-500 uppercase lg:mb-2 dark:text-gray-600 lg:text-xs"

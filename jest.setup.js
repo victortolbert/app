@@ -1,4 +1,5 @@
-// import '@testing-library/jest-dom/extend-expect'
+import '@testing-library/jest-dom/extend-expect'
+
 import {mount} from '@vue/test-utils'
 
 export async function mountWithAsyncData(

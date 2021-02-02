@@ -1,10 +1,31 @@
+<script>
+import {reactive, defineComponent} from '@nuxtjs/composition-api'
+import {useMouse} from '@vueuse/core'
+
+export default defineComponent({
+  props: {
+    data: {
+      type: Array,
+      default: () => [],
+    },
+  },
+  setup() {
+    // "x" and "y" are refs
+    const mouse = reactive(useMouse())
+
+    return {
+      mouse,
+    }
+  },
+})
+</script>
 <template lang="pug">
 .p-10.min-h-screen.flex.items-center.bg-indigo-500
   .flex-1.max-w-lg.mx-auto
     .bg-white.rounded-lg.shadow-2xl
       ul.divide-y-2.divide-gray-400
         li.p-6.space-y-2
-          .h-3.w-48.bg-gray-300.rounded
+          .h-3.w-48.bg-gray-300.rounded {{ mouse.x }} {{ mouse.y }}
           .h-3.w-24.bg-gray-500.rounded
         li.p-6.space-y-2
           .h-3.w-64.bg-gray-300.rounded

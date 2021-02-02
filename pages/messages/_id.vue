@@ -13,7 +13,7 @@
 
     <template v-else>
       <h2>
-        <NuxtLink to="/messages"> &larr; Inbox </NuxtLink>
+        <NuxtLink to="/messages/"> &larr; Inbox </NuxtLink>
       </h2>
 
       <h1>{{ message.subject }}</h1>
@@ -38,7 +38,7 @@ import {
 import {strip} from '@/helpers'
 
 export default defineComponent({
-  name: 'MessagePage',
+  nuxtI18n: false,
   setup() {
     const message = ref()
 

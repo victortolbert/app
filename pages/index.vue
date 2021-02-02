@@ -1,157 +1,731 @@
+<template>
+  <div class="space-y-1 lg:mt-8 lg:space-y-8 lg:px-8">
+    <div class="grid gap-8 lg:grid-cols-2">
+      <section class="p-8 bg-white shadow lg:rounded-lg">
+        <div class="text-primary-500 aspect-w-21 aspect-h-9">
+          <UsaMap />
+        </div>
+      </section>
+
+      <section class="p-8 bg-white shadow lg:rounded-lg">
+        <Chart type="column" />
+      </section>
+
+      <section class="p-8 bg-white shadow lg:rounded-lg">
+        <Chart type="line" />
+      </section>
+
+      <section class="p-8 bg-white shadow lg:rounded-lg">
+        <Chart type="bar" />
+      </section>
+
+      <section class="p-8 bg-white shadow lg:rounded-lg">
+        <Chart
+          type="pie"
+          :data="[
+            ['Blueberry', 44],
+            ['Strawberry', 23],
+          ]"
+        />
+      </section>
+
+      <section class="p-8 bg-white shadow lg:rounded-lg">
+        <Chart
+          type="bar"
+          :data="[
+            ['X-Small', 5],
+            ['Small', 27],
+          ]"
+        />
+      </section>
+
+      <section class="p-8 bg-white shadow lg:rounded-lg">
+        <Chart type="area" />
+      </section>
+
+      <section class="p-8 bg-white shadow lg:rounded-lg">
+        <Chart
+          type="area"
+          :data="{
+            '2017-01-01 00:00:00 -0800': 2,
+            '2017-01-01 00:01:00 -0800': 5,
+          }"
+        />
+      </section>
+    </div>
+
+    <section class="p-8 bg-white shadow lg:rounded-lg">
+      <v-client-table
+        :columns="exampleColumns"
+        v-model="exampleData"
+        :options="exampleOptions"
+      >
+        <a
+          slot="uri"
+          slot-scope="props"
+          target="_blank"
+          :href="props.row.uri"
+          class="glyphicon glyphicon-eye-open"
+        ></a>
+        <div slot="child_row" slot-scope="props">
+          The link to {{ props.row.name }}
+          is
+          <a :href="props.row.uri">{{ props.row.uri }}</a>
+        </div>
+
+        <div
+          slot="name"
+          slot-scope="{row, update, setEditing, isEditing, revertValue}"
+        >
+          <span @click="setEditing(true)" v-if="!isEditing()">
+            <a>{{ row.name }}</a>
+          </span>
+
+          <span v-else>
+            <input type="text" v-model="row.name" />
+            <button
+              type="button"
+              class="btn btn-info btn-xs"
+              @click="
+                update(row.name)
+                setEditing(false)
+              "
+            >
+              Submit
+            </button>
+            <button
+              type="button"
+              class="btn btn-default btn-xs"
+              @click="
+                revertValue()
+                setEditing(false)
+              "
+            >
+              Cancel
+            </button>
+          </span>
+        </div>
+      </v-client-table>
+    </section>
+
+    <section class="p-8 bg-white shadow lg:rounded-lg">
+      <PeopleTable />
+    </section>
+
+    <section class="p-8 bg-white shadow lg:rounded-lg">
+      <div class="grid grid-cols-2 gap-8">
+        <div>
+          <button @click="fetchUsers">Fetch Data</button>
+          <button @click="updateUsers">Update Data</button>
+
+          <h2>Data</h2>
+          <pre class="font-mono text-2xs">{{ $store.state.users }}</pre>
+        </div>
+      </div>
+    </section>
+
+    <section class="p-8 bg-white shadow lg:rounded-lg">
+      <div class="flex items-center space-x-8">
+        <button @click="play">Play a sound</button>
+        <button @click="$sounds.back.play">Back</button>
+        <button @click="$sounds.button.play">Button</button>
+        <!-- <button @click="$sounds.dumb_ass.play">Dumb Ass</button> -->
+        <button @click="$sounds.error.play">Error</button>
+        <!-- <button @click="$sounds.excuse_me_while_i_whip_this_out.play">Whipout</button> -->
+        <button @click="$sounds.fanfare.play">Fanfare</button>
+        <!-- <button @click="$sounds.initiating_startup_sequence.play">Startup</button> -->
+        <!-- <button @click="$sounds.loop_3.play">Loop 3</button> -->
+        <!-- <button @click="$sounds.loop_6.play">Loop 6</button> -->
+        <!-- <button @click="$sounds.loop_tainted_2.play">Tainted Loop 2</button> -->
+        <!-- <button @click="$sounds.loop_tainted.play">Tainted Loop 1</button> -->
+        <!-- <button @click="$sounds.negative_on_password.play">Negative on password</button> -->
+        <button @click="$sounds.pop_down.play">Pop Down</button>
+        <button @click="$sounds.pop_up_off.play">Popup Off</button>
+        <button @click="$sounds.pop_up_on.play">Popup On</button>
+        <button @click="$sounds.success.play">Success</button>
+        <!-- <button @click="$sounds.the_mail_is_here.play">Got mail</button> -->
+        <!-- <button @click="$sounds.thx.play">THX</button>  -->
+        <!-- <button @click="$sounds.times_up.play">Times up</button> -->
+        <button @click="$sounds.vue.play">Vue</button>
+        <button @click="$sounds.warning.play">Warning</button>
+      </div>
+    </section>
+
+    <section class="p-8 bg-white shadow lg:rounded-lg">
+      <!-- <button @click="$sounds.you_have_a_mail_message.play">
+        You have a mail message
+      </button> -->
+      <!-- <LineChart /> -->
+      <!-- <BarChart :data="barChartData" :options="{maintainAspectRatio: true}" /> -->
+    </section>
+  </div>
+</template>
+
 <script>
-export default {
-  // layout: 'plain',
-  data() {
+// import moment from 'moment'
+import {defineComponent} from '@nuxtjs/composition-api'
+import {useSound} from '@vueuse/sound'
+import buttonSfx from '../static/sound/button.wav'
+
+import {theme} from '~tailwind.config'
+
+export default defineComponent({
+  setup() {
+    const {play} = useSound(buttonSfx)
+
     return {
-      message: {
-        id: 2,
-        subject: 'Tech Conferences',
-      },
+      play,
     }
   },
+  asyncData({env, app}) {
+    // const stats = await app.$axios.$get(
+    //   'https://api.github.com/repos/nuxt/nuxt.js/stats/commit_activity',
+    //   {
+    //     headers: {
+    //       Authorization: `token 42cdf9fd55abf41d24f34c0f8a4d9ada5f9e9b93`,
+    //     },
+    //   },
+    // )
+    return {
+      theme,
+      // barChartData: {
+      //   labels: stats.map(stat =>
+      //     moment(stat.week * 1000).format('GGGG[-W]WW'),
+      //   ),
+      //   datasets: [
+      //     {
+      //       label: 'Nuxt Commit Activity',
+      //       backgroundColor: theme.colors.primary['500'],
+      //       data: stats.map(stat => stat.total),
+      //     },
+      //   ],
+      // },
+    }
+  },
+  data() {
+    return {
+      chartData: [
+        ['Jan', [4, 6]],
+        ['Feb', 2],
+        ['Mar', 10],
+        ['Apr', 5],
+        ['May', 3],
+      ],
+      columns: ['id', 'name', 'age'],
+      tableData: [
+        {id: 1, name: 'John', age: '20'},
+        {id: 2, name: 'Jane', age: '24'},
+        {id: 3, name: 'Susan', age: '16'},
+        {id: 4, name: 'Chris', age: '55'},
+        {id: 5, name: 'Dan', age: '40'},
+      ],
+      options: {
+        // see the options API
+      },
+      exampleColumns: ['name', 'code', 'uri'],
+      exampleData: getData(),
+      exampleOptions: {
+        headings: {
+          name: 'Country Name',
+          code: 'Country Code',
+          uri: 'View Record',
+        },
+        editableColumns: ['name'],
+        sortable: ['name', 'code'],
+        filterable: ['name', 'code'],
+      },
+      labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+      datasets: [
+        {
+          label: '# of Votes',
+          data: [12, 19, 3, 5, 2, 3],
+          backgroundColor: [
+            'rgba(255, 99, 132, 0.2)',
+            'rgba(54, 162, 235, 0.2)',
+            'rgba(255, 206, 86, 0.2)',
+            'rgba(75, 192, 192, 0.2)',
+            'rgba(153, 102, 255, 0.2)',
+            'rgba(255, 159, 64, 0.2)',
+          ],
+          borderColor: [
+            'rgba(255, 99, 132, 1)',
+            'rgba(54, 162, 235, 1)',
+            'rgba(255, 206, 86, 1)',
+            'rgba(75, 192, 192, 1)',
+            'rgba(153, 102, 255, 1)',
+            'rgba(255, 159, 64, 1)',
+          ],
+          borderWidth: 1,
+        },
+      ],
+    }
+  },
+  methods: {
+    fetchUsers() {
+      this.$store.dispatch('getUsers')
+    },
+
+    updateUsers() {
+      this.$store.dispatch('updateUsers', this.$store.state.users)
+    },
+  },
+})
+
+function getData() {
+  return [
+    {
+      code: 'ZW',
+      name: 'Zimbabwe',
+      created_at: '2015-04-24T01:46:50.459583',
+      updated_at: '2015-04-24T01:46:50.459593',
+      uri: 'http://api.lobbyfacts.eu/api/1/country/245',
+      id: 245,
+    },
+    {
+      code: 'ZM',
+      name: 'Zambia',
+      created_at: '2015-04-24T01:46:50.457459',
+      updated_at: '2015-04-24T01:46:50.457468',
+      uri: 'http://api.lobbyfacts.eu/api/1/country/244',
+      id: 244,
+    },
+    {
+      code: 'YE',
+      name: 'Yemen',
+      created_at: '2015-04-24T01:46:50.454731',
+      updated_at: '2015-04-24T01:46:50.454741',
+      uri: 'http://api.lobbyfacts.eu/api/1/country/243',
+      id: 243,
+    },
+    {
+      code: 'EH',
+      name: 'Western Sahara',
+      created_at: '2015-04-24T01:46:50.452002',
+      updated_at: '2015-04-24T01:46:50.452011',
+      uri: 'http://api.lobbyfacts.eu/api/1/country/242',
+      id: 242,
+    },
+    {
+      code: 'WF',
+      name: 'Wallis & Futuna',
+      created_at: '2015-04-24T01:46:50.449346',
+      updated_at: '2015-04-24T01:46:50.449355',
+      uri: 'http://api.lobbyfacts.eu/api/1/country/241',
+      id: 241,
+    },
+    {
+      code: 'VN',
+      name: 'Vietnam',
+      created_at: '2015-04-24T01:46:50.446644',
+      updated_at: '2015-04-24T01:46:50.446652',
+      uri: 'http://api.lobbyfacts.eu/api/1/country/240',
+      id: 240,
+    },
+    {
+      code: 'VE',
+      name: 'Venezuela',
+      created_at: '2015-04-24T01:46:50.444031',
+      updated_at: '2015-04-24T01:46:50.444040',
+      uri: 'http://api.lobbyfacts.eu/api/1/country/239',
+      id: 239,
+    },
+    {
+      code: 'VU',
+      name: 'Vanuatu',
+      created_at: '2015-04-24T01:46:50.441423',
+      updated_at: '2015-04-24T01:46:50.441433',
+      uri: 'http://api.lobbyfacts.eu/api/1/country/238',
+      id: 238,
+    },
+    {
+      code: 'UZ',
+      name: 'Uzbekistan',
+      created_at: '2015-04-24T01:46:50.438748',
+      updated_at: '2015-04-24T01:46:50.438757',
+      uri: 'http://api.lobbyfacts.eu/api/1/country/237',
+      id: 237,
+    },
+    {
+      code: 'UY',
+      name: 'Uruguay',
+      created_at: '2015-04-24T01:46:50.435761',
+      updated_at: '2015-04-24T01:46:50.435770',
+      uri: 'http://api.lobbyfacts.eu/api/1/country/236',
+      id: 236,
+    },
+    {
+      code: 'VI',
+      name: 'United States Virgin Islands',
+      created_at: '2015-04-24T01:46:50.433229',
+      updated_at: '2015-04-24T01:46:50.433238',
+      uri: 'http://api.lobbyfacts.eu/api/1/country/235',
+      id: 235,
+    },
+    {
+      code: 'US',
+      name: 'United States',
+      created_at: '2015-04-24T01:46:50.430335',
+      updated_at: '2015-04-24T01:46:50.430340',
+      uri: 'http://api.lobbyfacts.eu/api/1/country/234',
+      id: 234,
+    },
+    {
+      code: 'GB',
+      name: 'United Kingdom',
+      created_at: '2015-04-24T01:46:50.427956',
+      updated_at: '2015-04-24T01:46:50.427961',
+      uri: 'http://api.lobbyfacts.eu/api/1/country/233',
+      id: 233,
+    },
+    {
+      code: 'AE',
+      name: 'United Arab Emirates',
+      created_at: '2015-04-24T01:46:50.425383',
+      updated_at: '2015-04-24T01:46:50.425392',
+      uri: 'http://api.lobbyfacts.eu/api/1/country/232',
+      id: 232,
+    },
+    {
+      code: 'UA',
+      name: 'Ukraine',
+      created_at: '2015-04-24T01:46:50.422970',
+      updated_at: '2015-04-24T01:46:50.422980',
+      uri: 'http://api.lobbyfacts.eu/api/1/country/231',
+      id: 231,
+    },
+    {
+      code: 'UG',
+      name: 'Uganda',
+      created_at: '2015-04-24T01:46:50.419963',
+      updated_at: '2015-04-24T01:46:50.419968',
+      uri: 'http://api.lobbyfacts.eu/api/1/country/230',
+      id: 230,
+    },
+    {
+      code: 'TV',
+      name: 'Tuvalu',
+      created_at: '2015-04-24T01:46:50.417896',
+      updated_at: '2015-04-24T01:46:50.417906',
+      uri: 'http://api.lobbyfacts.eu/api/1/country/229',
+      id: 229,
+    },
+    {
+      code: 'TC',
+      name: 'Turks & Caicos Islands',
+      created_at: '2015-04-24T01:46:50.414854',
+      updated_at: '2015-04-24T01:46:50.414868',
+      uri: 'http://api.lobbyfacts.eu/api/1/country/228',
+      id: 228,
+    },
+    {
+      code: 'TM',
+      name: 'Turkmenistan',
+      created_at: '2015-04-24T01:46:50.412601',
+      updated_at: '2015-04-24T01:46:50.412605',
+      uri: 'http://api.lobbyfacts.eu/api/1/country/227',
+      id: 227,
+    },
+    {
+      code: 'TR',
+      name: 'Turkey',
+      created_at: '2015-04-24T01:46:50.411105',
+      updated_at: '2015-04-24T01:46:50.411110',
+      uri: 'http://api.lobbyfacts.eu/api/1/country/226',
+      id: 226,
+    },
+    {
+      code: 'TN',
+      name: 'Tunisia',
+      created_at: '2015-04-24T01:46:50.409535',
+      updated_at: '2015-04-24T01:46:50.409539',
+      uri: 'http://api.lobbyfacts.eu/api/1/country/225',
+      id: 225,
+    },
+    {
+      code: 'TT',
+      name: 'Trinidad & Tobago',
+      created_at: '2015-04-24T01:46:50.408030',
+      updated_at: '2015-04-24T01:46:50.408034',
+      uri: 'http://api.lobbyfacts.eu/api/1/country/224',
+      id: 224,
+    },
+    {
+      code: 'TO',
+      name: 'Tonga',
+      created_at: '2015-04-24T01:46:50.406306',
+      updated_at: '2015-04-24T01:46:50.406311',
+      uri: 'http://api.lobbyfacts.eu/api/1/country/223',
+      id: 223,
+    },
+    {
+      code: 'TK',
+      name: 'Tokelau',
+      created_at: '2015-04-24T01:46:50.404794',
+      updated_at: '2015-04-24T01:46:50.404799',
+      uri: 'http://api.lobbyfacts.eu/api/1/country/222',
+      id: 222,
+    },
+    {
+      code: 'TG',
+      name: 'Togo',
+      created_at: '2015-04-24T01:46:50.403306',
+      updated_at: '2015-04-24T01:46:50.403310',
+      uri: 'http://api.lobbyfacts.eu/api/1/country/221',
+      id: 221,
+    },
+    {
+      code: 'TH',
+      name: 'Thailand',
+      created_at: '2015-04-24T01:46:50.400840',
+      updated_at: '2015-04-24T01:46:50.400849',
+      uri: 'http://api.lobbyfacts.eu/api/1/country/220',
+      id: 220,
+    },
+    {
+      code: 'TZ',
+      name: 'Tanzania',
+      created_at: '2015-04-24T01:46:50.397846',
+      updated_at: '2015-04-24T01:46:50.397855',
+      uri: 'http://api.lobbyfacts.eu/api/1/country/219',
+      id: 219,
+    },
+    {
+      code: 'TJ',
+      name: 'Tajikistan',
+      created_at: '2015-04-24T01:46:50.394924',
+      updated_at: '2015-04-24T01:46:50.394933',
+      uri: 'http://api.lobbyfacts.eu/api/1/country/218',
+      id: 218,
+    },
+    {
+      code: 'TW',
+      name: 'Taiwan',
+      created_at: '2015-04-24T01:46:50.391969',
+      updated_at: '2015-04-24T01:46:50.391978',
+      uri: 'http://api.lobbyfacts.eu/api/1/country/217',
+      id: 217,
+    },
+    {
+      code: 'SY',
+      name: 'Syria',
+      created_at: '2015-04-24T01:46:50.389120',
+      updated_at: '2015-04-24T01:46:50.389124',
+      uri: 'http://api.lobbyfacts.eu/api/1/country/216',
+      id: 216,
+    },
+    {
+      code: 'CH',
+      name: 'Switzerland',
+      created_at: '2015-04-24T01:46:50.386939',
+      updated_at: '2015-04-24T01:46:50.386943',
+      uri: 'http://api.lobbyfacts.eu/api/1/country/215',
+      id: 215,
+    },
+    {
+      code: 'SE',
+      name: 'Sweden',
+      created_at: '2015-04-24T01:46:50.385345',
+      updated_at: '2015-04-24T01:46:50.385349',
+      uri: 'http://api.lobbyfacts.eu/api/1/country/214',
+      id: 214,
+    },
+    {
+      code: 'SZ',
+      name: 'Swaziland',
+      created_at: '2015-04-24T01:46:50.383834',
+      updated_at: '2015-04-24T01:46:50.383838',
+      uri: 'http://api.lobbyfacts.eu/api/1/country/213',
+      id: 213,
+    },
+    {
+      code: 'SR',
+      name: 'Suriname',
+      created_at: '2015-04-24T01:46:50.382073',
+      updated_at: '2015-04-24T01:46:50.382078',
+      uri: 'http://api.lobbyfacts.eu/api/1/country/212',
+      id: 212,
+    },
+    {
+      code: 'SD',
+      name: 'Sudan',
+      created_at: '2015-04-24T01:46:50.380114',
+      updated_at: '2015-04-24T01:46:50.380119',
+      uri: 'http://api.lobbyfacts.eu/api/1/country/211',
+      id: 211,
+    },
+    {
+      code: 'LK',
+      name: 'Sri Lanka',
+      created_at: '2015-04-24T01:46:50.378189',
+      updated_at: '2015-04-24T01:46:50.378195',
+      uri: 'http://api.lobbyfacts.eu/api/1/country/210',
+      id: 210,
+    },
+    {
+      code: 'ES',
+      name: 'Spain',
+      created_at: '2015-04-24T01:46:50.376105',
+      updated_at: '2015-04-24T01:46:50.376109',
+      uri: 'http://api.lobbyfacts.eu/api/1/country/209',
+      id: 209,
+    },
+    {
+      code: 'SS',
+      name: 'South Sudan',
+      created_at: '2015-04-24T01:46:50.373942',
+      updated_at: '2015-04-24T01:46:50.373946',
+      uri: 'http://api.lobbyfacts.eu/api/1/country/208',
+      id: 208,
+    },
+    {
+      code: 'KR',
+      name: 'South Korea',
+      created_at: '2015-04-24T01:46:50.371790',
+      updated_at: '2015-04-24T01:46:50.371794',
+      uri: 'http://api.lobbyfacts.eu/api/1/country/207',
+      id: 207,
+    },
+    {
+      code: 'GS',
+      name: 'South Georgia & The South Sandwish Islands',
+      created_at: '2015-04-24T01:46:50.369460',
+      updated_at: '2015-04-24T01:46:50.369465',
+      uri: 'http://api.lobbyfacts.eu/api/1/country/206',
+      id: 206,
+    },
+    {
+      code: 'ZA',
+      name: 'South Africa',
+      created_at: '2015-04-24T01:46:50.367247',
+      updated_at: '2015-04-24T01:46:50.367252',
+      uri: 'http://api.lobbyfacts.eu/api/1/country/205',
+      id: 205,
+    },
+    {
+      code: 'SO',
+      name: 'Somaliland',
+      created_at: '2015-04-24T01:46:50.362905',
+      updated_at: '2016-09-18T18:34:35.724427',
+      uri: 'http://api.lobbyfacts.eu/api/1/country/204',
+      id: 204,
+    },
+    {
+      code: 'SB',
+      name: 'Solomon Islands',
+      created_at: '2015-04-24T01:46:50.360631',
+      updated_at: '2015-04-24T01:46:50.360635',
+      uri: 'http://api.lobbyfacts.eu/api/1/country/203',
+      id: 203,
+    },
+    {
+      code: 'SI',
+      name: 'Slovenia',
+      created_at: '2015-04-24T01:46:50.358394',
+      updated_at: '2015-04-24T01:46:50.358399',
+      uri: 'http://api.lobbyfacts.eu/api/1/country/202',
+      id: 202,
+    },
+    {
+      code: 'SK',
+      name: 'Slovakia',
+      created_at: '2015-04-24T01:46:50.356154',
+      updated_at: '2015-04-24T01:46:50.356158',
+      uri: 'http://api.lobbyfacts.eu/api/1/country/201',
+      id: 201,
+    },
+    {
+      code: 'SX',
+      name: 'Sint Maarten',
+      created_at: '2015-04-24T01:46:50.353807',
+      updated_at: '2015-04-24T01:46:50.353811',
+      uri: 'http://api.lobbyfacts.eu/api/1/country/200',
+      id: 200,
+    },
+    {
+      code: 'SG',
+      name: 'Singapore',
+      created_at: '2015-04-24T01:46:50.349354',
+      updated_at: '2015-04-24T01:46:50.349358',
+      uri: 'http://api.lobbyfacts.eu/api/1/country/199',
+      id: 199,
+    },
+    {
+      code: 'SL',
+      name: 'Sierra Leone',
+      created_at: '2015-04-24T01:46:50.347186',
+      updated_at: '2015-04-24T01:46:50.347190',
+      uri: 'http://api.lobbyfacts.eu/api/1/country/198',
+      id: 198,
+    },
+    {
+      code: 'SC',
+      name: 'Seychelles',
+      created_at: '2015-04-24T01:46:50.344980',
+      updated_at: '2015-04-24T01:46:50.344984',
+      uri: 'http://api.lobbyfacts.eu/api/1/country/197',
+      id: 197,
+    },
+    {
+      code: 'RS',
+      name: 'Serbia',
+      created_at: '2015-04-24T01:46:50.342496',
+      updated_at: '2015-04-24T01:46:50.342501',
+      uri: 'http://api.lobbyfacts.eu/api/1/country/196',
+      id: 196,
+    },
+  ]
 }
 </script>
 
-<template>
-  <section
-    class="flex flex-col items-center justify-center flex-1 w-full min-h-screen p-8"
-  >
-    <!-- class="grid grid-flow-row-dense grid-cols-2 grid-rows-3 gap-4 auto-cols-min" -->
-    <div class="grid w-full grid-cols-1 gap-4 lg:grid-cols-3">
-      <div
-        class="col-span-2 p-4 pr-6 space-y-2 bg-white border-l-8 border-transparent rounded-md shadow-md dark:bg-gray-900"
-      >
-        <!-- Table -->
-        <article>
-          <div
-            class="mt-4 overflow-hidden border-b border-gray-200 shadow sm:rounded-lg"
-          >
-            <table class="min-w-full divide-y divide-gray-200">
-              <thead class="bg-gray-50 dark:bg-black">
-                <tr>
-                  <th
-                    scope="col"
-                    class="px-6 py-3 text-xs font-medium tracking-wider text-left uppercase"
-                  >
-                    code
-                  </th>
-                  <th
-                    scope="col"
-                    class="px-6 py-3 text-xs font-medium tracking-wider text-left uppercase"
-                  >
-                    Name
-                  </th>
-                  <th
-                    scope="col"
-                    class="px-6 py-3 text-xs font-medium tracking-wider text-left uppercase"
-                  >
-                    Status
-                  </th>
-                  <th scope="col" class="relative px-6 py-3">
-                    <span class="sr-only">Edit</span>
-                  </th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr class="bg-white dark:bg-black dark:text-white">
-                  <td class="px-6 py-4 text-sm font-medium whitespace-nowrap">
-                    ema
-                  </td>
-                  <td class="px-6 py-4 text-sm font-medium whitespace-nowrap">
-                    Every Mother's Advocate
-                  </td>
-                  <td class="px-6 py-4 text-sm whitespace-nowrap">Active</td>
-                  <td
-                    class="px-6 py-4 text-sm font-medium text-right whitespace-nowrap"
-                  >
-                    <div>
-                      <button
-                        type="button"
-                        class="inline-flex items-center px-2.5 py-1.5 border border-transparent text-xs font-medium rounded focus:outline-none focus:ring-2 focus:ring-offset-2"
-                      >
-                        <svg
-                          class="w-5 h-5 mr-1"
-                          fill="currentColor"
-                          viewBox="0 0 20 20"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            fill-rule="evenodd"
-                            d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                            clip-rule="evenodd"
-                          ></path>
-                        </svg>
-                        {{ $t('actions') }}
-                      </button>
-                    </div>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </article>
+<style>
+.bar-chart {
+  width: 80%;
+  height: 80%;
+  margin: auto;
+  margin-top: 30px;
+}
 
-        <!-- Calendar -->
-        <article>
-          <h2 class="text-xl font-bold">{{ $t('calendar_title') }}</h2>
-        </article>
-      </div>
+.VuePagination {
+  text-align: center;
+}
 
-      <!-- Cases -->
-      <div
-        class="p-4 pr-6 space-y-2 bg-white border-l-8 border-transparent rounded-md shadow-md dark:bg-gray-900"
-      >
-        <h2 class="text-lg font-semibold leading-6">
-          {{ $t('cases_title') }}
-        </h2>
+.vue-title {
+  text-align: center;
+  margin-bottom: 10px;
+}
 
-        <p>
-          {{ $t('cases_description') }}
-        </p>
+.vue-pagination-ad {
+  text-align: center;
+}
 
-        <div>
-          <button
-            type="button"
-            class="inline-flex items-center px-2.5 py-1.5 border border-transparent text-xs font-medium rounded text-primary-700 bg-primary-100 hover:bg-primary-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500"
-          >
-            <svg
-              class="w-5 h-5 mr-1"
-              fill="currentColor"
-              viewBox="0 0 20 20"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                fill-rule="evenodd"
-                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                clip-rule="evenodd"
-              ></path>
-            </svg>
-            {{ $t('actions') }}
-          </button>
-        </div>
-      </div>
+.glyphicon.glyphicon-eye-open {
+  width: 16px;
+  display: block;
+  margin: 0 auto;
+}
 
-      <!-- Upcoming Items -->
-      <div
-        class="p-4 pr-6 space-y-2 bg-white border-l-8 rounded-md shadow-md border-brand dark:bg-gray-900"
-      >
-        <h2 class="text-lg font-bold leading-6">
-          {{ $t('upcoming_items_title') }}
-        </h2>
+th:nth-child(3) {
+  text-align: center;
+}
 
-        <p>{{ $t('upcoming_items_blank_state_message') }}</p>
-      </div>
+.VueTables__child-row-toggler {
+  width: 16px;
+  height: 16px;
+  line-height: 16px;
+  display: block;
+  margin: auto;
+  text-align: center;
+}
 
-      <!-- SteppedProgress -->
-      <div
-        class="col-span-2 space-y-2 bg-white border-l-8 border-white rounded-md shadow-md dark:border-gray-900 dark:bg-gray-900"
-      >
-        <stepped-progress></stepped-progress>
+.VueTables__child-row-toggler--closed::before {
+  content: '+';
+}
 
-        <action-button></action-button>
+.VueTables__child-row-toggler--open::before {
+  content: '-';
+}
 
-        <h2>Meet the team</h2>
-      </div>
-    </div>
-  </section>
-</template>
+[v-cloak] {
+  display: none;
+}
+</style>

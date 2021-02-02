@@ -1,0 +1,225 @@
+Project promise_lab {
+  database_type: 'MySQL'
+  Note: '''
+    # DBML - Database Markup Language
+    DBML (database markup language) is a simple, readable DSL language designed to define database structures.
+
+    ## Benefits
+
+    * It is simple, flexible and highly human-readable
+    * It is database agnostic, focusing on the essential database structure definition without worrying about the detailed syntaxes of each database
+    * Comes with a free, simple database visualiser at [dbdiagram.io](http://dbdiagram.io)
+  '''
+}
+
+
+
+Table affiliates {
+    id int [pk, increment, not null]
+    status varchar [note: 'status']
+
+    Note: 'Stores affiliate data'
+}
+
+Table posts {
+    id integer [primary key, increment]
+	category_id integer [not null, ref: > categories.id]
+	user_id integer [not null, ref: > users.id] // many-to-one
+	post_type_id integer [not null]
+    title varchar [not null]
+    body text [not null, note: 'Content of the post']
+    created_at timestamp
+    updated_at timestamp
+
+    Note: 'Stores post data'
+}
+// Ref: posts.user_id > users.id // many-to-one
+
+Table categories {
+	id int [pk, increment, not null]
+	user_id int [not null, ref: > users.id]
+	name varchar [not null]
+	created_at timestamp
+	updated_at timestamp
+}
+Table reviews {
+    id integer [primary key]
+    title varchar
+    body text [note: 'Content of the post']
+    user_id integer [ref: > users.id] // many-to-one
+    created_at timestamp
+
+    Note: 'Stores review data'
+}
+// Ref: reviews.user_id > users.id // many-to-one
+
+Table users {
+    id integer [ pk, unique, increment]
+    username varchar(255) [not null, unique]
+    gender varchar(1) [default: 'm']
+    address varchar(255) [unique, not null, note: 'to include unit number']
+    role varchar
+    created_at timestamp
+    rating integer [default: 10]
+}
+
+Table bookings {
+  id integer
+  country varchar
+  booking_date date
+  created_at timestamp
+
+  indexes {
+      (id, country) [pk]
+      created_at
+      booking_date
+      (country, booking_date) [unique]
+      booking_date [type: hash]
+      (`id*2`)
+      (`id*3`,`getdate()`)
+      (`id*3`,id)
+  }
+}
+
+
+enum job_status {
+    created [note: 'Waiting to be processed']
+    running
+    done
+    failure
+}
+
+Table jobs {
+    id integer
+    status job_status
+}
+
+Table authors {
+  id int
+  name varchar
+  dob datetime
+  gender varchar
+}
+
+Table books {
+  id int
+  release_date datetime
+  title varchar
+}
+
+Table author_book {
+  author_id int [ref: > authors.id]
+  book_id int [ref: > books.id]
+}
+
+
+Table products {
+    id int [pk]
+    name varchar
+    merchant_id int
+    price int
+    status varchar
+    created_at timestamp
+    category_id int
+}
+
+Table orders {
+    id int [pk]
+    user_id int [ref: > users.id]
+    status varchar [
+    note: '
+        💸 1 = processing,
+        ✔️ 2 = shipped,
+        ❌ 3 = cancelled,
+        😔 4 = refunded
+    ']
+    created_at timestamp
+}
+
+
+Table order_items {
+    order_id int [ref: > orders.id]
+    product_id int [ref: > products.id]
+    quantity int
+}
+
+Table students {
+    id int [pk]
+    name varchar
+    dob datetime
+}
+
+Table classes {
+    id int [pk]
+    title varchar
+    description text
+}
+
+Table enrollments {
+    id int [pk]
+    student_id int [ref: > students.id]
+    class_id int [ref: > classes.id]
+}
+
+Table podcasts {
+    id int [increment, not null]
+	user_id int [not null]
+	title varchar [not null]
+	description text [not null]
+	website varchar [not null]
+	cover_path varchar [not null]
+	published_at datetime
+	created_at timestamp
+	updated_at timestamp
+}
+
+Table episodes {
+    id int [pk, increment, unique, not null]
+	podcast_id int [not null, ref: > podcasts.id]
+    number varchar [not null]
+	title varchar [not null]
+	url varchar [not null]
+	content_text text [not null]
+	content_html text [not null]
+	published_at datetime [null]
+	download_url varchar [not null]
+	duration varchar [not null]
+	price int(11) [null]
+	created_at timestamp
+	updated_at timestamp
+}
+
+Table subscriptions {
+    id int [pk, increment, unique]
+    user_id int
+	podcast_id int
+
+}
+
+Table recipes {
+	id int [pk]
+	category_id int [ref: > categories.id]
+	user_id int [ref: > users.id]
+	name varchar
+	is_published boolean
+	likes int
+}
+
+Table contests {
+	id int [pk]
+	owner_id int [ref: > users.id]
+	category_id int [ref: > categories.id]
+	name varchar
+}
+
+Table contest_user {
+	id int [pk]
+	contest_id int [ref: > contests.id]
+	user_id int [ref: > users.id]
+}
+
+Table contest_recipe {
+	id int [pk]
+	contest_id int [ref: > contests.id]
+	recipe_id int [ref: > recipes.id]
+}

@@ -1,16 +1,17 @@
 <template>
-  <div>
-    <nuxt-link to="/">Home</nuxt-link>
-    <h2>Nuxt.js Blog</h2>
+  <main class="flex-1 p-8 prose dark:prose-dark">
+    <NuxtLink to="/">Home</NuxtLink>
+
+    <h2>Articles</h2>
 
     <input id="search" v-model="q" placeholder="Search..." />
 
     <ul>
       <li v-for="article in articles" :key="article.slug">
-        <nuxt-link :to="article.path">{{ article.title }}</nuxt-link>
+        <NuxtLink :to="`${article.path}/`">{{ article.title }}</NuxtLink>
       </li>
     </ul>
-  </div>
+  </main>
 </template>
 
 <script>

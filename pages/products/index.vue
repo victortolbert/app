@@ -1,7 +1,8 @@
 <template>
-  <div>
-    <nuxt-link to="/">Home</nuxt-link>
-    <h2>Nuxt.js Shop</h2>
+  <main class="flex-1 p-8 prose dark:prose-dark">
+    <NuxtLink to="/">Home</NuxtLink>
+
+    <h2>Shop</h2>
 
     <ul>
       <li v-for="product in products" :key="product.slug">
@@ -9,7 +10,7 @@
         {{ product.categories.map(category => category.slug).join(', ') }}
       </li>
     </ul>
-  </div>
+  </main>
 </template>
 
 <script>

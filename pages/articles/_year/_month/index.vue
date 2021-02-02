@@ -1,14 +1,15 @@
 <template>
-  <div>
-    <nuxt-link to="/articles">Articles</nuxt-link>
+  <main class="flex-1 p-8 prose dark:prose-dark">
+    <NuxtLink to="/articles/">Articles</NuxtLink>
+
     <h2>{{ year }}/{{ month }}</h2>
 
     <ul>
       <li v-for="article in articles" :key="article.slug">
-        <nuxt-link :to="article.path">{{ article.title }}</nuxt-link>
+        <NuxtLink :to="article.path">{{ article.title }}</NuxtLink>
       </li>
     </ul>
-  </div>
+  </main>
 </template>
 
 <script>

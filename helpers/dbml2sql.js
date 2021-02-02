@@ -6,3 +6,5 @@ const dbml = fs.readFileSync('./schema.dbml', 'utf-8')
 
 // generate MySQL from DBML
 const mysql = exporter.export(dbml, 'mysql')
+
+module.export = mysql

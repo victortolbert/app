@@ -1,0 +1,17 @@
+services:
+- type: web
+
+  name: nuxt-js
+  # name: nuxtjs-static
+
+  env: node
+  # env: static
+
+  plan: starter
+  # branch: static
+
+  buildCommand: yarn; yarn build
+  # buildCommand: yarn; yarn generate
+
+  startCommand: yarn start
+  # staticPublishPath: dist
