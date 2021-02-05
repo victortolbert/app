@@ -265,7 +265,57 @@ speed.
 
 ## Geo Search (10 Lessons)
 
+### Refactoring for Google Places
+
+In this lesson, we'll be updating our Google Maps plugin in preparation to using
+Google Places Autocomplete.
+
+#### Lesson Resources
+
+- [Google Places Autocomplete example](https://developers.google.com/maps/documentation/javascript/examples/places-autocomplete-hotelsearch)
+
 ## Working with Modules (4 Lessons)
+
+### Google Places Autocomplete
+
+In this lesson, we'll implement the Google Places Autocomplete feature.
+
+#### Lesson Resources
+
+- [Autocomplete documentation](https://developers.google.com/maps/documentation/javascript/places-autocomplete)
+- [PlaceGeometry interface documentation](https://developers.google.com/maps/documentation/javascript/reference/places-service#PlaceGeometry)
+- [Programmatic navigation with Vue Router documentation](https://router.vuejs.org/guide/essentials/navigation.html)
+
+### Importing New Properties
+
+In this lesson, we'll update our test data so it's easier for us in the upcoming
+lessons.
+
+Please download the updated test data from the link below and update your
+Algolia indexes.
+
+#### Lesson Resources
+
+- [Updated test data](https://github.com/MasteringNuxt/NuxtBnB-course/raw/main/resources/33-resources.zip)
+
+### Creating the Geo Search Page
+
+In this lesson, we'll dive into creating the functionality of our new Geo Search
+Page.
+
+#### Lesson Resources
+
+- [Algolia aroundLatLng Documentation](https://www.algolia.com/doc/api-reference/api-parameters/aroundLatLng/)
+- [Nuxt watchQuery documentation](https://nuxtjs.org/docs/2.x/components-glossary/pages-watchquery/)
+
+### The Dev Bug
+
+In this lesson, we'll take a look at and fix a bug that exists in our dev
+environment.
+
+#### Lesson Resources
+
+- [In-component navigation guards](https://router.vuejs.org/guide/advanced/navigation-guards.html#in-component-guards)
 
 ## Working with Styles and Design (5 Lessons)
 

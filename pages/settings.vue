@@ -8,33 +8,31 @@
           <nav class="space-y-1">
             <!-- Current: "bg-gray-50 text-primary-700 hover:text-primary-700 hover:bg-white", Default: "text-gray-900 hover:text-gray-900 hover:bg-gray-50" -->
             <a
-              href="#"
+              href="#profile"
               class="flex items-center px-3 py-2 text-sm font-medium text-gray-900 rounded-md hover:text-gray-900 hover:bg-gray-50 group"
             >
               <BaseIconOutlined
                 class="flex-shrink-0 w-6 h-6 mr-3 -ml-1 text-gray-400 group-hover:text-gray-500"
-                name="identification"
+                name="user-circle"
               />
-              <span class="truncate">{{ $t('basic_info') }}</span>
+              <span class="truncate">{{ $t('profile') }}</span>
             </a>
 
             <a
-              v-if="false"
-              href="#"
+              href="#personal-info"
               class="flex items-center px-3 py-2 text-sm font-medium rounded-md text-primary-700 bg-gray-50 hover:text-primary-700 hover:bg-white group"
               aria-current="page"
             >
               <!-- Current: "text-primary-500 group-hover:text-primary-500", Default: "text-gray-400 group-hover:text-gray-500" -->
               <BaseIconOutlined
                 class="flex-shrink-0 w-6 h-6 mr-3 -ml-1 text-gray-400 group-hover:text-gray-500"
-                name="user-circle"
+                name="identification"
               />
-              <span class="truncate"> {{ $t('account') }} </span>
+              <span class="truncate"> {{ $t('personal_information') }} </span>
             </a>
 
             <a
-              v-if="false"
-              href="#"
+              href="#password"
               class="flex items-center px-3 py-2 text-sm font-medium text-gray-900 rounded-md hover:text-gray-900 hover:bg-gray-50 group"
             >
               <BaseIconOutlined
@@ -45,8 +43,7 @@
             </a>
 
             <a
-              v-if="false"
-              href="#"
+              href="#plans-and-billing"
               class="flex items-center px-3 py-2 text-sm font-medium text-gray-900 rounded-md hover:text-gray-900 hover:bg-gray-50 group"
             >
               <BaseIconOutlined
@@ -57,8 +54,7 @@
             </a>
 
             <a
-              v-if="false"
-              href="#"
+              href="#team"
               class="flex items-center px-3 py-2 text-sm font-medium text-gray-900 rounded-md hover:text-gray-900 hover:bg-gray-50 group"
             >
               <BaseIconOutlined
@@ -69,7 +65,7 @@
             </a>
 
             <a
-              href="#"
+              href="#roles"
               class="flex items-center px-3 py-2 text-sm font-medium text-gray-900 rounded-md hover:text-gray-900 hover:bg-gray-50 group"
             >
               <BaseIconOutlined
@@ -82,8 +78,7 @@
             </a>
 
             <a
-              v-if="false"
-              href="#"
+              href="#integrations"
               class="flex items-center px-3 py-2 text-sm font-medium text-gray-900 rounded-md hover:text-gray-900 hover:bg-gray-50 group"
             >
               <BaseIconOutlined
@@ -94,7 +89,7 @@
             </a>
 
             <a
-              href="#"
+              href="#assignments"
               class="flex items-center px-3 py-2 text-sm font-medium text-gray-900 rounded-md hover:text-gray-900 hover:bg-gray-50 group"
             >
               <BaseIconOutlined
@@ -105,8 +100,7 @@
             </a>
 
             <a
-              v-if="false"
-              href="#"
+              href="#members"
               class="flex items-center px-3 py-2 text-sm font-medium text-gray-900 rounded-md hover:text-gray-900 hover:bg-gray-50 group"
             >
               <BaseIconOutlined
@@ -117,7 +111,7 @@
             </a>
 
             <a
-              href="#"
+              href="#notes"
               class="flex items-center px-3 py-2 text-sm font-medium text-gray-900 rounded-md hover:text-gray-900 hover:bg-gray-50 group"
             >
               <BaseIconOutlined
@@ -128,7 +122,7 @@
             </a>
 
             <a
-              href="#"
+              href="#agreements"
               class="flex items-center px-3 py-2 text-sm font-medium text-gray-900 rounded-md hover:text-gray-900 hover:bg-gray-50 group"
             >
               <BaseIconSolid
@@ -140,7 +134,7 @@
 
             <!--
               <a
-                href="#"
+                href="#staff-roles"
                 class="flex items-center px-3 py-2 text-sm font-medium text-gray-900 rounded-md hover:text-gray-900 hover:bg-gray-50 group"
               >
                 <BaseIconOutlined
@@ -153,7 +147,7 @@
 
             <!--
               <a
-                href="#"
+                href="#church-roles"
                 class="flex items-center px-3 py-2 text-sm font-medium text-gray-900 rounded-md hover:text-gray-900 hover:bg-gray-50 group"
               >
                 <BaseIconOutlined
@@ -166,7 +160,7 @@
 
             <!--
               <a
-                href="#"
+                href="#care-community-volunteer-roles"
                 class="flex items-center px-3 py-2 text-sm font-medium text-gray-900 rounded-md hover:text-gray-900 hover:bg-gray-50 group"
               >
                 <BaseIconOutlined
@@ -178,7 +172,7 @@
             -->
 
             <a
-              href="#"
+              href="#care-communities"
               class="flex items-center px-3 py-2 text-sm font-medium text-gray-900 rounded-md hover:text-gray-900 hover:bg-gray-50 group"
             >
               <BaseIconOutlined
@@ -189,7 +183,7 @@
             </a>
 
             <a
-              href="#"
+              href="#history"
               class="flex items-center px-3 py-2 text-sm font-medium text-gray-900 rounded-md hover:text-gray-900 hover:bg-gray-50 group"
             >
               <BaseIconSolid
@@ -213,7 +207,7 @@
             </a>
 
             <a
-              href="#"
+              href="#family-photo"
               class="flex items-center px-3 py-2 text-sm font-medium text-gray-900 rounded-md hover:text-gray-900 hover:bg-gray-50 group"
             >
               <BaseIconOutlined
@@ -226,7 +220,7 @@
         </aside>
 
         <div class="space-y-6 sm:px-6 lg:px-0 lg:col-span-9">
-          <form action="#" method="POST">
+          <form id="profile" action="#" method="POST">
             <div class="shadow sm:rounded-md sm:overflow-hidden">
               <div class="px-4 py-6 space-y-6 bg-white sm:p-6">
                 <div>
@@ -367,7 +361,7 @@
             </div>
           </form>
 
-          <form action="#" method="POST">
+          <form id="personal-info" action="#" method="POST">
             <div class="shadow sm:rounded-md sm:overflow-hidden">
               <div class="px-4 py-6 space-y-6 bg-white sm:p-6">
                 <div>
@@ -659,6 +653,81 @@
                   {{ $t('save') }}
                 </button>
               </div>
+            </div>
+          </form>
+
+          <form id="roles" class="p-8 mt-8 bg-white rounded-lg shadow">
+            <div>
+              <h3 class="text-lg font-medium leading-6 text-gray-900">
+                {{ $t('roles') }}
+              </h3>
+              <p class="mt-1 text-sm text-gray-500">
+                {{ $t('roles_description') }}
+              </p>
+            </div>
+          </form>
+          <form id="assignments" class="p-8 mt-8 bg-white rounded-lg shadow">
+            <div>
+              <h3 class="text-lg font-medium leading-6 text-gray-900">
+                {{ $t('assignments') }}
+              </h3>
+              <p class="mt-1 text-sm text-gray-500">
+                {{ $t('assignments_description') }}
+              </p>
+            </div>
+          </form>
+          <form id="notes" class="p-8 mt-8 bg-white rounded-lg shadow"></form>
+          <form id="agreements" class="p-8 mt-8 bg-white rounded-lg shadow">
+            <div>
+              <h3 class="text-lg font-medium leading-6 text-gray-900">
+                {{ $t('agreements') }}
+              </h3>
+              <p class="mt-1 text-sm text-gray-500">
+                {{ $t('agreements_description') }}
+              </p>
+            </div>
+          </form>
+          <form
+            id="care-communities"
+            class="p-8 mt-8 bg-white rounded-lg shadow"
+          >
+            <div>
+              <h3 class="text-lg font-medium leading-6 text-gray-900">
+                {{ $t('care_communities') }}
+              </h3>
+              <p class="mt-1 text-sm text-gray-500">
+                {{ $t('care_communities_description') }}
+              </p>
+            </div>
+          </form>
+          <form id="history" class="p-8 mt-8 bg-white rounded-lg shadow">
+            <div>
+              <h3 class="text-lg font-medium leading-6 text-gray-900">
+                {{ $t('history') }}
+              </h3>
+              <p class="mt-1 text-sm text-gray-500">
+                {{ $t('history_description') }}
+              </p>
+            </div>
+          </form>
+          <form id="contact-log" class="p-8 mt-8 bg-white rounded-lg shadow">
+            <div>
+              <h3 class="text-lg font-medium leading-6 text-gray-900">
+                {{ $t('contact_log') }}
+              </h3>
+              <p class="mt-1 text-sm text-gray-500">
+                {{ $t('contact_log_description') }}
+              </p>
+            </div>
+          </form>
+          <form id="family-photo" class="p-8 mt-8 bg-white rounded-lg shadow">
+            <div>
+              <h3 class="text-lg font-medium leading-6 text-gray-900">
+                {{ $t('family_photo') }}
+              </h3>
+              <p class="mt-1 text-sm text-gray-500">
+                {{ $t('family_photo_description') }}
+              </p>
             </div>
           </form>
         </div>

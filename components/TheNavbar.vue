@@ -18,7 +18,7 @@ export default defineComponent({
 
     const affiliate = reactive({
       id: 1,
-      name: 'Ema',
+      name: 'Victor Tolbert',
       theme: {
         nav: {
           class: 'bg-white text-gray-800',
@@ -71,6 +71,7 @@ export default defineComponent({
       langs,
     }
   },
+
   computed: {
     routes() {
       return [
@@ -171,6 +172,24 @@ export default defineComponent({
       ]
     },
   },
+
+  mounted() {
+    this.$maps.makeAutoComplete(this.$refs.citySearch)
+  },
+  methods: {
+    changed(event) {
+      const place = event.detail
+      if (!place.geometry) return
+      this.$router.push({
+        path: '/search/',
+        query: {
+          lat: place.geometry.location.lat(),
+          lng: place.geometry.location.lng(),
+          label: this.$refs.citySearch.value,
+        },
+      })
+    },
+  },
 })
 </script>
 
@@ -256,6 +275,12 @@ export default defineComponent({
               {{ lang.toUpperCase() }}
             </option>
           </OSelect> -->
+          <input
+            class="block w-full max-w-lg border-gray-300 rounded-md shadow-sm focus:ring-primary-500 focus:border-primary-500 sm:max-w-xs sm:text-sm"
+            type="text"
+            ref="citySearch"
+            @changed="changed"
+          />
 
           <NuxtLink v-if="$i18n.locale !== 'en'" :to="switchLocalePath('en')">
             English?

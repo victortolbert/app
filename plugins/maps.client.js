@@ -11,7 +11,7 @@ export default function (context, inject) {
   function addScript() {
     const script = document.createElement('script')
     script.src =
-      'https://maps.googleapis.com/maps/api/js?key=AIzaSyBvOoQe7xFg-XaWj9w_l7ODbMqb4BK0B9E&libraries=places&callback=initGoogleMaps'
+      'https://maps.googleapis.com/maps/api/js?key=AIzaSyBKANcqkf40AUjz5IadW_H5wzijw1ZRkmY&libraries=places&callback=initGoogleMaps'
     script.async = true
     window.initGoogleMaps = initGoogleMaps
     document.head.appendChild(script)
