@@ -1,5 +1,5 @@
 {
-  "baseUrl": "http://localhost:3000/messages",
+  "baseUrl": "http://localhost:8686/messages",
   "integrationFolder": "cypress/e2e",
   "projectId": "5rtouh",
   "retries": {

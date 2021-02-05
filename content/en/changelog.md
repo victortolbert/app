@@ -9,6 +9,19 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to
 [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+https://css-tricks.com/how-to-automate-project-versioning-and-releases-with-continuous-deployment/
+
+```
+feat: New feature
+fix: Bug fix
+docs: Change to the documentation
+style: Changes that do not affect the meaning of the code (e.g. white-space, formatting, missing semi-colons, etc.)
+refactor: Changes that neither fix a bug nor add a feature
+perf: Change that improves performance
+test: Add missing tests or corrections to existing ones
+chore: Changes to the build process or auxiliary tools and libraries, such as generating documentation
+```
+
 ## [Unreleased][unreleased]
 
 - Tech Stack
@@ -82,6 +95,10 @@ and this project adheres to
   - TMDB
 - Features
   - File upload
+
+## [0.2.0] - 2021-02-01
+
+-
 
 ## [0.1.0] - 2020-12-16
 

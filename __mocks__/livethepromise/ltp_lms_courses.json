@@ -1,0 +1,44 @@
+[
+  {
+    "id_lms_course": 100,
+    "course_name": "Care Community Volunteer Orientation",
+    "course_desc": null,
+    "course_type": null,
+    "params": "{\"total_modules\":4,\"total_sub_elements\":17,\"modules\":[702,703,704,705,706],\"cert_on_complete\":325, \"email_alias_on_complete\": \"email_lms_complete_ccvo\", \"on_complete_url\": \"[BASEURL]login\"}",
+    "state": 40,
+    "date_add": null,
+    "date_mod": null,
+    "date_removed": null,
+    "id_add": 101,
+    "id_mod": 101,
+    "id_removed": null
+  },
+  {
+    "id_lms_course": 101,
+    "course_name": "FAM Foundations Course",
+    "course_desc": null,
+    "course_type": null,
+    "params": "{\"total_modules\":8,\"total_sub_elements\":17,\"modules\":[707],\"cert_on_complete\":326, \"email_alias_on_complete\": \"email_lms_complete_fam_foundations\", \"on_complete_url\": \"[BASEURL]login\"}",
+    "state": 40,
+    "date_add": null,
+    "date_mod": null,
+    "date_removed": null,
+    "id_add": 101,
+    "id_mod": 101,
+    "id_removed": null
+  },
+  {
+    "id_lms_course": 102,
+    "course_name": "Advocate Clinic Part 1",
+    "course_desc": null,
+    "course_type": "advocate_clinic",
+    "params": "{\"total_modules\":13,\"total_sub_elements\":17,\"modules\":[708,709,710,711,707,712,713,714,702,703,704,705,706],\"cert_on_complete\":327, \"email_alias_on_complete\": \"email_lms_complete_advocate_clinic_homework\", \"on_complete_url\": \"[BASEURL]login\", \"start_view\": \"lms_start_account_view\", \"html_lms_start\":\"<h1 class='text-center'>Welcome to the FAM Care Community Clinic!<\\/h1><p>This six-hour course is divided into two sections. Part 1 (approximately 2 hours) is this online course which will give you the foundation for Part 2 (4 hours) which is taught live in-person or live via a webinar platform. You must successfully complete all modules of Part 1 before attending Part 2 because the information included here is essential for understanding the more in-depth teaching that follows.<\\/p><p>The following modules comprising Part 1 will take approximately two hours to complete. You may watch each module individually or all at one time. The modules do need to be watched in order as they build on each other.<\\/p><p>Once you have successfully completed all the modules of Part 1, you will be sent the information for logging in to the FAM Care Community Clinic webinar or attending the in-person event.<\\/p><p>We know you will love learning more about how you and your church can serve vulnerable children and families. As you become equipped, we pray you will become even more passionate and focused. We can\\u2019t wait to see how God will work through you and your FAM.<\\/p>\",\"html_lms_end\": \"<\\/p class=\\\"text-center\\\">Be on the lookout for an email coming soon with details about the FAM Care Community Clinic.<\\/p>\"}",
+    "state": 40,
+    "date_add": null,
+    "date_mod": null,
+    "date_removed": null,
+    "id_add": 101,
+    "id_mod": 101,
+    "id_removed": null
+  }
+]

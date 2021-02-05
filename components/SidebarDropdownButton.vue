@@ -11,7 +11,7 @@
         <div class="flex items-center justify-between min-w-0 space-x-3">
           <img
             class="flex-shrink-0 w-10 h-10 bg-gray-300 rounded-full"
-            src="/img/avatar.jpg"
+            src="/assets/img/people/victor.jpg"
             alt=""
           />
           <div class="flex-1 min-w-0">

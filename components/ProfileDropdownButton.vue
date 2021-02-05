@@ -6,7 +6,11 @@
       aria-label="User menu"
       aria-haspopup="true"
     >
-      <img class="w-8 h-8 rounded-full" src="/img/avatars/charlee.jpg" alt="" />
+      <img
+        class="w-8 h-8 rounded-full"
+        src="/assets/img/people/charlee.jpeg"
+        alt=""
+      />
     </button>
   </div>
 </template>

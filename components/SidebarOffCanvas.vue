@@ -10,7 +10,7 @@
       >
         <SidebarCloseButton />
 
-        <SalesLoftLogo class="px-4" />
+        <LogoSalesLoft class="px-4" />
 
         <div class="flex-1 h-0 mt-5 overflow-y-auto">
           <nav class="px-2">

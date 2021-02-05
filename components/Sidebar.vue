@@ -2,7 +2,7 @@
   <div>
     <div class="flex flex-col w-64 pt-5 pb-4 border-r border-gray-200">
       <NuxtLink to="/messages/" class="brand" data-testid="home-link">
-        <SalesLoftLogo class="px-6" />
+        <LogoSalesLoft class="px-6" />
       </NuxtLink>
 
       <!-- Sidebar component, swap this element with another sidebar if you like -->

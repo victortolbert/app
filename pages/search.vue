@@ -4,7 +4,7 @@
     <div v-if="homes.length > 0">
       <HomeRow v-for="home in homes" :key="home.objectID" :home="home" />
     </div>
-    <div v-else>No results found</div>
+    <div v-else>{{ $t('no_results_found') }}</div>
   </div>
 </template>
 

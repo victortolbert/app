@@ -7,7 +7,7 @@ import {defineComponent, useContext, computed} from '@nuxtjs/composition-api'
 import useMessages from '@/composables/useMessages'
 
 export default defineComponent({
-  nuxtI18n: false,
+  name: 'TagPage',
   setup() {
     const {messages} = useMessages()
     const {route} = useContext()

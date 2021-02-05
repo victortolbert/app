@@ -38,6 +38,7 @@ import {
 import {strip} from '@/helpers'
 
 export default defineComponent({
+  name: 'MessagePage',
   nuxtI18n: false,
   setup() {
     const message = ref()

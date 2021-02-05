@@ -1,7 +1,9 @@
 <template>
   <Layout>
     <template #header>
-      <Navbar class="text-gray-600 bg-white dark:bg-gray-900 dark:text-white" />
+      <TheNavbar
+        class="text-gray-600 bg-white dark:bg-gray-900 dark:text-white"
+      />
     </template>
 
     <main class="flex-1 overflow-hidden bg-gray-100">
@@ -94,8 +96,8 @@
     </main>
 
     <template #footer>
-      <TheFooter />
-      <DeveloperToolbar />
+      <!-- <TheFooter /> -->
+      <!-- <DeveloperToolbar /> -->
     </template>
     <PortalTarget name="modals" />
     <SvgSprite />

@@ -14,7 +14,7 @@ const STRIPE_SECRET_KEY = retrieveKey()
 const stripe = stripeLib(STRIPE_SECRET_KEY)
 
 exports.handler = async event => {
-  console.log('In the API')
+  // console.log('In the API')
   if (event.httpMethod !== 'POST') {
     return errorFn('Method not allowed', 405)
   }
@@ -32,7 +32,7 @@ exports.handler = async event => {
         422,
       )
     }
-    console.log('Entered the zone')
+    // console.log('Entered the zone')
 
     const {amount, donationType, email, message} = params
 
@@ -50,7 +50,7 @@ exports.handler = async event => {
               email,
             })
 
-        console.log('Custom is ready, id ' + customer.id)
+        // console.log('Custom is ready, id ' + customer.id)
 
         try {
           const paymentIntent = await stripe.paymentIntents.create({
@@ -62,7 +62,7 @@ exports.handler = async event => {
             metadata: {donation_type: donationType, message},
           })
 
-          console.log('Intent created!')
+          // console.log('Intent created!')
 
           return {
             statusCode: 200,

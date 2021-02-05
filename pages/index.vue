@@ -1,5 +1,7 @@
 <template>
   <div class="space-y-1 lg:mt-8 lg:space-y-8 lg:px-8">
+    <a class="wavy-link" href="#" role="button">A wavy link</a>
+
     <div class="grid gap-8 lg:grid-cols-2">
       <section class="p-8 bg-white shadow lg:rounded-lg">
         <div class="text-primary-500 aspect-w-21 aspect-h-9">
@@ -125,33 +127,6 @@
     </section>
 
     <section class="p-8 bg-white shadow lg:rounded-lg">
-      <div class="flex items-center space-x-8">
-        <button @click="play">Play a sound</button>
-        <button @click="$sounds.back.play">Back</button>
-        <button @click="$sounds.button.play">Button</button>
-        <!-- <button @click="$sounds.dumb_ass.play">Dumb Ass</button> -->
-        <button @click="$sounds.error.play">Error</button>
-        <!-- <button @click="$sounds.excuse_me_while_i_whip_this_out.play">Whipout</button> -->
-        <button @click="$sounds.fanfare.play">Fanfare</button>
-        <!-- <button @click="$sounds.initiating_startup_sequence.play">Startup</button> -->
-        <!-- <button @click="$sounds.loop_3.play">Loop 3</button> -->
-        <!-- <button @click="$sounds.loop_6.play">Loop 6</button> -->
-        <!-- <button @click="$sounds.loop_tainted_2.play">Tainted Loop 2</button> -->
-        <!-- <button @click="$sounds.loop_tainted.play">Tainted Loop 1</button> -->
-        <!-- <button @click="$sounds.negative_on_password.play">Negative on password</button> -->
-        <button @click="$sounds.pop_down.play">Pop Down</button>
-        <button @click="$sounds.pop_up_off.play">Popup Off</button>
-        <button @click="$sounds.pop_up_on.play">Popup On</button>
-        <button @click="$sounds.success.play">Success</button>
-        <!-- <button @click="$sounds.the_mail_is_here.play">Got mail</button> -->
-        <!-- <button @click="$sounds.thx.play">THX</button>  -->
-        <!-- <button @click="$sounds.times_up.play">Times up</button> -->
-        <button @click="$sounds.vue.play">Vue</button>
-        <button @click="$sounds.warning.play">Warning</button>
-      </div>
-    </section>
-
-    <section class="p-8 bg-white shadow lg:rounded-lg">
       <!-- <button @click="$sounds.you_have_a_mail_message.play">
         You have a mail message
       </button> -->
@@ -164,17 +139,18 @@
 <script>
 // import moment from 'moment'
 import {defineComponent} from '@nuxtjs/composition-api'
-import {useSound} from '@vueuse/sound'
-import buttonSfx from '../static/sound/button.wav'
-
+// import {useSound} from '@vueuse/sound'
+import sourceData from '@/__mocks__/data/forumData'
+// import buttonSfx from '../static/sound/button.wav'
+// data.posts.filter(post => post.userId === 'u1')
 import {theme} from '~tailwind.config'
 
 export default defineComponent({
   setup() {
-    const {play} = useSound(buttonSfx)
+    // const {play} = useSound(buttonSfx)
 
     return {
-      play,
+      // play,
     }
   },
   asyncData({env, app}) {
@@ -204,6 +180,7 @@ export default defineComponent({
   },
   data() {
     return {
+      threads: sourceData.threads,
       chartData: [
         ['Jan', [4, 6]],
         ['Feb', 2],
@@ -727,5 +704,17 @@ th:nth-child(3) {
 
 [v-cloak] {
   display: none;
+}
+
+.wavy-link {
+  display: inline-block;
+  text-decoration-line: underline;
+  text-decoration-thickness: auto;
+  text-decoration-color: red;
+  text-decoration-style: wavy;
+  white-space: nowrap;
+  backface-visibility: hidden;
+  user-select: none;
+  padding-bottom: 2px;
 }
 </style>

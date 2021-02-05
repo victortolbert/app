@@ -21,7 +21,7 @@ import useMessages from '@/composables/useMessages'
 
 export default defineComponent({
   nuxtI18n: false,
-  setup(props, context) {
+  setup() {
     const {
       messages,
       tags,

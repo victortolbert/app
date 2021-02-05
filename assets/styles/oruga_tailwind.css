@@ -1,0 +1,138 @@
+.o-ctrl-input {
+  @apply w-full;
+}
+
+.o-control-select .o-select {
+  @apply focus:ring-primary-500 focus:border-primary-500 !important;
+}
+
+.o-control-select.o-control-select-expanded {
+  @apply w-full;
+}
+
+.o-table table {
+  @apply table-fixed;
+}
+
+.o-table table tr.o-table-row-selected {
+  @apply px-4 py-2 font-bold rounded bg-opacity-90 text-primary-800 bg-primary-50;
+}
+
+.o-table .o-pagination-wrapper {
+  @apply mt-8;
+}
+
+/* .o-button.o-color-secondary {
+  border-color: transparent;
+  background-color: var(--oruga-color-secondary, hsla(109, 0%, 67%, 1));
+  color: var(--oruga-color-invert-secondary, theme('colors.white'));
+}
+
+.o-button.o-color-tertiary {
+  border-color: transparent;
+  background-color: var(--oruga-color-tertiary, hsla(109, 0%, 67%, 1));
+  color: var(--oruga-color-invert-tertiary, theme('colors.white'));
+}
+
+.o-button {
+  @apply border border-transparent focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500;
+  @apply border border-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500;
+} */
+
+/* .o-button.o-color-danger {
+  @apply focus:ring-danger;
+}
+
+.o-button.o-button-rounded {
+  @apply rounded-2xl;
+} */
+
+/* Button */
+/* .btn {
+  outline: none !important;
+  @apply px-4 py-2 font-bold text-white bg-blue-500 rounded;
+}
+
+.btn-rounded {
+  @apply rounded-full;
+}
+
+.btn-outlined-primary {
+  @apply px-4 py-2 font-semibold text-blue-700 bg-transparent border border-blue-500;
+}
+
+.btn-outlined-primary:hover {
+  @apply px-4 py-2 font-bold text-white bg-blue-500 rounded;
+}
+
+.btn-disabled {
+  @apply opacity-50 cursor-not-allowed;
+} */
+
+/* Field */
+/* .field-label {
+  @apply block mb-2 text-sm font-bold text-gray-700;
+}
+
+.field-danger {
+  @apply text-red-500;
+} */
+
+/* Input */
+/* .input {
+  @apply w-full px-3 py-2 leading-tight text-gray-500 border appearance-none;
+}
+
+.input-danger {
+  @apply border-red-500;
+} */
+
+/* Dropdown */
+/* .dropdown {
+  @apply relative inline-flex;
+}
+
+.dropdown-menu {
+  min-width: 12em;
+  @apply bg-white rounded-sm shadow-lg ;
+}
+
+.dropdown-item {
+  @apply relative block py-2 no-underline cursor-pointer;
+}
+
+.dropdown-item-active {
+  @apply bg-blue-500;
+} */
+
+/* Checkbox */
+/* .checkbox {
+  @apply bg-blue-500 border-blue-500 appearance-none;
+}
+
+.checkbox-checked {
+  @apply bg-blue-500;
+} */
+
+/* Steps */
+/* .step-divider {
+  background: #b5b5b5;
+}
+
+.steps-nav-item-active .step-marker {
+  @apply text-blue-500 border-blue-500;
+}
+
+.steps-nav-item-active .step-divider {
+  background: none;
+  @apply bg-blue-500;
+}
+
+.steps-nav-item-previous .step-marker {
+  @apply bg-blue-500;
+}
+
+.steps-nav-item-previous .step-divider {
+  background: none;
+  @apply bg-blue-500;
+} */

@@ -4,18 +4,81 @@ import {utils} from './config'
 // const isDev = process.env.NODE_ENV !== "production"
 
 export default {
-  // modern: !utils.isDev && 'client',
-  env: {
-    nodeEnv: process.env.NODE_ENV,
-    baseUrl: process.env.BASE_URL || 'https://app.vticonsulting.com/',
-    apiUrl: process.env.API_URL || 'https://api.vticonsulting.com/',
-    assetsUrl: process.env.ASSETS_URL || 'https://app.vticonsulting.com/',
-    stripePublicKey: utils.isDev
-      ? 'pk_test_HHvO5elQXBUhbNuZWt0ngNLx'
-      : process.env.STRIPE_PUBLIC_KEY || '',
+  // should hold all env variables that are public as these will be exposed on the frontend. This could include a reference to your public URL for example.
+  publicRuntimeConfig: {
+    // baseUrl: process.env.BASE_URL || 'https://app.vticonsulting.com',
+    baseURL:
+      process.env.NODE_ENV === 'production'
+        ? 'https://app.vticonsulting.com'
+        : 'https://app.vticonsulting.com',
+    assetUrl:
+      process.env.ASSETS_URL ||
+      'https://td-aws-bucket.s3.amazonaws.com/album2/',
+    apiUrl: process.env.API_URL || 'https://victortolbert-api.herokuapp.com',
+    algoliaApiKey:
+      process.env.ALGOLIA_API_KEY || 'AIzaSyBvOoQe7xFg-XaWj9w_l7ODbMqb4BK0B9E',
+
+    awsS3DefaultRegion: process.env.AWS_S3_DEFAULT_REGION || 'us-east-1',
+    awsS3AccessKey: process.env.AWS_S3_ACCESS_KEY || 'AKIAXGYXHSXXHYBR5HOE',
+    awsS3AccessSecret:
+      process.env.AWS_S3_ACCESS_SECRET ||
+      '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',
+    awsS3Bucket: process.env.AWS_S3_BUCKET || 'victortolbert',
+    awsS3Url: process.env.AWS_S3_URL || 'https://the_url.s3.amazonaws.co',
+
+    ackeeDomainId:
+      process.env.ACKEE_DOMAIN_ID || '601bbeb1-8a0a-4d5d-ba1f-a75ce1cefda3',
+
+    calendlyApiKey:
+      process.env.CALENDLY_API_KEY || 'LCCHKGMJC2UDJQM6TXZQF4IZUDOB7QO3',
+    contentApiUrl:
+      process.env.CONTENT_API_URL || 'http://localhost:3000/_content',
+
+    githubCallbackUrl:
+      process.env.GITHUB_CALLBACK_URL ||
+      'http://laravel-7.test/login/github/callback',
+    githubClientId: process.env.GITHUB_CLIENT_ID || 'e95268cd14d26f7628e7',
+    githubClientSecret:
+      process.env.GITHUB_CLIENT_SECRET ||
+      '3f4f1c158f84198da82bff5087227fc7417a2293',
     githubToken:
       process.env.GITHUB_TOKEN || '87f7875f1b84f0ac61310280b14496c8864f2e8f',
+    googleAnalyticsId: process.env.GOOGLE_ANALYTICS_ID || 'UA-76464598-5',
+    googleApiKey:
+      process.env.GOOGLE_API_KEY || 'AIzaSyBiqWapJFvSp4uetA7QROuWbs3L3hDWOVI',
+    googleCallbackUrl:
+      process.env.GOOGLE_CALLBACK_URL ||
+      'https://local-dashboard.boosterthon.com/v3/oauth/google',
+    googleClientId:
+      process.env.GOOGLE_CLIENT_ID ||
+      '10606724298-0cc8ggrgapoihqshq6gfj7nc7je23q88.apps.googleusercontent.com',
+    googleClientSecret:
+      process.env.GOOGLE_CLIENT_SECRET || 'w5XyFEiwXO1yr6kTVrWpiSqy',
+    googleMapsApiKey:
+      process.env.GOOGLE_MAPS_API_KEY ||
+      'AIzaSyAC93FnPRqmvipFZZUenONKIbKHqPlbu6s',
+    sentryDsn:
+      process.env.SENTRY_DSN ||
+      'https://c30dc69c78434050aed6f64b97cbd645@o244691.ingest.sentry.io/1422222',
+    stripePublicKey:
+      process.env.STRIPE_PUBLIC_KEY || 'pk_test_HHvO5elQXBUhbNuZWt0ngNLx',
+    stripePublishableKey:
+      process.env.STRIPE_PUBLISHABLE_KEY || 'pk_test_HHvO5elQXBUhbNuZWt0ngNLx',
+    vueAppApiUrl:
+      process.env.VUE_APP_API_URL || 'https://victortolbert-api.herokuapp.com',
   },
+
+  // should hold all env variables that are private and that should not be exposed on the frontend. This could include a reference to your API secret tokens for example.
+  privateRuntimeConfig: {
+    apiSecret: process.env.API_SECRET,
+    dbDatabase: process.env.DB_DATABASE,
+    dbHost: process.env.DB_HOST,
+    dbPassword: process.env.DB_PASSWORD,
+    dbUser: process.env.DB_USER,
+  },
+  //  privateRuntimeConfig always overrides publicRuntimeConfig on server-side. $config in server mode is { ...public, ...private } but for client mode only { ...public }
+
+  // modern: !utils.isDev && 'client',
 
   components: true,
   // loading: false,
@@ -82,8 +145,8 @@ export default {
     // '@oruga-ui/oruga/nuxt',
     'nuxt-i18n',
     'nuxt-basic-auth-module',
-    'nuxt-buefy',
-    'nuxt-use-sound',
+    // 'nuxt-buefy',
+    // 'nuxt-use-sound',
     // [
     //   'nuxt-lazy-load',
     //   {
@@ -138,36 +201,37 @@ export default {
   ],
 
   plugins: [
-    '@/plugins/buefy',
     '@/plugins/data-api',
     '@/plugins/dynamic-marquee.client',
+    '@/plugins/fontawesome',
     '@/plugins/i18n.client',
     '@/plugins/init',
     '@/plugins/maps.client',
     '@/plugins/markdown',
     '@/plugins/menu.client',
+    '@/plugins/oruga',
     '@/plugins/polyfills.client',
     '@/plugins/portal-vue',
     '@/plugins/slick.client.js',
-    '@/plugins/socketio.client.js',
+    // '@/plugins/socketio.client.js',
     '@/plugins/to-title-case',
+    '@/plugins/v-tooltip',
     '@/plugins/vue-chartkick.client',
     '@/plugins/vue-content-placeholders',
+    // '@/plugins/vue-feather-icons',
     '@/plugins/vue-good-table.client',
-    '@/plugins/vue-select',
     '@/plugins/vue-scroll-reveal.client',
     '@/plugins/vue-scrollactive',
-    '@/plugins/vue-trix.client',
+    '@/plugins/vue-select',
     '@/plugins/vue-tables-2.client',
+    '@/plugins/vue-trix.client',
+    '@/plugins/vuebars',
     '@/plugins/vuelidate',
-    '@/plugins/v-tooltip',
-
-    // '@/plugins/vue-feather-icons',
   ],
 
   server: {
     host: '0.0.0.0',
-    // port: process.env.PORT || 8000,
+    port: process.env.PORT || 8686,
   },
 
   serverMiddleware: ['@/server'],
@@ -192,7 +256,7 @@ export default {
   // },
 
   axios: {
-    baseURL: process.env.apiUrl || 'https://api.vticonsulting.com/',
+    baseURL: process.env.apiUrl || 'https://victortolbert-api.herokuapp.com/',
     credentials: true,
   },
 
@@ -310,6 +374,10 @@ export default {
     langDir: 'i18n/',
   },
 
+  // oruga: {
+  //   includeCss: true,
+  // },
+
   sentry: {
     dsn:
       'https://c30dc69c78434050aed6f64b97cbd645@o244691.ingest.sentry.io/1422222',
@@ -339,80 +407,80 @@ export default {
   //     source: 'static/img/me@2x.jpg'
   //   }
   // },
-  sounds: {
-    back: {
-      src: '/sound/back.wav',
-      options: {
-        volume: 1,
-      },
-    },
-    button: {
-      src: '/sound/button.wav',
-      options: {
-        volume: 1,
-      },
-    },
-    error: {
-      src: '/sound/error.wav',
-      options: {
-        volume: 1,
-      },
-    },
-    fanfare: {
-      src: '/sound/fanfare.mp3',
-      options: {
-        volume: 1,
-      },
-    },
-    pop_down: {
-      src: '/sound/pop_down.mp3',
-      options: {
-        volume: 1,
-      },
-    },
-    pop_up_off: {
-      src: '/sound/pop_up_off.mp3',
-      options: {
-        volume: 1,
-      },
-    },
-    pop_up_on: {
-      src: '/sound/pop_up_on.mp3',
-      options: {
-        volume: 1,
-      },
-    },
-    success: {
-      src: '/sound/success.wav',
-      options: {
-        volume: 1,
-      },
-    },
-    times_up: {
-      src: '/sound/times_up.wav',
-      options: {
-        volume: 1,
-      },
-    },
-    warning: {
-      src: '/sound/warning.wav',
-      options: {
-        volume: 1,
-      },
-    },
-    vue: {
-      src: '/sound/vue.mp3',
-      options: {
-        volume: 1,
-      },
-    },
-    you_have_a_mail_message: {
-      src: '/sound/you_have_a_mail_message.wav',
-      options: {
-        volume: 1,
-      },
-    },
-  },
+  // sounds: {
+  //   back: {
+  //     src: '/sound/back.wav',
+  //     options: {
+  //       volume: 1,
+  //     },
+  //   },
+  //   button: {
+  //     src: '/sound/button.wav',
+  //     options: {
+  //       volume: 1,
+  //     },
+  //   },
+  //   error: {
+  //     src: '/sound/error.wav',
+  //     options: {
+  //       volume: 1,
+  //     },
+  //   },
+  //   fanfare: {
+  //     src: '/sound/fanfare.mp3',
+  //     options: {
+  //       volume: 1,
+  //     },
+  //   },
+  //   pop_down: {
+  //     src: '/sound/pop_down.mp3',
+  //     options: {
+  //       volume: 1,
+  //     },
+  //   },
+  //   pop_up_off: {
+  //     src: '/sound/pop_up_off.mp3',
+  //     options: {
+  //       volume: 1,
+  //     },
+  //   },
+  //   pop_up_on: {
+  //     src: '/sound/pop_up_on.mp3',
+  //     options: {
+  //       volume: 1,
+  //     },
+  //   },
+  //   success: {
+  //     src: '/sound/success.wav',
+  //     options: {
+  //       volume: 1,
+  //     },
+  //   },
+  //   times_up: {
+  //     src: '/sound/times_up.wav',
+  //     options: {
+  //       volume: 1,
+  //     },
+  //   },
+  //   warning: {
+  //     src: '/sound/warning.wav',
+  //     options: {
+  //       volume: 1,
+  //     },
+  //   },
+  //   vue: {
+  //     src: '/sound/vue.mp3',
+  //     options: {
+  //       volume: 1,
+  //     },
+  //   },
+  //   you_have_a_mail_message: {
+  //     src: '/sound/you_have_a_mail_message.wav',
+  //     options: {
+  //       volume: 1,
+  //     },
+  //   },
+  // },
 
   storybook: {
     stories: [
@@ -431,7 +499,7 @@ export default {
 
   tailwindcss: {
     // configPath: '@/config/tailwind.config.js',
-    // cssPath: '@/assets/styles/app.pcss',
+    cssPath: '@/assets/styles/tailwind.css',
     exposeConfig: true,
   },
 
@@ -477,6 +545,7 @@ export default {
         'postcss-import': {},
         tailwindcss: path.resolve(__dirname, './tailwind.config.js'),
         'postcss-preset-env': {},
+        'postcss-100vh-fix': {},
       },
     },
     preset: {

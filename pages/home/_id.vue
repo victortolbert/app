@@ -35,6 +35,7 @@
     {{ user.description }} <br />
   </div>
 </template>
+
 <script>
 export default {
   head() {
@@ -55,14 +56,13 @@ export default {
       $dataApi.getReviewsByHomeId(params.id),
       $dataApi.getUserByHomeId(params.id),
     ])
-
     const badResponse = responses.find(response => !response.ok)
+
     if (badResponse)
       return error({
         statusCode: badResponse.status,
         message: badResponse.statusText,
       })
-
     return {
       home: responses[0].json,
       reviews: responses[1].json.hits,

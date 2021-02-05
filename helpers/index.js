@@ -1,8 +1,34 @@
+export const currency = amount => {
+  const formatter = new Intl.NumberFormat('en-US', {
+    style: 'currency',
+    currency: 'USD',
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2,
+  })
+  return formatter.format(amount).replace(/\D00(?=\D*$)/, '')
+}
+
+export const capitalize = str => {
+  if (typeof str !== 'string') return ''
+  return str.charAt(0).toUpperCase() + str.slice(1)
+}
+
+export const formatDate = value => {
+  const date = new Date(value)
+  return date.toLocaleString(['en-US'], {
+    month: 'short',
+    day: '2-digit',
+    year: 'numeric',
+  })
+}
+
 export async function init({app, store, error, isClient}) {
   if (isClient) return
 
   try {
-    const messages = await app.$axios.$get(`${process.env.apiUrl}/messages`)
+    const messages = await app.$axios.$get(
+      `${process.env.VUE_APP_API_URL}/messages`,
+    )
     store.commit('INIT', messages)
   } catch (err) {
     store.commit('INIT', [])
@@ -67,3 +93,6 @@ export const toTitleCase = str => {
     })
     .join('')
 }
+
+export const getEventIndexById = (state, eventId) =>
+  state.events.findIndex(event => event.id.toString() === eventId.toString())

@@ -1,0 +1,11 @@
+.switcher {
+  display: flex;
+  flex-wrap: wrap;
+  margin: calc(var(--metric-gutter) * -1) 0 0 calc(var(--metric-gutter) * -1);
+}
+
+.switcher > * {
+  flex-basis: calc((var(--metric-wrapper) - 100%) * 999);
+  flex-grow: 1;
+  margin: var(--metric-gutter) 0 0 var(--metric-gutter);
+}

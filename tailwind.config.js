@@ -1,4 +1,19 @@
-const colors = require('tailwindcss/colors')
+const defaultTheme = require('tailwindcss/defaultTheme')
+const tailWindColors = require('tailwindcss/colors')
+const defaultColors = require('./config/__DEFAULT__/colors')
+const boosterColors = require('./config/booster/colors')
+const emaColors = require('./config/ema/colors')
+const gaSpsColors = require('./config/ga_sps_org/colors')
+const promiseServesColors = require('./config/promise_serves/colors')
+
+const colors = {
+  ...defaultColors,
+  ...boosterColors,
+  ...emaColors,
+  ...gaSpsColors,
+  ...promiseServesColors,
+  ...tailWindColors,
+}
 
 module.exports = {
   theme: {
@@ -17,101 +32,67 @@ module.exports = {
         135: '135',
         205: '205',
       },
+      boxShadow: {
+        tag: '3px 3px 0 #004085',
+        field: 'rgba(10, 10, 10, 0.1) 0px 1px 2px 0px inset',
+      },
       fontSize: {
         '2xs': '.625rem', // 10px
       },
+      fontFamily: {
+        sans: ['Inter var', ...defaultTheme.fontFamily.sans],
+        display: ['Pica'],
+        mono: [
+          'Roboto Mono',
+          'Cousine',
+          'Input Mono',
+          ...defaultTheme.fontFamily.mono,
+        ],
+        cursive: ['Balsamiq Sans', 'cursive'],
+        proto: [
+          'Redacted Script',
+          '"Flow Block"',
+          '"Blokk Neue"',
+          'Blokk',
+          '"Flow Circular"',
+          '"Flow Rounded"',
+        ],
+      },
       colors: {
-        // primary: {
-        //   50: '#fafcf5',
-        //   100: '#f4f8ec',
-        //   200: '#e5eecf',
-        //   300: '#d5e3b1',
-        //   400: '#b5cf77',
-        //   500: '#95ba3d',
-        //   600: '#86a737',
-        //   700: '#708c2e',
-        //   800: '#597025',
-        //   900: '#495b1e',
-        // },
-        // secondary: {
-        //   50: '#fef6f5',
-        //   100: '#fdeeeb',
-        //   200: '#f9d4cc',
-        //   300: '#f6bbae',
-        //   400: '#ef8771',
-        //   500: '#E85434',
-        //   600: '#d14c2f',
-        //   700: '#ae3f27',
-        //   800: '#8b321f',
-        //   900: '#722919',
-        // },
+        // primary: colors.burgundy,
+        // primary: colors.blueGray,
+        // primary: colors.jacarta,
+        // primary: colors.studio,
+        // primary: colors.paprika,
+        // primary: colors.emerald,
+        // primary: colors.oliveGreen,
+        primary: colors['flame-pea'],
 
-        // primary: {
-        //   50: '#f5fbf7',
-        //   100: '#eaf8f0',
-        //   200: '#cbedd8',
-        //   300: '#abe1c1',
-        //   400: '#6ccb93',
-        //   500: '#2DB564',
-        //   600: '#29a35a',
-        //   700: '#22884b',
-        //   800: '#1b6d3c',
-        //   900: '#165931',
-        // },
-        // secondary: {
-        //   50: '#f5f9fd',
-        //   100: '#eaf3fc',
-        //   200: '#cbe1f7',
-        //   300: '#abcff2',
-        //   400: '#6daae8',
-        //   500: '#2E86DE',
-        //   600: '#2979c8',
-        //   700: '#2365a7',
-        //   800: '#1c5085',
-        //   900: '#17426d',
-        // },
+        // secondary: colors['silver-chalice'],
+        // secondary: colors.coolGray,
+        // secondary: colors['clay-creek'],
+        // secondary: colors['gold-tips'],
+        // secondary: colors['tory-blue'],
+        // secondary: colors['cornflower-blue'],
+        // secondary: colors.mineShaft,
+        secondary: colors.deepTeal,
 
-        primary: {
-          50: '#fbfbf7',
-          100: '#f7f8ef',
-          200: '#ececd7',
-          300: '#e0e1be',
-          400: '#c9cb8e',
-          500: '#b2b45d',
-          600: '#a0a254',
-          700: '#868746',
-          800: '#6b6c38',
-          900: '#57582e',
-        },
+        // tertiary: colors['hokey-pokey'],
+        // tertiary: colors.trueGray,
+        // tertiary: colors.mineShaft,
+        // tertiary: colors['deep-sea'],
+        // tertiary: colors['deep-sea'],
+        // tertiary: colors['picton-blue'],
+        // tertiary: colors['yellow-orange'],
+        // tertiary: colors.candlelight,
+        tertiary: colors.peachSchnapps,
 
-        secondary: {
-          50: '#f5f5f5',
-          100: '#ebebeb',
-          200: '#cccccc',
-          300: '#adadad',
-          400: '#707070',
-          500: '#323232',
-          600: '#2d2d2d',
-          700: '#262626',
-          800: '#1e1e1e',
-          900: '#191919',
-        },
-
-        tertiary: {
-          50: '#fffbf5',
-          100: '#fff6eb',
-          200: '#fee9cd',
-          300: '#fddbaf',
-          400: '#fcc174',
-          500: '#FAA638',
-          600: '#e19532',
-          700: '#bc7d2a',
-          800: '#966422',
-          900: '#7b511b',
-        },
-
-        // tertiary: colors.amber,
         orange: colors.amber,
+        teal: colors.teal,
+
+        rose: colors.rose,
+        lime: colors.lime,
+        'light-blue': colors.lightBlue,
 
         danger: 'var(--color-danger)',
         warning: 'var(--color-warning)',
@@ -122,25 +103,54 @@ module.exports = {
         sms: 'var(--color-sms)',
         copy: 'var(--color-copy)',
         brand: '#1B2A60',
-        facebook: '#3b5998',
-        twitter: '#1da1f2',
-        instagram: '#E4405F',
-        linkedin: '#0077b5',
-        github: '#181717',
-        codepen: '#000000',
-        laravel: '#FF2D20',
-        promiserves: '#95ba3d',
-        php: '#777BB4',
-        ema: '#202d56',
+        'booster-blue': '#003E7E',
+        'booster-red': '#B3282D',
         bootstrap: '#7952B3',
-        buefy: '##7957D5',
+        buefy: '#7957D5',
         bulma: '#00D1B2',
         codeigniter: '#EE4323',
+        codepen: '#000000',
+        ema: '#202d56',
+        facebook: '#3b5998',
+        github: '#181717',
+        instagram: '#E4405F',
+        laravel: '#FF2D20',
+        linkedin: '#0077b5',
+        php: '#777BB4',
+        promiseserves: '#95ba3d',
+        ruby: '#CC342D',
+        twitter: '#1da1f2',
         vue: '#4FC08D',
+        'temperture-01': '#3eff00',
+        'temperture-02': '#b0ff00',
+        'temperture-03': '#FFfa00',
+        'temperture-04': '#FFdc00',
+        'temperture-05': '#FFbe00',
+        'temperture-06': '#FFa000',
+        'temperture-07': '#FF8200',
+        'temperture-08': '#FF6400',
+        'temperture-09': '#FF4600',
+        'temperture-10': '#FF2800',
         nuxt: {
           gray: '#243746',
           lightgreen: '#41B38A',
           green: '#158876',
+        },
+        main: {
+          DEFAULT: colors.gray[700],
+          dark: '#ffffff',
+        },
+        // primary: {
+        //   DEFAULT: '#1fb6ff',
+        //   dark: '#ffffff',
+        // },
+        highlight: {
+          DEFAULT: colors.red[700],
+          dark: colors.violet[800],
+        },
+        'highlight-background': {
+          DEFAULT: colors.yellow[400],
+          dark: '#1fb6ff',
         },
       },
       fill: theme => ({
@@ -166,19 +176,6 @@ module.exports = {
           },
         },
       },
-      // typography: {
-      //   DEFAULT: {
-      //     css: {
-      //       color: '#333',
-      //       a: {
-      //         color: '#3182ce',
-      //         '&:hover': {
-      //           color: '#2c5282',
-      //         },
-      //       },
-      //     },
-      //   },
-      // },
       typography: theme => ({
         DEFAULT: {
           css: {
@@ -252,33 +249,6 @@ module.exports = {
         },
       }),
     },
-    // typography: theme => ({
-    //   default: {
-    //     css: {
-    //       color: theme('colors.gray.900'),
-
-    //       a: {
-    //         color: theme('colors.blue.500'),
-    //         '&:hover': {
-    //           color: theme('colors.blue.700'),
-    //         },
-    //       },
-    //     },
-    //   },
-
-    //   dark: {
-    //     css: {
-    //       color: theme('colors.gray.100'),
-
-    //       a: {
-    //         color: theme('colors.blue.100'),
-    //         '&:hover': {
-    //           color: theme('colors.blue.100'),
-    //         },
-    //       },
-    //     },
-    //   },
-    // }),
   },
   variants: {
     margin: ['responsive', 'last'],
@@ -305,6 +275,7 @@ module.exports = {
   },
   plugins: [
     require('@tailwindcss/forms'),
+    require('@tailwindcss/line-clamp'),
     require('@tailwindcss/typography'),
     require('@tailwindcss/aspect-ratio'),
   ],
@@ -317,13 +288,7 @@ module.exports = {
   },
   purge: {
     enabled: process.env.NODE_ENV === 'production',
-    content: [
-      'components/**/*.vue',
-      'layouts/**/*.vue',
-      'pages/**/*.vue',
-      'plugins/**/*.js',
-      'nuxt.config.js',
-    ],
+    content: ['./public/index.html', './src/**/*.{vue,js,ts,jsx,tsx}'],
   },
   darkMode: 'class',
 }
