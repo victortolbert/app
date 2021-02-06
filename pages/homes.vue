@@ -2,7 +2,7 @@
   <section class="h-full p-8">
     <div class="grid grid-cols-1 gap-4 mt-8 sm:grid-cols-2 md:grid-cols-3">
       <div v-for="home in homes" :key="home.objectID">
-        <NuxtLink :to="localePath({path: `/home/${home.objectID}`})" prefetch>
+        <NuxtLink :to="localePath({path: `/home/${home.objectID}/`})" prefetch>
           <HomeCard :home="home" />
         </NuxtLink>
       </div>

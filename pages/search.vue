@@ -8,13 +8,13 @@
       <div>
         Results for {{ label }}<br />
 
-        <div style="height: 800px; width: 800px; float: right" ref="map" />
+        <div style="height: 800px; width: 800px; float: right" ref="map"></div>
 
         <div v-if="homes.length > 0">
           <NuxtLink
             v-for="home in homes"
             :key="home.objectID"
-            :to="`/home/${home.objectID}`"
+            :to="localePath({path: `/home/${home.objectID}/`})"
           >
             <HomeRow
               :home="home"
@@ -47,7 +47,12 @@ export default {
         ?.classList?.toggle('marker-highlight', isHighlighted)
     },
     updateMap() {
-      this.$maps.showMap(this.$refs.map, this.lat, this.lng)
+      this.$maps.showMap(
+        this.$refs.map,
+        this.lat,
+        this.lng,
+        this.getHomeMarkers(),
+      )
     },
     getHomeMarkers() {
       return this.homes.map(home => {
