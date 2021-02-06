@@ -174,6 +174,8 @@ export default {
     //   },
     // ],
     '@nuxtjs/sitemap',
+    // '@/modules/test',
+    ['@/modules/module', {message: 'my module!!!!!!!!!!!!!!'}],
   ],
 
   buildModules: [
@@ -222,6 +224,8 @@ export default {
     '@/plugins/vue-content-placeholders',
     // '@/plugins/vue-feather-icons',
     '@/plugins/vue-good-table.client',
+    '@/plugins/vue-good-table.client',
+    '@/plugins/vue-notifications',
     '@/plugins/vue-scroll-reveal.client',
     '@/plugins/vue-scrollactive',
     '@/plugins/vue-select',

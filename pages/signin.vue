@@ -18,9 +18,10 @@
 
 <script>
 export default {
-  auth: 'guest',
+  // auth: 'guest',
   data() {
     return {
+      response: null,
       login: {
         username: '',
         password: '',
@@ -55,10 +56,8 @@ export default {
         // })
 
         const response = await this.$auth.loginWith('github')
-        console.log(response)
-      } catch (err) {
-        console.log(err)
-      }
+        this.response = response
+      } catch {}
     },
   },
 }

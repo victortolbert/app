@@ -7,9 +7,9 @@
     <!-- {{ $auth.loggedIn }} -->
     <!-- {{ $store.state.auth.loggedIn }} -->
 
-    {{ $auth.$state.loggedIn ? 'Logged In' : 'Guest' }}
+    {{ $auth.loggedIn ? 'Logged In' : 'Guest' }}
 
-    <template v-if="$auth.$state.loggedIn">
+    <template v-if="$auth.loggedIn">
       <OButton variant="info"> Secure </OButton>
       <OButton variant="danger" @click="$auth.logout()"> Logout </OButton>
     </template>
@@ -282,6 +282,12 @@ export default defineComponent({
       ],
     }
   },
+  mounted() {
+    this.showSuccessMsg()
+    this.showInfoMsg()
+    this.showWarnMsg()
+    this.showErrorMsg()
+  },
   methods: {
     fetchUsers() {
       this.$store.dispatch('getUsers')
@@ -289,6 +295,28 @@ export default defineComponent({
 
     updateUsers() {
       this.$store.dispatch('updateUsers', this.$store.state.users)
+    },
+  },
+  notifications: {
+    showSuccessMsg: {
+      type: 'success',
+      title: 'Hello there',
+      message: "That's the success!",
+    },
+    showInfoMsg: {
+      type: 'info',
+      title: 'Hey you',
+      message: 'Here is some info for you',
+    },
+    showWarnMsg: {
+      type: 'warn',
+      title: 'Wow, man',
+      message: "That's the kind of warning",
+    },
+    showErrorMsg: {
+      type: 'error',
+      title: 'Wow-wow',
+      message: "That's the error",
     },
   },
 })

@@ -179,7 +179,7 @@
 import {data2} from '@/__mocks__'
 
 export default {
-  middleware: 'guest',
+  // middleware: 'guest',
   data() {
     return {
       data2,

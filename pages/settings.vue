@@ -44,7 +44,7 @@
               <!-- Current: "text-primary-500 group-hover:text-primary-500", Default: "text-gray-400 group-hover:text-gray-500" -->
               <BaseIconSolid
                 class="flex-shrink-0 w-6 h-6 mr-3 -ml-1 text-gray-400 group-hover:text-gray-500"
-                name="home-heart"
+                name="family-restroom"
               />
               <span class="truncate"> {{ $t('family') }} </span>
             </a>
@@ -55,9 +55,9 @@
               aria-current="page"
             >
               <!-- Current: "text-primary-500 group-hover:text-primary-500", Default: "text-gray-400 group-hover:text-gray-500" -->
-              <BaseIconOutlined
+              <BaseIconSolid
                 class="flex-shrink-0 w-6 h-6 mr-3 -ml-1 text-gray-400 group-hover:text-gray-500"
-                name="hand"
+                name="volunteer-activism"
               />
               <span class="truncate"> {{ $t('volunteer_profile') }} </span>
             </a>
@@ -749,7 +749,7 @@
                 </div>
               </div>
 
-              <div>
+              <div class="px-4 py-6 space-y-6 bg-white sm:p-6">
                 <!-- Family Info -->
                 <h4 class="text-lg font-medium">{{ $t('family_info') }}</h4>
 
@@ -1440,3 +1440,147 @@
     </section>
   </main>
 </template>
+
+<script>
+import {data2} from '@/__mocks__'
+
+export default {
+  // middleware: 'guest',
+  data() {
+    return {
+      data2,
+      data: [],
+      keepFirst: false,
+      openOnFocus: false,
+      name: '',
+      selected: null,
+      minutesGranularity: 15,
+      hoursGranularity: 2,
+      file: null,
+      dropFiles: [],
+      isLoading: false,
+      isFetching: false,
+      recipe: {
+        title: null,
+        author: null,
+        time: 5,
+        image: null,
+        servings: 1,
+        difficulty: 'easy',
+        procedure: '',
+      },
+      errors: {
+        title: null,
+        author: null,
+        image: null,
+        procedure: null,
+        time: null,
+        servings: null,
+      },
+      page: 1,
+      totalPages: 1,
+    }
+  },
+  computed: {
+    filteredDataObj() {
+      return this.data2.filter(option => {
+        return option.user.first_name
+          .toString()
+          .toLowerCase()
+          .includes(this.name.toLowerCase())
+      })
+    },
+  },
+  watch: {
+    file(newFile) {
+      this.recipe.image = window.URL.createObjectURL(newFile)
+    },
+  },
+  methods: {
+    deleteDropFile(index) {
+      this.dropFiles.splice(index, 1)
+    },
+    _validateRecipe() {
+      let isValid = true
+      for (const key in this.errors) {
+        this.errors[key] = null
+        if (!this.recipe[key]) {
+          this.errors[key] = 'This field cannot be empty'
+          isValid = false
+        }
+        if ((key === 'servings' || key === 'time') && this.recipe[key] < 1) {
+          this.errors[key] = 'This field should be at least 1'
+          isValid = false
+        }
+      }
+      return isValid
+    },
+    addRecipe() {
+      this.isLoading = true
+      if (this._validateRecipe()) {
+        setTimeout(() => {
+          this.$store.commit('addRecipe', this.recipe)
+          this.recipe = {
+            title: '',
+            author: '',
+            time: 5,
+            image: null,
+            servings: 1,
+            difficulty: 'easy',
+            procedure: '',
+          }
+          this.isLoading = false
+        }, 2000)
+      } else {
+        this.isLoading = false
+      }
+    },
+    handleIconClick() {
+      // console.log('handleIconClick')
+    },
+    handleIconRightClick() {
+      // console.log('handleIconRightClick')
+    },
+    getAsyncData(name) {
+      // String update
+      if (this.name !== name) {
+        this.name = name
+        this.data = []
+        this.page = 1
+        this.totalPages = 1
+      }
+      // String cleared
+      if (!name.length) {
+        this.data = []
+        this.page = 1
+        this.totalPages = 1
+        return
+      }
+      // Reached last page
+      if (this.page > this.totalPages) {
+        return
+      }
+      this.isFetching = true
+      fetch(
+        `https://api.themoviedb.org/3/search/movie?api_key=bb6f51bef07465653c3e553d6ab161a8&query=${name}&page=${this.page}`,
+      )
+        .then(response => response.json())
+        .then(data => {
+          data.results.forEach(item => this.data.push(item))
+
+          this.page++
+          this.totalPages = data.total_pages
+        })
+        .catch(error => {
+          throw error
+        })
+        .finally(() => {
+          this.isFetching = false
+        })
+    },
+    getMoreAsyncData() {
+      this.getAsyncData(this.name)
+    },
+  },
+}
+</script>

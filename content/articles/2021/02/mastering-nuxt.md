@@ -274,8 +274,6 @@ Google Places Autocomplete.
 
 - [Google Places Autocomplete example](https://developers.google.com/maps/documentation/javascript/examples/places-autocomplete-hotelsearch)
 
-## Working with Modules (4 Lessons)
-
 ### Google Places Autocomplete
 
 In this lesson, we'll implement the Google Places Autocomplete feature.
@@ -359,7 +357,67 @@ We'll also learn how to control which information we show on our map.
 - [Style Reference Documentation](https://developers.google.com/maps/documentation/javascript/style-reference?hl=en)
 - [Optional Chaining (?.) Documentation](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining)
 
+## Working with Modules (4 Lessons)
+
+### Intro to Nuxt Modules
+
+In this lesson, we'll start a new chapter about Nuxt Modules. Modules are a
+powerful feature that allows us to customize the internal behavior of Nuxt.
+Watch this lesson for an introduction to Nuxt modules.
+
+#### Lesson Resources
+
+- [Module Documentation](https://nuxtjs.org/docs/2.x/directory-structure/modules/)
+- [Official Nuxt and community modules list](https://modules.nuxtjs.org/)
+
+### The Module Environment
+
+In this lesson, we'll start exploring the environment the Nuxt modules run in.
+
+#### Lesson Resources
+
+- [The ModuleContainer Class Documentation](https://nuxtjs.org/docs/2.x/internals-glossary/internals-module-container)
+
+### Module Hooks
+
+In this lesson, we'll learn about the Nuxt module and configuration hooks, which
+allow us to invoke callbacks at specific stages of the application.
+
+#### Lesson Resources
+
+- [Hooks Documentation](https://nuxtjs.org/docs/2.x/configuration-glossary/configuration-hooks)
+
+### Install the Tailwind CSS Module
+
+To make styling easier for us, we'll be installing the Tailwind CSS module in
+this lesson.
+
+#### Lesson Resources
+
+- [Tailwind CSS website](https://tailwindcss.com/)
+- [Tailwind Nuxt Module Documentation](https://tailwindcss.nuxtjs.org/)
+- [buildModules Documentation](https://nuxtjs.org/docs/2.x/directory-structure/modules/#buildmodules)
+
 ## Working with Styles and Design (5 Lessons)
+
+### Setting up the Design
+
+In this lesson, we'll configure our style processing setup.
+
+Please make sure you download the design resources from the list below.
+
+#### Lesson Resources
+
+- [Design Resources](https://github.com/MasteringNuxt/NuxtBnB-course/raw/main/resources/45-resources.zip)
+- [Assets Documentation](https://nuxtjs.org/docs/2.x/directory-structure/assets/)
+- [Webpack URL loader](https://github.com/webpack-contrib/url-loader)
+- [Sass Basics](https://sass-lang.com/guide)
+- [Tailwind configuration Documentation](https://v1.tailwindcss.com/docs/configuration#app)
+- [build Property](https://nuxtjs.org/docs/2.x/configuration-glossary/configuration-build)
+
+### Styling the Header
+
+In this lesson, we'll style the header of our application.
 
 ## Refactoring and Improvements (7 Lessons)
 
