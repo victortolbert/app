@@ -88,9 +88,9 @@
 
     <section class="p-8 bg-white shadow lg:rounded-lg">
       <v-client-table
-        :columns="exampleColumns"
-        v-model="exampleData"
-        :options="exampleOptions"
+        :columns="countryColumns"
+        v-model="countries"
+        :options="countryOptions"
       >
         <a
           slot="uri"
@@ -167,14 +167,14 @@
 </template>
 
 <script>
-// import moment from 'moment'
+import sourceData from '@/__mocks__/data'
 import {defineComponent} from '@nuxtjs/composition-api'
+import {theme} from '~tailwind.config'
+
+// import moment from 'moment'
 // import {useSound} from '@vueuse/sound'
-import sourceData from '@/__mocks__/data/forumData'
-import exampleData from '@/__mocks__/data/exampleData'
 // import buttonSfx from '../static/sound/button.wav'
 // data.posts.filter(post => post.userId === 'u1')
-import {theme} from '~tailwind.config'
 
 export default defineComponent({
   setup() {
@@ -212,7 +212,18 @@ export default defineComponent({
   data() {
     return {
       threads: sourceData.threads,
-      exampleData,
+      countries: sourceData.countries,
+      countryColumns: ['name', 'code', 'uri'],
+      countryOptions: {
+        headings: {
+          name: 'Country Name',
+          code: 'Country Code',
+          uri: 'View Record',
+        },
+        editableColumns: ['name'],
+        sortable: ['name', 'code'],
+        filterable: ['name', 'code'],
+      },
       chartData: [
         ['Jan', [4, 6]],
         ['Feb', 2],
@@ -231,18 +242,7 @@ export default defineComponent({
       options: {
         // see the options API
       },
-      exampleColumns: ['name', 'code', 'uri'],
 
-      exampleOptions: {
-        headings: {
-          name: 'Country Name',
-          code: 'Country Code',
-          uri: 'View Record',
-        },
-        editableColumns: ['name'],
-        sortable: ['name', 'code'],
-        filterable: ['name', 'code'],
-      },
       labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
       datasets: [
         {

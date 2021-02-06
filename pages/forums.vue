@@ -12,7 +12,7 @@
 </template>
 
 <script>
-import sourceData from '@/__mocks__/data/forumData'
+import sourceData from '@/__mocks__/data'
 
 export default {
   data() {
