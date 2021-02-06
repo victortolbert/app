@@ -2,6 +2,19 @@
   <div class="space-y-1 lg:mt-8 lg:space-y-8 lg:px-8">
     <a class="wavy-link" href="#" role="button">A wavy link</a>
 
+    <!-- {{ $auth.user }} -->
+    <!-- {{ $store.state.auth.user }} -->
+    <!-- {{ $auth.loggedIn }} -->
+    <!-- {{ $store.state.auth.loggedIn }} -->
+
+    {{ $auth.$state.loggedIn ? 'Logged In' : 'Guest' }}
+
+    <template v-if="$auth.$state.loggedIn">
+      <OButton variant="info"> Secure </OButton>
+      <OButton variant="danger" @click="$auth.logout()"> Logout </OButton>
+    </template>
+    <OButton v-else variant="success"> Login </OButton>
+
     <img
       src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/Harry-Potter-1-.jpg"
       alt=""

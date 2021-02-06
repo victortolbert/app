@@ -140,6 +140,7 @@ export default {
   modules: [
     '@nuxt/content',
     '@nuxtjs/axios',
+    '@nuxtjs/auth-next',
     // '@nuxtjs/auth',
     '@nuxtjs/sentry',
     // '@oruga-ui/oruga/nuxt',
@@ -217,6 +218,7 @@ export default {
     '@/plugins/to-title-case',
     '@/plugins/v-tooltip',
     '@/plugins/vue-chartkick.client',
+    // '@/plugins/vue-cocomaterial-image',
     '@/plugins/vue-content-placeholders',
     // '@/plugins/vue-feather-icons',
     '@/plugins/vue-good-table.client',
@@ -239,6 +241,7 @@ export default {
   router: {
     // prefetchLinks: false,
     middleware: [
+      // 'auth',
       'pages',
       // 'user-agent',
       'visits',
@@ -258,6 +261,64 @@ export default {
   axios: {
     baseURL: process.env.apiUrl || 'https://victortolbert-api.herokuapp.com/',
     credentials: true,
+    // proxy: true,
+  },
+
+  // proxy: {
+  //   '/laravel': {
+  //     target: 'https://laravel-auth.nuxtjs.app',
+  //     pathRewrite: {'^/laravel': '/'},
+  //   },
+  // },
+
+  auth: {
+    redirect: {
+      login: '/login/',
+      logout: '/',
+      callback: '/login/',
+      home: '/',
+    },
+    strategies: {
+      local: {
+        token: {
+          property: 'token',
+          // required: true,
+          // type: 'Bearer'
+        },
+        user: {
+          property: 'user',
+          // autoFetch: true
+        },
+        endpoints: {
+          login: {url: '/api/auth/login', method: 'post'},
+          logout: {url: '/api/auth/logout', method: 'post'},
+          user: {url: '/api/auth/user', method: 'get'},
+        },
+      },
+      cookie: {
+        cookie: {
+          // (optional) If set we check this cookie existence for loggedIn check
+          name: 'XSRF-TOKEN',
+        },
+        endpoints: {
+          // (optional) If set, we send a get request to this endpoint before login
+          csrf: {
+            url: '',
+          },
+        },
+      },
+      github: {
+        clientId: process.env.githubClientId,
+        clientSecret: process.env.githubClientSecret,
+      },
+      google: {
+        clientId: process.env.googleClientId,
+      },
+      laravelSanctum: {
+        provider: 'laravel/sanctum',
+        url: '<laravel url>',
+      },
+    },
   },
 
   // auth: {

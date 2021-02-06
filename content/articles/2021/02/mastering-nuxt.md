@@ -317,6 +317,48 @@ environment.
 
 - [In-component navigation guards](https://router.vuejs.org/guide/advanced/navigation-guards.html#in-component-guards)
 
+### Adding Additional Property Details in the Search Results
+
+In this lesson, we'll refactor our search results page into using a component.
+We'll also add more properties and information about the home.
+
+### Adding a Map to the Search Results Page
+
+In this lesson, we'll improve our search results page by adding a map and
+showing the location the user searches for.
+
+### Adding Property Markers on the Map
+
+In this lesson, we'll continue to work on the map on the search results page.
+We'll improve it by marking the properties from the search result on our map.
+
+#### Lesson Resources
+
+- [LatLngBounds Documentation](https://developers.google.com/maps/documentation/javascript/reference/coordinates#LatLngBounds)
+- [Array.prototype.map() Documentation](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map)
+- [fitBounds Documentation](https://developers.google.com/maps/documentation/javascript/reference/map#Map.fitBounds)
+
+### Marker Styling
+
+In this lesson, we'll learn how we can restyle our markers and add the price per
+night as a label to create a useful overview and a more custom feel to the map.
+
+#### Lesson Resources
+
+- [MarkerLabel Documentation](https://developers.google.com/maps/documentation/javascript/reference/marker#MarkerLabel)
+- [Icon Documentation](https://developers.google.com/maps/documentation/javascript/reference/marker#Icon)
+- [Transparent icon](https://maps.gstatic.com/mapfiles/transparent.png)
+
+### Map Styles and Marker Effects
+
+In this lesson, we'll learn how we create and apply effects to our markers.
+We'll also learn how to control which information we show on our map.
+
+#### Lesson Resources
+
+- [Style Reference Documentation](https://developers.google.com/maps/documentation/javascript/style-reference?hl=en)
+- [Optional Chaining (?.) Documentation](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining)
+
 ## Working with Styles and Design (5 Lessons)
 
 ## Refactoring and Improvements (7 Lessons)

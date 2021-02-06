@@ -2,6 +2,11 @@
   <main class="flex-1">
     <BasePageHeading>{{ $t('settings') }}</BasePageHeading>
 
+    <p>
+      {{ $t('edit_volunteer') }} / {{ $t('edit_advocate') }} |
+      {{ $t('edit_family_members') }}
+    </p>
+
     <section class="p-8">
       <div class="lg:grid lg:grid-cols-12 lg:gap-x-5">
         <aside class="px-2 py-6 sm:px-6 lg:py-0 lg:px-0 lg:col-span-3">
@@ -20,7 +25,7 @@
 
             <a
               href="#personal-info"
-              class="flex items-center px-3 py-2 text-sm font-medium rounded-md text-primary-700 bg-gray-50 hover:text-primary-700 hover:bg-white group"
+              class="flex items-center px-3 py-2 text-sm font-medium text-gray-900 rounded-md hover:text-gray-900 hover:bg-gray-50 group"
               aria-current="page"
             >
               <!-- Current: "text-primary-500 group-hover:text-primary-500", Default: "text-gray-400 group-hover:text-gray-500" -->
@@ -32,6 +37,33 @@
             </a>
 
             <a
+              href="#family"
+              class="flex items-center px-3 py-2 text-sm font-medium text-gray-900 rounded-md hover:text-gray-900 hover:bg-gray-50 group"
+              aria-current="page"
+            >
+              <!-- Current: "text-primary-500 group-hover:text-primary-500", Default: "text-gray-400 group-hover:text-gray-500" -->
+              <BaseIconSolid
+                class="flex-shrink-0 w-6 h-6 mr-3 -ml-1 text-gray-400 group-hover:text-gray-500"
+                name="home-heart"
+              />
+              <span class="truncate"> {{ $t('family') }} </span>
+            </a>
+
+            <a
+              href="#volunteer-profile"
+              class="flex items-center px-3 py-2 text-sm font-medium text-gray-900 rounded-md hover:text-gray-900 hover:bg-gray-50 group"
+              aria-current="page"
+            >
+              <!-- Current: "text-primary-500 group-hover:text-primary-500", Default: "text-gray-400 group-hover:text-gray-500" -->
+              <BaseIconOutlined
+                class="flex-shrink-0 w-6 h-6 mr-3 -ml-1 text-gray-400 group-hover:text-gray-500"
+                name="hand"
+              />
+              <span class="truncate"> {{ $t('volunteer_profile') }} </span>
+            </a>
+
+            <a
+              v-if="false"
               href="#password"
               class="flex items-center px-3 py-2 text-sm font-medium text-gray-900 rounded-md hover:text-gray-900 hover:bg-gray-50 group"
             >
@@ -43,6 +75,7 @@
             </a>
 
             <a
+              v-if="false"
               href="#plans-and-billing"
               class="flex items-center px-3 py-2 text-sm font-medium text-gray-900 rounded-md hover:text-gray-900 hover:bg-gray-50 group"
             >
@@ -54,6 +87,7 @@
             </a>
 
             <a
+              v-if="false"
               href="#team"
               class="flex items-center px-3 py-2 text-sm font-medium text-gray-900 rounded-md hover:text-gray-900 hover:bg-gray-50 group"
             >
@@ -78,6 +112,7 @@
             </a>
 
             <a
+              v-if="false"
               href="#integrations"
               class="flex items-center px-3 py-2 text-sm font-medium text-gray-900 rounded-md hover:text-gray-900 hover:bg-gray-50 group"
             >
@@ -100,6 +135,7 @@
             </a>
 
             <a
+              v-if="false"
               href="#members"
               class="flex items-center px-3 py-2 text-sm font-medium text-gray-900 rounded-md hover:text-gray-900 hover:bg-gray-50 group"
             >
@@ -196,7 +232,7 @@
             </a>
 
             <a
-              href="#"
+              href="#contact-log"
               class="flex items-center px-3 py-2 text-sm font-medium text-gray-900 rounded-md hover:text-gray-900 hover:bg-gray-50 group"
             >
               <BaseIconOutlined
@@ -204,17 +240,6 @@
                 name="clipboard-list"
               />
               <span class="truncate">{{ $t('contact_log') }}</span>
-            </a>
-
-            <a
-              href="#family-photo"
-              class="flex items-center px-3 py-2 text-sm font-medium text-gray-900 rounded-md hover:text-gray-900 hover:bg-gray-50 group"
-            >
-              <BaseIconOutlined
-                class="flex-shrink-0 w-6 h-6 mr-3 -ml-1 text-gray-400 group-hover:text-gray-500"
-                name="photograph"
-              />
-              <span class="truncate">{{ $t('family_photo') }}</span>
             </a>
           </nav>
         </aside>
@@ -503,6 +528,202 @@
                     />
                   </div>
                 </div>
+
+                <div class="px-4 py-6 space-y-6 bg-white sm:p-6">
+                  <h3 class="text-lg font-medium">{{ $t('contact_info') }}</h3>
+
+                  <OButton>{{ $t('change_profile_picture') }}</OButton>
+
+                  <OField :label="$t('find_movie')">
+                    <OAutocomplete
+                      :data="data"
+                      :placeholder="$t('enter_movie_name')"
+                      field="title"
+                      clearable
+                      size="medium"
+                      input-class="block w-full border-gray-300 rounded-md focus:ring-primary-500 focus:border-primary-500"
+                      open-on-focus
+                      :loading="isFetching"
+                      check-infinite-scroll
+                      :debounce-typing="500"
+                      @typing="getAsyncData"
+                      @select="option => (selected = option)"
+                      @infinite-scroll="getMoreAsyncData"
+                    >
+                      <template #default="{option}">
+                        <div class="flex">
+                          <div class="flex-shrink-0 mr-4">
+                            <div class="">
+                              <img
+                                width="120"
+                                :src="`https://image.tmdb.org/t/p/w500/${option.poster_path}`"
+                              />
+                            </div>
+                          </div>
+                          <div>
+                            <h4 class="text-lg font-bold">
+                              {{ option.title }}
+                            </h4>
+                            <p class="mt-1">
+                              {{ option.overview }}
+                            </p>
+                            <small>
+                              {{ $t('released_at') }} {{ option.release_date }},
+                              {{ $t('rated') }}
+                              <b>{{ option.vote_average }}</b>
+                            </small>
+                          </div>
+                        </div>
+                      </template>
+                      <template #footer>
+                        <span v-show="page > totalPages" class="has-text-grey">
+                          {{ $t('no_movies_found') }}
+                        </span>
+                      </template>
+                    </OAutocomplete>
+
+                    <div v-if="selected" class="mt-4">
+                      <span
+                        class="text-xs font-semibold tracking-widest uppercase border-b"
+                      >
+                        {{ $t('selected') }}
+                      </span>
+                      <p class="mt-1 font-mono text-xs">{{ selected }}</p>
+                    </div>
+                  </OField>
+
+                  <OField :label="$t('first_name')">
+                    <OInput
+                      value=""
+                      input-class="block w-full border-gray-300 rounded-md focus:ring-primary-500 focus:border-primary-500"
+                    />
+                  </OField>
+
+                  <OField :label="$t('last_name')">
+                    <OInput
+                      value=""
+                      input-class="block w-full border-gray-300 rounded-md focus:ring-primary-500 focus:border-primary-500"
+                    />
+                  </OField>
+
+                  <OField :label="$t('status')">
+                    <OSelect :placeholder="$t('select_status')" expanded>
+                      <option value="1">Serving</option>
+                      <option value="2">Option 2</option>
+                    </OSelect>
+                  </OField>
+
+                  <OField :label="$t('home_church')">
+                    <OInput
+                      value=""
+                      input-class="block w-full border-gray-300 rounded-md focus:ring-primary-500 focus:border-primary-500"
+                    />
+                  </OField>
+
+                  <OField :label="$t('assigned_church')">
+                    <OSelect
+                      :placeholder="$t('select_assigned_church')"
+                      expanded
+                    >
+                      <option value="1">
+                        12Stone - Snellville - Snellvill, GA - Active
+                      </option>
+                      <option value="2">Option 2</option>
+                    </OSelect>
+                  </OField>
+
+                  <OField :label="$t('primary_email')">
+                    <OInput
+                      input-class="block w-full border-gray-300 rounded-md focus:ring-primary-500 focus:border-primary-500"
+                      type="email"
+                      value="john@"
+                      maxlength="30"
+                    />
+                  </OField>
+
+                  <OField :label="$t('secondary_email')">
+                    <OInput
+                      type="email"
+                      value="john@"
+                      input-class="block w-full border-gray-300 rounded-md focus:ring-primary-500 focus:border-primary-500"
+                      :placeholder="$t('enter_secondary_email')"
+                      maxlength="30"
+                    />
+                  </OField>
+
+                  <OField :label="$t('mobile_phone')">
+                    <OInput
+                      value=""
+                      input-class="block w-full border-gray-300 rounded-md focus:ring-primary-500 focus:border-primary-500"
+                    />
+                  </OField>
+
+                  <OField :label="$t('home_phone')">
+                    <OInput
+                      value=""
+                      :placeholder="$t('enter_home_phone')"
+                      input-class="block w-full border-gray-300 rounded-md focus:ring-primary-500 focus:border-primary-500"
+                    />
+                  </OField>
+
+                  <OField :label="$t('work_phone')">
+                    <OInput
+                      value=""
+                      input-class="block w-full border-gray-300 rounded-md focus:ring-primary-500 focus:border-primary-500"
+                    />
+                  </OField>
+
+                  <OField :label="$t('occupation')">
+                    <OInput
+                      value=""
+                      :placeholder="$t('occupation')"
+                      input-class="block w-full border-gray-300 rounded-md focus:ring-primary-500 focus:border-primary-500"
+                    />
+                  </OField>
+
+                  <OField :label="$t('address')">
+                    <OInput
+                      value=""
+                      input-class="block w-full border-gray-300 rounded-md focus:ring-primary-500 focus:border-primary-500"
+                    />
+                  </OField>
+
+                  <OField :label="$t('apartment_or_unit_number')">
+                    <OInput
+                      value=""
+                      placeholder="Suite, apartment number, or unit"
+                      input-class="block w-full border-gray-300 rounded-md focus:ring-primary-500 focus:border-primary-500"
+                    />
+                  </OField>
+
+                  <OField :label="$t('city')">
+                    <OInput
+                      value=""
+                      input-class="block w-full border-gray-300 rounded-md focus:ring-primary-500 focus:border-primary-500"
+                    />
+                  </OField>
+
+                  <OField :label="$t('state')">
+                    <OInput
+                      value=""
+                      input-class="block w-full border-gray-300 rounded-md focus:ring-primary-500 focus:border-primary-500"
+                    />
+                  </OField>
+
+                  <OField :label="$t('zip_code')">
+                    <OInput
+                      value=""
+                      input-class="block w-full border-gray-300 rounded-md focus:ring-primary-500 focus:border-primary-500"
+                    />
+                  </OField>
+
+                  <OField :label="$t('country')">
+                    <OInput
+                      value=""
+                      input-class="block w-full border-gray-300 rounded-md focus:ring-primary-500 focus:border-primary-500"
+                    />
+                  </OField>
+                </div>
               </div>
               <div class="px-4 py-3 text-right bg-gray-50 sm:px-6">
                 <button
@@ -515,7 +736,107 @@
             </div>
           </form>
 
-          <form action="#" method="POST">
+          <form id="family" action="#" method="POST">
+            <div class="shadow sm:rounded-md sm:overflow-hidden">
+              <div class="px-4 py-6 space-y-6 bg-white sm:p-6">
+                <div>
+                  <h3 class="text-lg font-medium leading-6 text-gray-900">
+                    {{ $t('family_photo') }}
+                  </h3>
+                  <p class="mt-1 text-sm text-gray-500">
+                    {{ $t('family_photo_description') }}
+                  </p>
+                </div>
+              </div>
+
+              <div>
+                <!-- Family Info -->
+                <h4 class="text-lg font-medium">{{ $t('family_info') }}</h4>
+
+                <OField :label="$t('family_name')">
+                  <OInput
+                    value=""
+                    input-class="block w-full border-gray-300 rounded-md focus:ring-primary-500 focus:border-primary-500"
+                  />
+                </OField>
+
+                <OField :label="$t('family_status')">
+                  <OSelect :placeholder="$t('select_family_status')" expanded>
+                    <option value="1">Closed</option>
+                    <option value="2">Option 2</option>
+                  </OSelect>
+                </OField>
+
+                <OField :label="$t('home_type')">
+                  <OSelect :placeholder="$t('select_home_type')" expanded>
+                    <option value="1">Traditional Home - Foster</option>
+                    <option value="2">Option 2</option>
+                  </OSelect>
+                </OField>
+
+                <OField :label="$t('family_structure')">
+                  <OSelect
+                    :placeholder="$t('select_family_structure')"
+                    expanded
+                  >
+                    <option value="1">Single Mother</option>
+                    <option value="2">Option 2</option>
+                  </OSelect>
+                </OField>
+
+                <OField :label="$t('agency')">
+                  <OSelect :placeholder="$t('select_agency')" expanded>
+                    <option value="1">
+                      Gwinett County DFCS (Lawrenceville, GA)
+                    </option>
+                    <option value="2">Option 2</option>
+                  </OSelect>
+                </OField>
+
+                <OField :label="$t('family_language')">
+                  <OSelect :placeholder="$t('select_language')" expanded>
+                    <option value="1">English Only</option>
+                    <option value="2">Option 2</option>
+                  </OSelect>
+                </OField>
+
+                <!-- Family Address -->
+                <h4 class="text-lg font-medium">{{ $t('family_address') }}</h4>
+
+                <OField :label="$t('address')">
+                  <OInput
+                    value=""
+                    input-class="block w-full border-gray-300 rounded-md focus:ring-primary-500 focus:border-primary-500"
+                  />
+                </OField>
+
+                <OField :label="$t('apartment_or_unit_number')">
+                  <OInput
+                    value=""
+                    input-class="block w-full border-gray-300 rounded-md focus:ring-primary-500 focus:border-primary-500"
+                  />
+                </OField>
+
+                <OField :label="$t('city')">
+                  <OInput
+                    value=""
+                    input-class="block w-full border-gray-300 rounded-md focus:ring-primary-500 focus:border-primary-500"
+                  />
+                </OField>
+              </div>
+
+              <div class="px-4 py-3 text-right bg-gray-50 sm:px-6">
+                <button
+                  type="submit"
+                  class="inline-flex justify-center px-4 py-2 text-sm font-medium text-white border border-transparent rounded-md shadow-sm bg-primary-600 hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500"
+                >
+                  {{ $t('save') }}
+                </button>
+              </div>
+            </div>
+          </form>
+
+          <form id="notifications" action="#" method="POST">
             <div class="shadow sm:rounded-md sm:overflow-hidden">
               <div class="px-4 py-6 space-y-6 bg-white sm:p-6">
                 <div>
@@ -656,78 +977,462 @@
             </div>
           </form>
 
-          <form id="roles" class="p-8 mt-8 bg-white rounded-lg shadow">
-            <div>
-              <h3 class="text-lg font-medium leading-6 text-gray-900">
-                {{ $t('roles') }}
-              </h3>
-              <p class="mt-1 text-sm text-gray-500">
-                {{ $t('roles_description') }}
-              </p>
+          <form id="roles" action="#" method="POST">
+            <div class="shadow sm:rounded-md sm:overflow-hidden">
+              <div class="px-4 py-6 space-y-6 bg-white sm:p-6">
+                <div>
+                  <h3 class="text-lg font-medium leading-6 text-gray-900">
+                    {{ $t('roles') }}
+                  </h3>
+                  <p class="mt-1 text-sm text-gray-500">
+                    {{ $t('roles_description') }}
+                  </p>
+                </div>
+              </div>
+
+              <div class="px-4 py-6 space-y-6 bg-white sm:p-6">
+                <!-- Roles & Assignments -->
+                <h3 class="text-lg font-medium">
+                  {{ $t('roles_and_assignments') }}
+                </h3>
+                <!--
+                  - Group
+                  - Role
+                  - Status
+                -->
+                <h4>{{ $t('staff_roles') }}</h4>
+
+                <!--
+                  - Actions
+                  - Affiliate
+                  - Role
+                  - Status
+                -->
+
+                <h4>{{ $t('church_roles') }}</h4>
+
+                <!--
+                  - Actions
+                  - Church
+                  - Role
+                  - Status
+                -->
+
+                <h4>{{ $t('care_community_volunteer_roles') }}</h4>
+
+                <!--
+                  - Actions
+                  - Care Community
+                  - Iteration
+                  - Role
+                  - Status
+                -->
+
+                <h4>{{ $t('family_roles') }}</h4>
+
+                <!--
+                  - Family
+                  - Role
+                  - Status
+                -->
+
+                <h4>{{ $t('events') }}</h4>
+
+                <!--
+                  - Event
+                  - Event Date
+                  - Status
+                -->
+
+                <h4>{{ $t('groups') }}</h4>
+              </div>
+              <div class="px-4 py-3 text-right bg-gray-50 sm:px-6">
+                <button
+                  type="submit"
+                  class="inline-flex justify-center px-4 py-2 text-sm font-medium text-white border border-transparent rounded-md shadow-sm bg-primary-600 hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500"
+                >
+                  {{ $t('save') }}
+                </button>
+              </div>
             </div>
           </form>
-          <form id="assignments" class="p-8 mt-8 bg-white rounded-lg shadow">
-            <div>
-              <h3 class="text-lg font-medium leading-6 text-gray-900">
-                {{ $t('assignments') }}
-              </h3>
-              <p class="mt-1 text-sm text-gray-500">
-                {{ $t('assignments_description') }}
-              </p>
+
+          <form id="volunteer-profile" action="#" method="POST">
+            <div class="shadow sm:rounded-md sm:overflow-hidden">
+              <div class="px-4 py-6 space-y-6 bg-white sm:p-6">
+                <div>
+                  <h3 class="text-lg font-medium leading-6 text-gray-900">
+                    {{ $t('volunteer_profile') }}
+                  </h3>
+                  <p class="mt-1 text-sm text-gray-500">
+                    {{ $t('volunteer_profile_description') }}
+                  </p>
+                </div>
+              </div>
+
+              <div class="px-4 py-6 space-y-6 bg-white sm:p-6">
+                <!-- Volunteer Eligibility -->
+                <h4 class="text-lg font-medium">
+                  {{ $t('volunteer_eligibility') }}
+                </h4>
+
+                - {{ $t('signed_agreement_on') }}:
+
+                <button>{{ $t('view_print_agreement') }}</button>
+
+                <OField>
+                  <OSwitch>{{ $t('has_church_volunteer_approval') }}</OSwitch>
+                </OField>
+
+                <button>{{ $t('cancel') }}</button>
+                <button>{{ $t('save') }}</button>
+
+                <!-- Volunteer Compliance -->
+                <h4 class="text-lg font-medium">
+                  {{ $t('volunteer_compliance') }}
+                </h4>
+
+                <OField :label="$t('affiliate_training_completed')">
+                  <ODatepicker
+                    icon="calendar"
+                    input-class="block w-full border-gray-300 rounded-md focus:ring-primary-500 focus:border-primary-500"
+                  />
+                </OField>
+
+                <OField :label="$t('agency_training_completed')">
+                  <ODatepicker
+                    icon="calendar"
+                    input-class="block w-full border-gray-300 rounded-md focus:ring-primary-500 focus:border-primary-500"
+                  />
+                </OField>
+
+                <OField :label="$t('church_training_completed')">
+                  <ODatepicker
+                    icon="calendar"
+                    input-class="block w-full border-gray-300 rounded-md focus:ring-primary-500 focus:border-primary-500"
+                  />
+                </OField>
+
+                <OField :label="$t('agency_background_check_completed')">
+                  <ODatepicker
+                    icon="calendar"
+                    input-class="block w-full border-gray-300 rounded-md focus:ring-primary-500 focus:border-primary-500"
+                  />
+                </OField>
+
+                <OField :label="$t('church_background_check_completed')">
+                  <ODatepicker
+                    icon="calendar"
+                    input-class="block w-full border-gray-300 rounded-md focus:ring-primary-500 focus:border-primary-500"
+                  />
+                </OField>
+
+                <OField :label="$t('fingerprints_completed')">
+                  <ODatepicker
+                    icon="calendar"
+                    input-class="block w-full border-gray-300 rounded-md focus:ring-primary-500 focus:border-primary-500"
+                  />
+                </OField>
+
+                <OField :label="$t('cpr_expiration')">
+                  <ODatepicker
+                    icon="calendar"
+                    input-class="block w-full border-gray-300 rounded-md focus:ring-primary-500 focus:border-primary-500"
+                  />
+                </OField>
+
+                <OField>
+                  <OSwitch>{{ $t('approved_to_babysit') }}</OSwitch>
+                </OField>
+
+                <OField :label="$t('which_agency')">
+                  <OSelect :placeholder="$t('select_an_agency')" expanded>
+                    <option value="1">Option 1</option>
+                    <option value="2">Option 2</option>
+                  </OSelect>
+                </OField>
+
+                <OField :label="$t('church')">
+                  <OSelect :placeholder="$t('select_church')" expanded>
+                    <option value="1">Staff Only</option>
+                    <option value="2">Option 2</option>
+                  </OSelect>
+                </OField>
+
+                <OField :label="$t('role')">
+                  <OSelect :placeholder="$t('select_role')" expanded>
+                    <option value="1">Staff Only</option>
+                    <option value="2">Option 2</option>
+                  </OSelect>
+                </OField>
+              </div>
+              <div class="px-4 py-3 text-right bg-gray-50 sm:px-6">
+                <button
+                  type="submit"
+                  class="inline-flex justify-center px-4 py-2 text-sm font-medium text-white border border-transparent rounded-md shadow-sm bg-primary-600 hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500"
+                >
+                  {{ $t('save') }}
+                </button>
+              </div>
             </div>
           </form>
-          <form id="notes" class="p-8 mt-8 bg-white rounded-lg shadow"></form>
-          <form id="agreements" class="p-8 mt-8 bg-white rounded-lg shadow">
-            <div>
-              <h3 class="text-lg font-medium leading-6 text-gray-900">
-                {{ $t('agreements') }}
-              </h3>
-              <p class="mt-1 text-sm text-gray-500">
-                {{ $t('agreements_description') }}
-              </p>
+
+          <form id="assignments" action="#" method="POST">
+            <div class="shadow sm:rounded-md sm:overflow-hidden">
+              <div class="px-4 py-6 space-y-6 bg-white sm:p-6">
+                <div>
+                  <h3 class="text-lg font-medium leading-6 text-gray-900">
+                    {{ $t('assignments') }}
+                  </h3>
+                  <p class="mt-1 text-sm text-gray-500">
+                    {{ $t('assignments_description') }}
+                  </p>
+                </div>
+              </div>
+              <div class="px-4 py-3 text-right bg-gray-50 sm:px-6">
+                <button
+                  type="submit"
+                  class="inline-flex justify-center px-4 py-2 text-sm font-medium text-white border border-transparent rounded-md shadow-sm bg-primary-600 hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500"
+                >
+                  {{ $t('save') }}
+                </button>
+              </div>
             </div>
           </form>
-          <form
-            id="care-communities"
-            class="p-8 mt-8 bg-white rounded-lg shadow"
-          >
-            <div>
-              <h3 class="text-lg font-medium leading-6 text-gray-900">
-                {{ $t('care_communities') }}
-              </h3>
-              <p class="mt-1 text-sm text-gray-500">
-                {{ $t('care_communities_description') }}
-              </p>
+
+          <form id="interests" action="#" method="POST">
+            <div class="shadow sm:rounded-md sm:overflow-hidden">
+              <div class="px-4 py-6 space-y-6 bg-white sm:p-6">
+                <div>
+                  <h3 class="text-lg font-medium leading-6 text-gray-900">
+                    {{ $t('interests') }}
+                  </h3>
+                  <p class="mt-1 text-sm text-gray-500">
+                    {{ $t('interests_description') }}
+                  </p>
+                </div>
+              </div>
+
+              <div class="px-4 py-6 space-y-6 bg-white sm:p-6">
+                <OField>
+                  <OSwitch>{{ $t('has_church_volunteer_approval') }}</OSwitch>
+                </OField>
+
+                <OField>
+                  <OSwitch>{{ $t('helping_in_a_care_community') }}</OSwitch>
+                </OField>
+
+                <OField>
+                  <OSwitch>{{ $t('care_community_team_leader') }}</OSwitch>
+                </OField>
+
+                <OField>
+                  <OSwitch>{{ $t('care_community_family_helper') }}</OSwitch>
+                </OField>
+
+                <OField>
+                  <OSwitch>{{ $t('care_community_child_mentor') }}</OSwitch>
+                </OField>
+
+                <OField>
+                  <OSwitch>{{ $t('interim_care_giver') }}</OSwitch>
+                </OField>
+
+                <OField>
+                  <OSwitch>{{ $t('becoming_a_foster_family') }} </OSwitch>
+                </OField>
+
+                <OField>
+                  <OSwitch>{{
+                    $t('becoming_a_respite_foster_family')
+                  }}</OSwitch>
+                </OField>
+
+                <OField>
+                  <OSwitch>{{ $t('joining_the_advocate_team') }}</OSwitch>
+                </OField>
+
+                <OField>
+                  <OSwitch>CarePortal</OSwitch>
+                </OField>
+
+                <OField>
+                  <OSwitch>Loaves and Fishes (12Stone Church Central)</OSwitch>
+                </OField>
+              </div>
+              <div class="px-4 py-3 text-right bg-gray-50 sm:px-6">
+                <button
+                  type="submit"
+                  class="inline-flex justify-center px-4 py-2 text-sm font-medium text-white border border-transparent rounded-md shadow-sm bg-primary-600 hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500"
+                >
+                  {{ $t('save') }}
+                </button>
+              </div>
             </div>
           </form>
-          <form id="history" class="p-8 mt-8 bg-white rounded-lg shadow">
-            <div>
-              <h3 class="text-lg font-medium leading-6 text-gray-900">
-                {{ $t('history') }}
-              </h3>
-              <p class="mt-1 text-sm text-gray-500">
-                {{ $t('history_description') }}
-              </p>
+
+          <form id="notes" action="#" method="POST">
+            <div class="shadow sm:rounded-md sm:overflow-hidden">
+              <div class="px-4 py-6 space-y-6 bg-white sm:p-6">
+                <div>
+                  <h3 class="text-lg font-medium leading-6 text-gray-900">
+                    {{ $t('notes') }}
+                  </h3>
+                  <p class="mt-1 text-sm text-gray-500">
+                    {{ $t('notes_description') }}
+                  </p>
+                </div>
+              </div>
+
+              <div class="px-4 py-6 space-y-6 bg-white sm:p-6">
+                <em>{{ $t('only_advocates_and_staff_can_view') }}</em>
+
+                <OButton>{{ $t('add') }}</OButton>
+
+                <!--
+                  - From
+                  - Note
+                  - Status
+                -->
+                <p>{{ $t('no_matching_results') }}</p>
+
+                <OField :label="$t('who_can_view_this_note')">
+                  <OSelect :placeholder="$t('select_an_agency')" expanded>
+                    <option value="1">Staff Only</option>
+                    <option value="2">Option 2</option>
+                  </OSelect>
+                </OField>
+
+                <!--
+                  - Author
+                  - Note
+                  - Date
+                -->
+              </div>
+              <div class="px-4 py-3 text-right bg-gray-50 sm:px-6">
+                <button
+                  type="submit"
+                  class="inline-flex justify-center px-4 py-2 text-sm font-medium text-white border border-transparent rounded-md shadow-sm bg-primary-600 hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500"
+                >
+                  {{ $t('save') }}
+                </button>
+              </div>
             </div>
           </form>
-          <form id="contact-log" class="p-8 mt-8 bg-white rounded-lg shadow">
-            <div>
-              <h3 class="text-lg font-medium leading-6 text-gray-900">
-                {{ $t('contact_log') }}
-              </h3>
-              <p class="mt-1 text-sm text-gray-500">
-                {{ $t('contact_log_description') }}
-              </p>
+
+          <form id="agreements" action="#" method="POST">
+            <div class="shadow sm:rounded-md sm:overflow-hidden">
+              <div class="px-4 py-6 space-y-6 bg-white sm:p-6">
+                <div>
+                  <h3 class="text-lg font-medium leading-6 text-gray-900">
+                    {{ $t('agreements') }}
+                  </h3>
+                  <p class="mt-1 text-sm text-gray-500">
+                    {{ $t('agreements_description') }}
+                  </p>
+                </div>
+              </div>
+
+              <div class="px-4 py-6 space-y-6 bg-white sm:p-6">
+                <!-- Agreements -->
+                <h3 class="text-lg font-medium">{{ $t('agreements') }}</h3>
+
+                <h4>{{ $t('family_agreements') }}</h4>
+
+                {{ $t('no_agreements_found') }}
+              </div>
+              <div class="px-4 py-3 text-right bg-gray-50 sm:px-6">
+                <button
+                  type="submit"
+                  class="inline-flex justify-center px-4 py-2 text-sm font-medium text-white border border-transparent rounded-md shadow-sm bg-primary-600 hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500"
+                >
+                  {{ $t('save') }}
+                </button>
+              </div>
             </div>
           </form>
-          <form id="family-photo" class="p-8 mt-8 bg-white rounded-lg shadow">
-            <div>
-              <h3 class="text-lg font-medium leading-6 text-gray-900">
-                {{ $t('family_photo') }}
-              </h3>
-              <p class="mt-1 text-sm text-gray-500">
-                {{ $t('family_photo_description') }}
-              </p>
+
+          <form id="care-communities" action="#" method="POST">
+            <div class="shadow sm:rounded-md sm:overflow-hidden">
+              <div class="px-4 py-6 space-y-6 bg-white sm:p-6">
+                <div>
+                  <h3 class="text-lg font-medium leading-6 text-gray-900">
+                    {{ $t('care_communities') }}
+                  </h3>
+                  <p class="mt-1 text-sm text-gray-500">
+                    {{ $t('care_communities_description') }}
+                  </p>
+                </div>
+              </div>
+              <div class="px-4 py-3 text-right bg-gray-50 sm:px-6">
+                <button
+                  type="submit"
+                  class="inline-flex justify-center px-4 py-2 text-sm font-medium text-white border border-transparent rounded-md shadow-sm bg-primary-600 hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500"
+                >
+                  {{ $t('save') }}
+                </button>
+              </div>
+            </div>
+          </form>
+
+          <form id="history" action="#" method="POST">
+            <div class="shadow sm:rounded-md sm:overflow-hidden">
+              <div class="px-4 py-6 space-y-6 bg-white sm:p-6">
+                <div>
+                  <h3 class="text-lg font-medium leading-6 text-gray-900">
+                    {{ $t('history') }}
+                  </h3>
+                  <p class="mt-1 text-sm text-gray-500">
+                    {{ $t('history_description') }}
+                  </p>
+                </div>
+              </div>
+              <div class="px-4 py-3 text-right bg-gray-50 sm:px-6">
+                <button
+                  type="submit"
+                  class="inline-flex justify-center px-4 py-2 text-sm font-medium text-white border border-transparent rounded-md shadow-sm bg-primary-600 hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500"
+                >
+                  {{ $t('save') }}
+                </button>
+              </div>
+            </div>
+          </form>
+
+          <form id="contact-log" action="#" method="POST">
+            <div class="shadow sm:rounded-md sm:overflow-hidden">
+              <div class="px-4 py-6 space-y-6 bg-white sm:p-6">
+                <div>
+                  <h3 class="text-lg font-medium leading-6 text-gray-900">
+                    {{ $t('contact_log') }}
+                  </h3>
+                  <p class="mt-1 text-sm text-gray-500">
+                    {{ $t('contact_log_description') }}
+                  </p>
+                </div>
+              </div>
+
+              <div class="px-4 py-6 space-y-6 bg-white sm:p-6">
+                <h3 class="text-lg font-medium">{{ $t('contact_log') }}</h3>
+
+                <!--
+                  - Type
+                  - Staff Member
+                  - Contact(s)
+                  - Note
+                  - Date
+                -->
+
+                <OButton>{{ $t('add_log_entry') }}</OButton>
+              </div>
+
+              <div class="px-4 py-3 text-right bg-gray-50 sm:px-6">
+                <button
+                  type="submit"
+                  class="inline-flex justify-center px-4 py-2 text-sm font-medium text-white border border-transparent rounded-md shadow-sm bg-primary-600 hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500"
+                >
+                  {{ $t('save') }}
+                </button>
+              </div>
             </div>
           </form>
         </div>

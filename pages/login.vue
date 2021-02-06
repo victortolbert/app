@@ -206,6 +206,7 @@ import AWS from 'aws-sdk'
 import {defineComponent} from '@nuxtjs/composition-api'
 
 export default defineComponent({
+  auth: 'guest',
   layout: 'plain',
   data() {
     return {

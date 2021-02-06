@@ -16,9 +16,10 @@
       "@/*": ["./*"]
     },
     "types": [
-      "@types/node",
       "@nuxt/content",
       "@nuxt/types",
+      "@nuxtjs/auth-next",
+      "@types/node",
       "nuxt-i18n",
       "testing-library__jest-dom"
     ]
