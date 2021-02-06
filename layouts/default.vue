@@ -289,7 +289,8 @@ export default defineComponent({
 </script>
 
 <style lang="postcss">
-html, body {
+html,
+body {
   max-width: 100%;
   overflow-x: hidden;
 }
