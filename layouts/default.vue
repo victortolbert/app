@@ -289,6 +289,11 @@ export default defineComponent({
 </script>
 
 <style lang="postcss">
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
 .Cookie.Cookie--mytheme {
   @apply fixed bottom-0 inset-x-0 pb-2 sm:pb-5 md:flex-col lg:flex-col;
 }
