@@ -85,7 +85,7 @@ export default {
   target: 'static',
   ssr: false,
 
-  watch: ['~/config/*'],
+  watch: ['@/config/*'],
 
   head: {
     // title: 'Lab',
@@ -128,10 +128,13 @@ export default {
     },
   },
   css: [
-    // '~/assets/css/bulma.scss',
-    '~/assets/css/content.css',
-    '~/assets/css/transitions.css',
-    '~/assets/css/select.scss',
+    // '@/assets/css/bulma.scss',
+    '@/assets/css/app.scss',
+    '@/assets/css/content.css',
+    '@/assets/css/transitions.css',
+    '@/assets/css/select.scss',
+    '@/assets/styles/oruga_tailwind.css',
+    '@fortawesome/fontawesome-svg-core/styles.css',
   ],
   layoutTransition: {
     name: 'layout',
@@ -622,6 +625,7 @@ export default {
   },
   purgeCSS: {
     whitelist: ['dark-mode'],
+    whitelistPatterns: [/svg.*/, /fa.*/],
     whitelistPatternsChildren: [/^token/, /^pre/, /^code/, /^nuxt-content/],
   },
 

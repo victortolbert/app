@@ -204,6 +204,7 @@ export default {
   password: 'Password',
   pending: 'Pending',
   people: 'People',
+  person: 'Person',
   personal_information: 'Personal Information',
   personal_information_description: 'Personal Information Description',
   photo: 'Photo',

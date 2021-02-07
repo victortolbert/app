@@ -213,6 +213,7 @@ export default {
   password: 'Contraseña',
   pending: 'Pendiente',
   people: 'Personas',
+  person: 'Persona',
   personal_information: 'Informacion personal',
   personal_information_description: 'Descripción de la información personal',
   photo: 'Foto',

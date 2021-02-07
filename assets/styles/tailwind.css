@@ -1,5 +1,6 @@
 @import 'tailwindcss/base';
 @import './base/variables.css';
+
 @import './base/utilities.css';
 @import './base/transitions.css';
 

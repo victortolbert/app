@@ -13,6 +13,12 @@ export default defineComponent({
 
 <template>
   <div>
+    <img
+      v-if="name === 'angel_armies'"
+      src="/assets/img/logos/angel_armies.png"
+      width="200"
+      height="44"
+    />
     <!-- AT&T-->
     <svg
       v-if="name === 'att'"

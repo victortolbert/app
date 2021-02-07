@@ -9,6 +9,8 @@ export const state = () => ({
   visits: [],
   open: false,
   isMenuOpen: false,
+  activeTab: 0,
+  activeEventName: 'Active Event Name',
   projects: ['app', 'cms', 'lab', 'psv1', 'tdx'],
   categories: {},
   releases: [],
@@ -90,71 +92,26 @@ export const state = () => ({
         'Wandered the cobblestone streets and quaint lanes of the town, which has been designated a UNESCO World Heritage site. A walking tour revealed historic architecture, colonial landmarks and alluring shops and restaurants.',
     },
   ],
+  programs: [
+    {
+      name: 'Program Name',
+      event_name: 'Event Name',
+      archived: 0,
+      deleted: 0,
+    },
+  ],
 })
 
 export const getters = {
   selectedUser: state => {
     return state.users[state.indexedUser]
   },
-}
-
-export const mutations = {
-  toggleMenu(state) {
-    state.isMenuOpen = !state.isMenuOpen
-  },
-  openMenu(state) {
-    state.isMenuOpen = true
-  },
-  closeMenu(state) {
-    state.isMenuOpen = false
-  },
-
-  toggle(state, open) {
-    state.open = open !== undefined ? open : !state.open
-  },
-  close(state) {
-    state.open = false
-  },
-
-  SET_CATEGORIES(state, categories) {
-    // Vue Reactivity rules since we add a nested object
-    Vue.set(state.categories, this.$i18n.locale, categories)
-  },
-
-  SET_RELEASES(state, releases) {
-    state.releases = releases
-  },
-
-  ADD_VISIT(state, path) {
-    state.visits.push({
-      path,
-      date: new Date().toJSON(),
+  activePrograms: state => {
+    return state.programs.filter(program => {
+      return program.archived === 0 && program.deleted === 0
     })
   },
-
-  UPDATE_PAGE(state, pageName) {
-    state.page = pageName
-  },
-
-  ADD_FOLLOWER(state) {
-    state.users[state.indexedUser].followers++
-  },
-
-  REMOVE_FOLLOWER(state) {
-    state.users[state.indexedUser].followers--
-  },
-
-  CHANGE_USER(state, i) {
-    state.indexedUser = i
-  },
-
-  SET_COUNT(state, count) {
-    state.count = count
-  },
-
-  SET_USERS(state, payload) {
-    state.users = payload
-  },
+  avatarPath: state => `/assets/img/people/`,
 }
 
 export const actions = {
@@ -244,5 +201,64 @@ export const actions = {
     return axios.get('https://demo3878003.mockable.io').then(res => {
       commit('SET_USERS', res.data.users)
     })
+  },
+}
+
+export const mutations = {
+  toggleMenu(state) {
+    state.isMenuOpen = !state.isMenuOpen
+  },
+  openMenu(state) {
+    state.isMenuOpen = true
+  },
+  closeMenu(state) {
+    state.isMenuOpen = false
+  },
+
+  toggle(state, open) {
+    state.open = open !== undefined ? open : !state.open
+  },
+  close(state) {
+    state.open = false
+  },
+
+  SET_CATEGORIES(state, categories) {
+    // Vue Reactivity rules since we add a nested object
+    Vue.set(state.categories, this.$i18n.locale, categories)
+  },
+
+  SET_RELEASES(state, releases) {
+    state.releases = releases
+  },
+
+  ADD_VISIT(state, path) {
+    state.visits.push({
+      path,
+      date: new Date().toJSON(),
+    })
+  },
+
+  UPDATE_PAGE(state, pageName) {
+    state.page = pageName
+  },
+
+  ADD_FOLLOWER(state) {
+    state.users[state.indexedUser].followers++
+  },
+
+  REMOVE_FOLLOWER(state) {
+    state.users[state.indexedUser].followers--
+  },
+
+  CHANGE_USER(state, i) {
+    state.indexedUser = i
+  },
+
+  SET_COUNT(state, count) {
+    state.count = count
+  },
+
+  SET_USERS(state, payload) {
+    state.users = payload
   },
 }

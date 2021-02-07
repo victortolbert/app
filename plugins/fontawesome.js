@@ -18,4 +18,8 @@ library.add(far)
 library.add(fal)
 
 dom.watch()
+
+// const css = dom.css()
+// dom.insertCss(css)
+
 Vue.component('FontAwesomeIcon', FontAwesomeIcon)

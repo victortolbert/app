@@ -18,7 +18,7 @@ export default defineComponent({
 
     const affiliate = reactive({
       id: 1,
-      name: 'Victor Tolbert',
+      name: 'Angel Armies',
       theme: {
         nav: {
           class: 'bg-white text-gray-800',
@@ -75,6 +75,27 @@ export default defineComponent({
   computed: {
     routes() {
       return [
+        {
+          name: 'dashboard',
+          label: this.$t('dashboard'),
+          path: '/dashboard/',
+        },
+        {
+          name: 'affiliates',
+          label: this.$t('affiliates'),
+          path: '/affiliates/',
+        },
+        {
+          name: 'people',
+          label: this.$t('people'),
+          path: '/people/',
+        },
+        {
+          name: 'person',
+          label: this.$t('person'),
+          path: '/person/',
+        },
+
         // {
         //   name: 'resume',
         //   label: this.$t('resume'),
@@ -85,32 +106,27 @@ export default defineComponent({
           label: this.$t('homes'),
           path: '/homes/',
         },
-        {
-          name: 'messages',
-          label: this.$t('messages'),
-          path: '/messages/',
-        },
-
-        {
-          name: 'courses',
-          label: this.$t('courses'),
-          path: '/courses/',
-        },
         // {
-        //   name: 'dashboard',
-        //   label: this.$t('dashboard'),
-        //   path: '/dashboard/',
+        //   name: 'messages',
+        //   label: this.$t('messages'),
+        //   path: '/messages/',
+        // },
+        // {
+        //   name: 'courses',
+        //   label: this.$t('courses'),
+        //   path: '/courses/',
         // },
         {
-          name: 'advocates',
-          label: this.$t('advocates'),
-          path: '/advocates/',
+          name: 'dashboards',
+          label: this.$t('dashboard'),
+          path: '/dashboards/booster/',
         },
-        {
-          name: 'affiliates',
-          label: this.$t('affiliates'),
-          path: '/affiliates/',
-        },
+        // {
+        //   name: 'advocates',
+        //   label: this.$t('advocates'),
+        //   path: '/advocates/',
+        // },
+
         // {
         //   name: 'resources',
         //   label: this.$t('resources'),
@@ -120,11 +136,11 @@ export default defineComponent({
         //   label: this.$t('calendar'),
         //   path: '/calendar/',
         // },
-        {
-          name: 'forums',
-          label: this.$t('forums'),
-          path: '/forums/',
-        },
+        // {
+        //   name: 'forums',
+        //   label: this.$t('forums'),
+        //   path: '/forums/',
+        // },
         // {
         //   name: 'media',
         //   label: this.$t('media'),
@@ -146,16 +162,16 @@ export default defineComponent({
         //   name: 'profile',
         //   label: this.$t('profile'),
         // },
-        {
-          name: 'settings',
-          label: this.$t('settings'),
-          path: '/settings/',
-        },
-        {
-          name: 'team',
-          label: this.$t('team'),
-          path: '/team/',
-        },
+        // {
+        //   name: 'settings',
+        //   label: this.$t('settings'),
+        //   path: '/settings/',
+        // },
+        // {
+        //   name: 'team',
+        //   label: this.$t('team'),
+        //   path: '/team/',
+        // },
         // {
         //   name: 'tasks',
         //   label: this.$t('tasks'),

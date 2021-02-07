@@ -5,7 +5,30 @@
     </BasePageHeading>
 
     <section class="p-8">
-      <div>
+      <div class="app-search-results-page">
+        <div class="app-search-results">
+          <div class="app-search-results-listing">
+            <h2 class="app-title">Stays in {{ label }}</h2>
+            <nuxt-link
+              v-for="home in homes"
+              :key="home.objectID"
+              :to="`/home/${home.objectID}/`"
+            >
+              <HomeRow
+                class="app-house"
+                :home="home"
+                @mouseover.native="highlightMarker(home.objectID, true)"
+                @mouseout.native="highlightMarker(home.objectID, false)"
+              />
+            </nuxt-link>
+          </div>
+          <div class="app-search-results-map">
+            <div class="app-map" ref="map"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- <div>
         Results for {{ label }}<br />
 
         <div style="height: 800px; width: 800px; float: right" ref="map"></div>
@@ -24,7 +47,7 @@
           </NuxtLink>
         </div>
         <div v-else>{{ $t('no_results_found') }}</div>
-      </div>
+      </div> -->
     </section>
   </main>
 </template>
@@ -36,7 +59,6 @@ export default {
       title: `${this.$t('homes_around')} ${this.label}`,
     }
   },
-  // watchQuery: ['lat'],
   mounted() {
     this.updateMap()
   },
@@ -55,6 +77,7 @@ export default {
       )
     },
     getHomeMarkers() {
+      if (this.homes.length === 0) return null
       return this.homes.map(home => {
         return {
           ...home._geoloc,
@@ -87,7 +110,6 @@ export default {
   },
 }
 </script>
-
 <style>
 .marker {
   background-color: white;

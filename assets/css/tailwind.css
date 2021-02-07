@@ -21,6 +21,24 @@
   transition: all 0.5s cubic-bezier(0.55, 0, 0.1, 1);
 }
 
+@layer base {
+  body {
+    @apply bg-white dark:bg-gray-900;
+  }
+
+  h1 {
+    @apply mt-10 mb-8 text-4xl font-extrabold leading-none tracking-tight sm:text-6xl lg:text-7xl text-primary dark:text-primary-dark sm:mt-14 sm:mb-10;
+  }
+
+  h2 {
+    @apply text-3xl text-primary dark:text-primary-dark;
+  }
+
+  h3 {
+    @apply text-lg text-primary dark:text-primary-dark;
+  }
+}
+
 @layer components {
   .create-story {
     @apply absolute bottom-0 flex items-center justify-center w-8 h-8 font-mono text-2xl font-semibold text-white bg-blue-500 border-4 border-white rounded-full right-1 hover:bg-blue-700;
