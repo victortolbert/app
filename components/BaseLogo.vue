@@ -44,7 +44,7 @@ export default defineComponent({
 
     <!-- AutoTrader -->
     <svg
-      v-if="name === 'auto_trader_com'"
+      v-if="name === 'autotrader'"
       class="w-auto h-5"
       width="382"
       height="44"
@@ -161,6 +161,7 @@ export default defineComponent({
       v-if="name === 'computerland'"
       width="312"
       height="44"
+      class="w-auto h-6"
       viewBox="0 0 312 44"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"

@@ -41,8 +41,11 @@ export default {
   birthday: 'Birthday',
   by_email: 'By Email',
   calendar: 'Calendar',
+  calendar_description:
+    "What to keep up with all that's going on? Take a look at the GASPS calendar. Where we list upcoming events, trainings and Major due dates for in the GASPS systems.",
   calendar_intro:
     "What to keep up with all that's going on? Take a look at the GASPS calendar. Where we list upcoming events, trainings and Major due             dates for in the GASPS systems",
+  calendar_title: 'Calendar',
   cancel: 'Cancel',
   candidates: 'Candidates',
   candidates_description: 'Candidates Description',
@@ -84,6 +87,9 @@ export default {
   cover_photo: 'Cover Photo',
   cpr_expiration: 'CPR Expiration Date',
   dashboard: 'Dashboard',
+  dashboard_description:
+    'An at-a-glance view of key performance indicators (KPIs) ',
+  dashboard_title: 'Dashboard',
   days: 'Days',
   decreased_by: 'Decreased by',
   demo: 'Demo',
@@ -237,8 +243,11 @@ export default {
   remember_me: 'Remember me',
   request_cc_link: 'Request CC Link',
   resources: 'Resources',
+  resources_description:
+    'GASPS has searched, developed and listed a comprehensive list of approved support resources. This includes Tools, Prospectus Literature Reviews, and webinars.',
   resources_intro:
     'GASPS has searched, developed and curated a comprehensive list of approved support resources. This includes tools, Prospectus literature reviews, and webinars',
+  resources_title: 'Resources',
   resume: 'Résumé',
   role: 'Role',
   roles: 'Roles',
@@ -276,7 +285,10 @@ export default {
   street_address: 'Street Address',
   super_admin: 'Super Admin',
   support: 'Support',
+  support_description:
+    'In need of Technical Assistance (TA)? Use the TA page to link to ECCO to submit a request for TA quickly and easily, no log in required',
   support_link_text: 'FAQ, How-to & Help',
+  support_title: 'Help / IP Reports',
   tasks: 'Tasks',
   team: 'Team',
   team_members: 'Team Members',
@@ -288,10 +300,13 @@ export default {
   training: 'Training',
   training_center: 'Training Center',
   training_courses: 'Training Courses',
+  training_description:
+    'Locate and Register for local and national trainings from the Training Center page.',
   training_intro:
     'Locate and register for local and national trainings from the Training Center page',
   training_module: 'Training Module',
   training_provider: 'Thinkrific',
+  training_title: 'Training Center',
   upcoming_items: 'Upcoming Items',
   upcoming_tasks: 'Upcoming Tasks',
   upload_a_file: 'Upload a file',

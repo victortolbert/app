@@ -1,8 +1,13 @@
 import Vue from 'vue'
 import groupBy from 'lodash.groupby'
 import axios from 'axios'
+import {addDays} from 'date-fns'
+
 // import camelcaseKeys from 'camelcase-keys'
 import snakecaseKeys from 'snakecase-keys'
+
+const getEventIndexById = (state, eventId) =>
+  state.events.findIndex(event => event.id.toString() === eventId.toString())
 
 export const state = () => ({
   count: 0,
@@ -13,10 +18,98 @@ export const state = () => ({
   activeTab: 0,
   activeEventName: 'Active Event Name',
   projects: ['app', 'cms', 'lab', 'psv1', 'tdx'],
+  events: [
+    {
+      id: 10,
+      title: 'Gratitude, Wisdom, Care, Courage, Grit, Celebration',
+      date: new Date(),
+      allDay: true,
+    },
+    {
+      id: 20,
+      title: 'Backlog Grooming/Story Time',
+      start: addDays(new Date(), 1),
+    },
+    {id: 30, title: 'Sprint Planning', start: addDays(new Date(), 2)},
+    {id: 40, title: 'Release day', date: '2021-01-30'},
+    {id: 50, title: 'The Future of Frontend', date: '2021-02-05'},
+  ],
+  quotes: [
+    {
+      id: 1,
+      text: 'A goal should scare you a little and excite you a lot.',
+      attribution: 'Joe Vitale',
+    },
+    {
+      id: 2,
+      text:
+        'There is a destiny that makes us brothers; none goes his way alone. What we put into the lives of others, comes back into our own.',
+      attribution: 'Edwin Markham',
+    },
+    {
+      id: 3,
+      text: 'Simplicity is the ultimate sophistication',
+      attribution: 'Leonardo da Vinci',
+      created_at: '',
+      source: {
+        title:
+          'Presentation Zen: Simple Ideas on Presentation Design and Delivery',
+        author: 'Gar Reynolds',
+      },
+    },
+    {
+      id: 4,
+      text: 'Invention requires a long term willingness to be misunderstood',
+      attribution: 'Jeff Bezos',
+      created_at: '',
+      source: {
+        title: '',
+        author: '',
+        url: '',
+      },
+    },
+  ],
+  todos: [
+    {
+      id: 1,
+      name: 'Buy Milk',
+      isComplete: false,
+    },
+    {
+      id: 2,
+      name: 'Buy Eggs',
+      isComplete: false,
+    },
+    {
+      id: 3,
+      name: 'Buy Bread',
+      isComplete: false,
+    },
+    {
+      id: 4,
+      name: 'Make French Toast',
+      isComplete: false,
+    },
+  ],
+  topics: [
+    'Evaluation',
+    'Health and Wellness',
+    'Literature Review',
+    'Literature',
+    'Needs Assessment',
+    'Report',
+    'Strategic Prevention Framework',
+    'Strategy',
+    'Substance Abuse',
+    'Suicide',
+    'Technical Assistance',
+    'Webinar',
+  ],
   categories: {},
   releases: [],
   page: 'index',
   indexedUser: 0,
+  weekendsVisible: false,
   users: [
     {
       name: 'Sophia Gonzalez',
@@ -113,9 +206,14 @@ export const getters = {
     })
   },
   avatarPath: state => `/assets/img/people/`,
+  events: state => state.events,
+  weekendsVisible: state => state.weekendsVisible,
 }
 
 export const actions = {
+  sendWindowHeight() {
+    window.parent.postMessage({windowHeight: document.body.scrollHeight}, '*')
+  },
   async fetchCategories({commit, state}) {
     // Avoid re-fetching in production
     if (process.dev === false && state.categories[this.$i18n.locale]) {
@@ -203,6 +301,21 @@ export const actions = {
       commit('SET_USERS', res.data.users)
     })
   },
+  createEvent({commit}, event) {
+    commit('CREATE_EVENT', event)
+  },
+
+  updateEvent({commit}, updatedEvent) {
+    commit('UPDATE_EVENT', updatedEvent)
+  },
+
+  deleteEvent({commit}, eventId) {
+    commit('DELETE_EVENT', eventId)
+  },
+
+  setweekendsVisible({commit}, enabled) {
+    commit('SET_WEEKENDS_ENABLED', enabled)
+  },
 }
 
 export const mutations = {
@@ -265,5 +378,41 @@ export const mutations = {
 
   SET_USERS(state, payload) {
     state.users = payload
+  },
+
+  CREATE_EVENT(state, event) {
+    return state.events.push(event)
+  },
+
+  UPDATE_EVENT(state, updatedEvent) {
+    const index = getEventIndexById(state, updatedEvent.id)
+
+    if (index === -1) {
+      // eslint-disable-next-line
+      return console.warn(`Unable to update event (id ${updatedEvent.id})`)
+    }
+
+    return state.events.splice(index, 1, {
+      ...state.events[index],
+      title: updatedEvent.title,
+      start: updatedEvent.start,
+      end: updatedEvent.end,
+      date: updatedEvent.date,
+    })
+  },
+
+  DELETE_EVENT(state, eventId) {
+    const index = getEventIndexById(state, eventId)
+
+    if (index === -1) {
+      // eslint-disable-next-line
+      return console.warn(`Unable to delete event (id ${eventId})`)
+    }
+
+    return state.events.splice(index, 1)
+  },
+
+  SET_WEEKENDS_ENABLED(state, enabled) {
+    state.weekendsVisible = enabled
   },
 }

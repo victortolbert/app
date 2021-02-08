@@ -80,7 +80,15 @@ module.exports = {
 
   // modern: !utils.isDev && 'client',
   env: {
-    WS_URL: process.env.WS_URL || 'http://localhost:8686',
+    baseURL:
+      process.env.NODE_ENV === 'production'
+        ? 'https://app.vticonsulting.com'
+        : 'https://app.vticonsulting.com',
+    assetURL:
+      process.env.ASSETS_URL ||
+      'https://td-aws-bucket.s3.amazonaws.com/album2/',
+    apiURL: process.env.API_URL || 'https://victortolbert-api.herokuapp.com',
+    wsURL: process.env.WS_URL || 'http://localhost:8686',
   },
   components: true,
   // loading: false,
@@ -270,7 +278,7 @@ module.exports = {
   // },
 
   axios: {
-    baseURL: process.env.apiUrl || 'https://victortolbert-api.herokuapp.com/',
+    baseURL: process.env.apiURL || 'https://victortolbert-api.herokuapp.com/',
     credentials: true,
     // proxy: true,
   },
@@ -460,7 +468,7 @@ module.exports = {
   },
 
   sitemap: {
-    hostname: process.env.baseUrl || 'https://app.vticonsulting.com/',
+    hostname: process.env.baseURL || 'https://app.vticonsulting.com/',
   },
 
   // sitemap: {

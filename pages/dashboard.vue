@@ -1,7 +1,5 @@
 <template>
   <div class="space-y-1 lg:mt-8 lg:space-y-8 lg:px-8">
-    <a class="wavy-link" href="#" role="button">A wavy link</a>
-
     <!-- {{ $auth.user }} -->
     <!-- {{ $store.state.auth.user }} -->
     <!-- {{ $auth.loggedIn }} -->
@@ -14,36 +12,6 @@
       <OButton variant="danger" @click="$auth.logout()"> Logout </OButton>
     </template>
     <OButton v-else variant="primary"> Login </OButton>
-
-    <img
-      src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/Harry-Potter-1-.jpg"
-      alt=""
-      class="w-32 m-5"
-    />
-
-    <img
-      src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/Harry-Potter-1-.jpg"
-      alt=""
-      class="w-32 m-5 clipped"
-    />
-
-    <img
-      src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/Harry-Potter-1-.jpg"
-      alt=""
-      class="w-32 m-5 clip-circle"
-    />
-
-    <img
-      src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/Harry-Potter-1-.jpg"
-      alt=""
-      class="w-32 m-5 clip-ellipse"
-    />
-
-    <img
-      src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/Harry-Potter-1-.jpg"
-      alt=""
-      class="w-32 m-5 clip-polygon"
-    />
 
     <div class="grid gap-8 lg:grid-cols-2">
       <section class="p-8 bg-white shadow lg:rounded-lg">
@@ -409,45 +377,5 @@ th:nth-child(3) {
 
 [v-cloak] {
   display: none;
-}
-
-.wavy-link {
-  display: inline-block;
-  text-decoration-line: underline;
-  text-decoration-thickness: auto;
-  text-decoration-color: red;
-  text-decoration-style: wavy;
-  white-space: nowrap;
-  backface-visibility: hidden;
-  user-select: none;
-  padding-bottom: 2px;
-}
-
-.clip-circle {
-  clip-path: circle(60px at center);
-}
-.clip-ellipse {
-  clip-path: ellipse(60px 40px at center);
-}
-.clip-polygon {
-  clip-path: polygon(
-    5% 5%,
-    100% 0%,
-    100% 75%,
-    75% 75%,
-    75% 100%,
-    50% 75%,
-    0% 75%
-  );
-}
-
-.clipped {
-  width: 250px;
-  height: 250px;
-  object-fit: cover;
-  clip-path: path(
-    'M213.1,6.7c-32.4-14.4-73.7,0-88.1,30.6C110.6,4.9,67.5-9.5,36.9,6.7C2.8,22.9-13.4,62.4,13.5,110.9 C33.3,145.1,67.5,170.3,125,217c59.3-46.7,93.5-71.9,111.5-106.1C263.4,64.2,247.2,22.9,213.1,6.7z'
-  );
-  margin: 0;
 }
 </style>

@@ -44,8 +44,11 @@ export default {
   birthday: 'Cumpleaños',
   by_email: 'Por correo electrónico',
   calendar: 'Calendario',
+  calendar_description:
+    '¿Qué seguir con todo lo que está pasando? \nEche un vistazo al calendario de GASPS. \nDonde enumeramos los próximos eventos, capacitaciones y fechas de entrega principales en los sistemas GASPS.',
   calendar_intro:
     '¿Qué seguir con todo lo que está pasando? \nEche un vistazo al calendario de GASPS. \nDónde enumeramos los próximos eventos, capacitaciones y fechas de entrega principales en los sistemas GASPS',
+  calendar_title: 'Calendario',
   cancel: 'Cancelar',
   candidates: 'Candidatos',
   candidates_description: 'Descripción de los candidatos',
@@ -90,6 +93,9 @@ export default {
   cover_photo: 'Foto de cubierta',
   cpr_expiration: 'Fecha de vencimiento de CPR',
   dashboard: 'Tablero de mandos',
+  dashboard_description:
+    'Una vista de un vistazo de los indicadores clave de rendimiento (KPI)',
+  dashboard_title: 'Tablero',
   days: 'Dias',
   decreased_by: 'Disminuido en',
   demo: 'Manifestación',
@@ -246,8 +252,11 @@ export default {
   remember_me: 'Recuérdame',
   request_cc_link: 'Solicitar enlace CC',
   resources: 'Recursos',
+  resources_description:
+    'GASPS ha buscado, desarrollado y enumerado una lista completa de recursos de apoyo aprobados. \nEsto incluye herramientas, revisiones de literatura de prospectos y seminarios web.',
   resources_intro:
     'GASPS ha buscado, desarrollado y enumerado una lista completa de recursos de apoyo aprobados. \nEsto incluye herramientas, revisiones de la literatura del prospecto y seminarios web.',
+  resources_title: 'Recursos',
   resume: 'Currículum vitae',
   role: 'Papel',
   roles: 'Papeles',
@@ -285,7 +294,10 @@ export default {
   street_address: 'Dirección',
   super_admin: 'Super administrador',
   support: 'Apoyo',
+  support_description:
+    '¿Necesita asistencia técnica (TA)? \nUtilice la página de asistencia técnica para enlazar a ECCO y enviar una solicitud de asistencia técnica rápida y fácilmente, sin necesidad de iniciar sesión',
   support_link_text: 'Preguntas frecuentes, procedimientos',
+  support_title: 'Ayuda / Informes de IP',
   tasks: 'Tareas',
   team: 'Equipo',
   team_members: 'Miembros del equipo',
@@ -297,6 +309,8 @@ export default {
   training: 'Formación',
   training_center: 'Centro de formación',
   training_courses: 'Cursos de formación',
+  training_description:
+    'Busque y regístrese para capacitaciones locales y nacionales desde la página del Centro de capacitación.',
   training_intro:
     'Localice y regístrese en las formaciones locales y nacionales desde la página del Centro de Formación',
   training_module: 'Modulo de entrenamiento',

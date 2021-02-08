@@ -18,7 +18,7 @@ export default defineComponent({
 
     const affiliate = reactive({
       id: 1,
-      name: 'Angel Armies',
+      name: 'autotrader',
       theme: {
         nav: {
           class: 'bg-white text-gray-800',

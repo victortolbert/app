@@ -15,19 +15,28 @@
       <figure
         class="overflow-hidden rounded-lg shadow-lg aspect-w-1 aspect-h-1"
       >
-        <img class="object-cover" src="/assets/img/me/newspaper_photo.jpeg" />
+        <img
+          class="object-cover"
+          :src="`${$config.assetsURL}/img/me/newspaper_photo.jpeg`"
+        />
       </figure>
 
       <figure
         class="overflow-hidden rounded-lg shadow-lg aspect-w-16 aspect-h-9"
       >
-        <img class="object-cover" src="/assets/img/me/classmates.jpeg" />
+        <img
+          class="object-cover"
+          :src="`${$config.assetsURL}/img/me/classmates.jpeg`"
+        />
       </figure>
 
       <figure
         class="overflow-hidden rounded-lg shadow-lg aspect-w-1 aspect-h-1"
       >
-        <img class="object-cover" src="/assets/img/me/so_many_screens.jpeg" />
+        <img
+          class="object-cover"
+          :src="`${$config.assetsURL}/img/me/so_many_screens.jpeg`"
+        />
       </figure>
     </section>
   </main>

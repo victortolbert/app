@@ -19,6 +19,6 @@ axios.defaults.transformRequest = [
 ]
 
 export default axios.create({
-  baseURL: process.env.apiUrl,
+  baseURL: process.env.apiURL,
 })
 // import axios from '~/plugins/axios'

@@ -1,10 +1,8 @@
-export const namespaced = true
-
 export const state = () => ({
   programs: [
     {
       id: 1,
-      name: 'Program Name',
+      name: 'Springdale Elementary',
       event_name: 'Event Name',
       archived: 0,
       deleted: 0,
@@ -38,7 +36,7 @@ export const state = () => ({
             ],
           },
           profile: {
-            image_name: 'victor.jpg',
+            image_name: 'victor.jpeg',
             pledge_goal: 100,
           },
         },

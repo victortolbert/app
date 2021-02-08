@@ -10,11 +10,11 @@ export default {
     baseURL:
       process.env.NODE_ENV === 'production'
         ? 'https://app.vticonsulting.com'
-        : 'https://app.vticonsulting.com',
-    assetUrl:
+        : 'http://example-app.test',
+    assetsURL:
       process.env.ASSETS_URL ||
       'https://td-aws-bucket.s3.amazonaws.com/album2/',
-    apiUrl: process.env.API_URL || 'https://victortolbert-api.herokuapp.com',
+    apiURL: process.env.API_URL || 'https://victortolbert-api.herokuapp.com',
     algoliaApiKey:
       process.env.ALGOLIA_API_KEY || 'AIzaSyBvOoQe7xFg-XaWj9w_l7ODbMqb4BK0B9E',
 
@@ -80,7 +80,7 @@ export default {
 
   // modern: !utils.isDev && 'client',
   env: {
-    WS_URL: process.env.WS_URL || 'http://localhost:8686',
+    wsURL: process.env.WS_URL || 'http://localhost:8686',
   },
   components: true,
   // loading: false,
@@ -181,7 +181,7 @@ export default {
     '@nuxtjs/sitemap',
     // '@/modules/test',
     ['@/modules/module', {message: 'my module!!!!!!!!!!!!!!'}],
-    '@/modules/io',
+    // '@/modules/io',
   ],
 
   buildModules: [
@@ -212,7 +212,7 @@ export default {
   plugins: [
     '@/plugins/cookies',
     '@/plugins/data-api',
-    '@/plugins/dynamic-marquee.client',
+    // '@/plugins/dynamic-marquee.client',
     '@/plugins/fontawesome',
     '@/plugins/i18n.client',
     '@/plugins/init',
@@ -635,6 +635,7 @@ export default {
     preset: {
       stage: 1,
     },
+    transpile: /@fullcalendar.*/, // transpile ESM modules within all fullcalendar packages
   },
   eslint: {
     cache: false,
