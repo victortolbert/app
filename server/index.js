@@ -13,7 +13,7 @@ function getRandomFilename() {
 
 api.use(
   '/api',
-  jsonServer.router(path.join(__dirname, '..', 'server', 'data.json')),
+  jsonServer.router(path.join(__dirname, '..', '__mocks__', 'db.json')),
 )
 
 api.get('/sign_put', (req, res) => {

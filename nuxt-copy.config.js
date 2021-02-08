@@ -1,9 +1,9 @@
-import path from 'path'
+const path = require('path')
 // eslint-disable-next-line import/named
-import {utils} from './config'
+// import {utils} from './config'
 // const isDev = process.env.NODE_ENV !== "production"
 
-export default {
+module.exports = {
   // should hold all env variables that are public as these will be exposed on the frontend. This could include a reference to your public URL for example.
   publicRuntimeConfig: {
     // baseUrl: process.env.BASE_URL || 'https://app.vticonsulting.com',
@@ -409,14 +409,14 @@ export default {
   //   id: process.env.GOOGLE_ANALYTICS_ID,
   // },
 
-  googleAnalytics: {
-    id: process.env.GOOGLE_ANALYTICS_ID || 'UA-76464598-5',
-    disabled: () => document.cookie.includes('ga_optout=true'),
-    debug: {
-      sendHitTask: !utils.isDev,
-    },
-    set: [{field: 'anonymizeIp', value: true}],
-  },
+  // googleAnalytics: {
+  //   id: process.env.GOOGLE_ANALYTICS_ID || 'UA-76464598-5',
+  //   disabled: () => document.cookie.includes('ga_optout=true'),
+  //   debug: {
+  //     sendHitTask: !utils.isDev,
+  //   },
+  //   set: [{field: 'anonymizeIp', value: true}],
+  // },
 
   i18n: {
     // locales: [

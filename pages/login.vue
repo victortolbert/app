@@ -203,9 +203,8 @@
 
 <script>
 import AWS from 'aws-sdk'
-import {defineComponent} from '@nuxtjs/composition-api'
 
-export default defineComponent({
+export default {
   // auth: 'guest',
   layout: 'plain',
   data() {
@@ -248,5 +247,5 @@ export default defineComponent({
     },
     viewAlbum() {},
   },
-})
+}
 </script>

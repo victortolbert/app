@@ -180,7 +180,7 @@
 </template>
 
 <script>
-import sourceData from '@/__mocks__/data'
+import sourceData from '@/__mocks__/db'
 import {defineComponent} from '@nuxtjs/composition-api'
 import {theme} from '~tailwind.config'
 
@@ -283,7 +283,7 @@ export default defineComponent({
     }
   },
   mounted() {
-    this.showSuccessMsg({message: 'overrode....'})
+    // this.showSuccessMsg({message: 'overrode....'})
     // this.showInfoMsg()
     // this.showWarnMsg()
     // this.showErrorMsg()

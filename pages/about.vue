@@ -2,6 +2,15 @@
   <main class="flex-1">
     <BasePageHeading> {{ $t('about') }} </BasePageHeading>
 
+    <div>
+      <p>
+        <button @click="$store.commit('increment')">
+          {{ $store.state.counter }}</button
+        ><br />
+        <NuxtLink to="/"> Home </NuxtLink>
+      </p>
+    </div>
+
     <section class="grid grid-cols-3 gap-8 p-8">
       <figure
         class="overflow-hidden rounded-lg shadow-lg aspect-w-1 aspect-h-1"

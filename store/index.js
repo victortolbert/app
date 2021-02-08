@@ -6,6 +6,7 @@ import snakecaseKeys from 'snakecase-keys'
 
 export const state = () => ({
   count: 0,
+  counter: 0,
   visits: [],
   open: false,
   isMenuOpen: false,
@@ -220,6 +221,10 @@ export const mutations = {
   },
   close(state) {
     state.open = false
+  },
+
+  INCREMENT(state) {
+    state.counter++
   },
 
   SET_CATEGORIES(state, categories) {

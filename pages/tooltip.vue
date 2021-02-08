@@ -1,17 +1,17 @@
 <template>
   <main class="flex-1">
     <section class="flex items-center justify-center h-full p-8">
-      <o-button @click="active = !active"> Toggle </o-button>
+      <OButton @click="active = !active"> Toggle </OButton>
 
       <hr />
 
-      <o-tooltip label="I'm never closing" :active="active" always>
-        <o-button> Always </o-button>
-      </o-tooltip>
+      <OTooltip label="I'm never closing" :active="active" always>
+        <OButton> Always </OButton>
+      </OTooltip>
 
-      <o-tooltip label="Tooltip right" position="right" :active="active">
-        <o-button> Right </o-button>
-      </o-tooltip>
+      <OTooltip label="Tooltip right" position="right" :active="active">
+        <OButton> Right </OButton>
+      </OTooltip>
     </section>
   </main>
 </template>

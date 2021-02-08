@@ -37,7 +37,7 @@
 </template>
 
 <script>
-import sourceData from '@/__mocks__/data'
+import sourceData from '@/__mocks__/db'
 
 export default {
   props: {
