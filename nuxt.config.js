@@ -11,10 +11,10 @@ export default {
       process.env.NODE_ENV === 'production'
         ? 'https://app.vticonsulting.com'
         : 'http://example-app.test',
+    apiURL: process.env.API_URL || 'http://localhost:8686',
     assetsURL:
       process.env.ASSETS_URL ||
       'https://td-aws-bucket.s3.amazonaws.com/album2/',
-    apiURL: process.env.API_URL || 'https://victortolbert-api.herokuapp.com',
     algoliaApiKey:
       process.env.ALGOLIA_API_KEY || 'AIzaSyBvOoQe7xFg-XaWj9w_l7ODbMqb4BK0B9E',
 
@@ -80,7 +80,8 @@ export default {
 
   // modern: !utils.isDev && 'client',
   env: {
-    wsURL: process.env.WS_URL || 'http://localhost:8686',
+    apiUrl: process.env.API_URL || 'http://localhost:8686',
+    wsUrl: process.env.WS_URL || 'http://localhost:8686',
   },
   components: true,
   // loading: false,
@@ -214,6 +215,7 @@ export default {
     '@/plugins/data-api',
     // '@/plugins/dynamic-marquee.client',
     '@/plugins/fontawesome',
+    '@/plugins/highcharts',
     '@/plugins/i18n.client',
     '@/plugins/init',
     // '@/plugins/inject-ww.client',

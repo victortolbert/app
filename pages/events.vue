@@ -6,23 +6,23 @@
         <EventCard v-for="event in events" :key="event.id" :event="event" />
 
         <div class="pagination">
-          <RouterLink
+          <NuxtLink
             id="page-prev"
-            :to="{name: 'events', query: {page: page - 1}}"
+            :to="localePath({path: '/events/', query: {page: page - 1}})"
             rel="prev"
             v-if="page != 1"
           >
             &#60; {{ $t('previous') }}
-          </RouterLink>
+          </NuxtLink>
 
-          <RouterLink
+          <NuxtLink
             id="page-next"
-            :to="{name: 'events', query: {page: page + 1}}"
+            :to="localePath({path: '/events/', query: {page: page + 1}})"
             rel="next"
             v-if="hasNextPage"
           >
             {{ $t('next') }} &#62;
-          </RouterLink>
+          </NuxtLink>
         </div>
       </div>
     </section>

@@ -1,10 +1,10 @@
 <template>
-  <RouterLink class="event-link" :to="{name: 'event', params: {id: event.id}}">
+  <a @click.prevent="viewEvent" class="event-link">
     <div class="event-card">
       <span>@{{ event.time }} on {{ event.date }}</span>
       <h4>{{ event.title }}</h4>
     </div>
-  </RouterLink>
+  </a>
 </template>
 
 <script>
@@ -13,6 +13,11 @@ export default {
     event: {
       type: Object,
       required: true,
+    },
+  },
+  methods: {
+    viewEvent() {
+      this.$router.push(this.localePath({path: `/event/${this.event.id}/`}))
     },
   },
 }

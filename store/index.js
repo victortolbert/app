@@ -10,14 +10,12 @@ const getEventIndexById = (state, eventId) =>
   state.events.findIndex(event => event.id.toString() === eventId.toString())
 
 export const state = () => ({
+  activeEventName: 'Active Event Name',
+  activeTab: 0,
+  categories: {},
   count: 0,
   counter: 0,
-  visits: [],
-  open: false,
-  isMenuOpen: false,
-  activeTab: 0,
-  activeEventName: 'Active Event Name',
-  projects: ['app', 'cms', 'lab', 'psv1', 'tdx'],
+  defaultUserImage: '',
   events: [
     {
       id: 10,
@@ -34,6 +32,45 @@ export const state = () => ({
     {id: 40, title: 'Release day', date: '2021-01-30'},
     {id: 50, title: 'The Future of Frontend', date: '2021-02-05'},
   ],
+  indexedUser: 0,
+  isMenuOpen: false,
+  open: false,
+  page: 'index',
+  places: [
+    {
+      name: 'Honolulu',
+      stars: 4,
+      rating: 8.9,
+      img: '/honolulu.jpg',
+      description:
+        'Ocean breezes rustle palm trees along the harborfront, while in the cool, mist-shrouded Koʻolau Range, forested hiking trails offer postcard city views. At sunset, cool off with an amble around Magic Island or splash in the ocean at Ala Moana Beach.',
+    },
+    {
+      name: 'Santorini',
+      stars: 4,
+      rating: 7.8,
+      img: '/santorini.jpg',
+      description:
+        'With multicoloured cliffs soaring above a sea-drowned caldera, Santorini looks like a giant slab of layered cake. The main island of Thira will take your breath away with its snow-drift of white Cycladic houses lining the cliff tops and, in places, spilling like icy cornices down the terraced rock.',
+    },
+    {
+      name: 'Cusco',
+      stars: 3,
+      rating: 7.4,
+      img: '/peru.jpg',
+      description:
+        'Wandered the cobblestone streets and quaint lanes of the town, which has been designated a UNESCO World Heritage site. A walking tour revealed historic architecture, colonial landmarks and alluring shops and restaurants.',
+    },
+  ],
+  programs: [
+    {
+      name: 'Program Name',
+      event_name: 'Event Name',
+      archived: 0,
+      deleted: 0,
+    },
+  ],
+  projects: ['app', 'cms', 'lab', 'psv1', 'tdx'],
   quotes: [
     {
       id: 1,
@@ -69,6 +106,9 @@ export const state = () => ({
       },
     },
   ],
+  releases: [],
+  shipping: {},
+  states: [],
   todos: [
     {
       id: 1,
@@ -105,11 +145,6 @@ export const state = () => ({
     'Technical Assistance',
     'Webinar',
   ],
-  categories: {},
-  releases: [],
-  page: 'index',
-  indexedUser: 0,
-  weekendsVisible: false,
   users: [
     {
       name: 'Sophia Gonzalez',
@@ -160,40 +195,9 @@ export const state = () => ({
       trips: ['Honolulu', 'Tokyo', 'Osaka'],
     },
   ],
-  places: [
-    {
-      name: 'Honolulu',
-      stars: 4,
-      rating: 8.9,
-      img: '/honolulu.jpg',
-      description:
-        'Ocean breezes rustle palm trees along the harborfront, while in the cool, mist-shrouded Koʻolau Range, forested hiking trails offer postcard city views. At sunset, cool off with an amble around Magic Island or splash in the ocean at Ala Moana Beach.',
-    },
-    {
-      name: 'Santorini',
-      stars: 4,
-      rating: 7.8,
-      img: '/santorini.jpg',
-      description:
-        'With multicoloured cliffs soaring above a sea-drowned caldera, Santorini looks like a giant slab of layered cake. The main island of Thira will take your breath away with its snow-drift of white Cycladic houses lining the cliff tops and, in places, spilling like icy cornices down the terraced rock.',
-    },
-    {
-      name: 'Cusco',
-      stars: 3,
-      rating: 7.4,
-      img: '/peru.jpg',
-      description:
-        'Wandered the cobblestone streets and quaint lanes of the town, which has been designated a UNESCO World Heritage site. A walking tour revealed historic architecture, colonial landmarks and alluring shops and restaurants.',
-    },
-  ],
-  programs: [
-    {
-      name: 'Program Name',
-      event_name: 'Event Name',
-      archived: 0,
-      deleted: 0,
-    },
-  ],
+  userType: '',
+  weekendsVisible: false,
+  visits: [],
 })
 
 export const getters = {
@@ -208,6 +212,19 @@ export const getters = {
   avatarPath: state => `/assets/img/people/`,
   events: state => state.events,
   weekendsVisible: state => state.weekendsVisible,
+  getUserType(state) {
+    const requireFullInfo = ['parent', 'teacher']
+    let isValidUser = true
+    if (requireFullInfo.includes(state.userType)) {
+      if (!validateUserHasFullInfo(state.user)) {
+        isValidUser = false
+      }
+    }
+    if (isValidUser) {
+      return state.userType
+    }
+    return 'incompleteProfile'
+  },
 }
 
 export const actions = {
@@ -234,7 +251,6 @@ export const actions = {
 
     commit('SET_CATEGORIES', categories)
   },
-
   async fetchReleases({commit}) {
     const options = {}
     if (process.env.GITHUB_TOKEN) {
@@ -269,19 +285,15 @@ export const actions = {
 
     commit('SET_RELEASES', releases)
   },
-
   updateActionValue({commit}, payload) {
     commit('UPDATE_VALUE', payload)
   },
-
   increment({commit, state}) {
     commit('SET_COUNT', state.count + 1)
   },
-
   decrement({commit, state}) {
     commit('SET_COUNT', state.count - 1)
   },
-
   updateUsers(_, users) {
     return axios.post(
       'https://demo3878003.mockable.io',
@@ -295,7 +307,6 @@ export const actions = {
       },
     )
   },
-
   getUsers({commit}) {
     return axios.get('https://demo3878003.mockable.io').then(res => {
       commit('SET_USERS', res.data.users)
@@ -304,86 +315,70 @@ export const actions = {
   createEvent({commit}, event) {
     commit('CREATE_EVENT', event)
   },
-
   updateEvent({commit}, updatedEvent) {
     commit('UPDATE_EVENT', updatedEvent)
   },
-
   deleteEvent({commit}, eventId) {
     commit('DELETE_EVENT', eventId)
   },
-
   setweekendsVisible({commit}, enabled) {
     commit('SET_WEEKENDS_ENABLED', enabled)
   },
 }
 
 export const mutations = {
-  toggleMenu(state) {
+  TOGGLE_MENU(state) {
     state.isMenuOpen = !state.isMenuOpen
   },
-  openMenu(state) {
+  OPEN_MENU(state) {
     state.isMenuOpen = true
   },
-  closeMenu(state) {
+  CLOSE_MENU(state) {
     state.isMenuOpen = false
   },
-
-  toggle(state, open) {
+  TOGGLE(state, open) {
     state.open = open !== undefined ? open : !state.open
   },
-  close(state) {
+  CLOSE(state) {
     state.open = false
   },
-
   INCREMENT(state) {
     state.counter++
   },
-
   SET_CATEGORIES(state, categories) {
     // Vue Reactivity rules since we add a nested object
     Vue.set(state.categories, this.$i18n.locale, categories)
   },
-
   SET_RELEASES(state, releases) {
     state.releases = releases
   },
-
   ADD_VISIT(state, path) {
     state.visits.push({
       path,
       date: new Date().toJSON(),
     })
   },
-
   UPDATE_PAGE(state, pageName) {
     state.page = pageName
   },
-
   ADD_FOLLOWER(state) {
     state.users[state.indexedUser].followers++
   },
-
   REMOVE_FOLLOWER(state) {
     state.users[state.indexedUser].followers--
   },
-
   CHANGE_USER(state, i) {
     state.indexedUser = i
   },
-
   SET_COUNT(state, count) {
     state.count = count
   },
-
   SET_USERS(state, payload) {
     state.users = payload
   },
-
   CREATE_EVENT(state, event) {
     return state.events.push(event)
   },
-
   UPDATE_EVENT(state, updatedEvent) {
     const index = getEventIndexById(state, updatedEvent.id)
 
@@ -400,7 +395,6 @@ export const mutations = {
       date: updatedEvent.date,
     })
   },
-
   DELETE_EVENT(state, eventId) {
     const index = getEventIndexById(state, eventId)
 
@@ -411,8 +405,53 @@ export const mutations = {
 
     return state.events.splice(index, 1)
   },
-
   SET_WEEKENDS_ENABLED(state, enabled) {
     state.weekendsVisible = enabled
   },
+  SET_USER(state, user) {
+    if (user.dob) {
+      const [year, month, day] = user.dob.split('-')
+
+      user.year = year
+      user.month = month
+      user.day = day
+    }
+    state.user = user
+  },
+  SET_USER_TYPE(state, type) {
+    state.userType = type
+  },
+  SET_DEFAULT_USER_IMAGE(state, url) {
+    state.defaultUserImage = url
+  },
+  SET_USER_PHOTO(state, url) {
+    const user = state.user
+    user.participants[user.participants.length - 1].photoUrl = url
+    this.commit('SET_USER', user)
+  },
+  SET_USER_PHOTO_FILE(state, file) {
+    const user = state.user
+    user.participants[user.participants.length - 1].photoFile = file
+    this.commit('SET_USER', user)
+  },
+  RESET_USER(state) {
+    state.user = {
+      firstName: '',
+      lastName: '',
+      participants: [],
+      phone: '',
+    }
+  },
+}
+
+function validateUserHasFullInfo(user) {
+  const validFirstName = user.firstName !== null
+  const validLastName = user.lastName !== null
+  const validEmail = user.email !== null
+  const validDob = user.dob !== null
+  const validPhone = user.phone !== null
+  if (validFirstName && validLastName && validEmail && validDob && validPhone) {
+    return true
+  }
+  return false
 }

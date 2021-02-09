@@ -2,6 +2,8 @@
   <div>
     <a class="wavy-link" href="#" role="button">A wavy link</a>
 
+    <HighChart />
+
     <img
       src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/Harry-Potter-1-.jpg"
       alt=""
@@ -35,7 +37,10 @@
 </template>
 
 <script>
-export default {}
+import HighChart from '~/components/HighChart.vue'
+export default {
+  components: {HighChart},
+}
 </script>
 
 <style>

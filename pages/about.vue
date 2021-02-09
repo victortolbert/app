@@ -1,7 +1,10 @@
 <template>
   <main class="flex-1">
     <BasePageHeading> {{ $t('about') }} </BasePageHeading>
-
+    <h1>
+      Hello from
+      <span class="name">{{ name }}</span>
+    </h1>
     <div>
       <p>
         <button @click="$store.commit('increment')">
@@ -41,3 +44,13 @@
     </section>
   </main>
 </template>
+
+<script>
+export default {
+  asyncData() {
+    return {
+      name: process.server ? 'server' : 'client',
+    }
+  },
+}
+</script>

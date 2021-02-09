@@ -51,6 +51,8 @@ export const actions = {
   },
 
   fetchEvent({commit, getters, state}, id) {
+    console.log('here', id)
+
     if (id === state.event.id) {
       return state.event
     }
