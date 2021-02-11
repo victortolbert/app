@@ -149,7 +149,7 @@ export default {
     '@nuxtjs/auth-next',
     // '@nuxtjs/auth',
     // '@nuxtjs/sentry',
-    // '@oruga-ui/oruga/nuxt',
+    '@oruga-ui/oruga/nuxt',
     'nuxt-i18n',
     // 'nuxt-basic-auth-module',
     // 'nuxt-buefy',
@@ -179,9 +179,9 @@ export default {
     //     },
     //   },
     // ],
-    '@nuxtjs/sitemap',
+    // '@nuxtjs/sitemap',
     // '@/modules/test',
-    ['@/modules/module', {message: 'my module!!!!!!!!!!!!!!'}],
+    // ['@/modules/module', {message: 'my module!!!!!!!!!!!!!!'}],
     // '@/modules/io',
   ],
 
@@ -189,17 +189,17 @@ export default {
     '@nuxtjs/color-mode',
     '@nuxtjs/composition-api',
     '@nuxtjs/eslint-module',
-    '@nuxtjs/google-analytics',
-    '@nuxtjs/svg',
+    // '@nuxtjs/google-analytics',
+    // '@nuxtjs/svg',
     '@nuxtjs/tailwindcss',
     // '@nuxtjs/vuetify',
     // 'nuxt-ackee',
-    [
-      '@nuxt/typescript-build',
-      {
-        ignoreNotFoundWarnings: true,
-      },
-    ],
+    // [
+    //   '@nuxt/typescript-build',
+    //   {
+    //     ignoreNotFoundWarnings: true,
+    //   },
+    // ],
     // '@nuxtjs/netlify-files',
     // 'nuxt-svg-loader',
     // '@nuxtjs/pwa',
@@ -207,40 +207,41 @@ export default {
     // '@nuxtjs/sitemap'
 
     // Doc: https://github.com/nuxt-community/moment-module
-    '@nuxtjs/moment',
+    // '@nuxtjs/moment',
   ],
 
   plugins: [
-    '@/plugins/cookies',
+    // '@/plugins/cookies',
     '@/plugins/data-api',
     // '@/plugins/dynamic-marquee.client',
     '@/plugins/fontawesome',
-    '@/plugins/highcharts',
-    '@/plugins/i18n.client',
-    '@/plugins/init',
+    // '@/plugins/highcharts',
+    // '@/plugins/i18n.client',
+    // '@/plugins/init',
     // '@/plugins/inject-ww.client',
     '@/plugins/maps.client',
-    '@/plugins/markdown',
-    '@/plugins/menu.client',
-    '@/plugins/oruga',
-    '@/plugins/polyfills.client',
+    // '@/plugins/markdown',
+    // '@/plugins/menu.client',
+    // '@/plugins/oruga',
+    // '@/plugins/polyfills.client',
     '@/plugins/portal-vue',
-    '@/plugins/slick.client.js',
+    // '@/plugins/slick.client.js',
     // '@/plugins/socketio.client.js',
-    '@/plugins/to-title-case',
-    '@/plugins/v-tooltip',
+    // '@/plugins/to-title-case',
+    // '@/plugins/v-tooltip',
     '@/plugins/vue-chartkick.client',
     // '@/plugins/vue-cocomaterial-image',
     '@/plugins/vue-content-placeholders',
     // '@/plugins/vue-feather-icons',
-    '@/plugins/vue-good-table.client',
-    '@/plugins/vue-notifications',
-    '@/plugins/vue-scroll-reveal.client',
-    '@/plugins/vue-scrollactive',
-    '@/plugins/vue-select',
+    // '@/plugins/vue-good-table.client',
+    // '@/plugins/vue-notifications',
+    // '@/plugins/vue-scroll-reveal.client',
+    // '@/plugins/vue-scrollactive',
+    // '@/plugins/vue-select',
     '@/plugins/vue-tables-2.client',
-    '@/plugins/vue-trix.client',
-    '@/plugins/vuebars',
+    // '@/plugins/vue-tippy',
+    // '@/plugins/vue-trix.client',
+    // '@/plugins/vuebars',
     '@/plugins/vuelidate',
   ],
 
@@ -255,13 +256,13 @@ export default {
     // prefetchLinks: false,
     middleware: [
       // 'auth',
-      'pages',
+      // 'pages',
       // 'user-agent',
-      'visits',
+      // 'visits',
     ],
     trailingSlash: true,
-    linkActiveClass: 'is-active',
-    linkExactActiveClass: 'is-exact-active',
+    // linkActiveClass: 'is-active',
+    // linkExactActiveClass: 'is-exact-active',
   },
 
   // ackee: {
@@ -355,15 +356,15 @@ export default {
   //     enabled: process.env.BASIC_ENABLED === 'true', // require boolean value(nullable)
   //   },
 
-  buefy: {
-    css: false,
-    materialDesignIcons: true,
-  },
+  // buefy: {
+  //   css: false,
+  //   materialDesignIcons: true,
+  // },
 
-  colorMode: {
-    classSuffix: '',
-    preference: 'system',
-  },
+  // colorMode: {
+  //   classSuffix: '',
+  //   preference: 'system',
+  // },
 
   content: {
     markdown: {
@@ -381,16 +382,16 @@ export default {
     // },
   },
 
-  feed: [
-    // A default feed configuration object
-    {
-      path: '/feed.xml', // The route to your feed.
-      async create(feed) {}, // The create function (see below)
-      cacheTime: 1000 * 60 * 15, // How long should the feed be cached
-      type: 'rss2', // Can be: rss2, atom1, json1
-      data: ['Some additional data'], // Will be passed as 2nd argument to `create` function
-    },
-  ],
+  // feed: [
+  //   // A default feed configuration object
+  //   {
+  //     path: '/feed.xml', // The route to your feed.
+  //     async create(feed) {}, // The create function (see below)
+  //     cacheTime: 1000 * 60 * 15, // How long should the feed be cached
+  //     type: 'rss2', // Can be: rss2, atom1, json1
+  //     data: ['Some additional data'], // Will be passed as 2nd argument to `create` function
+  //   },
+  // ],
 
   // fetch: {
   //   client: false,
@@ -411,21 +412,16 @@ export default {
   //   id: process.env.GOOGLE_ANALYTICS_ID,
   // },
 
-  googleAnalytics: {
-    id: process.env.GOOGLE_ANALYTICS_ID || 'UA-76464598-5',
-    disabled: () => document.cookie.includes('ga_optout=true'),
-    debug: {
-      sendHitTask: !utils.isDev,
-    },
-    set: [{field: 'anonymizeIp', value: true}],
-  },
+  // googleAnalytics: {
+  //   id: process.env.GOOGLE_ANALYTICS_ID || 'UA-76464598-5',
+  //   disabled: () => document.cookie.includes('ga_optout=true'),
+  //   debug: {
+  //     sendHitTask: !utils.isDev,
+  //   },
+  //   set: [{field: 'anonymizeIp', value: true}],
+  // },
 
   i18n: {
-    // locales: [
-    //   {code: 'en', iso: 'en-US', file: 'en.js'},
-    //   {code: 'fr', iso: 'fr-FR', file: 'fr.js'},
-    //   {code: 'es', iso: 'es-ES', file: 'es.js'},
-    // ],
     locales: [
       {
         code: 'es',
@@ -448,22 +444,22 @@ export default {
     langDir: 'i18n/',
   },
 
-  // oruga: {
-  //   includeCss: true,
+  oruga: {
+    includeCss: true,
+  },
+
+  // sentry: {
+  //   dsn:
+  //     'https://c30dc69c78434050aed6f64b97cbd645@o244691.ingest.sentry.io/1422222',
+  //   config: {
+  //     maxBreadcrumbs: 50,
+  //     debug: false,
+  //   },
   // },
 
-  sentry: {
-    dsn:
-      'https://c30dc69c78434050aed6f64b97cbd645@o244691.ingest.sentry.io/1422222',
-    config: {
-      maxBreadcrumbs: 50,
-      debug: false,
-    },
-  },
-
-  sitemap: {
-    hostname: process.env.baseUrl || 'https://app.vticonsulting.com/',
-  },
+  // sitemap: {
+  //   hostname: process.env.baseUrl || 'https://app.vticonsulting.com/',
+  // },
 
   // sitemap: {
   //   hostname: utils.baseUrl,
@@ -556,20 +552,20 @@ export default {
   //   },
   // },
 
-  storybook: {
-    stories: [
-      '~/components/**/*.stories.mdx',
-      '~/components/**/*.stories.@(js|jsx|ts|tsx)',
-    ],
-    parameters: {
-      viewMode: 'docs',
-      actions: {argTypesRegex: '^on[A-Z].*'},
-    },
-    addons: ['@storybook/addon-docs', '@storybook/addon-controls'],
-    webpackFinal(config) {
-      return config
-    },
-  },
+  // storybook: {
+  //   stories: [
+  //     '~/components/**/*.stories.mdx',
+  //     '~/components/**/*.stories.@(js|jsx|ts|tsx)',
+  //   ],
+  //   parameters: {
+  //     viewMode: 'docs',
+  //     actions: {argTypesRegex: '^on[A-Z].*'},
+  //   },
+  //   addons: ['@storybook/addon-docs', '@storybook/addon-controls'],
+  //   webpackFinal(config) {
+  //     return config
+  //   },
+  // },
 
   tailwindcss: {
     // configPath: '@/config/tailwind.config.js',
@@ -577,17 +573,17 @@ export default {
     exposeConfig: true,
   },
 
-  typescript: {
-    typeCheck: {
-      eslint: {
-        files: './**/*.{ts,js,vue}',
-      },
-    },
-  },
+  // typescript: {
+  //   typeCheck: {
+  //     eslint: {
+  //       files: './**/*.{ts,js,vue}',
+  //     },
+  //   },
+  // },
 
-  netlifyFiles: {
-    existingFilesDirectory: './netlify',
-  },
+  // netlifyFiles: {
+  //   existingFilesDirectory: './netlify',
+  // },
 
   // http: {
   //   https: !utils.isDev,
@@ -610,22 +606,20 @@ export default {
           name: '[path][name].[ext]',
         },
       })
-
       // @see https://github.com/nuxt/nuxt.js/pull/3480#issuecomment-404150387
-      config.output.globalObject = 'this'
-
-      if (context.isClient) {
-        // web workers are only available client-side
-        config.module.rules.push({
-          test: /\.worker\.js$/, // this will pick up all .js files that ends with ".worker.js"
-          loader: 'worker-loader',
-          exclude: /(node_modules)/,
-        })
-      }
+      // config.output.globalObject = 'this'
+      // if (context.isClient) {
+      //   // web workers are only available client-side
+      //   config.module.rules.push({
+      //     test: /\.worker\.js$/, // this will pick up all .js files that ends with ".worker.js"
+      //     loader: 'worker-loader',
+      //     exclude: /(node_modules)/,
+      //   })
+      // }
     },
-    babel: {
-      plugins: ['@babel/plugin-syntax-jsx'],
-    },
+    // babel: {
+    //   plugins: ['@babel/plugin-syntax-jsx'],
+    // },
     postcss: {
       plugins: {
         'postcss-import': {},

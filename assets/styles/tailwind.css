@@ -16,6 +16,10 @@ html {
   overflow-y: scroll;
 }
 
+[id] {
+  scroll-margin-top: 100px;
+}
+
 .themed {
   --fa-secondary-opacity: 0.5;
   --fa-primary-color: var(--color-primary);

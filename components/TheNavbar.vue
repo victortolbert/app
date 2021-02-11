@@ -18,7 +18,7 @@ export default defineComponent({
 
     const affiliate = reactive({
       id: 1,
-      name: 'autotrader',
+      name: 'Ema',
       theme: {
         nav: {
           class: 'bg-white text-gray-800',
@@ -354,14 +354,14 @@ export default defineComponent({
                 aria-labelledby="user-menu"
               >
                 <NuxtLink
-                  :to="{name: 'profile'}"
+                  :to="localePath({path: '/profile/'})"
                   class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                   role="menuitem"
                 >
                   {{ $t('my_profile') }}
                 </NuxtLink>
                 <NuxtLink
-                  :to="{name: 'team'}"
+                  :to="localePath({path: '/team/'})"
                   class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                   role="menuitem"
                 >
@@ -375,7 +375,7 @@ export default defineComponent({
                   {{ $t('volunteers') }}
                 </button>
                 <NuxtLink
-                  :to="{name: 'settings'}"
+                  :to="localePath({path: '/settings/'})"
                   class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                   role="menuitem"
                 >
@@ -404,28 +404,21 @@ export default defineComponent({
       <div class="pt-2 pb-3 space-y-1">
         <!-- Current: "bg-primary-50 border-primary-500 text-primary-700", Default: "border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700" -->
         <NuxtLink
-          :to="{name: 'dashboard'}"
+          :to="localePath({path: '/dashboard/'})"
           class="block py-2 pl-3 pr-4 text-base font-medium border-l-4 text-primary-700 border-primary-500 bg-primary-50 sm:pl-5 sm:pr-6"
         >
           {{ $t('dashboard') }}
         </NuxtLink>
 
         <NuxtLink
-          :to="{name: 'team'}"
+          :to="localePath({path: '/team/'})"
           class="block py-2 pl-3 pr-4 text-base font-medium text-gray-500 border-l-4 border-transparent hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 sm:pl-5 sm:pr-6"
         >
           {{ $t('team') }}
         </NuxtLink>
 
-        <a
-          href="#"
-          class="block py-2 pl-3 pr-4 text-base font-medium text-gray-500 border-l-4 border-transparent hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 sm:pl-5 sm:pr-6"
-        >
-          {{ $t('projects') }}
-        </a>
-
         <NuxtLink
-          :to="{name: 'calendar'}"
+          :to="localePath({path: '/calendar/'})"
           class="block py-2 pl-3 pr-4 text-base font-medium text-gray-500 border-l-4 border-transparent hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 sm:pl-5 sm:pr-6"
         >
           {{ $t('calendar') }}
@@ -476,14 +469,14 @@ export default defineComponent({
 
         <div class="mt-3 space-y-1">
           <NuxtLink
-            :to="{name: 'profile'}"
+            :to="localePath({path: '/profile/'})"
             class="block px-4 py-2 text-base font-medium text-gray-500 hover:text-gray-800 hover:bg-gray-100 sm:px-6"
           >
             {{ $t('my_profile') }}
           </NuxtLink>
 
           <NuxtLink
-            :to="{name: 'setttings'}"
+            :to="localePath({path: '/setttings/'})"
             class="block px-4 py-2 text-base font-medium text-gray-500 hover:text-gray-800 hover:bg-gray-100 sm:px-6"
           >
             {{ $t('settings') }}
@@ -535,22 +528,6 @@ export default defineComponent({
           </header>
 
           <article class="relative flex-1 px-4 mt-4 sm:px-6">
-            <!--
-  This example requires Tailwind CSS v2.0+
-
-  This example requires some changes to your config:
-
-  ```
-  // tailwind.config.js
-  module.exports = {
-    // ...
-    plugins: [
-      // ...
-      require('@tailwindcss/line-clamp'),
-    ]
-  }
-  ```
--->
             <div>
               <div class="flow-root mt-6">
                 <ul class="-my-5 divide-y divide-gray-200">
@@ -674,15 +651,15 @@ export default defineComponent({
               aria-labelledby="slide-over-heading"
             >
               <!--
-        Slide-over panel, show/hide based on slide-over state.
+                Slide-over panel, show/hide based on slide-over state.
 
-        Entering: "transform transition ease-in-out duration-500 sm:duration-700"
-          From: "translate-x-full"
-          To: "translate-x-0"
-        Leaving: "transform transition ease-in-out duration-500 sm:duration-700"
-          From: "translate-x-0"
-          To: "translate-x-full"
-      -->
+                Entering: "transform transition ease-in-out duration-500 sm:duration-700"
+                  From: "translate-x-full"
+                  To: "translate-x-0"
+                Leaving: "transform transition ease-in-out duration-500 sm:duration-700"
+                  From: "translate-x-0"
+                  To: "translate-x-full"
+              -->
               <div class="w-screen max-w-md">
                 <div
                   class="flex flex-col h-full overflow-y-scroll bg-white shadow-xl"
@@ -859,15 +836,15 @@ export default defineComponent({
     <div v-if="showNewProjectView" class="fixed inset-0 overflow-hidden">
       <div class="absolute inset-0 overflow-hidden">
         <!--
-      Background overlay, show/hide based on slide-over state.
+          Background overlay, show/hide based on slide-over state.
 
-      Entering: "ease-in-out duration-500"
-        From: "opacity-0"
-        To: "opacity-100"
-      Leaving: "ease-in-out duration-500"
-        From: "opacity-100"
-        To: "opacity-0"
-    -->
+          Entering: "ease-in-out duration-500"
+            From: "opacity-0"
+            To: "opacity-100"
+          Leaving: "ease-in-out duration-500"
+            From: "opacity-100"
+            To: "opacity-0"
+        -->
         <Transition
           enter-class="opacity-0"
           enter-active-class="duration-500 ease-in-out transition-medium"

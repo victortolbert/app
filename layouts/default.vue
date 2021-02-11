@@ -269,6 +269,33 @@ export default defineComponent({
       ...i18nSeo,
     }
   },
+  // created() {
+  //   this.$store.commit('SET_PROGRAM', initialState.program)
+  //   this.$store.commit('SET_FEATURED_VIDEO', initialState.featuredVideo)
+  //   this.$store.commit('SET_RELATIONSHIPS', initialState.relationships)
+  //   this.$store.commit(
+  //     'SET_PRE_SELECT_AMOUNT_OPTIONS',
+  //     initialState.preSelectAmountOptions,
+  //   )
+  //   this.$store.commit('SET_S3_BUCKET', initialState.s3Bucket)
+  //   this.$store.commit('SET_LANG', initialState.lang)
+  //   this.$store.commit(
+  //     'SET_BRAINTREE_MERCHANT_ID',
+  //     initialState.braintreeMerchantId,
+  //   )
+  //   this.$store.commit('SET_PAYMENT_URL', initialState.paymentUrl)
+  //   this.$store.commit('SET_RECEIPT_URL', initialState.receiptUrl)
+  //   this.$store.commit('SET_S3_BUCKET', initialState.s3Bucket)
+  //   this.$store.commit(
+  //     'SET_DOUBLE_THE_DONATION_KEY',
+  //     initialState.doubleTheDonationKey,
+  //   )
+  //   this.$store.commit(
+  //     'SET_MERCHANT_LEGAL_NAME',
+  //     initialState.merchantLegalName,
+  //   )
+  //   this.$store.commit('SET_MERCHANT_TAX_ID', initialState.merchantTaxId)
+  // },
   mounted() {
     this.$maps.makeAutoComplete(this.$refs.citySearch)
   },

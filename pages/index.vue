@@ -126,7 +126,7 @@ export default {
           </h3>
           <p class="mt-2 text-sm text-gray-500">
             Doloribus dolores nostrum quia qui natus officia quod et dolorem.
-            Sit repellendus qui ut at blanditiis et quo et molestiae.
+            Sit repellendus qui ut at blanditiis et quo et molestiae
           </p>
         </div>
         <span
@@ -139,3 +139,18 @@ export default {
     </div>
   </main>
 </template>
+<style scoped>
+main {
+  --color-primary: #b2b45d;
+  --color-on-primary: #444513;
+  --color-secondary: #ffdc18;
+  --color-on-secondary: #756000;
+  --color-tertiary: hsl(245, 70%, 30%);
+  --color-on-tertiary: #918bd3;
+  --color-surface: #f9f9f9;
+  --color-on-surface: #494848;
+
+  background: var(--color-primary);
+  color: var(--color-on-primary);
+}
+</style>

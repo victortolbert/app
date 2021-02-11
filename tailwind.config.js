@@ -83,8 +83,8 @@ module.exports = {
         // primary: colors.paprika,
         // primary: colors.emerald,
         // primary: colors.oliveGreen,
-        // primary: colors['flame-pea'],
-        primary: colors['regal-blue'],
+        primary: colors['flame-pea'],
+        // primary: colors['regal-blue'],
 
         // secondary: colors['silver-chalice'],
         // secondary: colors.coolGray,
@@ -93,8 +93,8 @@ module.exports = {
         // secondary: colors['tory-blue'],
         // secondary: colors['cornflower-blue'],
         // secondary: colors.mineShaft,
-        // secondary: colors.deepTeal,
-        secondary: colors['chathams-blue'],
+        secondary: colors.deepTeal,
+        // secondary: colors['chathams-blue'],
 
         // tertiary: colors['hokey-pokey'],
         // tertiary: colors.trueGray,

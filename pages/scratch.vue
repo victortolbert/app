@@ -2,7 +2,40 @@
   <div>
     <a class="wavy-link" href="#" role="button">A wavy link</a>
 
-    <HighChart />
+    <FeaturedVideo id="gwlDorikqgY" />
+
+    🌜 🌞
+
+    <o-field label="Simple">
+      <o-select
+        expanded
+        select-class="block w-full border-gray-300 rounded-md focus:outline-none focus:ring-primary-500 focus:border-primary-500"
+        placeholder="Select a name"
+      >
+        <option value="flint">Flint</option>
+        <option value="silver">Silver</option>
+      </o-select>
+    </o-field>
+
+    <GivingMarketPaymentForm
+      :program="$store.state.program"
+      :relationships="$store.state.relationships"
+      :pre-select-amount-options="$store.state.preSelectAmountOptions"
+      braintree-merchant-id="clientToken"
+      payment-url="payment"
+      receipt-url="reciept"
+    />
+
+    <div
+      class="border-primary-500 group hover:bg-white hover:shadow-lg hover:border-transparent"
+    >
+      <p class="text-primary-600 group-hover:text-gray-900">New Project</p>
+      <p class="text-primary-500 group-hover:text-gray-500">
+        Create a new project from a variety of starting templates.
+      </p>
+    </div>
+
+    <!-- <HighChart /> -->
 
     <img
       src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/Harry-Potter-1-.jpg"
@@ -37,9 +70,11 @@
 </template>
 
 <script>
-import HighChart from '~/components/HighChart.vue'
+import GivingMarketPaymentForm from '~/components/GivingMarketPaymentForm.vue'
 export default {
-  components: {HighChart},
+  components: {
+    GivingMarketPaymentForm,
+  },
 }
 </script>
 

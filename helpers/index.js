@@ -96,3 +96,17 @@ export const toTitleCase = str => {
 
 export const getEventIndexById = (state, eventId) =>
   state.events.findIndex(event => event.id.toString() === eventId.toString())
+
+export const Status = {
+  NOT_ENROLLED: 'Ready',
+  ACTIVE: 'Emailed',
+  PLEDGED: 'Pledged',
+  UNSUBSCRIBED: 'Unsubscribed',
+}
+
+export const PledgingStatus = {
+  NOT_ENROLLED: 'Ready',
+  ACTIVE: 'Emailed',
+  PLEDGED: 'Pledged',
+  UNSUBSCRIBED: 'Unsubscribed',
+}

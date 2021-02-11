@@ -12,10 +12,16 @@ const getEventIndexById = (state, eventId) =>
 export const state = () => ({
   activeEventName: 'Active Event Name',
   activeTab: 0,
+  avatarPath: '',
+  braintreeMerchantId: null,
   categories: {},
+  contacts: [],
+  contentGroup: '',
   count: 0,
   counter: 0,
+  countries: [],
   defaultUserImage: '',
+  doubleTheDonationKey: null,
   events: [
     {
       id: 10,
@@ -32,10 +38,27 @@ export const state = () => ({
     {id: 40, title: 'Release day', date: '2021-01-30'},
     {id: 50, title: 'The Future of Frontend', date: '2021-02-05'},
   ],
+  featuredVideo: {
+    id: 4,
+    description: 'Omnis sit cumque laudantium qui quod ducimus.',
+    hash: '9yzeWoelJ3M',
+    url: null,
+    original_url: 'http://www.youtube.com/watch?v=9yzeWoelJ3M',
+    source: 'youtube',
+    timestamp: '2015-12-30 14:30:08',
+  },
+  forcePageRouteRefresh: false,
   indexedUser: 0,
+  isBetaUser: false,
   isMenuOpen: false,
+  merchantLegalName: null,
+  merchantTaxId: null,
+  newUserPhoto: '',
+  newUserPhotoFile: '',
   open: false,
   page: 'index',
+  paymentUrl: '/payment',
+  photoDirty: false,
   places: [
     {
       name: 'Honolulu',
@@ -62,6 +85,79 @@ export const state = () => ({
         'Wandered the cobblestone streets and quaint lanes of the town, which has been designated a UNESCO World Heritage site. A walking tour revealed historic architecture, colonial landmarks and alluring shops and restaurants.',
     },
   ],
+  pledge: null,
+  preSelectAmountOptions: {
+    perlap_a: ['1', '2', '3', '5', '10'],
+    perlap_b: ['1', '2', '3', '5', '10'],
+    flat_a: ['30', '60', '90', '150', '300'],
+    flat_b: ['30', '60', '90', '150', '300'],
+  },
+  program: {
+    id: 1,
+    archived: 0,
+    decoded_event_name: 'Decoded Event Name',
+    deleted: 0,
+    event_name: 'Fun Run',
+    fun_run: '2021-02-05',
+    microsite: {
+      clean_overview_text_override: 'Overview Text Override',
+      microsite_color_theme: {
+        theme_name: 'default',
+      },
+      overview_text_override: 'Overview Text Override',
+      school_image_name: 'school-logo.png',
+    },
+    name: 'Springdale Elementary',
+    participants: [
+      {
+        id: 1,
+        first_name: 'Victor',
+        last_name: 'Tolbert',
+        participant_info: {
+          family_pledging_enabled: 1,
+          pledges: [
+            {
+              pledge_status_id: 1,
+              amount: 30,
+            },
+          ],
+        },
+        profile: {
+          image_name: 'victor.jpeg',
+          pledge_goal: 100,
+        },
+      },
+      {
+        id: 2,
+        first_name: 'Jeremy',
+        last_name: 'Doublestein',
+        participant_info: {
+          family_pledging_enabled: 1,
+          pledges: [
+            {
+              pledge_status_id: 1,
+              amount: 30,
+            },
+          ],
+        },
+        profile: {
+          image_name: 'jeremy.jpeg',
+          pledge_goal: 100,
+        },
+      },
+    ],
+    program_pledge_setting: {
+      flat_donate_only: 0,
+    },
+    show_corporate_matching_widget: false,
+    sponsor_convenience_fee: '2.00',
+    unit_flat_conversion: 0,
+    unit: {
+      modifier: 'per',
+      name: 'Challenge',
+      name_plural: 'Challenges',
+    },
+  },
   programs: [
     {
       name: 'Program Name',
@@ -106,7 +202,53 @@ export const state = () => ({
       },
     },
   ],
+  receiptUrl: '/thanks',
+  relationships: [
+    {
+      id: 1,
+      sponsor_type: 'Parent',
+      description: null,
+    },
+    {
+      id: 2,
+      sponsor_type: 'Grandparent',
+      description: null,
+    },
+    {
+      id: 3,
+      sponsor_type: 'Relative',
+      description: null,
+    },
+    {
+      id: 5,
+      sponsor_type: 'Family Friend',
+      description: null,
+    },
+    {
+      id: 6,
+      sponsor_type: 'Co-Worker',
+      description: null,
+    },
+    {
+      id: 7,
+      sponsor_type: 'Business',
+      description: null,
+    },
+    {
+      id: 8,
+      sponsor_type: 'Corporate Matching Gift',
+      description: '',
+    },
+    {
+      id: 99,
+      sponsor_type: 'Other',
+      description:
+        'All other types not listed.  The name will be listed.  The text will be stored under the specific pledge under the pledges table',
+    },
+  ],
   releases: [],
+  s3Bucket: null,
+  shareButtonsOnScreen: true,
   shipping: {},
   states: [],
   todos: [
@@ -145,6 +287,13 @@ export const state = () => ({
     'Technical Assistance',
     'Webinar',
   ],
+  user: {
+    firstName: 'Victor',
+    lastName: 'Tolbert',
+    email: 'victor.tolbert@gmail.com',
+    dob: '1966-07-07',
+    phone: '678-613-3400',
+  },
   users: [
     {
       name: 'Sophia Gonzalez',
@@ -441,6 +590,42 @@ export const mutations = {
       participants: [],
       phone: '',
     }
+  },
+  SET_PROGRAM(state, program) {
+    state.program = program
+  },
+  SET_S3_BUCKET(state, bucket) {
+    state.s3Bucket = bucket
+  },
+  SET_RELATIONSHIPS(state, relationships) {
+    state.relationships = relationships
+  },
+  SET_PRE_SELECT_AMOUNT_OPTIONS(state, preSelectAmountOptions) {
+    state.preSelectAmountOptions = preSelectAmountOptions
+  },
+  SET_BRAINTREE_MERCHANT_ID(state, braintreeMerchantId) {
+    state.braintreeMerchantId = braintreeMerchantId
+  },
+  SET_PAYMENT_URL(state, paymentUrl) {
+    state.paymentUrl = paymentUrl
+  },
+  SET_RECEIPT_URL(state, receiptUrl) {
+    state.receiptUrl = receiptUrl
+  },
+  SET_PLEDGE(state, pledge) {
+    state.pledge = pledge
+  },
+  SET_FEATURED_VIDEO(state, featuredVideo) {
+    state.featuredVideo = featuredVideo
+  },
+  SET_DOUBLE_THE_DONATION_KEY(state, key) {
+    state.doubleTheDonationKey = key
+  },
+  SET_MERCHANT_LEGAL_NAME(state, key) {
+    state.merchantLegalName = key
+  },
+  SET_MERCHANT_TAX_ID(state, key) {
+    state.merchantTaxId = key
   },
 }
 
