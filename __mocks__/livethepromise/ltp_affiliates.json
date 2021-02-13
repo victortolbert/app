@@ -1,6 +1,6 @@
 [
   {
-    "id_affiliate": 1,
+    "id": 1,
     "affiliate_name": "Promise686",
     "affiliate_desc": null,
     "affiliate_contact_name": "Andy Cook",
@@ -47,7 +47,7 @@
     "affiliate_time_zone": "America/New_York"
   },
   {
-    "id_affiliate": 4,
+    "id": 4,
     "affiliate_name": "Welcomed",
     "affiliate_desc": null,
     "affiliate_contact_name": "Scott Kingston",
@@ -94,7 +94,7 @@
     "affiliate_time_zone": "America/Chicago"
   },
   {
-    "id_affiliate": 5,
+    "id": 5,
     "affiliate_name": "Hands of Hope",
     "affiliate_desc": null,
     "affiliate_contact_name": "Amy Jo Fox",
@@ -141,7 +141,7 @@
     "affiliate_time_zone": "America/New_York"
   },
   {
-    "id_affiliate": 6,
+    "id": 6,
     "affiliate_name": "Restoration Rome",
     "affiliate_desc": null,
     "affiliate_contact_name": "Mary Margaret Mauer",
@@ -188,7 +188,7 @@
     "affiliate_time_zone": "America/New_York"
   },
   {
-    "id_affiliate": 7,
+    "id": 7,
     "affiliate_name": "Florida1.27",
     "affiliate_desc": null,
     "affiliate_contact_name": "Brian Strawser",
@@ -235,7 +235,7 @@
     "affiliate_time_zone": "America/New_York"
   },
   {
-    "id_affiliate": 8,
+    "id": 8,
     "affiliate_name": "Clement Arts",
     "affiliate_desc": null,
     "affiliate_contact_name": "Brad Griffith",
@@ -282,7 +282,7 @@
     "affiliate_time_zone": "America/New_York"
   },
   {
-    "id_affiliate": 9,
+    "id": 9,
     "affiliate_name": "Chosen For Life",
     "affiliate_desc": null,
     "affiliate_contact_name": "Stephanie Mann",
@@ -329,7 +329,7 @@
     "affiliate_time_zone": "America/New_York"
   },
   {
-    "id_affiliate": 10,
+    "id": 10,
     "affiliate_name": "Fostering Family Ministries Inc.",
     "affiliate_desc": null,
     "affiliate_contact_name": "Sherry Bouquet",
@@ -376,7 +376,7 @@
     "affiliate_time_zone": "America/New_York"
   },
   {
-    "id_affiliate": 12,
+    "id": 12,
     "affiliate_name": "Fostering the Family",
     "affiliate_desc": null,
     "affiliate_contact_name": "Betsy Ruch",
@@ -423,7 +423,7 @@
     "affiliate_time_zone": "America/New_York"
   },
   {
-    "id_affiliate": 13,
+    "id": 13,
     "affiliate_name": "Starfish Ministry",
     "affiliate_desc": null,
     "affiliate_contact_name": "Chuck Varadin",
@@ -470,7 +470,7 @@
     "affiliate_time_zone": "America/Los_Angeles"
   },
   {
-    "id_affiliate": 14,
+    "id": 14,
     "affiliate_name": "Olive Crest Family Care",
     "affiliate_desc": null,
     "affiliate_contact_name": "Donald Verleur",
@@ -517,7 +517,7 @@
     "affiliate_time_zone": "America/Los_Angeles"
   },
   {
-    "id_affiliate": 15,
+    "id": 15,
     "affiliate_name": "Kansas City Gracepoint",
     "affiliate_desc": null,
     "affiliate_contact_name": "",
@@ -564,7 +564,7 @@
     "affiliate_time_zone": null
   },
   {
-    "id_affiliate": 16,
+    "id": 16,
     "affiliate_name": "4KIDS",
     "affiliate_desc": null,
     "affiliate_contact_name": "Tom Lukasik",
@@ -611,7 +611,7 @@
     "affiliate_time_zone": "America/New_York"
   },
   {
-    "id_affiliate": 17,
+    "id": 17,
     "affiliate_name": "Grace Fellowship",
     "affiliate_desc": null,
     "affiliate_contact_name": "Faith Jennings",
@@ -658,7 +658,7 @@
     "affiliate_time_zone": "America/New_York"
   },
   {
-    "id_affiliate": 18,
+    "id": 18,
     "affiliate_name": "Fostering Joy",
     "affiliate_desc": null,
     "affiliate_contact_name": "Justin Oberndorfer",
@@ -705,7 +705,7 @@
     "affiliate_time_zone": "America/Chicago"
   },
   {
-    "id_affiliate": 19,
+    "id": 19,
     "affiliate_name": "Hope Community Church",
     "affiliate_desc": null,
     "affiliate_contact_name": "Kirk Belmont",
@@ -752,7 +752,7 @@
     "affiliate_time_zone": "America/New_York"
   },
   {
-    "id_affiliate": 20,
+    "id": 20,
     "affiliate_name": "Commission 127",
     "affiliate_desc": null,
     "affiliate_contact_name": "Betsey Bell",
@@ -799,7 +799,7 @@
     "affiliate_time_zone": "America/New_York"
   },
   {
-    "id_affiliate": 21,
+    "id": 21,
     "affiliate_name": "Every Church Every Child",
     "affiliate_desc": null,
     "affiliate_contact_name": "Carly Souza",
@@ -846,7 +846,7 @@
     "affiliate_time_zone": "America/Los_Angeles"
   },
   {
-    "id_affiliate": 22,
+    "id": 22,
     "affiliate_name": "Wellroot Family Services",
     "affiliate_desc": null,
     "affiliate_contact_name": "April McGlothin-Eller",
@@ -893,7 +893,7 @@
     "affiliate_time_zone": "America/New_York"
   },
   {
-    "id_affiliate": 24,
+    "id": 24,
     "affiliate_name": "Agape of Central Alabama",
     "affiliate_desc": null,
     "affiliate_contact_name": "Amanda Gunn",
@@ -940,7 +940,7 @@
     "affiliate_time_zone": "America/Chicago"
   },
   {
-    "id_affiliate": 25,
+    "id": 25,
     "affiliate_name": "Hope 1312 Collective",
     "affiliate_desc": null,
     "affiliate_contact_name": "Ally Christianson",
@@ -987,7 +987,7 @@
     "affiliate_time_zone": "America/New_York"
   },
   {
-    "id_affiliate": 26,
+    "id": 26,
     "affiliate_name": "FAM Anchor Churches",
     "affiliate_desc": null,
     "affiliate_contact_name": "",
@@ -1034,7 +1034,7 @@
     "affiliate_time_zone": null
   },
   {
-    "id_affiliate": 27,
+    "id": 27,
     "affiliate_name": "Restoration 225",
     "affiliate_desc": null,
     "affiliate_contact_name": "Lisa Christy",
@@ -1081,7 +1081,7 @@
     "affiliate_time_zone": "America/Los_Angeles"
   },
   {
-    "id_affiliate": 28,
+    "id": 28,
     "affiliate_name": "CoMission",
     "affiliate_desc": null,
     "affiliate_contact_name": "Kristen Friesen",
@@ -1128,7 +1128,7 @@
     "affiliate_time_zone": "America/New_York"
   },
   {
-    "id_affiliate": 29,
+    "id": 29,
     "affiliate_name": "Coalition of Care",
     "affiliate_desc": null,
     "affiliate_contact_name": "Chris Combs",
@@ -1175,7 +1175,7 @@
     "affiliate_time_zone": "America/New_York"
   },
   {
-    "id_affiliate": 30,
+    "id": 30,
     "affiliate_name": "4KIDS of Central Texas",
     "affiliate_desc": "",
     "affiliate_contact_name": "Bob Mardock",
@@ -1222,7 +1222,7 @@
     "affiliate_time_zone": "America/Chicago"
   },
   {
-    "id_affiliate": 32,
+    "id": 32,
     "affiliate_name": "GoProject",
     "affiliate_desc": null,
     "affiliate_contact_name": "",
@@ -1269,7 +1269,7 @@
     "affiliate_time_zone": "America/Chicago"
   },
   {
-    "id_affiliate": 33,
+    "id": 33,
     "affiliate_name": "New Oaks Community",
     "affiliate_desc": null,
     "affiliate_contact_name": "Daryl Gunnarson",
@@ -1316,7 +1316,7 @@
     "affiliate_time_zone": "America/New_York"
   },
   {
-    "id_affiliate": 34,
+    "id": 34,
     "affiliate_name": "Fostering Family Ministries",
     "affiliate_desc": null,
     "affiliate_contact_name": "Sherry Bouquet",
@@ -1363,7 +1363,7 @@
     "affiliate_time_zone": "America/New_York"
   },
   {
-    "id_affiliate": 35,
+    "id": 35,
     "affiliate_name": "Belong + Bloom",
     "affiliate_desc": null,
     "affiliate_contact_name": "Kristen Jones",
@@ -1410,7 +1410,7 @@
     "affiliate_time_zone": "America/Chicago"
   },
   {
-    "id_affiliate": 36,
+    "id": 36,
     "affiliate_name": "Dwell Orphan Care",
     "affiliate_desc": null,
     "affiliate_contact_name": "Heidi Mnkandhla",
@@ -1457,7 +1457,7 @@
     "affiliate_time_zone": "America/New_York"
   },
   {
-    "id_affiliate": 37,
+    "id": 37,
     "affiliate_name": "Project Belong",
     "affiliate_desc": null,
     "affiliate_contact_name": "Chris Seaton",
@@ -1504,7 +1504,7 @@
     "affiliate_time_zone": "America/New_York"
   },
   {
-    "id_affiliate": 38,
+    "id": 38,
     "affiliate_name": "Nebraska 117",
     "affiliate_desc": null,
     "affiliate_contact_name": "Tim Bowes",
@@ -1551,7 +1551,7 @@
     "affiliate_time_zone": "America/Chicago"
   },
   {
-    "id_affiliate": 39,
+    "id": 39,
     "affiliate_name": "Centre County Orphan Alliance",
     "affiliate_desc": null,
     "affiliate_contact_name": "",
@@ -1598,7 +1598,7 @@
     "affiliate_time_zone": "America/New_York"
   },
   {
-    "id_affiliate": 40,
+    "id": 40,
     "affiliate_name": "Ohio Ministry Network",
     "affiliate_desc": null,
     "affiliate_contact_name": "",
@@ -1645,7 +1645,7 @@
     "affiliate_time_zone": "America/New_York"
   },
   {
-    "id_affiliate": 42,
+    "id": 42,
     "affiliate_name": "The Advocate Mission",
     "affiliate_desc": null,
     "affiliate_contact_name": "Mark Moss",
@@ -1692,7 +1692,7 @@
     "affiliate_time_zone": "America/New_York"
   },
   {
-    "id_affiliate": 43,
+    "id": 43,
     "affiliate_name": "South Texas Alliance for Orphans",
     "affiliate_desc": null,
     "affiliate_contact_name": "Bethann Jackson",
@@ -1739,7 +1739,7 @@
     "affiliate_time_zone": "America/Chicago"
   },
   {
-    "id_affiliate": 44,
+    "id": 44,
     "affiliate_name": "DC127",
     "affiliate_desc": null,
     "affiliate_contact_name": "Cynthia Moreland",
@@ -1786,7 +1786,7 @@
     "affiliate_time_zone": "America/New_York"
   },
   {
-    "id_affiliate": 45,
+    "id": 45,
     "affiliate_name": "ema",
     "affiliate_desc": null,
     "affiliate_contact_name": "Charlee",

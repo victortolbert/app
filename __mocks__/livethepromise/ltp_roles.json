@@ -1,6 +1,6 @@
 [
   {
-    "id_role": -1,
+    "id": -1,
     "role_name": "Ignore",
     "role_desc": null,
     "role_scope": null,
@@ -13,7 +13,7 @@
     "is_interest": null
   },
   {
-    "id_role": 1,
+    "id": 1,
     "role_name": "Biological Father",
     "role_desc": null,
     "role_scope": "",
@@ -26,7 +26,7 @@
     "is_interest": null
   },
   {
-    "id_role": 2,
+    "id": 2,
     "role_name": "Biological Mother",
     "role_desc": null,
     "role_scope": null,
@@ -39,7 +39,7 @@
     "is_interest": null
   },
   {
-    "id_role": 3,
+    "id": 3,
     "role_name": "Bio Parent",
     "role_desc": null,
     "role_scope": null,
@@ -52,7 +52,7 @@
     "is_interest": null
   },
   {
-    "id_role": 4,
+    "id": 4,
     "role_name": "Sibling",
     "role_desc": null,
     "role_scope": "community_family",
@@ -65,7 +65,7 @@
     "is_interest": null
   },
   {
-    "id_role": 5,
+    "id": 5,
     "role_name": "Foster Dad",
     "role_desc": null,
     "role_scope": "community_family",
@@ -78,7 +78,7 @@
     "is_interest": null
   },
   {
-    "id_role": 6,
+    "id": 6,
     "role_name": "Grandfather",
     "role_desc": null,
     "role_scope": "community_family",
@@ -91,7 +91,7 @@
     "is_interest": null
   },
   {
-    "id_role": 7,
+    "id": 7,
     "role_name": "Grandmother",
     "role_desc": null,
     "role_scope": "community_family",
@@ -104,7 +104,7 @@
     "is_interest": null
   },
   {
-    "id_role": 8,
+    "id": 8,
     "role_name": "Aunt",
     "role_desc": null,
     "role_scope": "community_family",
@@ -117,7 +117,7 @@
     "is_interest": null
   },
   {
-    "id_role": 9,
+    "id": 9,
     "role_name": "Uncle",
     "role_desc": null,
     "role_scope": "community_family",
@@ -130,7 +130,7 @@
     "is_interest": null
   },
   {
-    "id_role": 10,
+    "id": 10,
     "role_name": "Foster Mom",
     "role_desc": null,
     "role_scope": "community_family",
@@ -143,7 +143,7 @@
     "is_interest": null
   },
   {
-    "id_role": 11,
+    "id": 11,
     "role_name": "Kinship",
     "role_desc": null,
     "role_scope": "community_family",
@@ -156,7 +156,7 @@
     "is_interest": null
   },
   {
-    "id_role": 12,
+    "id": 12,
     "role_name": "Adopted Child",
     "role_desc": null,
     "role_scope": "community_family",
@@ -169,7 +169,7 @@
     "is_interest": null
   },
   {
-    "id_role": 13,
+    "id": 13,
     "role_name": "Biological Child",
     "role_desc": null,
     "role_scope": "community_family",
@@ -182,7 +182,7 @@
     "is_interest": null
   },
   {
-    "id_role": 14,
+    "id": 14,
     "role_name": "Foster Child",
     "role_desc": null,
     "role_scope": "community_family",
@@ -195,7 +195,7 @@
     "is_interest": null
   },
   {
-    "id_role": 15,
+    "id": 15,
     "role_name": "Foster Family Child",
     "role_desc": null,
     "role_scope": "community_family",
@@ -208,7 +208,7 @@
     "is_interest": null
   },
   {
-    "id_role": 16,
+    "id": 16,
     "role_name": "Adoptive Mom",
     "role_desc": null,
     "role_scope": "community_family",
@@ -221,7 +221,7 @@
     "is_interest": null
   },
   {
-    "id_role": 17,
+    "id": 17,
     "role_name": "Adoptive Dad",
     "role_desc": null,
     "role_scope": "community_family",
@@ -234,7 +234,7 @@
     "is_interest": null
   },
   {
-    "id_role": 18,
+    "id": 18,
     "role_name": "Foster Family Member",
     "role_desc": null,
     "role_scope": "community_family",
@@ -247,7 +247,7 @@
     "is_interest": null
   },
   {
-    "id_role": 19,
+    "id": 19,
     "role_name": "Foster Family Staff",
     "role_desc": null,
     "role_scope": "community_family",
@@ -260,7 +260,7 @@
     "is_interest": null
   },
   {
-    "id_role": 20,
+    "id": 20,
     "role_name": "Foster Parent",
     "role_desc": null,
     "role_scope": "community_family",
@@ -273,7 +273,7 @@
     "is_interest": null
   },
   {
-    "id_role": 25,
+    "id": 25,
     "role_name": "Need Recipient",
     "role_desc": null,
     "role_scope": "people",
@@ -286,7 +286,7 @@
     "is_interest": null
   },
   {
-    "id_role": 30,
+    "id": 30,
     "role_name": "Prospective Volunteer",
     "role_desc": null,
     "role_scope": "community_volunteer",
@@ -299,7 +299,7 @@
     "is_interest": null
   },
   {
-    "id_role": 50,
+    "id": 50,
     "role_name": "No Longer Serving",
     "role_desc": null,
     "role_scope": "community_volunteer",
@@ -312,7 +312,7 @@
     "is_interest": null
   },
   {
-    "id_role": 75,
+    "id": 75,
     "role_name": "Taking a Break",
     "role_desc": null,
     "role_scope": "community_volunteer",
@@ -325,7 +325,7 @@
     "is_interest": null
   },
   {
-    "id_role": 79,
+    "id": 79,
     "role_name": "Event RSVPer",
     "role_desc": null,
     "role_scope": null,
@@ -338,7 +338,7 @@
     "is_interest": null
   },
   {
-    "id_role": 80,
+    "id": 80,
     "role_name": "Event Attendee",
     "role_desc": null,
     "role_scope": null,
@@ -351,7 +351,7 @@
     "is_interest": null
   },
   {
-    "id_role": 81,
+    "id": 81,
     "role_name": "Event Responder",
     "role_desc": null,
     "role_scope": "",
@@ -364,7 +364,7 @@
     "is_interest": null
   },
   {
-    "id_role": 82,
+    "id": 82,
     "role_name": "Event Host",
     "role_desc": null,
     "role_scope": null,
@@ -377,7 +377,7 @@
     "is_interest": null
   },
   {
-    "id_role": 93,
+    "id": 93,
     "role_name": "Church Network Representative",
     "role_desc": null,
     "role_scope": "church",
@@ -390,7 +390,7 @@
     "is_interest": null
   },
   {
-    "id_role": 94,
+    "id": 94,
     "role_name": "Lay Leader",
     "role_desc": null,
     "role_scope": "church",
@@ -403,7 +403,7 @@
     "is_interest": null
   },
   {
-    "id_role": 95,
+    "id": 95,
     "role_name": "Primary Church Staff Contact",
     "role_desc": null,
     "role_scope": "church",
@@ -416,7 +416,7 @@
     "is_interest": null
   },
   {
-    "id_role": 96,
+    "id": 96,
     "role_name": "Primary Lay Leader Contact",
     "role_desc": null,
     "role_scope": "church",
@@ -429,7 +429,7 @@
     "is_interest": null
   },
   {
-    "id_role": 97,
+    "id": 97,
     "role_name": "Church Staff Contact",
     "role_desc": null,
     "role_scope": "church",
@@ -442,7 +442,7 @@
     "is_interest": null
   },
   {
-    "id_role": 98,
+    "id": 98,
     "role_name": "Church Member",
     "role_desc": null,
     "role_scope": "church",
@@ -455,7 +455,7 @@
     "is_interest": null
   },
   {
-    "id_role": 99,
+    "id": 99,
     "role_name": "Need Requestor",
     "role_desc": null,
     "role_scope": "community_volunteer",
@@ -468,7 +468,7 @@
     "is_interest": null
   },
   {
-    "id_role": 100,
+    "id": 100,
     "role_name": "Volunteer",
     "role_desc": null,
     "role_scope": "community_volunteer",
@@ -481,7 +481,7 @@
     "is_interest": null
   },
   {
-    "id_role": 101,
+    "id": 101,
     "role_name": "TCC Volunteer",
     "role_desc": null,
     "role_scope": "tcc_volunteer",
@@ -494,7 +494,7 @@
     "is_interest": null
   },
   {
-    "id_role": 102,
+    "id": 102,
     "role_name": "Shared Volunteer",
     "role_desc": null,
     "role_scope": "community_volunteer",
@@ -507,7 +507,7 @@
     "is_interest": null
   },
   {
-    "id_role": 104,
+    "id": 104,
     "role_name": "Need Organizer",
     "role_desc": null,
     "role_scope": "community_volunteer",
@@ -520,7 +520,7 @@
     "is_interest": null
   },
   {
-    "id_role": 105,
+    "id": 105,
     "role_name": "Need Fulfiller",
     "role_desc": null,
     "role_scope": "community_volunteer",
@@ -533,7 +533,7 @@
     "is_interest": null
   },
   {
-    "id_role": 106,
+    "id": 106,
     "role_name": "Need Contributor",
     "role_desc": null,
     "role_scope": "community_volunteer",
@@ -546,7 +546,7 @@
     "is_interest": null
   },
   {
-    "id_role": 110,
+    "id": 110,
     "role_name": "Registered For Awareness Event",
     "role_desc": null,
     "role_scope": "community_volunteer",
@@ -559,7 +559,7 @@
     "is_interest": null
   },
   {
-    "id_role": 120,
+    "id": 120,
     "role_name": "Completed Awareness Event",
     "role_desc": null,
     "role_scope": "community_volunteer",
@@ -572,7 +572,7 @@
     "is_interest": null
   },
   {
-    "id_role": 130,
+    "id": 130,
     "role_name": "Husband",
     "role_desc": null,
     "role_scope": "group_people",
@@ -585,7 +585,7 @@
     "is_interest": null
   },
   {
-    "id_role": 131,
+    "id": 131,
     "role_name": "Wife",
     "role_desc": "",
     "role_scope": "group_people",
@@ -598,7 +598,7 @@
     "is_interest": null
   },
   {
-    "id_role": 133,
+    "id": 133,
     "role_name": "Group Member",
     "role_desc": null,
     "role_scope": "group_people",
@@ -611,7 +611,7 @@
     "is_interest": null
   },
   {
-    "id_role": 135,
+    "id": 135,
     "role_name": "Small Group Leader",
     "role_desc": null,
     "role_scope": "group_people",
@@ -624,7 +624,7 @@
     "is_interest": null
   },
   {
-    "id_role": 136,
+    "id": 136,
     "role_name": "Small Group Member",
     "role_desc": "",
     "role_scope": "group_people",
@@ -637,7 +637,7 @@
     "is_interest": null
   },
   {
-    "id_role": 210,
+    "id": 210,
     "role_name": "Registered For Training Event",
     "role_desc": null,
     "role_scope": "community_volunteer",
@@ -650,7 +650,7 @@
     "is_interest": null
   },
   {
-    "id_role": 220,
+    "id": 220,
     "role_name": "Equipped",
     "role_desc": null,
     "role_scope": "community_volunteer",
@@ -663,7 +663,7 @@
     "is_interest": null
   },
   {
-    "id_role": 230,
+    "id": 230,
     "role_name": "Home Church",
     "role_desc": null,
     "role_scope": "family",
@@ -676,7 +676,7 @@
     "is_interest": null
   },
   {
-    "id_role": 231,
+    "id": 231,
     "role_name": "Referred Church",
     "role_desc": null,
     "role_scope": "family",
@@ -689,7 +689,7 @@
     "is_interest": null
   },
   {
-    "id_role": 232,
+    "id": 232,
     "role_name": "Claimed Church",
     "role_desc": null,
     "role_scope": "family",
@@ -702,7 +702,7 @@
     "is_interest": null
   },
   {
-    "id_role": 234,
+    "id": 234,
     "role_name": "Assigned Church",
     "role_desc": null,
     "role_scope": "family",
@@ -715,7 +715,7 @@
     "is_interest": null
   },
   {
-    "id_role": 235,
+    "id": 235,
     "role_name": "Serving Church",
     "role_desc": null,
     "role_scope": "family",
@@ -728,7 +728,7 @@
     "is_interest": null
   },
   {
-    "id_role": 236,
+    "id": 236,
     "role_name": "Recruiting Church",
     "role_desc": null,
     "role_scope": "family",
@@ -741,7 +741,7 @@
     "is_interest": null
   },
   {
-    "id_role": 250,
+    "id": 250,
     "role_name": "Prospective Advocate",
     "role_desc": null,
     "role_scope": "prospect",
@@ -754,7 +754,7 @@
     "is_interest": null
   },
   {
-    "id_role": 251,
+    "id": 251,
     "role_name": "Level 1 Advocate Candidate",
     "role_desc": null,
     "role_scope": "prospect",
@@ -767,7 +767,7 @@
     "is_interest": null
   },
   {
-    "id_role": 252,
+    "id": 252,
     "role_name": "Level 2 Advocate Candidate",
     "role_desc": null,
     "role_scope": "prospect",
@@ -780,7 +780,7 @@
     "is_interest": null
   },
   {
-    "id_role": 253,
+    "id": 253,
     "role_name": "Level 3 Advocate Candidate",
     "role_desc": null,
     "role_scope": "prospect",
@@ -793,7 +793,7 @@
     "is_interest": null
   },
   {
-    "id_role": 260,
+    "id": 260,
     "role_name": "Pre-approved Advocate",
     "role_desc": null,
     "role_scope": "prospect",
@@ -806,7 +806,7 @@
     "is_interest": null
   },
   {
-    "id_role": 310,
+    "id": 310,
     "role_name": "Team Leader",
     "role_desc": null,
     "role_scope": "community_volunteer",
@@ -819,7 +819,7 @@
     "is_interest": null
   },
   {
-    "id_role": 320,
+    "id": 320,
     "role_name": "Child Mentor",
     "role_desc": null,
     "role_scope": "community_volunteer",
@@ -832,7 +832,7 @@
     "is_interest": null
   },
   {
-    "id_role": 330,
+    "id": 330,
     "role_name": "Family Helper",
     "role_desc": null,
     "role_scope": "community_volunteer",
@@ -845,7 +845,7 @@
     "is_interest": null
   },
   {
-    "id_role": 337,
+    "id": 337,
     "role_name": "CARE Volunteer",
     "role_desc": null,
     "role_scope": "community_volunteer",
@@ -858,7 +858,7 @@
     "is_interest": null
   },
   {
-    "id_role": 338,
+    "id": 338,
     "role_name": "HOPE Volunteer",
     "role_desc": null,
     "role_scope": "community_volunteer",
@@ -871,7 +871,7 @@
     "is_interest": null
   },
   {
-    "id_role": 339,
+    "id": 339,
     "role_name": "Virtual Volunteer",
     "role_desc": null,
     "role_scope": "community_volunteer",
@@ -884,7 +884,7 @@
     "is_interest": null
   },
   {
-    "id_role": 340,
+    "id": 340,
     "role_name": "Respite Care",
     "role_desc": null,
     "role_scope": "community_volunteer",
@@ -897,7 +897,7 @@
     "is_interest": null
   },
   {
-    "id_role": 341,
+    "id": 341,
     "role_name": "Babysitting 0-12 Hours",
     "role_desc": null,
     "role_scope": "community_volunteer",
@@ -910,7 +910,7 @@
     "is_interest": null
   },
   {
-    "id_role": 342,
+    "id": 342,
     "role_name": "Babysitting 0-72 Hours",
     "role_desc": null,
     "role_scope": "community_volunteer",
@@ -923,7 +923,7 @@
     "is_interest": null
   },
   {
-    "id_role": 345,
+    "id": 345,
     "role_name": "Childcare (Babysitting)",
     "role_desc": "",
     "role_scope": "community_volunteer",
@@ -936,7 +936,7 @@
     "is_interest": null
   },
   {
-    "id_role": 346,
+    "id": 346,
     "role_name": "Hospital Sitter",
     "role_desc": "",
     "role_scope": "community_volunteer",
@@ -949,7 +949,7 @@
     "is_interest": null
   },
   {
-    "id_role": 348,
+    "id": 348,
     "role_name": "Transporter",
     "role_desc": "",
     "role_scope": "community_volunteer",
@@ -962,7 +962,7 @@
     "is_interest": null
   },
   {
-    "id_role": 349,
+    "id": 349,
     "role_name": "Homework Help",
     "role_desc": null,
     "role_scope": "community_volunteer",
@@ -975,7 +975,7 @@
     "is_interest": null
   },
   {
-    "id_role": 350,
+    "id": 350,
     "role_name": "Prayer",
     "role_desc": "",
     "role_scope": "community_volunteer",
@@ -988,7 +988,7 @@
     "is_interest": null
   },
   {
-    "id_role": 360,
+    "id": 360,
     "role_name": "Encourager",
     "role_desc": "",
     "role_scope": "community_volunteer",
@@ -1001,7 +1001,7 @@
     "is_interest": null
   },
   {
-    "id_role": 370,
+    "id": 370,
     "role_name": "Standby Volunteer",
     "role_desc": null,
     "role_scope": "community_volunteer",
@@ -1014,7 +1014,7 @@
     "is_interest": null
   },
   {
-    "id_role": 550,
+    "id": 550,
     "role_name": "Church Staff",
     "role_desc": null,
     "role_scope": "advocate",
@@ -1027,7 +1027,7 @@
     "is_interest": null
   },
   {
-    "id_role": 551,
+    "id": 551,
     "role_name": "Pastor",
     "role_desc": null,
     "role_scope": "church",
@@ -1040,7 +1040,7 @@
     "is_interest": null
   },
   {
-    "id_role": 552,
+    "id": 552,
     "role_name": "Lead Pastor",
     "role_desc": null,
     "role_scope": "church",
@@ -1053,7 +1053,7 @@
     "is_interest": null
   },
   {
-    "id_role": 553,
+    "id": 553,
     "role_name": "Care Community Coordinator",
     "role_desc": null,
     "role_scope": "church",
@@ -1066,7 +1066,7 @@
     "is_interest": null
   },
   {
-    "id_role": 554,
+    "id": 554,
     "role_name": "CarePortal Coordinator",
     "role_desc": null,
     "role_scope": "church",
@@ -1079,7 +1079,7 @@
     "is_interest": null
   },
   {
-    "id_role": 560,
+    "id": 560,
     "role_name": "Lay Leader",
     "role_desc": null,
     "role_scope": "advocate",
@@ -1092,7 +1092,7 @@
     "is_interest": null
   },
   {
-    "id_role": 600,
+    "id": 600,
     "role_name": "Care Community",
     "role_desc": null,
     "role_scope": "community",
@@ -1105,7 +1105,7 @@
     "is_interest": null
   },
   {
-    "id_role": 700,
+    "id": 700,
     "role_name": "Level 1 Advocate",
     "role_desc": null,
     "role_scope": "advocate",
@@ -1118,7 +1118,7 @@
     "is_interest": null
   },
   {
-    "id_role": 701,
+    "id": 701,
     "role_name": "Level 2 Advocate",
     "role_desc": null,
     "role_scope": "advocate",
@@ -1131,7 +1131,7 @@
     "is_interest": null
   },
   {
-    "id_role": 702,
+    "id": 702,
     "role_name": "Level 3 Advocate",
     "role_desc": null,
     "role_scope": "advocate",
@@ -1144,7 +1144,7 @@
     "is_interest": null
   },
   {
-    "id_role": 705,
+    "id": 705,
     "role_name": "Promoter",
     "role_desc": null,
     "role_scope": "advocate",
@@ -1157,7 +1157,7 @@
     "is_interest": null
   },
   {
-    "id_role": 706,
+    "id": 706,
     "role_name": "Trainer",
     "role_desc": null,
     "role_scope": "advocate",
@@ -1170,7 +1170,7 @@
     "is_interest": null
   },
   {
-    "id_role": 707,
+    "id": 707,
     "role_name": "Data Tracker",
     "role_desc": null,
     "role_scope": "advocate",
@@ -1183,7 +1183,7 @@
     "is_interest": null
   },
   {
-    "id_role": 708,
+    "id": 708,
     "role_name": "Shephard",
     "role_desc": null,
     "role_scope": "advocate",
@@ -1196,7 +1196,7 @@
     "is_interest": null
   },
   {
-    "id_role": 710,
+    "id": 710,
     "role_name": "Church Advocate",
     "role_desc": null,
     "role_scope": "advocate",
@@ -1209,7 +1209,7 @@
     "is_interest": null
   },
   {
-    "id_role": 720,
+    "id": 720,
     "role_name": "Campus Advocate",
     "role_desc": null,
     "role_scope": "advocate",
@@ -1222,7 +1222,7 @@
     "is_interest": null
   },
   {
-    "id_role": 730,
+    "id": 730,
     "role_name": "Lead Advocate",
     "role_desc": null,
     "role_scope": "advocate",
@@ -1235,7 +1235,7 @@
     "is_interest": null
   },
   {
-    "id_role": 740,
+    "id": 740,
     "role_name": "Multi-Church Leader",
     "role_desc": null,
     "role_scope": "advocate",
@@ -1248,7 +1248,7 @@
     "is_interest": null
   },
   {
-    "id_role": 750,
+    "id": 750,
     "role_name": "Certified Trainer",
     "role_desc": null,
     "role_scope": "staff",
@@ -1261,7 +1261,7 @@
     "is_interest": null
   },
   {
-    "id_role": 752,
+    "id": 752,
     "role_name": "Certified Facilitator",
     "role_desc": null,
     "role_scope": "staff",
@@ -1274,7 +1274,7 @@
     "is_interest": null
   },
   {
-    "id_role": 754,
+    "id": 754,
     "role_name": "Certified Producer",
     "role_desc": null,
     "role_scope": "staff",
@@ -1287,7 +1287,7 @@
     "is_interest": null
   },
   {
-    "id_role": 790,
+    "id": 790,
     "role_name": "Staff - Employee",
     "role_desc": null,
     "role_scope": "staff",
@@ -1300,7 +1300,7 @@
     "is_interest": null
   },
   {
-    "id_role": 800,
+    "id": 800,
     "role_name": "Staff - Manager",
     "role_desc": null,
     "role_scope": "staff",
@@ -1313,7 +1313,7 @@
     "is_interest": null
   },
   {
-    "id_role": 810,
+    "id": 810,
     "role_name": "Staff - Leadership",
     "role_desc": null,
     "role_scope": "staff",
@@ -1326,7 +1326,7 @@
     "is_interest": null
   },
   {
-    "id_role": 830,
+    "id": 830,
     "role_name": "Staff - Administrator",
     "role_desc": null,
     "role_scope": "staff",
@@ -1339,7 +1339,7 @@
     "is_interest": null
   },
   {
-    "id_role": 990,
+    "id": 990,
     "role_name": "System Admin",
     "role_desc": null,
     "role_scope": "staff",
@@ -1352,7 +1352,7 @@
     "is_interest": null
   },
   {
-    "id_role": 992,
+    "id": 992,
     "role_name": "Affiliates Admin",
     "role_desc": "",
     "role_scope": "staff",
@@ -1365,7 +1365,7 @@
     "is_interest": null
   },
   {
-    "id_role": 995,
+    "id": 995,
     "role_name": "Super Admin",
     "role_desc": null,
     "role_scope": "staff",
@@ -1378,7 +1378,7 @@
     "is_interest": null
   },
   {
-    "id_role": 1004,
+    "id": 1004,
     "role_name": "Advocate Candidate",
     "role_desc": null,
     "role_scope": "advocate",
@@ -1391,7 +1391,7 @@
     "is_interest": null
   },
   {
-    "id_role": 1005,
+    "id": 1005,
     "role_name": "Advocate in Training",
     "role_desc": null,
     "role_scope": "advocate",
@@ -1404,7 +1404,7 @@
     "is_interest": null
   },
   {
-    "id_role": 1006,
+    "id": 1006,
     "role_name": "Certificed Advocate",
     "role_desc": null,
     "role_scope": "advocate",

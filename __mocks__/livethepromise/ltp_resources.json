@@ -1,6 +1,6 @@
 [
   {
-    "id_resource": 2,
+    "id": 2,
     "resource_name": "The Role of Lead Advocate",
     "resource_desc_short": "This resource defines the role of a Lead Advocate, and details how a Church Advocate Clinic equips a Lead Advocate to serve.",
     "resource_desc_long": "Good leadership is essential in building a sustainable ministry, and understanding the role of a Lead Advocate is key to finding the right leaders. This resource defines the role of a Lead Advocate, and details how a Church Advocate Clinic equips a Lead Advocate to serve.",
@@ -46,7 +46,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 3,
+    "id": 3,
     "resource_name": "Roles within a Church Advocate Team",
     "resource_desc_short": "This resource provides a list of roles and guidance for how ministry responsibilities may be divided and distributed. ",
     "resource_desc_long": "This resource provides a list of roles and guidance for how ministry responsibilities may be divided and distributed. ",
@@ -92,7 +92,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 4,
+    "id": 4,
     "resource_name": "Growing a Strong Advocate Team",
     "resource_desc_short": "This resource will guide you in who is needed, what to do when sharing the need for Advocate team volunteers, and what Advocate team volunteers can contribute.",
     "resource_desc_long": "Growing a strong Advocate team is necessary to the growth and sustainability of the ministry. This resource will guide you in who is needed, what to do when sharing the need for Advocate team volunteers, and what Advocate team volunteers can contribute.",
@@ -138,7 +138,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 5,
+    "id": 5,
     "resource_name": "Creating a MAP (Ministry Action Plan)",
     "resource_desc_short": "Ask God what your ministry should look like and where to focus your efforts, and then complete this Ministry Action Plan (MAP) as you to help make this vision a reality and to develop a strong FAM.",
     "resource_desc_long": "What is the vision for the FAM at your church? We invite you to ask God what the ministry should look like, and where to focus your efforts. Then, complete this Ministry Action Plan (MAP) as you to help make this vision a reality and to develop a strong FAM.",
@@ -184,7 +184,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 6,
+    "id": 6,
     "resource_name": "Creating Awareness Overview",
     "resource_desc_short": "This resource offers an overview of suggestions for creating awareness in your church.",
     "resource_desc_long": "Creating awareness may be the first step to awakening your congregation to the child welfare crisis. This resource offers an overview of suggestions for creating awareness in your church.",
@@ -230,7 +230,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 7,
+    "id": 7,
     "resource_name": "Engaging Volunteers in a FAM",
     "resource_desc_short": "This flowchart depicts the process of helping volunteers get plugged in following an awareness event.",
     "resource_desc_long": "This flowchart depicts the process of helping volunteers get plugged in following an awareness event.",
@@ -276,7 +276,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 11,
+    "id": 11,
     "resource_name": "Hosting a Movie Awareness Event: “ReMoved” and “Remember My Story”",
     "resource_desc_short": "This document provides guidance and discussion questions for a movie awareness event featuring \"ReMoved\" and \"Remember My Story.\"",
     "resource_desc_long": "Hosting a movie event is an impactful way to engage people and create awareness for your ministry. This document provides guidance for the event and discussion questions for \"ReMoved\" and \"Remember My Story.\"",
@@ -322,7 +322,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 12,
+    "id": 12,
     "resource_name": "Hosting a Movie Awareness Event: “Mully”",
     "resource_desc_short": "This document provides guidance and discussion questions for a movie awareness event featuring \"Mully.\"",
     "resource_desc_long": "Hosting a movie event is an impactful way to engage people and create awareness for your ministry. This document provides guidance for the event and discussion questions for \"Mully.\"",
@@ -368,7 +368,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 13,
+    "id": 13,
     "resource_name": "Hosting a Movie Awareness Event: “The Dropbox”",
     "resource_desc_short": "This document provides guidance and discussion questions for a movie awareness event featuring \"The Dropbox.\"",
     "resource_desc_long": "Hosting a movie event is an impactful way to engage people and create awareness for your ministry. This document provides guidance for the event and discussion questions for \"The Dropbox.\"",
@@ -414,7 +414,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 14,
+    "id": 14,
     "resource_name": "Hosting a Movie Awareness Event: “From the Mire”",
     "resource_desc_short": "This document provides guidance and discussion questions for a movie awareness event featuring \"From the Mire.\"",
     "resource_desc_long": "Hosting a movie event is an impactful way to engage people and create awareness for your ministry. This document provides guidance for the event and discussion questions for \"From the Mire.\"",
@@ -460,7 +460,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 15,
+    "id": 15,
     "resource_name": "Hosting a “Ready or Not” Small Group Study",
     "resource_desc_short": "Check out this overview for tips and guidance on hosting a 6 or 8-week long study of Pam Parish's book, Ready or Not: 30 Day Discovery for Families Growing through Foster Care & Adoption.",
     "resource_desc_long": "Want to host a small group study of Pam Parish's book, Ready or Not: 30 Day Discovery for Families Growing through Foster Care & Adoption? Check out this overview for tips and guidance on hosting a 6 or 8-week long study.",
@@ -506,7 +506,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 16,
+    "id": 16,
     "resource_name": "Hosting a Service Project",
     "resource_desc_short": "This resource provides a list of elements to include when planning a service project, as well as a list of suggested service projects.",
     "resource_desc_long": "Service projects are great ways to draw new interest in your ministry and give people a glimpse of how they can help. This resource provides a list of elements to include when planning a service project, as well as a list of suggested service projects.",
@@ -552,7 +552,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 18,
+    "id": 18,
     "resource_name": "Recruiting Volunteers",
     "resource_desc_short": "This resource defines the steps to creating a strong volunteer base.",
     "resource_desc_long": "Recruiting volunteers occurs naturally through creating awareness and through the process of surrounding families with Care Communities. This resource defines the steps to creating a strong volunteer base.",
@@ -598,7 +598,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 19,
+    "id": 19,
     "resource_name": "Equipping Volunteers",
     "resource_desc_short": "This resource provides guidance on planning, preparing, hosting, and following up after a Care Community Volunteer Orientation.",
     "resource_desc_long": "Every volunteer must complete the Care Community Volunteer Orientation, no matter their level of service. This resource provides guidance on planning, preparing, hosting, and following up after a Care Community Volunteer Orientation.",
@@ -644,7 +644,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 20,
+    "id": 20,
     "resource_name": "Counseling and Releasing Volunteers",
     "resource_desc_short": "Utilize this resource as a guide in the event that you face a situation with a volunteer that requires your redirection, counsel, and wisdom. ",
     "resource_desc_long": "Once volunteers are engaged in serving families, you may run into the occasional issue with someone not performing the required tasks. Utilize this resource as a guide in the event that you face a situation with a volunteer that requires your redirection, counsel, and wisdom. ",
@@ -690,7 +690,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 21,
+    "id": 21,
     "resource_name": "Launching a Care Community: Overview",
     "resource_desc_short": "This overview outlines the steps to forming a Care Community and tips to help the process run smoothly.",
     "resource_desc_long": "Establishing and maintaining Care Communities will likely be the central focus of your work. This overview outlines the steps to forming a Care Community and tips to help the process run smoothly.",
@@ -736,7 +736,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 22,
+    "id": 22,
     "resource_name": "Pertinent Information for Care Community Formation",
     "resource_desc_short": "This resource provides tips for launching Care Communities and methods of recruiting volunteers.",
     "resource_desc_long": "The goals of Care Community formation are to support the independence and ownership of the Care Community by its volunteers, and to launch a Care Community before a family in the process of becoming licensed receives their first placement. This resource provides tips for launching Care Communities and methods of recruiting volunteers.",
@@ -782,7 +782,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 23,
+    "id": 23,
     "resource_name": "Phone Call to Supported Family",
     "resource_desc_short": "Use this resource as a topical guide to explain and answer questions that arise. ",
     "resource_desc_long": "Building relationships between supported families and their Care Communities is key to the success of working together, and a phone call or in-person conversation is best practice due to the personal nature of the information to be relayed. Use this resource as a topical guide to explain and answer questions that arise. ",
@@ -828,7 +828,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 24,
+    "id": 24,
     "resource_name": "Launching a Care Community for Adoptive Families",
     "resource_desc_short": "This resource offers best practices on launching Care Communities for adoptive families.",
     "resource_desc_long": "All types of adoptive families face similar adjustments and struggles much like foster families, and as long as the adoptive family desires to be supported, the support of a Care Community is very appropriate. This resource offers best practices on launching Care Communities for adoptive families.",
@@ -874,7 +874,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 25,
+    "id": 25,
     "resource_name": "Hosting a Care Community Launch",
     "resource_desc_short": "Use this resource to guide you through preparing and hosting a Care Community launch.",
     "resource_desc_long": "Ready to host a Care Community Launch? Use this resource to guide you through preparing and hosting the event. The checklist and information forms included will help you stay organized and on track for a successful launch!",
@@ -920,7 +920,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 26,
+    "id": 26,
     "resource_name": "Relaunching a Care Community",
     "resource_desc_short": "Follow this guide when planning and preparing to relaunch a Care Community.",
     "resource_desc_long": "Need to relaunch a Care Community for a supported family? If a year has passed, the Care Community has changed significantly, or the needs of the family have changed, it may be time for a Re-Launch. Follow this guide when planning and preparing for a Re-Launch.",
@@ -966,7 +966,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 28,
+    "id": 28,
     "resource_name": "Care Community Team Leader Training: Overview",
     "resource_desc_short": "This resource gives an overview of Team Leader training, including how to prepare and complete the training, and how to support the Team Leader throughout the process and after the training is completed.",
     "resource_desc_long": "Effectively training the Team Leader is the key to creating independent Care Communities that will require minimal attention from you. This resource gives an overview of Team Leader training, including how to prepare and complete the training, and how to support the Team Leader throughout the process and after the training is completed.",
@@ -1012,7 +1012,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 29,
+    "id": 29,
     "resource_name": "Care Community Team Leader Training: 10 Simple Steps",
     "resource_desc_short": "This resource is a step-by-step guide to lead you through the Team Leader Training process. ",
     "resource_desc_long": "This resource is a step-by-step guide to lead you through the Team Leader Training process. ",
@@ -1058,7 +1058,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 30,
+    "id": 30,
     "resource_name": "Coaching Care Community Team Leaders",
     "resource_desc_short": "This resource is a helpful tool that provides good questions to ask your Team Leaders during your regular checkpoints.",
     "resource_desc_long": "Team Leaders need you to walk beside them, encourage them, and praise their important work. Everyone needs to know that they matter and that someone recognizes their efforts. This resource is a helpful tool that provides good questions to ask your Team Leaders during your regular checkpoints.",
@@ -1104,7 +1104,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 31,
+    "id": 31,
     "resource_name": "Certification for Foster Families: Overview",
     "resource_desc_short": "Although each state varies in the timing and specific requirements, this document contains a comprehensive list of commonly found elements required to vet foster families.",
     "resource_desc_long": "As an Advocate, it is important that you are familiar with the foster family certification process required in your state. Although each state varies in the timing and specific requirements, this document contains a comprehensive list of commonly found elements required to vet foster families.",
@@ -1150,7 +1150,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 32,
+    "id": 32,
     "resource_name": "Working with Child Welfare Agencies and Child Placing Agencies: Overview",
     "resource_desc_short": "This resource offers guidance on working with agencies because we believe that working closely with child welfare agencies can bring healing and grace to a broken system.",
     "resource_desc_long": "Our desire is for our church partners to work as closely as possible with their local, county, and state child welfare agencies, including private agencies where applicable. This resource offers guidance on working with agencies because we believe that working closely with child welfare agencies can bring healing and grace to a broken system.",
@@ -1196,7 +1196,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 33,
+    "id": 33,
     "resource_name": "Affirming Foster Families",
     "resource_desc_short": "This resource offers guidance on affirming foster families before and after the certification process is complete.",
     "resource_desc_long": "Churches affirm foster families by being loyal to them and committed in our support of them. This resource offers guidance on affirming foster families before and after the certification process is complete.",
@@ -1242,7 +1242,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 38,
+    "id": 38,
     "resource_name": "Email - Offering a Care Community to a New Foster Family",
     "resource_desc_short": "This resource provides an email template for reaching out, making an introduction, and offering a Care Community to a new foster family.",
     "resource_desc_long": "This resource provides an email template for reaching out, making an introduction, and offering a Care Community to a new foster family.",
@@ -1288,7 +1288,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 39,
+    "id": 39,
     "resource_name": "Email - Offering a Care Community to an Existing Foster Family",
     "resource_desc_short": "This resource provides an email template for offering a Care Community to an existing foster family.",
     "resource_desc_long": "This resource provides an email template for offering a Care Community to an existing foster family.",
@@ -1334,7 +1334,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 40,
+    "id": 40,
     "resource_name": "Email - Potential Volunteers for a Foster Family in Your Church",
     "resource_desc_short": "This resource provides an email template to potential volunteers for a Care Community. ",
     "resource_desc_long": "This resource provides an email template to potential volunteers for a Care Community. This email is a particularly good resource when contacting volunteers whose names were given by the supported family.",
@@ -1380,7 +1380,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 41,
+    "id": 41,
     "resource_name": "Email - Care Community Launch for a Foster Family in Your Church",
     "resource_desc_short": "This resource provides an email template for a Care Community Launch for a foster family in your church.",
     "resource_desc_long": "This resource provides an email template for a Care Community Launch for a foster family in your church.",
@@ -1426,7 +1426,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 42,
+    "id": 42,
     "resource_name": "Email - Potential Volunteers for a Foster Family Outside Your Church",
     "resource_desc_short": "This resource provides an email template for Care Community volunteers inviting them to serve a foster family outside of their church.",
     "resource_desc_long": "This resource provides an email template for Care Community volunteers inviting them to serve a foster family outside of their church.",
@@ -1472,7 +1472,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 43,
+    "id": 43,
     "resource_name": "Email - Care Community Launch for a Foster Family Outside Your Church",
     "resource_desc_short": "This resource provides an email template to send to volunteers for a Care Community Launch for a foster family outside of their church.",
     "resource_desc_long": "This resource provides an email template to send to volunteers for a Care Community Launch for a foster family outside of their church.",
@@ -1518,7 +1518,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 44,
+    "id": 44,
     "resource_name": "Prayer Guide for Church Advocates",
     "resource_desc_short": "Use this prayer guide as a resource as you pray through the specifics of your ministry.",
     "resource_desc_long": "Prayer is the foundational work necessary for development and growth to occur throughout the life of your FAM. Use this prayer guide as a resource as you pray through the specifics of your ministry.",
@@ -1564,7 +1564,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 45,
+    "id": 45,
     "resource_name": "Spiritual Preparation for Ministry",
     "resource_desc_short": "This resource offers encouragement as you spiritually prepare for ministry.",
     "resource_desc_long": "We recommend praying individually for the ministry and also gathering regularly as an Advocate Team to pray, dedicating a certain amount of time each meeting for prayer. This resource offers encouragement as you spiritually prepare for ministry.",
@@ -1610,7 +1610,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 46,
+    "id": 46,
     "resource_name": "Setting Goals",
     "resource_desc_short": "This resource will help you begin to think through the direction of your ministry so you can work toward beginning your ministry action plan.",
     "resource_desc_long": "Setting goals is an essential part of starting and growing your FAM. This resource will help you begin to think through the direction of your ministry so you can work toward beginning your ministry action plan.",
@@ -1656,7 +1656,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 47,
+    "id": 47,
     "resource_name": "Establishing Your FAM",
     "resource_desc_short": "This resource serves as a reminder that building this ministry is a marathon, not a sprint!",
     "resource_desc_long": "Establishing a sustainable FAM takes dedicated prayer, much time, and hard work. This resource serves as a reminder that building this ministry is a marathon, not a sprint!",
@@ -1702,7 +1702,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 48,
+    "id": 48,
     "resource_name": "Roadmap: Launching a Care Community Beginning with Awareness",
     "resource_desc_short": "This resource offers a roadmap from having an Awareness event to launching a Care Community.",
     "resource_desc_long": "This resource offers a roadmap from having an Awareness event to launching a Care Community.",
@@ -1748,7 +1748,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 68,
+    "id": 68,
     "resource_name": "Next Steps Following the Advocate Clinic",
     "resource_desc_short": "So you've been to a Clinic, but now what? Check out this resource for guidance on your next steps following an Advocate Clinic.",
     "resource_desc_long": "So you've been to a Clinic, but now what? Check out this resource for guidance on your next steps following an Advocate Clinic.",
@@ -1794,7 +1794,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 69,
+    "id": 69,
     "resource_name": "Determining The Focus Of Your FAM",
     "resource_desc_short": null,
     "resource_desc_long": "---",
@@ -1840,7 +1840,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 70,
+    "id": 70,
     "resource_name": "Setting Goals",
     "resource_desc_short": null,
     "resource_desc_long": "--",
@@ -1886,7 +1886,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 71,
+    "id": 71,
     "resource_name": "Creating Foster Care Awareness - Event Promotion",
     "resource_desc_short": "This resource offers ideas on what to share, and how to promote your event.",
     "resource_desc_long": "Once you have decided which Awareness Event you’ll host and have the necessary follow-up events scheduled, it’s time to spread the word to your congregation! This resource offers ideas on what to share, and how to promote your event.",
@@ -1932,7 +1932,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 72,
+    "id": 72,
     "resource_name": "Hosting a FAM Awareness Event",
     "resource_desc_short": "Utilize this document when planning and preparing to host a FAM Awareness event, as it details the most important steps for a successful event.",
     "resource_desc_long": "Utilize this document when planning and preparing to host a FAM Awareness event, as it details the most important steps for a successful event.",
@@ -1978,7 +1978,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 73,
+    "id": 73,
     "resource_name": "Foster Care: Common Abbreviations and Terms",
     "resource_desc_short": "This resource can help decode some of the commonly used abbreviations and terms in foster care.",
     "resource_desc_long": "Confused by the abundance of acronyms floating around? Never fear - this resource can help decode some of the commonly used abbreviations and terms in foster care.",
@@ -2024,7 +2024,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 74,
+    "id": 74,
     "resource_name": "Bringing Them Home",
     "resource_desc_short": "An animated video that describes the opportunity churches and families have to help vulnerable children and help set them in homes that provide love and a forever family.",
     "resource_desc_long": "Explore the opportunity for churches and families to help vulnerable children as they travel the path of child welfare; ultimately setting them in homes that provide love and a forever family. Psalm 68:6 - \"God sets the lonely in families.\"",
@@ -2070,7 +2070,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 75,
+    "id": 75,
     "resource_name": "Live The Promise",
     "resource_desc_short": "An animated video that describes how churches and families can help support vulnerable children, living out the promise God makes in Psalm 68:6, which says, \"God sets the lonely in families.\"",
     "resource_desc_long": "Did you know that children in foster care are at much higher risk for incarceration, sex trafficking, and unwed pregnancy. If just one family from each church in the U.S. welcomed a foster child, then every foster child in America would be able to receive the love, nurture, accountability, and hope they desperately need. Psalm 68:6 promises that “God sets the lonely in families,” and we want to put this promise into action. Created by Polymath Innovations for the Live The Promise.",
@@ -2116,7 +2116,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 76,
+    "id": 76,
     "resource_name": "Care Communities: Why Support a Foster Family?",
     "resource_desc_short": "Join a Care Community at your church! Your support of a foster family enables them to foster stronger and longer.",
     "resource_desc_long": "Join a Care Community at your church! Your support of a foster family enables them to foster stronger and longer.",
@@ -2162,7 +2162,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 77,
+    "id": 77,
     "resource_name": "How Care Communities Support Families",
     "resource_desc_short": "This video gives an overview of how Care Communities support families, sharing about the roles of family helpers, child mentors, and team leader.",
     "resource_desc_long": "This video gives an overview of how Care Communities support families, sharing about the roles of family helpers, child mentors, and team leader.",
@@ -2208,7 +2208,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 78,
+    "id": 78,
     "resource_name": "Care Communities: The Peters Family",
     "resource_desc_short": "See the Peters family's journey through fostering with the support of a Care Community around them.",
     "resource_desc_long": "See the Peters family's journey through fostering with the support of a Care Community around them.",
@@ -2254,7 +2254,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 79,
+    "id": 79,
     "resource_name": "A Promise Story: The Masters Family",
     "resource_desc_short": "The story of the Masters family is one of many playing out in foster homes supported by churches with a Family Advocacy Ministry (FAM).",
     "resource_desc_long": "This Promise story depicts the importance of one family in the life of a child in foster care and the significance that a church can make in offering support to foster families. The story of the Masters family is one of many playing out in foster homes supported by churches with a Family Advocacy Ministry. \r\n\r\nProduced by Stuart Atkins (www.stuartatkinsfilms.com)",
@@ -2300,7 +2300,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 80,
+    "id": 80,
     "resource_name": "Care Communities: Fostering Joy Network",
     "resource_desc_short": "Fostering Joy equips churches to implement foster care ministries in their congregations.",
     "resource_desc_long": "Fostering Joy is a ministry of Joy Meadows. The ministry equips churches to implement foster care ministries in their congregations.",
@@ -2346,7 +2346,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 81,
+    "id": 81,
     "resource_name": "Video Testimony: The Zezulka Adoption Story (16:03)",
     "resource_desc_short": null,
     "resource_desc_long": "The Zezulka family shares their story of fostering and adopting three beautiful children.",
@@ -2392,7 +2392,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 82,
+    "id": 82,
     "resource_name": "Growing Up in Foster Care",
     "resource_desc_short": "One woman shares about her experience growing up in foster care, and how she came to know and embrace God's love for her.",
     "resource_desc_long": "One woman shares about her experience growing up in foster care, and how she came to know and embrace God's love for her.",
@@ -2438,7 +2438,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 83,
+    "id": 83,
     "resource_name": "Awareness Video: Foster Care Montage",
     "resource_desc_short": "This video raises awareness for the foster care system, and the vulnerable children in care who need loving homes.",
     "resource_desc_long": "This video raises awareness for the foster care system, and the vulnerable children in care who need loving homes.",
@@ -2484,7 +2484,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 84,
+    "id": 84,
     "resource_name": "Out from the Mire: An Allegory",
     "resource_desc_short": "This clip is an extended metaphor which parallels the life of a vulnerable child from leaving his biological mother into the difficult realities that face these children as they journey through the child welfare system.",
     "resource_desc_long": "This clip is an extended metaphor which parallels the life of a vulnerable child from leaving his biological mother into the difficult realities that face these children as they journey through the child welfare system.",
@@ -2530,7 +2530,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 85,
+    "id": 85,
     "resource_name": "Foster Care Awareness Event Presentation",
     "resource_desc_short": "This PowerPoint presentation can be adapted for your ministry to use when hosting Awareness Events.",
     "resource_desc_long": "This PowerPoint presentation can be adapted for your ministry to use when hosting Awareness Events.",
@@ -2576,7 +2576,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 86,
+    "id": 86,
     "resource_name": "Volunteer Response Card",
     "resource_desc_short": "Utilize this printable form to help track volunteer information and interest.",
     "resource_desc_long": "Utilize this printable form to help track volunteer information and interest.",
@@ -2622,7 +2622,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 87,
+    "id": 87,
     "resource_name": "The Basics of Foster Care - Awareness Event Handout",
     "resource_desc_short": "This handout details the basics of foster care, and is a good resource to include at Awareness Events.",
     "resource_desc_long": "This printable handout details the basics of foster care, and is a good resource to include at Awareness Events. It depicts Care Community Volunteer Roles, including Family Helper, Child Mentor, Team Leader, and Interim Caregiver.",
@@ -2668,7 +2668,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 88,
+    "id": 88,
     "resource_name": "Care Community Model (Full-Page)",
     "resource_desc_short": "A simple full-page printable handout that portrays the Care Community model.",
     "resource_desc_long": "A simple full-page printable handout that portrays the Care Community model.",
@@ -2714,7 +2714,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 89,
+    "id": 89,
     "resource_name": "Care Community Model and Awareness (Half-Sheet)",
     "resource_desc_short": "A simple half-page printable handout that portrays the Care Community model, and details the vision and goal of establishing FAMs and building Care Communities.",
     "resource_desc_long": "A simple half-page printable handout that portrays the Care Community model, and details the vision and goal of establishing FAMs and building Care Communities.",
@@ -2760,7 +2760,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 90,
+    "id": 90,
     "resource_name": "Orphan Sunday Prayer Guide",
     "resource_desc_short": "A prayer guide for the week leading up to Orphan Sunday in November.",
     "resource_desc_long": "A prayer guide for the week leading up to Orphan Sunday in November. This resource offers Scripture verses and specific prayers lifting up the needs of vulnerable children and families.",
@@ -2806,7 +2806,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 91,
+    "id": 91,
     "resource_name": "Facilitating an Effective Panel Discussion",
     "resource_desc_short": "This resource offers a plan for preparing and executing an effective panel.",
     "resource_desc_long": "Planning a great panel discussion may sometimes be the most impacting element of an Awareness Event. This resource offers a plan for preparing and executing an effective panel.",
@@ -2852,7 +2852,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 92,
+    "id": 92,
     "resource_name": "Possible Panelist Questions",
     "resource_desc_short": "This resource offers guidance on selecting your panelists, and provides a variety of good potential questions to ask the panelists.",
     "resource_desc_long": "This resource offers guidance on selecting your panelists, and provides a variety of good potential questions to ask the panelists.",
@@ -2898,7 +2898,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 93,
+    "id": 93,
     "resource_name": "Ready or Not Leader's Guide (6-Week Study)",
     "resource_desc_short": "This is a guide to assist you in leading a 6-week long study group in dynamic discussion of Pam Parish’s, Ready or Not: 30 Days of Discovery for Foster & Adoptive Parents.",
     "resource_desc_long": "This is a guide to assist you in leading a 6-week long study group in dynamic discussion of Pam Parish’s, Ready or Not: 30 Days of Discovery for Foster & Adoptive Parents. This resource provides discussion questions, daily devotionals, and guidance for weekly meetings.",
@@ -2944,7 +2944,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 94,
+    "id": 94,
     "resource_name": "Ready or Not Leader's Guide (8-Week Study)",
     "resource_desc_short": "This is a guide to assist you in leading an 8-week long study group in dynamic discussion of Pam Parish’s, Ready or Not: 30 Days of Discovery for Foster & Adoptive Parents.",
     "resource_desc_long": "This is a guide to assist you in leading an 8-week long study group in dynamic discussion of Pam Parish’s, Ready or Not: 30 Days of Discovery for Foster & Adoptive Parents. This resource provides discussion questions, daily devotionals, and guidance for weekly meetings.",
@@ -2990,7 +2990,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 95,
+    "id": 95,
     "resource_name": "Ordering \"Ready or Not\" Books",
     "resource_desc_short": "Visit the link below to place an order through Amazon for Pam Parish's book, Ready or Not: 30 Day Discovery for Families Growing through Foster Care & Adoption.",
     "resource_desc_long": "Visit the link below to place an order through Amazon for Pam Parish's book, Ready or Not: 30 Day Discovery for Families Growing through Foster Care & Adoption.",
@@ -3036,7 +3036,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 96,
+    "id": 96,
     "resource_name": "Adoption 101",
     "resource_desc_short": "Adoption 101 is designed for those who may sense God’s call to adopt and provides an overview of the various types of adoption.",
     "resource_desc_long": "Adoption 101 is designed for those who may sense God’s call to adopt and provides an overview of the various types of adoption. It offers an opportunity for potential adoptive families to explore and compare options for growing a family. Many adoption journeys begin here!",
@@ -3082,7 +3082,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 97,
+    "id": 97,
     "resource_name": "Awareness Event Follow-Up Email",
     "resource_desc_short": "Update this email template with the details of your upcoming events, and send it as a follow-up to your recent Awareness Event.",
     "resource_desc_long": "Update this email template with the details of your upcoming events, and send it as a follow-up to your recent Awareness Event.",
@@ -3128,7 +3128,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 98,
+    "id": 98,
     "resource_name": "NEW! Click HERE for video curriculum, print materials, and a step-by-step guide to facilitating \"Adoption 101\" at your church!",
     "resource_desc_short": null,
     "resource_desc_long": "---",
@@ -3174,7 +3174,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 99,
+    "id": 99,
     "resource_name": "Care Community Volunteer Orientation: Part 1",
     "resource_desc_short": "Part 1 of 2 Care Community Volunteer Orientation videos.",
     "resource_desc_long": "Part 1 of 2 Care Community Volunteer Orientation videos.",
@@ -3220,7 +3220,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 100,
+    "id": 100,
     "resource_name": "Care Community Volunteer Orientation: Part 2",
     "resource_desc_short": "Part 2 of 2 Care Community Volunteer Orientation videos.",
     "resource_desc_long": "Part 2 of 2 Care Community Volunteer Orientation videos.",
@@ -3266,7 +3266,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 101,
+    "id": 101,
     "resource_name": "Care Community Volunteer Orientation: Advocate's Guide",
     "resource_desc_short": "This resource contains some important points to highlight that are vital for your volunteers to know. ",
     "resource_desc_long": "When working within foster care, policies and practices change on a frequent basis. This resource contains some important points to highlight that are vital for your volunteers to know. You may consider sharing these highlights between Parts 1 and 2 of the Care Community Volunteer Orientation.",
@@ -3312,7 +3312,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 102,
+    "id": 102,
     "resource_name": "Care Community Volunteer Information Form",
     "resource_desc_short": "A printable form that will help you capture Care Community volunteer information and interest. ",
     "resource_desc_long": "A printable form that will help you capture Care Community volunteer information and interest. ",
@@ -3358,7 +3358,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 103,
+    "id": 103,
     "resource_name": "Volunteer Agreement (Sample)",
     "resource_desc_short": "A sample agreement for Care Community volunteers that details supervised and unsupervised assistance, and explains the standards for volunteering.",
     "resource_desc_long": "A sample agreement for Care Community volunteers that details supervised and unsupervised assistance, and explains the standards for volunteering. This agreement must be signed by volunteers who desire to serve children in foster care by supporting a foster family through participating in a Care Community.",
@@ -3404,7 +3404,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 104,
+    "id": 104,
     "resource_name": "Roles in a Care Community Handout",
     "resource_desc_short": "A handout that discusses the different roles in a Care Community, including family helper, child mentor, team leader, and interim caregiver.",
     "resource_desc_long": "A handout that discusses the different roles in a Care Community, including family helper, child mentor, team leader, and interim caregiver.",
@@ -3450,7 +3450,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 105,
+    "id": 105,
     "resource_name": "Connecting When Correcting Handout",
     "resource_desc_short": "This printable handout documents effective ideas for ways to positively connect with children in foster care when correction is necessary.",
     "resource_desc_long": "This printable handout documents effective ideas for ways to positively connect with children in foster care when correction is necessary. It includes the Georgia DFCS prohibited disciplinary practices, alternative and acceptable methods of discipline, and tips for making positive connections when correcting. ",
@@ -3496,7 +3496,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 106,
+    "id": 106,
     "resource_name": "2019 Georgia RPPS Guidelines",
     "resource_desc_short": "A printable handout of the Georgia Reasonable and Prudent Parenting Guidelines from 2019.",
     "resource_desc_long": "A printable handout of the Georgia Reasonable and Prudent Parenting Guidelines from 2019. This document includes supplemental caregiver guidelines, as well as overnight/sleepover guidelines.",
@@ -3542,7 +3542,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 107,
+    "id": 107,
     "resource_name": "Launching Multiple Care Communities Simultaneously",
     "resource_desc_short": "Use this resource as a guide for planning and hosting a multi-Care Community Launch.",
     "resource_desc_long": "In your church, you may already have numerous families who need support immediately. It is possible to launch several (even up to five) Care Communities, at one time. This requires very good organization, communication, and planning. Use this resource as a guide for planning and hosting a multi-Care Community Launch.",
@@ -3588,7 +3588,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 108,
+    "id": 108,
     "resource_name": "Maintaining Strong Care Communities",
     "resource_desc_short": "This resource gives ideas and best practices for maintaining strong Care Communities.",
     "resource_desc_long": "Care Communities are meant to be a tight-knit group of people who are serving together in unity, even though they more often serve separately than they do together. How can we ensure these Care Community volunteers continue to feel like a team after the Launch and Meet & Greet? This resource gives ideas and best practices for maintaining strong Care Communities.",
@@ -3634,7 +3634,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 109,
+    "id": 109,
     "resource_name": "What is a Care Community?",
     "resource_desc_short": "This video gives an overview of how Care Communities support families, sharing about the roles of family helpers, child mentors, and team leader.",
     "resource_desc_long": "This video gives an overview of how Care Communities support families, sharing about the roles of family helpers, child mentors, and team leader. It also explains how a Care Community works, and what is involved in getting started, from inviting others to serve in the Care Community, to identifying roles, and launching the team.",
@@ -3680,7 +3680,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 110,
+    "id": 110,
     "resource_name": "Supported Family Agreement",
     "resource_desc_short": "This agreement must be signed by families that desire the support of a Care Community.",
     "resource_desc_long": "This agreement must be signed by families that desire the support of a Care Community. It outlines the basic levels of support through supervised assistance and unsupervised assistance, and states that the supported family agrees to having a Care Community serve them.",
@@ -3726,7 +3726,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 111,
+    "id": 111,
     "resource_name": "Foster Family Information Request",
     "resource_desc_short": "This resource contains a list of information you will need in order to fill out the Care Community Launch forms and to set up an online calendar for your supported families.",
     "resource_desc_long": "This resource contains a list of information you will need in order to fill out the Care Community Launch forms and to set up an online calendar for your supported families. Copy and paste these questions into an email to your supported family.",
@@ -3772,7 +3772,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 112,
+    "id": 112,
     "resource_name": "Care Community Launch Checklist",
     "resource_desc_short": "This checklist walks you through hosting a Care Community Launch, and helps ensure that you complete all the necessary steps.",
     "resource_desc_long": "This checklist walks you through hosting a Care Community Launch, and helps ensure that you complete all the necessary steps.",
@@ -3818,7 +3818,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 113,
+    "id": 113,
     "resource_name": "Supported Family Contact Information Form",
     "resource_desc_short": "A printable form to document supported family contact information, including case worker/consultant, and ministry contacts. ",
     "resource_desc_long": "A printable form to document supported family contact information, including case worker/consultant, and ministry contacts. ",
@@ -3864,7 +3864,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 114,
+    "id": 114,
     "resource_name": "Care Community Sign-Up Form",
     "resource_desc_short": "A printable form to document Care Community volunteer information and to track monthly meal delivery dates and associated volunteers.",
     "resource_desc_long": "A printable form to document Care Community volunteer information and to track monthly meal delivery dates and associated volunteers.",
@@ -3910,7 +3910,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 115,
+    "id": 115,
     "resource_name": "Care Community One-Pager (Sample)",
     "resource_desc_short": "An example of a Care Community one-pager that includes photos, contact information, meal delivery assignments, and food preferences/allergies for the supported family.",
     "resource_desc_long": "An example of a Care Community one-pager that includes photos, contact information, meal delivery assignments, and food preferences/allergies for the supported family. A great resource for team leaders to pass out to Care Community members at the Care Community Launch.",
@@ -3956,7 +3956,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 116,
+    "id": 116,
     "resource_name": "Emails to Foster Family - Offering a Care Community",
     "resource_desc_short": "This resource includes an email template to send as a follow-up to a foster family after talking with them and offering a Care Community.",
     "resource_desc_long": "This resource includes an email template to send as a follow-up to a foster family after talking with them and offering a Care Community.",
@@ -4002,7 +4002,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 117,
+    "id": 117,
     "resource_name": "Email Examples",
     "resource_desc_short": "link",
     "resource_desc_long": "link",
@@ -4048,7 +4048,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 118,
+    "id": 118,
     "resource_name": "Email - Volunteer Joining an Existing Team",
     "resource_desc_short": "This resource provides an email template to send to a volunteer inviting them to join an existing Care Community.",
     "resource_desc_long": "This resource provides an email template to send to a volunteer inviting them to join an existing Care Community.",
@@ -4094,7 +4094,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 119,
+    "id": 119,
     "resource_name": "Email - Volunteer with an Immediate Assignment",
     "resource_desc_short": "This resource provides an email template to invite a volunteer to serve a family who is in need of a Care Community.",
     "resource_desc_long": "This resource provides an email template to invite a volunteer to serve a family who is in need of a Care Community.",
@@ -4140,7 +4140,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 120,
+    "id": 120,
     "resource_name": "Email - Volunteer Waiting for Available Assignment",
     "resource_desc_short": "This resource provides an email template with information on next steps for a volunteer who has attended Volunteer Orientation, and is now awaiting an assignment.",
     "resource_desc_long": "This resource provides an email template with information on next steps for a volunteer who has attended Volunteer Orientation, and is now awaiting an assignment.",
@@ -4186,7 +4186,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 121,
+    "id": 121,
     "resource_name": "Care Community Team Leader Training: Part 1",
     "resource_desc_short": "Part 1 of the Team Leader Training describes the role and impact of a Team Leader, explains the other roles of members of a Care Community, and offers tips on encouraging and supporting the family.",
     "resource_desc_long": "Part 1 of the Team Leader Training describes the role and impact of a Team Leader, explains the other roles of members of a Care Community, and offers tips on encouraging and supporting the family.",
@@ -4232,7 +4232,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 122,
+    "id": 122,
     "resource_name": "Care Community Team Leader Training: Part 2",
     "resource_desc_short": "Part 2 of the Team Leader Training includes best practices on preparing for the Meet and Greet, providing extra support at the beginning of a family's placement, dealing with sensitive issues, and taking next steps after comp",
     "resource_desc_long": "Part 2 of the Team Leader Training includes best practices on preparing for the Meet and Greet, providing extra support at the beginning of a family's placement, dealing with sensitive issues, and taking next steps after completing this training.",
@@ -4278,7 +4278,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 123,
+    "id": 123,
     "resource_name": "Resource File for Care Community Team Leaders",
     "resource_desc_short": null,
     "resource_desc_long": "link",
@@ -4324,7 +4324,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 124,
+    "id": 124,
     "resource_name": "Care Calendar Set-Up Instructions",
     "resource_desc_short": null,
     "resource_desc_long": "not needed",
@@ -4370,7 +4370,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 125,
+    "id": 125,
     "resource_name": "Team Leader Resource File",
     "resource_desc_short": "This resource file contains the information needed for team leaders, including best practices, tips for hosting events, email templates, and information pages.",
     "resource_desc_long": "This resource file contains the information needed for team leaders, including best practices, tips for hosting events, email templates, and information pages.",
@@ -4416,7 +4416,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 126,
+    "id": 126,
     "resource_name": "Foster Family Information Request,",
     "resource_desc_short": null,
     "resource_desc_long": "This document contains is a list of things you will need to know to both fill out the Care Community Launch forms and to set up the Care Calendar for your foster families. ",
@@ -4462,7 +4462,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 127,
+    "id": 127,
     "resource_name": "E-Form: Childcare and Respite Care Info",
     "resource_desc_short": "This information form is for the supported family to complete for childcare or respite caregivers, and includes important details and contact information.",
     "resource_desc_long": "This information form is for the supported family to complete for childcare or respite caregivers, and includes important details and contact information.",
@@ -4508,7 +4508,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 128,
+    "id": 128,
     "resource_name": "Care Calendar Set-Up Instructions",
     "resource_desc_short": null,
     "resource_desc_long": "not needed",
@@ -4554,7 +4554,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 129,
+    "id": 129,
     "resource_name": "Click HERE to find these articles and resources!",
     "resource_desc_short": null,
     "resource_desc_long": "link",
@@ -4600,7 +4600,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 130,
+    "id": 130,
     "resource_name": "Implementing RPPS in Georgia",
     "resource_desc_short": "This document provides guidance on how to implement the reasonable and prudent parenting standards in Georgia, and unpacks the changes made to the policy in 2019.",
     "resource_desc_long": "This document provides guidance on how to implement the reasonable and prudent parenting standards in Georgia, and unpacks the changes made to the policy in 2019.",
@@ -4646,7 +4646,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 131,
+    "id": 131,
     "resource_name": "GA DFCS Substitute Caregivers: Babysitting and Overnight Guidelines",
     "resource_desc_short": "This document contains the Georgia DFCS reasonable and prudent parenting guidelines for substitute caregivers in regards to babysitting and overnight.",
     "resource_desc_long": "This document contains the Georgia DFCS reasonable and prudent parenting guidelines for substitute caregivers in regards to babysitting and overnight.",
@@ -4692,7 +4692,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 132,
+    "id": 132,
     "resource_name": "GA DFCS RPPS Routine Caregiver Guidelines and Forms",
     "resource_desc_short": "This document contains the RPPS guidelines, the caregiver child safety agreement, and routine substitute caregiver documentation. ",
     "resource_desc_long": "This document contains the RPPS guidelines, the caregiver child safety agreement, and routine substitute caregiver documentation. ",
@@ -4738,7 +4738,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 168,
+    "id": 168,
     "resource_name": "GA DFCS RPPS Full Overview",
     "resource_desc_short": "This resource offers guidance on RPPS, includes a caregiver child safety agreement, and routine substitute caregiver documentation and instructions. Other related forms are included, as well as RPPS FAQs.",
     "resource_desc_long": "The standard characterized by careful and sensible parental decisions that maintain children’s health, safety, well-being and best interests while at the same time encouraging their emotional and developmental growth. This resource offers guidance on RPPS, includes a caregiver child safety agreement, and routine substitute caregiver documentation and instructions. Other related forms are included, as well as RPPS FAQs.",
@@ -4784,7 +4784,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 169,
+    "id": 169,
     "resource_name": "Foster Care - Common Abbreviations and Terms",
     "resource_desc_short": "Many of the abbreviations included in this list are commonly used in the world of foster care and it is important to become familiar with this terminology in order to better serve foster families and volunteers.",
     "resource_desc_long": "Many of the abbreviations included in this list are commonly used in the world of foster care and it is important to become familiar with this terminology in order to better serve foster families and volunteers.",
@@ -4830,7 +4830,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 170,
+    "id": 170,
     "resource_name": "Foster Family Certification Process (GA)",
     "resource_desc_short": null,
     "resource_desc_long": "---",
@@ -4876,7 +4876,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 171,
+    "id": 171,
     "resource_name": "Forming Support Groups",
     "resource_desc_short": "In this resource, you will find ideas for support groups that are helpful to adoptive and fostering families - from organic groups that form over time to more structured and intentional groups.",
     "resource_desc_long": "In this resource, you will find ideas for support groups that are helpful to adoptive and fostering families - from organic groups that form over time to more structured and intentional groups.",
@@ -4922,7 +4922,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 172,
+    "id": 172,
     "resource_name": "FAM FAQs: Bumps in the Road",
     "resource_desc_short": "This article addresses common frequently asked questions and possible solutions that may help when navigating these issues.",
     "resource_desc_long": "Once a FAM has been launched, challenges inevitably arise. This article addresses common frequently asked questions and possible solutions that may help when navigating these issues.",
@@ -4968,7 +4968,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 173,
+    "id": 173,
     "resource_name": "Communicating with Promise686 Staff",
     "resource_desc_short": "Use this resource as a guide on staying connected to the Promise686 team.",
     "resource_desc_long": "Please know that we want to help and advise you whenever you need it! We are here to coach, encourage, and support you. Use this resource as a guide on staying connected to the Promise686 team.",
@@ -5014,7 +5014,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 174,
+    "id": 174,
     "resource_name": "Essential Online Resources",
     "resource_desc_short": "This document contains a list of essential online resources for foster and adoptive families, and it includes websites, additional tools, and a list of useful tutorials.",
     "resource_desc_long": "This document contains a list of essential online resources for foster and adoptive families, and it includes websites, additional tools, and a list of useful tutorials.",
@@ -5060,7 +5060,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 175,
+    "id": 175,
     "resource_name": "Recommended Reading List",
     "resource_desc_short": "This resource provides a recommended reading list for foster and adoptive families, and includes books for both adults and children.",
     "resource_desc_long": "This resource provides a recommended reading list for foster and adoptive families, and includes books for both adults and children.",
@@ -5106,7 +5106,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 176,
+    "id": 176,
     "resource_name": "Recommended Viewing - Foster Care Resources",
     "resource_desc_short": "This resource list provides links to short films and clips that are recommended for those who want to learn more about foster care.",
     "resource_desc_long": "This resource list provides links to short films and clips that are recommended for those who want to learn more about foster care.",
@@ -5152,7 +5152,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 177,
+    "id": 177,
     "resource_name": "Recommended Links",
     "resource_desc_short": "This document contains links to resources for foster and adoptive families, including websites and blogs, infographics, and books.",
     "resource_desc_long": "This document contains links to resources for foster and adoptive families, including websites and blogs, infographics, and books.",
@@ -5198,7 +5198,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 178,
+    "id": 178,
     "resource_name": "GA DFCS RPPS Childcare Guidelines",
     "resource_desc_short": "A printable handout of the Georgia Reasonable and Prudent Parenting Guidelines.",
     "resource_desc_long": "A printable handout of the Georgia Reasonable and Prudent Parenting Guidelines. This document includes supplemental caregiver guidelines, as well as overnight/sleepover guidelines.",
@@ -5244,7 +5244,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 179,
+    "id": 179,
     "resource_name": "Clothing Closet Resource List (Georgia)",
     "resource_desc_short": "This resource contains information on clothing closets that can be utilized by foster families in Georgia.",
     "resource_desc_long": "This resource contains information on clothing closets that can be utilized by foster families in Georgia.",
@@ -5290,7 +5290,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 180,
+    "id": 180,
     "resource_name": "Amerigroup Providers by Georgia County",
     "resource_desc_short": "This spreadsheet contains Amerigroup provider information, organized by Georgia county.",
     "resource_desc_long": "This spreadsheet contains Amerigroup provider information, organized by Georgia county.",
@@ -5336,7 +5336,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 181,
+    "id": 181,
     "resource_name": "Organization for FAMs: Promise Serves",
     "resource_desc_short": "This resource highlights the features available in Promise Serves.",
     "resource_desc_long": "As your ministry grows you will quickly be unable to recall from memory who is serving whom, so good record keeping is essential! Promise Serves provides one place where all information about volunteers, foster and adoptive families, Care Communities, and events can be stored and recalled. This resource highlights the features available in Promise Serves.",
@@ -5382,7 +5382,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 182,
+    "id": 182,
     "resource_name": "Excel Spreadsheet: Volunteers",
     "resource_desc_short": null,
     "resource_desc_long": "---",
@@ -5428,7 +5428,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 183,
+    "id": 183,
     "resource_name": "Excel Spreadsheet: Care Communities",
     "resource_desc_short": null,
     "resource_desc_long": "---",
@@ -5474,7 +5474,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 184,
+    "id": 184,
     "resource_name": "Excel Spreadsheet: Foster Families",
     "resource_desc_short": null,
     "resource_desc_long": "---",
@@ -5520,7 +5520,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 185,
+    "id": 185,
     "resource_name": "September 2019, Vol. 35 - The Virtuous Cycle",
     "resource_desc_short": "The Advocate Journal: Resources and Encouragement for Ministry!",
     "resource_desc_long": "The Advocate Journal: Resources and Encouragement for Ministry!\r\n",
@@ -5566,7 +5566,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 186,
+    "id": 186,
     "resource_name": "June 2019, Vol. 34 - New Resources",
     "resource_desc_short": "The Advocate Journal: Resources and Encouragement for Ministry!",
     "resource_desc_long": "The Advocate Journal: Resources and Encouragement for Ministry!\r\n",
@@ -5612,7 +5612,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 187,
+    "id": 187,
     "resource_name": "January 2019, Vol. 32 - Strong Connections",
     "resource_desc_short": "The Advocate Journal: Resources and Encouragement for Ministry!",
     "resource_desc_long": "The Advocate Journal: Resources and Encouragement for Ministry!\r\n",
@@ -5658,7 +5658,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 188,
+    "id": 188,
     "resource_name": "November/Dec 2018, Vol. 31 - Keeping Count",
     "resource_desc_short": "The Advocate Journal: Resources and Encouragement for Ministry!",
     "resource_desc_long": "The Advocate Journal: Resources and Encouragement for Ministry!\r\n",
@@ -5704,7 +5704,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 189,
+    "id": 189,
     "resource_name": "October 2018, Vol. 30 - Orphan Sunday",
     "resource_desc_short": "The Advocate Journal: Resources and Encouragement for Ministry!",
     "resource_desc_long": "The Advocate Journal: Resources and Encouragement for Ministry!\r\n",
@@ -5750,7 +5750,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 190,
+    "id": 190,
     "resource_name": "September 2018, Vol. 29 - Plan Your Stand",
     "resource_desc_short": "The Advocate Journal: Resources and Encouragement for Ministry!",
     "resource_desc_long": "The Advocate Journal: Resources and Encouragement for Ministry!\r\n",
@@ -5796,7 +5796,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 191,
+    "id": 191,
     "resource_name": "July 2018, Vol. 28 - Be Encouraged",
     "resource_desc_short": "The Advocate Journal: Resources and Encouragement for Ministry!",
     "resource_desc_long": "The Advocate Journal: Resources and Encouragement for Ministry!\r\n",
@@ -5842,7 +5842,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 192,
+    "id": 192,
     "resource_name": "June 2018, Vol. 27 - Summer Refreshers",
     "resource_desc_short": "The Advocate Journal: Resources and Encouragement for Ministry!",
     "resource_desc_long": "The Advocate Journal: Resources and Encouragement for Ministry!\r\n",
@@ -5888,7 +5888,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 193,
+    "id": 193,
     "resource_name": "May 2018, Vol. 26 - #pyramidofpromise",
     "resource_desc_short": "The Advocate Journal: Resources and Encouragement for Ministry!",
     "resource_desc_long": "The Advocate Journal: Resources and Encouragement for Ministry!\r\n",
@@ -5934,7 +5934,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 194,
+    "id": 194,
     "resource_name": "April 2018, Vol. 25 - Stronger and Longer!",
     "resource_desc_short": "The Advocate Journal: Resources and Encouragement for Ministry!",
     "resource_desc_long": "The Advocate Journal: Resources and Encouragement for Ministry!\r\n",
@@ -5980,7 +5980,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 195,
+    "id": 195,
     "resource_name": "March 2018, Vol. 24 - The Promise is on the move!",
     "resource_desc_short": "The Advocate Journal: Resources and Encouragement for Ministry!",
     "resource_desc_long": "The Advocate Journal: Resources and Encouragement for Ministry!\r\n",
@@ -6026,7 +6026,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 196,
+    "id": 196,
     "resource_name": "February 2018, Vol. 23 - Wear It To Share It",
     "resource_desc_short": "The Advocate Journal: Resources and Encouragement for Ministry!",
     "resource_desc_long": "The Advocate Journal: Resources and Encouragement for Ministry!\r\n",
@@ -6072,7 +6072,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 197,
+    "id": 197,
     "resource_name": "January 2018, Vol. 22 - New Year, Procedures & Resources",
     "resource_desc_short": "The Advocate Journal: Resources and Encouragement for Ministry!",
     "resource_desc_long": "The Advocate Journal: Resources and Encouragement for Ministry!\r\n",
@@ -6118,7 +6118,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 198,
+    "id": 198,
     "resource_name": "December 2017, Vol. 21 - More Than Enough",
     "resource_desc_short": "The Advocate Journal: Resources and Encouragement for Ministry!",
     "resource_desc_long": "The Advocate Journal: Resources and Encouragement for Ministry!\r\n",
@@ -6164,7 +6164,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 199,
+    "id": 199,
     "resource_name": "November 2017, Vol. 20 - Stand Sunday Prayer Guide",
     "resource_desc_short": "The Advocate Journal: Resources and Encouragement for Ministry!",
     "resource_desc_long": "The Advocate Journal: Resources and Encouragement for Ministry!\r\n",
@@ -6210,7 +6210,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 200,
+    "id": 200,
     "resource_name": "October 2017, Vol. 19 - The Promise Blog",
     "resource_desc_short": "The Advocate Journal: Resources and Encouragement for Ministry!",
     "resource_desc_long": "The Advocate Journal: Resources and Encouragement for Ministry!\r\n",
@@ -6256,7 +6256,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 201,
+    "id": 201,
     "resource_name": "September 2017, Vol. 18 - FAMs, Fans, and more!",
     "resource_desc_short": "The Advocate Journal: Resources and Encouragement for Ministry!",
     "resource_desc_long": "The Advocate Journal: Resources and Encouragement for Ministry!\r\n",
@@ -6302,7 +6302,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 202,
+    "id": 202,
     "resource_name": "August 2017, Vol. 17 - Introducing CarePortal",
     "resource_desc_short": "The Advocate Journal: Resources and Encouragement for Ministry!",
     "resource_desc_long": "The Advocate Journal: Resources and Encouragement for Ministry!\r\n",
@@ -6348,7 +6348,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 203,
+    "id": 203,
     "resource_name": "June/July 2017, Vol. 16 - Stronger Together!",
     "resource_desc_short": "The Advocate Journal: Resources and Encouragement for Ministry!",
     "resource_desc_long": "The Advocate Journal: Resources and Encouragement for Ministry!\r\n",
@@ -6394,7 +6394,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 204,
+    "id": 204,
     "resource_name": "May 2017, Vol. 15 - At Home In Church",
     "resource_desc_short": "The Advocate Journal: Resources and Encouragement for Ministry!",
     "resource_desc_long": "The Advocate Journal: Resources and Encouragement for Ministry!\r\n",
@@ -6440,7 +6440,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 205,
+    "id": 205,
     "resource_name": "April 2017, Vol. 14 - Contagious Enthusiasm",
     "resource_desc_short": "The Advocate Journal: Resources and Encouragement for Ministry!",
     "resource_desc_long": "The Advocate Journal: Resources and Encouragement for Ministry!\r\n",
@@ -6486,7 +6486,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 206,
+    "id": 206,
     "resource_name": "March 2017, Vol. 13 - Adopting a New Curriculum",
     "resource_desc_short": "The Advocate Journal: Resources and Encouragement for Ministry!",
     "resource_desc_long": "The Advocate Journal: Resources and Encouragement for Ministry!\r\n",
@@ -6532,7 +6532,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 207,
+    "id": 207,
     "resource_name": "February 2017, Vol. 12 - Remembering Our Source of Strength",
     "resource_desc_short": "The Advocate Journal: Resources and Encouragement for Ministry!",
     "resource_desc_long": "The Advocate Journal: Resources and Encouragement for Ministry!\r\n",
@@ -6578,7 +6578,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 208,
+    "id": 208,
     "resource_name": "January 2017, Vol. 11 - A New Year of FAM",
     "resource_desc_short": "The Advocate Journal: Resources and Encouragement for Ministry!",
     "resource_desc_long": "The Advocate Journal: Resources and Encouragement for Ministry!\r\n",
@@ -6624,7 +6624,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 209,
+    "id": 209,
     "resource_name": "December 2016, Vol. 10 - Celebrating Volunteers",
     "resource_desc_short": "The Advocate Journal: Resources and Encouragement for Ministry!",
     "resource_desc_long": "The Advocate Journal: Resources and Encouragement for Ministry!\r\n",
@@ -6670,7 +6670,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 210,
+    "id": 210,
     "resource_name": "November 2016, Vol. 9 - Orphan Sunday Prayer Guide",
     "resource_desc_short": "The Advocate Journal: Resources and Encouragement for Ministry!",
     "resource_desc_long": "The Advocate Journal: Resources and Encouragement for Ministry!\r\n",
@@ -6716,7 +6716,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 211,
+    "id": 211,
     "resource_name": "October 2016, Vol. 8 - Childcare Wanted!",
     "resource_desc_short": "The Advocate Journal: Resources and Encouragement for Ministry!",
     "resource_desc_long": "The Advocate Journal: Resources and Encouragement for Ministry!\r\n",
@@ -6762,7 +6762,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 212,
+    "id": 212,
     "resource_name": "September 2016, Vol. 7 - Stand Sunday | Orphan Sunday",
     "resource_desc_short": "The Advocate Journal: Resources and Encouragement for Ministry!",
     "resource_desc_long": "The Advocate Journal: Resources and Encouragement for Ministry!\r\n",
@@ -6808,7 +6808,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 213,
+    "id": 213,
     "resource_name": "August 2016, Vol. 6 - Synergy In Ministry",
     "resource_desc_short": "The Advocate Journal: Resources and Encouragement for Ministry!",
     "resource_desc_long": "The Advocate Journal: Resources and Encouragement for Ministry!\r\n",
@@ -6854,7 +6854,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 214,
+    "id": 214,
     "resource_name": "July 2016, Vol. 5 - Live The Promise Web Calendar",
     "resource_desc_short": "The Advocate Journal: Resources and Encouragement for Ministry!",
     "resource_desc_long": "The Advocate Journal: Resources and Encouragement for Ministry!",
@@ -6900,7 +6900,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 215,
+    "id": 215,
     "resource_name": "June 2016, Vol. 4 - BIG FUN! Family Day & Summer Break Survival",
     "resource_desc_short": "The Advocate Journal: Resources and Encouragement for Ministry!",
     "resource_desc_long": "The Advocate Journal: Resources and Encouragement for Ministry!\r\n",
@@ -6946,7 +6946,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 216,
+    "id": 216,
     "resource_name": "May 2016, Vol. 3 - May Is Foster Care Awareness Month",
     "resource_desc_short": "The Advocate Journal: Resources and Encouragement for Ministry!",
     "resource_desc_long": "The Advocate Journal: Resources and Encouragement for Ministry!\r\n",
@@ -6992,7 +6992,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 217,
+    "id": 217,
     "resource_name": "April 2016, Vol. 2 - Movies: The Ticket To Awareness",
     "resource_desc_short": "The Advocate Journal: Resources and Encouragement for Ministry!",
     "resource_desc_long": "The Advocate Journal: Resources and Encouragement for Ministry!\r\n",
@@ -7038,7 +7038,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 218,
+    "id": 218,
     "resource_name": "March 2016, Vo1. 1 - The LTP Advocate Portal",
     "resource_desc_short": "The Advocate Journal: Resources and Encouragement for Ministry!",
     "resource_desc_long": "The Advocate Journal: Resources and Encouragement for Ministry!\r\n",
@@ -7084,7 +7084,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 219,
+    "id": 219,
     "resource_name": "Facilitator's Guide",
     "resource_desc_short": "This facilitator's guide details the necessary steps in preparing to host Adoption 101, including the timeline for preparation, promotion, facilitating the course, and follow-up.",
     "resource_desc_long": "This facilitator's guide details the necessary steps in preparing to host Adoption 101, including the timeline for preparation, promotion, facilitating the course, and follow-up.",
@@ -7130,7 +7130,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 220,
+    "id": 220,
     "resource_name": "Adoption: Common Abbreviations and Terms",
     "resource_desc_short": "This handout defines common adoption abbreviations and terms.",
     "resource_desc_long": "This handout defines common adoption abbreviations and terms.",
@@ -7176,7 +7176,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 221,
+    "id": 221,
     "resource_name": "Adoption 101: Next Steps Handout",
     "resource_desc_short": "This handout provides next steps for those considering adoption.",
     "resource_desc_long": "This handout provides next steps for those considering adoption. It includes questions for families to consider, as well as suggestions for conferences to attend.",
@@ -7222,7 +7222,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 222,
+    "id": 222,
     "resource_name": "Adoption 101: Response Card",
     "resource_desc_short": "Use this printable form to track the information and interests of your Adoption 101 attendees.",
     "resource_desc_long": "Use this printable form to track the information and interests of your Adoption 101 attendees.",
@@ -7268,7 +7268,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 223,
+    "id": 223,
     "resource_name": "Adoption 101: Speaker Invite",
     "resource_desc_short": "This email template is designed to be sent to an adoptive parent/couple who has agreed to share their story during Adoption 101.",
     "resource_desc_long": "This email template is designed to be sent to an adoptive parent/couple who has agreed to share their story during Adoption 101. This template guides the speaker in how to prepare to share their story.",
@@ -7314,7 +7314,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 224,
+    "id": 224,
     "resource_name": "Adoption 101: Part 1 - Overview of Adoption",
     "resource_desc_short": "Part 1 of the Adoption 101 video curriculum provides a general overview of adoption.",
     "resource_desc_long": "Part 1 of the Adoption 101 video curriculum provides a general overview of adoption.",
@@ -7360,7 +7360,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 225,
+    "id": 225,
     "resource_name": "Adoption 101: Part 2 - International Adoption",
     "resource_desc_short": "Part 2 of the Adoption 101 video curriculum provides information on international adoption.",
     "resource_desc_long": "Part 2 of the Adoption 101 video curriculum provides information on international adoption.",
@@ -7406,7 +7406,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 226,
+    "id": 226,
     "resource_name": "Adoption 101: Part 3 - Domestic Adoption",
     "resource_desc_short": "Part 3 of the Adoption 101 video curriculum provides information about domestic adoption.",
     "resource_desc_long": "Part 3 of the Adoption 101 video curriculum provides information about domestic adoption.",
@@ -7452,7 +7452,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 227,
+    "id": 227,
     "resource_name": "Domestic Infant Adoption: The Smith's Story",
     "resource_desc_short": "The Smith family shares their story of domestic infant adoption.",
     "resource_desc_long": "The Smith family shares their story of domestic infant adoption.",
@@ -7498,7 +7498,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 228,
+    "id": 228,
     "resource_name": "Adoption from Foster Care: The Ryan's Story",
     "resource_desc_short": "The Ryan family shares their journey of adopting from foster care.",
     "resource_desc_long": "The Ryan family shares their journey of adopting from foster care.",
@@ -7544,7 +7544,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 229,
+    "id": 229,
     "resource_name": "Adoption from Foster Care: The Zezulka's Story",
     "resource_desc_short": "The Zezulka family shares their story of fostering and adopting three beautiful children.",
     "resource_desc_long": "The Zezulka family shares their story of fostering and adopting three beautiful children.",
@@ -7590,7 +7590,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 230,
+    "id": 230,
     "resource_name": "Adoption 101: Next Steps Presentation",
     "resource_desc_short": "This PowerPoint presentation guides Adoption 101 attendees through good next steps to take as a follow-up to Adoption 101.",
     "resource_desc_long": "This PowerPoint presentation guides Adoption 101 attendees through good next steps to take as a follow-up to Adoption 101. The presentation highlights prayer, resources, and ways to stay connected in the journey.",
@@ -7636,7 +7636,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 231,
+    "id": 231,
     "resource_name": "Attendee Follow-Up Spreadsheet",
     "resource_desc_short": "This spreadsheet is a useful tool for tracking Adoption 101 attendee information for follow-up.",
     "resource_desc_long": "This spreadsheet is a useful tool for tracking Adoption 101 attendee information for follow-up.",
@@ -7682,7 +7682,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 232,
+    "id": 232,
     "resource_name": "Adoption 101: General Response",
     "resource_desc_short": "This email template is a general response that can be used for following up with a family after attending Adoption 101.",
     "resource_desc_long": "This email template is a general response that can be used for following up with a family after attending Adoption 101. It points to the Exploring Adoption and Foster Care resource that families can use to learn more about fostering and adopting.",
@@ -7728,7 +7728,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 233,
+    "id": 233,
     "resource_name": "Offering a \"Ready or Not\" Study",
     "resource_desc_short": "This email template is for following up with a family who expressed interest in hosting a study on Pam Parish's book, Ready or Not: 30 Days of Discovery for Foster & Adoptive Parents after attending Adoption 101.",
     "resource_desc_long": "This email template is for following up with a family who expressed interest in hosting a study on Pam Parish's book, Ready or Not: 30 Days of Discovery for Foster & Adoptive Parents after attending Adoption 101.",
@@ -7774,7 +7774,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 234,
+    "id": 234,
     "resource_name": "Interest in an Adoption Grant",
     "resource_desc_short": "This email template is for following up with a family who expressed interest in applying for an adoption grant after attending Adoption 101. ",
     "resource_desc_long": "This email template is for following up with a family who expressed interest in applying for an adoption grant after attending Adoption 101. The email explains the two types of grants offered by Promise686 and details the process for applying.",
@@ -7820,7 +7820,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 235,
+    "id": 235,
     "resource_name": "Offering an Adoption Mentor",
     "resource_desc_short": "This email template is for following up with a family who expressed interest in connecting with an adoption mentor after attending Adoption 101.",
     "resource_desc_long": "This email template is for following up with a family who expressed interest in connecting with an adoption mentor after attending Adoption 101.",
@@ -7866,7 +7866,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 236,
+    "id": 236,
     "resource_name": "Adoption from Foster Care",
     "resource_desc_short": "This email template is for following up with a family who expressed interest in adopting from foster care after attending Adoption 101.",
     "resource_desc_long": "This email template is for following up with a family who expressed interest in adopting from foster care after attending Adoption 101.",
@@ -7912,7 +7912,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 237,
+    "id": 237,
     "resource_name": "Exploring Adoption and Foster Care",
     "resource_desc_short": "This document highlights resources for both parents and children, including books, links to websites, and short films/videos to view when exploring fostering and/or adopting.",
     "resource_desc_long": "This document highlights resources for both parents and children, including books, links to websites, and short films/videos to view when exploring fostering and/or adopting.",
@@ -7958,7 +7958,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 238,
+    "id": 238,
     "resource_name": "Adoption 101: Child Placing Agency Fact Sheet (Georgia)",
     "resource_desc_short": "This is a list of Child Placing Agencies who serve Georgia, and includes information about their mission, process, estimated costs, special requirements, and timing.",
     "resource_desc_long": "This is a list of Child Placing Agencies who serve Georgia, and includes information about their mission, process, estimated costs, special requirements, and timing.",
@@ -8004,7 +8004,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 239,
+    "id": 239,
     "resource_name": "\"Ready or Not\" Study (6 Weeks)",
     "resource_desc_short": "This is a guide to assist you in leading a 6-week long study group in dynamic discussion of Pam Parish’s, Ready or Not: 30 Days of Discovery for Foster & Adoptive Parents.",
     "resource_desc_long": "This is a guide to assist you in leading a 6-week long study group in dynamic discussion of Pam Parish’s, Ready or Not: 30 Days of Discovery for Foster & Adoptive Parents. This resource provides discussion questions, daily devotionals, and guidance for weekly meetings.",
@@ -8050,7 +8050,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 240,
+    "id": 240,
     "resource_name": "\"Ready or Not\" Study (8 Weeks)",
     "resource_desc_short": "This is a guide to assist you in leading an 8-week long study group in dynamic discussion of Pam Parish’s, Ready or Not: 30 Days of Discovery for Foster & Adoptive Parents.",
     "resource_desc_long": "This is a guide to assist you in leading an 8-week long study group in dynamic discussion of Pam Parish’s, Ready or Not: 30 Days of Discovery for Foster & Adoptive Parents. This resource provides discussion questions, daily devotionals, and guidance for weekly meetings.",
@@ -8096,7 +8096,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 241,
+    "id": 241,
     "resource_name": "Using the Calendar",
     "resource_desc_short": "This training video covers everything you need to know to get started using the calendar.",
     "resource_desc_long": "<p>This training video covers everything you need to know to get started using the calendar. This includes:\r\n       <ul>\r\n        <li><strong>00:15</strong> - <a class=\"vimeo-play-time-link\" href=\"#;\" target=\"_self\" data-time=\"15\"> Adding an event via the events page</a><span class=\"vimeo-play-time-link-status\"></span></li>\r\n        <li><strong>00:40</strong> - <a class=\"vimeo-play-time-link\" href=\"#\" target=\"_self\" data-time=\"40\"> Adding an event on the calendar</a><span class=\"vimeo-play-time-link-status\"></span></li>\r\n        <li><strong>01:16</strong> - <a class=\"vimeo-play-time-link\" href=\"#\" target=\"_self\" data-time=\"76\"> Viewing event details</a><span class=\"vimeo-play-time-link-status\"></span></li>\r\n        <li><strong>01:27</strong> - <a class=\"vimeo-play-time-link\" href=\"#\" target=\"_self\" data-time=\"87\"> Changing calendar views</a><span class=\"vimeo-play-time-link-status\"></span></li>\r\n        <li><strong>02:23</strong> - <a class=\"vimeo-play-time-link\" href=\"#\" target=\"_self\" data-time=\"123\"> Adding meals to the calendar</a><span class=\"vimeo-play-time-link-status\"></span></li>\r\n        <li><strong>03:41</strong> - <a class=\"vimeo-play-time-link\" href=\"#\" target=\"_self\" data-time=\"221\"> Email reminders </a><span class=\"vimeo-play-time-link-status\"></span></li>\r\n        <li><strong>04:28</strong> - <a class=\"vimeo-play-time-link\" href=\"#\" target=\"_self\" data-time=\"268\"> Confirming / declining meals</a><span class=\"vimeo-play-time-link-status\"></span></li>\r\n        <li><strong>04:51</strong> - <a class=\"vimeo-play-time-link\" href=\"#\" target=\"_self\" data-time=\"294\"> Viewing meal responses</a><span class=\"vimeo-play-time-link-status\"></span></li>\r\n       </ul>\r\n      </p>';",
@@ -8142,7 +8142,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 245,
+    "id": 245,
     "resource_name": "How To: Handling Events",
     "resource_desc_short": "This training video covers all of the topics related to managing events.",
     "resource_desc_long": "<h3>About This Video <small>06/01/2019</small></h3>\r\n      <p>This training video covers all of the topics related to managing events. This includes:\r\n       <ul>\r\n        <li><strong>00:55</strong> - <a class=\"vimeo-play-time-link\" href=\"[removed]void(0);\" target=\"_self\" data-time=\"55\"> Event types</a><span class=\"vimeo-play-time-link-status\"></span></li>\r\n        <li><strong>01:24</strong> - <a class=\"vimeo-play-time-link\" href=\"[removed]void(0);\" target=\"_self\" data-time=\"84\"> Contact Person</a><span class=\"vimeo-play-time-link-status\"></span></li>\r\n        <li><strong>03:14</strong> - <a class=\"vimeo-play-time-link\" href=\"[removed]void(0);\" target=\"_self\" data-time=\"194\"> RSVP Options</a><span class=\"vimeo-play-time-link-status\"></span></li>\r\n        <li><strong>04:27</strong> - <a class=\"vimeo-play-time-link\" href=\"[removed]void(0);\" target=\"_self\" data-time=\"267\"> Response card options</a><span class=\"vimeo-play-time-link-status\"></span></li>\r\n        <li><strong>06:34</strong> - <a class=\"vimeo-play-time-link\" href=\"[removed]void(0);\" target=\"_self\" data-time=\"394\"> RSVP overview</a><span class=\"vimeo-play-time-link-status\"></span></li>\r\n        <li><strong>07:22</strong> - <a class=\"vimeo-play-time-link\" href=\"[removed]void(0);\" target=\"_self\" data-time=\"442\"> Message RSVPs </a><span class=\"vimeo-play-time-link-status\"></span></li>\r\n        <li><strong>07:57</strong> - <a class=\"vimeo-play-time-link\" href=\"[removed]void(0);\" target=\"_self\" data-time=\"477\"> Hosting event / response card</a><span class=\"vimeo-play-time-link-status\"></span></li>\r\n        <li><strong>11:39</strong> - <a class=\"vimeo-play-time-link\" href=\"[removed]void(0);\" target=\"_self\" data-time=\"699\"> Managing responders</a><span class=\"vimeo-play-time-link-status\"></span></li>\r\n        <li><strong>12:44</strong> - <a class=\"vimeo-play-time-link\" href=\"[removed]void(0);\" target=\"_self\" data-time=\"764\"> Manually entering volunteers</a><span class=\"vimeo-play-time-link-status\"></span></li>\r\n       </ul>\r\n       </p><p>The link that you will use for your volunteers will use to respond at the event is: <a href=\"'.base_url().'\" target=\"_blank\">'.base_url().'</a></p>\r\n       <p><strong>Important</strong> Your event will be available on the <a href=\"'.base_url().'rsvp\" target=\"_blank\">RSVP page</a> immediately but it will not show up on the event list for the volunteers response until 1 hour before the event.</p>\r\n      </p>",
@@ -8188,7 +8188,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 246,
+    "id": 246,
     "resource_name": "How To: Managing Families",
     "resource_desc_short": "This training video covers all of the topics related to managing families.",
     "resource_desc_long": "<h3>About This Video <small>06/07/2019</small></h3>\r\n      <p>This training video covers all of the topics related to managing families. This includes:\r\n      \r\n       <ul>\r\n        <li><strong>00:31</strong> - <a class=\"vimeo-play-time-link\" href=\"[removed]void(0);\" target=\"_self\" data-time=\"31\"> Family status</a><span class=\"vimeo-play-time-link-status\"></span></li>\r\n        <li><strong>03:57</strong> - <a class=\"vimeo-play-time-link\" href=\"[removed]void(0);\" target=\"_self\" data-time=\"237\"> Setting a church</a><span class=\"vimeo-play-time-link-status\"></span></li>\r\n        <li><strong>05:15</strong> - <a class=\"vimeo-play-time-link\" href=\"[removed]void(0);\" target=\"_self\" data-time=\"315\"> Contact information</a><span class=\"vimeo-play-time-link-status\"></span></li>\r\n        <li><strong>08:25</strong> - <a class=\"vimeo-play-time-link\" href=\"[removed]void(0);\" target=\"_self\" data-time=\"505\"> Awaiting families</a><span class=\"vimeo-play-time-link-status\"></span></li>\r\n        <li><strong>10:05</strong> - <a class=\"vimeo-play-time-link\" href=\"[removed]void(0);\" target=\"_self\" data-time=\"605\"> Refer a family</a><span class=\"vimeo-play-time-link-status\"></span></li>\r\n       </ul>\r\n       </p>\r\n       <p>Link for referring a family is: <a href=\"'.base_url().'refer-family\" target=\"_blank\">'.base_url().'refer-family</a>\r\n      </p>",
@@ -8234,7 +8234,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 247,
+    "id": 247,
     "resource_name": "How To: Refer Families for Support",
     "resource_desc_short": "This training video covers the end to end process for every step from family referral to an advocate claiming the family for support.",
     "resource_desc_long": "<h3>About This Video <small>01/27/2020</small></h3>\r\n      <p>This training video covers the end to end process for every step from family referral to an advocate claiming the family for support.\r\n      \r\n       <ul>\r\n        <li>Refer Family Link<br><a href=\"[BASEURL]refer-family\" target=\"_blank\">[BASEURL]refer-familyy</a><br><small>This link is to be used for people who want to refer a family for support (not the family themselves).</small></li>\r\n        <li>Request Care Community Support Link<br><a href=\"[BASEURL]request-care-community\" target=\"_blank\">[BASEURL]request-care-community</a><br><small>For privacy reasons, this link is to be used by the family only.</small></li>\r\n       </ul>\r\n       \r\n      </p>",
@@ -8280,7 +8280,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 248,
+    "id": 248,
     "resource_name": "How To: Setup a Care Community",
     "resource_desc_short": "This training video covers all of the topics related to managing care communities.",
     "resource_desc_long": "<h3>About This Video <small>06/11/2019</small></h3>\r\n      <p>This training video covers all of the topics related to managing care communities. This includes:\r\n       <ul>\r\n            \r\n        <li><strong>00:11</strong> - <a class=\"vimeo-play-time-link\" href=\"[removed]void(0);\" target=\"_self\" data-time=\"11\"> The role of a community</a><span class=\"vimeo-play-time-link-status\"></span></li>\r\n        <li><strong>01:07</strong> - <a class=\"vimeo-play-time-link\" href=\"[removed]void(0);\" target=\"_self\" data-time=\"67\"> Add a new care community</a><span class=\"vimeo-play-time-link-status\"></span></li>\r\n        <li><strong>05:36</strong> - <a class=\"vimeo-play-time-link\" href=\"[removed]void(0);\" target=\"_self\" data-time=\"336\"> Build a team</a><span class=\"vimeo-play-time-link-status\"></span></li>\r\n        <li><strong>09:55</strong> - <a class=\"vimeo-play-time-link\" href=\"[removed]void(0);\" target=\"_self\" data-time=\"595\"> Create cross-church teams</a><span class=\"vimeo-play-time-link-status\"></span></li>\r\n        <li><strong>11:59</strong> - <a class=\"vimeo-play-time-link\" href=\"[removed]void(0);\" target=\"_self\" data-time=\"719\"> Emailing the team</a><span class=\"vimeo-play-time-link-status\"></span></li>\r\n        <li><strong>12:17</strong> - <a class=\"vimeo-play-time-link\" href=\"[removed]void(0);\" target=\"_self\" data-time=\"737\"> Generate a one pager</a><span class=\"vimeo-play-time-link-status\"></span></li>\r\n        <li><strong>12:51</strong> - <a class=\"vimeo-play-time-link\" href=\"[removed]void(0);\" target=\"_self\" data-time=\"771\"> Closing a care community</a><span class=\"vimeo-play-time-link-status\"></span></li>\r\n        <li><strong>14:03</strong> - <a class=\"vimeo-play-time-link\" href=\"[removed]void(0);\" target=\"_self\" data-time=\"843\"> Quick Search</a><span class=\"vimeo-play-time-link-status\"></span></li>\r\n        \r\n       </ul>\r\n      </p>",
@@ -8326,7 +8326,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 249,
+    "id": 249,
     "resource_name": "How To: Manage Volunteers",
     "resource_desc_short": "This training video covers all of the topics related to managing volunteers.",
     "resource_desc_long": "<h3>About This Video <small>06/07/2019</small></h3>\r\n      <p>This training video covers all of the topics related to managing volunteers. This includes:\r\n       <ul>\r\n        <li><strong>00:42</strong> - <a class=\"vimeo-play-time-link\" href=\"[removed]void(0);\" target=\"_self\" data-time=\"42\"> Volunteer status</a><span class=\"vimeo-play-time-link-status\"></span></li>\r\n        <li><strong>01:53</strong> - <a class=\"vimeo-play-time-link\" href=\"[removed]void(0);\" target=\"_self\" data-time=\"113\"> Setting a church</a><span class=\"vimeo-play-time-link-status\"></span></li>\r\n        <li><strong>02:08</strong> - <a class=\"vimeo-play-time-link\" href=\"[removed]void(0);\" target=\"_self\" data-time=\"128\"> Contact information</a><span class=\"vimeo-play-time-link-status\"></span></li>\r\n        <li><strong>03:01</strong> - <a class=\"vimeo-play-time-link\" href=\"[removed]void(0);\" target=\"_self\" data-time=\"181\"> List volunteers</a><span class=\"vimeo-play-time-link-status\"></span></li>\r\n        <li><strong>04:47</strong> - <a class=\"vimeo-play-time-link\" href=\"[removed]void(0);\" target=\"_self\" data-time=\"287\"> Manually entering volunteers</a><span class=\"vimeo-play-time-link-status\"></span></li>\r\n        <li><strong>05:13</strong> - <a class=\"vimeo-play-time-link\" href=\"[removed]void(0);\" target=\"_self\" data-time=\"313\"> Request volunteer agreement</a><span class=\"vimeo-play-time-link-status\"></span></li>\r\n        <li><strong>05:50</strong> - <a class=\"vimeo-play-time-link\" href=\"[removed]void(0);\" target=\"_self\" data-time=\"350\"> Messaging volunteers</a><span class=\"vimeo-play-time-link-status\"></span></li>\r\n        <li><strong>06:02</strong> - <a class=\"vimeo-play-time-link\" href=\"[removed]void(0);\" target=\"_self\" data-time=\"362\"> Understanding roles</a><span class=\"vimeo-play-time-link-status\"></span></li>\r\n        <li><strong>07:55</strong> - <a class=\"vimeo-play-time-link\" href=\"[removed]void(0);\" target=\"_self\" data-time=\"475\"> Move volunteer to advocate</a><span class=\"vimeo-play-time-link-status\"></span></li>\r\n        <li><strong>08:28</strong> - <a class=\"vimeo-play-time-link\" href=\"[removed]void(0);\" target=\"_self\" data-time=\"508\"> Troubleshooting login problems</a><span class=\"vimeo-play-time-link-status\"></span></li>\r\n        \r\n       </ul>\r\n      </p>",
@@ -8372,7 +8372,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 250,
+    "id": 250,
     "resource_name": "Promise Serves Advocate Training Spring 2019",
     "resource_desc_short": null,
     "resource_desc_long": "<h3>About This Video <small>05/09/2019</small></h3>\r\n\t\t\t\t\t\t<p>This training webinar was hosted on April 22, 2019 and May 6, 2019. This video includes the most recent additions to Promise serves including:\r\n\t\t\t\t\t\t<ul>\r\n\t\t\t\t\t\t\t<li>Setting up events</li>\t\r\n\t\t\t\t\t\t\t<li>Building cross church teams</li>\r\n\t\t\t\t\t\t\t<li>Extending FAM offerings as your church</li>\r\n\t\t\t\t\t\t\t<li>Simple troubleshooting steps for common problems</li>\r\n\t\t\t\t\t\t\t<li>New features for events</li>\r\n\t\t\t\t\t\t\t<li>And more!</li>\r\n\t\t\t\t\t\t</ul></p>",
@@ -8418,7 +8418,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 251,
+    "id": 251,
     "resource_name": "Promise Serves Overview",
     "resource_desc_short": "This overview briefly explains the benefits and features of Promise Serves.",
     "resource_desc_long": "05/07/2019 - This overview briefly explains the benefits and features of Promise Serves.",
@@ -8464,7 +8464,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 252,
+    "id": 252,
     "resource_name": "Florida 1.27 Care Community Model",
     "resource_desc_short": null,
     "resource_desc_long": null,
@@ -8510,7 +8510,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 253,
+    "id": 253,
     "resource_name": "Florida 1.27 Connecting When Correcting Handout",
     "resource_desc_short": "Florida 1.27 Connecting When Correcting Handout",
     "resource_desc_long": "Florida 1.27 Connecting When Correcting Handout",
@@ -8556,7 +8556,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 254,
+    "id": 254,
     "resource_name": "Awareness Cheat Sheet",
     "resource_desc_short": null,
     "resource_desc_long": null,
@@ -8602,7 +8602,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 255,
+    "id": 255,
     "resource_name": "Foster Parent Guide 2019",
     "resource_desc_short": null,
     "resource_desc_long": null,
@@ -8648,7 +8648,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 256,
+    "id": 256,
     "resource_name": "Orientation Cheat Sheet",
     "resource_desc_short": null,
     "resource_desc_long": null,
@@ -8694,7 +8694,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 257,
+    "id": 257,
     "resource_name": "Orientation - Required Handout",
     "resource_desc_short": null,
     "resource_desc_long": null,
@@ -8740,7 +8740,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 258,
+    "id": 258,
     "resource_name": "Care Community Model - Roles",
     "resource_desc_short": null,
     "resource_desc_long": null,
@@ -8786,7 +8786,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 259,
+    "id": 259,
     "resource_name": "Promise Serves 2020 Spring Updates Webinar Session 1",
     "resource_desc_short": null,
     "resource_desc_long": "<h3>About This Video <small>06/04/2020</small></h3>\r\n\t\t\t\t\t\t<p>This webinar presented on June 4th, 2020 covers the recent changes and updates to Promise Serves. This includes:\r\n\t\t\t\t\t\t\t<ul>\r\n\t\t\t\t\t\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t\t<li><strong>02:54</strong> - <a class=\"vimeo-play-time-link\" href=\"javascript:void(0);\" target=\"_self\" data-time=\"175\"> Calendar Overview</a><span class=\"vimeo-play-time-link-status\"></span></li>\r\n\t\t\t\t\t\t\t\t<li><strong>10:15</strong> - <a class=\"vimeo-play-time-link\" href=\"javascript:void(0);\" target=\"_self\" data-time=\"615\"> Calendar - Manage Meals Wizard</a><span class=\"vimeo-play-time-link-status\"></span></li>\r\n\t\t\t\t\t\t\t\t<li><strong>15:58</strong> - <a class=\"vimeo-play-time-link\" href=\"javascript:void(0);\" target=\"_self\" data-time=\"336\"> New Dashboard Views</a><span class=\"vimeo-play-time-link-status\"></span></li>\r\n\t\t\t\t\t\t\t\t<li><strong>21:09</strong> - <a class=\"vimeo-play-time-link\" href=\"javascript:void(0);\" target=\"_self\" data-time=\"1269\"> Virtual Events</a><span class=\"vimeo-play-time-link-status\"></span></li>\r\n\t\t\t\t\t\t\t\t<li><strong>28:48</strong> - <a class=\"vimeo-play-time-link\" href=\"javascript:void(0);\" target=\"_self\" data-time=\"1728\"> Signup / Response Process</a><span class=\"vimeo-play-time-link-status\"></span></li>\r\n\t\t\t\t\t\t\t\t<li><strong>32:10</strong> - <a class=\"vimeo-play-time-link\" href=\"javascript:void(0);\" target=\"_self\" data-time=\"1930\"> Inviting Team Leaders to PS</a><span class=\"vimeo-play-time-link-status\"></span></li>\r\n\t\t\t\t\t\t\t\t<li><strong>33:08</strong> - <a class=\"vimeo-play-time-link\" href=\"javascript:void(0);\" target=\"_self\" data-time=\"1980\"> New Resources Section</a><span class=\"vimeo-play-time-link-status\"></span></li>\r\n\t\t\t\t\t\t\t\t<li><strong>40:10</strong> - <a class=\"vimeo-play-time-link\" href=\"javascript:void(0);\" target=\"_self\" data-time=\"2410\"> Interface Changes</a><span class=\"vimeo-play-time-link-status\"></span></li>\r\n\t\t\t\t\t\t\t\t<li><strong>45:05</strong> - <a class=\"vimeo-play-time-link\" href=\"javascript:void(0);\" target=\"_self\" data-time=\"2705\"> Requesting Support</a><span class=\"vimeo-play-time-link-status\"></span></li>\r\n\t\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t</ul>\r\n\t\t\t\t\t\t</p>",
@@ -8832,7 +8832,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 260,
+    "id": 260,
     "resource_name": "Promise Serves 2020 Spring Updates Webinar Session 2",
     "resource_desc_short": null,
     "resource_desc_long": "<h3>About This Video <small>06/09/2020</small></h3>\r\n\t\t\t\t\t\t<p>This webinar presented on June 9th, 2020 covers the recent changes and updates to Promise Serves. This includes:\r\n\t\t\t\t\t\t\t<ul>\r\n\t\t\t\t\t\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t\t<li><strong>02:54</strong> - <a class=\"vimeo-play-time-link\" href=\"javascript:void(0);\" target=\"_self\" data-time=\"1\"> Calendar Overview</a><span class=\"vimeo-play-time-link-status\"></span></li>\r\n\t\t\t\t\t\t\t\t<li><strong>10:15</strong> - <a class=\"vimeo-play-time-link\" href=\"javascript:void(0);\" target=\"_self\" data-time=\"336\"> Calendar - Manage Meals Wizard</a><span class=\"vimeo-play-time-link-status\"></span></li>\r\n\t\t\t\t\t\t\t\t<li><strong>15:58</strong> - <a class=\"vimeo-play-time-link\" href=\"javascript:void(0);\" target=\"_self\" data-time=\"600\"> New Dashboard Views</a><span class=\"vimeo-play-time-link-status\"></span></li>\r\n\t\t\t\t\t\t\t\t<li><strong>21:09</strong> - <a class=\"vimeo-play-time-link\" href=\"javascript:void(0);\" target=\"_self\" data-time=\"1200\"> Virtual Events</a><span class=\"vimeo-play-time-link-status\"></span></li>\r\n\t\t\t\t\t\t\t\t<li><strong>28:48</strong> - <a class=\"vimeo-play-time-link\" href=\"javascript:void(0);\" target=\"_self\" data-time=\"1603\"> Signup / Response Process</a><span class=\"vimeo-play-time-link-status\"></span></li>\r\n\t\t\t\t\t\t\t\t<li><strong>32:10</strong> - <a class=\"vimeo-play-time-link\" href=\"javascript:void(0);\" target=\"_self\" data-time=\"1930\"> Inviting Team Leaders to PS</a><span class=\"vimeo-play-time-link-status\"></span></li>\r\n\t\t\t\t\t\t\t\t<li><strong>33:08</strong> - <a class=\"vimeo-play-time-link\" href=\"javascript:void(0);\" target=\"_self\" data-time=\"2168\"> New Resources Section</a><span class=\"vimeo-play-time-link-status\"></span></li>\r\n\t\t\t\t\t\t\t\t<li><strong>40:10</strong> - <a class=\"vimeo-play-time-link\" href=\"javascript:void(0);\" target=\"_self\" data-time=\"2640\"> Interface Changes</a><span class=\"vimeo-play-time-link-status\"></span></li>\r\n\t\t\t\t\t\t\t\t<li><strong>45:05</strong> - <a class=\"vimeo-play-time-link\" href=\"javascript:void(0);\" target=\"_self\" data-time=\"3240\"> Requesting Support</a><span class=\"vimeo-play-time-link-status\"></span></li>\r\n\t\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t</ul>\r\n\t\t\t\t\t\t</p>",
@@ -8878,7 +8878,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 261,
+    "id": 261,
     "resource_name": "March 2019, Vol. 33 - Announcing Promise Serves",
     "resource_desc_short": "The Advocate Journal: Resources and Encouragement for Ministry!",
     "resource_desc_long": "The Advocate Journal: Resources and Encouragement for Ministry!",
@@ -8924,7 +8924,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 262,
+    "id": 262,
     "resource_name": "Initial MAP (Ministry Action Plan)",
     "resource_desc_short": "Utilize this MAP to write down some simple goals that will help direct your steps in establishing the FAM in your church.",
     "resource_desc_long": "What is the vision for the FAM at your church? We invite you to ask God what the ministry should look like, and where to focus your efforts. Then, write down some simple goals that will help direct your steps in establishing the FAM in your church.",
@@ -8970,7 +8970,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 263,
+    "id": 263,
     "resource_name": "December 2019, Vol. 36 - Chris Tomlin's Angel Armies",
     "resource_desc_short": "The Advocate Journal: Resources and Encouragement for Ministry!",
     "resource_desc_long": "The Advocate Journal: Resources and Encouragement for Ministry!",
@@ -9016,7 +9016,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 264,
+    "id": 264,
     "resource_name": "December 2019, Vol. 36 - Chris Tomlin's Angel Armies",
     "resource_desc_short": "The Advocate Journal: Resources and Encouragement for Ministry!",
     "resource_desc_long": "The Advocate Journal: Resources and Encouragement for Ministry!",
@@ -9062,7 +9062,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 265,
+    "id": 265,
     "resource_name": "March 2020, Vol. 37 - New Features in Promise Serves",
     "resource_desc_short": "The Advocate Journal: Resources and Encouragement for Ministry!",
     "resource_desc_long": "The Advocate Journal: Resources and Encouragement for Ministry!",
@@ -9108,7 +9108,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 266,
+    "id": 266,
     "resource_name": "June 2020, Vol. 38 - New and Improved Advocate Resources",
     "resource_desc_short": "The Advocate Journal: Resources and Encouragement for Ministry!",
     "resource_desc_long": "The Advocate Journal: Resources and Encouragement for Ministry!",
@@ -9154,7 +9154,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 267,
+    "id": 267,
     "resource_name": "Montgomery Child Mentor Forms",
     "resource_desc_short": "Montgomery County child mentor forms.",
     "resource_desc_long": "Montgomery County child mentor forms.",
@@ -9200,7 +9200,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 268,
+    "id": 268,
     "resource_name": "Montgomery County Paperwork Instructions",
     "resource_desc_short": "Montgomery County Paperwork Instructions",
     "resource_desc_long": "Montgomery County Paperwork Instructions",
@@ -9246,7 +9246,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 269,
+    "id": 269,
     "resource_name": "Montgomery County Volunteer Application",
     "resource_desc_short": "Montgomery County Volunteer Application",
     "resource_desc_long": "Montgomery County Volunteer Application",
@@ -9292,7 +9292,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 270,
+    "id": 270,
     "resource_name": "Awareness Cheat Sheet",
     "resource_desc_short": "Awareness Cheat Sheet",
     "resource_desc_long": "Awareness Cheat Sheet",
@@ -9338,7 +9338,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 271,
+    "id": 271,
     "resource_name": "Foster Parent Guide 2019",
     "resource_desc_short": "Foster Parent Guide 2019",
     "resource_desc_long": "Foster Parent Guide 2019",
@@ -9384,7 +9384,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 272,
+    "id": 272,
     "resource_name": "Orientation Cheat Sheet",
     "resource_desc_short": "Orientation Cheat Sheet",
     "resource_desc_long": "Orientation Cheat Sheet",
@@ -9430,7 +9430,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 273,
+    "id": 273,
     "resource_name": "Orientation Required Handout",
     "resource_desc_short": "Orientation Required Handout",
     "resource_desc_long": "Orientation Required Handout",
@@ -9476,7 +9476,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 274,
+    "id": 274,
     "resource_name": "Care Community Model Roles",
     "resource_desc_short": "Care Community Model Roles",
     "resource_desc_long": "Care Community Model Roles",
@@ -9522,7 +9522,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 275,
+    "id": 275,
     "resource_name": "Florida 1.27 Care Community Model",
     "resource_desc_short": "Florida 1.27 Care Community Model",
     "resource_desc_long": "Florida 1.27 Care Community Model",
@@ -9568,7 +9568,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 276,
+    "id": 276,
     "resource_name": "FL1.27 Connecting When Correcting Handout",
     "resource_desc_short": "FL1.27 Connecting When Correcting Handout",
     "resource_desc_long": "FL1.27 Connecting When Correcting Handout",
@@ -9614,7 +9614,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 277,
+    "id": 277,
     "resource_name": "Fostering Joy Care Community Model",
     "resource_desc_short": "Fostering Joy Care Community Model",
     "resource_desc_long": "Fostering Joy Care Community Model",
@@ -9660,7 +9660,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 278,
+    "id": 278,
     "resource_name": "Fostering Joy Connecting When Correcting",
     "resource_desc_short": "Fostering Joy Connecting When Correcting",
     "resource_desc_long": "Fostering Joy Connecting When Correcting",
@@ -9706,7 +9706,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 279,
+    "id": 279,
     "resource_name": "Fostering Joy Foster Family Information Request",
     "resource_desc_short": "Fostering Joy Foster Family Information Request",
     "resource_desc_long": "Fostering Joy Foster Family Information Request",
@@ -9752,7 +9752,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 280,
+    "id": 280,
     "resource_name": "Fostering Joy KVS Driver Volunteer Agreement",
     "resource_desc_short": "Fostering Joy KVS Driver Volunteer Agreement",
     "resource_desc_long": "Fostering Joy KVS Driver Volunteer Agreement",
@@ -9798,7 +9798,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 281,
+    "id": 281,
     "resource_name": "Fostering Joy Ministry Action Plan (MAP)",
     "resource_desc_short": "Fostering Joy Ministry Action Plan (MAP)",
     "resource_desc_long": "Fostering Joy Ministry Action Plan (MAP)",
@@ -9844,7 +9844,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 282,
+    "id": 282,
     "resource_name": "Fostering Joy Next Steps Following the Advocate Clinic",
     "resource_desc_short": "Fostering Joy Next Steps Following the Advocate Clinic",
     "resource_desc_long": "Fostering Joy Next Steps Following the Advocate Clinic",
@@ -9890,7 +9890,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 283,
+    "id": 283,
     "resource_name": "Fostering Joy Rates and Level of Care",
     "resource_desc_short": "Fostering Joy Rates and Level of Care",
     "resource_desc_long": "Fostering Joy Rates and Level of Care",
@@ -9936,7 +9936,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 284,
+    "id": 284,
     "resource_name": "Fostering Joy Supported Family Agreement",
     "resource_desc_short": "Fostering Joy Supported Family Agreement",
     "resource_desc_long": "Fostering Joy Supported Family Agreement",
@@ -9982,7 +9982,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 285,
+    "id": 285,
     "resource_name": "Fostering Joy Three Church Comparison",
     "resource_desc_short": "Fostering Joy Three Church Comparison",
     "resource_desc_long": "Fostering Joy Three Church Comparison",
@@ -10028,7 +10028,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 286,
+    "id": 286,
     "resource_name": "Fostering Joy Roles in a Care Community",
     "resource_desc_short": "Fostering Joy Roles in a Care Community",
     "resource_desc_long": "Fostering Joy Roles in a Care Community",
@@ -10074,7 +10074,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 287,
+    "id": 287,
     "resource_name": "Fostering Joy Volunteer Agreement",
     "resource_desc_short": "Fostering Joy Volunteer Agreement",
     "resource_desc_long": "Fostering Joy Volunteer Agreement",
@@ -10120,7 +10120,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 288,
+    "id": 288,
     "resource_name": "Fostering the Family Advocate Agreement",
     "resource_desc_short": "Fostering the Family Advocate Agreement",
     "resource_desc_long": "Fostering the Family Advocate Agreement",
@@ -10166,7 +10166,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 289,
+    "id": 289,
     "resource_name": "Fostering the Family SC Church Partnership Agreement",
     "resource_desc_short": "Fostering the Family SC Church Partnership Agreement",
     "resource_desc_long": "Fostering the Family SC Church Partnership Agreement",
@@ -10212,7 +10212,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 290,
+    "id": 290,
     "resource_name": "Fostering the Family SC Childcare Policy",
     "resource_desc_short": "Fostering the Family SC Childcare Policy",
     "resource_desc_long": "Fostering the Family SC Childcare Policy",
@@ -10258,7 +10258,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 291,
+    "id": 291,
     "resource_name": "Fostering the Family Care Community Volunteer Information",
     "resource_desc_short": "Fostering the Family Care Community Volunteer Information",
     "resource_desc_long": "Fostering the Family Care Community Volunteer Information",
@@ -10304,7 +10304,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 292,
+    "id": 292,
     "resource_name": "Fostering the Family Volunteer Agreement",
     "resource_desc_short": "Fostering the Family Volunteer Agreement",
     "resource_desc_long": "Fostering the Family Volunteer Agreement",
@@ -10350,7 +10350,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 293,
+    "id": 293,
     "resource_name": "Fostering the Family Foster Family Information Request",
     "resource_desc_short": "Fostering the Family Foster Family Information Request",
     "resource_desc_long": "Fostering the Family Foster Family Information Request",
@@ -10396,7 +10396,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 294,
+    "id": 294,
     "resource_name": "Fostering the Family Ministry Action Plan (MAP)",
     "resource_desc_short": "Fostering the Family Ministry Action Plan (MAP)",
     "resource_desc_long": "Fostering the Family Ministry Action Plan (MAP)",
@@ -10442,7 +10442,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 295,
+    "id": 295,
     "resource_name": "Fostering the Family SC Criminal Record Check",
     "resource_desc_short": "Fostering the Family SC Criminal Record Check",
     "resource_desc_long": "Fostering the Family SC Criminal Record Check",
@@ -10488,7 +10488,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 296,
+    "id": 296,
     "resource_name": "Fostering the Family Basics of Foster Care",
     "resource_desc_short": "Fostering the Family Basics of Foster Care",
     "resource_desc_long": "Fostering the Family Basics of Foster Care",
@@ -10534,7 +10534,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 297,
+    "id": 297,
     "resource_name": "Fostering the Family Next Steps",
     "resource_desc_short": "Fostering the Family Next Steps",
     "resource_desc_long": "Fostering the Family Next Steps",
@@ -10580,7 +10580,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 298,
+    "id": 298,
     "resource_name": "Olive Crest Volunteer Discipline Guidelines",
     "resource_desc_short": "Olive Crest Volunteer Discipline Guidelines",
     "resource_desc_long": "Olive Crest Volunteer Discipline Guidelines",
@@ -10626,7 +10626,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 299,
+    "id": 299,
     "resource_name": "Olive Crest Supported Family Agreement",
     "resource_desc_short": "Olive Crest Supported Family Agreement",
     "resource_desc_long": "Olive Crest Supported Family Agreement",
@@ -10672,7 +10672,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 300,
+    "id": 300,
     "resource_name": "Welcomed Volunteer Application",
     "resource_desc_short": "Welcomed Volunteer Application",
     "resource_desc_long": "Welcomed Volunteer Application",
@@ -10718,7 +10718,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 301,
+    "id": 301,
     "resource_name": "Welcomed Volunteer Agreement",
     "resource_desc_short": "Welcomed Volunteer Agreement",
     "resource_desc_long": "Welcomed Volunteer Agreement",
@@ -10764,7 +10764,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 302,
+    "id": 302,
     "resource_name": "Welcomed Care Community Roles",
     "resource_desc_short": "Welcomed Care Community Roles",
     "resource_desc_long": "Welcomed Care Community Roles",
@@ -10810,7 +10810,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 303,
+    "id": 303,
     "resource_name": "Welcomed Care Community Basics",
     "resource_desc_short": "Welcomed Care Community Basics",
     "resource_desc_long": "Welcomed Care Community Basics",
@@ -10856,7 +10856,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 304,
+    "id": 304,
     "resource_name": "Welcomed Video",
     "resource_desc_short": "Welcomed Video",
     "resource_desc_long": "Welcomed Video",
@@ -10902,7 +10902,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 305,
+    "id": 305,
     "resource_name": "The Jump Story - Andrew Schneidler - Foster Movement Video",
     "resource_desc_short": "The Jump Story - Andrew Schneidler - Foster Movement Video",
     "resource_desc_long": "The Jump Story - Andrew Schneidler - Foster Movement Video",
@@ -10948,7 +10948,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 306,
+    "id": 306,
     "resource_name": "Welcomed Volunteer Response Card",
     "resource_desc_short": "Welcomed Volunteer Response Card",
     "resource_desc_long": "Welcomed Volunteer Response Card",
@@ -10994,7 +10994,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 307,
+    "id": 307,
     "resource_name": "Welcomed Care Community Sign Up",
     "resource_desc_short": "Welcomed Care Community Sign Up",
     "resource_desc_long": "Welcomed Care Community Sign Up",
@@ -11040,7 +11040,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 308,
+    "id": 308,
     "resource_name": "Welcomed Family Contact Information Sheet",
     "resource_desc_short": "Welcomed Family Contact Information Sheet",
     "resource_desc_long": "Welcomed Family Contact Information Sheet",
@@ -11086,7 +11086,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 309,
+    "id": 309,
     "resource_name": "Welcomed Care Community Testimony Video",
     "resource_desc_short": "Welcomed Care Community Testimony Video",
     "resource_desc_long": "Welcomed Care Community Testimony Video",
@@ -11132,7 +11132,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 310,
+    "id": 310,
     "resource_name": "Welcomed Care Community Testimony Video",
     "resource_desc_short": "Welcomed Care Community Testimony Video",
     "resource_desc_long": "Welcomed Care Community Testimony Video",
@@ -11178,7 +11178,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 311,
+    "id": 311,
     "resource_name": "Life After Foster Care Data (GA)",
     "resource_desc_short": "Life After Foster Care Data (GA)",
     "resource_desc_long": "Life After Foster Care Data (GA)",
@@ -11224,7 +11224,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 312,
+    "id": 312,
     "resource_name": "Roadmap: Launching a Care Community Organically",
     "resource_desc_short": "This resource offers a step-by-step roadmap to launching a Care Community, from contacting the family to hosting a meet and greet.",
     "resource_desc_long": "This resource offers a step-by-step roadmap to launching a Care Community, from contacting the family to hosting a meet and greet.",
@@ -11270,7 +11270,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 313,
+    "id": 313,
     "resource_name": "Volunteer Communication - 1 Year",
     "resource_desc_short": "This resource provides an email template for thanking volunteers and assessing their desire to continue serving the supported family beyond their one-year commitment.",
     "resource_desc_long": "This resource provides an email template for thanking volunteers and assessing their desire to continue serving the supported family beyond their one-year commitment.",
@@ -11316,7 +11316,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 314,
+    "id": 314,
     "resource_name": "Welcomed Supported Family Agreement",
     "resource_desc_short": null,
     "resource_desc_long": null,
@@ -11362,7 +11362,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 315,
+    "id": 315,
     "resource_name": "Advocate Clinic Panel Discussion",
     "resource_desc_short": "This is a recording of a panel discussion from a Church Advocate Clinic.",
     "resource_desc_long": "This is a recording of a panel discussion from a Church Advocate Clinic.",
@@ -11408,7 +11408,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 316,
+    "id": 316,
     "resource_name": "Virtual Care Communities",
     "resource_desc_short": "This document outlines the roles for a establishing a Virtual Care Community.",
     "resource_desc_long": "This document outlines the roles for a establishing a Virtual Care Community.",
@@ -11454,7 +11454,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 317,
+    "id": 317,
     "resource_name": "Team Leader's Guide to Using the Calendar",
     "resource_desc_short": "This training video covers everything you need to know to get started using the calendar.",
     "resource_desc_long": "<p>This training video covers everything you need to know to get started using the calendar. This includes:\r\n       <ul>\r\n        <li><strong>00:07</strong> - <a class=\"vimeo-play-time-link\" href=\"#;\" target=\"_self\" data-time=\"7\"> Getting started</a><span class=\"vimeo-play-time-link-status\"></span></li>\r\n        <li><strong>00:45</strong> - <a class=\"vimeo-play-time-link\" href=\"#\" target=\"_self\" data-time=\"45\"> Adding an event on the calendar</a><span class=\"vimeo-play-time-link-status\"></span></li>\r\n        <li><strong>01:49</strong> - <a class=\"vimeo-play-time-link\" href=\"#\" target=\"_self\" data-time=\"109\"> Viewing event details</a><span class=\"vimeo-play-time-link-status\"></span></li>\r\n        <li><strong>02:22</strong> - <a class=\"vimeo-play-time-link\" href=\"#\" target=\"_self\" data-time=\"142\"> Adding meals to the calendar</a><span class=\"vimeo-play-time-link-status\"></span></li>\r\n        <li><strong>04:08</strong> - <a class=\"vimeo-play-time-link\" href=\"#\" target=\"_self\" data-time=\"248\"> Reminders & confirming / declining meals</a><span class=\"vimeo-play-time-link-status\"></span></li>\r\n        <li><strong>04:36</strong> - <a class=\"vimeo-play-time-link\" href=\"#\" target=\"_self\" data-time=\"276\"> Give Volunteers Access</a><span class=\"vimeo-play-time-link-status\"></span></li>\r\n\t\t\t\t<li><strong>04:51</strong> - <a class=\"vimeo-play-time-link\" href=\"#\" target=\"_self\" data-time=\"289\"> Volunteer view</a><span class=\"vimeo-play-time-link-status\"></span></li>\r\n\t\t\t\t<li><strong>05:07</strong> - <a class=\"vimeo-play-time-link\" href=\"#\" target=\"_self\" data-time=\"307\"> Viewing meal responses</a><span class=\"vimeo-play-time-link-status\"></span></li>\r\n       </ul>\r\n      </p>';",
@@ -11500,7 +11500,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 318,
+    "id": 318,
     "resource_name": "How To: Use the FAM Resources",
     "resource_desc_short": "This training video covers everything you need to know to get started using the FAM Resources section of Promise Serves.",
     "resource_desc_long": "<p>This training video covers everything you need to know to get started using the Promise Serves FAM Resources. This includes:\r\n       <ul>\r\n        <li><strong>00:15</strong> - <a class=\"vimeo-play-time-link\" href=\"#;\" target=\"_self\" data-time=\"7\"> Getting started</a><span class=\"vimeo-play-time-link-status\"></span></li>\r\n        <li><strong>00:21</strong> - <a class=\"vimeo-play-time-link\" href=\"#\" target=\"_self\" data-time=\"21\"> Tab based navigation</a><span class=\"vimeo-play-time-link-status\"></span></li>\r\n        <li><strong>00:35</strong> - <a class=\"vimeo-play-time-link\" href=\"#\" target=\"_self\" data-time=\"35\"> Viewing resource details</a><span class=\"vimeo-play-time-link-status\"></span></li>\r\n        <li><strong>00:50</strong> - <a class=\"vimeo-play-time-link\" href=\"#\" target=\"_self\" data-time=\"50\"> Video resources</a><span class=\"vimeo-play-time-link-status\"></span></li>\r\n        <li><strong>00:57</strong> - <a class=\"vimeo-play-time-link\" href=\"#\" target=\"_self\" data-time=\"57\"> Sharing resources</a><span class=\"vimeo-play-time-link-status\"></span></li>\r\n        <li><strong>01:18</strong> - <a class=\"vimeo-play-time-link\" href=\"#\" target=\"_self\" data-time=\"78\"> Special categories</a><span class=\"vimeo-play-time-link-status\"></span></li>\r\n\t\t\t\t<li><strong>01:42</strong> - <a class=\"vimeo-play-time-link\" href=\"#\" target=\"_self\" data-time=\"102\"> Search feature</a><span class=\"vimeo-play-time-link-status\"></span></li>\r\n       </ul>\r\n      </p>';",
@@ -11546,7 +11546,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 319,
+    "id": 319,
     "resource_name": "Made for Home Table Host Promotion Email",
     "resource_desc_short": "A link to the Made for Home at Home promotion email for potential hosts.",
     "resource_desc_long": "A link to the Made for Home at Home promotion email for potential hosts.",
@@ -11592,7 +11592,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 320,
+    "id": 320,
     "resource_name": "Made for Home Silent Auction Donation Request",
     "resource_desc_short": "An invitation for donations to the Silent Auction and a donation form for the items.",
     "resource_desc_long": "An invitation for donations to the Silent Auction and a donation form for the items.",
@@ -11638,7 +11638,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 321,
+    "id": 321,
     "resource_name": "Made for Home Webpage",
     "resource_desc_short": "A link to the Made for Home webpage.",
     "resource_desc_long": "A link to the Made for Home webpage.",
@@ -11684,7 +11684,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 322,
+    "id": 322,
     "resource_name": "Made for Home Social Media Graphic",
     "resource_desc_short": "A Made for Home social media graphic.",
     "resource_desc_long": "A Made for Home social media graphic.",
@@ -11730,7 +11730,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 323,
+    "id": 323,
     "resource_name": "Made for Home Social Media Graphic (Illustrator)",
     "resource_desc_short": "A Made for Home social media graphic (Illustrator version).",
     "resource_desc_long": "A Made for Home social media graphic (Illustrator version).",
@@ -11776,7 +11776,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 324,
+    "id": 324,
     "resource_name": "Made for Home Host Home Recruitment Video",
     "resource_desc_short": "A Made for Home host home recruitment video by Andy Cook, Promise686 CEO.",
     "resource_desc_long": "A Made for Home host home recruitment video by Andy Cook, Promise686 CEO.",
@@ -11822,7 +11822,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 325,
+    "id": 325,
     "resource_name": "Made for Home Editable Logos",
     "resource_desc_short": "An editable Illustrator file of the Made for Home logos.",
     "resource_desc_long": "An editable Illustrator file of the Made for Home logos.",
@@ -11868,7 +11868,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 326,
+    "id": 326,
     "resource_name": "Made for Home - Black and Green Logo",
     "resource_desc_short": "A black and green Made for Home logo.",
     "resource_desc_long": "A black and green Made for Home logo.",
@@ -11914,7 +11914,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 327,
+    "id": 327,
     "resource_name": "Made for Home - White and Green Logo",
     "resource_desc_short": "A white and green Made for Home logo.",
     "resource_desc_long": "A white and green Made for Home logo.",
@@ -11960,7 +11960,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 328,
+    "id": 328,
     "resource_name": "Made for Home Email Header Graphic",
     "resource_desc_short": "A Made for Home email header graphic.",
     "resource_desc_long": "A Made for Home email header graphic.",
@@ -12006,7 +12006,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 329,
+    "id": 329,
     "resource_name": "Made for Home Editable Email Header Graphic (Illustrator)",
     "resource_desc_short": "An editable Illustrator file of the Made for Home email header graphic.",
     "resource_desc_long": "An editable Illustrator file of the Made for Home email header graphic.",
@@ -12052,7 +12052,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 330,
+    "id": 330,
     "resource_name": "Made for Home Editable Webpage Header Graphic (Illustrator)",
     "resource_desc_short": "An editable Made for Home website header graphic.",
     "resource_desc_long": "An editable Made for Home website header graphic.",
@@ -12098,7 +12098,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 331,
+    "id": 331,
     "resource_name": "Made for Home Webpage Header Graphic",
     "resource_desc_short": "A Made for Home webpage header graphic.",
     "resource_desc_long": "A Made for Home webpage header graphic.",
@@ -12144,7 +12144,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 332,
+    "id": 332,
     "resource_name": "How To: Host a Virtual CCVO on Promise Serves or Zoom",
     "resource_desc_short": "This video will show you how to host a virtual Care Community Volunteer Orientation using Promise Serves or Zoom",
     "resource_desc_long": "This video will show you how to host a virtual Care Community Volunteer Orientation using Promise Serves or Zoom",
@@ -12190,7 +12190,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 333,
+    "id": 333,
     "resource_name": "FAM Leadership Advance: Refueling Your Ministry Breakout Session",
     "resource_desc_short": "Notes for the FAM Leadership Advance 2020 breakout session: Refueling Your FAM.",
     "resource_desc_long": "Notes for the FAM Leadership Advance 2020 breakout session: Refueling Your FAM.",
@@ -12236,7 +12236,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 334,
+    "id": 334,
     "resource_name": "Addendum to New Orientation Videos",
     "resource_desc_short": "2020 Addendum to Orientation Videos",
     "resource_desc_long": "2020 Addendum to Orientation Videos",
@@ -12282,7 +12282,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 335,
+    "id": 335,
     "resource_name": "Define Roles within Your Ministry",
     "resource_desc_short": "This chart will help you define the structure of roles within your ministry.",
     "resource_desc_long": "This chart will help you define the structure of roles within your ministry.",
@@ -12328,7 +12328,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 336,
+    "id": 336,
     "resource_name": "What is a Care Community? (2 Minute Version)",
     "resource_desc_short": "This video gives an overview of how Care Communities support families, sharing about the roles of family helpers, child mentors, and team leader.",
     "resource_desc_long": "This video gives an overview of how Care Communities support families, sharing about the roles of family helpers, child mentors, and team leader. It also explains how a Care Community works, and what is involved in getting started, from inviting others to serve in the Care Community, to identifying roles, and launching the team.",
@@ -12374,7 +12374,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 337,
+    "id": 337,
     "resource_name": "DataBank Indicator Archive - Child Trends",
     "resource_desc_short": "\"The Child Trends DataBank is an online resource for indicators of child and family well-being and associated measures. The DataBank includes close to 100 population-based measures, covering the domains of health and safety, ",
     "resource_desc_long": "\"The Child Trends DataBank is an online resource for indicators of child and family well-being and associated measures. The DataBank includes close to 100 population-based measures, covering the domains of health and safety, child care and education, and behaviors linked to positive and negative well-being.\"",
@@ -12420,7 +12420,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 338,
+    "id": 338,
     "resource_name": "FAM Leadership Advance 2020: Panel on Racial Unity",
     "resource_desc_short": "A panel discussion on racial unity from the FAM Leadership Advance 2020.",
     "resource_desc_long": "A panel discussion on racial unity from the FAM Leadership Advance 2020.",
@@ -12466,7 +12466,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 339,
+    "id": 339,
     "resource_name": "FAM Leadership Advance 2020: Developing a Community Blueprint, Pt. 1",
     "resource_desc_short": "Developing a Community Blueprint: Part 1 by Andy Cook",
     "resource_desc_long": "Developing a Community Blueprint: Part 1 by Andy Cook",
@@ -12512,7 +12512,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 340,
+    "id": 340,
     "resource_name": "FAM Leadership Advance 2020: Developing a Community Blueprint, Pt. 2",
     "resource_desc_short": "Developing a Community Blueprint: Part 2 by Andy Cook",
     "resource_desc_long": "",
@@ -12558,7 +12558,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 341,
+    "id": 341,
     "resource_name": "FAM Leadership Advance 2020: Working Toward Collective Impact",
     "resource_desc_short": "A session on collective impact from the FAM Leadership Advance 2020.",
     "resource_desc_long": "A session on collective impact from the FAM Leadership Advance 2020.",
@@ -12604,7 +12604,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 342,
+    "id": 342,
     "resource_name": "FAM Leadership Advance 2020: Designed for More Keynote Session",
     "resource_desc_short": "Lucas Ramirez, author of the book Designed for More, shares about unity and collective strategy.",
     "resource_desc_long": "Lucas Ramirez, author of the book Designed for More, shares about unity and collective strategy. You can order Designed for More and find out more about Lucas at http://www.lucasramirez.org/.",
@@ -12650,7 +12650,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 343,
+    "id": 343,
     "resource_name": "FAM Leadership Advance 2020: Primary and Temporary Care Communities",
     "resource_desc_short": "Johnna Stein hosts a conversation about primary and temporary Care Communities with Charlee Tchividjian and Logan Mabe during the FAM Leadership Advance 2020.",
     "resource_desc_long": "Johnna Stein hosts a conversation about primary and temporary Care Communities with Charlee Tchividjian and Logan Mabe during the FAM Leadership Advance 2020.",
@@ -12696,7 +12696,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 344,
+    "id": 344,
     "resource_name": "FAM Leadership Advance 2020: Leadership + Growth",
     "resource_desc_short": "A session on leadership and growth by Ike Ubasineke from the FAM Leadership Advance 2020.",
     "resource_desc_long": "A session on leadership and growth by Ike Ubasineke from the FAM Leadership Advance 2020.",
@@ -12742,7 +12742,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 345,
+    "id": 345,
     "resource_name": "FAM Leadership Advance 2020: Interview with Jason Weber",
     "resource_desc_short": "Audrey Hayes interviews Jason Weber about unity and collaboration at the FAM Leadership Advance 2020.",
     "resource_desc_long": "Audrey Hayes interviews Jason Weber about unity and collaboration at the FAM Leadership Advance 2020.",
@@ -12788,7 +12788,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 346,
+    "id": 346,
     "resource_name": "FAM Leadership Advance 2020: More Than Enough Interview with Jason Weber",
     "resource_desc_short": "Promise686's Creative Director Audrey Hayes interviews Jason Weber about unity and collaboration at the FAM Leadership Advance 2020.",
     "resource_desc_long": "Promise686's Creative Director Audrey Hayes interviews Jason Weber about unity and collaboration at the FAM Leadership Advance 2020.",
@@ -12834,7 +12834,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 347,
+    "id": 347,
     "resource_name": "Connecting While Correcting",
     "resource_desc_short": "Discipline practices for volunteers",
     "resource_desc_long": "As a volunteer relating to children in foster care, you are responsible to adhere to the same \r\ndisciplinary guidelines followed by foster parents. It is always a good idea to inquire of the \r\nfoster parents which methods have been the most successful with the current child(ren) in their \r\ncare. Below are effective ideas for ways to positively connect with children in foster care when \r\ncorrection is necessary. Please note these mandated disciplinary stipulations, as stated by  Child \r\nWelfare in the state of Wisconsin. ",
@@ -12880,7 +12880,7 @@
     "rights_can_edit": null
   },
   {
-    "id_resource": 348,
+    "id": 348,
     "resource_name": "The FAM Forum: December 2020",
     "resource_desc_short": "The FAM Forum: A Resource to Inspire Those Caring for Vulnerable Children",
     "resource_desc_long": "The FAM Forum: A Resource to Inspire Those Caring for Vulnerable Children",

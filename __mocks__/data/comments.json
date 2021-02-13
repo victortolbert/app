@@ -1,0 +1,10 @@
+[
+  {
+    "id": 1,
+    "post_id": 1,
+    "name": "Comment",
+    "email": "comment@email.com",
+    "body": "comment body",
+    "created_at": "2020-12-04 19:05:11"
+  }
+]

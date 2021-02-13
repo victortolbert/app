@@ -69,7 +69,7 @@ export default {
       <div
         v-for="section in sections"
         :key="section.name"
-        class="relative p-6 bg-white rounded-tl-lg rounded-tr-lg sm:rounded-tr-none group focus-within:ring-2 focus-within:ring-inset focus-within:ring-primary-500"
+        class="relative p-6 bg-white group focus-within:ring-2 focus-within:ring-inset focus-within:ring-primary-500"
       >
         <div>
           <span
@@ -104,53 +104,6 @@ export default {
           <BaseIconSolid name="arrow-top-right" />
         </span>
       </div>
-
-      <div
-        class="relative p-6 bg-white group focus-within:ring-2 focus-within:ring-inset focus-within:ring-primary-500"
-      >
-        <div>
-          <span
-            class="inline-flex p-3 rounded-lg bg-primary-50 text-primary-700 ring-4 ring-white"
-          >
-            <BaseIconOutlined name="users" />
-          </span>
-        </div>
-
-        <div class="mt-8">
-          <h3 class="text-lg font-medium">
-            <a href="#" class="focus:outline-none">
-              <!-- Extend touch target to entire panel -->
-              <span class="absolute inset-0" aria-hidden="true"></span>
-              Schedule a one-on-one
-            </a>
-          </h3>
-          <p class="mt-2 text-sm text-gray-500">
-            Doloribus dolores nostrum quia qui natus officia quod et dolorem.
-            Sit repellendus qui ut at blanditiis et quo et molestiae
-          </p>
-        </div>
-        <span
-          class="absolute text-gray-300 pointer-events-none top-6 right-6 group-hover:text-gray-400"
-          aria-hidden="true"
-        >
-          <BaseIconSolid name="arrow-top-right" />
-        </span>
-      </div>
     </div>
   </main>
 </template>
-<style scoped>
-main {
-  --color-primary: #b2b45d;
-  --color-on-primary: #444513;
-  --color-secondary: #ffdc18;
-  --color-on-secondary: #756000;
-  --color-tertiary: hsl(245, 70%, 30%);
-  --color-on-tertiary: #918bd3;
-  --color-surface: #f9f9f9;
-  --color-on-surface: #494848;
-
-  background: var(--color-primary);
-  color: var(--color-on-primary);
-}
-</style>

@@ -149,11 +149,11 @@ export default defineComponent({
         //   name: 'overview',
         //   label: this.$t('overview'),
         // },
-        // {
-        //   name: 'events',
-        //   label: this.$t('events'),
-        //   path: '/events/',
-        // },
+        {
+          name: 'events',
+          label: this.$t('events'),
+          path: '/events/',
+        },
         // {
         //   name: 'map',
         //   label: this.$t('map'),
