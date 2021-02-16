@@ -22,7 +22,7 @@ export default {
   },
   computed: {
     link() {
-      return `https://github.com/VictorTolbert/app/tree/main/content${this.document.path}${this.document.extension}`
+      return `https://github.com/VictorTolbert/app/edit/main/content${this.document.path}${this.document.extension}`
     },
   },
 }

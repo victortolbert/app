@@ -642,7 +642,7 @@ export default {
     preset: {
       stage: 1,
     },
-    transpile: /@fullcalendar.*/, // transpile ESM modules within all fullcalendar packages
+    transpile: [/@fullcalendar.*/], // transpile ESM modules within all fullcalendar packages
   },
   eslint: {
     cache: false,
