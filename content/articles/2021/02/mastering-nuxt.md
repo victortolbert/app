@@ -419,6 +419,45 @@ Please make sure you download the design resources from the list below.
 
 In this lesson, we'll style the header of our application.
 
+## Authentication (6 Lessons)
+
+### Creating a Google oAuth2 Client ID
+
+In this lesson, we'll create a Google oAuth2 Client ID and start working on the
+authentication process of our Nuxt application.
+
+#### Lesson Resources
+
+- [Google Sign-in Documentation](https://developers.google.com/identity/sign-in/web/sign-in)
+- [Google + oAuth 2 Documentation](https://developers.google.com/identity/protocols/oauth2)
+- [Google Developers Console](https://console.developers.google.com/)
+
+### Using Runtime Configs in Nuxt
+
+In this lesson, we'll learn about runtime configs, which is a brilliant way to
+define our application's configuration.
+
+#### Lesson Resources
+
+- [runtimeConfig documentation](https://nuxtjs.org/docs/2.x/directory-structure/nuxt-config#runtimeconfig)
+- [Moving from @nuxtjs/dotenv to runtime config, article By Debbie O'Brien](https://nuxtjs.org/blog/moving-from-nuxtjs-dotenv-to-runtime-config)
+
+### Setting Up The Vuex Store
+
+In this lesson, we'll play around with Vuex and learn how Vuex works with
+Nuxt.js.
+
+To get the most out of this lesson, you should be familiar with Vuex. If you
+want to brush up on your Vuex skills, we recommend the free Vuex for Everyone
+video course by Vue School.
+
+#### Lesson Resources
+
+- [store Directory Documentation](https://nuxtjs.org/docs/2.x/directory-structure/store/)
+- [Vuex Documentation](https://vuex.vuejs.org/)
+- [Vue.js Devtools for Google Chrome](https://chrome.google.com/webstore/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd?hl=en)
+- [Vuex For Everyone Course](https://vueschool.io/courses/vuex-for-everyone)
+
 ## Refactoring and Improvements (7 Lessons)
 
 ## Property Availability (3 Lessons)

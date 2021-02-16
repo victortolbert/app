@@ -1,0 +1,106 @@
+data:
+- id: 1
+  first_name: Anthony
+  last_name: Lee
+  title: Senior Web Developer
+  email: anthonyl@boosterthon.com
+  phone: 910-916-4320
+  current_team_id: 3
+- id: 2
+  first_name: Chris
+  last_name: Lanham
+  title: Senior Technical Customer Support Specialist
+  email: chrisl@boosterthon.com
+  phone: 704-472-7763
+  current_team_id: 3
+- id: 3
+  first_name: Chris
+  last_name: Randazzo
+  title: null
+  email: null
+  phone: 407-721-0541
+  current_team_id: 3
+- id: 4
+  first_name: Chris
+  last_name: Thomas
+  title: null
+  email: null
+  phone: 404-725-1803
+  current_team_id: 3
+- id: 5
+  first_name: Daniel
+  last_name: Pitsko
+  title: Senior Web Developer
+  email: dpitsko@boosterthon.com
+  phone: 404-917-4002
+  current_team_id: 3
+- id: 6
+  first_name: Ian
+  last_name: Mackenzie
+  title: Web Developer
+  email: ianm@boosterthon.com
+  phone: 706-974-8134
+  current_team_id: 3
+- id: 7
+  first_name: Jey
+  last_name: Choi
+  title: Digital Product Owner
+  email: jeyc@boosterthon.com
+  phone: 404-539-8179
+  current_team_id: 3
+- id: 8
+  first_name: Josh
+  last_name: McCarty
+  title: Web Developer
+  email: joshmccarty@boosterthon.com
+  phone: 914-420-0546
+  current_team_id: 3
+- id: 10
+  first_name: Kenny
+  last_name: Gutierrez
+  title: null
+  email: null
+  phone: 678-763-0946
+  current_team_id: 3
+- id: 11
+  first_name: Logan
+  last_name: Antcliff
+  title: null
+  email: null
+  phone: 346-234-9044
+  current_team_id: 3
+- id: 12
+  first_name: Matt
+  last_name: Selee
+  title: Data Analyst
+  email: mattselee@boosterthon.com
+  phone: 914-420-0546
+  current_team_id: 3
+- id: 13
+  first_name: Matt
+  last_name: Parker
+  title: Director of Architecture
+  email: mparker@boosterthon.com
+  phone: 914-420-0546
+  current_team_id: 3
+- id: 13
+  first_name: Miguel
+  last_name: Williams
+  title: Senior Web Developer
+  email: mwilliams@boosterthon.com
+  phone: 914-420-0546
+  current_team_id: 3
+- id: 14
+  first_name: Todd
+  last_name: Trappe
+  title: Senior VP of Technology
+  email: toddt@boosterthon.com
+  phone: 914-420-0546
+  current_team_id: 3
+- id: 15
+  first_name: Trent
+  last_name: Kinsey
+  title: null
+  email: null
+  phone: 678-491-6853
+  current_team_id: 3

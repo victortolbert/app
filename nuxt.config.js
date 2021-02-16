@@ -189,6 +189,7 @@ export default {
     '@nuxtjs/color-mode',
     '@nuxtjs/composition-api',
     '@nuxtjs/eslint-module',
+    '@nuxtjs/moment',
     // '@nuxtjs/google-analytics',
     // '@nuxtjs/svg',
     '@nuxtjs/tailwindcss',
@@ -221,7 +222,7 @@ export default {
     // '@/plugins/inject-ww.client',
     '@/plugins/maps.client',
     // '@/plugins/markdown',
-    // '@/plugins/menu.client',
+    '@/plugins/menu.client',
     // '@/plugins/oruga',
     // '@/plugins/polyfills.client',
     '@/plugins/portal-vue',
@@ -236,7 +237,7 @@ export default {
     // '@/plugins/vue-good-table.client',
     // '@/plugins/vue-notifications',
     // '@/plugins/vue-scroll-reveal.client',
-    // '@/plugins/vue-scrollactive',
+    '@/plugins/vue-scrollactive',
     // '@/plugins/vue-select',
     '@/plugins/vue-tables-2.client',
     // '@/plugins/vue-tippy',
@@ -420,6 +421,16 @@ export default {
   //   },
   //   set: [{field: 'anonymizeIp', value: true}],
   // },
+
+  hooks: {
+    'content:file:beforeInsert': document => {
+      if (document.extension === '.md') {
+        const {time} = require('reading-time')(document.text)
+
+        document.readingTime = time
+      }
+    },
+  },
 
   i18n: {
     locales: [

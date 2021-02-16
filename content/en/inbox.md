@@ -9,7 +9,7 @@ multiselectOptions:
 ---
 
 1. These are guidelines. Not rules.
-2. Your opinion and experience matters too.
+2. Your opinion and experience matter too.
 3. Choose what works best for you and your team.
 
 - SpeakEasy Code July572 (Hey)
@@ -23,8 +23,8 @@ multiselectOptions:
 const messages = {
   en: {
     message: {
-      hello: '{msg} world'
-    }
-  }
+      hello: '{msg} world',
+    },
+  },
 }
 ```
