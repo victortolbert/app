@@ -1,6 +1,6 @@
 import path from 'path'
 // eslint-disable-next-line import/named
-import {utils} from './config'
+// import {utils} from './config'
 // const isDev = process.env.NODE_ENV !== "production"
 
 export default {
@@ -192,6 +192,7 @@ export default {
     '@nuxtjs/moment',
     // '@nuxtjs/google-analytics',
     // '@nuxtjs/svg',
+    '@nuxtjs/style-resources',
     '@nuxtjs/tailwindcss',
     // '@nuxtjs/vuetify',
     // 'nuxt-ackee',
@@ -213,7 +214,11 @@ export default {
 
   plugins: [
     // '@/plugins/cookies',
+    // '@/plugins/axios.plugin',
+    '@/plugins/api',
+    // '@/plugins/repositories',
     '@/plugins/data-api',
+    '@/plugins/devto',
     // '@/plugins/dynamic-marquee.client',
     '@/plugins/fontawesome',
     // '@/plugins/highcharts',
@@ -230,12 +235,14 @@ export default {
     // '@/plugins/socketio.client.js',
     // '@/plugins/to-title-case',
     // '@/plugins/v-tooltip',
+    '@/plugins/vue-api-query',
     '@/plugins/vue-chartkick.client',
     // '@/plugins/vue-cocomaterial-image',
     '@/plugins/vue-content-placeholders',
     // '@/plugins/vue-feather-icons',
     // '@/plugins/vue-good-table.client',
     // '@/plugins/vue-notifications',
+    '@/plugins/vue-observe-visibility.client',
     // '@/plugins/vue-scroll-reveal.client',
     '@/plugins/vue-scrollactive',
     // '@/plugins/vue-select',
@@ -274,7 +281,8 @@ export default {
   // },
 
   axios: {
-    baseURL: process.env.apiUrl || 'https://victortolbert-api.herokuapp.com/',
+    // baseURL: process.env.apiUrl || 'https://victortolbert-api.herokuapp.com/',
+    baseURL: 'https://dev.to/api',
     credentials: true,
     // proxy: true,
   },
@@ -459,6 +467,9 @@ export default {
     includeCss: true,
   },
 
+  styleResources: {
+    scss: ['@/assets/styles/tokens.scss'],
+  },
   // sentry: {
   //   dsn:
   //     'https://c30dc69c78434050aed6f64b97cbd645@o244691.ingest.sentry.io/1422222',

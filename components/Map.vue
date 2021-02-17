@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import {provide, ref} from 'vue'
+import {provide, ref} from '@nuxtjs/composition-api'
 import MyMarker from './MyMarker'
 
 export default {

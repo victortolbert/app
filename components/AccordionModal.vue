@@ -80,7 +80,7 @@ export default {
   },
   computed: {
     widthSizeClass() {
-      if (this.widthSize == 'small') {
+      if (this.widthSize === 'small') {
         return 'max-w-sm'
       }
 

@@ -99,7 +99,10 @@
       <!-- <TheFooter /> -->
       <!-- <DeveloperToolbar /> -->
     </template>
+
     <PortalTarget name="modals" />
+    <div id="overlays" class="" />
+
     <SvgSprite />
     <!-- <CookieConsent
       message="I use Cookies for user analysis and on-page improvements!"

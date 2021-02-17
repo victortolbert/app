@@ -2,11 +2,11 @@
   <AccordionModal :header="lang.emails_we_send" class="mx-4">
     <template>
       <Accordion
-        v-for="(template, index) in templates"
+        v-for="(template, i) in templates"
         :key="template.id"
         :open="template.isOpen"
         animation="zoom-out"
-        @open="openAndCloseOthers(index)"
+        @open="openAndCloseOthers(i)"
       >
         <template slot="title">
           <p class="text-sm text-left sm:text-base md:text-lg">
@@ -32,9 +32,10 @@
           >
             <p class="mb-4">Hey, {{ lang.sponsor_name }}!</p>
             <p
-              v-for="(content, index) in lang
-                .easy_emailer_template_content_lines[template.identifier]"
-              :key="index"
+              v-for="(content, j) in lang.easy_emailer_template_content_lines[
+                template.identifier
+              ]"
+              :key="j"
               class="mb-4"
             >
               {{

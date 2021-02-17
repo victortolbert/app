@@ -20,6 +20,7 @@ export const state = () => ({
   count: 0,
   counter: 0,
   countries: [],
+  currentArticle: null,
   defaultUserImage: '',
   doubleTheDonationKey: null,
   events: [
@@ -626,6 +627,9 @@ export const mutations = {
   },
   SET_MERCHANT_TAX_ID(state, key) {
     state.merchantTaxId = key
+  },
+  SET_CURRENT_ARTICLE(state, article) {
+    state.currentArticle = article
   },
 }
 

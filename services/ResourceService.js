@@ -1,56 +1,47 @@
 import axios from 'axios'
 // import {Toast} from 'buefy/dist/components/toast'
 
-// Laravel CSRF token
-// let token = document.head.querySelector('meta[name="csrf-token"]')
+function hideDefaultLoading() {
+  document.querySelector('#overlays').classList.add('hidden')
+}
 
 const instance = axios.create({
-  // change this url to your api
-  baseURL: '//' + window.location.hostname + '/',
+  baseURL: process.env.API_URL || '/api',
+  withCredentials: false,
   headers: {
-    'X-Requested-With': 'XMLHttpRequest',
-    // 'X-CSRF-TOKEN': token ? token.content : null,
+    Accept: 'application/json',
+    'Content-Type': 'application/json',
   },
 })
-
-function hideDefaultLoading() {
-  document.querySelector('#default-loading').classList.add('hidden')
-}
 
 instance.interceptors.request.use(function (request) {
   if (request.loading && typeof request.loading === 'function') {
     request.loading()
   } else {
-    document.querySelector('#default-loading').classList.remove('hidden')
+    document.querySelector('#overlays').classList.remove('hidden')
   }
 
   return request
 })
 
-instance.interceptors.response.use(
-  function (response) {
-    hideDefaultLoading()
+instance.interceptors.response.use(function (response) {
+  hideDefaultLoading()
 
-    return response
-  },
-  function (error) {
-    if (error.config.error && typeof error.config.error === 'function') {
-      hideDefaultLoading()
-      error.config.error(error)
-    } else {
-      hideDefaultLoading()
-      // Toast.open('An error has occurred. Please try again.')
-    }
+  return response
+})
 
-    return Promise.reject(error)
-  },
-)
-
-// Define RESTful endpoints for the resources with a callback for the loading state
-// Note: Eloquent ORM naming conventions were used
 export default {
-  get: (resource, loading, error) => {
-    return instance.get(`${resource}`, {
+  getEvents(perPage, page) {
+    return instance.get('events?_limit=' + perPage + '&_page=' + page)
+  },
+  getEvent(id) {
+    return instance.get('events/' + id)
+  },
+  postEvent(event) {
+    return instance.post('events', event)
+  },
+  get: (resource, perPage, page, loading, error) => {
+    return instance.get(`${resource}?_limit=` + perPage + '&_page=' + page, {
       loading,
       error,
     })

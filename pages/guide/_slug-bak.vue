@@ -1,7 +1,7 @@
 <template>
   <div>
     <header class="top-0 flex items-center justify-between h-20 px-8 lg:sticky">
-      <nuxt-link
+      <NuxtLink
         to="/"
         class="flex items-center text-gray-800 transition duration-150 ease-in-out hover:text-gray-600 dark:text-white dark-hover:text-gray-400 focus:outline-none focus:underline"
       >
@@ -17,7 +17,7 @@
           />
         </svg>
         Nuxt.js Blog Starter
-      </nuxt-link>
+      </NuxtLink>
 
       <div class="ml-8">
         <button

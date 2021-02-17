@@ -50,8 +50,8 @@
 </template>
 
 <script>
-import EventCard from '@/components/EventCard'
 import EventService from '@/services/EventService'
+import EventCard from '@/components/EventCard'
 import {watchEffect} from '@vue/composition-api'
 
 export default {
@@ -69,7 +69,7 @@ export default {
   created() {
     watchEffect(() => {
       this.events = null
-      EventService.getEvents(2, this.page)
+      EventService.get('events', 2, this.page)
         .then(response => {
           this.events = response.data
           this.totalEvents = response.headers['x-total-count']

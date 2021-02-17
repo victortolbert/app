@@ -1,5 +1,5 @@
 <template>
-  <div class="flex">
+  <main class="flex flex-1">
     <div
       class="w-full py-4 lg:pt-8 lg:pb-4 dark:border-gray-800 lg:border-l lg:border-r"
       :class="{'': doc.toc && doc.toc.length, 'lg:w-3/4': !doc.fullscreen}"
@@ -17,7 +17,7 @@
       <ArticlePrevNext :prev="prev" :next="next" class="mt-4 lg:px-8" />
     </div>
     <SidebarToc v-if="doc.toc && doc.toc.length" :toc="doc.toc" />
-  </div>
+  </main>
 </template>
 
 <script>
