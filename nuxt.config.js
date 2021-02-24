@@ -253,7 +253,7 @@ export default {
     '@/plugins/vue-scrollactive',
     // '@/plugins/vue-select',
     '@/plugins/vue-tables-2.client',
-    // '@/plugins/vue-tippy',
+    '@/plugins/vue-tippy',
     // '@/plugins/vue-trix.client',
     // '@/plugins/vuebars',
     '@/plugins/vuelidate',

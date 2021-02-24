@@ -7,11 +7,11 @@ export default {
   <div id="resume" class="p-8 bg-white border rounded shadow-md">
     <header id="header" class="clear">
       <div>
-        <h1 class="name">Victor Tolbert</h1>
+        <h1 class="hidden name">Victor Tolbert</h1>
         <h2 class="label">Lead User Interface Engineer</h2>
       </div>
 
-      <span class="location">
+      <span class="hidden location">
         <span class="address">1547 Boulder Walk Drive,</span>
         <span class="postalCode">GA 30316,</span>
         <span class="city">Atlanta,</span>
@@ -24,7 +24,7 @@ export default {
           <span class="fa fa-envelope-o"></span>
           <a href="mailto:victor@tolbert.design">victor@tolbert.design</a>
         </div>
-        <div class="phone">
+        <div class="hidden phone">
           <span class="fa fa-mobile"></span>
           <a href="tel:(678) 613-3400">(678) 613-3400</a>
         </div>
@@ -57,14 +57,14 @@ export default {
       <section>
         <div>
           <p>
-            I’m a front-end developer with expertise building responsive,
-            standards-compliant solutions for some high-profile companies. My
-            most relevant strengths include __ revenue generating web products
-            for consumer-facing web platforms like AT&T, WebMD and AutoTrader.
-            Currently, I’m seeking similar opportunities to continue to build
-            delightful user experiences with a small team, using modern tooling
-            and frameworks in an environment with others are passionate about
-            their craft.
+            Hi!, I’m a self-taught Software Engineer with expertise building
+            responsive, standards-compliant solutions for a diverse group of
+            companies. My most relevant strengths include delivering
+            well-crafted, revenue generating solutions. for consumer-facing web
+            platforms like AT&T, WebMD and AutoTrader.com. Currently, I’m
+            seeking similar opportunities to continue to build delightful user
+            experiences with a small team, using modern tooling and frameworks
+            in an environment with others are passionate about their craft.
           </p>
         </div>
       </section>

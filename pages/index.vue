@@ -1,6 +1,4 @@
 <script>
-import {ray} from 'js-ray'
-
 // @ts-ignore
 export default {
   layout: 'plain',
@@ -46,16 +44,11 @@ export default {
     },
   },
   mounted() {
-    ray('a string')
-
-    ray(['an', 'array'])
-
-    ray({text: 'an object'})
-
-    ray('as', 'many', 'arguments', 'as', 'you', 'like')
-
-    ray('this is blue').color('blue')
-
+    // ray('a string')
+    // ray(['an', 'array'])
+    // ray({text: 'an object'})
+    // ray('as', 'many', 'arguments', 'as', 'you', 'like')
+    // ray('this is blue').color('blue')
     // ray().newScreen('My debug screen')
   },
 }

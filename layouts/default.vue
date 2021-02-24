@@ -303,9 +303,9 @@ export default defineComponent({
   //   )
   //   this.$store.commit('SET_MERCHANT_TAX_ID', initialState.merchantTaxId)
   // },
-  mounted() {
-    this.$maps.makeAutoComplete(this.$refs.citySearch)
-  },
+  //   mounted() {
+  //     this.$maps.makeAutoComplete(this.$refs.citySearch)
+  //   },
 })
 </script>
 
