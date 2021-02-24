@@ -6,7 +6,7 @@
 
     <ul>
       <li v-for="article in articles" :key="article.slug">
-        <NuxtLink :to="article.path">{{ article.title }}</NuxtLink>
+        <NuxtLink :to="`${article.path}/`">{{ article.title }}</NuxtLink>
       </li>
     </ul>
   </main>

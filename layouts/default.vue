@@ -4,7 +4,6 @@
       <TheNavbar
         class="text-gray-600 bg-white dark:bg-gray-900 dark:text-white"
       />
-      <BnbHeader />
     </template>
 
     <main class="flex-1 overflow-hidden bg-gray-100">

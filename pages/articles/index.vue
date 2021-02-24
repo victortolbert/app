@@ -4,7 +4,7 @@
 
     <h2>Articles</h2>
 
-    <input id="search" v-model="q" placeholder="Search..." />
+    <input id="search" v-model="q" autocomplete="off" placeholder="Search..." />
 
     <ul>
       <li v-for="article in articles" :key="article.slug">

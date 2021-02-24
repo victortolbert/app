@@ -287,8 +287,8 @@ export default {
   // },
 
   axios: {
-    // baseURL: process.env.apiUrl || 'https://victortolbert-api.herokuapp.com/',
-    baseURL: 'https://dev.to/api',
+    baseURL: process.env.apiUrl || 'https://victortolbert-api.herokuapp.com/',
+    // baseURL: 'https://dev.to/api',
     credentials: true,
     // proxy: true,
   },
