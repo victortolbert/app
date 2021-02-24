@@ -18,7 +18,7 @@ export default defineComponent({
 
     const affiliate = reactive({
       id: 1,
-      name: 'Ema',
+      name: 'Victor Tolbert',
       theme: {
         nav: {
           class: 'bg-white text-gray-800',
@@ -75,52 +75,62 @@ export default defineComponent({
   computed: {
     routes() {
       return [
-        {
-          name: 'dashboard',
-          label: this.$t('dashboard'),
-          path: '/dashboard/',
-        },
-        {
-          name: 'affiliates',
-          label: this.$t('affiliates'),
-          path: '/affiliates/',
-        },
-        {
-          name: 'people',
-          label: this.$t('people'),
-          path: '/people/',
-        },
-        {
-          name: 'person',
-          label: this.$t('person'),
-          path: '/person/',
-        },
-
         // {
-        //   name: 'resume',
-        //   label: this.$t('resume'),
-        //   path: '/demos/resume/',
+        //   name: 'dashboard',
+        //   label: this.$t('dashboard'),
+        //   path: '/dashboard/',
         // },
+        // {
+        //   name: 'affiliates',
+        //   label: this.$t('affiliates'),
+        //   path: '/affiliates/',
+        // },
+        // {
+        //   name: 'people',
+        //   label: this.$t('people'),
+        //   path: '/people/',
+        // },
+        {
+          name: 'guide',
+          label: this.$t('guide'),
+          path: '/guide/',
+        },
+        {
+          name: 'articles',
+          label: this.$t('articles'),
+          path: '/articles/',
+        },
+        // {
+        //   name: 'person',
+        //   label: this.$t('person'),
+        //   path: '/person/',
+        // },
+
+        {
+          name: 'resume',
+          label: this.$t('resume'),
+          path: '/demos/resume/',
+        },
         {
           name: 'homes',
           label: this.$t('homes'),
           path: '/homes/',
         },
-        // {
-        //   name: 'messages',
-        //   label: this.$t('messages'),
-        //   path: '/messages/',
-        // },
+        {
+          name: 'messages',
+          label: this.$t('messages'),
+          path: '/messages/',
+        },
         // {
         //   name: 'courses',
         //   label: this.$t('courses'),
         //   path: '/courses/',
         // },
-        {
-          name: 'dashboards',
-          label: this.$t('dashboard'),
-          path: '/dashboards/booster/',
-        },
+        // {
+        //   name: 'dashboards',
+        //   label: this.$t('dashboard'),
+        //   path: '/dashboards/booster/',
+        // },
         // {
         //   name: 'advocates',
         //   label: this.$t('advocates'),
@@ -227,7 +237,10 @@ export default defineComponent({
           </div>
 
           <div class="flex items-center flex-shrink-0">
-            <NuxtLink class="flex items-center justify-center" to="/">
+            <NuxtLink
+              class="flex items-center justify-center"
+              :to="localePath({path: '/dashboard/'})"
+            >
               <BaseLogo class="text-primary-500" :name="slug" />
             </NuxtLink>
           </div>

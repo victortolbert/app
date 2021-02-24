@@ -317,13 +317,8 @@ export default defineComponent({
             },
             {
               id: 4,
-              label: this.$t('bnb'),
-              path: '/bnb/',
-            },
-            {
-              id: 5,
-              label: this.$t('buefy'),
-              path: '/buefy/',
+              label: this.$t('homes'),
+              path: '/homes/',
             },
             {
               id: 6,

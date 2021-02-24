@@ -1,0 +1,32 @@
+on:
+  push:
+  workflow_dispatch:
+    inputs:
+      titleText:
+        description: 'Which text should it say?'
+        required: true
+        default: 'Welcome to Remotion'
+      titleColor:
+        description: 'Which color should it be in?'
+        required: true
+        default: 'black'
+name: Render video
+jobs:
+  render:
+    name: Render video
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@main
+      - uses: actions/setup-node@main
+      - run: brew install ffmpeg
+      - run: npm i
+      - run: npm run build -- --props="$WORKFLOW_INPUT"
+        env:
+          WORKFLOW_INPUT: ${{ toJson(github.event.inputs) }}
+      - run:
+          ffmpeg -y -i out.mp4 -i src/voiceover-no-music.mp3 -c:v copy -c:a aac
+          trailer.mp4
+      - uses: actions/upload-artifact@v2
+        with:
+          name: trailer.mp4
+          path: trailer.mp4

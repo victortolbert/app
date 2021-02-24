@@ -6,6 +6,11 @@ import path from 'path'
 export default {
   // should hold all env variables that are public as these will be exposed on the frontend. This could include a reference to your public URL for example.
   publicRuntimeConfig: {
+    auth: {
+      cookieName: 'idToken',
+      clientId:
+        '462364873905-pshoug4pfdd74iso13km6n7hg88s2ova.apps.googleusercontent.com',
+    },
     // baseUrl: process.env.BASE_URL || 'https://app.vticonsulting.com',
     baseURL:
       process.env.NODE_ENV === 'production'
@@ -92,7 +97,7 @@ export default {
 
   head: {
     // title: 'Lab',
-    titleTemplate: 'Lab: %s',
+    titleTemplate: 'Nuxt: %s',
     htmlAttrs: {
       lang: 'en',
     },
@@ -216,6 +221,7 @@ export default {
     // '@/plugins/cookies',
     // '@/plugins/axios.plugin',
     '@/plugins/api',
+    '@/plugins/auth.client',
     // '@/plugins/repositories',
     '@/plugins/data-api',
     '@/plugins/devto',

@@ -2,14 +2,14 @@ import {useFetch, useContext, ref, computed} from '@nuxtjs/composition-api'
 import {strip} from '@/helpers'
 
 export default function useMessages() {
-  const {$axios, route} = useContext()
+  const {$api, route} = useContext()
 
   const messages = ref([])
   const checked = ref([])
   const isCheckAll = ref(false)
 
   useFetch(async () => {
-    messages.value = await $axios.$get('messages')
+    messages.value = await $api.messages.index()
   })
 
   const filteredMessages = computed(() => {

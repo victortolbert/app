@@ -47,10 +47,10 @@ export default defineComponent({
       return `${strip(html).substr(0, 50)}...`
     }
 
-    const {$axios, params} = useContext()
+    const {$api, params} = useContext()
 
     useFetch(async () => {
-      message.value = await $axios.$get(`messages/${params.value.id}`)
+      message.value = await $api.messages.show(params.value.id)
     })
 
     return {message, truncate}

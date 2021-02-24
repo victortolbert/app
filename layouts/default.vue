@@ -4,6 +4,7 @@
       <TheNavbar
         class="text-gray-600 bg-white dark:bg-gray-900 dark:text-white"
       />
+      <BnbHeader />
     </template>
 
     <main class="flex-1 overflow-hidden bg-gray-100">
@@ -103,6 +104,10 @@
     <PortalTarget name="modals" />
     <div id="overlays" class="" />
 
+    <OLoading full-page :active.sync="$store.state.isLoading">
+      <OIcon pack="fas" icon="sync-alt" size="large" spin />
+    </OLoading>
+
     <SvgSprite />
     <!-- <CookieConsent
       message="I use Cookies for user analysis and on-page improvements!"
@@ -119,7 +124,7 @@
       </template>
     </CookieConsent> -->
 
-    <client-only>
+    <ClientOnly>
       <!-- <CookieLaw button-decline theme="mytheme"></CookieLaw> -->
       <CookieLaw class="flex-col" theme="mytheme">
         <div
@@ -198,7 +203,7 @@
           </div>
         </div>
       </CookieLaw>
-    </client-only>
+    </ClientOnly>
   </Layout>
 </template>
 

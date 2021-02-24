@@ -9,7 +9,7 @@
         <div class="app-search-results">
           <div class="app-search-results-listing">
             <h2 class="app-title">Stays in {{ label }}</h2>
-            <nuxt-link
+            <NuxtLink
               v-for="home in homes"
               :key="home.objectID"
               :to="`/home/${home.objectID}/`"
@@ -20,8 +20,9 @@
                 @mouseover.native="highlightMarker(home.objectID, true)"
                 @mouseout.native="highlightMarker(home.objectID, false)"
               />
-            </nuxt-link>
+            </NuxtLink>
           </div>
+
           <div class="app-search-results-map">
             <div class="app-map" ref="map"></div>
           </div>

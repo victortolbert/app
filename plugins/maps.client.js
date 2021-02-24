@@ -1,4 +1,6 @@
 export default function ({$config}, inject) {
+  window.initGoogleMaps = init
+
   let isLoaded = false
   let waiting = []
 
@@ -12,11 +14,11 @@ export default function ({$config}, inject) {
     const script = document.createElement('script')
     script.src = `https://maps.googleapis.com/maps/api/js?key=${$config.googleMapsApiKey}&libraries=places&callback=initGoogleMaps`
     script.async = true
-    window.initGoogleMaps = initGoogleMaps
+
     document.head.appendChild(script)
   }
 
-  function initGoogleMaps() {
+  function init() {
     isLoaded = true
     waiting.forEach(item => {
       if (typeof item.fn === 'function') {

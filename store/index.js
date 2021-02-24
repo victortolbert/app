@@ -51,6 +51,7 @@ export const state = () => ({
   forcePageRouteRefresh: false,
   indexedUser: 0,
   isBetaUser: false,
+  isLoading: false,
   isMenuOpen: false,
   merchantLegalName: null,
   merchantTaxId: null,

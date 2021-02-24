@@ -471,6 +471,7 @@ export default defineComponent({
       </svg>
     </div>
 
+    <!-- Prospectus -->
     <img
       v-if="name === 'prospectus'"
       class="w-auto h-11"

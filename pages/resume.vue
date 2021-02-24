@@ -1,6 +1,6 @@
 <script>
 export default {
-  layout: 'plain',
+  //   layout: 'plain',
 }
 </script>
 <template>

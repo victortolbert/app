@@ -1,0 +1,91 @@
+data:
+  - id: 1
+    category_id: 1
+    user_id: 1
+    post_type_id: 1
+    title: Post One
+    slug: post-one
+    body: This is post one.
+    post_image: post-one.jpg
+    created_at: '2020-12-04 19:06:44'
+  - id: 2
+    category_id: 1
+    user_id: 1
+    post_type_id: 1
+    title: First title
+    slug: slug-2
+    body: This is content for first title
+    post_image: no-image.jpg
+    created_at: '2020-12-31 08:27:04'
+  - id: 3
+    category_id: 1
+    user_id: 1
+    post_type_id: 1
+    title: Another title
+    slug: slug-3
+    body: This is content for another title
+    post_image: no-image.jpg
+    created_at: '2020-12-31 08:27:04'
+  - id: 4
+    category_id: 1
+    user_id: 1
+    post_type_id: 1
+    title: One more title
+    slug: slug-4
+    body: This is content for one more title
+    post_image: no-image.jpg
+    created_at: '2020-12-31 08:27:04'
+  - id: 5
+    category_id: 1
+    user_id: 1
+    post_type_id: 1
+    title: This one has a title too
+    slug: slug-5
+    body: This is content for this title too
+    post_image: no-image.jpg
+    created_at: '2020-12-31 08:27:04'
+  - id: 6
+    category_id: 1
+    user_id: 1
+    post_type_id: 1
+    title: How about this title
+    slug: slug-6
+    body: This is content for how about this title
+    post_image: no-image.jpg
+    created_at: '2020-12-31 08:27:04'
+  - id: 7
+    category_id: 1
+    user_id: 1
+    post_type_id: 0
+    title: Sustainability Training -- In Search of Sustainabilit
+    slug: Sustainability-Training-In-Search-of-Sustainabilit
+    body: sdgsdfg
+    post_image: noimage.jpg
+    created_at: '2021-01-08 12:33:00'
+  - id: 8
+    category_id: 1
+    user_id: 1
+    post_type_id: 0
+    title: asdfs
+    slug: asdfs
+    body: asdfasf
+    post_image: noimage.jpg
+    created_at: '2021-01-08 12:37:45'
+  - id: 9
+    category_id: 1
+    user_id: 1
+    post_type_id: 0
+    title: Quxx
+    slug: Quxx
+    body: asdfasdf
+    post_image: noimage.jpg
+    created_at: '2021-01-08 12:38:52'
+  - id: 10
+    category_id: 1
+    user_id: 1
+    post_type_id: 0
+    title: Quxx
+    slug: Quxx
+    body: asdfasdf
+    post_image: noimage.jpg
+    created_at: '2021-01-09 09:00:25'
