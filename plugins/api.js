@@ -75,16 +75,16 @@ export default ({$axios, store}, inject) => {
       request.loading()
     } else {
       // document.querySelector('#overlays').classList.remove('hidden')
-      console.log('loading...')
-      store.state.isLoading = true
+      //   console.log('loading...')
+      //   store.state.isLoading = true
     }
 
     return request
   })
 
   instance.interceptors.response.use(function (response) {
-    console.log('hide loading...')
-    store.state.isLoading = false
+    // console.log('hide loading...')
+    // store.state.isLoading = false
 
     return response
   })

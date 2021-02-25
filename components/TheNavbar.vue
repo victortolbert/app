@@ -350,70 +350,65 @@ export default defineComponent({
                   />
                 </button>
               </div>
-              <!--
-              Profile dropdown panel, show/hide based on dropdown state.
-
-              Entering: "transition ease-out duration-200"
-                From: "transform opacity-0 scale-95"
-                To: "transform opacity-100 scale-100"
-              Leaving: "transition ease-in duration-75"
-                From: "transform opacity-100 scale-100"
-                To: "transform opacity-0 scale-95"
-            -->
-              <div
-                v-if="showProfile == true"
-                class="absolute right-0 w-48 py-1 mt-2 origin-top-right bg-white rounded-md shadow-lg ring-1 ring-black ring-opacity-5"
-                role="menu"
-                aria-orientation="vertical"
-                aria-labelledby="user-menu"
+              <Transition
+                enter-class="scale-95 opacity-0"
+                enter-active-class="transition duration-200 ease-out transform scale-95 opacity-0"
+                enter-to-class="scale-100 opacity-100"
+                leave-class="scale-100 opacity-100"
+                leave-active-class="transition duration-75 ease-in transform scale-95 opacity-0"
+                leave-to-class="scale-95 opacity-0"
               >
-                <NuxtLink
-                  :to="localePath({path: '/profile/'})"
-                  class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                  role="menuitem"
+                <div
+                  v-if="showProfile == true"
+                  class="absolute right-0 w-48 py-1 mt-2 origin-top-right bg-white rounded-md shadow-lg ring-1 ring-black ring-opacity-5"
+                  role="menu"
+                  aria-orientation="vertical"
+                  aria-labelledby="user-menu"
                 >
-                  {{ $t('my_profile') }}
-                </NuxtLink>
-                <NuxtLink
-                  :to="localePath({path: '/team/'})"
-                  class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                  role="menuitem"
-                >
-                  {{ $t('team') }}
-                </NuxtLink>
-                <button
-                  @click.prevent="showVolunteerView = true"
-                  class="block w-full px-4 py-2 text-sm text-left text-gray-700 hover:bg-gray-100"
-                  role="menuitem"
-                >
-                  {{ $t('volunteers') }}
-                </button>
-                <NuxtLink
-                  :to="localePath({path: '/settings/'})"
-                  class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                  role="menuitem"
-                >
-                  {{ $t('settings') }}
-                </NuxtLink>
-                <a
-                  href="#"
-                  class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                  role="menuitem"
-                >
-                  {{ $t('sign_out') }}
-                </a>
-              </div>
+                  <NuxtLink
+                    :to="localePath({path: '/profile/'})"
+                    class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                    role="menuitem"
+                  >
+                    {{ $t('my_profile') }}
+                  </NuxtLink>
+                  <NuxtLink
+                    :to="localePath({path: '/team/'})"
+                    class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                    role="menuitem"
+                  >
+                    {{ $t('team') }}
+                  </NuxtLink>
+                  <button
+                    @click.prevent="showVolunteerView = true"
+                    class="block w-full px-4 py-2 text-sm text-left text-gray-700 hover:bg-gray-100"
+                    role="menuitem"
+                  >
+                    {{ $t('volunteers') }}
+                  </button>
+                  <NuxtLink
+                    :to="localePath({path: '/settings/'})"
+                    class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                    role="menuitem"
+                  >
+                    {{ $t('settings') }}
+                  </NuxtLink>
+                  <a
+                    href="#"
+                    class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                    role="menuitem"
+                  >
+                    {{ $t('sign_out') }}
+                  </a>
+                </div>
+              </Transition>
             </div>
           </div>
         </div>
       </div>
     </div>
 
-    <!--
-    Mobile menu, toggle classes based on menu state.
-
-    Menu open: "block", Menu closed: "hidden"
-  -->
+    <!-- Mobile Menu -->
     <div v-if="showMenu" class="md:hidden">
       <div class="pt-2 pb-3 space-y-1">
         <!-- Current: "bg-primary-50 border-primary-500 text-primary-700", Default: "border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700" -->
@@ -439,6 +434,7 @@ export default defineComponent({
         </NuxtLink>
       </div>
 
+      <!--  -->
       <div class="pt-4 pb-3 border-t border-gray-200">
         <div class="flex items-center px-4 sm:px-6">
           <div class="flex-shrink-0">
@@ -506,6 +502,8 @@ export default defineComponent({
       </div>
     </div>
 
+    <!-- Overlays / Off-canvas Sidebars -->
+    <!-- Announcements Sidebar -->
     <OSidebar
       :fullwidth="fullwidth"
       fullheight
@@ -646,6 +644,7 @@ export default defineComponent({
       </section>
     </OSidebar>
 
+    <!-- Volunteer Sidebar -->
     <OSidebar
       :fullwidth="fullwidth"
       fullheight
@@ -847,6 +846,7 @@ export default defineComponent({
       </section>
     </OSidebar>
 
+    <!-- Projects Sidebar  -->
     <div v-if="showNewProjectView" class="fixed inset-0 overflow-hidden">
       <div class="absolute inset-0 overflow-hidden">
         <!--

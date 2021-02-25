@@ -7,6 +7,13 @@
 
     {{ $auth.loggedIn ? 'Logged In' : 'Guest' }}
 
+    <FontAwesomeIcon style="color: #0a66c2" :icon="['fab', 'linkedin']" />
+    <FontAwesomeIcon style="color: #ff0000" :icon="['fab', 'youtube']" />
+    <FontAwesomeIcon
+      style="color: #1877f2"
+      :icon="['fab', 'facebook-square']"
+    />
+
     <template v-if="$auth.loggedIn">
       <OButton variant="info"> Secure </OButton>
       <OButton variant="danger" @click="$auth.logout()"> Logout </OButton>
