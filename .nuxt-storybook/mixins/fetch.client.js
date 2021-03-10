@@ -1,39 +1,27 @@
 import Vue from 'vue'
-import {
-  hasFetch,
-  normalizeError,
-  addLifecycleHook,
-  createGetCounter,
-} from '../utils'
+import { hasFetch, normalizeError, addLifecycleHook, createGetCounter } from '../utils'
 
-const isSsrHydration = vm =>
-  vm.$vnode &&
-  vm.$vnode.elm &&
-  vm.$vnode.elm.dataset &&
-  vm.$vnode.elm.dataset.fetchKey
+const isSsrHydration = (vm) => vm.$vnode && vm.$vnode.elm && vm.$vnode.elm.dataset && vm.$vnode.elm.dataset.fetchKey
 const nuxtState = window.__NUXT__
 
 export default {
-  beforeCreate() {
+  beforeCreate () {
     if (!hasFetch(this)) {
       return
     }
 
-    this._fetchDelay =
-      typeof this.$options.fetchDelay === 'number'
-        ? this.$options.fetchDelay
-        : 200
+    this._fetchDelay = typeof this.$options.fetchDelay === 'number' ? this.$options.fetchDelay : 200
 
     Vue.util.defineReactive(this, '$fetchState', {
       pending: false,
       error: null,
-      timestamp: Date.now(),
+      timestamp: Date.now()
     })
 
     this.$fetch = $fetch.bind(this)
     addLifecycleHook(this, 'created', created)
     addLifecycleHook(this, 'beforeMount', beforeMount)
-  },
+  }
 }
 
 function beforeMount() {
@@ -66,9 +54,8 @@ function created() {
 
 function $fetch() {
   if (!this._fetchPromise) {
-    this._fetchPromise = $_fetch.call(this).then(() => {
-      delete this._fetchPromise
-    })
+    this._fetchPromise = $_fetch.call(this)
+      .then(() => { delete this._fetchPromise })
   }
   return this._fetchPromise
 }

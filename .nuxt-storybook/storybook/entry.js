@@ -1,11 +1,11 @@
-import {start} from '@storybook/core/client'
-import {render, decorateStory, framework} from './nuxt-entry'
+import { start } from '@storybook/core/client'
+import { render, decorateStory, framework } from './nuxt-entry'
 
-const api = start(render, {decorateStory})
+const api = start(render, { decorateStory })
 
 export const storiesOf = (kind, m) => {
-  return api.clientApi.storiesOf(kind, m).addParameters({
-    framework,
+  return (api.clientApi.storiesOf(kind, m)).addParameters({
+    framework
   })
 }
 

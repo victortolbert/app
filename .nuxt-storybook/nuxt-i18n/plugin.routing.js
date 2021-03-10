@@ -10,10 +10,11 @@ import {
   STRATEGIES,
   strategy,
   trailingSlash,
-  vuex,
+  vuex
 } from './options'
+import { getDomainFromLocale } from './utils-common'
 
-function localePath(route, locale) {
+function localePath (route, locale) {
   const localizedRoute = localeRoute.call(this, route, locale)
 
   if (!localizedRoute) {
@@ -23,13 +24,13 @@ function localePath(route, locale) {
   return localizedRoute.fullPath
 }
 
-function localeRoute(route, locale) {
+function localeRoute (route, locale) {
   // Abort if no route or no locale
   if (!route) {
     return
   }
 
-  const {i18n} = this
+  const { i18n } = this
 
   locale = locale || i18n.locale
 
@@ -41,10 +42,10 @@ function localeRoute(route, locale) {
   if (typeof route === 'string') {
     if (route[0] === '/') {
       // If route parameter is a path, create route object with path.
-      route = {path: route}
+      route = { path: route }
     } else {
       // Else use it as route name.
-      route = {name: route}
+      route = { name: route }
     }
   }
 
@@ -54,20 +55,14 @@ function localeRoute(route, locale) {
     const isDefaultLocale = locale === defaultLocale
     // if route has a path defined but no name, resolve full route using the path
     const isPrefixed =
-      // don't prefix default locale
-      !(
-        isDefaultLocale &&
-        [
-          STRATEGIES.PREFIX_EXCEPT_DEFAULT,
-          STRATEGIES.PREFIX_AND_DEFAULT,
-        ].includes(strategy)
-      ) &&
-      // no prefix for any language
-      !(strategy === STRATEGIES.NO_PREFIX) &&
-      // no prefix for different domains
-      !i18n.differentDomains
+        // don't prefix default locale
+        !(isDefaultLocale && [STRATEGIES.PREFIX_EXCEPT_DEFAULT, STRATEGIES.PREFIX_AND_DEFAULT].includes(strategy)) &&
+        // no prefix for any language
+        !(strategy === STRATEGIES.NO_PREFIX) &&
+        // no prefix for different domains
+        !i18n.differentDomains
 
-    let path = isPrefixed ? `/${locale}${route.path}` : route.path
+    let path = (isPrefixed ? `/${locale}${route.path}` : route.path)
     path = path.replace(/\/+$/, '') + (trailingSlash ? '/' : '') || '/'
     localizedRoute.path = path
   } else {
@@ -77,7 +72,7 @@ function localeRoute(route, locale) {
 
     localizedRoute.name = getLocaleRouteName(localizedRoute.name, locale)
 
-    const {params} = localizedRoute
+    const { params } = localizedRoute
     if (params && params['0'] === undefined && params.pathMatch) {
       params['0'] = params.pathMatch
     }
@@ -86,58 +81,52 @@ function localeRoute(route, locale) {
   return this.router.resolve(localizedRoute).route
 }
 
-function switchLocalePath(locale) {
+function switchLocalePath (locale) {
   const name = this.getRouteBaseName()
   if (!name) {
     return ''
   }
 
-  const {i18n, route, store} = this
+  const { i18n, route, store } = this
 
   if (!route) {
     return ''
   }
 
-  const {params, ...routeCopy} = route
+  const { params, ...routeCopy } = route
   let langSwitchParams = {}
   if (vuex && vuex.syncRouteParams && store) {
-    langSwitchParams = store.getters[`${vuex.moduleName}/localeRouteParams`](
-      locale,
-    )
+    langSwitchParams = store.getters[`${vuex.moduleName}/localeRouteParams`](locale)
   }
   const baseRoute = Object.assign({}, routeCopy, {
     name,
     params: {
       ...params,
       ...langSwitchParams,
-      0: params.pathMatch,
-    },
+      0: params.pathMatch
+    }
   })
   let path = this.localePath(baseRoute, locale)
 
   // Handle different domains
   if (i18n.differentDomains) {
-    const lang = i18n.locales.find(l => l[LOCALE_CODE_KEY] === locale)
-    if (lang && lang[LOCALE_DOMAIN_KEY]) {
-      let protocol
-      if (process.server) {
-        const isHTTPS = require('is-https')
-        protocol = this.req && isHTTPS(this.req) ? 'https' : 'http'
-      } else {
-        protocol = window.location.protocol.split(':')[0]
-      }
-      path = protocol + '://' + lang[LOCALE_DOMAIN_KEY] + path
-    } else {
-      // eslint-disable-next-line no-console
-      console.warn(
-        `[${MODULE_NAME}] Could not find domain name for locale ${locale}`,
-      )
+    const options = {
+      differentDomains: i18n.differentDomains,
+      locales: i18n.locales,
+      localeDomainKey: LOCALE_DOMAIN_KEY,
+      localeCodeKey: LOCALE_CODE_KEY,
+      moduleName: MODULE_NAME
+    }
+    const domain = getDomainFromLocale(locale, this.req, options)
+    if (domain) {
+      path = domain + path
     }
   }
+
   return path
 }
 
-function getRouteBaseName(givenRoute) {
+function getRouteBaseName (givenRoute) {
   const route = givenRoute !== undefined ? givenRoute : this.route
   if (!route || !route.name) {
     return null
@@ -145,10 +134,8 @@ function getRouteBaseName(givenRoute) {
   return route.name.split(routesNameSeparator)[0]
 }
 
-function getLocaleRouteName(routeName, locale) {
-  let name =
-    routeName +
-    (strategy === STRATEGIES.NO_PREFIX ? '' : routesNameSeparator + locale)
+function getLocaleRouteName (routeName, locale) {
+  let name = routeName + (strategy === STRATEGIES.NO_PREFIX ? '' : routesNameSeparator + locale)
 
   if (locale === defaultLocale && strategy === STRATEGIES.PREFIX_AND_DEFAULT) {
     name += routesNameSeparator + defaultLocaleRouteNameSuffix
@@ -166,7 +153,7 @@ const VueInstanceProxy = function (targetFunction) {
       req: process.server ? this.$ssrContext.req : null,
       route: this.$route,
       router: this.$router,
-      store: this.$store,
+      store: this.$store
     }
 
     return targetFunction.apply(proxy, arguments)
@@ -175,7 +162,7 @@ const VueInstanceProxy = function (targetFunction) {
 
 const NuxtContextProxy = function (context, targetFunction) {
   return function () {
-    const {app, req, route, store} = context
+    const { app, req, route, store } = context
 
     const proxy = {
       getRouteBaseName: app.getRouteBaseName,
@@ -184,7 +171,7 @@ const NuxtContextProxy = function (context, targetFunction) {
       req: process.server ? req : null,
       route,
       router: app.router,
-      store,
+      store
     }
 
     return targetFunction.apply(proxy, arguments)
@@ -192,21 +179,21 @@ const NuxtContextProxy = function (context, targetFunction) {
 }
 
 const plugin = {
-  install(Vue) {
+  install (Vue) {
     Vue.mixin({
       methods: {
         localePath: VueInstanceProxy(localePath),
         localeRoute: VueInstanceProxy(localeRoute),
         switchLocalePath: VueInstanceProxy(switchLocalePath),
-        getRouteBaseName: VueInstanceProxy(getRouteBaseName),
-      },
+        getRouteBaseName: VueInstanceProxy(getRouteBaseName)
+      }
     })
-  },
+  }
 }
 
-export default context => {
+export default (context) => {
   Vue.use(plugin)
-  const {app} = context
+  const { app } = context
   app.localePath = NuxtContextProxy(context, localePath)
   app.localeRoute = NuxtContextProxy(context, localeRoute)
   app.switchLocalePath = NuxtContextProxy(context, switchLocalePath)

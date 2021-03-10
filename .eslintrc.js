@@ -31,6 +31,7 @@ module.exports = {
     'vue/require-default-props': 'off',
     'vue/order-in-components': 'off',
     'vue/no-v-html': 'off',
+    'node/no-callback-literal': 'off',
   },
   globals: {
     $nuxt: true,

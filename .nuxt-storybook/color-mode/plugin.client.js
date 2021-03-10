@@ -5,8 +5,7 @@ Vue.component('ColorScheme', colorSchemeComponent)
 
 const storageKey = 'nuxt-color-mode'
 const colorMode = window['__NUXT_COLOR_MODE__']
-const getForcedColorMode = route =>
-  route.matched[0] && route.matched[0].components.default.options.colorMode
+const getForcedColorMode = route => route.matched[0] && route.matched[0].components.default.options.colorMode
 
 export default function (ctx, inject) {
   let data = ctx.nuxtState.colorMode
@@ -15,7 +14,7 @@ export default function (ctx, inject) {
     data = {
       preference: colorMode.preference,
       value: colorMode.value,
-      unknown: false,
+      unknown: false
     }
     const pageColorMode = getForcedColorMode(ctx.route)
     if (pageColorMode) {
@@ -28,7 +27,7 @@ export default function (ctx, inject) {
   const $colorMode = new Vue({
     data,
     watch: {
-      preference(preference) {
+      preference (preference) {
         if (this.forced) {
           return
         }
@@ -41,44 +40,46 @@ export default function (ctx, inject) {
 
         this._storePreference(preference)
       },
-      value(newValue, oldValue) {
+      value (newValue, oldValue) {
         colorMode.removeClass(oldValue)
         colorMode.addClass(newValue)
-      },
+      }
     },
-    created() {
+    created () {
       if (this.preference === 'system') {
         this._watchMedia()
       }
+    },
+    mounted () {
       if (window.localStorage) {
         this._watchStorageChange()
       }
     },
     methods: {
-      _watchMedia() {
+      _watchMedia () {
         if (this._darkWatcher || !window.matchMedia) {
           return
         }
 
         this._darkWatcher = window.matchMedia('(prefers-color-scheme: dark)')
-        this._darkWatcher.addListener(e => {
+        this._darkWatcher.addListener((e) => {
           if (!this.forced && this.preference === 'system') {
             this.value = colorMode.getColorScheme()
           }
         })
       },
-      _watchStorageChange() {
-        window.addEventListener('storage', e => {
+      _watchStorageChange () {
+        window.addEventListener('storage', (e) => {
           if (e.key === storageKey) {
             this.preference = e.newValue
           }
         })
       },
-      _storePreference(preference) {
+      _storePreference (preference) {
         // Local storage to sync with other tabs
         window.localStorage.setItem(storageKey, preference)
-      },
-    },
+      }
+    }
   })
 
   window.onNuxtReady(() => {
@@ -95,15 +96,10 @@ export default function (ctx, inject) {
         $colorMode.forced = true
       } else {
         if (forcedColorMode === 'system') {
-          console.warn(
-            'You cannot force the colorMode to system at the page level.',
-          )
+          console.warn('You cannot force the colorMode to system at the page level.')
         }
         $colorMode.forced = false
-        $colorMode.value =
-          $colorMode.preference === 'system'
-            ? colorMode.getColorScheme()
-            : $colorMode.preference
+        $colorMode.value = $colorMode.preference === 'system' ? colorMode.getColorScheme() : $colorMode.preference
       }
       next()
     })

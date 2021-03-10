@@ -1,17 +1,17 @@
 import Vue from 'vue'
-import {normalizeURL} from '@nuxt/ufo'
+import { isSamePath as _isSamePath, joinURL, normalizeURL, withQuery, withoutTrailingSlash } from 'ufo'
 
 // window.{{globals.loadedCallback}} hook
 // Useful for jsdom testing or plugins (https://github.com/tmpvar/jsdom#dealing-with-asynchronous-script-loading)
 if (process.client) {
   window.onNuxtReadyCbs = []
-  window.onNuxtReady = cb => {
+  window.onNuxtReady = (cb) => {
     window.onNuxtReadyCbs.push(cb)
   }
 }
 
-export function createGetCounter(counterObject, defaultKey = '') {
-  return function getCounter(id = defaultKey) {
+export function createGetCounter (counterObject, defaultKey = '') {
+  return function getCounter (id = defaultKey) {
     if (counterObject[id] === undefined) {
       counterObject[id] = 0
     }
@@ -19,41 +19,35 @@ export function createGetCounter(counterObject, defaultKey = '') {
   }
 }
 
-export function empty() {}
+export function empty () {}
 
-export function globalHandleError(error) {
+export function globalHandleError (error) {
   if (Vue.config.errorHandler) {
     Vue.config.errorHandler(error)
   }
 }
 
-export function interopDefault(promise) {
+export function interopDefault (promise) {
   return promise.then(m => m.default || m)
 }
 
 export function hasFetch(vm) {
-  return (
-    vm.$options &&
-    typeof vm.$options.fetch === 'function' &&
-    !vm.$options.fetch.length
-  )
+  return vm.$options && typeof vm.$options.fetch === 'function' && !vm.$options.fetch.length
 }
 export function purifyData(data) {
   if (process.env.NODE_ENV === 'production') {
     return data
   }
 
-  return Object.entries(data)
-    .filter(([key, value]) => {
+  return Object.entries(data).filter(
+    ([key, value]) => {
       const valid = !(value instanceof Function) && !(value instanceof Promise)
       if (!valid) {
-        console.warn(
-          `${key} is not able to be stringified. This will break in a production environment.`,
-        )
+        console.warn(`${key} is not able to be stringified. This will break in a production environment.`)
       }
       return valid
-    })
-    .reduce((obj, [key, value]) => {
+    }
+    ).reduce((obj, [key, value]) => {
       obj[key] = value
       return obj
     }, {})
@@ -63,7 +57,7 @@ export function getChildrenComponentInstancesUsingFetch(vm, instances = []) {
   for (const child of children) {
     if (child.$fetch) {
       instances.push(child)
-      continue // Don't get the children since it will reload the template
+      continue; // Don't get the children since it will reload the template
     }
     if (child.$children) {
       getChildrenComponentInstancesUsingFetch(child, instances)
@@ -72,22 +66,16 @@ export function getChildrenComponentInstancesUsingFetch(vm, instances = []) {
   return instances
 }
 
-export function applyAsyncData(Component, asyncData) {
+export function applyAsyncData (Component, asyncData) {
   if (
     // For SSR, we once all this function without second param to just apply asyncData
     // Prevent doing this for each SSR request
-    !asyncData &&
-    Component.options.__hasNuxtData
+    !asyncData && Component.options.__hasNuxtData
   ) {
     return
   }
 
-  const ComponentData =
-    Component.options._originDataFn ||
-    Component.options.data ||
-    function () {
-      return {}
-    }
+  const ComponentData = Component.options._originDataFn || Component.options.data || function () { return {} }
   Component.options._originDataFn = ComponentData
 
   Component.options.data = function () {
@@ -95,7 +83,7 @@ export function applyAsyncData(Component, asyncData) {
     if (this.$ssrContext) {
       asyncData = this.$ssrContext.asyncData[Component.cid]
     }
-    return {...data, ...asyncData}
+    return { ...data, ...asyncData }
   }
 
   Component.options.__hasNuxtData = true
@@ -105,7 +93,7 @@ export function applyAsyncData(Component, asyncData) {
   }
 }
 
-export function sanitizeComponent(Component) {
+export function sanitizeComponent (Component) {
   // If Component already sanitized
   if (Component.options && Component._Ctor === Component) {
     return Component
@@ -124,43 +112,33 @@ export function sanitizeComponent(Component) {
   return Component
 }
 
-export function getMatchedComponents(
-  route,
-  matches = false,
-  prop = 'components',
-) {
-  return Array.prototype.concat.apply(
-    [],
-    route.matched.map((m, index) => {
-      return Object.keys(m[prop]).map(key => {
-        matches && matches.push(index)
-        return m[prop][key]
-      })
-    }),
-  )
+export function getMatchedComponents (route, matches = false, prop = 'components') {
+  return Array.prototype.concat.apply([], route.matched.map((m, index) => {
+    return Object.keys(m[prop]).map((key) => {
+      matches && matches.push(index)
+      return m[prop][key]
+    })
+  }))
 }
 
-export function getMatchedComponentsInstances(route, matches = false) {
+export function getMatchedComponentsInstances (route, matches = false) {
   return getMatchedComponents(route, matches, 'instances')
 }
 
-export function flatMapComponents(route, fn) {
-  return Array.prototype.concat.apply(
-    [],
-    route.matched.map((m, index) => {
-      return Object.keys(m.components).reduce((promises, key) => {
-        if (m.components[key]) {
-          promises.push(fn(m.components[key], m.instances[key], m, key, index))
-        } else {
-          delete m.components[key]
-        }
-        return promises
-      }, [])
-    }),
-  )
+export function flatMapComponents (route, fn) {
+  return Array.prototype.concat.apply([], route.matched.map((m, index) => {
+    return Object.keys(m.components).reduce((promises, key) => {
+      if (m.components[key]) {
+        promises.push(fn(m.components[key], m.instances[key], m, key, index))
+      } else {
+        delete m.components[key]
+      }
+      return promises
+    }, [])
+  }))
 }
 
-export function resolveRouteComponents(route, fn) {
+export function resolveRouteComponents (route, fn) {
   return Promise.all(
     flatMapComponents(route, async (Component, instance, match, key) => {
       // If component is a function, resolve it
@@ -168,14 +146,12 @@ export function resolveRouteComponents(route, fn) {
         Component = await Component()
       }
       match.components[key] = Component = sanitizeComponent(Component)
-      return typeof fn === 'function'
-        ? fn(Component, instance, match, key)
-        : Component
-    }),
+      return typeof fn === 'function' ? fn(Component, instance, match, key) : Component
+    })
   )
 }
 
-export async function getRouteData(route) {
+export async function getRouteData (route) {
   if (!route) {
     return
   }
@@ -185,12 +161,12 @@ export async function getRouteData(route) {
   return {
     ...route,
     meta: getMatchedComponents(route).map((Component, index) => {
-      return {...Component.options.meta, ...(route.matched[index] || {}).meta}
-    }),
+      return { ...Component.options.meta, ...(route.matched[index] || {}).meta }
+    })
   }
 }
 
-export async function setContext(app, context) {
+export async function setContext (app, context) {
   // If context not defined, create it
   if (!app.context) {
     app.context = {
@@ -201,22 +177,18 @@ export async function setContext(app, context) {
       store: app.store,
       payload: context.payload,
       error: context.error,
-      base: '/',
-      env: {
-        nodeEnv: 'development',
-        baseUrl: 'http://localhost:3000',
-        apiUrl: 'http://localhost:3000/api',
-        assetsUrl: 'http://localhost:3000',
-        stripePublicKey: 'pk_test_HHvO5elQXBUhbNuZWt0ngNLx',
-      },
+      base: app.router.options.base,
+      env: {"apiUrl":"https://api.victortolbert.com","wsUrl":"http://localhost:8686"}
     }
     // Only set once
-    if (!process.static && context.req) {
+
+    if (context.req) {
       app.context.req = context.req
     }
-    if (!process.static && context.res) {
+    if (context.res) {
       app.context.res = context.res
     }
+
     if (context.ssrContext) {
       app.context.ssrContext = context.ssrContext
     }
@@ -227,10 +199,7 @@ export async function setContext(app, context) {
       app.context._redirected = true
       // if only 1 or 2 arguments: redirect('/') or redirect('/', { foo: 'bar' })
       let pathType = typeof path
-      if (
-        typeof status !== 'number' &&
-        (pathType === 'undefined' || pathType === 'object')
-      ) {
+      if (typeof status !== 'number' && (pathType === 'undefined' || pathType === 'object')) {
         query = path || {}
         path = status
         pathType = typeof path
@@ -244,14 +213,14 @@ export async function setContext(app, context) {
         app.context.next({
           path,
           query,
-          status,
+          status
         })
       } else {
-        path = formatUrl(path, query)
+        path = withQuery(path, query)
         if (process.server) {
           app.context.next({
             path,
-            status,
+            status
           })
         }
         if (process.client) {
@@ -274,7 +243,7 @@ export async function setContext(app, context) {
   // Dynamic keys
   const [currentRouteData, fromRouteData] = await Promise.all([
     getRouteData(context.route),
-    getRouteData(context.from),
+    getRouteData(context.from)
   ])
 
   if (context.route) {
@@ -293,25 +262,24 @@ export async function setContext(app, context) {
   app.context.query = app.context.route.query || {}
 }
 
-export function middlewareSeries(promises, appContext) {
+export function middlewareSeries (promises, appContext) {
   if (!promises.length || appContext._redirected || appContext._errored) {
     return Promise.resolve()
   }
-  return promisify(promises[0], appContext).then(() => {
-    return middlewareSeries(promises.slice(1), appContext)
-  })
+  return promisify(promises[0], appContext)
+    .then(() => {
+      return middlewareSeries(promises.slice(1), appContext)
+    })
 }
 
-export function promisify(fn, context) {
+export function promisify (fn, context) {
   let promise
   if (fn.length === 2) {
-    console.warn(
-      'Callback-based asyncData, fetch or middleware calls are deprecated. ' +
-        'Please switch to promises or async/await syntax',
-    )
+      console.warn('Callback-based asyncData, fetch or middleware calls are deprecated. ' +
+        'Please switch to promises or async/await syntax')
 
     // fn(context, callback)
-    promise = new Promise(resolve => {
+    promise = new Promise((resolve) => {
       fn(context, function (err, data) {
         if (err) {
           context.error(err)
@@ -324,18 +292,14 @@ export function promisify(fn, context) {
     promise = fn(context)
   }
 
-  if (
-    promise &&
-    promise instanceof Promise &&
-    typeof promise.then === 'function'
-  ) {
+  if (promise && promise instanceof Promise && typeof promise.then === 'function') {
     return promise
   }
   return Promise.resolve(promise)
 }
 
 // Imported from vue-router
-export function getLocation(base, mode) {
+export function getLocation (base, mode) {
   if (mode === 'hash') {
     return window.location.hash.replace(/^#\//, '')
   }
@@ -361,13 +325,13 @@ export function getLocation(base, mode) {
  * @param  {Object=}            options
  * @return {!function(Object=, Object=)}
  */
-export function compile(str, options) {
+export function compile (str, options) {
   return tokensToFunction(parse(str, options), options)
 }
 
-export function getQueryDiff(toQuery, fromQuery) {
+export function getQueryDiff (toQuery, fromQuery) {
   const diff = {}
-  const queries = {...toQuery, ...fromQuery}
+  const queries = { ...toQuery, ...fromQuery }
   for (const k in queries) {
     if (String(toQuery[k]) !== String(fromQuery[k])) {
       diff[k] = true
@@ -376,7 +340,7 @@ export function getQueryDiff(toQuery, fromQuery) {
   return diff
 }
 
-export function normalizeError(err) {
+export function normalizeError (err) {
   let message
   if (!(err.message || typeof err === 'string')) {
     try {
@@ -390,11 +354,7 @@ export function normalizeError(err) {
   return {
     ...err,
     message,
-    statusCode:
-      err.statusCode ||
-      err.status ||
-      (err.response && err.response.status) ||
-      500,
+    statusCode: (err.statusCode || err.status || (err.response && err.response.status) || 500)
   }
 }
 
@@ -403,21 +363,18 @@ export function normalizeError(err) {
  *
  * @type {RegExp}
  */
-const PATH_REGEXP = new RegExp(
-  [
-    // Match escaped characters that would otherwise appear in future matches.
-    // This allows the user to escape special characters that won't transform.
-    '(\\\\.)',
-    // Match Express-style parameters and un-named parameters with a prefix
-    // and optional suffixes. Matches appear as:
-    //
-    // "/:test(\\d+)?" => ["/", "test", "\d+", undefined, "?", undefined]
-    // "/route(\\d+)"  => [undefined, undefined, undefined, "\d+", undefined, undefined]
-    // "/*"            => ["/", undefined, undefined, undefined, undefined, "*"]
-    '([\\/.])?(?:(?:\\:(\\w+)(?:\\(((?:\\\\.|[^\\\\()])+)\\))?|\\(((?:\\\\.|[^\\\\()])+)\\))([+*?])?|(\\*))',
-  ].join('|'),
-  'g',
-)
+const PATH_REGEXP = new RegExp([
+  // Match escaped characters that would otherwise appear in future matches.
+  // This allows the user to escape special characters that won't transform.
+  '(\\\\.)',
+  // Match Express-style parameters and un-named parameters with a prefix
+  // and optional suffixes. Matches appear as:
+  //
+  // "/:test(\\d+)?" => ["/", "test", "\d+", undefined, "?", undefined]
+  // "/route(\\d+)"  => [undefined, undefined, undefined, "\d+", undefined, undefined]
+  // "/*"            => ["/", undefined, undefined, undefined, undefined, "*"]
+  '([\\/.])?(?:(?:\\:(\\w+)(?:\\(((?:\\\\.|[^\\\\()])+)\\))?|\\(((?:\\\\.|[^\\\\()])+)\\))([+*?])?|(\\*))'
+].join('|'), 'g')
 
 /**
  * Parse a string for the raw tokens.
@@ -426,7 +383,7 @@ const PATH_REGEXP = new RegExp(
  * @param  {Object=} options
  * @return {!Array}
  */
-function parse(str, options) {
+function parse (str, options) {
   const tokens = []
   let key = 0
   let index = 0
@@ -475,11 +432,7 @@ function parse(str, options) {
       repeat,
       partial,
       asterisk: Boolean(asterisk),
-      pattern: pattern
-        ? escapeGroup(pattern)
-        : asterisk
-        ? '.*'
-        : '[^' + escapeString(delimiter) + ']+?',
+      pattern: pattern ? escapeGroup(pattern) : (asterisk ? '.*' : '[^' + escapeString(delimiter) + ']+?')
     })
   }
 
@@ -502,9 +455,9 @@ function parse(str, options) {
  * @param  {string}
  * @return {string}
  */
-function encodeURIComponentPretty(str, slashAllowed) {
+function encodeURIComponentPretty (str, slashAllowed) {
   const re = slashAllowed ? /[?#]/g : /[/?#]/g
-  return encodeURI(str).replace(re, c => {
+  return encodeURI(str).replace(re, (c) => {
     return '%' + c.charCodeAt(0).toString(16).toUpperCase()
   })
 }
@@ -515,7 +468,7 @@ function encodeURIComponentPretty(str, slashAllowed) {
  * @param  {string}
  * @return {string}
  */
-function encodeAsterisk(str) {
+function encodeAsterisk (str) {
   return encodeURIComponentPretty(str, true)
 }
 
@@ -525,7 +478,7 @@ function encodeAsterisk(str) {
  * @param  {string} str
  * @return {string}
  */
-function escapeString(str) {
+function escapeString (str) {
   return str.replace(/([.+*?=^!:${}()[\]|/\\])/g, '\\$1')
 }
 
@@ -535,14 +488,14 @@ function escapeString(str) {
  * @param  {string} group
  * @return {string}
  */
-function escapeGroup(group) {
+function escapeGroup (group) {
   return group.replace(/([=!:$/()])/g, '\\$1')
 }
 
 /**
  * Expose a method for transforming tokens into the path function.
  */
-function tokensToFunction(tokens, options) {
+function tokensToFunction (tokens, options) {
   // Compile all the tokens into regexps.
   const matches = new Array(tokens.length)
 
@@ -557,9 +510,7 @@ function tokensToFunction(tokens, options) {
     let path = ''
     const data = obj || {}
     const options = opts || {}
-    const encode = options.pretty
-      ? encodeURIComponentPretty
-      : encodeURIComponent
+    const encode = options.pretty ? encodeURIComponentPretty : encodeURIComponent
 
     for (let i = 0; i < tokens.length; i++) {
       const token = tokens[i]
@@ -588,13 +539,7 @@ function tokensToFunction(tokens, options) {
 
       if (Array.isArray(value)) {
         if (!token.repeat) {
-          throw new TypeError(
-            'Expected "' +
-              token.name +
-              '" to not repeat, but received `' +
-              JSON.stringify(value) +
-              '`',
-          )
+          throw new TypeError('Expected "' + token.name + '" to not repeat, but received `' + JSON.stringify(value) + '`')
         }
 
         if (value.length === 0) {
@@ -609,15 +554,7 @@ function tokensToFunction(tokens, options) {
           segment = encode(value[j])
 
           if (!matches[i].test(segment)) {
-            throw new TypeError(
-              'Expected all "' +
-                token.name +
-                '" to match "' +
-                token.pattern +
-                '", but received `' +
-                JSON.stringify(segment) +
-                '`',
-            )
+            throw new TypeError('Expected all "' + token.name + '" to match "' + token.pattern + '", but received `' + JSON.stringify(segment) + '`')
           }
 
           path += (j === 0 ? token.prefix : token.delimiter) + segment
@@ -629,15 +566,7 @@ function tokensToFunction(tokens, options) {
       segment = token.asterisk ? encodeAsterisk(value) : encode(value)
 
       if (!matches[i].test(segment)) {
-        throw new TypeError(
-          'Expected "' +
-            token.name +
-            '" to match "' +
-            token.pattern +
-            '", but received "' +
-            segment +
-            '"',
-        )
+        throw new TypeError('Expected "' + token.name + '" to match "' + token.pattern + '", but received "' + segment + '"')
       }
 
       path += token.prefix + segment
@@ -653,75 +582,8 @@ function tokensToFunction(tokens, options) {
  * @param  {Object} options
  * @return {string}
  */
-function flags(options) {
+function flags (options) {
   return options && options.sensitive ? '' : 'i'
-}
-
-/**
- * Format given url, append query to url query string
- *
- * @param  {string} url
- * @param  {string} query
- * @return {string}
- */
-function formatUrl(url, query) {
-  let protocol
-  const index = url.indexOf('://')
-  if (index !== -1) {
-    protocol = url.substring(0, index)
-    url = url.substring(index + 3)
-  } else if (url.startsWith('//')) {
-    url = url.substring(2)
-  }
-
-  let parts = url.split('/')
-  let result = (protocol ? protocol + '://' : '//') + parts.shift()
-
-  let path = parts.join('/')
-  if (path === '' && parts.length === 1) {
-    result += '/'
-  }
-
-  let hash
-  parts = path.split('#')
-  if (parts.length === 2) {
-    ;[path, hash] = parts
-  }
-
-  result += path ? '/' + path : ''
-
-  if (query && JSON.stringify(query) !== '{}') {
-    result += (url.split('?').length === 2 ? '&' : '?') + formatQuery(query)
-  }
-  result += hash ? '#' + hash : ''
-
-  return result
-}
-
-/**
- * Transform data object to query string
- *
- * @param  {object} query
- * @return {string}
- */
-function formatQuery(query) {
-  return Object.keys(query)
-    .sort()
-    .map(key => {
-      const val = query[key]
-      if (val == null) {
-        return ''
-      }
-      if (Array.isArray(val)) {
-        return val
-          .slice()
-          .map(val2 => [key, '=', val2].join(''))
-          .join('&')
-      }
-      return key + '=' + val
-    })
-    .filter(Boolean)
-    .join('&')
 }
 
 export function addLifecycleHook(vm, hook, fn) {
@@ -733,24 +595,14 @@ export function addLifecycleHook(vm, hook, fn) {
   }
 }
 
-export function urlJoin() {
-  return [].slice
-    .call(arguments)
-    .join('/')
-    .replace(/\/+/g, '/')
-    .replace(':/', '://')
-}
+export const urlJoin = joinURL
 
-export function stripTrailingSlash(path) {
-  return path.replace(/\/+$/, '') || '/'
-}
+export const stripTrailingSlash = withoutTrailingSlash
 
-export function isSamePath(p1, p2) {
-  return stripTrailingSlash(p1) === stripTrailingSlash(p2)
-}
+export const isSamePath = _isSamePath
 
-export function setScrollRestoration(newVal) {
+export function setScrollRestoration (newVal) {
   try {
-    window.history.scrollRestoration = newVal
-  } catch (e) {}
+    window.history.scrollRestoration = newVal;
+  } catch(e) {}
 }

@@ -1,6 +1,6 @@
 <template>
   <div
-    class="flex flex-col w-full min-h-screen pt-16 bg-white dark:bg-gray-900 dark:text-primary-50"
+    class="flex flex-col w-full min-h-screen bg-white dark:bg-gray-900 dark:text-primary-50"
   >
     <header v-if="hasHeaderSlot">
       <slot name="header">

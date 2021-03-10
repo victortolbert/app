@@ -1,18 +1,19 @@
+
 export default {
   name: 'NuxtChild',
   functional: true,
   props: {
     nuxtChildKey: {
       type: String,
-      default: '',
+      default: ''
     },
     keepAlive: Boolean,
     keepAliveProps: {
       type: Object,
-      default: undefined,
-    },
+      default: undefined
+    }
   },
-  render(_, {parent, data, props}) {
+  render (_, { parent, data, props }) {
     const h = parent.$createElement
 
     data.nuxtChild = true
@@ -30,14 +31,14 @@ export default {
     data.nuxtChildDepth = depth
     const transition = transitions[depth] || defaultTransition
     const transitionProps = {}
-    transitionsKeys.forEach(key => {
+    transitionsKeys.forEach((key) => {
       if (typeof transition[key] !== 'undefined') {
         transitionProps[key] = transition[key]
       }
     })
 
     const listeners = {}
-    listenersKeys.forEach(key => {
+    listenersKeys.forEach((key) => {
       if (typeof transition[key] === 'function') {
         listeners[key] = transition[key].bind(_parent)
       }
@@ -45,7 +46,7 @@ export default {
     if (process.client) {
       // Add triggerScroll event on beforeEnter (fix #1376)
       const beforeEnter = listeners.beforeEnter
-      listeners.beforeEnter = el => {
+      listeners.beforeEnter = (el) => {
         // Ensure to trigger scroll event after calling scrollBehavior
         window.$nuxt.$nextTick(() => {
           window.$nuxt.$emit('triggerScroll')
@@ -76,18 +77,14 @@ export default {
     let routerView = h('routerView', data)
 
     if (props.keepAlive) {
-      routerView = h('keep-alive', {props: props.keepAliveProps}, [routerView])
+      routerView = h('keep-alive', { props: props.keepAliveProps }, [routerView])
     }
 
-    return h(
-      'transition',
-      {
-        props: transitionProps,
-        on: listeners,
-      },
-      [routerView],
-    )
-  },
+    return h('transition', {
+      props: transitionProps,
+      on: listeners
+    }, [routerView])
+  }
 }
 
 const transitionsKeys = [
@@ -106,7 +103,7 @@ const transitionsKeys = [
   'appearActiveClass',
   'enterToClass',
   'leaveToClass',
-  'appearToClass',
+  'appearToClass'
 ]
 
 const listenersKeys = [
@@ -121,5 +118,5 @@ const listenersKeys = [
   'beforeAppear',
   'appear',
   'afterAppear',
-  'appearCancelled',
+  'appearCancelled'
 ]

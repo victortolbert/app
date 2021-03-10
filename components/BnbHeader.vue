@@ -18,7 +18,7 @@
     </div>
     <div class="app-user-menu">
       <img src="/images/icons/house.svg" />
-      <div class="name">Host</div>
+      <!-- <div class="name">Host</div> -->
       <div id="googleButton"></div>
     </div>
   </header>

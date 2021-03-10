@@ -5,11 +5,11 @@ export default {
     placeholder: String,
     tag: {
       type: String,
-      default: 'span',
-    },
+      default: 'span'
+    }
   },
-  render(createElement, {parent, data, props, children}) {
-    const {$colorMode} = parent
+  render (createElement, { parent, data, props, children }) {
+    const { $colorMode } = parent
 
     if (!$colorMode.unknown) {
       return children
@@ -17,9 +17,9 @@ export default {
     // transform props for <client-only>
     props = {
       placeholder: props.placeholder,
-      placeholderTag: props.tag,
+      placeholderTag: props.tag
     }
 
-    return createElement('client-only', {...data, props}, children)
-  },
+    return createElement('client-only', { ...data, props }, children)
+  }
 }

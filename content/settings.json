@@ -1,15 +1,25 @@
 {
-  "title": "Nuxt Content",
-  "url": "https://content.nuxtjs.org",
+  "title": "Example App",
+  "url": "https://app.vticonsulting.com",
   "logo": {
     "light": "/logo-light.svg",
     "dark": "/logo-dark.svg"
   },
-  "github": "nuxt/content",
-  "twitter": "nuxt_js",
-  "defaultBranch": "dev",
+  "github": "git+https://github.com/victortolbert/app.git",
+  "twitter": "@victortolbert",
+  "defaultBranch": "main",
   "algolia": {
-    "apiKey": "3677e049d48c83792ba0d2cb0715a12f",
-    "indexName": "nuxtjs_content"
+    "apiKey": "",
+    "indexName": ""
+  },
+  "links": {
+    "services": {
+      "google": {
+        "oauthDocs": "https://developers.google.com/identity/protocols/oauth2",
+        "mapsApis": "https://console.developers.google.com/google/maps-apis/metrics?project=mystic-sound-285115",
+        "dashboard": "https://console.developers.google.com/apis/dashboard?project=mystic-sound-285115&pli=1",
+        "credentials": "https://console.developers.google.com/apis/credentials?project=mystic-sound-285115&folder=&organizationId="
+      }
+    }
   }
 }

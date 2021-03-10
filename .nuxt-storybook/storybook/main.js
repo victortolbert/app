@@ -1,13 +1,5 @@
-const stories = [
-  '../components/**/*.stories.@(ts|js)',
-  '../components/**/*.stories.mdx',
-  '../components/**/*.stories.@(js|jsx|ts|tsx)',
-]
-const addons = [
-  '@storybook\u002Faddon-essentials',
-  '@storybook\u002Faddon-docs',
-  '@storybook\u002Faddon-controls',
-]
+const stories = ['../../components/**/*.stories.@(ts|js)','../../components/**/*.stories.mdx','../../components/**/*.stories.@(js|jsx|ts|tsx)']
+const addons  = ["@storybook\u002Faddon-essentials","@storybook\u002Faddon-docs","@storybook\u002Faddon-controls"]
 
 function nuxifyStorybook(storybookConfig) {
   return {
@@ -21,8 +13,14 @@ function nuxifyStorybook(storybookConfig) {
       }
       return config
     },
-    stories: [...stories, ...storybookConfig.stories],
-    addons: [...addons, ...storybookConfig.addons],
+    stories: [
+      ...stories,
+      ...storybookConfig.stories
+    ],
+    addons: [
+      ...addons,
+      ...storybookConfig.addons
+    ],
   }
 }
 
@@ -32,5 +30,5 @@ module.exports = {
   },
   stories,
   addons,
-  nuxifyStorybook,
+  nuxifyStorybook
 }

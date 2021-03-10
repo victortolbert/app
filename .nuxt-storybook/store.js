@@ -5,113 +5,104 @@ Vue.use(Vuex)
 
 const VUEX_PROPERTIES = ['state', 'getters', 'actions', 'mutations']
 
-let store = {}
+let store = {};
 
-;(function updateModules() {
+(function updateModules () {
   store = normalizeRoot(require('../store/index.js'), 'store/index.js')
 
   // If store is an exported method = classic mode (deprecated)
 
   if (typeof store === 'function') {
-    return console.warn(
-      'Classic mode for store/ is deprecated and will be removed in Nuxt 3.',
-    )
+    return console.warn('Classic mode for store/ is deprecated and will be removed in Nuxt 3.')
   }
 
   // Enforce store modules
   store.modules = store.modules || {}
 
   resolveStoreModules(require('../store/affiliate.js'), 'affiliate.js')
+  resolveStoreModules(require('../store/articles.js'), 'articles.js')
+  resolveStoreModules(require('../store/auth.js'), 'auth.js')
+  resolveStoreModules(require('../store/campaigns.js'), 'campaigns.js')
+  resolveStoreModules(require('../store/event.js'), 'event.js')
+  resolveStoreModules(require('../store/feature.js'), 'feature.js')
   resolveStoreModules(require('../store/menu.js'), 'menu.js')
   resolveStoreModules(require('../store/message.js'), 'message.js')
-  resolveStoreModules(require('../store/messages.js'), 'messages.js')
   resolveStoreModules(require('../store/notification.js'), 'notification.js')
   resolveStoreModules(require('../store/person.js'), 'person.js')
   resolveStoreModules(require('../store/post.js'), 'post.js')
+  resolveStoreModules(require('../store/role.js'), 'role.js')
   resolveStoreModules(require('../store/site.js'), 'site.js')
   resolveStoreModules(require('../store/ui.js'), 'ui.js')
-  resolveStoreModules(
-    require('../store/todos/IconCheckCircle.vue'),
-    'todos/IconCheckCircle.vue',
-  )
-  resolveStoreModules(
-    require('../store/todos/IconCircle.vue'),
-    'todos/IconCircle.vue',
-  )
-  resolveStoreModules(
-    require('../store/todos/IconDelete.vue'),
-    'todos/IconDelete.vue',
-  )
-  resolveStoreModules(
-    require('../store/todos/IconEdit.vue'),
-    'todos/IconEdit.vue',
-  )
-  resolveStoreModules(
-    require('../store/todos/MainHero.vue'),
-    'todos/MainHero.vue',
-  )
+  resolveStoreModules(require('../store/usr.js'), 'usr.js')
+  resolveStoreModules(require('../store/volunteer.js'), 'volunteer.js')
+  resolveStoreModules(require('../store/articles/comments.js'), 'articles/comments.js')
+  resolveStoreModules(require('../store/todos/getters.js'), 'todos/getters.js')
+  resolveStoreModules(require('../store/todos/IconCheckCircle.vue'), 'todos/IconCheckCircle.vue')
+  resolveStoreModules(require('../store/todos/IconCircle.vue'), 'todos/IconCircle.vue')
+  resolveStoreModules(require('../store/todos/IconDelete.vue'), 'todos/IconDelete.vue')
+  resolveStoreModules(require('../store/todos/IconEdit.vue'), 'todos/IconEdit.vue')
+  resolveStoreModules(require('../store/todos/MainHero.vue'), 'todos/MainHero.vue')
+  resolveStoreModules(require('../store/todos/mutations.js'), 'todos/mutations.js')
+  resolveStoreModules(require('../store/todos/state.js'), 'todos/state.js')
   resolveStoreModules(require('../store/todos/TabNav.vue'), 'todos/TabNav.vue')
-  resolveStoreModules(
-    require('../store/todos/TabNavItem.vue'),
-    'todos/TabNavItem.vue',
-  )
+  resolveStoreModules(require('../store/todos/TabNavItem.vue'), 'todos/TabNavItem.vue')
+  resolveStoreModules(require('../store/articles/comments/mutations.js'), 'articles/comments/mutations.js')
 
   // If the environment supports hot reloading...
 
   if (process.client && module.hot) {
     // Whenever any Vuex module is updated...
-    module.hot.accept(
-      [
-        '../store/affiliate.js',
-        '../store/index.js',
-        '../store/menu.js',
-        '../store/message.js',
-        '../store/messages.js',
-        '../store/notification.js',
-        '../store/person.js',
-        '../store/post.js',
-        '../store/site.js',
-        '../store/ui.js',
-        '../store/todos/IconCheckCircle.vue',
-        '../store/todos/IconCircle.vue',
-        '../store/todos/IconDelete.vue',
-        '../store/todos/IconEdit.vue',
-        '../store/todos/MainHero.vue',
-        '../store/todos/TabNav.vue',
-        '../store/todos/TabNavItem.vue',
-      ],
-      () => {
-        // Update `root.modules` with the latest definitions.
-        updateModules()
-        // Trigger a hot update in the store.
-        window.$nuxt.$store.hotUpdate(store)
-      },
-    )
+    module.hot.accept([
+      '../store/affiliate.js',
+      '../store/articles.js',
+      '../store/auth.js',
+      '../store/campaigns.js',
+      '../store/event.js',
+      '../store/feature.js',
+      '../store/index.js',
+      '../store/menu.js',
+      '../store/message.js',
+      '../store/notification.js',
+      '../store/person.js',
+      '../store/post.js',
+      '../store/role.js',
+      '../store/site.js',
+      '../store/ui.js',
+      '../store/usr.js',
+      '../store/volunteer.js',
+      '../store/articles/comments.js',
+      '../store/todos/getters.js',
+      '../store/todos/IconCheckCircle.vue',
+      '../store/todos/IconCircle.vue',
+      '../store/todos/IconDelete.vue',
+      '../store/todos/IconEdit.vue',
+      '../store/todos/MainHero.vue',
+      '../store/todos/mutations.js',
+      '../store/todos/state.js',
+      '../store/todos/TabNav.vue',
+      '../store/todos/TabNavItem.vue',
+      '../store/articles/comments/mutations.js',
+    ], () => {
+      // Update `root.modules` with the latest definitions.
+      updateModules()
+      // Trigger a hot update in the store.
+      window.$nuxt.$store.hotUpdate(store)
+    })
   }
 })()
 
 // createStore
-export const createStore =
-  store instanceof Function
-    ? store
-    : () => {
-        return new Vuex.Store(
-          Object.assign(
-            {
-              strict: process.env.NODE_ENV !== 'production',
-            },
-            store,
-          ),
-        )
-      }
+export const createStore = store instanceof Function ? store : () => {
+  return new Vuex.Store(Object.assign({
+    strict: (process.env.NODE_ENV !== 'production')
+  }, store))
+}
 
-function normalizeRoot(moduleData, filePath) {
+function normalizeRoot (moduleData, filePath) {
   moduleData = moduleData.default || moduleData
 
   if (moduleData.commit) {
-    throw new Error(
-      `[nuxt] ${filePath} should export a method that returns a Vuex instance.`,
-    )
+    throw new Error(`[nuxt] ${filePath} should export a method that returns a Vuex instance.`)
   }
 
   if (typeof moduleData !== 'function') {
@@ -121,38 +112,33 @@ function normalizeRoot(moduleData, filePath) {
   return normalizeModule(moduleData, filePath)
 }
 
-function normalizeModule(moduleData, filePath) {
+function normalizeModule (moduleData, filePath) {
   if (moduleData.state && typeof moduleData.state !== 'function') {
-    console.warn(
-      `'state' should be a method that returns an object in ${filePath}`,
-    )
+    console.warn(`'state' should be a method that returns an object in ${filePath}`)
 
     const state = Object.assign({}, moduleData.state)
     // Avoid TypeError: setting a property that has only a getter when overwriting top level keys
-    moduleData = Object.assign({}, moduleData, {state: () => state})
+    moduleData = Object.assign({}, moduleData, { state: () => state })
   }
   return moduleData
 }
 
-function resolveStoreModules(moduleData, filename) {
+function resolveStoreModules (moduleData, filename) {
   moduleData = moduleData.default || moduleData
   // Remove store src + extension (./foo/index.js -> foo/index)
-  const namespace = filename.replace(/\.(js|mjs|ts)$/, '')
+  const namespace = filename.replace(/\.(js|mjs)$/, '')
   const namespaces = namespace.split('/')
   let moduleName = namespaces[namespaces.length - 1]
   const filePath = `store/${filename}`
 
-  moduleData =
-    moduleName === 'state'
-      ? normalizeState(moduleData, filePath)
-      : normalizeModule(moduleData, filePath)
+  moduleData = moduleName === 'state'
+    ? normalizeState(moduleData, filePath)
+    : normalizeModule(moduleData, filePath)
 
   // If src is a known Vuex property
   if (VUEX_PROPERTIES.includes(moduleName)) {
     const property = moduleName
-    const propertyStoreModule = getStoreModule(store, namespaces, {
-      isProperty: true,
-    })
+    const propertyStoreModule = getStoreModule(store, namespaces, { isProperty: true })
 
     // Replace state since it's a function
     mergeProperty(propertyStoreModule, moduleData, property)
@@ -160,7 +146,7 @@ function resolveStoreModules(moduleData, filename) {
   }
 
   // If file is foo/index.js, it should be saved as foo
-  const isIndexModule = moduleName === 'index'
+  const isIndexModule = (moduleName === 'index')
   if (isIndexModule) {
     namespaces.pop()
     moduleName = namespaces[namespaces.length - 1]
@@ -177,7 +163,7 @@ function resolveStoreModules(moduleData, filename) {
   }
 }
 
-function normalizeState(moduleData, filePath) {
+function normalizeState (moduleData, filePath) {
   if (typeof moduleData !== 'function') {
     console.warn(`${filePath} should export a method that returns an object`)
     const state = Object.assign({}, moduleData)
@@ -186,7 +172,7 @@ function normalizeState(moduleData, filePath) {
   return normalizeModule(moduleData, filePath)
 }
 
-function getStoreModule(storeModule, namespaces, {isProperty = false} = {}) {
+function getStoreModule (storeModule, namespaces, { isProperty = false } = {}) {
   // If ./mutations.js
   if (!namespaces.length || (isProperty && namespaces.length === 1)) {
     return storeModule
@@ -196,15 +182,12 @@ function getStoreModule(storeModule, namespaces, {isProperty = false} = {}) {
 
   storeModule.modules[namespace] = storeModule.modules[namespace] || {}
   storeModule.modules[namespace].namespaced = true
-  storeModule.modules[namespace].modules =
-    storeModule.modules[namespace].modules || {}
+  storeModule.modules[namespace].modules = storeModule.modules[namespace].modules || {}
 
-  return getStoreModule(storeModule.modules[namespace], namespaces, {
-    isProperty,
-  })
+  return getStoreModule(storeModule.modules[namespace], namespaces, { isProperty })
 }
 
-function mergeProperty(storeModule, moduleData, property) {
+function mergeProperty (storeModule, moduleData, property) {
   if (!moduleData) {
     return
   }

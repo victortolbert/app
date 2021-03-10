@@ -458,6 +458,62 @@ video course by Vue School.
 - [Vue.js Devtools for Google Chrome](https://chrome.google.com/webstore/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd?hl=en)
 - [Vuex For Everyone Course](https://vueschool.io/courses/vuex-for-everyone)
 
+### Google Sign-In and Auth Plugin
+
+In this lesson, we'll learn how to integrate Google Sign-In into a Nuxt.js project. We'll do that by creating a self-made auth plugin.
+
+#### Lesson Resources
+
+- [Google Sign-In Documentation](https://developers.google.com/identity/sign-in/web/sign-in)
+
+### Storing Credentials
+
+In this lesson, we'll learn how to store the user's credentials after they log in with Google Sign-In so we can identify the user.
+
+#### Lesson Resources
+
+- [JavaScript Cookie](https://github.com/js-cookie/js-cookie)
+- [GoogleAuth.currentUser.listen(listener) Documentation](https://developers.google.com/identity/sign-in/web/reference#googleauthcurrentuserlistenlistener)
+- [Article: SameSite Cookies Explained](https://web.dev/samesite-cookies-explained/)
+
+### Setting Up The Auth Store
+
+In this lesson, we'll set up a Vuex auth store to store the user's image and logged-in state.
+
+If you need a refresher on how Vuex works with Nuxt, check out the Setting Up The Vuex Store lesson.
+
+If you want to brush up on your Vuex skills, we recommend the free Vuex for Everyone video course by Vue School.
+
+### Working With Server Middleware
+
+In this lesson, we'll learn about server middleware so we can protect our API routes.
+
+#### Lesson Resources
+
+- [The serverMiddleware Property Documentation](https://nuxtjs.org/docs/2.x/configuration-glossary/configuration-servermiddleware)
+- [Node.js IncomingMessage Documentation](https://nodejs.org/api/http.html#http_class_http_incomingmessage)
+- [Node.js Server Response Documentation](https://nodejs.org/api/http.html#http_class_http_serverresponse)
+
+### Building an API Firewall (Part 1)
+
+In this lesson, we'll create a server middleware that will act as an API firewall in our Nuxt application.
+
+#### Leson Resources
+
+- [cookie npm package](https://www.npmjs.com/package/cookie)
+- [Nuxt Hooks Documentation]()
+
+
+### Building an API Firewall (Part 2)
+
+### Creating an Algolia Proxy
+
+### Extending the Algolia Proxy
+
+### Filling The Auth Store
+
+
+
 ## Refactoring and Improvements (7 Lessons)
 
 ## Property Availability (3 Lessons)

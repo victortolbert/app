@@ -7,11 +7,11 @@ export default {
   <div id="resume" class="p-8 bg-white border rounded shadow-md">
     <header id="header" class="clear">
       <div>
-        <h1 class="hidden name">Victor Tolbert</h1>
+        <h1 class="name">Victor Tolbert</h1>
         <h2 class="label">Lead User Interface Engineer</h2>
       </div>
 
-      <span class="hidden location">
+      <span class="location">
         <span class="address">1547 Boulder Walk Drive,</span>
         <span class="postalCode">GA 30316,</span>
         <span class="city">Atlanta,</span>
@@ -20,34 +20,34 @@ export default {
       </span>
 
       <div id="contact">
-        <div class="email">
-          <span class="fa fa-envelope-o"></span>
+        <div class="flex items-center email">
+          <BaseIconSolid name="mail" />
           <a href="mailto:victor@tolbert.design">victor@tolbert.design</a>
         </div>
-        <div class="hidden phone">
-          <span class="fa fa-mobile"></span>
+        <div class="flex phone">
+          <BaseIconSolid name="device-mobile" />
           <a href="tel:(678) 613-3400">(678) 613-3400</a>
         </div>
       </div>
 
       <div id="profiles">
         <div class="item">
-          <div class="username">
-            <span class="fa fa-github github social"></span>
+          <div class="flex items-center username">
+            <BaseIconSolid name="github" />
             <span class="url">
-              <a target="_blank" href="https://github.com/victortolbert"
-                >victortolbert</a
-              >
+              <a target="_blank" href="https://github.com/victortolbert">
+                victortolbert
+              </a>
             </span>
           </div>
         </div>
         <div class="item">
-          <div class="username">
-            <span class="fa fa-linkedin linkedin social"></span>
+          <div class="flex items-center username">
+            <BaseIconSolid name="linkedin" />
             <span class="url">
-              <a target="_blank" href="https://linkedin.com/in/victortolbert"
-                >victortolbert</a
-              >
+              <a target="_blank" href="https://linkedin.com/in/victortolbert">
+                victortolbert
+              </a>
             </span>
           </div>
         </div>
@@ -112,7 +112,7 @@ export default {
       <section id="work">
         <section class="work-item">
           <span class="location">
-            <span class="fa fa-map-marker"></span>
+            <BaseIconSolid name="location-marker" />
           </span>
           <div class="item" id="work-item">
             <ul class="highlights">

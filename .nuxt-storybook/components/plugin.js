@@ -1,284 +1,155 @@
 import Vue from 'vue'
 
-const globalComponents = {
-  AffiliateItem: () =>
-    import(
-      '../../components/global/AffiliateItem.vue' /* webpackChunkName: "components/global/AffiliateItem" */
-    ).then(c => c.default || c),
-  ColorModeToggle: () =>
-    import(
-      '../../components/global/ColorModeToggle.vue' /* webpackChunkName: "components/global/ColorModeToggle" */
-    ).then(c => c.default || c),
-  DeveloperToolbar: () =>
-    import(
-      '../../components/global/DeveloperToolbar.vue' /* webpackChunkName: "components/global/DeveloperToolbar" */
-    ).then(c => c.default || c),
-  EmailLink: () =>
-    import(
-      '../../components/global/EmailLink.vue' /* webpackChunkName: "components/global/EmailLink" */
-    ).then(c => c.default || c),
-  Logo: () =>
-    import(
-      '../../components/global/Logo.vue' /* webpackChunkName: "components/global/Logo" */
-    ).then(c => c.default || c),
-  LogoAlgolia: () =>
-    import(
-      '../../components/global/LogoAlgolia.vue' /* webpackChunkName: "components/global/LogoAlgolia" */
-    ).then(c => c.default || c),
-  LogoBooster: () =>
-    import(
-      '../../components/global/LogoBooster.vue' /* webpackChunkName: "components/global/LogoBooster" */
-    ).then(c => c.default || c),
-  LogoCss3: () =>
-    import(
-      '../../components/global/LogoCSS3.vue' /* webpackChunkName: "components/global/LogoCSS3" */
-    ).then(c => c.default || c),
-  LogoCloud: () =>
-    import(
-      '../../components/global/LogoCloud.vue' /* webpackChunkName: "components/global/LogoCloud" */
-    ).then(c => c.default || c),
-  LogoCypress: () =>
-    import(
-      '../../components/global/LogoCypress.vue' /* webpackChunkName: "components/global/LogoCypress" */
-    ).then(c => c.default || c),
-  LogoFigma: () =>
-    import(
-      '../../components/global/LogoFigma.vue' /* webpackChunkName: "components/global/LogoFigma" */
-    ).then(c => c.default || c),
-  LogoGaSps: () =>
-    import(
-      '../../components/global/LogoGaSps.vue' /* webpackChunkName: "components/global/LogoGaSps" */
-    ).then(c => c.default || c),
-  LogoHtml5: () =>
-    import(
-      '../../components/global/LogoHTML5.vue' /* webpackChunkName: "components/global/LogoHTML5" */
-    ).then(c => c.default || c),
-  LogoJs: () =>
-    import(
-      '../../components/global/LogoJS.vue' /* webpackChunkName: "components/global/LogoJS" */
-    ).then(c => c.default || c),
-  LogoJamStack: () =>
-    import(
-      '../../components/global/LogoJamStack.vue' /* webpackChunkName: "components/global/LogoJamStack" */
-    ).then(c => c.default || c),
-  LogoLaravel: () =>
-    import(
-      '../../components/global/LogoLaravel.vue' /* webpackChunkName: "components/global/LogoLaravel" */
-    ).then(c => c.default || c),
-  LogoMirage: () =>
-    import(
-      '../../components/global/LogoMirage.vue' /* webpackChunkName: "components/global/LogoMirage" */
-    ).then(c => c.default || c),
-  LogoNetlify: () =>
-    import(
-      '../../components/global/LogoNetlify.vue' /* webpackChunkName: "components/global/LogoNetlify" */
-    ).then(c => c.default || c),
-  LogoNuxt: () =>
-    import(
-      '../../components/global/LogoNuxt.vue' /* webpackChunkName: "components/global/LogoNuxt" */
-    ).then(c => c.default || c),
-  LogoSalesLoft: () =>
-    import(
-      '../../components/global/LogoSalesLoft.vue' /* webpackChunkName: "components/global/LogoSalesLoft" */
-    ).then(c => c.default || c),
-  LogoSentry: () =>
-    import(
-      '../../components/global/LogoSentry.vue' /* webpackChunkName: "components/global/LogoSentry" */
-    ).then(c => c.default || c),
-  LogoSps: () =>
-    import(
-      '../../components/global/LogoSps.vue' /* webpackChunkName: "components/global/LogoSps" */
-    ).then(c => c.default || c),
-  LogoStatamic: () =>
-    import(
-      '../../components/global/LogoStatamic.vue' /* webpackChunkName: "components/global/LogoStatamic" */
-    ).then(c => c.default || c),
-  LogoStorybook: () =>
-    import(
-      '../../components/global/LogoStorybook.vue' /* webpackChunkName: "components/global/LogoStorybook" */
-    ).then(c => c.default || c),
-  LogoSvelte: () =>
-    import(
-      '../../components/global/LogoSvelte.vue' /* webpackChunkName: "components/global/LogoSvelte" */
-    ).then(c => c.default || c),
-  LogoTitan: () =>
-    import(
-      '../../components/global/LogoTitan.vue' /* webpackChunkName: "components/global/LogoTitan" */
-    ).then(c => c.default || c),
-  LogoTolbertDesign: () =>
-    import(
-      '../../components/global/LogoTolbertDesign.vue' /* webpackChunkName: "components/global/LogoTolbertDesign" */
-    ).then(c => c.default || c),
-  LogoVt: () =>
-    import(
-      '../../components/global/LogoVT.vue' /* webpackChunkName: "components/global/LogoVT" */
-    ).then(c => c.default || c),
-  LogoVtDark: () =>
-    import(
-      '../../components/global/LogoVTDark.vue' /* webpackChunkName: "components/global/LogoVTDark" */
-    ).then(c => c.default || c),
-  LogoVidea: () =>
-    import(
-      '../../components/global/LogoVidea.vue' /* webpackChunkName: "components/global/LogoVidea" */
-    ).then(c => c.default || c),
-  LogoZoom: () =>
-    import(
-      '../../components/global/LogoZoom.vue' /* webpackChunkName: "components/global/LogoZoom" */
-    ).then(c => c.default || c),
-  PendingPlaceholder: () =>
-    import(
-      '../../components/global/PendingPlaceholder.vue' /* webpackChunkName: "components/global/PendingPlaceholder" */
-    ).then(c => c.default || c),
-  SimpleLogoCloud: () =>
-    import(
-      '../../components/global/SimpleLogoCloud.vue' /* webpackChunkName: "components/global/SimpleLogoCloud" */
-    ).then(c => c.default || c),
-  SvgIcon: () =>
-    import(
-      '../../components/global/SvgIcon.vue' /* webpackChunkName: "components/global/SvgIcon" */
-    ).then(c => c.default || c),
-  SvgSprite: () =>
-    import(
-      '../../components/global/SvgSprite.vue' /* webpackChunkName: "components/global/SvgSprite" */
-    ).then(c => c.default || c),
-  BaseAlert: () =>
-    import(
-      '../../components/global/bases/BaseAlert.vue' /* webpackChunkName: "components/global/bases/BaseAlert" */
-    ).then(c => c.default || c),
-  BaseList: () =>
-    import(
-      '../../components/global/bases/BaseList.vue' /* webpackChunkName: "components/global/bases/BaseList" */
-    ).then(c => c.default || c),
-  CodeBlock: () =>
-    import(
-      '../../components/global/bases/CodeBlock.vue' /* webpackChunkName: "components/global/bases/CodeBlock" */
-    ).then(c => c.default || c),
-  CodeGroup: () =>
-    import(
-      '../../components/global/bases/CodeGroup.vue' /* webpackChunkName: "components/global/bases/CodeGroup" */
-    ).then(c => c.default || c),
-  CodeSandbox: () =>
-    import(
-      '../../components/global/bases/CodeSandbox.vue' /* webpackChunkName: "components/global/bases/CodeSandbox" */
-    ).then(c => c.default || c),
-  ColorSwitcher: () =>
-    import(
-      '../../components/global/bases/ColorSwitcher.vue' /* webpackChunkName: "components/global/bases/ColorSwitcher" */
-    ).then(c => c.default || c),
-  ExampleMultiselect: () =>
-    import(
-      '../../components/global/examples/ExampleMultiselect.vue' /* webpackChunkName: "components/global/examples/ExampleMultiselect" */
-    ).then(c => c.default || c),
-  IconAlert: () =>
-    import(
-      '../../components/global/icons/IconAlert.vue' /* webpackChunkName: "components/global/icons/IconAlert" */
-    ).then(c => c.default || c),
-  IconAngular: () =>
-    import(
-      '../../components/global/icons/IconAngular.vue' /* webpackChunkName: "components/global/icons/IconAngular" */
-    ).then(c => c.default || c),
-  IconArrowLeft: () =>
-    import(
-      '../../components/global/icons/IconArrowLeft.vue' /* webpackChunkName: "components/global/icons/IconArrowLeft" */
-    ).then(c => c.default || c),
-  IconArrowRight: () =>
-    import(
-      '../../components/global/icons/IconArrowRight.vue' /* webpackChunkName: "components/global/icons/IconArrowRight" */
-    ).then(c => c.default || c),
-  IconCheck: () =>
-    import(
-      '../../components/global/icons/IconCheck.vue' /* webpackChunkName: "components/global/icons/IconCheck" */
-    ).then(c => c.default || c),
-  IconChevronRight: () =>
-    import(
-      '../../components/global/icons/IconChevronRight.vue' /* webpackChunkName: "components/global/icons/IconChevronRight" */
-    ).then(c => c.default || c),
-  IconClose: () =>
-    import(
-      '../../components/global/icons/IconClose.vue' /* webpackChunkName: "components/global/icons/IconClose" */
-    ).then(c => c.default || c),
-  IconEma: () =>
-    import(
-      '../../components/global/icons/IconEma.vue' /* webpackChunkName: "components/global/icons/IconEma" */
-    ).then(c => c.default || c),
-  IconExternalLink: () =>
-    import(
-      '../../components/global/icons/IconExternalLink.vue' /* webpackChunkName: "components/global/icons/IconExternalLink" */
-    ).then(c => c.default || c),
-  IconGithub: () =>
-    import(
-      '../../components/global/icons/IconGithub.vue' /* webpackChunkName: "components/global/icons/IconGithub" */
-    ).then(c => c.default || c),
-  IconInfo: () =>
-    import(
-      '../../components/global/icons/IconInfo.vue' /* webpackChunkName: "components/global/icons/IconInfo" */
-    ).then(c => c.default || c),
-  IconLogo: () =>
-    import(
-      '../../components/global/icons/IconLogo.vue' /* webpackChunkName: "components/global/icons/IconLogo" */
-    ).then(c => c.default || c),
-  IconLogoDark: () =>
-    import(
-      '../../components/global/icons/IconLogoDark.vue' /* webpackChunkName: "components/global/icons/IconLogoDark" */
-    ).then(c => c.default || c),
-  IconMenu: () =>
-    import(
-      '../../components/global/icons/IconMenu.vue' /* webpackChunkName: "components/global/icons/IconMenu" */
-    ).then(c => c.default || c),
-  IconMoon: () =>
-    import(
-      '../../components/global/icons/IconMoon.vue' /* webpackChunkName: "components/global/icons/IconMoon" */
-    ).then(c => c.default || c),
-  IconNuxt: () =>
-    import(
-      '../../components/global/icons/IconNuxt.vue' /* webpackChunkName: "components/global/icons/IconNuxt" */
-    ).then(c => c.default || c),
-  IconPromiseServes: () =>
-    import(
-      '../../components/global/icons/IconPromiseServes.vue' /* webpackChunkName: "components/global/icons/IconPromiseServes" */
-    ).then(c => c.default || c),
-  IconReact: () =>
-    import(
-      '../../components/global/icons/IconReact.vue' /* webpackChunkName: "components/global/icons/IconReact" */
-    ).then(c => c.default || c),
-  IconSearch: () =>
-    import(
-      '../../components/global/icons/IconSearch.vue' /* webpackChunkName: "components/global/icons/IconSearch" */
-    ).then(c => c.default || c),
-  IconSun: () =>
-    import(
-      '../../components/global/icons/IconSun.vue' /* webpackChunkName: "components/global/icons/IconSun" */
-    ).then(c => c.default || c),
-  IconTitan: () =>
-    import(
-      '../../components/global/icons/IconTitan.vue' /* webpackChunkName: "components/global/icons/IconTitan" */
-    ).then(c => c.default || c),
-  IconTolbertDesign: () =>
-    import(
-      '../../components/global/icons/IconTolbertDesign.vue' /* webpackChunkName: "components/global/icons/IconTolbertDesign" */
-    ).then(c => c.default || c),
-  IconTranslate: () =>
-    import(
-      '../../components/global/icons/IconTranslate.vue' /* webpackChunkName: "components/global/icons/IconTranslate" */
-    ).then(c => c.default || c),
-  IconTwitter: () =>
-    import(
-      '../../components/global/icons/IconTwitter.vue' /* webpackChunkName: "components/global/icons/IconTwitter" */
-    ).then(c => c.default || c),
-  IconVue: () =>
-    import(
-      '../../components/global/icons/IconVue.vue' /* webpackChunkName: "components/global/icons/IconVue" */
-    ).then(c => c.default || c),
-  IconWebsite: () =>
-    import(
-      '../../components/global/icons/IconWebsite.vue' /* webpackChunkName: "components/global/icons/IconWebsite" */
-    ).then(c => c.default || c),
-  IconX: () =>
-    import(
-      '../../components/global/icons/IconX.vue' /* webpackChunkName: "components/global/icons/IconX" */
-    ).then(c => c.default || c),
+const components = {
+  Accordion: () => import('../../components/Accordion.vue' /* webpackChunkName: "components/accordion" */).then(c => c.default || c),
+  AccordionModal: () => import('../../components/AccordionModal.vue' /* webpackChunkName: "components/accordion-modal" */).then(c => c.default || c),
+  ActionsPanel: () => import('../../components/ActionsPanel.vue' /* webpackChunkName: "components/actions-panel" */).then(c => c.default || c),
+  AddContactsButtons: () => import('../../components/AddContactsButtons.vue' /* webpackChunkName: "components/add-contacts-buttons" */).then(c => c.default || c),
+  AffiliateItem: () => import('../../components/AffiliateItem.vue' /* webpackChunkName: "components/affiliate-item" */).then(c => c.default || c),
+  AffiliatesTable: () => import('../../components/AffiliatesTable.vue' /* webpackChunkName: "components/affiliates-table" */).then(c => c.default || c),
+  AlertBadge: () => import('../../components/AlertBadge.vue' /* webpackChunkName: "components/alert-badge" */).then(c => c.default || c),
+  AppFooter: () => import('../../components/AppFooter.vue' /* webpackChunkName: "components/app-footer" */).then(c => c.default || c),
+  AppHeader: () => import('../../components/AppHeader.vue' /* webpackChunkName: "components/app-header" */).then(c => c.default || c),
+  ArticleBlock: () => import('../../components/ArticleBlock.vue' /* webpackChunkName: "components/article-block" */).then(c => c.default || c),
+  ArticleCardBlock: () => import('../../components/ArticleCardBlock.vue' /* webpackChunkName: "components/article-card-block" */).then(c => c.default || c),
+  ArticlePrevNext: () => import('../../components/ArticlePrevNext.vue' /* webpackChunkName: "components/article-prev-next" */).then(c => c.default || c),
+  ArticleToc: () => import('../../components/ArticleToc.vue' /* webpackChunkName: "components/article-toc" */).then(c => c.default || c),
+  AsideUsernameBlock: () => import('../../components/AsideUsernameBlock.vue' /* webpackChunkName: "components/aside-username-block" */).then(c => c.default || c),
+  AvatarImage: () => import('../../components/AvatarImage.vue' /* webpackChunkName: "components/avatar-image" */).then(c => c.default || c),
+  Back: () => import('../../components/Back.vue' /* webpackChunkName: "components/back" */).then(c => c.default || c),
+  BarChart2: () => import('../../components/BarChart2.vue' /* webpackChunkName: "components/bar-chart-2" */).then(c => c.default || c),
+  BaseButton: () => import('../../components/BaseButton.vue' /* webpackChunkName: "components/base-button" */).then(c => c.default || c),
+  BaseCalendar: () => import('../../components/BaseCalendar.vue' /* webpackChunkName: "components/base-calendar" */).then(c => c.default || c),
+  BaseDirectory: () => import('../../components/BaseDirectory.vue' /* webpackChunkName: "components/base-directory" */).then(c => c.default || c),
+  BaseIconOutlined: () => import('../../components/BaseIconOutlined.vue' /* webpackChunkName: "components/base-icon-outlined" */).then(c => c.default || c),
+  BaseIconSolid: () => import('../../components/BaseIconSolid.vue' /* webpackChunkName: "components/base-icon-solid" */).then(c => c.default || c),
+  BaseImage: () => import('../../components/BaseImage.vue' /* webpackChunkName: "components/base-image" */).then(c => c.default || c),
+  BaseInput: () => import('../../components/BaseInput.vue' /* webpackChunkName: "components/base-input" */).then(c => c.default || c),
+  BaseLogo: () => import('../../components/BaseLogo.vue' /* webpackChunkName: "components/base-logo" */).then(c => c.default || c),
+  BasePageHeading: () => import('../../components/BasePageHeading.vue' /* webpackChunkName: "components/base-page-heading" */).then(c => c.default || c),
+  BnbHeader: () => import('../../components/BnbHeader.vue' /* webpackChunkName: "components/bnb-header" */).then(c => c.default || c),
+  CalendarSidebar: () => import('../../components/CalendarSidebar.vue' /* webpackChunkName: "components/calendar-sidebar" */).then(c => c.default || c),
+  ChangePasswordModal: () => import('../../components/ChangePasswordModal.vue' /* webpackChunkName: "components/change-password-modal" */).then(c => c.default || c),
+  Chart: () => import('../../components/Chart.vue' /* webpackChunkName: "components/chart" */).then(c => c.default || c),
+  ClientsTable: () => import('../../components/ClientsTable.vue' /* webpackChunkName: "components/clients-table" */).then(c => c.default || c),
+  ColorModeToggle: () => import('../../components/ColorModeToggle.vue' /* webpackChunkName: "components/color-mode-toggle" */).then(c => c.default || c),
+  ColorSwitcher: () => import('../../components/ColorSwitcher.vue' /* webpackChunkName: "components/color-switcher" */).then(c => c.default || c),
+  CommentBlock: () => import('../../components/CommentBlock.vue' /* webpackChunkName: "components/comment-block" */).then(c => c.default || c),
+  CommentsBlock: () => import('../../components/CommentsBlock.vue' /* webpackChunkName: "components/comments-block" */).then(c => c.default || c),
+  ContactsTable: () => import('../../components/ContactsTable.vue' /* webpackChunkName: "components/contacts-table" */).then(c => c.default || c),
+  CreditCardInputs: () => import('../../components/CreditCardInputs.vue' /* webpackChunkName: "components/credit-card-inputs" */).then(c => c.default || c),
+  DarkModeSwitch: () => import('../../components/DarkModeSwitch.vue' /* webpackChunkName: "components/dark-mode-switch" */).then(c => c.default || c),
+  DashboardLayout: () => import('../../components/DashboardLayout.vue' /* webpackChunkName: "components/dashboard-layout" */).then(c => c.default || c),
+  DeveloperToolbar: () => import('../../components/DeveloperToolbar.vue' /* webpackChunkName: "components/developer-toolbar" */).then(c => c.default || c),
+  Directory: () => import('../../components/Directory.vue' /* webpackChunkName: "components/directory" */).then(c => c.default || c),
+  DoubleTheDonation: () => import('../../components/DoubleTheDonation.vue' /* webpackChunkName: "components/double-the-donation" */).then(c => c.default || c),
+  Dropdown: () => import('../../components/Dropdown.vue' /* webpackChunkName: "components/dropdown" */).then(c => c.default || c),
+  EditOnGithub: () => import('../../components/EditOnGithub.vue' /* webpackChunkName: "components/edit-on-github" */).then(c => c.default || c),
+  EditParticipantForm: () => import('../../components/EditParticipantForm.vue' /* webpackChunkName: "components/edit-participant-form" */).then(c => c.default || c),
+  EditProfileForm: () => import('../../components/EditProfileForm.vue' /* webpackChunkName: "components/edit-profile-form" */).then(c => c.default || c),
+  EmailLink: () => import('../../components/EmailLink.vue' /* webpackChunkName: "components/email-link" */).then(c => c.default || c),
+  EmailTemplatesModal: () => import('../../components/EmailTemplatesModal.vue' /* webpackChunkName: "components/email-templates-modal" */).then(c => c.default || c),
+  EventCard: () => import('../../components/EventCard.vue' /* webpackChunkName: "components/event-card" */).then(c => c.default || c),
+  EventInfo: () => import('../../components/EventInfo.vue' /* webpackChunkName: "components/event-info" */).then(c => c.default || c),
+  FeaturedVideo: () => import('../../components/FeaturedVideo.vue' /* webpackChunkName: "components/featured-video" */).then(c => c.default || c),
+  FileUploadForm: () => import('../../components/FileUploadForm.vue' /* webpackChunkName: "components/file-upload-form" */).then(c => c.default || c),
+  GivingMarketCreditCardInputs: () => import('../../components/GivingMarketCreditCardInputs.vue' /* webpackChunkName: "components/giving-market-credit-card-inputs" */).then(c => c.default || c),
+  GivingMarketPaymentForm: () => import('../../components/GivingMarketPaymentForm.vue' /* webpackChunkName: "components/giving-market-payment-form" */).then(c => c.default || c),
+  GivingMarketSchoolSearch: () => import('../../components/GivingMarketSchoolSearch.vue' /* webpackChunkName: "components/giving-market-school-search" */).then(c => c.default || c),
+  GoogleLogin: () => import('../../components/GoogleLogin.vue' /* webpackChunkName: "components/google-login" */).then(c => c.default || c),
+  HighChart: () => import('../../components/HighChart.vue' /* webpackChunkName: "components/high-chart" */).then(c => c.default || c),
+  HomeCard: () => import('../../components/HomeCard.vue' /* webpackChunkName: "components/home-card" */).then(c => c.default || c),
+  HomeRow: () => import('../../components/HomeRow.vue' /* webpackChunkName: "components/home-row" */).then(c => c.default || c),
+  IconArrowLeft: () => import('../../components/IconArrowLeft.vue' /* webpackChunkName: "components/icon-arrow-left" */).then(c => c.default || c),
+  IconArrowRight: () => import('../../components/IconArrowRight.vue' /* webpackChunkName: "components/icon-arrow-right" */).then(c => c.default || c),
+  IconCodeigniter: () => import('../../components/IconCodeigniter.vue' /* webpackChunkName: "components/icon-codeigniter" */).then(c => c.default || c),
+  IconExternalLink: () => import('../../components/IconExternalLink.vue' /* webpackChunkName: "components/icon-external-link" */).then(c => c.default || c),
+  IconGithub: () => import('../../components/IconGithub.vue' /* webpackChunkName: "components/icon-github" */).then(c => c.default || c),
+  IconLaravel: () => import('../../components/IconLaravel.vue' /* webpackChunkName: "components/icon-laravel" */).then(c => c.default || c),
+  IconMoon: () => import('../../components/IconMoon.vue' /* webpackChunkName: "components/icon-moon" */).then(c => c.default || c),
+  IconNuxt: () => import('../../components/IconNuxt.vue' /* webpackChunkName: "components/icon-nuxt" */).then(c => c.default || c),
+  IconSearch: () => import('../../components/IconSearch.vue' /* webpackChunkName: "components/icon-search" */).then(c => c.default || c),
+  IconSun: () => import('../../components/IconSun.vue' /* webpackChunkName: "components/icon-sun" */).then(c => c.default || c),
+  IconTolbertDesign: () => import('../../components/IconTolbertDesign.vue' /* webpackChunkName: "components/icon-tolbert-design" */).then(c => c.default || c),
+  IconTranslate: () => import('../../components/IconTranslate.vue' /* webpackChunkName: "components/icon-translate" */).then(c => c.default || c),
+  IconTwitter: () => import('../../components/IconTwitter.vue' /* webpackChunkName: "components/icon-twitter" */).then(c => c.default || c),
+  IconVue: () => import('../../components/IconVue.vue' /* webpackChunkName: "components/icon-vue" */).then(c => c.default || c),
+  InlineErrorBlock: () => import('../../components/InlineErrorBlock.vue' /* webpackChunkName: "components/inline-error-block" */).then(c => c.default || c),
+  LangSwitcher: () => import('../../components/LangSwitcher.vue' /* webpackChunkName: "components/lang-switcher" */).then(c => c.default || c),
+  LanguageSwitcher: () => import('../../components/LanguageSwitcher.vue' /* webpackChunkName: "components/language-switcher" */).then(c => c.default || c),
+  Layout: () => import('../../components/Layout.vue' /* webpackChunkName: "components/layout" */).then(c => c.default || c),
+  LineChart2: () => import('../../components/LineChart2.vue' /* webpackChunkName: "components/line-chart-2" */).then(c => c.default || c),
+  LogoLaravel: () => import('../../components/LogoLaravel.vue' /* webpackChunkName: "components/logo-laravel" */).then(c => c.default || c),
+  LogoSalesLoft: () => import('../../components/LogoSalesLoft.vue' /* webpackChunkName: "components/logo-sales-loft" */).then(c => c.default || c),
+  LogoTolbertDesign: () => import('../../components/LogoTolbertDesign.vue' /* webpackChunkName: "components/logo-tolbert-design" */).then(c => c.default || c),
+  Map: () => import('../../components/Map.vue' /* webpackChunkName: "components/map" */).then(c => c.default || c),
+  MessageList: () => import('../../components/MessageList.vue' /* webpackChunkName: "components/message-list" */).then(c => c.default || c),
+  MessageTable: () => import('../../components/MessageTable.vue' /* webpackChunkName: "components/message-table" */).then(c => c.default || c),
+  MoviePoster: () => import('../../components/MoviePoster.vue' /* webpackChunkName: "components/movie-poster" */).then(c => c.default || c),
+  MyMap: () => import('../../components/MyMap.vue' /* webpackChunkName: "components/my-map" */).then(c => c.default || c),
+  MyMarker: () => import('../../components/MyMarker.vue' /* webpackChunkName: "components/my-marker" */).then(c => c.default || c),
+  Navbar: () => import('../../components/Navbar.vue' /* webpackChunkName: "components/navbar" */).then(c => c.default || c),
+  PageHeader: () => import('../../components/PageHeader.vue' /* webpackChunkName: "components/page-header" */).then(c => c.default || c),
+  ParticipantCard: () => import('../../components/ParticipantCard.vue' /* webpackChunkName: "components/participant-card" */).then(c => c.default || c),
+  ParticipantForm: () => import('../../components/ParticipantForm.vue' /* webpackChunkName: "components/participant-form" */).then(c => c.default || c),
+  ParticipantRegisterSuccess: () => import('../../components/ParticipantRegisterSuccess.vue' /* webpackChunkName: "components/participant-register-success" */).then(c => c.default || c),
+  ParticipantRewards: () => import('../../components/ParticipantRewards.vue' /* webpackChunkName: "components/participant-rewards" */).then(c => c.default || c),
+  ParticipantRewardsCard: () => import('../../components/ParticipantRewardsCard.vue' /* webpackChunkName: "components/participant-rewards-card" */).then(c => c.default || c),
+  PaymentForm: () => import('../../components/PaymentForm.vue' /* webpackChunkName: "components/payment-form" */).then(c => c.default || c),
+  PendingPlaceholder: () => import('../../components/PendingPlaceholder.vue' /* webpackChunkName: "components/pending-placeholder" */).then(c => c.default || c),
+  PeopleTable: () => import('../../components/PeopleTable.vue' /* webpackChunkName: "components/people-table" */).then(c => c.default || c),
+  PrivacyPolicy: () => import('../../components/PrivacyPolicy.vue' /* webpackChunkName: "components/privacy-policy" */).then(c => c.default || c),
+  PrivacyPolicyButton: () => import('../../components/PrivacyPolicyButton.vue' /* webpackChunkName: "components/privacy-policy-button" */).then(c => c.default || c),
+  PrivacyPolicyModal: () => import('../../components/PrivacyPolicyModal.vue' /* webpackChunkName: "components/privacy-policy-modal" */).then(c => c.default || c),
+  ProfileDropdown: () => import('../../components/ProfileDropdown.vue' /* webpackChunkName: "components/profile-dropdown" */).then(c => c.default || c),
+  ProfileDropdownButton: () => import('../../components/ProfileDropdownButton.vue' /* webpackChunkName: "components/profile-dropdown-button" */).then(c => c.default || c),
+  ProgramHeader: () => import('../../components/ProgramHeader.vue' /* webpackChunkName: "components/program-header" */).then(c => c.default || c),
+  ProgramOverview: () => import('../../components/ProgramOverview.vue' /* webpackChunkName: "components/program-overview" */).then(c => c.default || c),
+  ProgressBar: () => import('../../components/ProgressBar.vue' /* webpackChunkName: "components/progress-bar" */).then(c => c.default || c),
+  ProgressMeter: () => import('../../components/ProgressMeter.vue' /* webpackChunkName: "components/progress-meter" */).then(c => c.default || c),
+  PropertyDescription: () => import('../../components/PropertyDescription.vue' /* webpackChunkName: "components/property-description" */).then(c => c.default || c),
+  PropertyDetails: () => import('../../components/PropertyDetails.vue' /* webpackChunkName: "components/property-details" */).then(c => c.default || c),
+  PropertyGallery: () => import('../../components/PropertyGallery.vue' /* webpackChunkName: "components/property-gallery" */).then(c => c.default || c),
+  PropertyHost: () => import('../../components/PropertyHost.vue' /* webpackChunkName: "components/property-host" */).then(c => c.default || c),
+  PropertyMap: () => import('../../components/PropertyMap.vue' /* webpackChunkName: "components/property-map" */).then(c => c.default || c),
+  PropertyReviews: () => import('../../components/PropertyReviews.vue' /* webpackChunkName: "components/property-reviews" */).then(c => c.default || c),
+  Rating: () => import('../../components/Rating.vue' /* webpackChunkName: "components/rating" */).then(c => c.default || c),
+  RegistrationForm: () => import('../../components/RegistrationForm.vue' /* webpackChunkName: "components/registration-form" */).then(c => c.default || c),
+  RegistrationHandler: () => import('../../components/RegistrationHandler.vue' /* webpackChunkName: "components/registration-handler" */).then(c => c.default || c),
+  RegistrationType: () => import('../../components/RegistrationType.vue' /* webpackChunkName: "components/registration-type" */).then(c => c.default || c),
+  SchoolSearch: () => import('../../components/SchoolSearch.vue' /* webpackChunkName: "components/school-search" */).then(c => c.default || c),
+  SearchForm: () => import('../../components/SearchForm.vue' /* webpackChunkName: "components/search-form" */).then(c => c.default || c),
+  SearchHeader: () => import('../../components/SearchHeader.vue' /* webpackChunkName: "components/search-header" */).then(c => c.default || c),
+  SearchInput: () => import('../../components/SearchInput.vue' /* webpackChunkName: "components/search-input" */).then(c => c.default || c),
+  SelectionInput: () => import('../../components/SelectionInput.vue' /* webpackChunkName: "components/selection-input" */).then(c => c.default || c),
+  ShareButton: () => import('../../components/ShareButton.vue' /* webpackChunkName: "components/share-button" */).then(c => c.default || c),
+  ShippingAddress: () => import('../../components/ShippingAddress.vue' /* webpackChunkName: "components/shipping-address" */).then(c => c.default || c),
+  ShortText: () => import('../../components/ShortText.vue' /* webpackChunkName: "components/short-text" */).then(c => c.default || c),
+  Sidebar: () => import('../../components/Sidebar.vue' /* webpackChunkName: "components/sidebar" */).then(c => c.default || c),
+  SidebarCloseButton: () => import('../../components/SidebarCloseButton.vue' /* webpackChunkName: "components/sidebar-close-button" */).then(c => c.default || c),
+  SidebarDropdownButton: () => import('../../components/SidebarDropdownButton.vue' /* webpackChunkName: "components/sidebar-dropdown-button" */).then(c => c.default || c),
+  SidebarMenu: () => import('../../components/SidebarMenu.vue' /* webpackChunkName: "components/sidebar-menu" */).then(c => c.default || c),
+  SidebarOffCanvas: () => import('../../components/SidebarOffCanvas.vue' /* webpackChunkName: "components/sidebar-off-canvas" */).then(c => c.default || c),
+  SidebarSearch: () => import('../../components/SidebarSearch.vue' /* webpackChunkName: "components/sidebar-search" */).then(c => c.default || c),
+  SidebarToggle: () => import('../../components/SidebarToggle.vue' /* webpackChunkName: "components/sidebar-toggle" */).then(c => c.default || c),
+  SignUp: () => import('../../components/SignUp.vue' /* webpackChunkName: "components/sign-up" */).then(c => c.default || c),
+  SmsLink: () => import('../../components/SmsLink.vue' /* webpackChunkName: "components/sms-link" */).then(c => c.default || c),
+  SvgIcon: () => import('../../components/SvgIcon.vue' /* webpackChunkName: "components/svg-icon" */).then(c => c.default || c),
+  SvgSprite: () => import('../../components/SvgSprite.vue' /* webpackChunkName: "components/svg-sprite" */).then(c => c.default || c),
+  TextInput: () => import('../../components/TextInput.vue' /* webpackChunkName: "components/text-input" */).then(c => c.default || c),
+  TheFooter: () => import('../../components/TheFooter.vue' /* webpackChunkName: "components/the-footer" */).then(c => c.default || c),
+  TheNavbar: () => import('../../components/TheNavbar.vue' /* webpackChunkName: "components/the-navbar" */).then(c => c.default || c),
+  UploadPhotoForm: () => import('../../components/UploadPhotoForm.vue' /* webpackChunkName: "components/upload-photo-form" */).then(c => c.default || c),
+  UsaMap: () => import('../../components/UsaMap.vue' /* webpackChunkName: "components/usa-map" */).then(c => c.default || c),
+  UserLoginForm: () => import('../../components/UserLoginForm.vue' /* webpackChunkName: "components/user-login-form" */).then(c => c.default || c),
+  UsernameArticlesBlock: () => import('../../components/UsernameArticlesBlock.vue' /* webpackChunkName: "components/username-articles-block" */).then(c => c.default || c),
+  UsernameBlock: () => import('../../components/UsernameBlock.vue' /* webpackChunkName: "components/username-block" */).then(c => c.default || c),
+  Welcome: () => import('../../components/Welcome.vue' /* webpackChunkName: "components/welcome" */).then(c => c.default || c),
+  WelcomeBack: () => import('../../components/WelcomeBack.vue' /* webpackChunkName: "components/welcome-back" */).then(c => c.default || c),
+  WelcomeTeachers: () => import('../../components/WelcomeTeachers.vue' /* webpackChunkName: "components/welcome-teachers" */).then(c => c.default || c)
 }
 
-for (const name in globalComponents) {
-  Vue.component(name, globalComponents[name])
+for (const name in components) {
+  Vue.component(name, components[name])
+  Vue.component('Lazy' + name, components[name])
 }

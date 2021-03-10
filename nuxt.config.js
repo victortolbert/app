@@ -151,7 +151,7 @@ export default {
   modules: [
     '@nuxt/content',
     '@nuxtjs/axios',
-    '@nuxtjs/auth-next',
+    // '@nuxtjs/auth-next',
     // '@nuxtjs/auth',
     // '@nuxtjs/sentry',
     '@oruga-ui/oruga/nuxt',
@@ -264,10 +264,10 @@ export default {
     port: process.env.PORT || 8686,
   },
 
-  serverMiddleware: ['@/server'],
+  serverMiddleware: ['@/myServerMiddleware', '@/server'],
 
   router: {
-    // prefetchLinks: false,
+    prefetchLinks: false,
     middleware: [
       // 'auth',
       // 'pages',
@@ -580,20 +580,20 @@ export default {
   //   },
   // },
 
-  // storybook: {
-  //   stories: [
-  //     '~/components/**/*.stories.mdx',
-  //     '~/components/**/*.stories.@(js|jsx|ts|tsx)',
-  //   ],
-  //   parameters: {
-  //     viewMode: 'docs',
-  //     actions: {argTypesRegex: '^on[A-Z].*'},
-  //   },
-  //   addons: ['@storybook/addon-docs', '@storybook/addon-controls'],
-  //   webpackFinal(config) {
-  //     return config
-  //   },
-  // },
+  storybook: {
+    stories: [
+      '~/components/**/*.stories.mdx',
+      '~/components/**/*.stories.@(js|jsx|ts|tsx)',
+    ],
+    parameters: {
+      viewMode: 'docs',
+      actions: {argTypesRegex: '^on[A-Z].*'},
+    },
+    addons: ['@storybook/addon-docs', '@storybook/addon-controls'],
+    webpackFinal(config) {
+      return config
+    },
+  },
 
   tailwindcss: {
     // configPath: '@/config/tailwind.config.js',

@@ -220,7 +220,7 @@ export default defineComponent({
 </script>
 
 <template>
-  <nav :class="[affiliate.theme.nav.class, 'fixed top-0 z-40 w-full shadow']">
+  <nav :class="[affiliate.theme.nav.class, 'w-full shadow']">
     <div class="px-4 sm:px-6 lg:px-8">
       <div class="flex justify-between h-16">
         <div class="flex">

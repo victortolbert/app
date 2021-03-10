@@ -10,12 +10,11 @@ export default function (ctx, inject) {
     preference,
     value: preference,
     unknown: true,
-    forced: false,
+    forced: false
   }
 
   if (ctx.route.matched[0]) {
-    const pageColorMode =
-      ctx.route.matched[0].components.default.options.colorMode
+    const pageColorMode = ctx.route.matched[0].components.default.options.colorMode
     if (pageColorMode && pageColorMode !== 'system') {
       colorMode.value = pageColorMode
       colorMode.forced = true
@@ -23,13 +22,11 @@ export default function (ctx, inject) {
       ctx.app.head.bodyAttrs = ctx.app.head.bodyAttrs || {}
       ctx.app.head.bodyAttrs['data-color-mode-forced'] = pageColorMode
     } else if (pageColorMode === 'system') {
-      console.warn(
-        'You cannot force the colorMode to system at the page level.',
-      )
+      console.warn('You cannot force the colorMode to system at the page level.')
     }
   }
 
-  ctx.beforeNuxtRender(({nuxtState}) => {
+  ctx.beforeNuxtRender(({ nuxtState }) => {
     nuxtState.colorMode = colorMode
   })
 

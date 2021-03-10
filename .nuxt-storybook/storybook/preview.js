@@ -1,17 +1,14 @@
 import Vue from 'vue'
-import {prepareForInline} from './nuxt-entry'
-import '~storybook'
+import { prepareForInline } from './nuxt-entry';
+import '~storybook';
 
-import * as components from '../components'
-Object.keys(components).forEach(name => Vue.component(name, components[name]))
+import * as components from '../components';
+Object.keys(components).forEach(name => Vue.component(name, components[name]));
 
-const globalParameters = {
-  viewMode: 'docs',
-  actions: {argTypesRegex: '^on[A-Z].*'},
-}
+const globalParameters = {viewMode:"docs",actions:{argTypesRegex:"^on[A-Z].*"}};
 globalParameters.docs = {
-  ...globalParameters.docs,
-  prepareForInline,
+    ...globalParameters.docs,
+    prepareForInline
 }
 export const parameters = globalParameters
 

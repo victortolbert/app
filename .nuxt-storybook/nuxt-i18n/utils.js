@@ -1,21 +1,19 @@
-import {LOCALE_CODE_KEY, LOCALE_FILE_KEY, MODULE_NAME} from './options'
+import { LOCALE_CODE_KEY, LOCALE_FILE_KEY, MODULE_NAME } from './options'
 
 /**
  * Asynchronously load messages from translation files
  * @param  {Context}  context  Nuxt context
  * @param  {String}   locale  Language code to load
  */
-export async function loadLanguageAsync(context, locale) {
-  const {app} = context
+export async function loadLanguageAsync (context, locale) {
+  const { app } = context
 
   if (!app.i18n.loadedLanguages) {
     app.i18n.loadedLanguages = []
   }
 
   if (!app.i18n.loadedLanguages.includes(locale)) {
-    const localeObject = app.i18n.locales.find(
-      l => l[LOCALE_CODE_KEY] === locale,
-    )
+    const localeObject = app.i18n.locales.find(l => l[LOCALE_CODE_KEY] === locale)
     if (localeObject) {
       const file = localeObject[LOCALE_FILE_KEY]
       if (file) {
@@ -23,7 +21,7 @@ export async function loadLanguageAsync(context, locale) {
         /*  */
         let messages
         if (process.client) {
-          const {nuxtState} = context
+          const { nuxtState } = context
           if (nuxtState && nuxtState.__i18n && nuxtState.__i18n.langs[locale]) {
             messages = nuxtState.__i18n.langs[locale]
           }
@@ -31,13 +29,12 @@ export async function loadLanguageAsync(context, locale) {
         if (!messages) {
           try {
             const langFileModule = await import(
-              /* webpackChunkName: "lang-[request]" */ `~/i18n/${file}`
+              /* webpackChunkName: "lang-[request]" */
+              /* webpackInclude: /\.(js|ts|json|ya?ml)$/ */
+              `~/i18n/${file}`
             )
             const getter = langFileModule.default || langFileModule
-            messages =
-              typeof getter === 'function'
-                ? await Promise.resolve(getter(context, locale))
-                : getter
+            messages = typeof getter === 'function' ? await Promise.resolve(getter(context, locale)) : getter
           } catch (error) {
             // eslint-disable-next-line no-console
             console.error(error)
@@ -50,9 +47,7 @@ export async function loadLanguageAsync(context, locale) {
         /*  */
       } else {
         // eslint-disable-next-line no-console
-        console.warn(
-          `[${MODULE_NAME}] Could not find lang file for locale ${locale}`,
-        )
+        console.warn(`[${MODULE_NAME}] Could not find lang file for locale ${locale}`)
       }
     }
   }

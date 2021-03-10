@@ -2,7 +2,9 @@ import axios from 'axios'
 export const namespaced = true
 
 export const state = {
-  user: null,
+  isLogged: false,
+  user: {},
+  authUser: null,
   error: null,
 }
 
@@ -13,6 +15,11 @@ export const getters = {
 }
 
 export const mutations = {
+  SET_USER(state, user) {
+    state.isLoggedIn = !!user
+    state.user = user || {}
+  },
+
   SAVE_TOKEN(state, token) {
     state.token = token
   },
