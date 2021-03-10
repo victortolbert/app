@@ -506,13 +506,25 @@ In this lesson, we'll create a server middleware that will act as an API firewal
 
 ### Building an API Firewall (Part 2)
 
+
+In this lesson, we'll wrap up the API firewall that we started on in the previous lesson.
+
+#### Lesson Resources
+
+- [Google Auth Library: Node.js Client](https://github.com/googleapis/google-auth-library-nodejs#readme)
+- [Google API Client Library Documentation](https://developers.google.com/identity/sign-in/web/backend-auth#using-a-google-api-client-library)
+
 ### Creating an Algolia Proxy
+
+In this lesson, we'll create our first API endpoint that can use our API firewall and talk to Algolia to perform actions that require write access.
 
 ### Extending the Algolia Proxy
 
+In this lesson, we'll improve our Algolia module, so we only create a new user entry if the user doesn't already exist.
+
 ### Filling The Auth Store
 
-
+In this lesson, we'll be calling the Algolia User API and fill our Vuex store so we can use it as our data source instead of the client-side Google User.
 
 ## Refactoring and Improvements (7 Lessons)
 

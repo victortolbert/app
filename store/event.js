@@ -1,11 +1,11 @@
 import EventService from '@/services/EventService.js'
 
-export const state = {
+export const state = () => ({
   events: [],
   eventsTotal: 0,
   event: {},
   perPage: 3,
-}
+})
 
 export const getters = {
   getEventById: state => id => {

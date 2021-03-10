@@ -1,11 +1,12 @@
 export const namespaced = true
 
-export const state = {
+export const state = () => ({
   flags:
     window.__INITIAL_STATE__ && window.__INITIAL_STATE__.flags
       ? window.__INITIAL_STATE__.flags
       : {},
-}
+})
+
 export const getters = {
   isEnabled: ({flags}) => flag => {
     return !!flags[flag]

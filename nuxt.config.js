@@ -11,6 +11,10 @@ export default {
       clientId:
         '462364873905-pshoug4pfdd74iso13km6n7hg88s2ova.apps.googleusercontent.com',
     },
+    algolia: {
+      appId: 'WTEU7RU64C',
+      key: '0bdd840be2d7d4377e10b238bc731901',
+    },
     // baseUrl: process.env.BASE_URL || 'https://app.vticonsulting.com',
     baseURL:
       process.env.NODE_ENV === 'production'
@@ -21,7 +25,7 @@ export default {
       process.env.ASSETS_URL ||
       'https://td-aws-bucket.s3.amazonaws.com/album2/',
     algoliaApiKey:
-      process.env.ALGOLIA_API_KEY || 'AIzaSyBvOoQe7xFg-XaWj9w_l7ODbMqb4BK0B9E',
+      process.env.ALGOLIA_API_KEY || '0bdd840be2d7d4377e10b238bc731901',
 
     awsS3DefaultRegion: process.env.AWS_S3_DEFAULT_REGION || 'us-east-1',
     awsS3AccessKey: process.env.AWS_S3_ACCESS_KEY || 'AKIAXGYXHSXXHYBR5HOE',
@@ -80,6 +84,10 @@ export default {
     dbHost: process.env.DB_HOST,
     dbPassword: process.env.DB_PASSWORD,
     dbUser: process.env.DB_USER,
+    algolia: {
+      appId: 'WTEU7RU64C',
+      key: 'd1fe567d10edb4ffe8e470d61dc84616',
+    },
   },
   //  privateRuntimeConfig always overrides publicRuntimeConfig on server-side. $config in server mode is { ...public, ...private } but for client mode only { ...public }
 
@@ -150,6 +158,7 @@ export default {
   },
   modules: [
     '~/modules/auth',
+    '~/modules/algolia',
     '@nuxt/content',
     '@nuxtjs/axios',
     // '@nuxtjs/auth-next',

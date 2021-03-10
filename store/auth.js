@@ -1,12 +1,12 @@
 import axios from 'axios'
 export const namespaced = true
 
-export const state = {
+export const state = () => ({
   isLogged: false,
   user: {},
   authUser: null,
   error: null,
-}
+})
 
 export const getters = {
   loggedIn: state => !!state.user,
