@@ -149,6 +149,7 @@ export default {
     mode: 'out-in',
   },
   modules: [
+    '~/modules/auth',
     '@nuxt/content',
     '@nuxtjs/axios',
     // '@nuxtjs/auth-next',
