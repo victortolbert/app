@@ -29,10 +29,12 @@
     <nuxt />
   </div>
 </template>
+
 <script>
 export default {
   mounted() {
     this.$maps.makeAutoComplete(this.$refs.citySearch)
+    console.log('auth', this.$store.state.auth)
   },
   computed: {
     user() {
