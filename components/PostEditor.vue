@@ -1,13 +1,13 @@
 <script lang="ts">
 import {parse, MarkedOptions} from 'marked'
 import {highlightAuto} from 'highlight.js'
-import {defineComponent, onMounted, ref, watch} from '@nuxtjs/composition-api'
+import {defineComponent, onMounted, PropType, ref, watch} from '@nuxtjs/composition-api'
 import {Post} from '~/types'
 
 export default defineComponent({
   props: {
     post: {
-      type: Object as () => Post,
+      type: Object as PropType<Post>,
       required: true,
     },
   },

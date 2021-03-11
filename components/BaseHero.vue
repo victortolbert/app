@@ -1,4 +1,4 @@
-<script lang="ts">
+<script>
 import {defineComponent, computed, reactive} from '@nuxtjs/composition-api'
 const backgrounds = ['hero_error_2.jpg', 'hero_error_5.jpg']
 

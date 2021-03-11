@@ -1,18 +1,30 @@
 <template>
-  <div class="pt-16">
+  <Layout>
     <!-- <p class="p-1 bg-primary-500" /> -->
     <!-- <BaseHero logo="promise-serves" centered title="JavaScript and Markup" /> -->
     <!-- <AppHeader /> -->
-    <main class="container px-4 mx-auto lg:px-8">
-      <div class="relative flex flex-wrap">
-        <AppNav />
+    <!-- <AppNav /> -->
+    <TheNavbar
+      class="text-gray-600 bg-white dark:bg-gray-900 dark:text-white"
+    />
 
-        <Nuxt class="w-full lg:w-4/5" />
-      </div>
+    <div class="app-user-menu">
+      <template v-if="isLoggedIn">
+        <img :src="user.profileUrl" class="avatar" />
+      </template>
+
+      <div v-show="!isLoggedIn" id="googleButton" class="ml-8" />
+    </div>
+
+    <main class="flex-1 overflow-hidden bg-gray-100">
+      <nuxt keep-alive :key="$route.params.id" />
     </main>
 
-    <AppFooter />
-  </div>
+    <template #footer>
+      <TheFooter />
+    </template>
+    <PortalTarget name="overlays" />
+  </Layout>
 </template>
 
 <script>
@@ -72,8 +84,18 @@ export default {
       ]),
     }
   },
+  mounted() {
+    // this.$maps.makeAutoComplete(this.$refs.citySearch)
+    console.log('auth', this.$store.state.auth)
+  },
   computed: {
     ...mapGetters(['settings']),
+    user() {
+      return this.$store.state.auth.user
+    },
+    isLoggedIn() {
+      return this.$store.state.auth.isLoggedIn
+    },
     bodyClass() {
       return this.$store.state.menu.open
         ? ['h-screen lg:h-auto overflow-y-hidden lg:overflow-y-auto']

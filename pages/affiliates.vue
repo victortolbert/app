@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import affiliates from '@/__mocks__/livethepromise/ltp_affiliates'
+import affiliates from '@/__mocks__/affiliates'
 
 export default {
   // async asyncData({$content, $axios}) {

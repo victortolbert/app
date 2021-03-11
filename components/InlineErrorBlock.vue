@@ -20,22 +20,3 @@ export default {
   },
 }
 </script>
-
-<style lang="scss" scoped>
-.error-block {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 2rem;
-}
-svg {
-  width: 3rem;
-  height: 3rem;
-  margin-bottom: 1rem;
-  opacity: 0.75;
-}
-h2 {
-  font-size: $text-2xl;
-  text-align: center;
-}
-</style>

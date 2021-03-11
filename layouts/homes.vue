@@ -23,12 +23,13 @@
           <div class="name">Host</div>
           <img :src="user.profileUrl" class="avatar" />
         </template>
+
         <div v-show="!isLoggedIn" id="googleButton" class="ml-8"></div>
       </div>
     </header>
 
     <nuxt class="flex-1" />
-    <PortalTarget name="modals" />
+    <PortalTarget name="overlays" />
   </div>
 </template>
 

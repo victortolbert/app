@@ -4,7 +4,7 @@
     @click="modalOpen = true"
   >
     Privacy Policy
-    <Portal v-if="modalOpen" to="modals">
+    <Portal v-if="modalOpen" to="overlays">
       <PrivacyPolicyModal :show="modalOpen" @close="modalOpen = false" />
     </Portal>
   </button>

@@ -47,25 +47,3 @@ export default {
   },
 }
 </script>
-
-<style lang="scss" scoped>
-.add-comment {
-  display: block;
-  width: 100%;
-  padding: 0.5rem;
-  border-radius: 0.5rem;
-  box-shadow: $small-shadow;
-  text-transform: uppercase;
-  text-align: center;
-  font-weight: $display-font-weight;
-  letter-spacing: $-ls2;
-  margin-bottom: 1rem;
-  &:hover {
-    background: $hovered-surface-color;
-  }
-  &:active {
-    background: transparent;
-    box-shadow: $small-inner-shadow;
-  }
-}
-</style>

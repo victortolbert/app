@@ -316,7 +316,7 @@ export default {
   ],
 
   googleAnalytics: {
-    // Options
+    id: process.env.GOOGLE_ANALYTICS_ID || 'UA-76464598-5',
   },
 
   hooks: {

@@ -75,64 +75,6 @@
     </div>
 
     <section class="p-8 bg-white shadow lg:rounded-lg">
-      <v-client-table
-        :columns="countryColumns"
-        v-model="countries"
-        :options="countryOptions"
-      >
-        <a
-          slot="uri"
-          slot-scope="props"
-          target="_blank"
-          :href="props.row.uri"
-          class="glyphicon glyphicon-eye-open"
-        ></a>
-        <div slot="child_row" slot-scope="props">
-          The link to {{ props.row.name }}
-          is
-          <a :href="props.row.uri">{{ props.row.uri }}</a>
-        </div>
-
-        <div
-          slot="name"
-          slot-scope="{row, update, setEditing, isEditing, revertValue}"
-        >
-          <span @click="setEditing(true)" v-if="!isEditing()">
-            <a>{{ row.name }}</a>
-          </span>
-
-          <span v-else>
-            <input type="text" v-model="row.name" />
-            <button
-              type="button"
-              class="btn btn-info btn-xs"
-              @click="
-                update(row.name)
-                setEditing(false)
-              "
-            >
-              Submit
-            </button>
-            <button
-              type="button"
-              class="btn btn-default btn-xs"
-              @click="
-                revertValue()
-                setEditing(false)
-              "
-            >
-              Cancel
-            </button>
-          </span>
-        </div>
-      </v-client-table>
-    </section>
-
-    <section class="p-8 bg-white shadow lg:rounded-lg">
-      <PeopleTable />
-    </section>
-
-    <section class="p-8 bg-white shadow lg:rounded-lg">
       <div class="grid grid-cols-2 gap-8">
         <div>
           <button @click="fetchUsers">Fetch Data</button>

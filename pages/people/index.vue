@@ -20,7 +20,7 @@
   </main>
 </template>
 
-<script lang="ts">
+<script>
 export default {
   async asyncData({$content}) {
     const people = await $content('people').fetch()

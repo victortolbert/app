@@ -2,7 +2,7 @@
   <button @click="handleClick">Count Button</button>
 </template>
 
-<script lang="ts">
+<script>
 import {defineComponent, ref} from '@nuxtjs/composition-api'
 
 export default defineComponent({

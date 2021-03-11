@@ -50,20 +50,3 @@ export default {
   },
 }
 </script>
-
-<style lang="scss" scoped>
-.username-articles-block {
-  max-width: $screen-sm;
-  margin: auto;
-  padding: 1rem;
-}
-.article-cards-wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: flex-start;
-  .article-card-block {
-    width: calc(100% - 2 * 1rem);
-    margin: 1rem;
-  }
-}
-</style>

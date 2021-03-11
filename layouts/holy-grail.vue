@@ -2,15 +2,19 @@
   <div class="page-wrapper">
     <header class="header"><h1 contenteditable>Header.com</h1></header>
     <div class="left-sidebar" contenteditable>Left Sidebar</div>
+
     <main class="main" contenteditable>
       <Nuxt keep-alive :key="$route.params.id" />
     </main>
+
     <div class="right-sidebar" contenteditable>Right Sidebar</div>
+
     <footer class="footer" contenteditable>
       Footer Content — Header.com 2020
     </footer>
   </div>
 </template>
+
 <style>
 .page-wrapper {
   display: grid;

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Portal to="modals" v-if="showAnnouncement">
+    <Portal to="overlays" v-if="showAnnouncement">
       <AnnouncementModal
         :show="showAnnouncement"
         @close="showAnnouncement = false"
@@ -14,7 +14,7 @@
     </div>
 
     <!-- Teleport in Vue 3 -->
-    <PortalTarget name="modals" />
+    <PortalTarget name="overlays" />
   </div>
 </template>
 

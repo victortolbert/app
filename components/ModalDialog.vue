@@ -1,5 +1,5 @@
 <template>
-  <Portal v-if="show" to="modals">
+  <Portal v-if="show" to="overlays">
     <div class="modal-backdrop">
       <div class="modal">
         <slot />
