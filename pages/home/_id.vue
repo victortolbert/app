@@ -8,9 +8,9 @@
     <PropertyHost :user="user" />
   </div>
 </template>
-
 <script>
 export default {
+  layout: 'homes',
   head() {
     return {
       title: this.home.title,
@@ -23,7 +23,6 @@ export default {
       $dataApi.getUserByHomeId(params.id),
     ])
     const badResponse = responses.find(response => !response.ok)
-
     if (badResponse)
       return error({
         statusCode: badResponse.status,

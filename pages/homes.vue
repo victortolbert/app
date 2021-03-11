@@ -1,19 +1,20 @@
 <template>
-  <section class="h-full p-8">
-    <div class="grid grid-cols-1 gap-4 mt-8 sm:grid-cols-2 md:grid-cols-3">
-      <div v-for="home in homes" :key="home.objectID">
-        <NuxtLink :to="localePath({path: `/home/${home.objectID}/`})" prefetch>
-          <HomeCard :home="home" />
-        </NuxtLink>
-      </div>
+  <div>
+    <div
+      v-for="home in homes"
+      :key="home.objectID"
+      style="float: left; margin: 10px"
+    >
+      <nuxt-link :to="`/home/${home.objectID}`" prefetch>
+        <home-card :home="home" />
+      </nuxt-link>
     </div>
-  </section>
+  </div>
 </template>
-
 <script>
 import homes from '~/data/homes'
-
 export default {
+  layout: 'homes',
   head() {
     return {
       title: 'Homepage',

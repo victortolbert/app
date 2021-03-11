@@ -43,3 +43,6 @@ vendor/
 .env
 .eslintcache
 .php_cs.cache
+.tailwind-config/
+sw.js
+

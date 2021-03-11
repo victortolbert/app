@@ -31,12 +31,12 @@
   </section>
 </template>
 
-<script lang="ts">
+<script>
 import {defineComponent} from '@nuxtjs/composition-api'
 
 import {useMouse} from '@vueuse/core'
 import {useSound} from '@vueuse/sound'
-import Button from '@/assets/sound/button.wav'
+import Button from '~/assets/sound/button.wav'
 
 export default defineComponent({
   name: 'BaseTable',

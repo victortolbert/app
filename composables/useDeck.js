@@ -1,4 +1,4 @@
-import {ref} from 'vue'
+import {ref} from '@nuxtjs/composition-api'
 
 const cardList = ref([])
 

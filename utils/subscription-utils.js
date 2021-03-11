@@ -1,4 +1,4 @@
-import subscriptionPlanJson from '@/utils/subscription-plan-data.json'
+import subscriptionPlanJson from '~/utils/subscription-plan-data.json'
 
 export const getPlan = function (planId) {
   const plans = subscriptionPlanJson.plans

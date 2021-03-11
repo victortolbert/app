@@ -12,7 +12,7 @@ function getRandomFilename() {
 }
 
 api.use(
-  '/api',
+  '/v0/api',
   jsonServer.router(path.join(__dirname, '..', '__mocks__', 'db.json')),
 )
 

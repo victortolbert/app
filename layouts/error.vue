@@ -45,5 +45,8 @@ export default {
       title: this.error.message || 'Error Page',
     }
   },
+  mounted() {
+    // this.$sentry.captureException(this.error)
+  },
 }
 </script>

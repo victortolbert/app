@@ -3,12 +3,10 @@ import {unWrap, getErrorResponse} from '../utils/fetchUtils'
 
 export default function () {
   const algoliaConfig = this.options.privateRuntimeConfig.algolia
-
   const headers = {
     'X-Algolia-API-Key': algoliaConfig.key,
     'X-Algolia-Application-Id': algoliaConfig.appId,
   }
-
   this.nuxt.hook('render:setupMiddleware', app => {
     app.use('/api/user', getUserRoute)
   })
@@ -17,7 +15,7 @@ export default function () {
     const identity = req.identity
     const userData = await getUserById(identity)
 
-    if (userData.status === 200) {
+    if (userData.status == 200) {
       sendJSON(userData.json, res)
       return
     }
@@ -43,7 +41,7 @@ export default function () {
     }
   }
 
-  async function getUserById(userId) {
+  async function getUserById(identity) {
     try {
       return unWrap(
         await fetch(

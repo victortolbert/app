@@ -1,0 +1,13 @@
+<script>
+export default {
+  layout: 'blog',
+  async asyncData({$content}) {
+    const page = await $content('media-log').fetch()
+    return {page}
+  },
+}
+</script>
+
+<template>
+  <nuxt-content :document="page"></nuxt-content>
+</template>

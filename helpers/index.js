@@ -22,6 +22,18 @@ export const formatDate = value => {
   })
 }
 
+let UUID = 0
+export function UniqueID() {
+  const getID = () => {
+    UUID++
+    return UUID
+  }
+
+  return {
+    getID,
+  }
+}
+
 export async function init({app, store, error, isClient}) {
   if (isClient) return
 

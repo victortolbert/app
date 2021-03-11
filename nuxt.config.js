@@ -1,10 +1,6 @@
 import path from 'path'
-// eslint-disable-next-line import/named
-// import {utils} from './config'
-// const isDev = process.env.NODE_ENV !== "production"
 
 export default {
-  // should hold all env variables that are public as these will be exposed on the frontend. This could include a reference to your public URL for example.
   publicRuntimeConfig: {
     auth: {
       cookieName: 'idToken',
@@ -15,18 +11,7 @@ export default {
       appId: 'WTEU7RU64C',
       key: '0bdd840be2d7d4377e10b238bc731901',
     },
-    // baseUrl: process.env.BASE_URL || 'https://app.vticonsulting.com',
-    baseURL:
-      process.env.NODE_ENV === 'production'
-        ? 'https://app.vticonsulting.com'
-        : 'http://example-app.test',
     apiURL: process.env.API_URL || 'http://localhost:8686',
-    assetsURL:
-      process.env.ASSETS_URL ||
-      'https://td-aws-bucket.s3.amazonaws.com/album2/',
-    algoliaApiKey:
-      process.env.ALGOLIA_API_KEY || '0bdd840be2d7d4377e10b238bc731901',
-
     awsS3DefaultRegion: process.env.AWS_S3_DEFAULT_REGION || 'us-east-1',
     awsS3AccessKey: process.env.AWS_S3_ACCESS_KEY || 'AKIAXGYXHSXXHYBR5HOE',
     awsS3AccessSecret:
@@ -34,6 +19,13 @@ export default {
       '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',
     awsS3Bucket: process.env.AWS_S3_BUCKET || 'victortolbert',
     awsS3Url: process.env.AWS_S3_URL || 'https://the_url.s3.amazonaws.co',
+    assetsURL:
+      process.env.ASSETS_URL ||
+      'https://td-aws-bucket.s3.amazonaws.com/album2/',
+    baseURL:
+      process.env.NODE_ENV === 'production'
+        ? 'https://app.vticonsulting.com'
+        : 'http://example-app.test',
 
     ackeeDomainId:
       process.env.ACKEE_DOMAIN_ID || '601bbeb1-8a0a-4d5d-ba1f-a75ce1cefda3',
@@ -77,7 +69,6 @@ export default {
       process.env.VUE_APP_API_URL || 'https://victortolbert-api.herokuapp.com',
   },
 
-  // should hold all env variables that are private and that should not be exposed on the frontend. This could include a reference to your API secret tokens for example.
   privateRuntimeConfig: {
     apiSecret: process.env.API_SECRET,
     dbDatabase: process.env.DB_DATABASE,
@@ -89,23 +80,13 @@ export default {
       key: 'd1fe567d10edb4ffe8e470d61dc84616',
     },
   },
-  //  privateRuntimeConfig always overrides publicRuntimeConfig on server-side. $config in server mode is { ...public, ...private } but for client mode only { ...public }
-
-  // modern: !utils.isDev && 'client',
-  env: {
-    apiUrl: process.env.API_URL || 'http://localhost:8686',
-    wsUrl: process.env.WS_URL || 'http://localhost:8686',
-  },
   components: true,
-  // loading: false,
   target: 'static',
   ssr: false,
-
-  watch: ['@/config/*'],
-
+  // watch: ['~/config/*'],
   head: {
-    // title: 'Lab',
-    titleTemplate: 'Nuxt: %s',
+    // title: 'App',
+    titleTemplate: 'App: %s',
     htmlAttrs: {
       lang: 'en',
     },
@@ -115,6 +96,12 @@ export default {
       {hid: 'description', name: 'description', content: 'Lab'},
     ],
     link: [
+      {rel: 'icon', type: 'image/x-icon', href: '/favicon.svg'},
+      {
+        rel: 'stylesheet',
+        href:
+          'https://fonts.googleapis.com/css?family=Josefin+Sans|Playfair+Display',
+      },
       {rel: 'icon', type: 'image/x-icon', href: '/favicon.svg'},
       // {
       //   rel: 'stylesheet',
@@ -126,11 +113,6 @@ export default {
       //   href:
       //     'https://fonts.googleapis.com/css2?family=Caveat:wght@400;430&family=Markazi+Text&display=swap',
       // },
-      {
-        rel: 'stylesheet',
-        href:
-          'https://fonts.googleapis.com/css?family=Josefin+Sans|Playfair+Display',
-      },
     ],
     // script: [
     //   {
@@ -144,30 +126,34 @@ export default {
     },
   },
   css: [
-    // '@/assets/css/bulma.scss',
-    '@/assets/css/app.scss',
-    '@/assets/css/content.css',
-    '@/assets/css/transitions.css',
-    '@/assets/css/select.scss',
-    '@/assets/styles/oruga_tailwind.css',
-    '@fortawesome/fontawesome-svg-core/styles.css',
+    // '~/assets/css/bulma.scss',
+    // '~/assets/css/app.scss',
+    // '~/assets/css/content.css',
+    // '~/assets/css/transitions.css',
+    // '~/assets/css/select.scss',
+    // '~/assets/styles/oruga_tailwind.css',
+    // '@fortawesome/fontawesome-svg-core/styles.css',
   ],
+
   layoutTransition: {
     name: 'layout',
     mode: 'out-in',
   },
   modules: [
-    '~/modules/auth',
-    '~/modules/algolia',
     '@nuxt/content',
     '@nuxtjs/axios',
+    '@nuxtjs/feed',
+    '@nuxtjs/pwa',
+    '@oruga-ui/oruga/nuxt',
+    '~/modules/algolia',
+    '~/modules/auth',
+    'nuxt-i18n',
+    'vue-toastification/nuxt',
+
     // '@nuxtjs/auth-next',
     // '@nuxtjs/auth',
     // '@nuxtjs/sentry',
-    '@oruga-ui/oruga/nuxt',
-    'nuxt-i18n',
     // 'nuxt-basic-auth-module',
-    // 'nuxt-buefy',
     // 'nuxt-use-sound',
     // [
     //   'nuxt-lazy-load',
@@ -195,20 +181,20 @@ export default {
     //   },
     // ],
     // '@nuxtjs/sitemap',
-    // '@/modules/test',
-    // ['@/modules/module', {message: 'my module!!!!!!!!!!!!!!'}],
-    // '@/modules/io',
+    // '~/modules/test',
+    // ['~/modules/module', {message: 'my module!!!!!!!!!!!!!!'}],
+    // '~/modules/io',
   ],
-
   buildModules: [
+    '@nuxt/typescript-build',
     '@nuxtjs/color-mode',
     '@nuxtjs/composition-api',
-    '@nuxtjs/eslint-module',
     '@nuxtjs/moment',
-    // '@nuxtjs/google-analytics',
-    // '@nuxtjs/svg',
+    '@nuxtjs/google-analytics',
     '@nuxtjs/style-resources',
     '@nuxtjs/tailwindcss',
+    '@nuxtjs/stylelint-module',
+    // '@nuxtjs/svg',
     // '@nuxtjs/vuetify',
     // 'nuxt-ackee',
     // [
@@ -222,174 +208,66 @@ export default {
     // '@nuxtjs/pwa',
     // '@nuxt/http',
     // '@nuxtjs/sitemap'
-
-    // Doc: https://github.com/nuxt-community/moment-module
-    // '@nuxtjs/moment',
   ],
 
   plugins: [
-    // '@/plugins/cookies',
-    // '@/plugins/axios.plugin',
-    '@/plugins/api',
-    '@/plugins/auth.client',
-    // '@/plugins/repositories',
-    '@/plugins/data-api',
-    '@/plugins/devto',
-    // '@/plugins/dynamic-marquee.client',
-    '@/plugins/fontawesome',
-    // '@/plugins/highcharts',
-    // '@/plugins/i18n.client',
-    // '@/plugins/init',
-    // '@/plugins/inject-ww.client',
-    '@/plugins/maps.client',
-    // '@/plugins/markdown',
-    '@/plugins/menu.client',
-    // '@/plugins/oruga',
-    // '@/plugins/polyfills.client',
-    '@/plugins/portal-vue',
-    // '@/plugins/slick.client.js',
-    // '@/plugins/socketio.client.js',
-    // '@/plugins/to-title-case',
-    // '@/plugins/v-tooltip',
-    '@/plugins/vue-api-query',
-    '@/plugins/vue-chartkick.client',
-    // '@/plugins/vue-cocomaterial-image',
-    '@/plugins/vue-content-placeholders',
-    // '@/plugins/vue-feather-icons',
-    // '@/plugins/vue-good-table.client',
-    // '@/plugins/vue-notifications',
-    '@/plugins/vue-observe-visibility.client',
-    // '@/plugins/vue-scroll-reveal.client',
-    '@/plugins/vue-scrollactive',
-    // '@/plugins/vue-select',
-    '@/plugins/vue-tables-2.client',
-    '@/plugins/vue-tippy',
-    // '@/plugins/vue-trix.client',
-    // '@/plugins/vuebars',
-    '@/plugins/vuelidate',
+    '~/plugins/api',
+    '~/plugins/auth.client',
+    '~/plugins/data-api',
+    '~/plugins/devto',
+    '~/plugins/fontawesome',
+    '~/plugins/maps.client',
+    '~/plugins/menu.client',
+    '~/plugins/portal-vue',
+    '~/plugins/vue-api-query',
+    '~/plugins/vue-chartkick.client',
+    '~/plugins/vue-content-placeholders',
+    '~/plugins/vue-observe-visibility.client',
+    '~/plugins/vue-scrollactive',
+    '~/plugins/vue-tables-2.client',
+    '~/plugins/vue-tippy',
+    '~/plugins/vuelidate',
+    // '~/plugins/axios.plugin',
+    // '~/plugins/cookies',
+    // '~/plugins/dynamic-marquee.client',
+    // '~/plugins/highcharts',
+    // '~/plugins/i18n.client',
+    // '~/plugins/init',
+    // '~/plugins/inject-ww.client',
+    // '~/plugins/markdown',
+    // '~/plugins/oruga',
+    // '~/plugins/polyfills.client',
+    // '~/plugins/repositories',
+    // '~/plugins/slick.client.js',
+    // '~/plugins/socketio.client.js',
+    // '~/plugins/to-title-case',
+    // '~/plugins/v-tooltip',
+    // '~/plugins/vue-cocomaterial-image',
+    // '~/plugins/vue-feather-icons',
+    // '~/plugins/vue-good-table.client',
+    // '~/plugins/vue-notifications',
+    // '~/plugins/vue-scroll-reveal.client',
+    // '~/plugins/vue-select',
+    // '~/plugins/vue-trix.client',
+    // '~/plugins/vuebars',
   ],
 
   server: {
-    host: '0.0.0.0',
+    // host: '0.0.0.0',
     port: process.env.PORT || 8686,
   },
 
-  serverMiddleware: ['@/myServerMiddleware', '@/server'],
+  serverMiddleware: ['~/myServerMiddleware', '~/server'],
 
   router: {
     prefetchLinks: false,
-    middleware: [
-      // 'auth',
-      // 'pages',
-      // 'user-agent',
-      // 'visits',
-    ],
-    trailingSlash: true,
-    // linkActiveClass: 'is-active',
-    // linkExactActiveClass: 'is-exact-active',
+    // trailingSlash: true,
   },
-
-  // ackee: {
-  //   server: 'https://cranky-borg.herokuapp.com',
-  //   domainId: '601bbeb1-8a0a-4d5d-ba1f-a75ce1cefda3',
-  //   ignoreLocalhost: true,
-  //   detailed: true,
-  // },
 
   axios: {
-    baseURL: process.env.apiUrl || 'https://victortolbert-api.herokuapp.com/',
-    // baseURL: 'https://dev.to/api',
+    baseURL: process.env.apiUrl || 'https://api.victortolbert.com/',
     credentials: true,
-    // proxy: true,
   },
-
-  // proxy: {
-  //   '/laravel': {
-  //     target: 'https://laravel-auth.nuxtjs.app',
-  //     pathRewrite: {'^/laravel': '/'},
-  //   },
-  // },
-
-  auth: {
-    redirect: {
-      login: '/login/',
-      logout: '/',
-      callback: '/login/',
-      home: '/',
-    },
-    strategies: {
-      local: {
-        token: {
-          property: 'token',
-          // required: true,
-          // type: 'Bearer'
-        },
-        user: {
-          property: 'user',
-          // autoFetch: true
-        },
-        endpoints: {
-          login: {url: '/api/auth/login', method: 'post'},
-          logout: {url: '/api/auth/logout', method: 'post'},
-          user: {url: '/api/auth/user', method: 'get'},
-        },
-      },
-      cookie: {
-        cookie: {
-          // (optional) If set we check this cookie existence for loggedIn check
-          name: 'XSRF-TOKEN',
-        },
-        endpoints: {
-          // (optional) If set, we send a get request to this endpoint before login
-          csrf: {
-            url: '',
-          },
-        },
-      },
-      github: {
-        clientId: process.env.githubClientId,
-        clientSecret: process.env.githubClientSecret,
-      },
-      google: {
-        clientId: process.env.googleClientId,
-      },
-      laravelSanctum: {
-        provider: 'laravel/sanctum',
-        url: '<laravel url>',
-      },
-    },
-  },
-
-  // auth: {
-  //   strategies: {
-  //     local: {
-  //       endpoints: {
-  //         login: { url: '/sessions', method: 'post', propertyName: 'token' },
-  //         logout: { url: '/sessions', method: 'delete' },
-  //         user: { url: '/sessions/user', method: 'get', propertyName: 'data.attributes' }
-  //       },
-  //       // tokenRequired: true,
-  //       tokenType: ''
-  //     }
-  //   }
-  // },
-
-  //   basic: {
-  //     name: 'demo',
-  //     pass: 'password',
-  //     message: 'Please enter username and password',
-  //     enabled: process.env.BASIC_ENABLED === 'true', // require boolean value(nullable)
-  //   },
-
-  // buefy: {
-  //   css: false,
-  //   materialDesignIcons: true,
-  // },
-
-  // colorMode: {
-  //   classSuffix: '',
-  //   preference: 'system',
-  // },
 
   content: {
     markdown: {
@@ -402,49 +280,44 @@ export default {
     extendParser: {
       '.custom': file => ({body: file.split('\n').map(line => line.trim())}),
     },
-    // googleAnalytics: {
-    //   id: process.env.GOOGLE_ANALYTICS_ID || 'UA-76464598-4',
-    // },
   },
 
-  // feed: [
-  //   // A default feed configuration object
-  //   {
-  //     path: '/feed.xml', // The route to your feed.
-  //     async create(feed) {}, // The create function (see below)
-  //     cacheTime: 1000 * 60 * 15, // How long should the feed be cached
-  //     type: 'rss2', // Can be: rss2, atom1, json1
-  //     data: ['Some additional data'], // Will be passed as 2nd argument to `create` function
-  //   },
-  // ],
+  feed: [
+    {
+      path: '/rss.xml',
+      async create(feed) {
+        const {$content} = require('@nuxt/content')
+        const files = await $content('blog').fetch()
 
-  // fetch: {
-  //   client: false,
-  //   server: false,
-  // },
+        feed.options = {
+          title: 'Blog',
+          link: 'https://blog.designcoder.net/feed.xml',
+          description: 'Get the latest posts from designcoder.net',
+        }
 
-  // features: {
-  //   store: false,
-  //   middleware: false,
-  //   deprecations: false,
-  //   validate: false,
-  //   asyncData: false,
-  //   fetch: false,
-  //   componentAliases: false,
-  // },
+        files.forEach(post => {
+          feed.addItem({
+            title: post.title,
+            id: post.path,
+            link: `https://blog.designcoder.net${post.path}`,
+            description: post.excerpt,
+          })
+        })
 
-  // googleAnalytics: {
-  //   id: process.env.GOOGLE_ANALYTICS_ID,
-  // },
+        feed.addContributor({
+          name: 'Victor Tolbert',
+          email: 'victor.tolbert@gmail.com',
+          link: 'https://www.victortolbert.com',
+        })
+      },
+      cacheTime: 1000 * 60 * 15,
+      type: 'rss2',
+    },
+  ],
 
-  // googleAnalytics: {
-  //   id: process.env.GOOGLE_ANALYTICS_ID || 'UA-76464598-5',
-  //   disabled: () => document.cookie.includes('ga_optout=true'),
-  //   debug: {
-  //     sendHitTask: !utils.isDev,
-  //   },
-  //   set: [{field: 'anonymizeIp', value: true}],
-  // },
+  googleAnalytics: {
+    // Options
+  },
 
   hooks: {
     'content:file:beforeInsert': document => {
@@ -455,7 +328,6 @@ export default {
       }
     },
   },
-
   i18n: {
     locales: [
       {
@@ -483,9 +355,6 @@ export default {
     includeCss: true,
   },
 
-  styleResources: {
-    scss: ['@/assets/styles/tokens.scss'],
-  },
   // sentry: {
   //   dsn:
   //     'https://c30dc69c78434050aed6f64b97cbd645@o244691.ingest.sentry.io/1422222',
@@ -495,102 +364,12 @@ export default {
   //   },
   // },
 
-  // sitemap: {
-  //   hostname: process.env.baseUrl || 'https://app.vticonsulting.com/',
-  // },
-
-  // sitemap: {
-  //   hostname: utils.baseUrl,
-  //   trailingSlash: true,
-  //   exclude: ['/privacy', '/legal'],
-  //   defaults: {
-  //     changefreq: 'daily',
-  //     priority: 1,
-  //     lastmodrealtime: true,
-  //   },
-  // },
-
-  // pwa: {
-  //   icon: {
-  //     source: 'static/img/me@2x.jpg'
-  //   }
-  // },
-  // sounds: {
-  //   back: {
-  //     src: '/sound/back.wav',
-  //     options: {
-  //       volume: 1,
-  //     },
-  //   },
-  //   button: {
-  //     src: '/sound/button.wav',
-  //     options: {
-  //       volume: 1,
-  //     },
-  //   },
-  //   error: {
-  //     src: '/sound/error.wav',
-  //     options: {
-  //       volume: 1,
-  //     },
-  //   },
-  //   fanfare: {
-  //     src: '/sound/fanfare.mp3',
-  //     options: {
-  //       volume: 1,
-  //     },
-  //   },
-  //   pop_down: {
-  //     src: '/sound/pop_down.mp3',
-  //     options: {
-  //       volume: 1,
-  //     },
-  //   },
-  //   pop_up_off: {
-  //     src: '/sound/pop_up_off.mp3',
-  //     options: {
-  //       volume: 1,
-  //     },
-  //   },
-  //   pop_up_on: {
-  //     src: '/sound/pop_up_on.mp3',
-  //     options: {
-  //       volume: 1,
-  //     },
-  //   },
-  //   success: {
-  //     src: '/sound/success.wav',
-  //     options: {
-  //       volume: 1,
-  //     },
-  //   },
-  //   times_up: {
-  //     src: '/sound/times_up.wav',
-  //     options: {
-  //       volume: 1,
-  //     },
-  //   },
-  //   warning: {
-  //     src: '/sound/warning.wav',
-  //     options: {
-  //       volume: 1,
-  //     },
-  //   },
-  //   vue: {
-  //     src: '/sound/vue.mp3',
-  //     options: {
-  //       volume: 1,
-  //     },
-  //   },
-  //   you_have_a_mail_message: {
-  //     src: '/sound/you_have_a_mail_message.wav',
-  //     options: {
-  //       volume: 1,
-  //     },
-  //   },
-  // },
+  styleResources: {
+    scss: ['~/assets/scss/variables.scss'],
+  },
 
   storybook: {
+    port: 6006,
     stories: [
       '~/components/**/*.stories.mdx',
       '~/components/**/*.stories.@(js|jsx|ts|tsx)',
@@ -599,41 +378,22 @@ export default {
       viewMode: 'docs',
       actions: {argTypesRegex: '^on[A-Z].*'},
     },
-    addons: ['@storybook/addon-docs', '@storybook/addon-controls'],
+    addons: [
+      '@storybook/addon-a11y',
+      '@storybook/addon-storysource',
+      '@whitespace/storybook-addon-html',
+    ],
     webpackFinal(config) {
       return config
     },
   },
 
   tailwindcss: {
-    // configPath: '@/config/tailwind.config.js',
-    cssPath: '@/assets/styles/tailwind.css',
+    cssPath: '~/assets/styles/tailwind.css',
     exposeConfig: true,
   },
 
-  // typescript: {
-  //   typeCheck: {
-  //     eslint: {
-  //       files: './**/*.{ts,js,vue}',
-  //     },
-  //   },
-  // },
-
-  // netlifyFiles: {
-  //   existingFilesDirectory: './netlify',
-  // },
-
-  // http: {
-  //   https: !utils.isDev,
-  //   prefix: '/.netlify/functions/',
-  //   proxy: utils.isDev
-  // },
-
-  // proxy: {
-  //   '/.netlify/functions/': {
-  //     target: 'http://localhost:9000'
-  //   }
-  // },
+  toast: {timeout: 2000, closeOnClick: false},
 
   build: {
     extend(config, context) {
@@ -644,22 +404,11 @@ export default {
           name: '[path][name].[ext]',
         },
       })
-      // @see https://github.com/nuxt/nuxt.js/pull/3480#issuecomment-404150387
-      // config.output.globalObject = 'this'
-      // if (context.isClient) {
-      //   // web workers are only available client-side
-      //   config.module.rules.push({
-      //     test: /\.worker\.js$/, // this will pick up all .js files that ends with ".worker.js"
-      //     loader: 'worker-loader',
-      //     exclude: /(node_modules)/,
-      //   })
-      // }
     },
-    // babel: {
-    //   plugins: ['@babel/plugin-syntax-jsx'],
-    // },
+
     postcss: {
       plugins: {
+        'postcss-nested': {},
         'postcss-import': {},
         tailwindcss: path.resolve(__dirname, './tailwind.config.js'),
         'postcss-preset-env': {},
@@ -671,27 +420,20 @@ export default {
     },
     transpile: [/@fullcalendar.*/], // transpile ESM modules within all fullcalendar packages
   },
-  eslint: {
-    cache: false,
-  },
-  purgeCSS: {
-    whitelist: ['dark-mode'],
-    whitelistPatterns: [/svg.*/, /fa.*/],
-    whitelistPatternsChildren: [/^token/, /^pre/, /^code/, /^nuxt-content/],
-  },
+
+  // eslint: {
+  //   cache: false,
+  // },
 
   generate: {
     interval: 2000,
-    // fallback: true,
+    fallback: '404.html',
+    // routes: ['/'],
+    async routes() {
+      const {$content} = require('@nuxt/content')
+      const files = await $content('blog').fetch()
 
-    fallback: '404.html', // for Netlify
-    routes: ['/'], // give the first url to start crawling
-
-    // async routes() {
-    //   const {$content} = require('@nuxt/content')
-    //   const files = await $content('blog').fetch()
-
-    //   return files.map(file => (file.path === '/index' ? '/' : file.path))
-    // },
+      return files.map(file => (file.path === '/index' ? '/' : file.path))
+    },
   },
 }

@@ -1,143 +1,105 @@
 <template>
-  <div class="flex">
-    <div
-      class="w-full py-4 lg:pt-8 lg:pb-4 dark:border-gray-800 lg:border-l lg:border-r"
-      :class="{'': doc.toc && doc.toc.length, 'lg:w-3/4': !doc.fullscreen}"
+  <div
+    class="flex flex-wrap-reverse"
+    :class="{
+      'lg:-mx-8': settings.layout === 'single',
+    }"
+  >
+    <section
+      class="w-full py-4 lg:pt-8 lg:pb-4 dark:border-gray-800"
+      :class="{
+        'lg:w-3/4': !document.fullscreen,
+        'lg:border-l lg:border-r': settings.layout !== 'single',
+      }"
     >
-      <article
-        class="prose lg:px-8 dark:prose-dark max-w-none"
-        :class="{'prose-dark dark': $colorMode.value === 'dark'}"
-      >
-        <h1>{{ $t(doc.title) }}</h1>
+      <article class="prose dark:prose-dark max-w-none lg:px-8">
+        <!-- <h1 class="font-bold">{{ document.title }}</h1> -->
 
-        <NuxtContent :document="doc" />
+        <h1 class="flex items-center justify-between">
+          {{ document.title }}
+          <Badge v-if="document.badge">{{ document.badge }}</Badge>
+        </h1>
+        <div v-if="document.subtitle" class="-mt-4">
+          <p class="text-gray-600 dark:text-gray-400">
+            {{ document.subtitle }}
+          </p>
+        </div>
+
+        <p>{{ document.description }}</p>
+        <NuxtContent :document="document" />
       </article>
 
-      <EditOnGithub :document="doc" />
-      <ArticlePrevNext :prev="prev" :next="next" class="mt-4 lg:px-8" />
-    </div>
-    <SidebarToc v-if="doc.toc && doc.toc.length" :toc="doc.toc" />
+      <AppPageBottom :document="document" />
+      <!-- <AppPrevNext :prev="prev" :next="next" /> -->
+    </section>
+
+    <AppToc v-if="!document.fullscreen" :toc="document.toc" />
   </div>
 </template>
 
 <script>
-import Clipboard from 'clipboard'
+import Vue from 'vue'
+import {mapGetters} from 'vuex'
+
+import AppCopyButton from '~/components/app/AppCopyButton'
+import {Howl, Howler} from 'howler'
+import {getColors} from 'theme-colors'
+
+const theme = getColors('#ABABAB')
+
+const sound = new Howl({
+  src: ['sound.webm', 'sound.mp3'],
+})
 
 export default {
-  name: 'PageSlug',
-  layout: 'docs',
-  middleware({params, redirect}) {
-    if (params.slug === 'index') {
-      redirect('/')
-    }
-  },
-  async asyncData({$content, store, app, params, error}) {
+  // layout({store}) {
+  //   return store.state.settings.layout || 'default'
+  // },
+  // middleware ({ app, params, redirect }) {
+  //   if (params.pathMatch === 'index') {
+  //     redirect(app.localePath('/'))
+  //   }
+  // },
+  async asyncData({$content, params, error}) {
     const slug = params.slug || 'index'
-    let doc
-    try {
-      doc = await $content(app.i18n.locale, slug).fetch()
-    } catch (e) {
-      return error({statusCode: 404, message: 'Page not found'})
-    }
-    const [prev, next] = await $content(app.i18n.locale)
-      .only(['title', 'slug'])
-      .sortBy('position', 'asc')
-      .surround(slug, {before: 1, after: 1})
+    const document = await $content(slug)
       .fetch()
+      .catch(err => {
+        error({statusCode: 404, message: 'Document not found'})
+      })
+
     return {
-      doc,
-      prev,
-      next,
+      document,
     }
-  },
-  mounted() {
-    const blocks = document.getElementsByClassName('nuxt-content-highlight')
-    for (const block of blocks) {
-      const button = document.createElement('button')
-      button.className = 'copy'
-      button.textContent = 'Copy'
-      block.appendChild(button)
-    }
-    const copyCode = new Clipboard('.copy', {
-      target(trigger) {
-        return trigger.previousElementSibling
-      },
-    })
-    copyCode.on('success', function (event) {
-      event.clearSelection()
-      event.trigger.textContent = 'Copied!'
-      window.setTimeout(function () {
-        event.trigger.textContent = 'Copy'
-      }, 2000)
-    })
   },
   computed: {
-    readingTime() {
-      return Math.ceil(this.$moment.duration(this.doc.readingTime).asMinutes())
-    },
+    ...mapGetters(['settings']),
   },
-  head() {
-    return {
-      title: this.doc.title,
-      meta: [
-        {
-          hid: 'description',
-          name: 'description',
-          content: this.doc.description,
-        },
-        // Open Graph
-        {hid: 'og:title', property: 'og:title', content: this.doc.title},
-        {
-          hid: 'og:description',
-          property: 'og:description',
-          content: this.doc.description,
-        },
-        // Twitter Card
-        {hid: 'twitter:title', name: 'twitter:title', content: this.doc.title},
-        {
-          hid: 'twitter:description',
-          name: 'twitter:description',
-          content: this.doc.description,
-        },
-      ],
+  mounted() {
+    if (this.document.version) {
+      localStorage.setItem(
+        `document-${this.document.slug}-version`,
+        this.document.version,
+      )
     }
+
+    setTimeout(() => {
+      const blocks = document.getElementsByClassName('nuxt-content-highlight')
+
+      for (const block of blocks) {
+        const CopyButton = Vue.extend(AppCopyButton)
+        const component = new CopyButton().$mount()
+        block.appendChild(component.$el)
+      }
+    }, 100)
+
+    // Play the sound.
+    sound.play()
+
+    console.log(theme)
+
+    // Change global volume.
+    // Howler.volume(0.5);
   },
 }
 </script>
-
-<style>
-:target {
-  -webkit-animation: target-fade 3s 1;
-  -moz-animation: target-fade 3s 1;
-}
-
-@-webkit-keyframes target-fade {
-  0% {
-    background-color: rgba(0, 0, 0, 0.1);
-  }
-  100% {
-    background-color: rgba(0, 0, 0, 0);
-  }
-}
-@-moz-keyframes target-fade {
-  0% {
-    background-color: rgba(0, 0, 0, 0.1);
-  }
-  100% {
-    background-color: rgba(0, 0, 0, 0);
-  }
-}
-
-@keyframes yellowfade {
-  from {
-    background: yellow;
-  }
-  to {
-    background: transparent;
-  }
-}
-
-p.item-highlight {
-  animation: yellowfade 1s;
-}
-</style>

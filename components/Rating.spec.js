@@ -1,5 +1,5 @@
 import {shallowMount} from '@vue/test-utils'
-import Rating from '@/components/Rating'
+import Rating from '~/components/Rating'
 
 let wrapper = null
 

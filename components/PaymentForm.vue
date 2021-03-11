@@ -348,7 +348,7 @@ import {validationMixin} from 'vuelidate'
 import {required, email, requiredIf} from 'vuelidate/lib/validators'
 import client from 'braintree-web/client'
 import hostedFields from 'braintree-web/hosted-fields'
-import CreditCardInputs from '@/components/CreditCardInputs'
+import CreditCardInputs from '~/components/CreditCardInputs'
 
 const isIE =
   '-ms-scroll-limit' in document.documentElement.style &&

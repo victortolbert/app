@@ -1,5 +1,5 @@
 <script>
-import {capitalize} from '@/helpers'
+import {capitalize} from '~/helpers'
 
 export default {
   name: 'BaseIconSolid',

@@ -19,7 +19,7 @@
 </template>
 
 <script>
-import shortDate from '@/utils/shortDate'
+import shortDate from '~/utils/shortDate'
 
 export default {
   props: {

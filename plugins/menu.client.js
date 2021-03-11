@@ -1,4 +1,4 @@
-export default ({app, store}) => {
+export default ({ app, store }) => {
   // For mobile navigation when clicking on a menu link
   app.router.afterEach(() => {
     if (store.state.menu.open) {

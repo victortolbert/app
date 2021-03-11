@@ -118,7 +118,7 @@
 
 <script>
 import {defineComponent} from '@nuxtjs/composition-api'
-import useMessages from '@/composables/useMessages'
+import useMessages from '~/composables/useMessages'
 
 export default defineComponent({
   props: {

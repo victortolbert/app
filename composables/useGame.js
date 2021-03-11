@@ -1,5 +1,5 @@
 import _ from 'lodash'
-import {computed, ref} from 'vue'
+import {computed, ref} from '@nuxtjs/composition-api'
 
 export default function useGame(deck) {
   const newPlayer = ref(true)
