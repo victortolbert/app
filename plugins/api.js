@@ -57,7 +57,7 @@
 //   inject('api', api)
 // }
 
-import createRepository from '@/api/repository'
+import createRepository from '~/api/repository'
 
 export default ({$axios, store}, inject) => {
   const instance = $axios.create({
@@ -68,7 +68,7 @@ export default ({$axios, store}, inject) => {
     },
   })
 
-  instance.setBaseURL('/api')
+  instance.setBaseURL('https://api.victortolbert.com')
 
   instance.interceptors.request.use(function (request) {
     if (request.loading && typeof request.loading === 'function') {
@@ -92,8 +92,10 @@ export default ({$axios, store}, inject) => {
   const repositoryWithAxios = createRepository(instance)
 
   const api = {
+    affiliates: repositoryWithAxios('affiliates'),
+    events: repositoryWithAxios('events'),
     messages: repositoryWithAxios('messages'),
-    // users: repositoryWithAxios('users'),
+    people: repositoryWithAxios('people'),
     // ...
   }
 

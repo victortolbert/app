@@ -20,6 +20,15 @@ const MyList = {
 }
 export default {
   components: {MyList},
+
+  async asyncData({$api}) {
+    const affiliate = await $api.affiliates.show(45)
+    return {
+      affiliate,
+    }
+    // console.log(affiliate)
+  },
+
   data: () => ({count: 0}),
 }
 </script>
@@ -27,6 +36,9 @@ export default {
 <template>
   <div>
     <p>{{ count }}</p>
+
+    <pre>{{ affiliate }}</pre>
+
     <MyList :class="$style.list" />
     <p>Our baseURL is: {{ $config.baseURL }}</p>
     <p>Our assetsURL is: {{ $config.assetsURL }}</p>

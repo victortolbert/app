@@ -95,32 +95,32 @@ export default defineComponent({
           label: this.$t('guide'),
           path: '/guide/',
         },
-        {
-          name: 'articles',
-          label: this.$t('articles'),
-          path: '/articles/',
-        },
+        // {
+        //   name: 'articles',
+        //   label: this.$t('articles'),
+        //   path: '/articles/',
+        // },
         // {
         //   name: 'person',
         //   label: this.$t('person'),
         //   path: '/person/',
         // },
 
-        {
-          name: 'resume',
-          label: this.$t('resume'),
-          path: '/resume/',
-        },
-        {
-          name: 'homes',
-          label: this.$t('homes'),
-          path: '/homes/',
-        },
-        {
-          name: 'messages',
-          label: this.$t('messages'),
-          path: '/messages/',
-        },
+        // {
+        //   name: 'resume',
+        //   label: this.$t('resume'),
+        //   path: '/resume/',
+        // },
+        // {
+        //   name: 'homes',
+        //   label: this.$t('homes'),
+        //   path: '/homes/',
+        // },
+        // {
+        //   name: 'messages',
+        //   label: this.$t('messages'),
+        //   path: '/messages/',
+        // },
         // {
         //   name: 'courses',
         //   label: this.$t('courses'),

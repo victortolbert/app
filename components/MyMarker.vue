@@ -1,5 +1,5 @@
 <script>
-import {defineComponent, inject} from '@vue/composition-api'
+import {defineComponent, inject} from '@nuxtjs/composition-api'
 
 export default defineComponent({
   setup() {

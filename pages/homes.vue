@@ -14,7 +14,7 @@
 <script>
 import homes from '~/data/homes'
 export default {
-  layout: 'homes',
+  // layout: 'homes',
   head() {
     return {
       title: 'Homepage',

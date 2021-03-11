@@ -1,0 +1,2610 @@
+[
+  {
+    "name": "about___en",
+    "path": "/about/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/about/index.vue",
+    "chunkName": "pages/about/index",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_79970511"
+  },
+  {
+    "name": "admin___en",
+    "path": "/admin/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/admin.vue",
+    "chunkName": "pages/admin",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_f3c1a060"
+  },
+  {
+    "name": "advocates___en",
+    "path": "/advocates/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/advocates.vue",
+    "chunkName": "pages/advocates",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_765a442e"
+  },
+  {
+    "name": "affiliates___en",
+    "path": "/affiliates/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/affiliates.vue",
+    "chunkName": "pages/affiliates",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_425fc495"
+  },
+  {
+    "name": "announcements___en",
+    "path": "/announcements/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/announcements.vue",
+    "chunkName": "pages/announcements",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_8ce32de6"
+  },
+  {
+    "name": "articles___en",
+    "path": "/articles/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/articles/index.vue",
+    "chunkName": "pages/articles/index",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_23669dcf"
+  },
+  {
+    "name": "blog___en",
+    "path": "/blog/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/blog/index.vue",
+    "chunkName": "pages/blog/index",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_ccd19718"
+  },
+  {
+    "name": "buttons___en",
+    "path": "/buttons/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/buttons.vue",
+    "chunkName": "pages/buttons",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_6f35ccc2"
+  },
+  {
+    "name": "calendar___en",
+    "path": "/calendar/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/calendar.vue",
+    "chunkName": "pages/calendar",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_11df7e66"
+  },
+  {
+    "name": "clients___en",
+    "path": "/clients/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/clients.vue",
+    "chunkName": "pages/clients",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_648c106e"
+  },
+  {
+    "name": "cookies___en",
+    "path": "/cookies/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/cookies.vue",
+    "chunkName": "pages/cookies",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_716018d0"
+  },
+  {
+    "name": "courses___en",
+    "path": "/courses/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/courses.vue",
+    "chunkName": "pages/courses",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_59bd850e"
+  },
+  {
+    "name": "css-modules___en",
+    "path": "/css-modules/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/css-modules.vue",
+    "chunkName": "pages/css-modules",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_55f6ac7e"
+  },
+  {
+    "name": "css-tricks___en",
+    "path": "/css-tricks/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/css-tricks.vue",
+    "chunkName": "pages/css-tricks",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_3fde2859"
+  },
+  {
+    "name": "dashboard___en",
+    "path": "/dashboard/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/dashboard.vue",
+    "chunkName": "pages/dashboard",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_4ee81015"
+  },
+  {
+    "name": "dashboards___en",
+    "path": "/dashboards/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/dashboards/index.vue",
+    "chunkName": "pages/dashboards/index",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_b357c09e"
+  },
+  {
+    "name": "data-provider___en",
+    "path": "/data-provider/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/data-provider.vue",
+    "chunkName": "pages/data-provider",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_3b85dc96"
+  },
+  {
+    "name": "demo___en",
+    "path": "/demo/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/demo.vue",
+    "chunkName": "pages/demo",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_fccc071c"
+  },
+  {
+    "name": "demos___en",
+    "path": "/demos/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/demos/index.vue",
+    "chunkName": "pages/demos/index",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_e6a3fe98"
+  },
+  {
+    "name": "easy-emailer___en",
+    "path": "/easy-emailer/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/easy-emailer.vue",
+    "chunkName": "pages/easy-emailer",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_13c0d88d"
+  },
+  {
+    "name": "edit-participant___en",
+    "path": "/edit-participant/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/edit-participant.vue",
+    "chunkName": "pages/edit-participant",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_412a657f"
+  },
+  {
+    "name": "edit-profile___en",
+    "path": "/edit-profile/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/edit-profile.vue",
+    "chunkName": "pages/edit-profile",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_21ff8ef5"
+  },
+  {
+    "name": "editor___en",
+    "path": "/editor/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/editor.vue",
+    "chunkName": "pages/editor",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_8ac26d88"
+  },
+  {
+    "name": "index___es",
+    "path": "/es/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/index.vue",
+    "chunkName": "pages/index",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_54afdbd3"
+  },
+  {
+    "name": "events___en",
+    "path": "/events/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/events.vue",
+    "chunkName": "pages/events",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_531ad2e8"
+  },
+  {
+    "name": "faq___en",
+    "path": "/faq/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/faq.vue",
+    "chunkName": "pages/faq",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_2d74c257"
+  },
+  {
+    "name": "file-upload___en",
+    "path": "/file-upload/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/file-upload.vue",
+    "chunkName": "pages/file-upload",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_1e088fb3"
+  },
+  {
+    "name": "form___en",
+    "path": "/form/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/form.vue",
+    "chunkName": "pages/form",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_6ac6b2d3"
+  },
+  {
+    "name": "forums___en",
+    "path": "/forums/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/forums.vue",
+    "chunkName": "pages/forums",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_3363967e"
+  },
+  {
+    "name": "game___en",
+    "path": "/game/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/game.vue",
+    "chunkName": "pages/game",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_35d0a9fe"
+  },
+  {
+    "name": "get-involved___en",
+    "path": "/get-involved/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/get-involved.vue",
+    "chunkName": "pages/get-involved",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_5526bded"
+  },
+  {
+    "name": "give___en",
+    "path": "/give/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/give.vue",
+    "chunkName": "pages/give",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_c8b5bac0"
+  },
+  {
+    "name": "grid___en",
+    "path": "/grid/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/grid.vue",
+    "chunkName": "pages/grid",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_61802055"
+  },
+  {
+    "name": "homes___en",
+    "path": "/homes/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/homes.vue",
+    "chunkName": "pages/homes",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_041e3975"
+  },
+  {
+    "name": "index1___en",
+    "path": "/index1/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/index1.vue",
+    "chunkName": "pages/index1",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_4155306e"
+  },
+  {
+    "name": "lab___en",
+    "path": "/lab/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/lab.vue",
+    "chunkName": "pages/lab",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_6a06c54e"
+  },
+  {
+    "name": "landing___en",
+    "path": "/landing/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/landing.vue",
+    "chunkName": "pages/landing",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_16a7e750"
+  },
+  {
+    "name": "learn___en",
+    "path": "/learn/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/learn/index.vue",
+    "chunkName": "pages/learn/index",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_5c027708"
+  },
+  {
+    "name": "listen___en",
+    "path": "/listen/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/listen.vue",
+    "chunkName": "pages/listen",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_4b79f896"
+  },
+  {
+    "name": "loading___en",
+    "path": "/loading/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/loading.vue",
+    "chunkName": "pages/loading",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_6d92ce06"
+  },
+  {
+    "name": "login___en",
+    "path": "/login/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/login.vue",
+    "chunkName": "pages/login",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_1e577eea"
+  },
+  {
+    "name": "logos___en",
+    "path": "/logos/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/logos.vue",
+    "chunkName": "pages/logos",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_28db0829"
+  },
+  {
+    "name": "map___en",
+    "path": "/map/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/map.vue",
+    "chunkName": "pages/map",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_c09b6cc6"
+  },
+  {
+    "name": "media-log___en",
+    "path": "/media-log/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/media-log.vue",
+    "chunkName": "pages/media-log",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_2069c048"
+  },
+  {
+    "path": "/messages/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/messages.vue",
+    "chunkName": "pages/messages",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "children": [
+      {
+        "name": "messages___en",
+        "path": "",
+        "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/messages/index.vue",
+        "chunkName": "pages/messages/index",
+        "pathToRegexpOptions": {
+          "strict": true
+        },
+        "_name": "_7652861e"
+      },
+      {
+        "name": "messages-layout___en",
+        "path": "layout/",
+        "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/messages/layout.vue",
+        "chunkName": "pages/messages/layout",
+        "pathToRegexpOptions": {
+          "strict": true
+        },
+        "_name": "_3e731b8e"
+      },
+      {
+        "name": "messages-tags-tag___en",
+        "path": "tags/:tag?/",
+        "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/messages/tags/_tag.vue",
+        "chunkName": "pages/messages/tags/_tag",
+        "pathToRegexpOptions": {
+          "strict": true
+        },
+        "_name": "_646fdedd"
+      },
+      {
+        "name": "messages-id___en",
+        "path": ":id/",
+        "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/messages/_id.vue",
+        "chunkName": "pages/messages/_id",
+        "pathToRegexpOptions": {
+          "strict": true
+        },
+        "_name": "_42677806"
+      }
+    ],
+    "_name": "_7f0ee04a"
+  },
+  {
+    "name": "modules___en",
+    "path": "/modules/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/modules.vue",
+    "chunkName": "pages/modules",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_de467c70"
+  },
+  {
+    "name": "movies___en",
+    "path": "/movies/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/movies.vue",
+    "chunkName": "pages/movies",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_a93917dc"
+  },
+  {
+    "name": "my-profile___en",
+    "path": "/my-profile/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/my-profile.vue",
+    "chunkName": "pages/my-profile",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_2f9a0552"
+  },
+  {
+    "name": "network-error___en",
+    "path": "/network-error/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/network-error.vue",
+    "chunkName": "pages/network-error",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_3c385c2a"
+  },
+  {
+    "name": "new-post___en",
+    "path": "/new-post/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/new-post.vue",
+    "chunkName": "pages/new-post",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_3821ea88"
+  },
+  {
+    "name": "no-access___en",
+    "path": "/no-access/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/no-access.vue",
+    "chunkName": "pages/no-access",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_3309de71"
+  },
+  {
+    "name": "not-found___en",
+    "path": "/not-found/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/not-found.vue",
+    "chunkName": "pages/not-found",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_802010ee"
+  },
+  {
+    "name": "partners___en",
+    "path": "/partners/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/partners/index.vue",
+    "chunkName": "pages/partners/index",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_0e265286"
+  },
+  {
+    "name": "people___en",
+    "path": "/people/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/people/index.vue",
+    "chunkName": "pages/people/index",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_0009fd3e"
+  },
+  {
+    "name": "person___en",
+    "path": "/person/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/person.vue",
+    "chunkName": "pages/person",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_3fd70f24"
+  },
+  {
+    "name": "posts___en",
+    "path": "/posts/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/posts.vue",
+    "chunkName": "pages/posts",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "children": [
+      {
+        "name": "posts-id___en",
+        "path": ":id?/",
+        "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/posts/_id.vue",
+        "chunkName": "pages/posts/_id",
+        "pathToRegexpOptions": {
+          "strict": true
+        },
+        "_name": "_79666c02"
+      }
+    ],
+    "_name": "_05807358"
+  },
+  {
+    "name": "preferences___en",
+    "path": "/preferences/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/preferences.vue",
+    "chunkName": "pages/preferences",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_7348c78e"
+  },
+  {
+    "name": "products___en",
+    "path": "/products/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/products/index.vue",
+    "chunkName": "pages/products/index",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_71361836"
+  },
+  {
+    "name": "profile___en",
+    "path": "/profile/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/profile.vue",
+    "chunkName": "pages/profile",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_3cbf7a2c"
+  },
+  {
+    "name": "releases___en",
+    "path": "/releases/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/releases.vue",
+    "chunkName": "pages/releases",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_d009304a"
+  },
+  {
+    "name": "resources___en",
+    "path": "/resources/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/resources.vue",
+    "chunkName": "pages/resources",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_97f899b4"
+  },
+  {
+    "path": "/resume/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/resume.vue",
+    "chunkName": "pages/resume",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "children": [
+      {
+        "name": "resume___en",
+        "path": "",
+        "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/resume/index.vue",
+        "chunkName": "pages/resume/index",
+        "pathToRegexpOptions": {
+          "strict": true
+        },
+        "_name": "_0a52ad02"
+      }
+    ],
+    "_name": "_13a1e008"
+  },
+  {
+    "name": "sandbox___en",
+    "path": "/sandbox/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/sandbox.vue",
+    "chunkName": "pages/sandbox",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_d1748df0"
+  },
+  {
+    "name": "scratch___en",
+    "path": "/scratch/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/scratch.vue",
+    "chunkName": "pages/scratch",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_3c1b5bbb"
+  },
+  {
+    "name": "search-app___en",
+    "path": "/search-app/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/search-app.vue",
+    "chunkName": "pages/search-app",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_2bf5154b"
+  },
+  {
+    "name": "search-copy___en",
+    "path": "/search-copy/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/search-copy.vue",
+    "chunkName": "pages/search-copy",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_1cec3e8a"
+  },
+  {
+    "name": "search___en",
+    "path": "/search/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/search.vue",
+    "chunkName": "pages/search",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_25eb1012"
+  },
+  {
+    "name": "serverless___en",
+    "path": "/serverless/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/serverless.vue",
+    "chunkName": "pages/serverless",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_1ededc2b"
+  },
+  {
+    "name": "settings___en",
+    "path": "/settings/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/settings.vue",
+    "chunkName": "pages/settings",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_2bef0732"
+  },
+  {
+    "name": "signin___en",
+    "path": "/signin/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/signin.vue",
+    "chunkName": "pages/signin",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_3748161e"
+  },
+  {
+    "name": "simple-form___en",
+    "path": "/simple-form/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/simple-form.vue",
+    "chunkName": "pages/simple-form",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_31541dc0"
+  },
+  {
+    "name": "sockets___en",
+    "path": "/sockets/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/sockets.vue",
+    "chunkName": "pages/sockets",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_1275d521"
+  },
+  {
+    "name": "stay-informed___en",
+    "path": "/stay-informed/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/stay-informed.vue",
+    "chunkName": "pages/stay-informed",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_2fe19bbd"
+  },
+  {
+    "name": "store___en",
+    "path": "/store/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/store.vue",
+    "chunkName": "pages/store",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_2ca9e73c"
+  },
+  {
+    "name": "support___en",
+    "path": "/support/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/support.vue",
+    "chunkName": "pages/support",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_68b0b610"
+  },
+  {
+    "name": "tailwind___en",
+    "path": "/tailwind/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/tailwind.vue",
+    "chunkName": "pages/tailwind",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_6fb264e7"
+  },
+  {
+    "name": "tasks___en",
+    "path": "/tasks/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/tasks.vue",
+    "chunkName": "pages/tasks",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_deb51ee2"
+  },
+  {
+    "name": "team___en",
+    "path": "/team/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/team.vue",
+    "chunkName": "pages/team",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_29d31828"
+  },
+  {
+    "name": "teams___en",
+    "path": "/teams/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/teams.vue",
+    "chunkName": "pages/teams",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_7b63aab7"
+  },
+  {
+    "name": "testing___en",
+    "path": "/testing/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/testing.vue",
+    "chunkName": "pages/testing",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_5f3f405e"
+  },
+  {
+    "name": "thanks___en",
+    "path": "/thanks/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/thanks.vue",
+    "chunkName": "pages/thanks",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_4e6bded0"
+  },
+  {
+    "name": "timeline___en",
+    "path": "/timeline/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/timeline.vue",
+    "chunkName": "pages/timeline",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_637fe050"
+  },
+  {
+    "name": "todos___en",
+    "path": "/todos/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/todos.vue",
+    "chunkName": "pages/todos",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_2c4bce6e"
+  },
+  {
+    "name": "tooltip___en",
+    "path": "/tooltip/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/tooltip.vue",
+    "chunkName": "pages/tooltip",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_08fecc44"
+  },
+  {
+    "name": "training___en",
+    "path": "/training/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/training.vue",
+    "chunkName": "pages/training",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_4d092069"
+  },
+  {
+    "name": "upload___en",
+    "path": "/upload/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/upload.vue",
+    "chunkName": "pages/upload",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_08e64bd0"
+  },
+  {
+    "name": "uses___en",
+    "path": "/uses/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/uses/index.vue",
+    "chunkName": "pages/uses/index",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_df2b77c4"
+  },
+  {
+    "name": "watch-reactive___en",
+    "path": "/watch-reactive/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/watch-reactive.vue",
+    "chunkName": "pages/watch-reactive",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_58981e06"
+  },
+  {
+    "name": "watch-ref___en",
+    "path": "/watch-ref/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/watch-ref.vue",
+    "chunkName": "pages/watch-ref",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_1e49a0d4"
+  },
+  {
+    "name": "website___en",
+    "path": "/website/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/website.vue",
+    "chunkName": "pages/website",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_58c2d0dc"
+  },
+  {
+    "name": "webworker___en",
+    "path": "/webworker/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/webworker.vue",
+    "chunkName": "pages/webworker",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_4937a653"
+  },
+  {
+    "name": "welcome___en",
+    "path": "/welcome/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/welcome.vue",
+    "chunkName": "pages/welcome",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_52605fba"
+  },
+  {
+    "name": "dashboards-admin___en",
+    "path": "/dashboards/admin/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/dashboards/admin.vue",
+    "chunkName": "pages/dashboards/admin",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_507918a4"
+  },
+  {
+    "name": "dashboards-advocate___en",
+    "path": "/dashboards/advocate/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/dashboards/advocate.vue",
+    "chunkName": "pages/dashboards/advocate",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_7e1e4c48"
+  },
+  {
+    "name": "dashboards-applicant___en",
+    "path": "/dashboards/applicant/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/dashboards/applicant.vue",
+    "chunkName": "pages/dashboards/applicant",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_62bcfb3e"
+  },
+  {
+    "name": "dashboards-booster___en",
+    "path": "/dashboards/booster/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/dashboards/booster.vue",
+    "chunkName": "pages/dashboards/booster",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_4a03f4a2"
+  },
+  {
+    "name": "dashboards-candidate___en",
+    "path": "/dashboards/candidate/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/dashboards/candidate.vue",
+    "chunkName": "pages/dashboards/candidate",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_45165f3c"
+  },
+  {
+    "name": "dashboards-executive___en",
+    "path": "/dashboards/executive/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/dashboards/executive.vue",
+    "chunkName": "pages/dashboards/executive",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_57008c47"
+  },
+  {
+    "name": "dashboards-staff___en",
+    "path": "/dashboards/staff/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/dashboards/staff.vue",
+    "chunkName": "pages/dashboards/staff",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_424c02bf"
+  },
+  {
+    "name": "dashboards-super-admin___en",
+    "path": "/dashboards/super-admin/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/dashboards/super-admin.vue",
+    "chunkName": "pages/dashboards/super-admin",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_6e78d2c8"
+  },
+  {
+    "name": "demos-resume___en",
+    "path": "/demos/resume/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/demos/resume.vue",
+    "chunkName": "pages/demos/resume",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_8414f18a"
+  },
+  {
+    "name": "demos-top___en",
+    "path": "/demos/top/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/demos/top.vue",
+    "chunkName": "pages/demos/top",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_6735aa37"
+  },
+  {
+    "name": "about___es",
+    "path": "/es/about/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/about/index.vue",
+    "chunkName": "pages/about/index",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_79970511"
+  },
+  {
+    "name": "admin___es",
+    "path": "/es/admin/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/admin.vue",
+    "chunkName": "pages/admin",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_f3c1a060"
+  },
+  {
+    "name": "advocates___es",
+    "path": "/es/advocates/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/advocates.vue",
+    "chunkName": "pages/advocates",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_765a442e"
+  },
+  {
+    "name": "affiliates___es",
+    "path": "/es/affiliates/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/affiliates.vue",
+    "chunkName": "pages/affiliates",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_425fc495"
+  },
+  {
+    "name": "announcements___es",
+    "path": "/es/announcements/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/announcements.vue",
+    "chunkName": "pages/announcements",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_8ce32de6"
+  },
+  {
+    "name": "articles___es",
+    "path": "/es/articles/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/articles/index.vue",
+    "chunkName": "pages/articles/index",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_23669dcf"
+  },
+  {
+    "name": "blog___es",
+    "path": "/es/blog/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/blog/index.vue",
+    "chunkName": "pages/blog/index",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_ccd19718"
+  },
+  {
+    "name": "buttons___es",
+    "path": "/es/buttons/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/buttons.vue",
+    "chunkName": "pages/buttons",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_6f35ccc2"
+  },
+  {
+    "name": "calendar___es",
+    "path": "/es/calendar/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/calendar.vue",
+    "chunkName": "pages/calendar",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_11df7e66"
+  },
+  {
+    "name": "clients___es",
+    "path": "/es/clients/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/clients.vue",
+    "chunkName": "pages/clients",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_648c106e"
+  },
+  {
+    "name": "cookies___es",
+    "path": "/es/cookies/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/cookies.vue",
+    "chunkName": "pages/cookies",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_716018d0"
+  },
+  {
+    "name": "courses___es",
+    "path": "/es/courses/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/courses.vue",
+    "chunkName": "pages/courses",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_59bd850e"
+  },
+  {
+    "name": "css-modules___es",
+    "path": "/es/css-modules/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/css-modules.vue",
+    "chunkName": "pages/css-modules",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_55f6ac7e"
+  },
+  {
+    "name": "css-tricks___es",
+    "path": "/es/css-tricks/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/css-tricks.vue",
+    "chunkName": "pages/css-tricks",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_3fde2859"
+  },
+  {
+    "name": "dashboard___es",
+    "path": "/es/dashboard/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/dashboard.vue",
+    "chunkName": "pages/dashboard",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_4ee81015"
+  },
+  {
+    "name": "dashboards___es",
+    "path": "/es/dashboards/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/dashboards/index.vue",
+    "chunkName": "pages/dashboards/index",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_b357c09e"
+  },
+  {
+    "name": "data-provider___es",
+    "path": "/es/data-provider/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/data-provider.vue",
+    "chunkName": "pages/data-provider",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_3b85dc96"
+  },
+  {
+    "name": "demo___es",
+    "path": "/es/demo/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/demo.vue",
+    "chunkName": "pages/demo",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_fccc071c"
+  },
+  {
+    "name": "demos___es",
+    "path": "/es/demos/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/demos/index.vue",
+    "chunkName": "pages/demos/index",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_e6a3fe98"
+  },
+  {
+    "name": "easy-emailer___es",
+    "path": "/es/easy-emailer/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/easy-emailer.vue",
+    "chunkName": "pages/easy-emailer",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_13c0d88d"
+  },
+  {
+    "name": "edit-participant___es",
+    "path": "/es/edit-participant/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/edit-participant.vue",
+    "chunkName": "pages/edit-participant",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_412a657f"
+  },
+  {
+    "name": "edit-profile___es",
+    "path": "/es/edit-profile/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/edit-profile.vue",
+    "chunkName": "pages/edit-profile",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_21ff8ef5"
+  },
+  {
+    "name": "editor___es",
+    "path": "/es/editor/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/editor.vue",
+    "chunkName": "pages/editor",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_8ac26d88"
+  },
+  {
+    "name": "events___es",
+    "path": "/es/events/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/events.vue",
+    "chunkName": "pages/events",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_531ad2e8"
+  },
+  {
+    "name": "faq___es",
+    "path": "/es/faq/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/faq.vue",
+    "chunkName": "pages/faq",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_2d74c257"
+  },
+  {
+    "name": "file-upload___es",
+    "path": "/es/file-upload/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/file-upload.vue",
+    "chunkName": "pages/file-upload",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_1e088fb3"
+  },
+  {
+    "name": "form___es",
+    "path": "/es/form/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/form.vue",
+    "chunkName": "pages/form",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_6ac6b2d3"
+  },
+  {
+    "name": "forums___es",
+    "path": "/es/forums/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/forums.vue",
+    "chunkName": "pages/forums",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_3363967e"
+  },
+  {
+    "name": "game___es",
+    "path": "/es/game/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/game.vue",
+    "chunkName": "pages/game",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_35d0a9fe"
+  },
+  {
+    "name": "get-involved___es",
+    "path": "/es/get-involved/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/get-involved.vue",
+    "chunkName": "pages/get-involved",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_5526bded"
+  },
+  {
+    "name": "give___es",
+    "path": "/es/give/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/give.vue",
+    "chunkName": "pages/give",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_c8b5bac0"
+  },
+  {
+    "name": "grid___es",
+    "path": "/es/grid/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/grid.vue",
+    "chunkName": "pages/grid",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_61802055"
+  },
+  {
+    "name": "homes___es",
+    "path": "/es/homes/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/homes.vue",
+    "chunkName": "pages/homes",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_041e3975"
+  },
+  {
+    "name": "index1___es",
+    "path": "/es/index1/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/index1.vue",
+    "chunkName": "pages/index1",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_4155306e"
+  },
+  {
+    "name": "lab___es",
+    "path": "/es/lab/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/lab.vue",
+    "chunkName": "pages/lab",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_6a06c54e"
+  },
+  {
+    "name": "landing___es",
+    "path": "/es/landing/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/landing.vue",
+    "chunkName": "pages/landing",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_16a7e750"
+  },
+  {
+    "name": "learn___es",
+    "path": "/es/learn/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/learn/index.vue",
+    "chunkName": "pages/learn/index",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_5c027708"
+  },
+  {
+    "name": "listen___es",
+    "path": "/es/listen/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/listen.vue",
+    "chunkName": "pages/listen",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_4b79f896"
+  },
+  {
+    "name": "loading___es",
+    "path": "/es/loading/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/loading.vue",
+    "chunkName": "pages/loading",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_6d92ce06"
+  },
+  {
+    "name": "login___es",
+    "path": "/es/login/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/login.vue",
+    "chunkName": "pages/login",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_1e577eea"
+  },
+  {
+    "name": "logos___es",
+    "path": "/es/logos/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/logos.vue",
+    "chunkName": "pages/logos",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_28db0829"
+  },
+  {
+    "name": "map___es",
+    "path": "/es/map/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/map.vue",
+    "chunkName": "pages/map",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_c09b6cc6"
+  },
+  {
+    "name": "media-log___es",
+    "path": "/es/media-log/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/media-log.vue",
+    "chunkName": "pages/media-log",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_2069c048"
+  },
+  {
+    "path": "/es/messages/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/messages.vue",
+    "chunkName": "pages/messages",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "children": [
+      {
+        "name": "messages___es",
+        "path": "",
+        "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/messages/index.vue",
+        "chunkName": "pages/messages/index",
+        "pathToRegexpOptions": {
+          "strict": true
+        },
+        "_name": "_7652861e"
+      },
+      {
+        "name": "messages-layout___es",
+        "path": "layout/",
+        "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/messages/layout.vue",
+        "chunkName": "pages/messages/layout",
+        "pathToRegexpOptions": {
+          "strict": true
+        },
+        "_name": "_3e731b8e"
+      },
+      {
+        "name": "messages-tags-tag___es",
+        "path": "tags/:tag?/",
+        "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/messages/tags/_tag.vue",
+        "chunkName": "pages/messages/tags/_tag",
+        "pathToRegexpOptions": {
+          "strict": true
+        },
+        "_name": "_646fdedd"
+      },
+      {
+        "name": "messages-id___es",
+        "path": ":id/",
+        "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/messages/_id.vue",
+        "chunkName": "pages/messages/_id",
+        "pathToRegexpOptions": {
+          "strict": true
+        },
+        "_name": "_42677806"
+      }
+    ],
+    "_name": "_7f0ee04a"
+  },
+  {
+    "name": "modules___es",
+    "path": "/es/modules/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/modules.vue",
+    "chunkName": "pages/modules",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_de467c70"
+  },
+  {
+    "name": "movies___es",
+    "path": "/es/movies/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/movies.vue",
+    "chunkName": "pages/movies",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_a93917dc"
+  },
+  {
+    "name": "my-profile___es",
+    "path": "/es/my-profile/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/my-profile.vue",
+    "chunkName": "pages/my-profile",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_2f9a0552"
+  },
+  {
+    "name": "network-error___es",
+    "path": "/es/network-error/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/network-error.vue",
+    "chunkName": "pages/network-error",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_3c385c2a"
+  },
+  {
+    "name": "new-post___es",
+    "path": "/es/new-post/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/new-post.vue",
+    "chunkName": "pages/new-post",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_3821ea88"
+  },
+  {
+    "name": "no-access___es",
+    "path": "/es/no-access/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/no-access.vue",
+    "chunkName": "pages/no-access",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_3309de71"
+  },
+  {
+    "name": "not-found___es",
+    "path": "/es/not-found/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/not-found.vue",
+    "chunkName": "pages/not-found",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_802010ee"
+  },
+  {
+    "name": "partners___es",
+    "path": "/es/partners/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/partners/index.vue",
+    "chunkName": "pages/partners/index",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_0e265286"
+  },
+  {
+    "name": "people___es",
+    "path": "/es/people/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/people/index.vue",
+    "chunkName": "pages/people/index",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_0009fd3e"
+  },
+  {
+    "name": "person___es",
+    "path": "/es/person/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/person.vue",
+    "chunkName": "pages/person",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_3fd70f24"
+  },
+  {
+    "name": "posts___es",
+    "path": "/es/posts/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/posts.vue",
+    "chunkName": "pages/posts",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "children": [
+      {
+        "name": "posts-id___es",
+        "path": ":id?/",
+        "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/posts/_id.vue",
+        "chunkName": "pages/posts/_id",
+        "pathToRegexpOptions": {
+          "strict": true
+        },
+        "_name": "_79666c02"
+      }
+    ],
+    "_name": "_05807358"
+  },
+  {
+    "name": "preferences___es",
+    "path": "/es/preferences/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/preferences.vue",
+    "chunkName": "pages/preferences",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_7348c78e"
+  },
+  {
+    "name": "products___es",
+    "path": "/es/products/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/products/index.vue",
+    "chunkName": "pages/products/index",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_71361836"
+  },
+  {
+    "name": "profile___es",
+    "path": "/es/profile/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/profile.vue",
+    "chunkName": "pages/profile",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_3cbf7a2c"
+  },
+  {
+    "name": "releases___es",
+    "path": "/es/releases/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/releases.vue",
+    "chunkName": "pages/releases",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_d009304a"
+  },
+  {
+    "name": "resources___es",
+    "path": "/es/resources/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/resources.vue",
+    "chunkName": "pages/resources",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_97f899b4"
+  },
+  {
+    "path": "/es/resume/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/resume.vue",
+    "chunkName": "pages/resume",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "children": [
+      {
+        "name": "resume___es",
+        "path": "",
+        "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/resume/index.vue",
+        "chunkName": "pages/resume/index",
+        "pathToRegexpOptions": {
+          "strict": true
+        },
+        "_name": "_0a52ad02"
+      }
+    ],
+    "_name": "_13a1e008"
+  },
+  {
+    "name": "sandbox___es",
+    "path": "/es/sandbox/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/sandbox.vue",
+    "chunkName": "pages/sandbox",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_d1748df0"
+  },
+  {
+    "name": "scratch___es",
+    "path": "/es/scratch/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/scratch.vue",
+    "chunkName": "pages/scratch",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_3c1b5bbb"
+  },
+  {
+    "name": "search-app___es",
+    "path": "/es/search-app/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/search-app.vue",
+    "chunkName": "pages/search-app",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_2bf5154b"
+  },
+  {
+    "name": "search-copy___es",
+    "path": "/es/search-copy/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/search-copy.vue",
+    "chunkName": "pages/search-copy",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_1cec3e8a"
+  },
+  {
+    "name": "search___es",
+    "path": "/es/search/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/search.vue",
+    "chunkName": "pages/search",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_25eb1012"
+  },
+  {
+    "name": "serverless___es",
+    "path": "/es/serverless/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/serverless.vue",
+    "chunkName": "pages/serverless",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_1ededc2b"
+  },
+  {
+    "name": "settings___es",
+    "path": "/es/settings/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/settings.vue",
+    "chunkName": "pages/settings",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_2bef0732"
+  },
+  {
+    "name": "signin___es",
+    "path": "/es/signin/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/signin.vue",
+    "chunkName": "pages/signin",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_3748161e"
+  },
+  {
+    "name": "simple-form___es",
+    "path": "/es/simple-form/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/simple-form.vue",
+    "chunkName": "pages/simple-form",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_31541dc0"
+  },
+  {
+    "name": "sockets___es",
+    "path": "/es/sockets/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/sockets.vue",
+    "chunkName": "pages/sockets",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_1275d521"
+  },
+  {
+    "name": "stay-informed___es",
+    "path": "/es/stay-informed/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/stay-informed.vue",
+    "chunkName": "pages/stay-informed",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_2fe19bbd"
+  },
+  {
+    "name": "store___es",
+    "path": "/es/store/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/store.vue",
+    "chunkName": "pages/store",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_2ca9e73c"
+  },
+  {
+    "name": "support___es",
+    "path": "/es/support/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/support.vue",
+    "chunkName": "pages/support",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_68b0b610"
+  },
+  {
+    "name": "tailwind___es",
+    "path": "/es/tailwind/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/tailwind.vue",
+    "chunkName": "pages/tailwind",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_6fb264e7"
+  },
+  {
+    "name": "tasks___es",
+    "path": "/es/tasks/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/tasks.vue",
+    "chunkName": "pages/tasks",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_deb51ee2"
+  },
+  {
+    "name": "team___es",
+    "path": "/es/team/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/team.vue",
+    "chunkName": "pages/team",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_29d31828"
+  },
+  {
+    "name": "teams___es",
+    "path": "/es/teams/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/teams.vue",
+    "chunkName": "pages/teams",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_7b63aab7"
+  },
+  {
+    "name": "testing___es",
+    "path": "/es/testing/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/testing.vue",
+    "chunkName": "pages/testing",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_5f3f405e"
+  },
+  {
+    "name": "thanks___es",
+    "path": "/es/thanks/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/thanks.vue",
+    "chunkName": "pages/thanks",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_4e6bded0"
+  },
+  {
+    "name": "timeline___es",
+    "path": "/es/timeline/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/timeline.vue",
+    "chunkName": "pages/timeline",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_637fe050"
+  },
+  {
+    "name": "todos___es",
+    "path": "/es/todos/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/todos.vue",
+    "chunkName": "pages/todos",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_2c4bce6e"
+  },
+  {
+    "name": "tooltip___es",
+    "path": "/es/tooltip/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/tooltip.vue",
+    "chunkName": "pages/tooltip",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_08fecc44"
+  },
+  {
+    "name": "training___es",
+    "path": "/es/training/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/training.vue",
+    "chunkName": "pages/training",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_4d092069"
+  },
+  {
+    "name": "upload___es",
+    "path": "/es/upload/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/upload.vue",
+    "chunkName": "pages/upload",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_08e64bd0"
+  },
+  {
+    "name": "uses___es",
+    "path": "/es/uses/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/uses/index.vue",
+    "chunkName": "pages/uses/index",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_df2b77c4"
+  },
+  {
+    "name": "watch-reactive___es",
+    "path": "/es/watch-reactive/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/watch-reactive.vue",
+    "chunkName": "pages/watch-reactive",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_58981e06"
+  },
+  {
+    "name": "watch-ref___es",
+    "path": "/es/watch-ref/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/watch-ref.vue",
+    "chunkName": "pages/watch-ref",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_1e49a0d4"
+  },
+  {
+    "name": "website___es",
+    "path": "/es/website/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/website.vue",
+    "chunkName": "pages/website",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_58c2d0dc"
+  },
+  {
+    "name": "webworker___es",
+    "path": "/es/webworker/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/webworker.vue",
+    "chunkName": "pages/webworker",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_4937a653"
+  },
+  {
+    "name": "welcome___es",
+    "path": "/es/welcome/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/welcome.vue",
+    "chunkName": "pages/welcome",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_52605fba"
+  },
+  {
+    "name": "event-create___en",
+    "path": "/event/create/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/event/create.vue",
+    "chunkName": "pages/event/create",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_142a9ea0"
+  },
+  {
+    "name": "event-details___en",
+    "path": "/event/details/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/event/details.vue",
+    "chunkName": "pages/event/details",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_180eac4e"
+  },
+  {
+    "name": "event-edit___en",
+    "path": "/event/edit/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/event/edit.vue",
+    "chunkName": "pages/event/edit",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_14cbf0a4"
+  },
+  {
+    "name": "event-register___en",
+    "path": "/event/register/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/event/register.vue",
+    "chunkName": "pages/event/register",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_319dedc7"
+  },
+  {
+    "name": "learn-advent___en",
+    "path": "/learn/advent/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/learn/advent.vue",
+    "chunkName": "pages/learn/advent",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_105a15dc"
+  },
+  {
+    "name": "welcomes-funrun___en",
+    "path": "/welcomes/funrun/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/welcomes/funrun.vue",
+    "chunkName": "pages/welcomes/funrun",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_31dbc2eb"
+  },
+  {
+    "name": "dashboards-admin___es",
+    "path": "/es/dashboards/admin/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/dashboards/admin.vue",
+    "chunkName": "pages/dashboards/admin",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_507918a4"
+  },
+  {
+    "name": "dashboards-advocate___es",
+    "path": "/es/dashboards/advocate/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/dashboards/advocate.vue",
+    "chunkName": "pages/dashboards/advocate",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_7e1e4c48"
+  },
+  {
+    "name": "dashboards-applicant___es",
+    "path": "/es/dashboards/applicant/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/dashboards/applicant.vue",
+    "chunkName": "pages/dashboards/applicant",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_62bcfb3e"
+  },
+  {
+    "name": "dashboards-booster___es",
+    "path": "/es/dashboards/booster/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/dashboards/booster.vue",
+    "chunkName": "pages/dashboards/booster",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_4a03f4a2"
+  },
+  {
+    "name": "dashboards-candidate___es",
+    "path": "/es/dashboards/candidate/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/dashboards/candidate.vue",
+    "chunkName": "pages/dashboards/candidate",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_45165f3c"
+  },
+  {
+    "name": "dashboards-executive___es",
+    "path": "/es/dashboards/executive/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/dashboards/executive.vue",
+    "chunkName": "pages/dashboards/executive",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_57008c47"
+  },
+  {
+    "name": "dashboards-staff___es",
+    "path": "/es/dashboards/staff/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/dashboards/staff.vue",
+    "chunkName": "pages/dashboards/staff",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_424c02bf"
+  },
+  {
+    "name": "dashboards-super-admin___es",
+    "path": "/es/dashboards/super-admin/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/dashboards/super-admin.vue",
+    "chunkName": "pages/dashboards/super-admin",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_6e78d2c8"
+  },
+  {
+    "name": "demos-resume___es",
+    "path": "/es/demos/resume/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/demos/resume.vue",
+    "chunkName": "pages/demos/resume",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_8414f18a"
+  },
+  {
+    "name": "demos-top___es",
+    "path": "/es/demos/top/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/demos/top.vue",
+    "chunkName": "pages/demos/top",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_6735aa37"
+  },
+  {
+    "name": "event-create___es",
+    "path": "/es/event/create/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/event/create.vue",
+    "chunkName": "pages/event/create",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_142a9ea0"
+  },
+  {
+    "name": "event-details___es",
+    "path": "/es/event/details/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/event/details.vue",
+    "chunkName": "pages/event/details",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_180eac4e"
+  },
+  {
+    "name": "event-edit___es",
+    "path": "/es/event/edit/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/event/edit.vue",
+    "chunkName": "pages/event/edit",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_14cbf0a4"
+  },
+  {
+    "name": "event-register___es",
+    "path": "/es/event/register/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/event/register.vue",
+    "chunkName": "pages/event/register",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_319dedc7"
+  },
+  {
+    "name": "learn-advent___es",
+    "path": "/es/learn/advent/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/learn/advent.vue",
+    "chunkName": "pages/learn/advent",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_105a15dc"
+  },
+  {
+    "name": "welcomes-funrun___es",
+    "path": "/es/welcomes/funrun/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/welcomes/funrun.vue",
+    "chunkName": "pages/welcomes/funrun",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_31dbc2eb"
+  },
+  {
+    "name": "demos-t-tag___es",
+    "path": "/es/demos/t/:tag?/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/demos/t/_tag.vue",
+    "chunkName": "pages/demos/t/_tag",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_0d856bb8"
+  },
+  {
+    "name": "demos-t-tag___en",
+    "path": "/demos/t/:tag?/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/demos/t/_tag.vue",
+    "chunkName": "pages/demos/t/_tag",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_0d856bb8"
+  },
+  {
+    "name": "articles-slug___es",
+    "path": "/es/articles/:slug/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/articles/_slug.vue",
+    "chunkName": "pages/articles/_slug",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_21affc87"
+  },
+  {
+    "name": "blog-slug___es",
+    "path": "/es/blog/:slug/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/blog/_slug.vue",
+    "chunkName": "pages/blog/_slug",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_d03ed9a8"
+  },
+  {
+    "name": "demos-username___es",
+    "path": "/es/demos/:username/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/demos/_username/index.vue",
+    "chunkName": "pages/demos/_username/index",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_048f2cda"
+  },
+  {
+    "name": "event-id___es",
+    "path": "/es/event/:id?/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/event/_id.vue",
+    "chunkName": "pages/event/_id",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_6f9109c6"
+  },
+  {
+    "name": "guide-slug-bak___es",
+    "path": "/es/guide/:slug-bak?/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/guide/_slug-bak.vue",
+    "chunkName": "pages/guide/_slug-bak",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_be807492"
+  },
+  {
+    "name": "guide-slug___es",
+    "path": "/es/guide/:slug?/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/guide/_slug.vue",
+    "chunkName": "pages/guide/_slug",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_f9938710"
+  },
+  {
+    "name": "home-id___es",
+    "path": "/es/home/:id?/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/home/_id.vue",
+    "chunkName": "pages/home/_id",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_ab6807ce"
+  },
+  {
+    "name": "partners-slug___es",
+    "path": "/es/partners/:slug/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/partners/_slug.vue",
+    "chunkName": "pages/partners/_slug",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_11939516"
+  },
+  {
+    "name": "thread-id___es",
+    "path": "/es/thread/:id?/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/thread/_id.vue",
+    "chunkName": "pages/thread/_id",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_277dcef8"
+  },
+  {
+    "name": "articles-year-month___es",
+    "path": "/es/articles/:year/:month?/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/articles/_year/_month/index.vue",
+    "chunkName": "pages/articles/_year/_month/index",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_47978caa"
+  },
+  {
+    "name": "demos-username-article___es",
+    "path": "/es/demos/:username/:article/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/demos/_username/_article.vue",
+    "chunkName": "pages/demos/_username/_article",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_e745db42"
+  },
+  {
+    "name": "partners-year-month___es",
+    "path": "/es/partners/:year/:month?/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/partners/_year/_month/index.vue",
+    "chunkName": "pages/partners/_year/_month/index",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_c7c47308"
+  },
+  {
+    "name": "articles-year-month-slug___es",
+    "path": "/es/articles/:year/:month?/:slug/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/articles/_year/_month/_slug.vue",
+    "chunkName": "pages/articles/_year/_month/_slug",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_45e0eb62"
+  },
+  {
+    "name": "partners-year-month-slug___es",
+    "path": "/es/partners/:year/:month?/:slug/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/partners/_year/_month/_slug.vue",
+    "chunkName": "pages/partners/_year/_month/_slug",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_cb31b598"
+  },
+  {
+    "name": "articles-slug___en",
+    "path": "/articles/:slug/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/articles/_slug.vue",
+    "chunkName": "pages/articles/_slug",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_21affc87"
+  },
+  {
+    "name": "blog-slug___en",
+    "path": "/blog/:slug/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/blog/_slug.vue",
+    "chunkName": "pages/blog/_slug",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_d03ed9a8"
+  },
+  {
+    "name": "demos-username___en",
+    "path": "/demos/:username/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/demos/_username/index.vue",
+    "chunkName": "pages/demos/_username/index",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_048f2cda"
+  },
+  {
+    "name": "slug___es",
+    "path": "/es/:slug/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/_slug.vue",
+    "chunkName": "pages/_slug",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_52f93a8b"
+  },
+  {
+    "name": "event-id___en",
+    "path": "/event/:id?/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/event/_id.vue",
+    "chunkName": "pages/event/_id",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_6f9109c6"
+  },
+  {
+    "name": "guide-slug-bak___en",
+    "path": "/guide/:slug-bak?/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/guide/_slug-bak.vue",
+    "chunkName": "pages/guide/_slug-bak",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_be807492"
+  },
+  {
+    "name": "guide-slug___en",
+    "path": "/guide/:slug?/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/guide/_slug.vue",
+    "chunkName": "pages/guide/_slug",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_f9938710"
+  },
+  {
+    "name": "home-id___en",
+    "path": "/home/:id?/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/home/_id.vue",
+    "chunkName": "pages/home/_id",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_ab6807ce"
+  },
+  {
+    "name": "partners-slug___en",
+    "path": "/partners/:slug/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/partners/_slug.vue",
+    "chunkName": "pages/partners/_slug",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_11939516"
+  },
+  {
+    "name": "thread-id___en",
+    "path": "/thread/:id?/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/thread/_id.vue",
+    "chunkName": "pages/thread/_id",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_277dcef8"
+  },
+  {
+    "name": "articles-year-month___en",
+    "path": "/articles/:year/:month?/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/articles/_year/_month/index.vue",
+    "chunkName": "pages/articles/_year/_month/index",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_47978caa"
+  },
+  {
+    "name": "demos-username-article___en",
+    "path": "/demos/:username/:article/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/demos/_username/_article.vue",
+    "chunkName": "pages/demos/_username/_article",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_e745db42"
+  },
+  {
+    "name": "partners-year-month___en",
+    "path": "/partners/:year/:month?/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/partners/_year/_month/index.vue",
+    "chunkName": "pages/partners/_year/_month/index",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_c7c47308"
+  },
+  {
+    "name": "articles-year-month-slug___en",
+    "path": "/articles/:year/:month?/:slug/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/articles/_year/_month/_slug.vue",
+    "chunkName": "pages/articles/_year/_month/_slug",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_45e0eb62"
+  },
+  {
+    "name": "partners-year-month-slug___en",
+    "path": "/partners/:year/:month?/:slug/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/partners/_year/_month/_slug.vue",
+    "chunkName": "pages/partners/_year/_month/_slug",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_cb31b598"
+  },
+  {
+    "name": "index___en",
+    "path": "/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/index.vue",
+    "chunkName": "pages/index",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_54afdbd3"
+  },
+  {
+    "name": "slug___en",
+    "path": "/:slug/",
+    "component": "/Users/vtolbert/@victortolbert/_github/__app__/pages/_slug.vue",
+    "chunkName": "pages/_slug",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_52f93a8b"
+  }
+]

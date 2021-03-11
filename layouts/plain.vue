@@ -4,7 +4,7 @@
   >
     <Nuxt keep-alive :key="$route.params.id" />
 
-    <PortalTarget name="modals" />
+    <PortalTarget name="overlays" />
     <SvgSprite />
   </div>
 </template>

@@ -1,9 +1,5 @@
 <script>
-import BaseIcon from './BaseIcon'
 export default {
-  components: {
-    BaseIcon,
-  },
   data() {
     return {
       accounts: [

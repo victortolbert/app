@@ -6,7 +6,7 @@ function hideDefaultLoading() {
 }
 
 const instance = axios.create({
-  baseURL: process.env.API_URL || '/api',
+  baseURL: process.env.API_URL || 'https://api.victortolbert.com',
   withCredentials: false,
   headers: {
     Accept: 'application/json',

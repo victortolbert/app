@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import {provide, reactive, readonly, ref} from '@vue/composition-api'
+import {provide, reactive, readonly, ref} from '@nuxtjs/composition-api'
 
 import MyMarker from './MyMarker.vue'
 

@@ -11,7 +11,7 @@ export default {
       appId: 'WTEU7RU64C',
       key: '0bdd840be2d7d4377e10b238bc731901',
     },
-    apiURL: process.env.API_URL || 'http://localhost:8686',
+    apiURL: process.env.API_URL || 'https://api.victortolbert.com',
     awsS3DefaultRegion: process.env.AWS_S3_DEFAULT_REGION || 'us-east-1',
     awsS3AccessKey: process.env.AWS_S3_ACCESS_KEY || 'AKIAXGYXHSXXHYBR5HOE',
     awsS3AccessSecret:
@@ -142,6 +142,7 @@ export default {
   modules: [
     '@nuxt/content',
     '@nuxtjs/axios',
+    '@nuxtjs/color-mode',
     '@nuxtjs/feed',
     '@nuxtjs/pwa',
     '@oruga-ui/oruga/nuxt',
@@ -187,7 +188,6 @@ export default {
   ],
   buildModules: [
     '@nuxt/typescript-build',
-    '@nuxtjs/color-mode',
     '@nuxtjs/composition-api',
     '@nuxtjs/moment',
     '@nuxtjs/google-analytics',
@@ -261,7 +261,7 @@ export default {
 
   router: {
     prefetchLinks: false,
-    // trailingSlash: true,
+    trailingSlash: true,
   },
 
   axios: {
@@ -380,7 +380,6 @@ export default {
     },
     addons: [
       '@storybook/addon-a11y',
-      '@storybook/addon-storysource',
       '@whitespace/storybook-addon-html',
     ],
     webpackFinal(config) {

@@ -17,7 +17,7 @@ export default {
   },
   methods: {
     viewEvent() {
-      this.$router.push(this.localePath({path: `/event/${this.event.id}/`}))
+      this.$router.push(this.toLocalePath({path: `/event/${this.event.id}/`}))
     },
   },
 }

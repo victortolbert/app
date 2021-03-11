@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const apiClient = axios.create({
-  baseURL: process.env.API_URL || '/api',
+  baseURL: process.env.API_URL || 'https://api.victortolbert.com',
   withCredentials: false, // This is the default
   headers: {
     Accept: 'application/json',

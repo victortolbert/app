@@ -5,8 +5,7 @@
     <!-- {{ $auth.loggedIn }} -->
     <!-- {{ $store.state.auth.loggedIn }} -->
 
-    {{ $auth.loggedIn ? 'Logged In' : 'Guest' }}
-
+    <!-- {{ $auth.loggedIn ? 'Logged In' : 'Guest' }} --><!--
     <FontAwesomeIcon style="color: #0a66c2" :icon="['fab', 'linkedin']" />
     <FontAwesomeIcon style="color: #ff0000" :icon="['fab', 'youtube']" />
     <FontAwesomeIcon
@@ -19,6 +18,7 @@
       <OButton variant="danger" @click="$auth.logout()"> Logout </OButton>
     </template>
     <OButton v-else variant="primary"> Login </OButton>
+    -->
 
     <div class="grid gap-8 lg:grid-cols-2">
       <section class="p-8 bg-white shadow lg:rounded-lg">
@@ -92,6 +92,7 @@
       </button> -->
       <!-- <LineChart /> -->
       <!-- <BarChart :data="barChartData" :options="{maintainAspectRatio: true}" /> -->
+      <pre>{{ people }}</pre>
     </section>
   </div>
 </template>
@@ -100,6 +101,9 @@
 import sourceData from '@/__mocks__/db'
 import {defineComponent} from '@nuxtjs/composition-api'
 import {theme} from '~tailwind.config'
+import useEvents from '~/composables/useEvents'
+import useMessages from '~/composables/useMessages'
+import usePeople from '~/composables/usePeople'
 
 // import moment from 'moment'
 // import {useSound} from '@vueuse/sound'
@@ -109,9 +113,33 @@ import {theme} from '~tailwind.config'
 export default defineComponent({
   setup() {
     // const {play} = useSound(buttonSfx)
+    const {
+      messages,
+      tags,
+      checked,
+      checkAll,
+      updateCheckAll,
+      isCheckAll,
+      truncate,
+      formatDate,
+      filteredMessages,
+    } = useMessages()
+    const {events} = useEvents()
+    const {people} = usePeople()
 
     return {
       // play,
+      events,
+      messages,
+      people,
+      tags,
+      checked,
+      checkAll,
+      updateCheckAll,
+      isCheckAll,
+      truncate,
+      formatDate,
+      filteredMessages,
     }
   },
   asyncData({env, app}) {

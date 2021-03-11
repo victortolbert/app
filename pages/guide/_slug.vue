@@ -25,7 +25,7 @@ import Clipboard from 'clipboard'
 
 export default {
   name: 'PageSlug',
-  layout: 'docs',
+  // layout: 'docs',
   middleware({params, redirect}) {
     if (params.slug === 'index') {
       redirect('/')
@@ -35,7 +35,7 @@ export default {
     const slug = params.slug || 'index'
     let doc
     try {
-      doc = await $content(app.i18n.locale, slug).fetch()
+      doc = await $content(slug).fetch()
     } catch (e) {
       return error({statusCode: 404, message: 'Page not found'})
     }

@@ -63,8 +63,8 @@ export default function () {
 
   function makeUserPayload(identity) {
     return {
-      name: identity.name,
-      email: identity.email,
+      name: identity.name || 'Victor Tolbert',
+      email: identity.email || 'victor.tolbert@gmail.com',
       image: identity.image,
       homeId: [],
       reviewCount: 0,

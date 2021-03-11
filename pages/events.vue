@@ -4,11 +4,11 @@
     <section class="p-8">
       <div class="events">
         <EventCard v-for="event in events" :key="event.id" :event="event" />
-
+        <!--
         <div class="pagination">
           <NuxtLink
             id="page-prev"
-            :to="localePath({path: '/events/', query: {page: page - 1}})"
+            :to="{path: '/events/', query: {page: page - 1}}"
             rel="prev"
             v-if="page != 1"
           >
@@ -17,13 +17,14 @@
 
           <NuxtLink
             id="page-next"
-            :to="localePath({path: '/events/', query: {page: page + 1}})"
+            :to="{path: '/events/', query: {page: page + 1}}"
             rel="next"
             v-if="hasNextPage"
           >
             {{ $t('next') }} &#62;
           </NuxtLink>
         </div>
+        -->
       </div>
     </section>
 
@@ -50,66 +51,63 @@
 </template>
 
 <script>
-import EventService from '@/services/EventService'
-import EventCard from '@/components/EventCard'
-import {watchEffect} from '@vue/composition-api'
+// import EventService from '@/services/EventService'
+import {defineComponent, watchEffect} from '@nuxtjs/composition-api'
+import useEvents from '~/composables/useEvents'
 
-export default {
+export default defineComponent({
   name: 'EventsView',
   props: ['page'],
-  components: {
-    EventCard,
-  },
-  data() {
+  setup() {
+    const {
+      events,
+      tags,
+      checked,
+      checkAll,
+      updateCheckAll,
+      isCheckAll,
+      truncate,
+      formatDate,
+      filteredEvents,
+    } = useEvents()
+
     return {
-      events: null,
-      totalEvents: 0,
+      events,
+      tags,
+      checked,
+      checkAll,
+      updateCheckAll,
+      isCheckAll,
+      truncate,
+      formatDate,
+      filteredEvents,
     }
   },
-  created() {
-    watchEffect(() => {
-      this.events = null
-      EventService.get('events', 2, this.page)
-        .then(response => {
-          this.events = response.data
-          this.totalEvents = response.headers['x-total-count']
-        })
-        .catch(() => {
-          this.$router.push({name: 'NetworkError'})
-        })
-    })
-  },
-  computed: {
-    hasNextPage() {
-      const totalPages = Math.ceil(this.totalEvents / 2)
+  // data() {
+  //   return {
+  //     // events: null,
+  //     totalEvents: 0,
+  //   }
+  // },
+  // created() {
+  //   watchEffect(() => {
+  //     this.events = null
+  //     EventService.get('events', 2, this.page)
+  //       .then(response => {
+  //         this.events = response.data
+  //         this.totalEvents = response.headers['x-total-count']
+  //       })
+  //       .catch(() => {
+  //         this.$router.push({name: 'NetworkError'})
+  //       })
+  //   })
+  // },
+  // computed: {
+  //   hasNextPage() {
+  //     const totalPages = Math.ceil(this.totalEvents / 2)
 
-      return this.page < totalPages
-    },
-  },
-}
+  //     return this.page < totalPages
+  //   },
+  // },
+})
 </script>
-
-<style scoped>
-.events {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.pagination {
-  display: flex;
-  width: 290px;
-}
-.pagination a {
-  flex: 1;
-  text-decoration: none;
-  color: #2c3e50;
-}
-
-#page-prev {
-  text-align: left;
-}
-
-#page-next {
-  text-align: right;
-}
-</style>
