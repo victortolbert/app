@@ -1,8 +1,7 @@
 <script>
 export default {
-  layout: 'blog',
-  async asyncData(ctx) {
-    const page = await ctx.$content(`blog/${ctx.params.slug}`).fetch()
+  async asyncData({$content, params}) {
+    const page = await $content(`blog/${params.slug}`).fetch()
     return {
       page,
     }
@@ -31,66 +30,3 @@ export default {
     </article>
   </main>
 </template>
-
-<style lang="scss">
-@import '../../assets/scss/_settings.scss';
-
-.blog-publish-date {
-  @apply mt-12;
-  font-family: $ff-sans;
-}
-
-.blog-title {
-  font-family: $ff-sans;
-  color: $c-navy;
-  @apply font-bold;
-  @apply text-5xl;
-  @apply mb-4;
-}
-
-.content {
-  @apply mx-auto;
-  @apply px-8;
-  max-width: 740px;
-}
-
-.nuxt-content {
-  blockquote {
-    font-style: italic;
-    @apply ml-3;
-  }
-
-  h2 {
-    color: $c-navy;
-    font-family: $ff-sans;
-    @apply font-bold;
-    @apply mt-5 mb-5;
-    @apply pb-3;
-    border-bottom: 1px solid $c-border;
-    @apply text-4xl;
-    line-height: 1.3;
-  }
-
-  p,
-  li {
-    line-height: 1.7;
-    font-size: 16px;
-    font-family: $ff-serif;
-
-    @include breakpoint(600px) {
-      font-size: 18px;
-    }
-  }
-
-  p {
-    @apply mb-4;
-  }
-
-  ul,
-  ol {
-    @apply list-decimal;
-    @apply list-inside;
-    @apply mb-4;
-  }
-}
-</style>

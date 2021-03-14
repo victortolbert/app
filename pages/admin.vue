@@ -1,17 +1,35 @@
-<template>
-  <div class="p-4">
-    Admin
-    <nuxt-child></nuxt-child>
-  </div>
-</template>
 <script>
-import Cookie from 'js-cookie'
+// import ClassicEditor from '@ckeditor/ckeditor5-build-classic'
+import ClassicEditor from '@ckeditor/ckeditor5-editor-classic/src/classiceditor'
+import CKEditor from '@ckeditor/ckeditor5-vue2'
+
+import Essentials from '@ckeditor/ckeditor5-essentials/src/essentials'
+import Bold from '@ckeditor/ckeditor5-basic-styles/src/bold'
+import Italic from '@ckeditor/ckeditor5-basic-styles/src/italic'
+import Markdown from '@ckeditor/ckeditor5-markdown-gfm/src/markdown'
+
+import Multiselect from 'vue-multiselect'
+
 export default {
-  asyncData({$config, redirect}) {
-    if (!Cookie.get($config.auth.cookieName)) {
-      redirect('/no-access/')
-      return
+  components: {
+    ckeditor: CKEditor.component,
+    Multiselect,
+  },
+  data() {
+    return {
+      editor: ClassicEditor,
+      editorData: '<p>Content of the editor.</p>',
+      editorConfig: {Markdown, Essentials, Bold, Italic},
+      selectOptions: [],
+      selectedOption: null,
     }
   },
+  methods: {},
 }
 </script>
+
+<template>
+  <div>
+    <ckeditor :editor="editor" v-model="editorData" :config="editorConfig" />
+  </div>
+</template>

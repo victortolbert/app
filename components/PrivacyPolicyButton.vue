@@ -1,3 +1,14 @@
+<!-- @vue-ignore -->
+<script>
+export default {
+  data() {
+    return {
+      modalOpen: false,
+    }
+  },
+}
+</script>
+
 <template>
   <button
     class="text-blue-500 border-b border-blue-500 border-dotted hover:border-solid"
@@ -9,13 +20,3 @@
     </Portal>
   </button>
 </template>
-
-<script>
-export default {
-  data() {
-    return {
-      modalOpen: false,
-    }
-  },
-}
-</script>

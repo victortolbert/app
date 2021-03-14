@@ -1,1 +1,0 @@
-{"version":3,"sources":["webpack://@victortolbert/lab/./site.scss"],"names":[],"mappings":"AAAA,KACE,cACF,C","file":"css/site.css","sourcesContent":["body {\n  background: red;\n}\n"],"sourceRoot":""}

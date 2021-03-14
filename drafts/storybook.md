@@ -1,4 +1,0 @@
----
-title: Storybook
-category: Frontend
----

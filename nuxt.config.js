@@ -11,7 +11,7 @@ export default {
       appId: 'WTEU7RU64C',
       key: '0bdd840be2d7d4377e10b238bc731901',
     },
-    apiURL: process.env.API_URL || 'https://api.victortolbert.com',
+    apiURL: process.env.API_URL || 'http://localhost:8686',
     awsS3DefaultRegion: process.env.AWS_S3_DEFAULT_REGION || 'us-east-1',
     awsS3AccessKey: process.env.AWS_S3_ACCESS_KEY || 'AKIAXGYXHSXXHYBR5HOE',
     awsS3AccessSecret:
@@ -80,7 +80,10 @@ export default {
       key: 'd1fe567d10edb4ffe8e470d61dc84616',
     },
   },
+
+  // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
+
   target: 'static',
   ssr: false,
   // watch: ['~/config/*'],
@@ -125,6 +128,8 @@ export default {
       // class: ['antialiased font-sans bg-gray-200'],
     },
   },
+
+  // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
     // '~/assets/css/bulma.scss',
     // '~/assets/css/app.scss',
@@ -139,23 +144,31 @@ export default {
     name: 'layout',
     mode: 'out-in',
   },
-  modules: [
-    '@nuxt/content',
-    '@nuxtjs/axios',
-    '@nuxtjs/color-mode',
-    '@nuxtjs/feed',
-    '@nuxtjs/pwa',
-    '@oruga-ui/oruga/nuxt',
-    '~/modules/algolia',
-    '~/modules/auth',
-    'nuxt-i18n',
-    'vue-toastification/nuxt',
 
+  // Modules: https://go.nuxtjs.dev/config-modules
+  modules: [
+    // https://go.nuxtjs.dev/content
+    '@nuxt/content',
+
+    // https://go.nuxtjs.dev/axios
+    '@nuxtjs/axios',
+
+    // Doc: https://oruga.io/documentation/#nuxt
+    '@oruga-ui/oruga/nuxt',
+
+    'nuxt-i18n',
     // '@nuxtjs/auth-next',
     // '@nuxtjs/auth',
+    // '@nuxtjs/feed',
+    // https://go.nuxtjs.dev/pwa
+    // '@nuxtjs/pwa',
     // '@nuxtjs/sentry',
+    // '~/modules/algolia',
+    // '~/modules/auth',
     // 'nuxt-basic-auth-module',
     // 'nuxt-use-sound',
+    // 'vue-toastification/nuxt',
+    // 'yamlful-nuxt',
     // [
     //   'nuxt-lazy-load',
     //   {
@@ -188,14 +201,20 @@ export default {
   ],
   buildModules: [
     '@nuxt/typescript-build',
+    '@nuxtjs/color-mode',
     '@nuxtjs/composition-api',
-    '@nuxtjs/moment',
-    '@nuxtjs/google-analytics',
-    '@nuxtjs/style-resources',
-    '@nuxtjs/tailwindcss',
-    '@nuxtjs/stylelint-module',
+    'nuxt-use-sound',
+    'nuxt-windicss',
+    // '@nuxtjs/google-analytics',
+    // '@nuxtjs/moment',
+    // '@nuxtjs/style-resources',
+    // '@nuxtjs/stylelint-module',
+    // '@nuxtjs/stylelint-module',
     // '@nuxtjs/svg',
+    // '@nuxtjs/tailwindcss',
     // '@nuxtjs/vuetify',
+    // https://go.nuxtjs.dev/stylelint
+    // https://go.nuxtjs.dev/typescript
     // 'nuxt-ackee',
     // [
     //   '@nuxt/typescript-build',
@@ -210,29 +229,55 @@ export default {
     // '@nuxtjs/sitemap'
   ],
 
+  // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
     '~/plugins/api',
-    '~/plugins/auth.client',
-    '~/plugins/data-api',
-    '~/plugins/devto',
-    '~/plugins/fontawesome',
-    '~/plugins/maps.client',
-    '~/plugins/menu.client',
+    '~/plugins/demo',
+    '~/plugins/jam',
     '~/plugins/portal-vue',
-    '~/plugins/vue-api-query',
-    '~/plugins/vue-chartkick.client',
-    '~/plugins/vue-content-placeholders',
-    '~/plugins/vue-observe-visibility.client',
-    '~/plugins/vue-scrollactive',
-    '~/plugins/vue-tables-2.client',
-    '~/plugins/vue-tippy',
-    '~/plugins/vuelidate',
+    '~/plugins/repository',
+    '~plugins/vue-api-query',
+    '~plugins/vue-content-placeholders',
+    '~plugins/vue-notifications',
+
+    // '~/plugins/vue-chartkick.client',
+    // '~plugins/vue-gtm',
+    // '~plugins/vue-ray.client',
+    // '~/plugins/vuelidate',
+    // '~plugins/vue-introjs.client',
+    // '~/plugins/vue-toastification.client',
+
+    // '~/plugins/auth.client',
+    // '~/plugins/data-api',
+    // '~/plugins/i18n.client',
+    // '~/plugins/init-categories',
+    // '~/plugins/maps.client',
+    // '~/plugins/menu.client',
+    // '~/plugins/vue-observe-visibility.client',
+    // '~/plugins/vue-scrollactive',
+    // '~/plugins/vue-tables-2.client',
+    // '~/plugins/vue-tippy',
+    // '~/plugins/auth.client',
+    // '~/plugins/data-api',
+    // '~/plugins/devto',
+    // '~/plugins/fontawesome',
+    // '~/plugins/i18n.client',
+    // '~/plugins/init-categories',
+    // '~/plugins/maps.client',
+    // '~/plugins/menu.client',
+    // '~/plugins/portal-vue',
+    // '~/plugins/vue-api-query',
+    // '~/plugins/vue-chartkick.client',
+    // '~/plugins/vue-content-placeholders',
+    // '~/plugins/vue-observe-visibility.client',
+    // '~/plugins/vue-scrollactive',
+    // '~/plugins/vue-tables-2.client',
+    // '~/plugins/vue-tippy',
+    // '~/plugins/vuelidate',
     // '~/plugins/axios.plugin',
     // '~/plugins/cookies',
     // '~/plugins/dynamic-marquee.client',
     // '~/plugins/highcharts',
-    // '~/plugins/i18n.client',
-    // '~/plugins/init',
     // '~/plugins/inject-ww.client',
     // '~/plugins/markdown',
     // '~/plugins/oruga',
@@ -254,80 +299,94 @@ export default {
 
   server: {
     // host: '0.0.0.0',
-    port: process.env.PORT || 8686,
+    port: process.env.PORT || 3003,
   },
 
-  serverMiddleware: ['~/myServerMiddleware', '~/server'],
-
+  // serverMiddleware: ['~/myServerMiddleware', '~/server'],
   router: {
     prefetchLinks: false,
     trailingSlash: true,
   },
 
+  // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
     baseURL: process.env.apiUrl || 'https://api.victortolbert.com/',
     credentials: true,
   },
 
-  content: {
-    markdown: {
-      remarkPlugins: [['remark-emoji', {emoticon: true}]],
-      prism: {
-        theme: 'prism-themes/themes/prism-material-oceanic.css',
-      },
-    },
-    nestedProperties: ['author.name', 'categories.slug'],
-    extendParser: {
-      '.custom': file => ({body: file.split('\n').map(line => line.trim())}),
-    },
+  colorMode: {
+    classSuffix: '',
   },
 
-  feed: [
-    {
-      path: '/rss.xml',
-      async create(feed) {
-        const {$content} = require('@nuxt/content')
-        const files = await $content('blog').fetch()
+  // Content module configuration: https://go.nuxtjs.dev/config-content
+  // content: {
+  //   markdown: {
+  //     remarkPlugins: [['remark-emoji', {emoticon: true}]],
+  //     prism: {
+  //       theme: 'prism-themes/themes/prism-material-oceanic.css',
+  //     },
+  //   },
+  //   nestedProperties: ['author.name', 'categories.slug'],
+  //   extendParser: {
+  //     '.custom': file => ({body: file.split('\n').map(line => line.trim())}),
+  //   },
+  // },
 
-        feed.options = {
-          title: 'Blog',
-          link: 'https://blog.designcoder.net/feed.xml',
-          description: 'Get the latest posts from designcoder.net',
-        }
+  // feed: [
+  //   {
+  //     path: '/rss.xml',
+  //     async create(feed) {
+  //       const {$content} = require('@nuxt/content')
+  //       const files = await $content('blog').fetch()
 
-        files.forEach(post => {
-          feed.addItem({
-            title: post.title,
-            id: post.path,
-            link: `https://blog.designcoder.net${post.path}`,
-            description: post.excerpt,
-          })
-        })
+  //       feed.options = {
+  //         title: 'Blog',
+  //         link: 'https://blog.designcoder.net/feed.xml',
+  //         description: 'Get the latest posts from designcoder.net',
+  //       }
 
-        feed.addContributor({
-          name: 'Victor Tolbert',
-          email: 'victor.tolbert@gmail.com',
-          link: 'https://www.victortolbert.com',
-        })
-      },
-      cacheTime: 1000 * 60 * 15,
-      type: 'rss2',
-    },
-  ],
+  //       files.forEach(post => {
+  //         feed.addItem({
+  //           title: post.title,
+  //           id: post.path,
+  //           link: `https://blog.designcoder.net${post.path}`,
+  //           description: post.excerpt,
+  //         })
+  //       })
 
-  googleAnalytics: {
-    id: process.env.GOOGLE_ANALYTICS_ID || 'UA-76464598-5',
-  },
+  //       feed.addContributor({
+  //         name: 'Victor Tolbert',
+  //         email: 'victor.tolbert@gmail.com',
+  //         link: 'https://www.victortolbert.com',
+  //       })
+  //     },
+  //     cacheTime: 1000 * 60 * 15,
+  //     type: 'rss2',
+  //   },
+  // ],
 
-  hooks: {
-    'content:file:beforeInsert': document => {
-      if (document.extension === '.md') {
-        const {time} = require('reading-time')(document.text)
+  // googleAnalytics: {
+  //   id: process.env.GOOGLE_ANALYTICS_ID || 'UA-76464598-5', // Use as fallback if no runtime config is provided
+  // },
 
-        document.readingTime = time
-      }
-    },
-  },
+  // hooks: {
+  //   'content:file:beforeInsert': document => {
+  //     if (document.extension === '.md') {
+  //       const {time} = require('reading-time')(document.text)
+  //       document.readingTime = time
+
+  //       // const regexp = new RegExp(`^/(${options.i18n.locales.map(locale => locale.code).join('|')})`, 'gi')
+  //       // const { dir, slug, category } = document
+  //       // const _dir = dir.replace(regexp, '')
+  //       // const _slug = slug.replace(/^index/, '')
+  //       // const _category = category && typeof category === 'string' ? category : ''
+
+  //       // document.to = `${_dir}/${_slug}`
+  //       // document.category = _category
+  //     }
+  //   },
+  // },
+
   i18n: {
     locales: [
       {
@@ -352,68 +411,76 @@ export default {
   },
 
   oruga: {
-    includeCss: true,
+    includeCss: 'vars',
   },
 
-  // sentry: {
-  //   dsn:
-  //     'https://c30dc69c78434050aed6f64b97cbd645@o244691.ingest.sentry.io/1422222',
-  //   config: {
-  //     maxBreadcrumbs: 50,
-  //     debug: false,
-  //   },
-  // },
-
-  styleResources: {
-    scss: ['~/assets/scss/variables.scss'],
-  },
-
-  storybook: {
-    port: 6006,
-    stories: [
-      '~/components/**/*.stories.mdx',
-      '~/components/**/*.stories.@(js|jsx|ts|tsx)',
-    ],
-    parameters: {
-      viewMode: 'docs',
-      actions: {argTypesRegex: '^on[A-Z].*'},
-    },
-    addons: [
-      '@storybook/addon-a11y',
-      '@whitespace/storybook-addon-html',
-    ],
-    webpackFinal(config) {
-      return config
+  // PWA module configuration: https://go.nuxtjs.dev/pwa
+  pwa: {
+    manifest: {
+      lang: 'en',
     },
   },
 
-  tailwindcss: {
-    cssPath: '~/assets/styles/tailwind.css',
-    exposeConfig: true,
-  },
-
-  toast: {timeout: 2000, closeOnClick: false},
-
-  build: {
-    extend(config, context) {
-      config.module.rules.push({
-        test: /\.(ogg|mp3|wav|mpe?g)$/i,
-        loader: 'file-loader',
-        options: {
-          name: '[path][name].[ext]',
-        },
-      })
-    },
-
-    postcss: {
-      plugins: {
-        'postcss-nested': {},
-        'postcss-import': {},
-        tailwindcss: path.resolve(__dirname, './tailwind.config.js'),
-        'postcss-preset-env': {},
-        'postcss-100vh-fix': {},
+  sound: {
+    back: {
+      src: '/assets/sound/back.wav',
+      options: {
+        volume: 0.25,
       },
     },
+    button: {
+      src: '/assets/sound/button.wav',
+      options: {
+        volume: 0.25,
+      },
+    },
+    error: {
+      src: '/assets/sound/error.wav',
+      options: {
+        volume: 0.25,
+      },
+    },
+  },
+
+  toast: {
+    timeout: 2000,
+    closeOnClick: false,
+    // Use your own CSS file
+    // cssFile: 'path/to/your/file.scss',
+    // Or disable CSS injection
+    // cssFile: false,
+  },
+
+  windicss: {
+    scan: {
+      dirs: ['./'],
+      exclude: [
+        '.nuxt/**/*',
+        '*.template.html',
+        // Any classes added in app.html (that have not previously been referenced) will need to be added to the safelist
+        'app.html',
+      ],
+    },
+    transformCSS: 'pre',
+    preflight: {
+      alias: {
+        // add nuxt aliases
+        'nuxt-link': 'a',
+      },
+    },
+  },
+
+  build: {
+    // extend(config, context) {
+    //   config.module.rules.push({
+    //     test: /\.(ogg|mp3|wav|mpe?g)$/i,
+    //     loader: 'file-loader',
+    //     options: {
+    //       name: '[path][name].[ext]',
+    //     },
+    //   })
+    // },
+
     preset: {
       stage: 1,
     },

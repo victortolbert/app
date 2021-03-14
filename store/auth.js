@@ -3,7 +3,12 @@ export const namespaced = true
 
 export const state = () => ({
   isLogged: false,
-  user: {},
+  user: {
+    name: 'Tatyana McNish',
+    email: 'tatyana@ema.promiseserves.org',
+    profileUrl: null,
+    avatarUrl: '/assets/img/people/tatyana.jpeg',
+  },
   authUser: null,
   error: null,
 })

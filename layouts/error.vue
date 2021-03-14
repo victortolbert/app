@@ -1,3 +1,23 @@
+<script>
+export default {
+  layout: 'plain',
+  props: {
+    error: {
+      type: Object,
+      required: true,
+    },
+  },
+  head() {
+    return {
+      title: this.error.message || 'Error Page',
+    }
+  },
+  mounted() {
+    // this.$sentry.captureException(this.error)
+  },
+}
+</script>
+
 <template>
   <div
     v-if="error"
@@ -30,23 +50,3 @@
     </div>
   </div>
 </template>
-
-<script>
-export default {
-  layout: 'plain',
-  props: {
-    error: {
-      type: Object,
-      required: true,
-    },
-  },
-  head() {
-    return {
-      title: this.error.message || 'Error Page',
-    }
-  },
-  mounted() {
-    // this.$sentry.captureException(this.error)
-  },
-}
-</script>

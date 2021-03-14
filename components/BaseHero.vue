@@ -1,6 +1,5 @@
-<script>
+<script lang="ts">
 import {defineComponent, computed, reactive} from '@nuxtjs/composition-api'
-const backgrounds = ['hero_error_2.jpg', 'hero_error_5.jpg']
 
 export default defineComponent({
   props: {
@@ -18,10 +17,6 @@ export default defineComponent({
     },
     bgCover: {
       type: Boolean,
-      default: false,
-    },
-    centered: {
-      type: String,
       default: false,
     },
     coverUrl: {
@@ -61,39 +56,50 @@ export default defineComponent({
     :class="{
       'min-h-screen': fullheight,
       'bg-cover': bgCover,
+      'md:flex md:flex-col md:items-center md:justify-center': false,
     }"
-    class="relative w-full bg-repeat md:flex md:flex-col md:items-center md:justify-center"
+    class="relative w-full bg-repeat"
   >
     <header
-      :class="[
-        {'max-w-screen-lg mx-auto xl:max-w-screen-xl': false},
-        {' text-gray-900 ': true},
-        {' text-white ': false},
-      ]"
-      class="relative z-10 w-full"
+      class="w-full relative z-10"
+      :class="{
+        'max-w-screen-lg xl:max-w-screen-xl': false,
+      }"
       v-if="hasTitleSlot || title"
     >
-      <div class="flex-1 min-w-0 p-8">
+      <div class="flex-1 min-w-0">
         <BaseLogo v-if="logo" :name="logo" class="w-auto h-7 sm:h-8" />
-        <h1
-          :class="[
-            {'mt-10 mb-8 sm:mt-14 sm:mb-10': false},
-            {'text-4xl font-extrabold sm:text-6xl lg:text-7xl': false},
-            {'text-xs font-bold tracking-wider uppercase': true},
-          ]"
-          class="leading-none tracking-tight"
-        >
-          <slot name="title">{{ title }}</slot>
-        </h1>
-        <p
-          class="max-w-screen-lg mb-10 text-lg font-medium sm:text-2xl sm:leading-10 sm:mb-11"
-          v-if="hasSubtitleSlot || subtitle"
-        >
-          <slot name="subtitle">
-            {{ subtitle }}
-          </slot>
-        </p>
-        <slot name="actions" />
+
+        <div class="hero-body">
+          <div>
+            <h1
+              :class="[
+                {'text-gray-900': false},
+                {'mt-10 mb-8 sm:mt-14 sm:mb-10': false},
+                {'text-4xl font-extrabold sm:text-6xl lg:text-7xl': false},
+              ]"
+              class="leading-none tracking-tight"
+            >
+              <slot name="title">{{ title }}</slot>
+            </h1>
+            <h2
+              :class="{
+                'max-w-screen-lg': false,
+                'mb-10 sm:mb-11': false,
+                'text-lg font-medium sm:leading-10 sm:text-2xl': false,
+              }"
+              v-if="hasSubtitleSlot || subtitle"
+            >
+              <slot name="subtitle">
+                {{ subtitle }}
+              </slot>
+            </h2>
+          </div>
+
+          <div>
+            <slot name="actions" />
+          </div>
+        </div>
       </div>
     </header>
 

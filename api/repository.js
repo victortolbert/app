@@ -2,6 +2,7 @@
 // I've used typical CRUD method names and actions here
 export default $axios => resource => ({
   index() {
+    // console.log($axios)
     return $axios.$get(`${resource}`)
   },
 

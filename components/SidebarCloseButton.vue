@@ -1,3 +1,14 @@
+<!-- @vue-ignore -->
+<script>
+import {mapMutations} from 'vuex'
+
+export default {
+  methods: {
+    ...mapMutations(['closeMenu']),
+  },
+}
+</script>
+
 <template>
   <div class="absolute top-0 right-0 p-1 -mr-14">
     <button
@@ -21,13 +32,3 @@
     </button>
   </div>
 </template>
-
-<script>
-import {mapMutations} from 'vuex'
-
-export default {
-  methods: {
-    ...mapMutations(['closeMenu']),
-  },
-}
-</script>

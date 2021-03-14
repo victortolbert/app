@@ -1,13 +1,4 @@
-<template>
-  <Portal v-if="show" to="overlays">
-    <div class="modal-backdrop">
-      <div class="modal">
-        <slot />
-      </div>
-    </div>
-  </Portal>
-</template>
-
+<!-- @vue-ignore -->
 <script>
 import {defineComponent} from '@nuxtjs/composition-api'
 
@@ -49,3 +40,13 @@ export default defineComponent({
   },
 })
 </script>
+
+<template>
+  <Portal v-if="show" to="overlays">
+    <div class="modal-backdrop">
+      <div class="modal">
+        <slot />
+      </div>
+    </div>
+  </Portal>
+</template>

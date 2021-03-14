@@ -71,7 +71,7 @@ export const toTitleCase = str => {
 
   return str
     .split(wordSeparators)
-    .map(function (current, index, array) {
+    .map(function(current, index, array) {
       if (
         /* Check for small words */
         current.search(smallWords) > -1 &&
@@ -99,7 +99,7 @@ export const toTitleCase = str => {
       }
 
       /* Capitalize the first letter */
-      return current.replace(alphanumericPattern, function (match) {
+      return current.replace(alphanumericPattern, function(match) {
         return match.toUpperCase()
       })
     })

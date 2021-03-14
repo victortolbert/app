@@ -1,34 +1,57 @@
-<template>
-  <main class="flex-1">
-    <BasePageHeading />
-    <pre>{{ teams }}</pre>
-    <section v-if="false" class="p-8">
-      <table>
-        <tr class="group" v-for="(person, key) in people.ema" :key="key">
-          <td class="p-3 group-hover:bg-primary-100">
-            <img
-              class="rounded-full shadow w-11 h-11"
-              :src="`/assets/img/people/${key}.jpeg`"
-            />
-          </td>
-          <td class="p-3 group-hover:bg-primary-100">
-            <pre>{{ person.firstName }}</pre>
-          </td>
-        </tr>
-      </table>
-    </section>
-  </main>
-</template>
-
+<!-- @vue-ignore -->
 <script>
 export default {
-  async asyncData({$content}) {
-    const people = await $content('people').fetch()
-    const teams = await $content('teams').fetch()
+  data() {
     return {
-      people,
-      teams,
+      people: [],
     }
+  },
+  async asyncData({app}) {
+    return {
+      people: await app.$personRepository.index(),
+    }
+  },
+  computed: {
+    slicedPeople() {
+      return this.people.slice(-3)
+    },
+  },
+  methods: {
+    async createPerson() {
+      const result = await this.$personRepository.create({
+        firstName: 'Victor',
+        lastName: 'Tolbert',
+        email: 'victor@example.com',
+        avatarUrl: 'https://cominex.net/assets/img/people/victor.jpeg',
+        homeChurch: 'Friendship Baptist Church',
+        phone: '6786133400',
+      })
+      console.log(result)
+      // Fix ids to be unique
+      this.people.push({...result, id: Number(this.people.slice(-1)[0].id) + 1})
+    },
   },
 }
 </script>
+
+<template>
+  <section>
+    <main>
+      <h1 class="title">People</h1>
+      <ul>
+        <li :key="id" v-for="{id, firstName} in slicedPeople">
+          <nuxt-link v-if="firstName !== 'foo'" :to="`/people/${id}`">
+            {{ firstName }}
+          </nuxt-link>
+          <p v-else>{{ firstName }}</p>
+        </li>
+      </ul>
+
+      <div class="links">
+        <button @click="createPerson" class="button--grey">
+          Create a person (send POST request)
+        </button>
+      </div>
+    </main>
+  </section>
+</template>

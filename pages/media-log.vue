@@ -1,8 +1,8 @@
 <script>
 export default {
-  layout: 'blog',
   async asyncData({$content}) {
     const page = await $content('media-log').fetch()
+
     return {page}
   },
 }

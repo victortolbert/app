@@ -1,3 +1,50 @@
+<script>
+import {capitalize} from '~/helpers'
+
+export default {
+  name: 'BaseIconOutlined',
+  props: {
+    name: {
+      type: String,
+      default: 'x',
+    },
+    label: {
+      type: String,
+      default: null,
+    },
+    library: {
+      type: String,
+      default: 'heroicon',
+    },
+    isSmall: {
+      type: Boolean,
+      default: false,
+    },
+    strokeWidth: {
+      type: Number,
+      default: 1,
+    },
+  },
+  computed: {
+    title() {
+      return this.label || capitalize(this.name)
+    },
+    viewBox() {
+      return this.isSmall ? '0 0 24 24' : '0 0 20 20'
+    },
+    description() {
+      return capitalize(`${this.library}: ${this.name}`)
+    },
+    width() {
+      return this.isSmall ? 20 : 24
+    },
+    height() {
+      return this.isSmall ? 20 : 24
+    },
+  },
+}
+</script>
+
 <template>
   <svg
     :width="height"
@@ -684,63 +731,3 @@
     />
   </svg>
 </template>
-
-<script>
-import {capitalize} from '~/helpers'
-
-export default {
-  name: 'BaseIconOutlined',
-  props: {
-    name: {
-      type: String,
-      default: 'x',
-      // validator: function (value) {
-      //   return (
-      //     [
-      //       'copy',
-      //       'email',
-      //       'exclamation-circle',
-      //       'question-mark-circle',
-      //       'users',
-      //       'vue',
-      //       'vti',
-      //     ].indexOf(value) !== -1
-      //   )
-      // },
-    },
-    label: {
-      type: String,
-      default: null,
-    },
-    library: {
-      type: String,
-      default: 'heroicon',
-    },
-    isSmall: {
-      type: Boolean,
-      default: false,
-    },
-    strokeWidth: {
-      type: Number,
-      default: 1,
-    },
-  },
-  computed: {
-    title() {
-      return this.label || capitalize(this.name)
-    },
-    viewBox() {
-      return this.isSmall ? '0 0 24 24' : '0 0 20 20'
-    },
-    description() {
-      return capitalize(`${this.library}: ${this.name}`)
-    },
-    width() {
-      return this.isSmall ? 20 : 24
-    },
-    height() {
-      return this.isSmall ? 20 : 24
-    },
-  },
-}
-</script>

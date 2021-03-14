@@ -2,6 +2,7 @@
 const SECONDS_IN_MINUTE = 60
 const MINUTES_IN_HOUR = 60
 const HOURS_IN_DAY = 24
+
 export default {
   props: {
     deadline: {
@@ -63,33 +64,3 @@ export default {
     </p>
   </div>
 </template>
-
-<style lang="scss" scoped>
-@import '../assets/scss/_settings';
-.time-unit-box {
-  @apply flex flex-col items-center;
-  border: 2px solid #2599e2;
-  font-family: Poppins;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 13px;
-  line-height: 24px;
-  letter-spacing: 0.299664px;
-  color: #232323;
-  padding: 6px 10px 14px;
-  text-transform: uppercase;
-  margin-right: 12px;
-  @include breakpoint(600px) {
-    padding: 12px 20px 20px;
-    font-size: 16px;
-  }
-}
-.unit {
-  @apply font-bold;
-  font-size: 30px;
-  line-height: 1.5;
-  @include breakpoint(600px) {
-    font-size: 40px;
-  }
-}
-</style>

@@ -1,3 +1,10 @@
+<!-- @vue-ignore -->
+<script>
+export default {
+  name: 'ProfileDropdown',
+}
+</script>
+
 <template>
   <div class="relative ml-3">
     <ProfileDropdownButton />
@@ -12,9 +19,3 @@
     <!-- <DropdownPanel /> -->
   </div>
 </template>
-
-<script>
-export default {
-  name: 'ProfileDropdown',
-}
-</script>

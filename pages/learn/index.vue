@@ -3,12 +3,12 @@
 import GuideItem from '~/components/GuideItem'
 
 export default {
-  layout: 'blog',
   components: {
     GuideItem,
   },
   async asyncData({$content}) {
     const page = await $content('learn').fetch()
+
     return {page}
   },
 }
@@ -19,14 +19,3 @@ export default {
     <nuxt-content :document="page"></nuxt-content>
   </main>
 </template>
-
-<style lang="scss">
-@import '../../assets/scss/_settings';
-.page-title {
-  @apply font-bold;
-  @apply text-4xl;
-  font-family: $ff-sans;
-  @apply mt-5 mb-3;
-  color: $c-navy;
-}
-</style>

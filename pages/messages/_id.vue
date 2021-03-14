@@ -1,3 +1,33 @@
+<script>
+import {
+  defineComponent,
+  useFetch,
+  useContext,
+  ref,
+} from '@nuxtjs/composition-api'
+import {strip} from '~/helpers'
+
+export default defineComponent({
+  name: 'MessagePage',
+  nuxtI18n: false,
+  setup() {
+    const message = ref()
+
+    const truncate = html => {
+      return `${strip(html).substr(0, 50)}...`
+    }
+
+    const {$messageRepository, params} = useContext()
+
+    useFetch(async () => {
+      message.value = await $messageRepository.show(params.value.id)
+    })
+
+    return {message, truncate}
+  },
+})
+</script>
+
 <template>
   <div class="mx-16 my-8 prose">
     <template v-if="$fetchState.pending">
@@ -27,33 +57,3 @@
     </template>
   </div>
 </template>
-
-<script>
-import {
-  defineComponent,
-  useFetch,
-  useContext,
-  ref,
-} from '@nuxtjs/composition-api'
-import {strip} from '@/helpers'
-
-export default defineComponent({
-  name: 'MessagePage',
-  nuxtI18n: false,
-  setup() {
-    const message = ref()
-
-    const truncate = html => {
-      return `${strip(html).substr(0, 50)}...`
-    }
-
-    const {$api, params} = useContext()
-
-    useFetch(async () => {
-      message.value = await $api.messages.show(params.value.id)
-    })
-
-    return {message, truncate}
-  },
-})
-</script>

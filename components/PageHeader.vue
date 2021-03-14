@@ -1,3 +1,15 @@
+<!-- @vue-ignore -->
+<script>
+export default {
+  props: {
+    messages: {
+      type: Array,
+      default: () => [],
+    },
+  },
+}
+</script>
+
 <template>
   <header
     class="px-4 py-4 border-b border-gray-200 sm:flex sm:items-center sm:justify-between sm:px-6 lg:px-8"
@@ -11,14 +23,3 @@
     </div>
   </header>
 </template>
-
-<script>
-export default {
-  props: {
-    messages: {
-      type: Array,
-      default: () => [],
-    },
-  },
-}
-</script>

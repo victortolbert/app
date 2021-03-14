@@ -15,33 +15,33 @@
         type="button"
         title="Refresh"
       >
-        <SvgIcon icon="refresh" />
+        <BaseIconSolid name="refresh" />
       </button>
 
       <div v-show="checked.length" class="flex items-center space-x-2">
         <button type="button">
-          <SvgIcon icon="package-down" />
+          <BaseIconSolid name="folder-download" />
         </button>
 
         <button type="button">
-          <SvgIcon icon="alert-octagon" />
+          <BaseIconSolid name="exclamation-circle" />
         </button>
 
         <button @click="removeMessages" title="Delete">
-          <SvgIcon icon="delete" />
+          <BaseIconSolid name="trash" />
         </button>
 
         <button @click="markAllRead" type="button">
-          <SvgIcon icon="email-mark-as-unread" />
+          <BaseIconSolid name="mail-open" />
         </button>
 
         <button type="button">
-          <SvgIcon icon="clock" />
+          <BaseIconSolid name="clock" />
         </button>
       </div>
 
       <button type="button">
-        <SvgIcon icon="dots-vertical" />
+        <BaseIconSolid name="dots-vertical" />
       </button>
     </div>
 
@@ -98,7 +98,7 @@
               type="button"
               @click="removeMessage(index)"
             >
-              <SvgIcon icon="delete" />
+              <BaseIconSolid name="delete" />
             </button>
 
             <button
@@ -107,7 +107,7 @@
               @click="archive(message.id)"
               type="button"
             >
-              <SvgIcon icon="dots-vertical" />
+              <BaseIconSolid name="dots-vertical" />
             </button>
           </td>
         </tr>

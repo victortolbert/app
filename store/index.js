@@ -1,6 +1,8 @@
 import Vue from 'vue'
 import groupBy from 'lodash.groupby'
 import defu from 'defu'
+import {addDays} from 'date-fns'
+import {getEventIndexById} from '~/helpers'
 
 export const state = () => ({
   categories: {},
@@ -12,6 +14,25 @@ export const state = () => ({
     defaultBranch: '',
     filled: false,
   },
+  events: [
+    {
+      id: 10,
+      title: 'All day event',
+      date: new Date(),
+      allDay: true,
+    },
+    {
+      id: 20,
+      title: 'Timed event',
+      start: addDays(new Date(), 1),
+    },
+    {
+      id: 30,
+      title: 'Timed event',
+      start: addDays(new Date(), 2),
+    },
+  ],
+  weekendsVisible: true,
 })
 
 export const getters = {
@@ -47,6 +68,8 @@ export const getters = {
   lastRelease(state) {
     return state.releases[0]
   },
+  events: state => state.events,
+  weekendsVisible: state => state.weekendsVisible,
 }
 
 export const mutations = {
@@ -68,6 +91,36 @@ export const mutations = {
         'Please provide the `url` property in `content/setting.json`',
       )
     }
+  },
+  CREATE_EVENT(state, event) {
+    return state.events.push(event)
+  },
+  UPDATE_EVENT(state, updatedEvent) {
+    const index = getEventIndexById(state, updatedEvent.id)
+
+    if (index === -1) {
+      return console.warn(`Unable to update event (id ${updatedEvent.id})`)
+    }
+
+    return state.events.splice(index, 1, {
+      ...state.events[index],
+      title: updatedEvent.title,
+      start: updatedEvent.start,
+      end: updatedEvent.end,
+      date: updatedEvent.date,
+    })
+  },
+  DELETE_EVENT(state, eventId) {
+    const index = getEventIndexById(state, eventId)
+
+    if (index === -1) {
+      return console.warn(`Unable to delete event (id ${eventId})`)
+    }
+
+    return state.events.splice(index, 1)
+  },
+  SET_WEEKENDS_ENABLED(state, enabled) {
+    state.weekendsVisible = enabled
   },
 }
 
@@ -179,5 +232,17 @@ export const actions = {
         'You can add a `settings.json` file inside the `content/` folder to customize this theme.',
       )
     }
+  },
+  createEvent({commit}, event) {
+    return commit('CREATE_EVENT', event)
+  },
+  updateEvent({commit}, updatedEvent) {
+    return commit('UPDATE_EVENT', updatedEvent)
+  },
+  deleteEvent({commit}, eventId) {
+    return commit('DELETE_EVENT', eventId)
+  },
+  setweekendsVisible({commit}, enabled) {
+    return commit('SET_WEEKENDS_ENABLED', enabled)
   },
 }

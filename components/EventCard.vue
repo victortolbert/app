@@ -1,12 +1,4 @@
-<template>
-  <a @click.prevent="viewEvent" class="event-link">
-    <div class="event-card">
-      <span>@{{ event.time }} on {{ event.date }}</span>
-      <h4>{{ event.title }}</h4>
-    </div>
-  </a>
-</template>
-
+<!-- @vue-ignore -->
 <script>
 export default {
   props: {
@@ -17,11 +9,20 @@ export default {
   },
   methods: {
     viewEvent() {
-      this.$router.push(this.toLocalePath({path: `/event/${this.event.id}/`}))
+      this.$router.push(this.localePath({path: `/event/${this.event.id}/`}))
     },
   },
 }
 </script>
+
+<template>
+  <a @click.prevent="viewEvent" class="event-link">
+    <div class="event-card">
+      <span>@{{ event.time }} on {{ event.date }}</span>
+      <h4>{{ event.title }}</h4>
+    </div>
+  </a>
+</template>
 
 <style scoped>
 .event-card {

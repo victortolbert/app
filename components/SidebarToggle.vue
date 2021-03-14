@@ -1,3 +1,14 @@
+<!-- @vue-ignore -->
+<script>
+import {mapMutations} from 'vuex'
+
+export default {
+  methods: {
+    ...mapMutations(['openMenu']),
+  },
+}
+</script>
+
 <template>
   <button
     @click="openMenu"
@@ -17,13 +28,3 @@
     </svg>
   </button>
 </template>
-
-<script>
-import {mapMutations} from 'vuex'
-
-export default {
-  methods: {
-    ...mapMutations(['openMenu']),
-  },
-}
-</script>

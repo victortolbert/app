@@ -1,19 +1,18 @@
 import marked from 'marked'
-// import sanitize from 'sanitize-html'
 
-export default function ({app}, inject) {
+export default function({app}, inject) {
   const renderer = new marked.Renderer()
 
-  renderer.link = function (href, title, text) {
-    return (
-      '<a target="_blank" href="' +
-      href +
-      '" title="' +
-      title +
-      '">' +
-      text +
-      '</a>'
-    )
+  renderer.link = function(href, title, text) {
+    return title
+      ? '<a target="_blank" href="' +
+          href +
+          '" title="' +
+          title +
+          '">' +
+          text +
+          '</a>'
+      : '<a target="_blank" href="' + href + '">' + text + '</a>'
   }
 
   const compile = markdown => {

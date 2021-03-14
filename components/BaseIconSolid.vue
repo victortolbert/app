@@ -7,19 +7,6 @@ export default {
     name: {
       type: String,
       default: 'question-mark-circle',
-      // validator: function (value) {
-      //   return (
-      //     [
-      //       'copy',
-      //       'email',
-      //       'exclamation-circle',
-      //       'question-mark-circle',
-      //       'users',
-      //       'vue',
-      //       'vti',
-      //     ].indexOf(value) !== -1
-      //   )
-      // },
     },
     label: {
       type: String,
@@ -273,6 +260,11 @@ export default {
       />
     </g>
 
+    <path
+      v-if="name === 'dots-vertical'"
+      d="M10 6a2 2 0 110-4 2 2 0 010 4zM10 12a2 2 0 110-4 2 2 0 010 4zM10 18a2 2 0 110-4 2 2 0 010 4z"
+    />
+
     <g v-if="name === 'duplicate'">
       <path
         d="M7 9a2 2 0 012-2h6a2 2 0 012 2v6a2 2 0 01-2 2H9a2 2 0 01-2-2V9z"
@@ -286,6 +278,13 @@ export default {
       />
       <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
     </g>
+
+    <path
+      v-if="name === 'exclamation'"
+      fill-rule="evenodd"
+      d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z"
+      clip-rule="evenodd"
+    />
 
     <path
       v-if="name === 'exclamation-circle'"
@@ -419,6 +418,13 @@ export default {
       d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"
     />
 
+    <path
+      v-if="name === 'identification'"
+      fill-rule="evenodd"
+      d="M10 2a1 1 0 00-1 1v1a1 1 0 002 0V3a1 1 0 00-1-1zM4 4h3a3 3 0 006 0h3a2 2 0 012 2v9a2 2 0 01-2 2H4a2 2 0 01-2-2V6a2 2 0 012-2zm2.5 7a1.5 1.5 0 100-3 1.5 1.5 0 000 3zm2.45 4a2.5 2.5 0 10-4.9 0h4.9zM12 9a1 1 0 100 2h3a1 1 0 100-2h-3zm-1 4a1 1 0 011-1h2a1 1 0 110 2h-2a1 1 0 01-1-1z"
+      clip-rule="evenodd"
+    />
+
     <g v-if="name === 'inbox-in'">
       <path
         d="M8.707 7.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l2-2a1 1 0 00-1.414-1.414L11 7.586V3a1 1 0 10-2 0v4.586l-.293-.293z"
@@ -427,13 +433,6 @@ export default {
         d="M3 5a2 2 0 012-2h1a1 1 0 010 2H5v7h2l1 2h4l1-2h2V5h-1a1 1 0 110-2h1a2 2 0 012 2v10a2 2 0 01-2 2H5a2 2 0 01-2-2V5z"
       />
     </g>
-
-    <path
-      v-if="name === 'identification'"
-      fill-rule="evenodd"
-      d="M10 2a1 1 0 00-1 1v1a1 1 0 002 0V3a1 1 0 00-1-1zM4 4h3a3 3 0 006 0h3a2 2 0 012 2v9a2 2 0 01-2 2H4a2 2 0 01-2-2V6a2 2 0 012-2zm2.5 7a1.5 1.5 0 100-3 1.5 1.5 0 000 3zm2.45 4a2.5 2.5 0 10-4.9 0h4.9zM12 9a1 1 0 100 2h3a1 1 0 100-2h-3zm-1 4a1 1 0 011-1h2a1 1 0 110 2h-2a1 1 0 01-1-1z"
-      clip-rule="evenodd"
-    />
 
     <path
       v-if="name === 'inbox'"

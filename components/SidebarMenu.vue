@@ -1,36 +1,4 @@
-<template>
-  <div class="space-y-1">
-    <NuxtLink
-      exact
-      to="/messages/"
-      @click.native="closeMenu"
-      class="nav-link inbox"
-    >
-      <SvgIcon icon="inbox" class="mr-1 text-2xl" />
-      Inbox
-    </NuxtLink>
-    <NuxtLink
-      exact
-      :to="`/messages/tags/${tag}/`"
-      v-for="(count, tag) in tags"
-      :key="tag"
-      :class="tag"
-      @click.native="closeMenu"
-      class="nav-link"
-    >
-      <SvgIcon icon="inbox" class="mr-1 text-2xl" />
-      <span class="flex items-center justify-between w-full capitalize">
-        <span class="flex-1">{{ tag }}</span>
-        <span
-          class="flex items-center justify-center w-8 h-8 text-xs font-bold text-gray-600 bg-gray-100 rounded-full"
-        >
-          {{ count }}
-        </span>
-      </span>
-    </NuxtLink>
-  </div>
-</template>
-
+<!-- @vue-ignore -->
 <script>
 import {mapMutations} from 'vuex'
 import {defineComponent} from '@nuxtjs/composition-api'
@@ -55,6 +23,39 @@ export default defineComponent({
   },
 })
 </script>
+
+<template>
+  <div class="space-y-1">
+    <NuxtLink
+      exact
+      to="/messages/"
+      @click.native="closeMenu"
+      class="nav-link inbox"
+    >
+      <BaseIconSolid name="inbox" class="mr-1 text-2xl" />
+      Inbox
+    </NuxtLink>
+    <NuxtLink
+      exact
+      :to="`/messages/tags/${tag}/`"
+      v-for="(count, tag) in tags"
+      :key="tag"
+      :class="tag"
+      @click.native="closeMenu"
+      class="nav-link"
+    >
+      <BaseIconSolid name="inbox" class="mr-1 text-2xl" />
+      <span class="flex items-center justify-between w-full capitalize">
+        <span class="flex-1">{{ tag }}</span>
+        <span
+          class="flex items-center justify-center w-8 h-8 text-xs font-bold text-gray-600 bg-gray-100 rounded-full"
+        >
+          {{ count }}
+        </span>
+      </span>
+    </NuxtLink>
+  </div>
+</template>
 
 <style lang="postcss">
 .nav-link {

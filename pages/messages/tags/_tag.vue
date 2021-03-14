@@ -1,10 +1,6 @@
-<template>
-  <MessageTable :data="taggedMessages" />
-</template>
-
 <script>
 import {defineComponent, useContext, computed} from '@nuxtjs/composition-api'
-import useMessages from '@/composables/useMessages'
+import useMessages from '~/composables/useMessages'
 
 export default defineComponent({
   name: 'TagPage',
@@ -24,3 +20,7 @@ export default defineComponent({
   },
 })
 </script>
+
+<template>
+  <MessageTable :data="taggedMessages" />
+</template>

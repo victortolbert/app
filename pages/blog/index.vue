@@ -1,6 +1,5 @@
 <script>
 export default {
-  layout: 'blog',
   async asyncData({$content}) {
     const posts = await $content('blog').fetch()
 

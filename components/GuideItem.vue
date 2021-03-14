@@ -4,25 +4,25 @@ export default {
   props: {
     description: {
       type: String,
-      required: true,
+      required: true
     },
     href: {
       type: String,
-      required: true,
+      required: true
     },
     image: {
       type: String,
-      default: '',
+      default: ''
     },
     alt: {
       type: String,
-      default: '',
+      default: ''
     },
     title: {
       type: String,
-      required: true,
-    },
-  },
+      required: true
+    }
+  }
 }
 </script>
 
@@ -44,14 +44,17 @@ export default {
   border: 1px solid #ddd;
   border-radius: 4px;
 }
+
 .guide-item-description {
   @apply mt-0 mb-2;
 }
+
 .guide-item-logo {
   max-width: 150px;
   max-height: 150px;
   @apply mr-5;
 }
+
 .guide-item-title {
   display: block;
   font-family: 'Poppins';

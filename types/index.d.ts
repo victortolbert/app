@@ -1,4 +1,10 @@
+import { ViteSSGContext } from 'vite-ssg'
+
+export type UserModule = (ctx: ViteSSGContext) => void
+
 export type SchemaValue = 'auto' | 'dark' | 'light'
+
+export interface Advocate {}
 
 export interface AgencyItem {
   id: number
@@ -7,6 +13,9 @@ export interface AgencyItem {
   agency_address_state: string
   state: number
 }
+
+
+
 
 export interface AffiliateItem {
   id: number
@@ -24,6 +33,17 @@ export interface AffiliateItem {
   url_avatar: null
   state: 40
 }
+
+export interface Assessment {}
+
+export interface BookItem {
+  title: string
+  year?: number
+}
+
+export const ButtonSizes = ['default', 'small', 'big'] as const
+
+export type ButtonSize = typeof ButtonSizes[number]
 
 export interface CaseItem {
   id: number
@@ -43,6 +63,12 @@ export interface ChurchItem {
   church_contact_email: string
   state: number
 }
+
+export interface Client {}
+
+export interface ClientCaseManager {}
+
+export interface ClientProfile {}
 
 export interface CommunityItem {
   id: number
@@ -81,6 +107,14 @@ export interface MessageItem {
   tags: array
 }
 
+export interface NotificationItem {
+  id: number
+  subject: string
+  sender: string
+  body: string
+  tags: array
+}
+
 export interface PersonItem {
   id: number
   first_name: string
@@ -97,6 +131,9 @@ export interface ProductItem {
   sold: number
   available: number
 }
+
+export interface Program {}
+
 
 export interface RegionItem {
   id: number
@@ -124,6 +161,16 @@ export interface ResourceItem {
   id_org_internal: number
 }
 
+export type TaskItem {
+  id: number
+  title: string
+  description: string
+  createdBy: string
+  assignedTo: string
+  completed: boolean
+  editing: boolean
+}
+
 export interface Todo {
   kind: 'Todo'
   id: number
@@ -131,5 +178,23 @@ export interface Todo {
   assignee: string
   completed?: boolean
 }
+
+export interface Schedule {}
+
+export interface SectionItem {
+  name: string
+  title: string
+  description: string
+  icon: string
+  completed?: boolean
+}
+
+export interface Staff {}
+
+export interface Status {
+  valid: boolean
+  message?: string
+}
+
 
 export type TodoInput = Pick<Todo, 'title' | 'assignee'>

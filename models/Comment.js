@@ -1,15 +1,8 @@
 import Model from './Model'
-import User from './User'
 
 export default class Comment extends Model {
+  // Set the resource route of the model
   resource() {
     return 'comments'
-  }
-
-  relations() {
-    return {
-      user: User,
-      children: Comment,
-    }
   }
 }

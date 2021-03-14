@@ -5,12 +5,12 @@
     "moduleResolution": "Node",
     "lib": ["ESNext", "ESNext.AsyncIterable", "DOM"],
     "esModuleInterop": true,
-    "allowJs": false,
+    "allowJs": true,
     "sourceMap": true,
     "strict": true,
     "noEmit": true,
-    "resolveJsonModule": true,
     "baseUrl": ".",
+    "experimentalDecorators": true,
     "paths": {
       "~/*": ["./*"],
       "@/*": ["./*"]
@@ -18,11 +18,10 @@
     "types": [
       "@nuxt/content",
       "@nuxt/types",
-      "@nuxtjs/auth-next",
-      "@types/node",
-      "nuxt-i18n",
-      "testing-library__jest-dom"
+      "@nuxtjs/axios",
+      "@nuxtjs/color-mode",
+      "@types/node"
     ]
   },
-  "exclude": ["node_modules", ".nuxt"]
+  "exclude": ["node_modules", ".nuxt", "dist"]
 }

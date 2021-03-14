@@ -12,7 +12,7 @@ export default function useEvents() {
     events.value = await $api.events.index()
   })
 
-  const filteredMessages = computed(() => {
+  const filteredEvents = computed(() => {
     if (route.value.params.tag) {
       return events.value.filter(event =>
         event.tags.includes(route.value.params.tag),
@@ -34,11 +34,11 @@ export default function useEvents() {
       }, {}),
   )
 
-  function removeMessage(index) {
+  function removeEvent(index) {
     events.value.splice(index, 1)
   }
 
-  function removeMessages() {
+  function removeEvents() {
     events.value = []
   }
 
@@ -83,9 +83,9 @@ export default function useEvents() {
     updateCheckAll,
     truncate,
     formatDate,
-    removeMessage,
-    removeMessages,
-    filteredMessages,
+    removeEvent,
+    removeEvents,
+    filteredEvents,
     markAllRead,
   }
 }

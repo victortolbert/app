@@ -1,7 +1,7 @@
 <template>
   <nav class="tabs is-boxed is-fullwidth">
     <div class="container">
-      <ul>
+      <ul class="flex space-x-2">
         <li class="is-active">
           <a>Overview</a>
         </li>

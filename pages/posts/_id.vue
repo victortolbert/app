@@ -1,11 +1,4 @@
-<template>
-  <section>
-    <h1>{{ post.title }}</h1>
-    <p>{{ post.body }}</p>
-    <p>by User with id {{ post.userId }}</p>
-  </section>
-</template>
-
+<!-- @vue-ignore -->
 <script>
 export default {
   data() {
@@ -20,3 +13,11 @@ export default {
   },
 }
 </script>
+
+<template>
+  <section>
+    <h1>{{ post.title }}</h1>
+    <p>{{ post.body }}</p>
+    <p>by User with id {{ post.userId }}</p>
+  </section>
+</template>

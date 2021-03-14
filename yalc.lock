@@ -1,0 +1,13 @@
+{
+  "version": "v1",
+  "packages": {
+    "@victortolbert/helpers": {
+      "signature": "a6c63e5125c0032afb990334092bb244",
+      "file": true
+    },
+    "@victortolbert/base": {
+      "signature": "309f403be594374d4d4b83634ea25fab",
+      "file": true
+    }
+  }
+}

@@ -1,44 +1,6 @@
 <template>
   <section class="max-w-screen-sm p-8">
     <form>
-      <!--
-        Firstly, your file is uploaded to S3, then a request is sent to your server with
-        file as expected behavior. But, an extra field will be added to your request as
-        `s3ObjectLocation` containing the location of your S3 object/file, which you may
-        require to store in database.
-        <VueDropzone
-          :awss3="awss3"
-          @vdropzone-s3-upload-error="s3UploadError"
-          @vdropzone-s3-upload-success="s3UploadSuccess"
-        />
-
-      <Dropzone
-        ref="myVueDropzone"
-        id="dropzone"
-        @vdropzone-sending="sendingEvent"
-        :awss3="awss3"
-        @vdropzone-s3-upload-error="s3UploadError"
-        @vdropzone-s3-upload-success="s3UploadSuccess"
-        :options="dropzoneOptions"
-      >
-      </Dropzone>
-
-      <hr />
-
-      <label>Enter your URL Signer Endpoint</label>
-      <span class="note">(POST request will be sent to endpoint)</span><br />
-      <input
-        type="text"
-        v-model="signurl"
-        ref="urlsigner"
-        placeholder="http://mydomain.com/"
-        required=""
-      />
-      <button @click="uploadFiles">Upload Files</button>
-
-      <h3>Response of your URL Signer should be as below</h3>
-      -->
-
       <input
         type="file"
         style="display: none"
@@ -89,10 +51,9 @@
 </template>
 
 <script>
-import affiliates from '@/__mocks__/affiliates'
 import AWS from 'aws-sdk'
 import required from 'vuelidate/lib/validators/required'
-import validations from '@/utils/validations'
+import validations from '~/helpers/validations'
 
 // import Dropzone from 'nuxt-dropzone'
 // import 'nuxt-dropzone/dropzone.css'
@@ -162,7 +123,6 @@ export default {
     }
   },
   data: () => ({
-    affiliates,
     signurl: '',
     awss3: {
       signingURL: 'http://url-signer.test/',

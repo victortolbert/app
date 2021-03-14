@@ -1,22 +1,3 @@
 {
-  "title": "Docs",
-  "url": "https://docs.designcoder.net",
-  "logo": {
-    "light": "/logo-light.svg",
-    "dark": "/logo-dark.svg"
-  },
-  "github": "victortolbert/docs",
-  "twitter": "victortolbert",
-  "defaultBranch": "main",
-  "algolia": {
-    "apiKey": "3677e049d48c83792ba0d2cb0715a12f",
-    "indexName": "docs_content"
-  },
-  "links": {
-    "services": {
-      "google": {
-        "credentials": "https://console.developers.google.com/apis/credentials?project=mystic-sound-285115&folder=&organizationId="
-      }
-    }
-  }
+  "version": "1.0"
 }

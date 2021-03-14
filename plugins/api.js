@@ -1,62 +1,3 @@
-// export default function ({$axios}, inject) {
-//   const api = $axios.create({
-//     headers: {
-//       common: {
-//         Accept: 'text/plain, */*',
-//       },
-//     },
-//   })
-
-//   // api.onError(error => {
-//   //   if (error.response.status === 500) {
-//   //     redirect('/sorry')
-//   //   }
-//   // })
-
-//   api.getEvents(() => {
-//     return api.get('events')
-//   })
-
-//   // Set baseURL to something different
-//   api.setBaseURL('/api')
-
-//   inject('api', api)
-// }
-
-// export default ({$axios}, inject) => {
-//   const api = $axios.create({
-//     headers: {
-//       common: {
-//         Accept: 'text/plain, */*',
-//       },
-//     },
-//   })
-
-//   api.setBaseURL('/api')
-
-//   api.index = resource => {
-//     return $axios.$get(`${resource}`)
-//   }
-
-//   api.show = (resource, id) => {
-//     return $axios.$get(`${resource}/${id}`)
-//   }
-
-//   api.create = (resource, payload) => {
-//     return $axios.$post(`${resource}`, payload)
-//   }
-
-//   api.update = (resource, id, payload) => {
-//     return $axios.$post(`${resource}/${id}`, payload)
-//   }
-
-//   api.delete = (resource, id) => {
-//     return $axios.$delete(`${resource}/${id}`)
-//   }
-
-//   inject('api', api)
-// }
-
 import createRepository from '~/api/repository'
 
 export default ({$axios, store}, inject) => {
@@ -92,10 +33,9 @@ export default ({$axios, store}, inject) => {
   const repositoryWithAxios = createRepository(instance)
 
   const api = {
-    affiliates: repositoryWithAxios('affiliates'),
-    events: repositoryWithAxios('events'),
     messages: repositoryWithAxios('messages'),
-    people: repositoryWithAxios('people'),
+    events: repositoryWithAxios('events'),
+    users: repositoryWithAxios('people'),
     // ...
   }
 

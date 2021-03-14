@@ -3,20 +3,16 @@ module.exports = {
     '^@/(.*)$': '<rootDir>/$1',
     '^~/(.*)$': '<rootDir>/$1',
     '^vue$': 'vue/dist/vue.common.js',
-    '@nuxtjs/composition-api': '@nuxtjs/composition-api/lib/entrypoint.js',
   },
-  moduleFileExtensions: ['js', 'vue', 'json'],
-  testPathIgnorePatterns: ['/node_modules/', '/cypress/e2e/'],
+  moduleFileExtensions: ['ts', 'js', 'vue', 'json'],
   transform: {
+    '^.+\\.ts$': 'ts-jest',
     '^.+\\.js$': 'babel-jest',
     '.*\\.(vue)$': 'vue-jest',
   },
-  collectCoverage: false,
+  collectCoverage: true,
   collectCoverageFrom: [
     '<rootDir>/components/**/*.vue',
     '<rootDir>/pages/**/*.vue',
   ],
-  snapshotSerializers: ['<rootDir>/node_modules/jest-serializer-vue-tjw'],
-  // setupFilesAfterEnv: ['./jest.setup.js'],
-  setupFilesAfterEnv: ['@testing-library/jest-dom/extend-expect'],
 }

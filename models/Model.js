@@ -10,4 +10,24 @@ export default class Model extends BaseModel {
   request(config) {
     return this.$http.request(config)
   }
+
+  // // Override default query parameter names
+  // parameterNames() {
+  //   const defaultParams = super.parameterNames()
+  //   const customParams = {
+  //     include: 'include_custom',
+  //   }
+
+  //   return {...defaultParams, ...customParams}
+  // }
+
+  // // Configure object-to-formadata
+  // formData() {
+  //   return {
+  //     // indices: false,
+  //     // nullsAsUndefineds: false,
+  //     // booleansAsIntegers: false,
+  //     // allowEmptyArrays: false,
+  //   }
+  // }
 }

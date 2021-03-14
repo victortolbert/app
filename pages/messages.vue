@@ -1,8 +1,13 @@
+<script>
+export default {
+  //   layout: 'plain',
+  nuxtI18n: false,
+}
+</script>
+
 <template>
   <main class="flex-1">
-    <section
-      class="flex h-full p-8 m-8 overflow-hidden bg-white rounded-lg shadow"
-    >
+    <section class="flex h-full p-8 overflow-hidden bg-white rounded-lg shadow">
       <Sidebar class="hidden lg:flex lg:flex-shrink-0" />
       <SidebarOffCanvas class="lg:hidden" />
 
@@ -21,10 +26,3 @@
     </section>
   </main>
 </template>
-
-<script>
-export default {
-  //   layout: 'plain',
-  nuxtI18n: false,
-}
-</script>

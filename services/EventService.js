@@ -40,6 +40,9 @@ export default {
   postEvent(event) {
     return instance.post('events', event)
   },
+  index: resource => {
+    return instance.get(`${resource}`)
+  },
   get: (resource, perPage, page, loading, error) => {
     return instance.get(`${resource}?_limit=` + perPage + '&_page=' + page, {
       loading,
