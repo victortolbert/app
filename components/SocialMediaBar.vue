@@ -5,27 +5,27 @@ export default {
       accounts: [
         {
           name: 'Codepen',
-          url: 'https://www.twitter.com/victortolbert',
+          url: 'https://codepen.io/VictorTolbert/',
         },
-        {
-          name: 'Clubhouse',
-          url: 'https://www.twitter.com/victortolbert',
-        },
+        // {
+        //   name: 'Clubhouse',
+        //   url: 'https://www.twitter.com/victortolbert',
+        // },
         {
           name: 'DeviantArt',
-          url: 'https://www.twitter.com/victortolbert',
+          url: 'https://www.deviantart.com/victor',
         },
         {
           name: 'Facebook',
-          url: 'https://www.twitter.com/victortolbert',
+          url: 'https://www.facebook.com/victortolbert',
         },
         {
           name: 'LinkedIn',
-          url: 'https://www.twitter.com/victortolbert',
+          url: 'https://www.linkedin.com/in/victortolbert',
         },
         {
           name: 'Tumblr',
-          url: 'https://www.twitter.com/victortolbert',
+          url: 'https://victor.tumblr.com',
         },
         {
           name: 'Twitter',
@@ -33,7 +33,7 @@ export default {
         },
         {
           name: 'TikTok',
-          url: 'https://www.instagram.com/victortolbert',
+          url: 'https://www.tiktok.com/@design_coder?lang=en',
         },
         {
           name: 'Instagram',
@@ -50,6 +50,10 @@ export default {
         {
           name: 'GitHub',
           url: 'https://www.github.com/victortolbert',
+        },
+        {
+          name: 'WordPress',
+          url: 'https://victor.wordpress.com/',
         },
       ],
     }

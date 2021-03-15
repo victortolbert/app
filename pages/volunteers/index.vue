@@ -1,47 +1,57 @@
 <!-- @vue-ignore -->
 <script>
-import Person from '~/models/Person'
-
 export default {
-  async fetch() {
-    const people = await Person.page(this.currentPage).get()
-    this.people = this.people.concat(people)
-  },
   data() {
     return {
-      currentPage: 1,
       people: [],
     }
   },
-  computed: {
-    _people() {
-      return this.people.map(person => new Person(person))
-    },
+  async asyncData({app}) {
+    return {
+      people: await app.$personRepository.index(),
+    }
   },
-  mounted() {
-    this.$jam('works in mounted')
+  computed: {
+    slicedPeople() {
+      const size = 10;
+      return this.people.slice(0, size)
+      // return this.people.slice(-size)
+    },
   },
   methods: {
-    lazyLoadPersons(isVisible) {
-      if (isVisible) {
-        if (this.currentPage < 5) {
-          this.currentPage++
-          this.$fetch()
-        }
-      }
+    async createPerson() {
+      const result = await this.$personRepository.create({
+        firstName: 'Victor',
+        lastName: 'Tolbert',
+        email: 'victor@example.com',
+        avatarUrl: 'https://cominex.net/assets/img/people/victor.jpeg',
+        homeChurch: 'Friendship Baptist Church',
+        phone: '6786133400',
+      })
+      console.log(result)
+      // Fix ids to be unique
+      this.people.push({...result, id: Number(this.people.slice(-1)[0].id) + 1})
     },
-  },
-  head() {
-    return {
-      title: 'New Nuxt.js people',
-    }
   },
 }
 </script>
-
 <template>
-  <section>
-    <div v-if="people.length">{{ people }}</div>
+  <SectionWrapper>
+    <ul v-if="people.length">
+      <li v-for="person in slicedPeople" :key="person.id">
+        <NuxtLink
+          :to="localePath({
+            path: `/volunteers/${person.id}/`,
+            query: {
+              lang: 'en',
+              plan: 'private'
+            }
+          })"
+        >
+          {{person.firstName}}
+        </NuxtLink>
+      </li>
+    </ul>
     <div v-else>
       <svg
         class="animate-spin -ml-1 mr-3 h-11 w-11 text-black"
@@ -64,5 +74,5 @@ export default {
         />
       </svg>
     </div>
-  </section>
+  </SectionWrapper>
 </template>

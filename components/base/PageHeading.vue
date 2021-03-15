@@ -8,7 +8,6 @@ import {
 } from '@vueuse/core'
 
 export default defineComponent({
-  name: 'PageHeading',
   setup() {
     const location = useBrowserLocation()
 

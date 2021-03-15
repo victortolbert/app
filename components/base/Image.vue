@@ -1,6 +1,5 @@
 <script>
 export default {
-  name: 'BaseImage',
   props: {
     isUnsplash: {
       type: Boolean,

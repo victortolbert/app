@@ -1,0 +1,65 @@
+.page-enter-active,
+.page-leave-active {
+  transition: opacity 0.3s;
+}
+.page-enter,
+.page-leave-to {
+  opacity: 0;
+}
+
+.slide-left-enter-active,
+.slide-left-leave-active,
+.slide-right-enter-active,
+.slide-right-leave-active {
+  transition-duration: 0.25s;
+  transition-property: height, opacity, transform;
+  transition-timing-function: cubic-bezier(0.55, 0, 0.1, 1);
+  overflow: hidden;
+}
+
+.slide-left-enter,
+.slide-right-leave-active {
+  opacity: 0;
+  transform: translate(100%, 0);
+}
+
+.slide-left-leave-active,
+.slide-right-enter {
+  opacity: 0;
+  transform: translate(-100%, 0);
+}
+
+@keyframes spinAround {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(359deg);
+  }
+}
+
+.btn {
+  /* ease-out */
+  transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  /* ease-in */
+  transition-timing-function: cubic-bezier(0.75, 0, 1, 1);
+  /* ease-in-out */
+  transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
+  /* ease */
+  transition-timing-function: cubic-bezier(0.44, 0.21, 0, 1);
+}
+@media (prefers-reduced-motion: reduce) {
+  .btn {
+    transition: none;
+  }
+}
+.dropdown {
+  opacity: 0;
+  transition: opacity 400ms;
+  transition-delay: 300ms;
+}
+.dropdown-wrapper:hover .dropdown {
+  opacity: 1;
+  transition: opacity 100ms;
+  transition-delay: 0ms;
+}

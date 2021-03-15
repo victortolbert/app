@@ -1,0 +1,10 @@
+.cover-button {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 3;
+}
+.cover-button:focus {
+  outline: 0.25rem solid var(--color-navy);
+}

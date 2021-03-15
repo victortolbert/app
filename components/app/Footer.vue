@@ -13,5 +13,7 @@ export default {
   <footer class="footer">
     <SocialMediaBar />
     <p>© Victor Tolbert {{ currentYear }}</p>
+    Terms
+    Privacy
   </footer>
 </template>

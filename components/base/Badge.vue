@@ -1,6 +1,5 @@
 <script>
 export default {
-  name: 'BaseBadge',
   props: {
     color: {
       type: String,

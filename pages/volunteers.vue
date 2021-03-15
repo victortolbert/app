@@ -1,6 +1,6 @@
 <template>
-  <article>
-    Volunteers
-    <nuxt-child />
-  </article>
+  <PageWrapper>
+    <BasePageHeading> {{ $t('volunteers') }} </BasePageHeading>
+    <NuxtChild />
+  </PageWrapper>
 </template>

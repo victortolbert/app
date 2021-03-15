@@ -44,6 +44,17 @@ export default {
     FullCalendar,
     Multiselect,
   },
+  beforeRouteLeave (to, from , next) {
+    // if not vue router
+    // window.onbeforeunload = () => 'Are you sure you want to leave?'
+    // window.onbeforeunload = () => (this.unsavedChanges ? true : null)
+    const answer = window.confirm('Do you really want to leave? you have unsaved changes!')
+    if (answer) {
+      next()
+    } else {
+      next(false)
+    }
+  },
   data() {
     return {
       autocompleteOptions: [],

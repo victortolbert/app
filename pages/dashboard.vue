@@ -19,16 +19,15 @@ export default defineComponent({
 </script>
 
 <template>
-  <article>
-    <section>
+  <PageWrapper>
+    <SectionWrapper>
       <ColorMode />
-    </section>
+      <div>
+        <OButton @click="$sounds.back.play">Boop! 🎺</OButton>
+        <OButton @click="showToast">Show Toast</OButton>
+      </div>
 
-    <section>
-      <OButton @click="$sounds.back.play">Boop! 🎺</OButton>
-      <OButton @click="showToast">Show Toast</OButton>
-    </section>
-
-    <section>{{ affiliate }}</section>
-  </article>
+      <div>{{ affiliate }}</div>
+    </SectionWrapper>
+  </PageWrapper>
 </template>

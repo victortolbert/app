@@ -1,6 +1,5 @@
-<script lang="ts">
+<script>
 export default {
-  name: 'BaseList',
   props: {
     items: {
       type: Array,

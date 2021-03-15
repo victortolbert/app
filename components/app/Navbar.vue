@@ -8,7 +8,7 @@ export default {
     const isAdmin = ref(false)
     const affiliate = reactive({
       id: 1,
-      name: 'Laravel',
+      name: 'Ema',
       theme: {
         nav: {
           class: 'bg-white text-gray-800',
@@ -74,6 +74,11 @@ export default {
   computed: {
     routes() {
       return [
+        {
+          name: 'volunteers',
+          label: this.$t('volunteers'),
+          path: '/volunteers/',
+        },
         {
           name: 'resources',
           label: this.$t('resources'),

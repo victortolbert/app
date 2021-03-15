@@ -20,7 +20,7 @@ export default defineComponent({
     <p v-if="$nuxt.isOffline" class="px-8 py-1 text-xs uppercase font-bold tracking-wider text-danger-50 bg-danger-500">
       offline
     </p>
-    <AppToolbar />
+    <!-- <AppToolbar /> -->
     <AppNavbar />
     <main class="flex-1">
       <!-- save fetch calls on pages already visited -->
@@ -82,6 +82,16 @@ a {
 
 ::selection {
   background: theme('colors.primary.100');
+}
+
+.layout-enter-active,
+.layout-leave-active {
+  transition: opacity 0.5s;
+}
+
+.layout-enter,
+.layout-leave-active {
+  opacity: 0;
 }
 
 /* body {

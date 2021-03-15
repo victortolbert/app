@@ -28,8 +28,8 @@ export default defineComponent({
 
     try {
       // Using the nuxtjs/http module here exposed via context.app
-      const volunteer = await context.app.$http.$get(
-        `https://api.nuxtjs.dev/volunteers/${id}`,
+      const volunteer = await context.app.$axios.$get(
+        `https://api.victortolbert.com/people/${id}`,
       )
       return {volunteer}
     } catch (e) {
@@ -39,8 +39,7 @@ export default defineComponent({
 })
 </script>
 <template>
-  <div>
-    <h1>{{ volunteer.firstName }}</h1>
-    <p>{{ volunteer.lastName }}</p>
-  </div>
+  <section class="p-8 prose">
+    <h1>{{ volunteer.firstName }} {{ volunteer.lastName }}</h1>
+  </section>
 </template>

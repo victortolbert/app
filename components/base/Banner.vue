@@ -1,6 +1,5 @@
 <script>
 export default {
-  name: 'BaseBanner',
   props: {
     color: {
       type: String,

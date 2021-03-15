@@ -2,7 +2,6 @@
 import {capitalize} from '~/helpers'
 
 export default {
-  name: 'BaseIconOutlined',
   props: {
     name: {
       type: String,
