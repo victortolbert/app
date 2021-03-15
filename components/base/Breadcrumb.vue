@@ -28,7 +28,6 @@ export default {
 }
 </script>
 
-<!-- @vue-ignore -->
 <template>
   <header class="flex items-center justify-between px-4 mx-auto lg:px-8">
     <nav class="flex" aria-label="Breadcrumb">

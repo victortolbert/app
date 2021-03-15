@@ -1,6 +1,6 @@
 <template>
   <PageWrapper>
-    <PageHeading> {{ $t('volunteers') }} </PageHeading>
+    <PageHeading> {{ $t('resources') }} </PageHeading>
     <BaseBreadcrumb class="mt-2" />
     <NuxtChild />
   </PageWrapper>

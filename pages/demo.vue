@@ -145,6 +145,8 @@ export default {
     >
     </BaseHero>
 
+
+
     <KeyboardShortcut />
 
     <section class="mt-4 px-8 max-w-3xl">

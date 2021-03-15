@@ -14,9 +14,6 @@ export default {
     <div>
       <OButton
         id="user-menu"
-        class="ml-2 -mr-1"
-        icon-pack="fas"
-        icon-right="angle-down"
         aria-haspopup="true"
         inverted
         variant="primary"

@@ -80,6 +80,11 @@ export default {
           path: '/volunteers/',
         },
         {
+          name: 'advocates',
+          label: this.$t('advocates'),
+          path: '/advocates/',
+        },
+        {
           name: 'resources',
           label: this.$t('resources'),
           path: '/resources/',
@@ -113,7 +118,7 @@ export default {
     <div class="px-4 sm:px-6 lg:px-8">
       <div class="flex h-16 justify-between">
         <div class="flex">
-          <div class="flex mr-2 -ml-2 items-center md:hidden">
+          <div class="border-2 flex mr-2 -ml-2 items-center md:hidden">
             <!-- Mobile menu button -->
             <button
               class="rounded-md p-2 text-gray-400 inline-flex items-center justify-center hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary-500"
@@ -125,7 +130,7 @@ export default {
             </button>
           </div>
 
-          <div class="flex flex-shrink-0 items-center">
+          <div class="border-2 flex flex-shrink-0 items-center">
             <NuxtLink
               class="flex items-center justify-center"
               :to="localePath({path: '/dashboard/'})"
@@ -134,16 +139,14 @@ export default {
             </NuxtLink>
           </div>
 
-          <div class="items-center hidden md:ml-6 md:flex md:space-x-8">
+          <div class="border-2 items-center hidden md:ml-6 md:flex md:space-x-8">
+            <NuxtLink :to="localePath({path: '/dashboard/'})">
+              {{ $t('dashboard') }}
+            </NuxtLink>
+
             <ODropdown aria-role="list">
               <div slot="trigger">
                 {{ $t('all_affiliates') }}
-                <OIcon
-                  variant="success"
-                  icon="chevron-down"
-                  slot="trigger"
-                  role="button"
-                />
               </div>
               <ODropdownItem aria-role="listitem">Action</ODropdownItem>
               <ODropdownItem aria-role="listitem">Another action</ODropdownItem>
@@ -192,7 +195,7 @@ export default {
               :to="localePath({path: '/about/'})"
               id="about"
             >
-              {{ $t('home.about') }}
+              {{ $t('about') }}
             </NuxtLink>
 
             <NuxtLink
@@ -200,7 +203,7 @@ export default {
               :to="localePath({path: '/profile/'})"
               id="profile"
             >
-              {{ $t('home.my_profile') }}
+              {{ $t('my_profile') }}
             </NuxtLink>
 
             <NuxtLink
@@ -208,7 +211,7 @@ export default {
               :to="localePath({path: '/admin/'})"
               id="admin"
             >
-              {{ $t('home.admin') }}
+              {{ $t('admin') }}
             </NuxtLink>
 
             <!-- <NuxtLink to="/" class="navbar-item">Home</NuxtLink>
@@ -218,12 +221,12 @@ export default {
       <NuxtLink to="/about/" class="navbar-item">Pricing</NuxtLink> -->
 
             <button v-if="!isLoggedIn" @click="login">
-              {{ $t('home.login') }}
+              {{ $t('login') }}
             </button>
           </div>
         </div>
 
-        <div class="flex space-x-3 items-center">
+        <div class="border-2 flex space-x-3 items-center">
           <!-- <div class="flex-shrink-0">
             <OButton
               size="small"

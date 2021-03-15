@@ -39,7 +39,7 @@ export default defineComponent({
 })
 </script>
 <template>
-  <section class="p-8 prose">
+  <section>
     <h1>{{ volunteer.firstName }} {{ volunteer.lastName }}</h1>
   </section>
 </template>
