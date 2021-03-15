@@ -474,6 +474,8 @@ export default {
     scan: {
       dirs: ['./'],
       exclude: [
+        'node_modules',
+        '.git',
         '.nuxt/**/*',
         '*.template.html',
         // Any classes added in app.html (that have not previously been referenced) will need to be added to the safelist
