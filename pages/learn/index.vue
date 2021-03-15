@@ -1,6 +1,6 @@
 <script>
 /* eslint-disable vue/no-unused-components */
-import GuideItem from '~/components/GuideItem'
+import GuideItem from '~/components/guide/Item'
 
 export default {
   components: {

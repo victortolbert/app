@@ -11,7 +11,7 @@
       />
     </div>
     <div class="flex">
-      <DarkModeSwitch />
+      <!-- <DarkModeSwitch /> -->
       <a
         target="blank"
         class="transition duration-500 opacity-40 hover:opacity-100 text-main dark:text-main-dark"

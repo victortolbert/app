@@ -1,6 +1,6 @@
 <template>
   <article class="flex-1">
-    <BasePageHeading> {{ $t('resources') }} </BasePageHeading>
+    <PageHeading> {{ $t('resources') }} </PageHeading>
     <section class="p-8">
       <div class="space-x-3">
         <span

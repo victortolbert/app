@@ -8,7 +8,7 @@ export default {
   },
   computed: {
     iconPath() {
-      return require(`../assets/icons/${this.icon}.svg`)
+      return require(`../../assets/icons/${this.icon}.svg`)
     },
   },
 }

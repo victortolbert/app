@@ -1,6 +1,6 @@
 <template>
   <article class="flex-1">
-    <BasePageHeading> {{ $t('training') }} </BasePageHeading>
+    <PageHeading> {{ $t('training') }} </PageHeading>
 
     <section class="tabs">
       <div>

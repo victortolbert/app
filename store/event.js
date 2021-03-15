@@ -1,7 +1,12 @@
 import EventService from '~/services/EventService.js'
 
 export const state = () => ({
-  events: [],
+  events: [{
+    id: 1,
+    title: 'First Event',
+    time: '09:00',
+    date: '2021-03-22'
+  }],
   eventsTotal: 0,
   event: {},
   perPage: 3,
@@ -63,7 +68,7 @@ export const actions = {
       commit('SET_EVENT', event)
       return event
     } else {
-      return EventService.getEvent(id).then(response => {
+      return this.$eventRepository.show(id).then(response => {
         commit('SET_EVENT', response.data)
         return response.data
       })

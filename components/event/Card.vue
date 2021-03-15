@@ -10,7 +10,7 @@ export default defineComponent({
   },
   methods: {
     viewEvent() {
-      this.$router.push(this.localePath({path: `/event/${this.event.id}/`}))
+      this.$router.push(this.localePath({path: `/events/${this.event.id}/`}))
     },
   },
 })

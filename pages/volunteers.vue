@@ -1,6 +1,6 @@
 <template>
   <PageWrapper>
-    <BasePageHeading> {{ $t('volunteers') }} </BasePageHeading>
+    <PageHeading> {{ $t('volunteers') }} </PageHeading>
     <NuxtChild />
   </PageWrapper>
 </template>

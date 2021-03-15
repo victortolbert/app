@@ -90,7 +90,7 @@ export default defineComponent({
 
         <div class="hero-foot">
           <slot name="actions" />
-          <NavbarSecondary />
+          <PageNavbar />
         </div>
       </div>
     </header>

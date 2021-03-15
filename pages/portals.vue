@@ -1,16 +1,4 @@
 <!-- @vue-ignore -->
-<script>
-import DesignContainer from './DesignContainer'
-import DesignPanel from './DesignPanel'
-
-export default {
-  components: {
-    DesignContainer,
-    DesignPanel,
-  },
-}
-</script>
-
 <template>
   <DesignContainer>
     <DesignPanel color="green" text="Source">

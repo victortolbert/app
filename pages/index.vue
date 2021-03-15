@@ -30,7 +30,11 @@ export default Vue.extend({
 
 <template>
   <article class="w-full">
-    <BaseHero title="Title or headline" subtitle="Subtitle or tagline" />
+    <BaseHero title="Title or headline" subtitle="Subtitle or tagline">
+      <template #footer>
+        <PageNavbar />
+      </template>
+    </BaseHero>
 
     <img src="https://cominex.net/assets/img/affiliates/40/logo_large.png" />
 
