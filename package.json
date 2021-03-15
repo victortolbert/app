@@ -47,7 +47,7 @@
     "@vueuse/firebase": "4.4.1",
     "@vueuse/head": "0.5.1",
     "@vueuse/integrations": "4.4.1",
-    "@vueuse/motion": "1.4.3",
+    "@vueuse/motion": "1.4.4",
     "@vueuse/router": "4.4.1",
     "@vueuse/rxjs": "4.4.1",
     "@vueuse/sound": "1.1.7",

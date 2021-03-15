@@ -3565,10 +3565,10 @@
     qrcode "^1.4.4"
     universal-cookie "^4.0.4"
 
-"@vueuse/motion@1.4.3":
-  version "1.4.3"
-  resolved "https://registry.yarnpkg.com/@vueuse/motion/-/motion-1.4.3.tgz#05a4d06ea91837cb200ea6aa36a74e1bdfd9bea5"
-  integrity sha512-QOs387x+uwNxNh9EnFboO2eP87CUzMnX6zYFOgR3JSNMTbe4lpRtBbmJPThrzBaAmG/1bGDT+MReRKtgtYgP8w==
+"@vueuse/motion@1.4.4":
+  version "1.4.4"
+  resolved "https://registry.yarnpkg.com/@vueuse/motion/-/motion-1.4.4.tgz#c0c34ea6cb25b9937435f5be39a75ae0bef248ea"
+  integrity sha512-EEHvv+jAjpYgXHkygOOkEmzOZ75wGKbckd0HMjNOEtTw7sAii6d7kVnedtp7ydqRlUPA7GJrHqHyW5jKYUprxg==
   dependencies:
     "@vueuse/core" "^4.4.0"
     popmotion "^9.3.1"
