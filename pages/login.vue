@@ -1,7 +1,8 @@
-<!-- @vue-ignore -->
 <script>
-export default {
-  name: 'DemoView',
+import {defineComponent} from '@nuxtjs/composition-api'
+
+export default defineComponent({
+  name: 'LoginView',
   data() {
     return {}
   },
@@ -19,10 +20,11 @@ export default {
       type: 'error',
     },
   },
-}
+})
 </script>
+
 <template>
-  <div>
-    <o-button @click="loginError">Show Error</o-button>
-  </div>
+  <article>
+    <OButton @click="loginError">Show Error</OButton>
+  </article>
 </template>

@@ -1,6 +1,6 @@
 <template>
-  <main>
+  <article>
     Volunteers
     <nuxt-child />
-  </main>
+  </article>
 </template>

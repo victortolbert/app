@@ -9,5 +9,7 @@ export default {
 </script>
 
 <template>
-  <nuxt-content :document="page"></nuxt-content>
+  <article>
+    <NuxtContent :document="page" />
+  </article>
 </template>

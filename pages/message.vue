@@ -13,7 +13,7 @@ export default Vue.extend({
 </script>
 
 <template>
-  <div>
+  <article>
     {{ message }}
-  </div>
+  </article>
 </template>

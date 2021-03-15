@@ -116,14 +116,24 @@ export default {
       //   href:
       //     'https://fonts.googleapis.com/css2?family=Caveat:wght@400;430&family=Markazi+Text&display=swap',
       // },
+      {
+        rel: 'stylesheet',
+        href:
+          '//cdn.materialdesignicons.com/5.4.55/css/materialdesignicons.min.css',
+      },
     ],
-    // script: [
-    //   {
-    //     src:
-    //       'https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js',
-    //     defer: true,
-    //   },
-    // ],
+    script: [
+      // {
+      //   src:
+      //     'https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js',
+      //   defer: true,
+      // },
+      {
+        src:
+          '//cdn.materialdesignicons.com/5.4.55/css/materialdesignicons.min.css',
+        defer: true,
+      },
+    ],
     bodyAttrs: {
       // class: ['antialiased font-sans bg-gray-200'],
     },
@@ -233,19 +243,23 @@ export default {
   plugins: [
     '~/plugins/api',
     '~/plugins/demo',
+    '~/plugins/filters',
+    '~/plugins/fontawesome',
     '~/plugins/jam',
     '~/plugins/portal-vue',
     '~/plugins/repository',
     '~plugins/vue-api-query',
     '~plugins/vue-content-placeholders',
+    '~plugins/vue-float-label',
     '~plugins/vue-notifications',
+    '~plugins/vue-shortkey',
+    '~/plugins/vue-toastification.client',
 
     // '~/plugins/vue-chartkick.client',
     // '~plugins/vue-gtm',
     // '~plugins/vue-ray.client',
     // '~/plugins/vuelidate',
     // '~plugins/vue-introjs.client',
-    // '~/plugins/vue-toastification.client',
 
     // '~/plugins/auth.client',
     // '~/plugins/data-api',
@@ -260,7 +274,6 @@ export default {
     // '~/plugins/auth.client',
     // '~/plugins/data-api',
     // '~/plugins/devto',
-    // '~/plugins/fontawesome',
     // '~/plugins/i18n.client',
     // '~/plugins/init-categories',
     // '~/plugins/maps.client',
@@ -412,6 +425,12 @@ export default {
 
   oruga: {
     includeCss: 'vars',
+    // iconPack: 'mdi',
+    // iconPack: 'fas',
+    // iconComponent: 'FontAwesomeIcon',
+    // button: {
+    //   override: true,
+    // },
   },
 
   // PWA module configuration: https://go.nuxtjs.dev/pwa

@@ -29,7 +29,7 @@ export default {
 </script>
 
 <template>
-  <div>
+  <article>
     <ckeditor :editor="editor" v-model="editorData" :config="editorConfig" />
-  </div>
+  </article>
 </template>

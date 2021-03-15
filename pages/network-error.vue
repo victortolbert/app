@@ -1,5 +1,5 @@
 <template>
-  <div class="networkError">
+  <article class="networkError">
     <h1>Uh-Oh!</h1>
 
     <h3>
@@ -7,5 +7,5 @@
       breath and <a href="#" @click="$router.go(-1)">click here</a> to try
       again.
     </h3>
-  </div>
+  </article>
 </template>

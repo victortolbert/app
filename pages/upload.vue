@@ -1,5 +1,5 @@
 <template>
-  <section class="max-w-screen-sm p-8">
+  <article class="max-w-screen-sm p-8">
     <form>
       <input
         type="file"
@@ -47,7 +47,7 @@
         </button>
       </div>
     </form>
-  </section>
+  </article>
 </template>
 
 <script>

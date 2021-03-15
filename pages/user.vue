@@ -15,11 +15,11 @@ export default {
 </script>
 
 <template>
-  <div>
+  <article>
     <p>Loaded with <b>$api.users.show(1)</b> in SSR context</p>
 
     <p class="code">{{ user }}</p>
 
     <button @click="loadTwo">Load <b>$api.users.show(2)</b> from client</button>
-  </div>
+  </article>
 </template>

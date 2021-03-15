@@ -1,11 +1,3 @@
-<template>
-  <section>
-    <form class="flex flex-col items-center justify-center">
-      <FilePond allow-multiple="true" />
-    </form>
-  </section>
-</template>
-
 <script>
 import vueFilePond from 'vue-filepond'
 import 'filepond/dist/filepond.min.css'
@@ -49,3 +41,11 @@ export default {
   },
 }
 </script>
+
+<template>
+  <article>
+    <form class="flex flex-col items-center justify-center">
+      <FilePond allow-multiple="true" />
+    </form>
+  </article>
+</template>

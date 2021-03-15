@@ -1,5 +1,7 @@
-const colors = require('windicss/colors')
 const plugin = require('windicss/plugin')
+const defaultColors = require('windicss/colors')
+const customColors = require('./colors')
+const colors = {...defaultColors, ...customColors}
 
 module.exports = {
   darkMode: 'class', // or 'media'
@@ -16,6 +18,14 @@ module.exports = {
       blue: colors.lightBlue,
       red: colors.rose,
       pink: colors.fuchsia,
+
+      primary: colors.flamePea,
+      secondary: colors.pomegranate,
+
+      danger: colors.monza,
+      warning: colors['sea-buckthorn'],
+      success: colors.malachite,
+      info: colors.scooter,
     },
     fontFamily: {
       sans: ['Graphik', 'sans-serif'],
@@ -23,8 +33,8 @@ module.exports = {
     },
     extend: {
       spacing: {
-        '128': '32rem',
-        '144': '36rem',
+        128: '32rem',
+        144: '36rem',
       },
       borderRadius: {
         '4xl': '2rem',
@@ -38,7 +48,7 @@ module.exports = {
     },
   },
   plugins: [
-    plugin(function({addUtilities}) {
+    plugin(function ({addUtilities}) {
       const newUtilities = {
         '.skew-10deg': {
           transform: 'skewY(-10deg)',
@@ -49,7 +59,7 @@ module.exports = {
       }
       addUtilities(newUtilities)
     }),
-    plugin(function({addComponents}) {
+    plugin(function ({addComponents}) {
       const buttons = {
         '.btn': {
           padding: '.5rem 1rem',
@@ -73,7 +83,7 @@ module.exports = {
       }
       addComponents(buttons)
     }),
-    plugin(function({addDynamic, variants}) {
+    plugin(function ({addDynamic, variants}) {
       addDynamic(
         'skew',
         ({Utility, theme}) => {

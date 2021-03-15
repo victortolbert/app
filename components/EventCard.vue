@@ -1,6 +1,7 @@
-<!-- @vue-ignore -->
 <script>
-export default {
+import {defineComponent} from '@nuxtjs/composition-api'
+
+export default defineComponent({
   props: {
     event: {
       type: Object,
@@ -12,7 +13,7 @@ export default {
       this.$router.push(this.localePath({path: `/event/${this.event.id}/`}))
     },
   },
-}
+})
 </script>
 
 <template>

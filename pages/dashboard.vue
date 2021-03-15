@@ -19,10 +19,16 @@ export default defineComponent({
 </script>
 
 <template>
-  <main>
-    <color-mode />
-    <o-button @click="$sounds.back.play">Boop! 🎺</o-button>
-    <o-button @click="showToast">Show Toast</o-button>
-    {{ affiliate }}
-  </main>
+  <article>
+    <section>
+      <ColorMode />
+    </section>
+
+    <section>
+      <OButton @click="$sounds.back.play">Boop! 🎺</OButton>
+      <OButton @click="showToast">Show Toast</OButton>
+    </section>
+
+    <section>{{ affiliate }}</section>
+  </article>
 </template>

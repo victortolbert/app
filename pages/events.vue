@@ -44,19 +44,23 @@ export default defineComponent({
       totalEvents: 0,
     }
   },
-  // created() {
-  //   watchEffect(() => {
-  //     this.events = null
-  //     EventService.index('events')
-  //       .then(response => {
-  //         this.events = response.data
-  //         this.totalEvents = response.headers['x-total-count']
-  //       })
-  //       .catch(() => {
-  //         this.$router.push(this.localePath({path: '/network-error/'}))
-  //       })
-  //   })
-  // },
+  created() {
+    watchEffect(() => {
+      this.events = null
+      EventService.index('events')
+        .then(response => {
+          this.events = response.data
+          this.totalEvents = response.headers['x-total-count']
+        })
+        .catch(error => {
+          // this.$router.push(this.localePath({path: '/network-error/'}))
+          // if (error.response.status === 404) {
+          //    return this.$nuxt.error({ statusCode: 404, message: err.message })
+          // }
+          this.$nuxt.error({statusCode: 404, message: error.message})
+        })
+    })
+  },
   computed: {
     hasNextPage() {
       const totalPages = Math.ceil(this.totalEvents / 2)
@@ -68,7 +72,7 @@ export default defineComponent({
 </script>
 
 <template>
-  <main class="flex-1">
+  <article class="flex-1">
     <BaseHero>
       <h1 class="text-3xl">Events</h1>
       <template #footer>
@@ -101,5 +105,5 @@ export default defineComponent({
         </div> -->
       </div>
     </section>
-  </main>
+  </article>
 </template>

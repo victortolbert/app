@@ -40,7 +40,7 @@ export default {
 </script>
 
 <template>
-  <div>
+  <section>
     <div v-if="people.length">{{ people }}</div>
     <div v-else>
       <svg
@@ -64,5 +64,5 @@ export default {
         />
       </svg>
     </div>
-  </div>
+  </section>
 </template>

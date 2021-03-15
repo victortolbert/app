@@ -58,9 +58,9 @@ export default {
 </script>
 
 <template>
-  <ul class="flex">
+  <ul class="flex space-x-3">
     <li v-for="account in accounts" :key="`footer-social-${account.name}`">
-      <a class="social-media-item" :href="account.url">
+      <a class="social-media-item"  target="_blank" rel="noopener" :href="account.url">
         <span class="social-media-label">{{ account.name }}</span>
       </a>
     </li>

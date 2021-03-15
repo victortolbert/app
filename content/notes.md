@@ -1,3 +1,7 @@
+##
+
+## Vue API Query
+
 ```js
     const affiliates = await Affiliate.get() // all, $get, $all
     const affiliate = await Affiliate.first() // $first

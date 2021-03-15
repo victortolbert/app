@@ -1,7 +1,8 @@
 <script>
 import {getColors} from 'theme-colors'
+import {defineComponent} from '@nuxtjs/composition-api'
 
-export default {
+export default defineComponent({
   setup() {
     const colors = getColors('#090')
     return {
@@ -11,14 +12,19 @@ export default {
   mounted() {
     this.$jam('this.$jam plugin works in mounted...')
   },
-}
+})
 </script>
 
 <template>
   <div class="flex flex-col min-h-screen">
-    <AppNavbar />
+    <p v-if="$nuxt.isOffline" class="px-8 py-1 text-xs uppercase font-bold tracking-wider text-danger-50 bg-danger-500">
+      offline
+    </p>
     <AppToolbar />
+    <AppNavbar />
     <main class="flex-1">
+      <!-- save fetch calls on pages already visited -->
+      <!-- <nuxt keep-alive /> -->
       <nuxt />
     </main>
 
@@ -68,6 +74,14 @@ body {
 
 a {
   color: var(--color-primary);
+}
+
+::-moz-selection {
+  background: theme('colors.primary.100');
+}
+
+::selection {
+  background: theme('colors.primary.100');
 }
 
 /* body {

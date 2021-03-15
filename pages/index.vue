@@ -29,20 +29,23 @@ export default Vue.extend({
 </script>
 
 <template>
-  <div class="w-full">
+  <article class="w-full">
     <BaseHero title="Title or headline" subtitle="Subtitle or tagline" />
+
     <img src="https://cominex.net/assets/img/affiliates/40/logo_large.png" />
+
     <div class="buttons">
       <!-- <div v-intro="'The content of tooltip'">Hello</div> -->
-      <o-button variant="primary" @click="goToDocs">Documentation</o-button>
-      <o-button variant="info" @click="goToGithub">GitHub</o-button>
-      <o-tooltip position="bottom" multiline>
-        <o-button>Html Content</o-button>
+      <OButton variant="primary" @click="goToDocs">Documentation</OButton>
+      <OButton variant="info" @click="goToGithub">GitHub</OButton>
+
+      <OTooltip position="bottom" multiline>
+        <OButton>Html Content</OButton>
         <template v-slot:content>
           <b>Lorem ipsum dolor sit amet</b>, consectetur warning elit.
           <i>Fusce id fermentum quam</i>.
         </template>
-      </o-tooltip>
+      </OTooltip>
     </div>
-  </div>
+  </article>
 </template>

@@ -96,7 +96,15 @@ export default {
 </script>
 
 <template>
-  <nav :class="[affiliate.theme.nav.class, 'fixed top-0 z-40 w-full shadow']">
+  <nav
+    :class="[
+      affiliate.theme.nav.class,
+      {
+        'fixed top-0 z-40': false,
+      },
+      'w-full shadow',
+    ]"
+  >
     <div class="px-4 sm:px-6 lg:px-8">
       <div class="flex h-16 justify-between">
         <div class="flex">
@@ -122,6 +130,20 @@ export default {
           </div>
 
           <div class="items-center hidden md:ml-6 md:flex md:space-x-8">
+            <ODropdown aria-role="list">
+              <div slot="trigger">
+                {{ $t('all_affiliates') }}
+                <OIcon
+                  variant="success"
+                  icon="chevron-down"
+                  slot="trigger"
+                  role="button"
+                />
+              </div>
+              <ODropdownItem aria-role="listitem">Action</ODropdownItem>
+              <ODropdownItem aria-role="listitem">Another action</ODropdownItem>
+              <ODropdownItem aria-role="listitem">Something else</ODropdownItem>
+            </ODropdown>
             <!-- <BaseDropdownMenu
               :options="[
                 {id: 1, name: 'affiliates', label: 'List Affiliates'},
@@ -158,10 +180,6 @@ export default {
               :to="localePath({path: route.path})"
             >
               {{ route.label }}
-            </NuxtLink>
-
-            <NuxtLink :to="localePath({path: '/dashboard/'})" id="dashboard">
-              {{ $t('home.dashboard') }}
             </NuxtLink>
 
             <NuxtLink
@@ -254,7 +272,7 @@ export default {
       <div class="space-y-1 pt-2 pb-3">
         <!-- Current: "bg-primary-50 border-primary-500 text-primary-700", Default: "border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700" -->
         <NuxtLink
-          :to="{name: 'dashboard'}"
+          :to="localePath({path: '/dashboard/'})"
           class="font-medium bg-primary-50 border-l-4 border-primary-500 text-base py-2 pr-4 pl-3 text-primary-700 block sm:pl-5 sm:pr-6"
         >
           {{ $t('dashboard') }}
