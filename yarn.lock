@@ -14923,10 +14923,10 @@ vue-eslint-parser@^7.1.1, vue-eslint-parser@^7.6.0:
     esquery "^1.4.0"
     lodash "^4.17.15"
 
-vue-filepond@6.0.3:
-  version "6.0.3"
-  resolved "https://registry.yarnpkg.com/vue-filepond/-/vue-filepond-6.0.3.tgz#199871e7d91f4d6a6c4ba5a4e653c6ce9cafbfa9"
-  integrity sha512-m0wArAdpgzOOs19bWA6zzYlHAb2aK+igPoKPZGrzpgKiiELPKW7XZ2OBDXzk7rhpFLkedujVrMqwjPyZfmQTTQ==
+vue-filepond@7.0.0:
+  version "7.0.0"
+  resolved "https://registry.yarnpkg.com/vue-filepond/-/vue-filepond-7.0.0.tgz#49f17551be0b1b10f0b0671bce432662d3e22bb5"
+  integrity sha512-FUqJqwOxVsz5BMYeK0tSFUAo7JhpTx+TMRA5XkYAzA1HH3KnkUz5tzvjDH+Pc282DTH2BIZOJe435BwYxYuHWg==
 
 vue-float-label@^1.6.1:
   version "1.6.1"
