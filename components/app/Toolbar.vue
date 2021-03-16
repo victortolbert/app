@@ -1,7 +1,7 @@
 <template>
   <nav
-    class="flex w-full px-8 py-1 space-x-3 text-xs font-bold tracking-wider uppercase"
+    class="flex w-full px-8 py-1 space-x-3 text-xs font-bold tracking-wider uppercase text-white bg-black"
   >
-  Docs
+  <NuxtLink :to="localePath('/docs/')">Docs</NuxtLink>
 </nav>
 </template>

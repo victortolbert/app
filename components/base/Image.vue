@@ -31,7 +31,7 @@ export default {
     src() {
       return this.isUnsplash
         ? `https://images.unsplash.com/photo-${this.photoIds[1]}?ixlib=rb-1.2.1&amp;ixid=${this.ixids[1]}&amp;auto=format&amp;fit=${this.fit}&amp;w=${this.width}&amp;q=${this.quality}&amp;sat=-100`
-        : '/assets/img/background.jpg'
+        : 'https://cominex.net/assets/img/background.jpg'
     },
   },
 }

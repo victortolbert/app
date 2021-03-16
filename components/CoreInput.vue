@@ -1,3 +1,126 @@
+<script>
+import {TheMask} from 'vue-the-mask'
+
+export default {
+  name: 'CoreInput',
+  components: {TheMask},
+  props: {
+    config: {
+      type: Object,
+      default: () => ({
+        id: null,
+        name: null,
+        value: null,
+        label: 'Text input',
+        placeholder: null,
+        required: false,
+        validate: null,
+        mask: null,
+        helpText: null,
+        maxLength: 40,
+        showAsterisk: false,
+        hint: null,
+        leadingIcon: null,
+        trailingIcon: null,
+      }),
+    },
+    type: {
+      type: String,
+      default: 'text',
+      // validators
+    },
+    value: {
+      type: [String, Number],
+      default: '',
+    },
+    name: {
+      type: String,
+      default: null,
+    },
+    id: {
+      type: String,
+      default: null,
+    },
+    label: {
+      type: String,
+      default: '',
+    },
+    placeholder: {
+      type: String,
+      default: '',
+    },
+    required: {
+      type: Boolean,
+      default: false,
+    },
+    validate: {
+      type: Object,
+      default: null,
+    },
+    mask: {
+      type: String,
+      default: '',
+    },
+    helpText: {
+      type: String,
+      default: '',
+    },
+    maxlength: {
+      type: [String, Number],
+      default: null,
+    },
+    showAsterisk: {
+      type: Boolean,
+      default: true,
+    },
+    hint: {
+      type: String,
+      default: '',
+    },
+    leadingIcon: {
+      type: String,
+      default: null,
+    },
+    trailingIcon: {
+      type: String,
+      default: 'question-mark-circle',
+    },
+    prepended: {
+      type: String,
+      default: null,
+    },
+  },
+  computed: {
+    lang() {
+      return this.$store.state.lang
+    },
+    model: {
+      get() {
+        return this.value
+      },
+      set(value) {
+        this.validate && this.validate.$touch()
+        this.$emit('input', value)
+      },
+    },
+  },
+  watch: {
+    model(val) {
+      this.$emit('input', val)
+    },
+  },
+  methods: {
+    onFileSelected(event) {
+      // console.log(event)
+      this.$emit('change', event)
+      // this.selectedFile = event.target.files[0]
+      // this.form.fileName = this.selectedFile.name
+    },
+  },
+}
+</script>
+
+
 <template>
   <div>
     <input
@@ -193,128 +316,6 @@
     </p>
   </div>
 </template>
-
-<script>
-import {TheMask} from 'vue-the-mask'
-
-export default {
-  name: 'CoreInput',
-  components: {TheMask},
-  props: {
-    config: {
-      type: Object,
-      default: () => ({
-        id: null,
-        name: null,
-        value: null,
-        label: 'Text input',
-        placeholder: null,
-        required: false,
-        validate: null,
-        mask: null,
-        helpText: null,
-        maxLength: 40,
-        showAsterisk: false,
-        hint: null,
-        leadingIcon: null,
-        trailingIcon: null,
-      }),
-    },
-    type: {
-      type: String,
-      default: 'text',
-      // validators
-    },
-    value: {
-      type: [String, Number],
-      default: '',
-    },
-    name: {
-      type: String,
-      default: null,
-    },
-    id: {
-      type: String,
-      default: null,
-    },
-    label: {
-      type: String,
-      default: '',
-    },
-    placeholder: {
-      type: String,
-      default: '',
-    },
-    required: {
-      type: Boolean,
-      default: false,
-    },
-    validate: {
-      type: Object,
-      default: null,
-    },
-    mask: {
-      type: String,
-      default: '',
-    },
-    helpText: {
-      type: String,
-      default: '',
-    },
-    maxlength: {
-      type: [String, Number],
-      default: null,
-    },
-    showAsterisk: {
-      type: Boolean,
-      default: true,
-    },
-    hint: {
-      type: String,
-      default: '',
-    },
-    leadingIcon: {
-      type: String,
-      default: null,
-    },
-    trailingIcon: {
-      type: String,
-      default: 'question-mark-circle',
-    },
-    prepended: {
-      type: String,
-      default: null,
-    },
-  },
-  computed: {
-    lang() {
-      return this.$store.state.lang
-    },
-    model: {
-      get() {
-        return this.value
-      },
-      set(value) {
-        this.validate && this.validate.$touch()
-        this.$emit('input', value)
-      },
-    },
-  },
-  watch: {
-    model(val) {
-      this.$emit('input', val)
-    },
-  },
-  methods: {
-    onFileSelected(event) {
-      // console.log(event)
-      this.$emit('change', event)
-      // this.selectedFile = event.target.files[0]
-      // this.form.fileName = this.selectedFile.name
-    },
-  },
-}
-</script>
 
 <style>
 label {

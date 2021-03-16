@@ -1,15 +1,13 @@
-<script lang="ts">
-import Vue from 'vue'
-
-export default Vue.extend({
+<script>
+export default {
   data() {
-    const message: string = 'This is a message'
+    const message = 'This is a message'
 
     return {
       message,
     }
   },
-})
+}
 </script>
 
 <template>

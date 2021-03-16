@@ -9,14 +9,14 @@ export default {
     },
   },
   computed: {
-    ...mapGetters(['settings', 'githubUrls']),
+    ...mapGetters(['settings', 'githubURLs']),
     link() {
       if (!this.settings.github) {
         return
       }
 
       return [
-        this.githubUrls.repo,
+        this.githubURLs.repo,
         'edit',
         this.settings.defaultBranch,
         this.settings.defaultDir,

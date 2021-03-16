@@ -52,7 +52,7 @@ export default defineComponent({
       this.isLoading = true
       if (this._validateRecipe()) {
         setTimeout(() => {
-          this.$store.commit('addRecipe', this.recipe)
+          this.$store.commit('ADD_RECIPE', this.recipe)
           this.recipe = {
             title: '',
             author: '',

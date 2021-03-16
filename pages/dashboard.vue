@@ -1,17 +1,12 @@
-<!-- @vue-ignore -->
 <script>
 export default {
-  async asyncData({app}) {
+  async asyncData({$axios, app}) {
     return {
-      affiliate: await app.$affiliateRepository.show(45),
-      volunteer: await app.$personRepository.show(1),
-      // volunteers: await app.$personRepository.index(),
+      // affiliate: await app.$affiliateRepository.show(45),
+      // volunteer: await app.$personRepository.show(1),
+      volunteers: await app.$volunteerRepository.index(),
+      // resources: await $axios.$get('http://resources.ga-sps.org/resources/api')
     }
-  },
-  methods: {
-    showToast() {
-      this.$toast.success('shown toast')
-    },
   },
 }
 </script>
@@ -19,15 +14,10 @@ export default {
 <template>
   <PageWrapper>
     <SectionWrapper>
-      <!-- <ColorMode /> -->
-        <!-- <pre>{{ volunteers }}</pre> -->
-          <!-- <BaseDirectory :people="affiliates" /> -->
-      <div>
-        <OButton @click="$sounds.back.play">Boop! 🎺</OButton>
-        <OButton @click="showToast">Show Toast</OButton>
-      </div>
+      <BaseDirectory :people="volunteers" />
 
-      <div>{{ affiliate }}</div>
+      <!-- <DashboardCharts /> -->
+      {{ resources }}
     </SectionWrapper>
   </PageWrapper>
 </template>

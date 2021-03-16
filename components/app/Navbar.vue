@@ -1,14 +1,15 @@
 <script>
-import {ref, reactive} from '@nuxtjs/composition-api'
+import {ref, reactive, useRouter} from '@nuxtjs/composition-api'
 import useUser from '~/composables/useUser'
 
 export default {
   setup() {
     const {isLoggedIn, login} = useUser()
+    const router = useRouter()
     const isAdmin = ref(false)
     const affiliate = reactive({
       id: 1,
-      name: 'Ema',
+      name: 'booster',
       theme: {
         nav: {
           class: 'bg-white text-gray-800',
@@ -46,6 +47,7 @@ export default {
     const showVolunteerView = ref(false)
     const slug = affiliate.name.toLowerCase()
 
+
     return {
       isLoggedIn,
       login,
@@ -67,23 +69,13 @@ export default {
       default: () => ({
         name: 'Tatyana McNish',
         email: 'tatyana@ema.promiseserves.org',
-        avatarUrl: '/assets/img/people/tatyana.jpeg',
+        avatarURL: 'https://cominex.net/assets/img/people/tatyana.jpeg',
       }),
     },
   },
   computed: {
     routes() {
       return [
-        {
-          name: 'volunteers',
-          label: this.$t('volunteers'),
-          path: '/volunteers/',
-        },
-        {
-          name: 'advocates',
-          label: this.$t('advocates'),
-          path: '/advocates/',
-        },
         {
           name: 'resources',
           label: this.$t('resources'),
@@ -102,6 +94,12 @@ export default {
       ]
     },
   },
+  methods: {
+    show(path) {
+      // .push({ path: 'register', query: { plan: 'private' } })
+      this.$router.push(this.localePath(`/${path}/`))
+    },
+  },
 }
 </script>
 
@@ -118,7 +116,7 @@ export default {
     <div class="px-4 sm:px-6 lg:px-8">
       <div class="flex h-16 justify-between">
         <div class="flex">
-          <div class="border-2 flex mr-2 -ml-2 items-center md:hidden">
+          <div class="flex mr-2 -ml-2 items-center md:hidden">
             <!-- Mobile menu button -->
             <button
               class="rounded-md p-2 text-gray-400 inline-flex items-center justify-center hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary-500"
@@ -130,16 +128,16 @@ export default {
             </button>
           </div>
 
-          <div class="border-2 flex flex-shrink-0 items-center">
+          <div class="flex flex-shrink-0 items-center">
             <NuxtLink
               class="flex items-center justify-center"
-              :to="localePath({path: '/dashboard/'})"
+              :to="localePath({path: '/'})"
             >
               <BaseLogo class="text-primary-500" :name="slug" />
             </NuxtLink>
           </div>
 
-          <div class="border-2 items-center hidden md:ml-6 md:flex md:space-x-8">
+          <div class="items-center hidden md:ml-6 md:flex md:space-x-8">
             <NuxtLink :to="localePath({path: '/dashboard/'})">
               {{ $t('dashboard') }}
             </NuxtLink>
@@ -148,10 +146,47 @@ export default {
               <div slot="trigger">
                 {{ $t('all_affiliates') }}
               </div>
-              <ODropdownItem aria-role="listitem">Action</ODropdownItem>
-              <ODropdownItem aria-role="listitem">Another action</ODropdownItem>
-              <ODropdownItem aria-role="listitem">Something else</ODropdownItem>
+              <ODropdownItem @click="show('affiliates')" aria-role="listitem">List Affiliates</ODropdownItem>
+              <ODropdownItem @click="show('regions')"  aria-role="listitem">Regions</ODropdownItem>
+              <ODropdownItem @click="show('staff')"  aria-role="listitem">Staff</ODropdownItem>
+              <ODropdownItem @click="show('agencies')"  aria-role="listitem">Agencies</ODropdownItem>
+              <ODropdownItem @click="show('churches')"  aria-role="listitem">Churches</ODropdownItem>
+              <ODropdownItem @click="show('import')"  aria-role="listitem">Import Data</ODropdownItem>
             </ODropdown>
+
+            <ODropdown aria-role="list">
+              <div slot="trigger">
+                Affiliate
+              </div>
+              <ODropdownItem @click="show('organizations')" aria-role="listitem">Edit Organization</ODropdownItem>
+              <ODropdownItem @click="show('regions')"  aria-role="listitem">Regions</ODropdownItem>
+              <ODropdownItem @click="show('staff')"  aria-role="listitem">Staff</ODropdownItem>
+              <ODropdownItem @click="show('agencies')"  aria-role="listitem">Agencies</ODropdownItem>
+              <ODropdownItem @click="show('churches')"  aria-role="listitem">Churches</ODropdownItem>
+              <ODropdownItem @click="show('reports')"  aria-role="listitem">Reports</ODropdownItem>
+              <ODropdownItem @click="show('import')"  aria-role="listitem">Import Data</ODropdownItem>
+            </ODropdown>
+
+            <ODropdown aria-role="list">
+              <div slot="trigger">
+                People
+              </div>
+              <ODropdownItem @click="show('advocates')" aria-role="listitem">Advocates</ODropdownItem>
+              <ODropdownItem @click="show('volunteers')"  aria-role="listitem">Volunteers</ODropdownItem>
+              <ODropdownItem @click="show('families')"  aria-role="listitem">Families</ODropdownItem>
+              <ODropdownItem @click="show('communities')"  aria-role="listitem">Communities</ODropdownItem>
+              <ODropdownItem @click="show('map')"  aria-role="listitem">People Map</ODropdownItem>
+            </ODropdown>
+
+            <ODropdown aria-role="list">
+              <div slot="trigger">
+                Events & Needs
+              </div>
+              <ODropdownItem @click="show('calendar')" aria-role="listitem">Calendar</ODropdownItem>
+              <ODropdownItem @click="show('events')"  aria-role="listitem">FAM Events</ODropdownItem>
+              <ODropdownItem @click="show('requests')"  aria-role="listitem">Care Requests</ODropdownItem>
+            </ODropdown>
+
             <!-- <BaseDropdownMenu
               :options="[
                 {id: 1, name: 'affiliates', label: 'List Affiliates'},
@@ -214,19 +249,25 @@ export default {
               {{ $t('admin') }}
             </NuxtLink>
 
-            <!-- <NuxtLink to="/" class="navbar-item">Home</NuxtLink>
-      <NuxtLink to="/learn/" class="navbar-item">Demos</NuxtLink>
-      <NuxtLink to="/blog/" class="navbar-item">Docs</NuxtLink>
-      <NuxtLink to="/uses/" class="navbar-item">Support</NuxtLink>
-      <NuxtLink to="/about/" class="navbar-item">Pricing</NuxtLink> -->
+            <!--
+              <NuxtLink to="/" class="navbar-item">Home</NuxtLink>
+              <NuxtLink to="/learn/" class="navbar-item">Demos</NuxtLink>
+              <NuxtLink to="/blog/" class="navbar-item">Docs</NuxtLink>
+              <NuxtLink to="/uses/" class="navbar-item">Support</NuxtLink>
+              <NuxtLink to="/about/" class="navbar-item">Pricing</NuxtLink>
+            -->
 
-            <button v-if="!isLoggedIn" @click="login">
+            <!-- <button v-if="!isLoggedIn" @click="login">
               {{ $t('login') }}
-            </button>
+            </button> -->
+
+            <NuxtLink :to="localePath('/login/')">
+              {{ $t('login')}}
+            </NuxtLink>
           </div>
         </div>
 
-        <div class="border-2 flex space-x-3 items-center">
+        <div class="flex space-x-3 items-center">
           <!-- <div class="flex-shrink-0">
             <OButton
               size="small"
@@ -293,7 +334,7 @@ export default {
             <img
               style="filter: grayscale(1)"
               class="rounded-full h-10 w-10"
-              :src="user.avatarUrl"
+              :src="user.avatarURL"
               :alt="user.name"
             />
           </div>
@@ -775,7 +816,7 @@ export default {
                   <!-- Replace with your content -->
                   <div class="px-4 inset-0 absolute sm:px-6">
                     <div
-                      class="border-dashed h-full border-2 border-gray-200"
+                      class="border-dashed h-full border-gray-200"
                       aria-hidden="true"
                     />
                   </div>

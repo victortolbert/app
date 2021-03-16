@@ -1,3 +1,46 @@
+<script>
+import {defineComponent} from '@nuxtjs/composition-api'
+import useMessages from '~/composables/useMessages'
+
+export default defineComponent({
+  props: {
+    data: {
+      type: Array,
+      default: () => [],
+    },
+  },
+  setup(props, context) {
+    const {
+      tags,
+      checked,
+      checkAll,
+      updateCheckAll,
+      isCheckAll,
+      truncate,
+      formatDate,
+      removeMessage,
+      filteredMessages,
+      removeMessages,
+      markAllRead,
+    } = useMessages()
+
+    return {
+      tags,
+      checked,
+      checkAll,
+      updateCheckAll,
+      isCheckAll,
+      truncate,
+      formatDate,
+      removeMessage,
+      filteredMessages,
+      removeMessages,
+      markAllRead,
+    }
+  },
+})
+</script>
+
 <template>
   <div>
     <div
@@ -61,7 +104,7 @@
               @change="updateCheckAll"
             />
 
-            <NuxtLink class="pl-2" :to="`/messages/${message.id}/`">
+            <NuxtLink class="pl-2" :to="localePath(`/messages/${message.id}/`)">
               {{ message.sender }}
             </NuxtLink>
           </td>
@@ -75,19 +118,19 @@
             >
               {{ tag }}
             </span>
-            <NuxtLink class="font-bold" :to="`/messages/${message.id}/`">
+            <NuxtLink class="font-bold" :to="localePath(`/messages/${message.id}/`)">
               {{ message.subject }}
             </NuxtLink>
             <NuxtLink
               class="hidden md:inline-block"
-              :to="`/messages/${message.id}/`"
+              :to="localePath(`/messages/${message.id}/`)"
             >
               {{ truncate(message.body) }}
             </NuxtLink>
           </td>
 
           <td class="py-2 text-sm text-right whitespace-no-wrap align-top">
-            <NuxtLink :to="`/messages/${message.id}/`">
+            <NuxtLink :to="localePath(`/messages/${message.id}/`)">
               {{ formatDate(message.date) }}
             </NuxtLink>
           </td>
@@ -115,46 +158,3 @@
     </table>
   </div>
 </template>
-
-<script>
-import {defineComponent} from '@nuxtjs/composition-api'
-import useMessages from '~/composables/useMessages'
-
-export default defineComponent({
-  props: {
-    data: {
-      type: Array,
-      default: () => [],
-    },
-  },
-  setup(props, context) {
-    const {
-      tags,
-      checked,
-      checkAll,
-      updateCheckAll,
-      isCheckAll,
-      truncate,
-      formatDate,
-      removeMessage,
-      filteredMessages,
-      removeMessages,
-      markAllRead,
-    } = useMessages()
-
-    return {
-      tags,
-      checked,
-      checkAll,
-      updateCheckAll,
-      isCheckAll,
-      truncate,
-      formatDate,
-      removeMessage,
-      filteredMessages,
-      removeMessages,
-      markAllRead,
-    }
-  },
-})
-</script>

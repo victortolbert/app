@@ -44,6 +44,11 @@ export default {
     FullCalendar,
     Multiselect,
   },
+  async asyncData({$axios}) {
+    return {
+      resources: await $axios.$get('http://resources.ga-sps.org/resources/api')
+    }
+  },
   beforeRouteLeave (to, from , next) {
     // if not vue router
     // window.onbeforeunload = () => 'Are you sure you want to leave?'
@@ -145,7 +150,7 @@ export default {
     >
     </BaseHero>
 
-
+    {{ resources }}
 
     <KeyboardShortcut />
 

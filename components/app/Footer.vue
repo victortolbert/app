@@ -14,6 +14,6 @@ export default {
     <SocialMediaBar />
     <p>© Victor Tolbert {{ currentYear }}</p>
     Terms
-    Privacy
+    <PrivacyPolicyButton />
   </footer>
 </template>

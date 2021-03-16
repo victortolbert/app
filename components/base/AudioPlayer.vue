@@ -1,14 +1,3 @@
-<template>
-  <div>
-    <!-- https://www.w3schools.com/tags/ref_av_dom.asp -->
-    <!-- https://github.com/muhammadatt/vue-audio-player -->
-    <audio ref="player" id="audio-player">
-      <source :src="url" type="audio/mpeg" />
-    </audio>
-    <button @click="toggleAudio()">Play/Pause</button>
-  </div>
-</template>
-
 <script>
 //import { mapState } from 'vuex'
 export default {
@@ -168,6 +157,18 @@ export default {
   },
 }
 </script>
+
+<template>
+  <div>
+    <!-- https://www.w3schools.com/tags/ref_av_dom.asp -->
+    <!-- https://github.com/muhammadatt/vue-audio-player -->
+    <audio ref="player" id="audio-player">
+      <source :src="url" type="audio/mpeg" />
+    </audio>
+    <button @click="toggleAudio()">Play/Pause</button>
+  </div>
+</template>
+
 
 <style>
 /* Play/Pause Button */

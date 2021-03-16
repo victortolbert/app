@@ -1,18 +1,3 @@
-<template>
-  <div
-    class="flex items-center justify-center w-full mx-auto mb-6 overflow-hidden text-3xl text-center text-white bg-black rounded-md codesandbox"
-  >
-    <iframe
-      v-if="isIntersecting && src"
-      :src="src"
-      title="CodeSandbox editor"
-      sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"
-      class="w-full overflow-hidden"
-    />
-    <span v-else>Loading CodeSandbox...</span>
-  </div>
-</template>
-
 <script>
 export default {
   props: {
@@ -51,6 +36,21 @@ export default {
   },
 }
 </script>
+
+<template>
+  <div
+    class="flex items-center justify-center w-full mx-auto mb-6 overflow-hidden text-3xl text-center text-white bg-black rounded-md codesandbox"
+  >
+    <iframe
+      v-if="isIntersecting && src"
+      :src="src"
+      title="CodeSandbox editor"
+      sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"
+      class="w-full overflow-hidden"
+    />
+    <span v-else>Loading CodeSandbox...</span>
+  </div>
+</template>
 
 <style scoped>
 .codesandbox,

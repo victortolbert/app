@@ -20,7 +20,7 @@ export default defineComponent({
       type: Boolean,
       default: false,
     },
-    coverUrl: {
+    coverURL: {
       type: String,
       default: '',
     },
@@ -34,9 +34,9 @@ export default defineComponent({
     const hasTitleSlot = computed(() => !!slots.title)
     const hasSubtitleSlot = computed(() => !!slots.subtitle)
     const hasFooterSlot = computed(() => !!slots.footer)
-    const affiliate = reactive({coverUrl: '/assets/img/people/victor.jpeg'})
+    const affiliate = reactive({coverURL: 'https://cominex.net/assets/img/people/victor.jpeg'})
     const backgroundImage = computed(() => {
-      return props.coverUrl ? `url(${props.coverUrl})` : 'none'
+      return props.coverURL ? `url(${props.coverURL})` : 'none'
     })
 
     return {

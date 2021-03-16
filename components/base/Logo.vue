@@ -37,7 +37,7 @@ export default {
 
     <!-- AutoTrader -->
     <svg
-      v-if="name === 'auto_trader_com'"
+      v-if="['autotrader', 'auto_trader_com'].includes(name)"
       class="w-auto h-5"
       width="382"
       height="44"
@@ -128,7 +128,7 @@ export default {
 
     <!-- Coca Cola -->
     <svg
-      v-if="name === 'coca_cola'"
+      v-if="['coca_cola', 'cocacola'].includes(name)"
       width="134"
       height="44"
       viewBox="0 0 134 44"
@@ -214,7 +214,7 @@ export default {
     <!-- Ēma 2-->
     <div
       v-if="name === 'ema2'"
-      class="flex items-center space-x-2 font-medium text-gray-500"
+      class="flex items-center space-x-2 font-medium"
     >
       <svg
         width="44"
@@ -526,7 +526,7 @@ export default {
     <img
       v-if="name === 'prospectus'"
       class="w-auto h-11"
-      src="/assets/img/logo_prospectus.png"
+      src="https://cominex.net/assets/img/logos/prospectus.png"
     />
 
     <!-- SalesLoft Mark -->

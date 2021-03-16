@@ -1,10 +1,3 @@
-<template>
-  <button ref="copy" class="copy">
-    <IconClipboardCheck v-if="state === 'copied'" class="w-5 h-5" />
-    <IconClipboardCopy v-else class="w-5 h-5" />
-  </button>
-</template>
-
 <script>
 import Clipboard from 'clipboard'
 
@@ -31,3 +24,10 @@ export default {
   },
 }
 </script>
+
+<template>
+  <button ref="copy" class="copy">
+    <IconClipboardCheck v-if="state === 'copied'" class="w-5 h-5" />
+    <IconClipboardCopy v-else class="w-5 h-5" />
+  </button>
+</template>

@@ -1,8 +1,5 @@
-<!-- @vue-ignore -->
-<script lang="ts">
-import Vue from 'vue'
-
-export default Vue.extend({
+<script>
+export default {
   asyncData({$demo}) {
     $demo('$demo plugin works in asyncData')
   },
@@ -25,7 +22,7 @@ export default Vue.extend({
       console.log('https://github.com/oruga-ui/oruga')
     },
   },
-})
+}
 </script>
 
 <template>

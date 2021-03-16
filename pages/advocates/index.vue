@@ -3,22 +3,22 @@
 export default {
   data() {
     return {
-      people: [],
+      advocates: [],
     }
   },
   async asyncData({app}) {
     return {
-      people: await app.$personRepository.index(),
+      advocates: await app.$advocateRepository.index(),
     }
   },
   computed: {
-    slicedPeople() {
-      return this.people.slice(-20)
+    slicedAdvocates() {
+      return this.advocates.slice(-20)
     },
   },
   methods: {
-    async createPerson() {
-      const result = await this.$personRepository.create({
+    async createAdvocate() {
+      const result = await this.$advocateRepository.create({
         firstName: 'Victor',
         lastName: 'Tolbert',
         email: 'victor@example.com',
@@ -28,7 +28,7 @@ export default {
       })
       console.log(result)
       // Fix ids to be unique
-      this.people.push({...result, id: Number(this.people.slice(-1)[0].id) + 1})
+      this.advocates.push({...result, id: Number(this.advocates.slice(-1)[0].id) + 1})
     },
   },
 }
@@ -37,17 +37,17 @@ export default {
 <template>
   <SectionWrapper>
       <ul>
-        <li :key="id" v-for="{id, firstName} in slicedPeople">
-          <nuxt-link v-if="firstName !== 'foo'" :to="`/people/${id}`">
+        <li :key="id" v-for="{id, firstName} in slicedAdvocates">
+          <NuxtLink v-if="firstName !== 'foo'" :to="localePath(`/advocates/${id}`)">
             {{ firstName }}
-          </nuxt-link>
+          </NuxtLink>
           <p v-else>{{ firstName }}</p>
         </li>
       </ul>
 
       <div class="links">
-        <button @click="createPerson" class="button--grey">
-          Create a person (send POST request)
+        <button @click="createAdvocate" class="button--grey">
+          Create a advocate (send POST request)
         </button>
       </div>
   </SectionWrapper>

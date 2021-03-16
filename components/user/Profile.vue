@@ -1,6 +1,6 @@
 <!-- @vue-ignore -->
 <script>
-import {defineComponent, computed, ref} from '@vue/composition-api'
+import {defineComponent, computed, ref} from '@nuxtjs/composition-api'
 
 export default defineComponent({
   props: {

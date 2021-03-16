@@ -1,35 +1,66 @@
 <!-- @vue-ignore -->
 <script>
 import {
-  computed,
+  // computed,
   defineComponent,
-  useMeta,
-  useRoute,
+  // useMeta,
+  // useRoute,
 } from '@nuxtjs/composition-api'
-import {usePerson} from '~/composables/usePeople'
+
+// import {useAdvocate} from '~/composables/useAdvocate'
 
 export default defineComponent({
   head: {},
-  setup() {
-    const route = useRoute()
-    const id = computed(() => route.value.params.id)
-    console.log(id)
-    const {person, fetchPerson, onFetchPerson} = usePerson(id.value)
-    const {title} = useMeta()
+  // setup() {
+  //   const route = useRoute()
+  //   const id = computed(() => route.value.params.id)
+  //   console.log(id)
+  //   const {advocate, fetchAdvocate, onFetchAdvocate} = useAdvocate(id.value)
+  //   const {title} = useMeta()
 
-    fetchPerson()
+  //   fetchAdvocate()
 
-    onFetchPerson(async () => {
-      title.value = person.value.firstName
-    })
+  //   onFetchAdvocate(async () => {
+  //     title.value = advocate.value.firstName
+  //   })
 
-    return {
-      person,
+  //   return {
+  //     advocate,
+  //   }
+  // },
+
+  async asyncData(context) {
+    const id = context.params.id
+    const i18n = context.app.$i18n
+    const query = context.query
+    const config = context.$config
+
+    console.log({id, i18n, query, config})
+
+    // Server-side
+    if (process.server) {
+      const {req, res, beforeNuxtRender} = context
+    }
+    // Client-side
+    if (process.client) {
+      const {from, nuxtState} = context
+    }
+
+    try {
+      // Using the nuxtjs/http module here exposed via context.app
+      const advocate = await context.app.$axios.$get(
+        `https://api.victortolbert.com/advocates/${id}`,
+      )
+      return {advocate}
+    } catch (e) {
+      context.error(e) // Show the nuxt error page with the thrown error
     }
   },
 })
 </script>
 
 <template>
-  <p>{{ person }}</p>
+  <section>
+    <h1>{{ advocate.firstName }} {{ advocate.lastName }}</h1>
+  </section>
 </template>

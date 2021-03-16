@@ -1,55 +1,3 @@
-<template>
-  <article class="max-w-screen-sm p-8">
-    <form>
-      <input
-        type="file"
-        style="display: none"
-        ref="file"
-        @change="onFileSelected"
-      />
-
-      <CoreInput
-        v-if="selectedFile"
-        v-model.trim="form.fileName"
-        :label="$t('file_name')"
-        :placeholder="$t('file_name_placeholder')"
-      />
-
-      <div class="flex items-center mt-2 space-x-2">
-        <button
-          @click="$refs.file.click()"
-          type="button"
-          class="inline-flex items-center px-6 py-3 text-base font-medium border border-transparent rounded-md shadow-sm text-primary-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500"
-        >
-          {{ $t('select_file') }}
-        </button>
-
-        <button
-          @click="onUpload"
-          v-if="selectedFile"
-          type="button"
-          class="inline-flex items-center px-6 py-3 text-base font-medium text-white border border-transparent rounded-md shadow-sm bg-primary-600 hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500"
-        >
-          Upload
-          <svg
-            class="w-5 h-5 ml-3 -mr-1"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 20 20"
-            fill="currentColor"
-            aria-hidden="true"
-          >
-            <path
-              fill-rule="evenodd"
-              d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM6.293 6.707a1 1 0 010-1.414l3-3a1 1 0 011.414 0l3 3a1 1 0 01-1.414 1.414L11 5.414V13a1 1 0 11-2 0V5.414L7.707 6.707a1 1 0 01-1.414 0z"
-              clip-rule="evenodd"
-            />
-          </svg>
-        </button>
-      </div>
-    </form>
-  </article>
-</template>
-
 <script>
 import AWS from 'aws-sdk'
 import required from 'vuelidate/lib/validators/required'
@@ -293,3 +241,56 @@ export default {
   },
 }
 </script>
+
+
+<template>
+  <article class="max-w-screen-sm p-8">
+    <form>
+      <input
+        type="file"
+        style="display: none"
+        ref="file"
+        @change="onFileSelected"
+      />
+
+      <CoreInput
+        v-if="selectedFile"
+        v-model.trim="form.fileName"
+        :label="$t('file_name')"
+        :placeholder="$t('file_name_placeholder')"
+      />
+
+      <div class="flex items-center mt-2 space-x-2">
+        <button
+          @click="$refs.file.click()"
+          type="button"
+          class="inline-flex items-center px-6 py-3 text-base font-medium border border-transparent rounded-md shadow-sm text-primary-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500"
+        >
+          {{ $t('select_file') }}
+        </button>
+
+        <button
+          @click="onUpload"
+          v-if="selectedFile"
+          type="button"
+          class="inline-flex items-center px-6 py-3 text-base font-medium text-white border border-transparent rounded-md shadow-sm bg-primary-600 hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500"
+        >
+          Upload
+          <svg
+            class="w-5 h-5 ml-3 -mr-1"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 20 20"
+            fill="currentColor"
+            aria-hidden="true"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM6.293 6.707a1 1 0 010-1.414l3-3a1 1 0 011.414 0l3 3a1 1 0 01-1.414 1.414L11 5.414V13a1 1 0 11-2 0V5.414L7.707 6.707a1 1 0 01-1.414 0z"
+              clip-rule="evenodd"
+            />
+          </svg>
+        </button>
+      </div>
+    </form>
+  </article>
+</template>

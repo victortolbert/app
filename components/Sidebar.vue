@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="flex flex-col w-64 pt-5 pb-4 border-r border-gray-200">
-      <NuxtLink to="/messages/" class="brand" data-testid="home-link">
+      <NuxtLink :to="localePath('/messages/')" class="brand" data-testid="home-link">
         <LogoSalesLoft class="w-auto px-6 h-11" />
       </NuxtLink>
 

@@ -1,9 +1,3 @@
-<template>
-  <div class="code-block" :class="[active && 'active']">
-    <slot />
-  </div>
-</template>
-
 <script>
 export default {
   props: {
@@ -18,6 +12,12 @@ export default {
   },
 }
 </script>
+
+<template>
+  <div class="code-block" :class="[active && 'active']">
+    <slot />
+  </div>
+</template>
 
 <style scoped>
 .code-block {

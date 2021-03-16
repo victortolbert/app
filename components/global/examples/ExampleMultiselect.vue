@@ -1,7 +1,3 @@
-<template>
-  <Multiselect v-model="value" :options="options"></Multiselect>
-</template>
-
 <script>
 import Multiselect from 'vue-multiselect'
 export default {
@@ -19,6 +15,10 @@ export default {
   },
 }
 </script>
+
+<template>
+  <Multiselect v-model="value" :options="options" />
+</template>
 
 <style>
 /* purgecss start ignore */

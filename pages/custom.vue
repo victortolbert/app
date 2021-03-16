@@ -1,47 +1,3 @@
-<template>
-  <article>
-    <div class="block">
-      <OIcon pack="ionicons" icon="person" size="small" />
-      <OIcon pack="ionicons" icon="home" size="small" />
-      <OIcon pack="ionicons" icon="apps" size="small" />
-    </div>
-
-    <div class="block">
-      <OIcon pack="ionicons" icon="person" />
-      <OIcon pack="ionicons" icon="home" />
-      <OIcon pack="ionicons" icon="apps" />
-    </div>
-
-    <div class="block">
-      <OIcon pack="ionicons" icon="person" size="medium" />
-      <OIcon pack="ionicons" icon="home" size="medium" />
-      <OIcon pack="ionicons" icon="apps" size="medium" />
-    </div>
-
-    <div class="block">
-      <OIcon pack="ionicons" icon="person" size="large" variant="success" />
-
-      <OIcon pack="ionicons" icon="home" size="large" variant="info" />
-      <OIcon pack="ionicons" icon="apps" size="large" variant="primary" />
-    </div>
-
-    <OButton variant="primary">
-      <OIcon pack="ionicons" icon="checkmark" />
-      <span>Finish</span>
-    </OButton>
-
-    <OButton variant="warning">
-      <OIcon pack="ionicons" icon="checkmark" />
-      <span>Finish</span>
-    </OButton>
-
-    <OButton variant="warning">
-      <OIcon spin pack="ionicons" icon="refresh" />
-      <span>Refresh</span>
-    </OButton>
-  </article>
-</template>
-
 <script>
 const customIconConfig = {
   iconComponent: undefined,
@@ -94,6 +50,52 @@ export default {
   },
 }
 </script>
+
+<template>
+  <article>
+    <div class="block">
+      <OIcon pack="ionicons" icon="person" size="small" />
+      <OIcon pack="ionicons" icon="home" size="small" />
+      <OIcon pack="ionicons" icon="apps" size="small" />
+    </div>
+
+    <div class="block">
+      <OIcon pack="ionicons" icon="person" />
+      <OIcon pack="ionicons" icon="home" />
+      <OIcon pack="ionicons" icon="apps" />
+    </div>
+
+    <div class="block">
+      <OIcon pack="ionicons" icon="person" size="medium" />
+      <OIcon pack="ionicons" icon="home" size="medium" />
+      <OIcon pack="ionicons" icon="apps" size="medium" />
+    </div>
+
+    <div class="block">
+      <OIcon pack="ionicons" icon="person" size="large" variant="success" />
+
+      <OIcon pack="ionicons" icon="home" size="large" variant="info" />
+      <OIcon pack="ionicons" icon="apps" size="large" variant="primary" />
+    </div>
+
+    <OButton variant="primary">
+      <OIcon pack="ionicons" icon="checkmark" />
+      <span>Finish</span>
+    </OButton>
+
+    <OButton variant="warning">
+      <OIcon pack="ionicons" icon="checkmark" />
+      <span>Finish</span>
+    </OButton>
+
+    <OButton variant="warning">
+      <OIcon spin pack="ionicons" icon="refresh" />
+      <span>Refresh</span>
+    </OButton>
+  </article>
+</template>
+
+
 
 <style>
 @import 'https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css';

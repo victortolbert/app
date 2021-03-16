@@ -3,24 +3,24 @@
 export default {
   data() {
     return {
-      people: [],
+      volunteers: [],
     }
   },
   async asyncData({app}) {
     return {
-      people: await app.$personRepository.index(),
+      volunteers: await app.$volunteerRepository.index(),
     }
   },
   computed: {
     slicedPeople() {
       const size = 10;
-      return this.people.slice(0, size)
-      // return this.people.slice(-size)
+      return this.volunteers.slice(0, size)
+      // return this.volunteers.slice(-size)
     },
   },
   methods: {
     async createPerson() {
-      const result = await this.$personRepository.create({
+      const result = await this.$volunteerRepository.create({
         firstName: 'Victor',
         lastName: 'Tolbert',
         email: 'victor@example.com',
@@ -30,25 +30,25 @@ export default {
       })
       console.log(result)
       // Fix ids to be unique
-      this.people.push({...result, id: Number(this.people.slice(-1)[0].id) + 1})
+      this.volunteers.push({...result, id: Number(this.volunteers.slice(-1)[0].id) + 1})
     },
   },
 }
 </script>
 <template>
   <SectionWrapper>
-    <ul v-if="people.length">
-      <li v-for="person in slicedPeople" :key="person.id">
+    <ul v-if="volunteers.length">
+      <li v-for="volunteer in slicedPeople" :key="volunteer.id">
         <NuxtLink
           :to="localePath({
-            path: `/volunteers/${person.id}/`,
+            path: `/volunteers/${volunteer.id}/`,
             query: {
               lang: 'en',
               plan: 'private'
             }
           })"
         >
-          {{person.firstName}}
+          {{volunteer.firstName}}
         </NuxtLink>
       </li>
     </ul>

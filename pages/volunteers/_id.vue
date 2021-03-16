@@ -4,7 +4,7 @@ import {defineComponent} from '@nuxtjs/composition-api'
 export default defineComponent({
   // async asyncData({params, $axios}) {
   //   const volunteer = await $axios.$get(
-  //     `https://api.victortolbert.com/people/${params.id}`,
+  //     `https://api.victortolbert.com/volunteers/${params.id}`,
   //   )
   //   return {volunteer}
   // },
@@ -29,7 +29,7 @@ export default defineComponent({
     try {
       // Using the nuxtjs/http module here exposed via context.app
       const volunteer = await context.app.$axios.$get(
-        `https://api.victortolbert.com/people/${id}`,
+        `https://api.victortolbert.com/volunteers/${id}`,
       )
       return {volunteer}
     } catch (e) {

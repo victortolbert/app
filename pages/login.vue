@@ -1,22 +1,30 @@
 
 <script>
 import AWS from 'aws-sdk'
-import {defineComponent} from '@nuxtjs/composition-api'
+import {ref, reactive, defineComponent} from '@nuxtjs/composition-api'
+import useUser from '~/composables/useUser'
 
 export default defineComponent({
-    name: 'LoginView',
+  name: 'LoginView',
   // auth: 'guest',
   layout: 'plain',
+  setup() {
+    const {isLoggedIn, login} = useUser()
+    const isAdmin = ref(false)
+    return { isLoggedIn, login, isAdmin }
+  },
   data() {
-    return {
-      albumBucketName: 'td-aws-bucket',
-    }
+    return { albumBucketName: 'td-aws-bucket'}
   },
   methods: {
+    handleSubmit() {
+      this.$toast.info('will handle login...')
+      this.login()
+    },
     loginError() {
       this.showLoginError()
-      //   this.$toast.success('Default toast')
-      //   this.$sounds.error.play()
+      this.$toast.error('Error toast')
+      this.$sounds.error.play()
     },
     addPhoto(albumName) {
       const files = document.getElementById('photoupload').files
@@ -70,7 +78,7 @@ export default defineComponent({
       <div class="w-full max-w-sm mx-auto lg:w-96">
         <div>
           <!-- <LogoTolbertDesign class="w-11 h-11 text-primary-900" /> -->
-          <BaseLogo name="ema" />
+          <BaseLogo name="ema" class="text-primary-500" />
 
           <h2 class="mt-6 text-3xl font-extrabold text-gray-900">
             {{ $t('sign_in') }}
@@ -182,7 +190,7 @@ export default defineComponent({
           <div class="mt-6">
 
             <!-- Form -->
-            <form action="#" method="POST" class="space-y-6">
+            <form @submit.prevent="handleSubmit" action="#" method="POST" class="space-y-6" novalidate>
               <div>
                 <label
                   for="email"
@@ -249,9 +257,9 @@ export default defineComponent({
 
               <div>
                 <button
-                  @click="loginError"
+                  @click="login"
                   type="submit"
-                  class="flex justify-center w-full px-4 py-2 text-sm font-medium text-white border border-transparent rounded-md shadow-sm bg-primary-600 hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500"
+                  class="flex justify-center w-full px-4 py-2 text-sm font-medium text-primary-50 border border-transparent rounded-md shadow-sm bg-primary-600 hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500"
                 >
                   {{ $t('login') }}
                 </button>
@@ -264,7 +272,10 @@ export default defineComponent({
       </div>
     </div>
     <div class="relative flex-1 hidden w-0 lg:block">
-      <BaseImage class="absolute inset-0 object-cover w-full h-full" />
+      <BaseImage
+        is-unsplash
+        class="absolute inset-0 object-cover w-full h-full"
+      />
     </div>
   </main>
 </template>

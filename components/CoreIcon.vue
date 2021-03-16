@@ -1,3 +1,42 @@
+<script>
+import {capitalize} from '~/helpers'
+
+export default {
+  name: 'CoreIcon',
+  props: {
+    icon: {
+      type: String,
+      default: 'question-mark-circle',
+      validator(value) {
+        return [
+          'copy',
+          'email',
+          'exclamation-circle',
+          'question-mark-circle',
+          'users',
+        ].includes(value)
+      },
+    },
+    label: {
+      type: String,
+      default: null,
+    },
+    library: {
+      type: String,
+      default: 'heroicon',
+    },
+  },
+  computed: {
+    title() {
+      return this.label || capitalize(this.icon)
+    },
+    description() {
+      return capitalize(`${this.library}: ${this.icon}`)
+    },
+  },
+}
+</script>
+
 <template>
   <svg
     class="w-5 h-5 text-gray-400"
@@ -55,42 +94,3 @@
     </g>
   </svg>
 </template>
-
-<script>
-import {capitalize} from '~/helpers'
-
-export default {
-  name: 'BaseIcon',
-  props: {
-    icon: {
-      type: String,
-      default: 'question-mark-circle',
-      validator(value) {
-        return [
-          'copy',
-          'email',
-          'exclamation-circle',
-          'question-mark-circle',
-          'users',
-        ].includes(value)
-      },
-    },
-    label: {
-      type: String,
-      default: null,
-    },
-    library: {
-      type: String,
-      default: 'heroicon',
-    },
-  },
-  computed: {
-    title() {
-      return this.label || capitalize(this.icon)
-    },
-    description() {
-      return capitalize(`${this.library}: ${this.icon}`)
-    },
-  },
-}
-</script>

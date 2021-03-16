@@ -13,6 +13,12 @@ export const capitalize = str => {
   return str.charAt(0).toUpperCase() + str.slice(1)
 }
 
+export const pluralize = (number, singularWord) => {
+  const text = `${number} ${singularWord}`
+  if (number === 1) return text
+  return text + 's'
+}
+
 export const formatDate = value => {
   const date = new Date(value)
   return date.toLocaleString(['en-US'], {
@@ -20,6 +26,11 @@ export const formatDate = value => {
     day: '2-digit',
     year: 'numeric',
   })
+}
+
+export const shortDate = dateStr => {
+  const date = new Date(dateStr)
+  return date.toLocaleDateString(undefined, {month: 'long', year: 'numeric'})
 }
 
 let UUID = 0

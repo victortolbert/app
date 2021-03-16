@@ -8,7 +8,7 @@
     >
       <img
         class="w-8 h-8 rounded-full"
-        src="/assets/img/people/charlee.jpeg"
+        src="https://cominex.net/assets/img/people/charlee.jpeg"
         alt=""
       />
     </button>

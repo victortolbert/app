@@ -2,6 +2,8 @@ import path from 'path'
 
 export default {
   publicRuntimeConfig: {
+    apiURL: process.env.API_URL || 'http://localhost:8686',
+    assetsURL: process.env.ASSETS_URL || 'https://td-aws-bucket.s3.amazonaws.com/album2/',
     auth: {
       cookieName: 'idToken',
       clientId:
@@ -11,17 +13,14 @@ export default {
       appId: 'WTEU7RU64C',
       key: '0bdd840be2d7d4377e10b238bc731901',
     },
-    apiURL: process.env.API_URL || 'http://localhost:8686',
     awsS3DefaultRegion: process.env.AWS_S3_DEFAULT_REGION || 'us-east-1',
     awsS3AccessKey: process.env.AWS_S3_ACCESS_KEY || 'AKIAXGYXHSXXHYBR5HOE',
     awsS3AccessSecret:
       process.env.AWS_S3_ACCESS_SECRET ||
       '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',
     awsS3Bucket: process.env.AWS_S3_BUCKET || 'victortolbert',
-    awsS3Url: process.env.AWS_S3_URL || 'https://the_url.s3.amazonaws.co',
-    assetsURL:
-      process.env.ASSETS_URL ||
-      'https://td-aws-bucket.s3.amazonaws.com/album2/',
+    awsS3URL: process.env.AWS_S3_URL || 'https://the_url.s3.amazonaws.co',
+
     baseURL:
       process.env.NODE_ENV === 'production'
         ? 'https://app.vticonsulting.com'
@@ -32,10 +31,10 @@ export default {
 
     calendlyApiKey:
       process.env.CALENDLY_API_KEY || 'LCCHKGMJC2UDJQM6TXZQF4IZUDOB7QO3',
-    contentApiUrl:
+    contentApiURL:
       process.env.CONTENT_API_URL || 'http://localhost:3000/_content',
 
-    githubCallbackUrl:
+    githubCallbackURL:
       process.env.GITHUB_CALLBACK_URL ||
       'http://laravel-7.test/login/github/callback',
     githubClientId: process.env.GITHUB_CLIENT_ID || 'e95268cd14d26f7628e7',
@@ -47,7 +46,7 @@ export default {
     googleAnalyticsId: process.env.GOOGLE_ANALYTICS_ID || 'UA-76464598-5',
     googleApiKey:
       process.env.GOOGLE_API_KEY || 'AIzaSyBiqWapJFvSp4uetA7QROuWbs3L3hDWOVI',
-    googleCallbackUrl:
+    googleCallbackURL:
       process.env.GOOGLE_CALLBACK_URL ||
       'https://local-dashboard.boosterthon.com/v3/oauth/google',
     googleClientId:
@@ -65,7 +64,7 @@ export default {
       process.env.STRIPE_PUBLIC_KEY || 'pk_test_HHvO5elQXBUhbNuZWt0ngNLx',
     stripePublishableKey:
       process.env.STRIPE_PUBLISHABLE_KEY || 'pk_test_HHvO5elQXBUhbNuZWt0ngNLx',
-    vueAppApiUrl:
+    vueAppApiURL:
       process.env.VUE_APP_API_URL || 'https://victortolbert-api.herokuapp.com',
   },
 
@@ -163,10 +162,13 @@ export default {
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
 
+    // '@nuxtjs/emotion,
+
     // Doc: https://oruga.io/documentation/#nuxt
     '@oruga-ui/oruga/nuxt',
 
     'nuxt-i18n',
+
     // '@nuxtjs/auth-next',
     // '@nuxtjs/auth',
     // '@nuxtjs/feed',
@@ -248,14 +250,15 @@ export default {
     '~/plugins/jam',
     '~/plugins/portal-vue',
     '~/plugins/repository',
-    '~plugins/vue-api-query',
-    '~plugins/vue-content-placeholders',
-    '~plugins/vue-float-label',
-    '~plugins/vue-notifications',
-    '~plugins/vue-shortkey',
+    '~/plugins/vue-api-query',
+    // '~/plugins/vue-chartkick.client',
+    '~/plugins/vue-content-placeholders',
+    '~/plugins/vue-float-label',
+    '~/plugins/vue-notifications',
+    '~/plugins/vue-scrollactive',
+    '~/plugins/vue-shortkey',
     '~/plugins/vue-toastification.client',
 
-    // '~/plugins/vue-chartkick.client',
     // '~plugins/vue-gtm',
     // '~plugins/vue-ray.client',
     // '~/plugins/vuelidate',
@@ -283,7 +286,6 @@ export default {
     // '~/plugins/vue-chartkick.client',
     // '~/plugins/vue-content-placeholders',
     // '~/plugins/vue-observe-visibility.client',
-    // '~/plugins/vue-scrollactive',
     // '~/plugins/vue-tables-2.client',
     // '~/plugins/vue-tippy',
     // '~/plugins/vuelidate',
@@ -323,7 +325,7 @@ export default {
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
-    baseURL: process.env.apiUrl || 'https://api.victortolbert.com/',
+    baseURL: process.env.apiURL || 'https://api.victortolbert.com/',
     credentials: true,
   },
 
@@ -492,15 +494,15 @@ export default {
   },
 
   build: {
-    // extend(config, context) {
-    //   config.module.rules.push({
-    //     test: /\.(ogg|mp3|wav|mpe?g)$/i,
-    //     loader: 'file-loader',
-    //     options: {
-    //       name: '[path][name].[ext]',
-    //     },
-    //   })
-    // },
+    extend(config, context) {
+      config.module.rules.push({
+        test: /\.(ogg|mp3|wav|mpe?g)$/i,
+        loader: 'file-loader',
+        options: {
+          name: '[path][name].[ext]',
+        },
+      })
+    },
 
     preset: {
       stage: 1,

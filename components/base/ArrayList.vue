@@ -1,15 +1,3 @@
-<template>
-  <div>
-    <div v-for="(item, i) in items" :key="i" class="flex mt-3">
-      <span :class="`list-${type}`" class="flex-shrink-0 mt-px mr-3">
-        <component :is="iconName" class="w-6 h-6" />
-      </span>
-
-      {{ item }}
-    </div>
-  </div>
-</template>
-
 <script>
 export default {
   props: {
@@ -47,6 +35,20 @@ export default {
   },
 }
 </script>
+
+<template>
+  <div>
+    <div v-for="(item, i) in items" :key="i" class="flex mt-3">
+      <span :class="`list-${type}`" class="flex-shrink-0 mt-px mr-3">
+        <component :is="iconName" class="w-6 h-6" />
+      </span>
+
+      {{ item }}
+    </div>
+  </div>
+</template>
+
+
 
 <style>
 /* Primary */

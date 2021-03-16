@@ -1,3 +1,12 @@
+
+<script>
+import {defineComponent} from '@nuxtjs/composition-api'
+
+export default defineComponent({
+  name: 'LogoTolbertDesign',
+})
+</script>
+
 <template>
   <svg
     clip-rule="evenodd"
@@ -54,11 +63,3 @@
     />
   </svg>
 </template>
-
-<script>
-import {defineComponent} from '@nuxtjs/composition-api'
-
-export default defineComponent({
-  name: 'LogoTolbertDesign',
-})
-</script>

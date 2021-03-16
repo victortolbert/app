@@ -12,7 +12,7 @@ import Multiselect from 'vue-multiselect'
 
 export default {
   components: {
-    ckeditor: CKEditor.component,
+    CKEditor: CKEditor.component,
     Multiselect,
   },
   data() {
@@ -30,6 +30,6 @@ export default {
 
 <template>
   <article>
-    <ckeditor :editor="editor" v-model="editorData" :config="editorConfig" />
+    <CKEditor :editor="editor" v-model="editorData" :config="editorConfig" />
   </article>
 </template>

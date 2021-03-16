@@ -1,24 +1,3 @@
-<template>
-  <div class="code-group">
-    <div
-      class="relative px-2 text-sm text-white bg-gray-800 border-b-2 border-gray-700 rounded-t-md"
-    >
-      <button
-        v-for="({label}, i) in tabs"
-        ref="tabs"
-        :key="label"
-        class="px-4 py-3 font-mono font-bold text-gray-400"
-        :class="[activeTabIndex === i && 'active']"
-        @click="updateTabs(i)"
-      >
-        {{ label }}
-      </button>
-      <span ref="highlight-underline" class="highlight-underline" />
-    </div>
-    <slot />
-  </div>
-</template>
-
 <script>
 export default {
   data() {
@@ -66,6 +45,29 @@ export default {
   },
 }
 </script>
+
+<template>
+  <div class="code-group">
+    <div
+      class="relative px-2 text-sm text-white bg-gray-800 border-b-2 border-gray-700 rounded-t-md"
+    >
+      <button
+        v-for="({label}, i) in tabs"
+        ref="tabs"
+        :key="label"
+        class="px-4 py-3 font-mono font-bold text-gray-400"
+        :class="[activeTabIndex === i && 'active']"
+        @click="updateTabs(i)"
+      >
+        {{ label }}
+      </button>
+      <span ref="highlight-underline" class="highlight-underline" />
+    </div>
+    <slot />
+  </div>
+</template>
+
+
 
 <style scoped>
 button {

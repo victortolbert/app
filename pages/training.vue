@@ -24,8 +24,6 @@
       </span>
     </div>
 
-    <h2>Resources</h2>
-
     <section class="tabs">
       <div>
         <div class="sm:hidden">

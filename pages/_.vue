@@ -1,42 +1,3 @@
-<template>
-  <div
-    class="flex flex-wrap-reverse"
-    :class="{
-      'lg:-mx-8': settings.layout === 'single',
-    }"
-  >
-    <section
-      class="w-full py-4 lg:pt-8 lg:pb-4 dark:border-gray-800"
-      :class="{
-        'lg:w-3/4': !document.fullscreen,
-        'lg:border-l lg:border-r': settings.layout !== 'single',
-      }"
-    >
-      <article class="prose dark:prose-dark max-w-none lg:px-8">
-        <!-- <h1 class="font-bold">{{ document.title }}</h1> -->
-
-        <h1 class="flex items-center justify-between">
-          {{ document.title }}
-          <Badge v-if="document.badge">{{ document.badge }}</Badge>
-        </h1>
-        <div v-if="document.subtitle" class="-mt-4">
-          <p class="text-gray-600 dark:text-gray-400">
-            {{ document.subtitle }}
-          </p>
-        </div>
-
-        <p>{{ document.description }}</p>
-        <NuxtContent :document="document" />
-      </article>
-
-      <AppPageBottom :document="document" />
-      <!-- <AppPrevNext :prev="prev" :next="next" /> -->
-    </section>
-
-    <AppToc v-if="!document.fullscreen" :toc="document.toc" />
-  </div>
-</template>
-
 <script>
 import Vue from 'vue'
 import {mapGetters} from 'vuex'
@@ -123,3 +84,43 @@ export default {
   },
 }
 </script>
+
+
+<template>
+  <div
+    class="flex flex-wrap-reverse"
+    :class="{
+      'lg:-mx-8': settings.layout === 'single',
+    }"
+  >
+    <section
+      class="w-full py-4 lg:pt-8 lg:pb-4 dark:border-gray-800"
+      :class="{
+        'lg:w-3/4': !document.fullscreen,
+        'lg:border-l lg:border-r': settings.layout !== 'single',
+      }"
+    >
+      <article class="prose dark:prose-dark max-w-none lg:px-8">
+        <!-- <h1 class="font-bold">{{ document.title }}</h1> -->
+
+        <h1 class="flex items-center justify-between">
+          {{ document.title }}
+          <Badge v-if="document.badge">{{ document.badge }}</Badge>
+        </h1>
+        <div v-if="document.subtitle" class="-mt-4">
+          <p class="text-gray-600 dark:text-gray-400">
+            {{ document.subtitle }}
+          </p>
+        </div>
+
+        <p>{{ document.description }}</p>
+        <NuxtContent :document="document" />
+      </article>
+
+      <AppPageBottom :document="document" />
+      <!-- <AppPrevNext :prev="prev" :next="next" /> -->
+    </section>
+
+    <AppToc v-if="!document.fullscreen" :toc="document.toc" />
+  </div>
+</template>
