@@ -44,11 +44,6 @@ export default {
     FullCalendar,
     Multiselect,
   },
-  async asyncData({$axios}) {
-    return {
-      resources: await $axios.$get('http://resources.ga-sps.org/resources/api')
-    }
-  },
   beforeRouteLeave (to, from , next) {
     // if not vue router
     // window.onbeforeunload = () => 'Are you sure you want to leave?'
@@ -150,10 +145,6 @@ export default {
     >
     </BaseHero>
 
-    {{ resources }}
-
-    <KeyboardShortcut />
-
     <section class="mt-4 px-8 max-w-3xl">
       <Multiselect v-model="selectedOption" :options="selectOptions" />
     </section>
@@ -167,6 +158,11 @@ export default {
         />
       </OField>
     </section>
+
+    <SectionWrapper>
+      <KeyboardShortcut />
+      <BaseDirectory />
+    </SectionWrapper>
 
     <section class="mt-4 px-8 max-w-3xl">
       <button @click="increment">Increment</button>

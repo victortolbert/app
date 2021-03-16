@@ -142,7 +142,7 @@ export default {
               {{ $t('dashboard') }}
             </NuxtLink>
 
-            <ODropdown aria-role="list">
+            <ODropdown :triggers="['hover']" aria-role="list">
               <div slot="trigger">
                 {{ $t('all_affiliates') }}
               </div>
@@ -154,7 +154,7 @@ export default {
               <ODropdownItem @click="show('import')"  aria-role="listitem">Import Data</ODropdownItem>
             </ODropdown>
 
-            <ODropdown aria-role="list">
+            <ODropdown :triggers="['hover']" aria-role="list">
               <div slot="trigger">
                 Affiliate
               </div>
@@ -167,7 +167,7 @@ export default {
               <ODropdownItem @click="show('import')"  aria-role="listitem">Import Data</ODropdownItem>
             </ODropdown>
 
-            <ODropdown aria-role="list">
+            <ODropdown :triggers="['hover']" aria-role="list">
               <div slot="trigger">
                 People
               </div>
@@ -178,7 +178,7 @@ export default {
               <ODropdownItem @click="show('map')"  aria-role="listitem">People Map</ODropdownItem>
             </ODropdown>
 
-            <ODropdown aria-role="list">
+            <ODropdown :triggers="['hover']" aria-role="list">
               <div slot="trigger">
                 Events & Needs
               </div>

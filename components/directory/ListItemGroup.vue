@@ -1,3 +1,24 @@
+<script>
+  // import {groupByAlphabet} from '~/helpers'
+
+  export default {
+    data() {
+      return {
+        employees: [
+          { id: 1, firstName: 'Victor', lastName: 'Tolbert' },
+          { id: 2, firstName: 'Reginald', lastName: 'Tolbert' },
+          { id: 3, firstName: 'Victor', lastName: 'Rodriquez' },
+          { id: 4, firstName: 'Ron', lastName: 'Johnson' },
+        ],
+      }
+    },
+    mounted() {
+      console.log(this.employees)
+      // const test = this.employees.sort((a, b) => a.name.localeCompare(b.name, 'es', { sensitivity: 'base' }))
+      // console.log(test)
+    }
+  }
+</script>
 <template>
   <div>
     <div
@@ -8,45 +29,3 @@
     <slot />
   </div>
 </template>
-
-<script>
-  export default {
-    data() {
-      return {
-        people: [
-          {
-            id: 1,
-            firstName: 'Victor'
-          },
-          {
-            id: 2,
-            firstName: 'Reginald'
-          },
-          {
-            id: 3,
-            firstName: 'Vincent'
-          },
-        ]
-      }
-    },
-    computed: {
-      group() {
-        const _group = {}
-
-        this.people.forEach(person => {
-          const firstLetter = person.firstName.charAt(0)
-
-          if (_group[firstLetter] == undefined) {
-            _group[firstLetter] = []
-          }
-          _group[firstLetter].push(person)
-        })
-
-        return _group
-      },
-    },
-    mounted() {
-      console.log(this.group)
-    }
-  }
-</script>

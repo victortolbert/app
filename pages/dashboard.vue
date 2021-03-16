@@ -1,23 +1,29 @@
 <script>
 export default {
-  async asyncData({$axios, app}) {
+  data() {
     return {
-      // affiliate: await app.$affiliateRepository.show(45),
-      // volunteer: await app.$personRepository.show(1),
-      volunteers: await app.$volunteerRepository.index(),
-      // resources: await $axios.$get('http://resources.ga-sps.org/resources/api')
+      people: []
     }
   },
+  async fetch() {
+    this.people = await this.$personRepository.index()
+    // await fetch('https://api.nuxtjs.dev/mountains').then(res =>res.json())
+  },
+  computed: {
+    slicedPeople() {
+      return this.people.slice(0, 20)
+    }
+  }
 }
 </script>
 
 <template>
   <PageWrapper>
     <SectionWrapper>
-      <BaseDirectory :people="volunteers" />
-
+      <div v-if="slicedPeople.length">
+        <BaseDirectory :people="slicedPeople" />
+      </div>
       <!-- <DashboardCharts /> -->
-      {{ resources }}
     </SectionWrapper>
   </PageWrapper>
 </template>

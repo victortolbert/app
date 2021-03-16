@@ -1,3 +1,8 @@
 <template>
-  <p>Calendar</p>
+  <PageWrapper>
+    <PageHeading>Calendar</PageHeading>
+    <SectionWrapper>
+      <BaseCalendar />
+    </SectionWrapper>
+  </PageWrapper>
 </template>

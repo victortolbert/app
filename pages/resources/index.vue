@@ -1,8 +1,22 @@
+<script>
+  export default {
+    async asyncData({$axios}) {
+      return {
+        resources: await $axios.$get('https://api.victortolbert.com/resources')
+      }
+    },
+  }
+</script>
 <template>
-  <SectionWrapper>
-    <RecipeFinder />
+  <PageWrapper>
+    <SectionWrapper>
+      <ResourceFinder />
+      <h2>Add your resource</h2>
+      <ResourceUploader />
+    </SectionWrapper>
 
-    <h2>Add your resource</h2>
-    <RecipeUploader />
-  </SectionWrapper>
+    <SectionWrapper>
+      {{ resources }}
+    </SectionWrapper>
+  </PageWrapper>
 </template>

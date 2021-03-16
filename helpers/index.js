@@ -45,6 +45,59 @@ export function UniqueID() {
   }
 }
 
+export const sortAndGroup = async () => {
+  const sortedData = data.sort()
+
+  const reducedData = sortedData.reduce((items, dataElement) => {
+    if (!items.find(item => item.header === dataElement.charAt(0))) {
+      items.push({ header: dataElement.charAt(0) });
+    }
+    items.push({ name: dataElement });
+    return items;
+  }, []);
+  return reducedData.map(item => item.header || item.name);
+};
+
+// sortAndGroup().then(result => console.log(result));
+
+export const binned = (wordsArray) =>  wordsArray.reduce((result, word) => {
+  // get the first letter. (this assumes no empty words in the list)
+  const letter = word[0];
+
+  // ensure the result has an entry for this letter
+  result[letter] = result[letter] || [];
+
+  // add the word to the letter index
+  result[letter].push(word);
+
+  // return the updated result
+  return result;
+}, {})
+
+
+// export const groupByAlphabet = (data, field = 'lastName') => {
+//   data.sort((a, b) => a[field].localeCompare(b[field], 'en', { sensitivity: 'base' }))
+
+//   return data.reduce((acc, cur) => {
+
+//     // get first letter of name of current element
+//     let alphabet = cur[field][0];
+
+//     // if there is no property in accumulator with this letter create it
+//     if (!acc[alphabet]) acc[alphabet] = { alphabet, record: [cur] }
+
+//     // if there is push current element to children array for that letter
+//     else acc[alphabet].record.push(cur);
+
+//     // return accumulator
+//     return acc;
+//   }, {})
+// };
+
+// let result = Object.values(data)
+// console.log(result)
+
+
 export async function init({app, store, error, isClient}) {
   if (isClient) return
 

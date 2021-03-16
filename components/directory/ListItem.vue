@@ -3,7 +3,7 @@
     props: {
       resource: {
         type: String,
-        default: 'volunteers'
+        default: 'people'
       },
       person: {
         type: Object,
