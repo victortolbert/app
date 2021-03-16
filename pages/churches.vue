@@ -1,30 +1,50 @@
+<script>
+import { defineComponent, watchEffect } from '@nuxtjs/composition-api'
+import ChurchService from '~/services/ChurchService'
+
+export default defineComponent({
+  props: {
+    page: {
+      type: Number,
+      default: 1,
+    },
+  },
+  data() {
+    return {
+      churches: [],
+      totalChurches: 0,
+      perPage: 40,
+    }
+  },
+  computed: {
+    hasNextPage() {
+      const totalPages = Math.ceil(this.totalChurches / this.perPage)
+
+      return this.page < totalPages
+    },
+  },
+  created() {
+    watchEffect(() => {
+      this.churches = null
+      ChurchService.getChurches(this.perPage, this.page)
+        .then((response) => {
+          this.churches = response.data
+          this.totalChurches = response.headers['x-total-count']
+        })
+        .catch(() => {
+          this.$router.push(this.localePath('/network-error/'))
+        })
+    })
+  },
+})
+</script>
+
 <template>
-  <article class="flex-1">
+  <PageWrapper>
     <PageHeading> {{ $t('churches') }} </PageHeading>
 
-    <div class="space-x-3">
-      <span class="rounded font-medium bg-warning-100 text-xs py-0.5 px-2 text-warning-800 inline-flex items-center"
-      >
-        {{ $t('badge') }}
-      </span>
-      <span
-        class="rounded font-medium bg-danger-100 text-xs py-0.5 px-2 text-danger-800 inline-flex items-center"
-      >
-        {{ $t('badge') }}
-      </span>
-      <span
-        class="rounded font-medium bg-info-100 text-xs py-0.5 px-2 text-info-800 inline-flex items-center"
-      >
-        {{ $t('badge') }}
-      </span>
-      <span
-        class="rounded font-medium bg-success-100 text-xs py-0.5 px-2 text-success-800 inline-flex items-center"
-      >
-        {{ $t('badge') }}
-      </span>
-    </div>
 
-    <section class="tabs">
+    <SectionWrapper class="tabs">
       <div>
         <div class="sm:hidden">
           <label for="tabs" class="sr-only">Select a tab</label>
@@ -91,6 +111,44 @@
           </nav>
         </div>
       </div>
-    </section>
-  </article>
+    </SectionWrapper>
+
+    <SectionWrapper>
+      <article>
+        <div class="flex justify-between w-full text-right border">
+          <NuxtLink
+            v-if="page != 1"
+            id="page-prev"
+            :to="localePath({path: '/churches/', query: {page: page - 1}})"
+            rel="prev"
+          >
+            &#60; {{ $t('previous') }}
+          </NuxtLink>
+
+          <NuxtLink
+            v-if="hasNextPage"
+            id="page-next"
+            class="inline-block"
+            :to="localePath({path: '/churches/', query: {page: page + 1}})"
+            rel="next"
+          >
+            {{ $t('next') }} &#62;
+          </NuxtLink>
+        </div>
+
+        <div class="overflow-hidden border-b border-gray-200">
+          <div class="grid grid-cols-2 gap-8 md:grid-cols-3">
+            <NuxtLink
+              v-for="church in churches"
+              :key="church.id"
+              class="flex justify-center col-span-1 px-8 py-8 shadow bg-gray-50"
+              :to="localePath(`/churches/${church.id}/`)"
+            >
+              {{ church.church_name }}
+            </NuxtLink>
+          </div>
+        </div>
+      </article>
+    </SectionWrapper>
+  </PageWrapper>
 </template>

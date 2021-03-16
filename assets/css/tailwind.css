@@ -34,15 +34,15 @@
   }
 
   h1 {
-    @apply mt-10 mb-8 text-4xl font-extrabold leading-none tracking-tight sm:text-6xl lg:text-7xl text-primary dark:text-primary-dark sm:mt-14 sm:mb-10;
+    @apply mt-10 mb-8 text-4xl font-extrabold leading-none tracking-tight sm:text-6xl lg:text-7xl text-primary-500 dark:text-primary-600 sm:mt-14 sm:mb-10;
   }
 
   h2 {
-    @apply text-3xl text-primary dark:text-primary-dark;
+    @apply text-3xl text-primary-500 dark:text-primary-600;
   }
 
   h3 {
-    @apply text-lg text-primary dark:text-primary-dark;
+    @apply text-lg text-primary-500 dark:text-primary-600;
   }
 }
 

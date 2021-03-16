@@ -441,7 +441,7 @@ export default {
     </svg>
 
     <!-- Promise Serves -->
-    <div v-if="name === 'promise_serves'">
+    <div v-if="['promise_serves', 'promise', 'pss', 'promiserves', 'promiseserves'].includes(name)">
       <svg
         class="hidden lg:block"
         width="154"

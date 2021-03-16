@@ -1,6 +1,46 @@
 ---
 title: Resume
 description: 'Empower your NuxtJS application with @nuxt/content module: write in a content/ directory and fetch your Markdown, JSON, YAML and CSV files through a MongoDB like API, acting as a Git-based Headless CMS.'
+bullets:
+  - ● Successfully pitched execs on and led the UI Architecture
+  - ● Created a UI Component Library that was adopted by engineering teams
+  - ● Reduced time to market for new features by enabling designers to deliver ready-to-ship prototypes
+  - ● Launched and trained a team of experienced Engineers to bootstrap new UI projects
+  - ● Advocated for and ultimately achieved a change to a modern UI stack and tooling
+  - ● Established and rolled out styleguide driven development, eliminating costly UI bugs
+  - ● Led product for 60% of the company's revenue generation.
+  - ● Achieved a 5x increase in enterprise leads, a 2x increase in Saas signups, and doubled the rate at which users sign up for free accounts via optimizations to the marketing pages and funnel
+  - ● Doubled the number of high quality of enterprise leads, allowing our sales team to scale
+  - ● Added analytics to website interactions leading to a discovery that users were unable to quickly complete primary tasks and were wandering
+  - ● Discovered why users abandoned the Saas product and wrote a product plan to address those opportunities
+  - ● Surveyed users the month after they cancelled their accounts, interviewed potential customers who chose another product, and paired with the support team
+  - ● Managed a team of engineers, designers, and contractors and introduced agile methodologies, including retrospectives, planning meetings, and incremental  deliverables leading to 2 orders of magnitude improvement in team velocity
+  - ● Shipped a refresh to nearly all Salesforce UIs across 100s of teams
+  - ● Featured in the Dreamforce executive keynotes for shipping a theming feature
+  - ● Improved sustainability and flexibility of the UI by adding abstracted color palettes
+  - ● Opened government and school markets by improving accessibility
+  - ● Balanced the needs of competing stakeholders while reducing bugs shipped to production
+  - ● Successfully pitched execs on and led the UI Infrastructure team
+  - ● Created a UI Component Library that has been adopted by more than 20 teams
+  - ● Reduced time to market for new features by enabling designers to deliver ready-to-ship prototypes
+  - ● Launched and trained a team of experienced UI Engineers to bootstrap new UI projects
+  - ● Advocated for and ultimately achieved a change to a modern UI stack and tooling
+  - ● Established and rolled out styleguide driven development, eliminating costly UI bugs
+  - ● Managed engineers and started the New York product team
+  - ● Full stack development.
+  - ● Took a break from leadership to learn server-side technologies.
+  - ● Full stack development.
+  - ● Took a break from leadership to learn server-side technologies.
+  - A multifunctional leadership role that was equal parts engineering, research, project management, and evangelism.
+  - ● Deployed performance measurement tools to emerging markets by collaborating closely with local teams. The project was completed more than 12 months ahead of schedule
+  - ● Launched a group dedicated to improving the performance of Yahoo! Products, which grew to 30 people
+  - ● Designed the next generation of our data analysis tools
+  - Led the team which successfully built UIs for the biggest brands in Europe including SFR, Club Med, Renault, Orange, FNAC, and Eurorail.
+  - ● Led a team of twelve engineers and designers and introduced best practices like version control, open source, and formal bug tracking
+  - ● Improved retention by designing IC levels used in annual reviews and compensation decisions
+  - ● Launched a professional development program for designers to become web developers allowing the company to take on more clients
+  - ● Tech lead for the company's largest client
+  - Wrote CSS and HTML for Web sites which complied with modern accessibility laws. Design, code, review, and testing. Performed accessibility testing that led to a WAI-AAA rating as well as Section 508 compliance.
 ---
 
 ## About the Company

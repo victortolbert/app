@@ -38,7 +38,7 @@ export default {
           center: 'title',
           right: 'dayGridMonth,timeGridWeek,timeGridDay',
         },
-        initialView: 'dayGridWeek',
+        // initialView: 'dayGridWeek',
       }
     },
 
@@ -99,15 +99,5 @@ export default {
 </script>
 
 <template>
-  <section class="gap-4 lg:grid lg:grid-cols-4">
-    <div class="col-span-3" id="calendar">
-      <div class="calendar">
-        <FullCalendar :options="calendarOptions" />
-      </div>
-    </div>
-
-    <div class="rounded shadow text-secondary-900 bg-secondary-100">
-      <CalendarSidebar :events="events" />
-    </div>
-  </section>
+    <FullCalendar :options="calendarOptions" />
 </template>

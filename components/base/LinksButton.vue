@@ -1,5 +1,13 @@
 <script>
 export default {
+  props: {
+    options: {
+      type: Array,
+      default() {
+        return []
+      }
+    }
+  },
   data() {
     return {
       isOpen: false,
@@ -19,7 +27,7 @@ export default {
         variant="primary"
         @click="isOpen = !isOpen"
       >
-        {{ $t('quick_links') }}
+        <slot />
       </OButton>
     </div>
 
@@ -33,7 +41,7 @@ export default {
     >
       <div
         v-show="isOpen"
-        class="absolute right-0 z-20 w-56 py-1 mt-2 origin-top-right bg-white rounded-md shadow-lg z-1 ring-1 ring-black ring-opacity-5"
+        class="absolute right-0 z-30 w-56 py-1 mt-2 origin-top-right bg-primary-50 rounded-md shadow-lg z-1 ring-1 ring-black ring-opacity-5"
         role="menu"
         aria-orientation="vertical"
         aria-labelledby="user-menu"

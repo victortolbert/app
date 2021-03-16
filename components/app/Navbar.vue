@@ -5,11 +5,11 @@ import useUser from '~/composables/useUser'
 export default {
   setup() {
     const {isLoggedIn, login} = useUser()
-    const router = useRouter()
+    // const router = useRouter()
     const isAdmin = ref(false)
     const affiliate = reactive({
       id: 1,
-      name: 'booster',
+      name: 'promiseserves',
       theme: {
         nav: {
           class: 'bg-white text-gray-800',
@@ -81,16 +81,56 @@ export default {
           label: this.$t('resources'),
           path: '/resources/',
         },
-        {
-          name: 'training',
-          label: this.$t('training'),
-          path: '/training/',
-        },
-        {
-          name: 'events',
-          label: this.$t('events'),
-          path: '/events/',
-        },
+        // {
+        //   name: 'training',
+        //   label: this.$t('training'),
+        //   path: '/training/',
+        // },
+        // {
+        //   name: 'events',
+        //   label: this.$t('events'),
+        //   path: '/events/',
+        // },
+        // {
+        //   name: 'about',
+        //   label: this.$t('about'),
+        //   path: '/about/',
+        // },
+        // {
+        //   name: 'learn',
+        //   label: this.$t('learn'),
+        //   path: '/learn/',
+        // },
+        // {
+        //   name: 'demos',
+        //   label: this.$t('demos'),
+        //   path: '/demos/',
+        // },
+        // {
+        //   name: 'blog',
+        //   label: this.$t('blog'),
+        //   path: '/blog/',
+        // },
+        // {
+        //   name: 'docs',
+        //   label: this.$t('docs'),
+        //   path: '/docs/',
+        // },
+        // {
+        //   name: 'uses',
+        //   label: this.$t('uses'),
+        //   path: '/uses/',
+        // },
+        // {
+        //   name: 'support',
+        //   label: this.$t('support'),
+        //   path: '/support/',
+        // },
+        // {
+        //   name: 'pricing',
+        //   label: this.$t('pricing'),
+        //   path: '/pricing/',
+        // },
       ]
     },
   },
@@ -131,19 +171,19 @@ export default {
           <div class="flex flex-shrink-0 items-center">
             <NuxtLink
               class="flex items-center justify-center"
-              :to="localePath({path: '/'})"
+              :to="localePath({path: '/dashboard/'})"
             >
               <BaseLogo class="text-primary-500" :name="slug" />
             </NuxtLink>
           </div>
 
           <div class="items-center hidden md:ml-6 md:flex md:space-x-8">
-            <NuxtLink :to="localePath({path: '/dashboard/'})">
+            <!-- <NuxtLink :to="localePath({path: '/dashboard/'})">
               {{ $t('dashboard') }}
-            </NuxtLink>
+            </NuxtLink> -->
 
             <ODropdown :triggers="['hover']" aria-role="list">
-              <div slot="trigger">
+              <div class="whitespace-nowrap" slot="trigger">
                 {{ $t('all_affiliates') }}
               </div>
               <ODropdownItem @click="show('affiliates')" aria-role="listitem">List Affiliates</ODropdownItem>
@@ -155,7 +195,7 @@ export default {
             </ODropdown>
 
             <ODropdown :triggers="['hover']" aria-role="list">
-              <div slot="trigger">
+              <div class="whitespace-nowrap" slot="trigger">
                 Affiliate
               </div>
               <ODropdownItem @click="show('organizations')" aria-role="listitem">Edit Organization</ODropdownItem>
@@ -168,7 +208,7 @@ export default {
             </ODropdown>
 
             <ODropdown :triggers="['hover']" aria-role="list">
-              <div slot="trigger">
+              <div class="whitespace-nowrap" slot="trigger">
                 People
               </div>
               <ODropdownItem @click="show('advocates')" aria-role="listitem">Advocates</ODropdownItem>
@@ -179,7 +219,7 @@ export default {
             </ODropdown>
 
             <ODropdown :triggers="['hover']" aria-role="list">
-              <div slot="trigger">
+              <div class="whitespace-nowrap" slot="trigger">
                 Events & Needs
               </div>
               <ODropdownItem @click="show('calendar')" aria-role="listitem">Calendar</ODropdownItem>
@@ -187,82 +227,12 @@ export default {
               <ODropdownItem @click="show('requests')"  aria-role="listitem">Care Requests</ODropdownItem>
             </ODropdown>
 
-            <!-- <BaseDropdownMenu
-              :options="[
-                {id: 1, name: 'affiliates', label: 'List Affiliates'},
-                {id: 1, name: 'regions', label: 'Regions'},
-                {id: 1, name: 'affiliates', label: 'Staff'},
-                {id: 1, name: 'agencies', label: 'Agencies'},
-                {id: 1, name: 'churches', label: 'Churches'},
-              ]"
-            >
-              <span class="whitespace-nowrap">{{ $t('all_affiliates') }}</span>
-            </BaseDropdownMenu> -->
-
-            <!-- <BaseDropdownMenu
-              :options="[
-                {id: 7, name: 'advocates', label: 'Advocates'},
-                {id: 7, name: 'volunteers', label: 'Volunteers'},
-              ]"
-            >
-              {{ $t('people') }}
-            </BaseDropdownMenu> -->
-
-            <!-- <BaseDropdownMenu
-              :options="[
-                {id: 7, name: 'calendar', label: 'Calendar'},
-                {id: 7, name: 'volunteers', label: 'FAM Events'},
-              ]"
-            >
-              {{ $t('events') }}
-            </BaseDropdownMenu> -->
-
             <NuxtLink
               v-for="(route, index) in routes"
               :key="index"
               :to="localePath({path: route.path})"
             >
               {{ route.label }}
-            </NuxtLink>
-
-            <NuxtLink
-              class="flex-1"
-              :to="localePath({path: '/about/'})"
-              id="about"
-            >
-              {{ $t('about') }}
-            </NuxtLink>
-
-            <NuxtLink
-              v-if="isLoggedIn"
-              :to="localePath({path: '/profile/'})"
-              id="profile"
-            >
-              {{ $t('my_profile') }}
-            </NuxtLink>
-
-            <NuxtLink
-              v-if="isAdmin"
-              :to="localePath({path: '/admin/'})"
-              id="admin"
-            >
-              {{ $t('admin') }}
-            </NuxtLink>
-
-            <!--
-              <NuxtLink to="/" class="navbar-item">Home</NuxtLink>
-              <NuxtLink to="/learn/" class="navbar-item">Demos</NuxtLink>
-              <NuxtLink to="/blog/" class="navbar-item">Docs</NuxtLink>
-              <NuxtLink to="/uses/" class="navbar-item">Support</NuxtLink>
-              <NuxtLink to="/about/" class="navbar-item">Pricing</NuxtLink>
-            -->
-
-            <!-- <button v-if="!isLoggedIn" @click="login">
-              {{ $t('login') }}
-            </button> -->
-
-            <NuxtLink :to="localePath('/login/')">
-              {{ $t('login')}}
             </NuxtLink>
           </div>
         </div>
@@ -286,9 +256,11 @@ export default {
           </OptionsMenuButton> -->
 
           <div class="md:ml-4 md:flex-shrink-0 md:flex md:items-center">
+
+            <!-- NotificationsButton -->
             <span class="rounded-md shadow-sm relative inline-flex">
               <button
-                class="bg-white rounded-full p-1 text-gray-400 hidden md:block hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500"
+                class="bg-white rounded-full p-1 text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500"
                 @click="showAnnouncements = !showAnnouncements"
               >
                 <span class="sr-only">{{ $t('view_notifications') }}</span>
@@ -312,6 +284,30 @@ export default {
 
             <!-- Profile dropdown -->
             <!-- <BaseProfileDropdownButton /> -->
+            <!-- <NuxtLink  v-if="!isLoggedIn" :to="localePath('/login/')">
+              {{ $t('login')}}
+            </NuxtLink> -->
+
+            <div class="hidden lg:block">
+              <button v-if="!isLoggedIn" @click="login">
+                {{ $t('login') }}
+              </button>
+              <NuxtLink
+                v-if="isLoggedIn"
+                :to="localePath({path: '/profile/'})"
+                id="profile"
+              >
+                {{ $t('my_profile') }}
+              </NuxtLink>
+              <NuxtLink
+                v-if="isAdmin"
+                :to="localePath({path: '/admin/'})"
+                id="admin"
+              >
+                {{ $t('admin') }}
+              </NuxtLink>
+            </div>
+
           </div>
         </div>
       </div>

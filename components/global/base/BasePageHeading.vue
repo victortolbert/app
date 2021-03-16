@@ -109,8 +109,8 @@
 
       <!-- Action Buttons -->
       <div class="flex flex-shrink-0 mt-4 space-x-2 md:mt-0 md:ml-4">
-        <OButton type="button" rounded> {{ $t('edit') }} </OButton>
-        <OButton variant="primary" rounded> {{ $t('publish') }} </OButton>
+        <OButton type="button"> {{ $t('edit') }} </OButton>
+        <OButton variant="primary"> {{ $t('publish') }} </OButton>
       </div>
     </header>
   </section>

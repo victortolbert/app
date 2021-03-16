@@ -3,7 +3,9 @@ import path from 'path'
 export default {
   publicRuntimeConfig: {
     apiURL: process.env.API_URL || 'http://localhost:8686',
-    assetsURL: process.env.ASSETS_URL || 'https://td-aws-bucket.s3.amazonaws.com/album2/',
+    assetsURL:
+      process.env.ASSETS_URL ||
+      'https://td-aws-bucket.s3.amazonaws.com/album2/',
     auth: {
       cookieName: 'idToken',
       clientId:
@@ -115,11 +117,11 @@ export default {
       //   href:
       //     'https://fonts.googleapis.com/css2?family=Caveat:wght@400;430&family=Markazi+Text&display=swap',
       // },
-      {
-        rel: 'stylesheet',
-        href:
-          '//cdn.materialdesignicons.com/5.4.55/css/materialdesignicons.min.css',
-      },
+      // {
+      //   rel: 'stylesheet',
+      //   href:
+      //     '//cdn.materialdesignicons.com/5.4.55/css/materialdesignicons.min.css',
+      // },
     ],
     script: [
       // {
@@ -212,11 +214,12 @@ export default {
     // '~/modules/io',
   ],
   buildModules: [
+    '@nuxtjs/tailwindcss',
     '@nuxt/typescript-build',
     '@nuxtjs/color-mode',
     '@nuxtjs/composition-api',
     'nuxt-use-sound',
-    'nuxt-windicss',
+    // 'nuxt-windicss',
     // '@nuxtjs/google-analytics',
     // '@nuxtjs/moment',
     // '@nuxtjs/style-resources',
@@ -249,6 +252,7 @@ export default {
     '~/plugins/fontawesome',
     '~/plugins/jam',
     '~/plugins/portal-vue',
+    '~/plugins/particles.client',
     '~/plugins/repository',
     '~/plugins/vue-api-query',
     // '~/plugins/vue-chartkick.client',
@@ -463,6 +467,10 @@ export default {
     },
   },
 
+  tailwindcss: {
+    jit: true,
+  },
+
   toast: {
     timeout: 2000,
     closeOnClick: false,
@@ -472,26 +480,26 @@ export default {
     // cssFile: false,
   },
 
-  windicss: {
-    scan: {
-      dirs: ['./'],
-      exclude: [
-        'node_modules',
-        '.git',
-        '.nuxt/**/*',
-        '*.template.html',
-        // Any classes added in app.html (that have not previously been referenced) will need to be added to the safelist
-        'app.html',
-      ],
-    },
-    transformCSS: 'pre',
-    preflight: {
-      alias: {
-        // add nuxt aliases
-        'nuxt-link': 'a',
-      },
-    },
-  },
+  // windicss: {
+  //   scan: {
+  //     dirs: ['./'],
+  //     exclude: [
+  //       'node_modules',
+  //       '.git',
+  //       '.nuxt/**/*',
+  //       '*.template.html',
+  //       // Any classes added in app.html (that have not previously been referenced) will need to be added to the safelist
+  //       'app.html',
+  //     ],
+  //   },
+  //   transformCSS: 'pre',
+  //   preflight: {
+  //     alias: {
+  //       // add nuxt aliases
+  //       'nuxt-link': 'a',
+  //     },
+  //   },
+  // },
 
   build: {
     extend(config, context) {

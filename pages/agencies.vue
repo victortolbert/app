@@ -1,30 +1,49 @@
+<script>
+import { defineComponent, watchEffect } from '@nuxtjs/composition-api'
+import AgencyService from '~/services/AgencyService'
+
+export default defineComponent({
+  props: {
+    page: {
+      type: Number,
+      default: 1,
+    },
+  },
+  data() {
+    return {
+      agencies: [],
+      totalAgencies: 0,
+      perPage: 40,
+    }
+  },
+  computed: {
+    hasNextPage() {
+      const totalPages = Math.ceil(this.totalAgencies / this.perPage)
+
+      return this.page < totalPages
+    },
+  },
+  created() {
+    watchEffect(() => {
+      this.agencies = null
+      AgencyService.getAgencies(this.perPage, this.page)
+        .then((response) => {
+          this.agencies = response.data
+          this.totalAgencies = response.headers['x-total-count']
+        })
+        .catch(() => {
+          this.$router.push({ name: 'network-error' })
+        })
+    })
+  },
+})
+</script>
+
 <template>
-  <article class="flex-1">
-    <PageHeading> {{ $t('agencies') }} </PageHeading>
+  <PageWrapper>
+    <PageHeading> {{ $t('agencies') }}</PageHeading>
 
-    <div class="space-x-3">
-      <span class="rounded font-medium bg-warning-100 text-xs py-0.5 px-2 text-warning-800 inline-flex items-center"
-      >
-        {{ $t('badge') }}
-      </span>
-      <span
-        class="rounded font-medium bg-danger-100 text-xs py-0.5 px-2 text-danger-800 inline-flex items-center"
-      >
-        {{ $t('badge') }}
-      </span>
-      <span
-        class="rounded font-medium bg-info-100 text-xs py-0.5 px-2 text-info-800 inline-flex items-center"
-      >
-        {{ $t('badge') }}
-      </span>
-      <span
-        class="rounded font-medium bg-success-100 text-xs py-0.5 px-2 text-success-800 inline-flex items-center"
-      >
-        {{ $t('badge') }}
-      </span>
-    </div>
-
-    <section class="tabs">
+    <SectionWrapper class="tabs">
       <div>
         <div class="sm:hidden">
           <label for="tabs" class="sr-only">Select a tab</label>
@@ -91,6 +110,23 @@
           </nav>
         </div>
       </div>
-    </section>
-  </article>
+    </SectionWrapper>
+
+    <SectionWrapper>
+      <article>
+        <div class="overflow-hidden border-b border-gray-200">
+          <div class="grid grid-cols-2 gap-8 md:grid-cols-3">
+            <RouterLink
+              v-for="agency in agencies"
+              :key="agency.id"
+              class="flex justify-center col-span-1 px-8 py-8 shadow bg-gray-50"
+              :to="{name: 'agencies-id-details', params: {id: agency.id}}"
+            >
+              {{ agency.agency_name }}
+            </RouterLink>
+          </div>
+        </div>
+      </article>
+    </SectionWrapper>
+  </PageWrapper>
 </template>

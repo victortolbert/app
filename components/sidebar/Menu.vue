@@ -57,9 +57,9 @@ export default defineComponent({
   </div>
 </template>
 
-<style lang="postcss">
+<style>
 .nav-link {
-  @apply flex rounded-r-full pl-6 items-center px-2 py-2 font-medium text-gray-900 transition duration-150 ease-in-out  rounded-md group focus:outline-none focus:bg-gray-50;
+  @apply flex rounded-r-full pl-6 items-center px-2 py-2 font-medium text-gray-900 transition duration-150 ease-in-out rounded-md focus:outline-none focus:bg-gray-50;
 }
 
 .nav-link:hover {

@@ -55,9 +55,9 @@ export default {
 </script>
 
 <template>
-  <main class="flex items-center justify-center min-h-screen bg-primary-500">
+  <main class="flex items-center justify-center min-h-screen ">
     <div
-      class="max-w-4xl overflow-hidden bg-gray-200 divide-y divide-gray-200 rounded-lg shadow sm:divide-y-0 sm:grid sm:grid-cols-2 sm:gap-px"
+      class="max-w-4xl overflow-hidden  divide-y divide-gray-200 rounded-lg sm:divide-y-0 sm:grid sm:grid-cols-2 sm:gap-px"
     >
       <div
         v-for="section in sections"
@@ -66,7 +66,7 @@ export default {
       >
         <div>
           <span
-            class="inline-flex p-3 rounded-lg text-primary-700 bg-primary-50 ring-4 ring-white"
+            class="inline-flex p-3 rounded-lg text-primary-700 bg-primary-50 ring-2 ring-primary-200"
           >
             <BaseIconOutlined :name="section.icon" />
           </span>

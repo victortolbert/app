@@ -19,11 +19,11 @@ module.exports = {
       red: colors.rose,
       pink: colors.fuchsia,
 
-      primary: colors.flamePea,
-      secondary: colors.pomegranate,
+      primary: colors.oliveGreen,
+      secondary: colors.mineShaft,
 
       danger: colors.monza,
-      warning: colors['sea-buckthorn'],
+      warning: colors.seaBuckthorn,
       success: colors.malachite,
       info: colors.scooter,
     },

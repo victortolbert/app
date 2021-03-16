@@ -1,0 +1,97 @@
+.Cookie {
+  position: fixed;
+  overflow: hidden;
+  box-sizing: border-box;
+  z-index: 9999;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-direction: column;
+}
+.Cookie > * {
+  margin: 0.9375rem 0;
+  align-self: center;
+}
+@media screen and (min-width: 48rem) {
+  .Cookie {
+    flex-flow: row;
+  }
+  .Cookie > * {
+    margin: 0;
+  }
+}
+
+.Cookie--top {
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.Cookie--bottom {
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.Cookie__buttons {
+  display: flex;
+  flex-direction: column;
+}
+.Cookie__buttons > * {
+  margin: 0.3125rem 0;
+}
+@media screen and (min-width: 48rem) {
+  .Cookie__buttons {
+    flex-direction: row;
+  }
+  .Cookie__buttons > * {
+    margin: 0 0.9375rem;
+  }
+}
+
+.Cookie__button {
+  cursor: pointer;
+  align-self: center;
+  white-space: nowrap;
+}
+
+.Cookie__declineButton {
+  cursor: pointer;
+  align-self: center;
+  white-space: nowrap;
+}
+
+.Cookie--base {
+  background: #f1f1f1;
+  color: #232323;
+  padding: 1.25em;
+}
+.Cookie--base .Cookie__button {
+  background: theme('colors.primary.500');
+  padding: 0.625em 3.125em;
+  color: #fff;
+  border-radius: theme('borderRadius.full');
+  border: 0;
+  font-size: 1em;
+}
+.Cookie--base .Cookie__button:hover {
+  background: theme('colors.primary.500');
+}
+.Cookie--base .Cookie__button--decline {
+  background: transparent;
+  padding: 0.625em 3.125em;
+  color: #727272;
+  border-radius: 0;
+  border: 0;
+  font-size: 1em;
+}
+.Cookie--base .Cookie__button--decline:hover {
+  background: #cbcbcb;
+}
+
+.Cookie--base--rounded {
+  background: #f1f1f1;
+  color: #232323;
+  padding: 1.25em;
+}
