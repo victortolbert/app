@@ -51,7 +51,7 @@
     "@vueuse/router": "4.4.1",
     "@vueuse/rxjs": "4.4.1",
     "@vueuse/sound": "1.1.7",
-    "aws-sdk": "^2.863.0",
+    "aws-sdk": "^2.864.0",
     "camelcase-keys": "^6.2.2",
     "canvas-confetti": "^1.4.0",
     "change-case": "^4.1.2",
