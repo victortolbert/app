@@ -11,13 +11,14 @@ export default defineComponent({
   },
   mounted() {
     this.$jam('this.$jam plugin works in mounted...')
+    ctx.$icon(512)
   },
 })
 </script>
 
 <template>
   <div id="app" class="relative flex flex-col min-h-screen">
-    <!-- <div class="fixed h-full w-full overflow-hidden">
+    <!-- <div class="fixed w-full h-full overflow-hidden">
         <div class="scroll-bg" style="
             width: 100%;
             height: 400%;
@@ -28,6 +29,7 @@ export default defineComponent({
           "></div>
       </div> -->
     <AppOfflineIndicator />
+
     <AppNavbar />
 
     <main class="flex-1">

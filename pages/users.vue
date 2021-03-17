@@ -1,6 +1,6 @@
 <script>
 import {defineComponent, watchEffect} from '@nuxtjs/composition-api'
-import PersonService from '@/services/PersonService'
+import PersonService from '~/services/PersonService'
 
 export default defineComponent({
   name: 'PersonList',

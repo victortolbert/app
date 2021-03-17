@@ -1,5 +1,5 @@
 <script>
-import { defineComponent, watchEffect } from '@nuxtjs/composition-api'
+import {defineComponent, watchEffect} from '@nuxtjs/composition-api'
 import AgencyService from '~/services/AgencyService'
 
 export default defineComponent({
@@ -27,12 +27,12 @@ export default defineComponent({
     watchEffect(() => {
       this.agencies = null
       AgencyService.getAgencies(this.perPage, this.page)
-        .then((response) => {
+        .then(response => {
           this.agencies = response.data
           this.totalAgencies = response.headers['x-total-count']
         })
         .catch(() => {
-          this.$router.push({ name: 'network-error' })
+          this.$router.push({name: 'network-error'})
         })
     })
   },
@@ -116,14 +116,14 @@ export default defineComponent({
       <article>
         <div class="overflow-hidden border-b border-gray-200">
           <div class="grid grid-cols-2 gap-8 md:grid-cols-3">
-            <RouterLink
+            <NuxtLink
               v-for="agency in agencies"
               :key="agency.id"
               class="flex justify-center col-span-1 px-8 py-8 shadow bg-gray-50"
-              :to="{name: 'agencies-id-details', params: {id: agency.id}}"
+              :to="localePath(`/agencies/${agency.id}`)"
             >
               {{ agency.agency_name }}
-            </RouterLink>
+            </NuxtLink>
           </div>
         </div>
       </article>

@@ -8,6 +8,7 @@
 @import './base/transitions.css';
 
 @import 'tailwindcss/components';
+@import './components/codemirror.css';
 @import './components/transitions.pcss';
 @import './components/cover_button.css';
 @import './components/duotone_card.css';
@@ -22,7 +23,6 @@
 @import './components/twentytwenty.pcss'; */
 
 @import 'tailwindcss/utilities';
-
 
 #__nuxt {
   transition: all 0.5s cubic-bezier(0.55, 0, 0.1, 1);
@@ -134,10 +134,6 @@ details.disclosure > div {
   margin-top: 0;
   padding: 1rem;
 }
-
-
-
-
 
 html {
   overflow-y: scroll;

@@ -89,15 +89,86 @@ export default {
   ssr: false,
   // watch: ['~/config/*'],
   head: {
-    // title: 'App',
-    titleTemplate: 'App: %s',
+    title: 'My amazing Nuxt application',
+    titleTemplate: 'Demo App | %s',
     htmlAttrs: {
       lang: 'en',
     },
     meta: [
       {charset: 'utf-8'},
-      {name: 'viewport', content: 'width=device-width, initial-scale=1'},
-      {hid: 'description', name: 'description', content: 'Lab'},
+      {
+        name: 'viewport',
+        content: 'width=device-width, initial-scale=1',
+      },
+      {
+        hid: 'description',
+        name: 'description',
+        content: 'An amazing Nuxt application created by @design_coder',
+      },
+
+      // Twitter
+      // Test on: https://cards-dev.twitter.com/validator
+      {
+        hid: 'twitter:card',
+        name: 'twitter:card',
+        content: 'summary_large_image',
+      },
+      {hid: 'twitter:site', name: 'twitter:site', content: '@victor_tolbert'},
+      {
+        hid: 'twitter:url',
+        name: 'twitter:url',
+        content: 'https://app.vticonsulting.com',
+      },
+      {
+        hid: 'twitter:title',
+        name: 'twitter:title',
+        content: 'An amazing Nuxt application created by @design_coder',
+      },
+      {
+        hid: 'twitter:description',
+        name: 'twitter:description',
+        content: 'An amazing Nuxt application created by @design_coder',
+      },
+      {
+        hid: 'twitter:image',
+        name: 'twitter:image',
+        content: 'https://cominex.net/assets/img/preview.png',
+      },
+
+      // Open Graph
+      // Test on: https://developers.facebook.com/tools/debug/
+      {hid: 'og:site_name', property: 'og:site_name', content: 'Demo App'},
+      {hid: 'og:type', property: 'og:type', content: 'website'},
+      {
+        hid: 'og:url',
+        property: 'og:url',
+        content: 'https://app.vticonsulting.com',
+      },
+      {
+        hid: 'og:title',
+        property: 'og:title',
+        content: 'An amazing Nuxt application created by @design_coder',
+      },
+      {
+        hid: 'og:description',
+        property: 'og:description',
+        content: 'An amazing Nuxt application created by @design_coder',
+      },
+      {
+        hid: 'og:image',
+        property: 'og:image',
+        content: 'https://cominex.net/assets/img/preview.png',
+      },
+      {
+        hid: 'og:image:secure_url',
+        property: 'og:image:secure_url',
+        content: 'https://cominex.net/assets/img/preview.png',
+      },
+      {
+        hid: 'og:image:alt',
+        property: 'og:image:alt',
+        content: 'NuxtJS',
+      },
     ],
     link: [
       {rel: 'icon', type: 'image/x-icon', href: '/favicon.svg'},
@@ -107,6 +178,11 @@ export default {
           'https://fonts.googleapis.com/css?family=Josefin+Sans|Playfair+Display',
       },
       {rel: 'icon', type: 'image/x-icon', href: '/favicon.svg'},
+      {
+        hid: 'canonical',
+        rel: 'canonical',
+        href: `https://app.vticonsulting.com/examples`,
+      },
       // {
       //   rel: 'stylesheet',
       //   href:
@@ -149,6 +225,10 @@ export default {
     // '~/assets/css/select.scss',
     // '~/assets/styles/oruga_tailwind.css',
     // '@fortawesome/fontawesome-svg-core/styles.css',
+    'video.js/dist/video-js.css',
+    'codemirror/lib/codemirror.css',
+    'codemirror/theme/base16-dark.css',
+    'swiper/swiper-bundle.css',
   ],
 
   layoutTransition: {
@@ -166,6 +246,11 @@ export default {
 
     // '@nuxtjs/emotion,
 
+    // https://go.nuxtjs.dev/pwa
+    '@nuxtjs/pwa',
+
+    '@nuxtjs/style-resources',
+
     // Doc: https://oruga.io/documentation/#nuxt
     '@oruga-ui/oruga/nuxt',
 
@@ -174,8 +259,7 @@ export default {
     // '@nuxtjs/auth-next',
     // '@nuxtjs/auth',
     // '@nuxtjs/feed',
-    // https://go.nuxtjs.dev/pwa
-    // '@nuxtjs/pwa',
+
     // '@nuxtjs/sentry',
     // '~/modules/algolia',
     // '~/modules/auth',
@@ -213,12 +297,15 @@ export default {
     // ['~/modules/module', {message: 'my module!!!!!!!!!!!!!!'}],
     // '~/modules/io',
   ],
+
   buildModules: [
     '@nuxtjs/tailwindcss',
     '@nuxt/typescript-build',
     '@nuxtjs/color-mode',
     '@nuxtjs/composition-api',
+    '@nuxtjs/pwa',
     'nuxt-use-sound',
+    // '@nuxtjs/ackee',
     // 'nuxt-windicss',
     // '@nuxtjs/google-analytics',
     // '@nuxtjs/moment',
@@ -239,7 +326,6 @@ export default {
     // ],
     // '@nuxtjs/netlify-files',
     // 'nuxt-svg-loader',
-    // '@nuxtjs/pwa',
     // '@nuxt/http',
     // '@nuxtjs/sitemap'
   ],
@@ -254,15 +340,22 @@ export default {
     '~/plugins/portal-vue',
     '~/plugins/particles.client',
     '~/plugins/repository',
+    '~/plugins/vee-validate',
     '~/plugins/vue-api-query',
+    '~/plugins/vue-awesome-swiper.client',
     // '~/plugins/vue-chartkick.client',
+    '~/plugins/vue-codemirror',
     '~/plugins/vue-content-placeholders',
+    '~/plugins/vue-drag-zone',
     '~/plugins/vue-float-label',
     '~/plugins/vue-notifications',
     '~/plugins/vue-scrollactive',
     '~/plugins/vue-shortkey',
     '~/plugins/vue-toastification.client',
-
+    '~/plugins/vue-touch-ripple',
+    '~/plugins/vue-video-player.client',
+    '~/plugins/vue-virtual-scroller.client',
+    // {src: '~plugins/vue-video-player.js', ssr: false},
     // '~plugins/vue-gtm',
     // '~plugins/vue-ray.client',
     // '~/plugins/vuelidate',
@@ -326,6 +419,19 @@ export default {
     prefetchLinks: false,
     trailingSlash: true,
   },
+
+  // ackee: {
+  //   server: 'https://example.com',
+  //   domainId: 'aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee',
+  //   /* see configuration for more */
+  //   // do not gather detailed data unless user gives permission
+  //   detailed: true,
+  //   // also tracks when on localhost
+  //   ignoreLocalhost: false,
+  //   // also tracks your own visits
+  //   ignoreOwnVisits: false,
+  //   storageKey: 'nuxt-ackee',
+  // },
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
@@ -430,7 +536,7 @@ export default {
   },
 
   oruga: {
-    includeCss: 'vars',
+    // includeCss: 'vars',
     // iconPack: 'mdi',
     // iconPack: 'fas',
     // iconComponent: 'FontAwesomeIcon',
@@ -443,6 +549,9 @@ export default {
   pwa: {
     manifest: {
       lang: 'en',
+    },
+    meta: {
+      ogImage: '/static/preview.png',
     },
   },
 
@@ -465,6 +574,10 @@ export default {
         volume: 0.25,
       },
     },
+  },
+
+  styleResources: {
+    scss: ['~/assets/scss/vars/*.scss', '~/assets/scss/abstracts/_mixins.scss'],
   },
 
   tailwindcss: {
@@ -515,7 +628,7 @@ export default {
     preset: {
       stage: 1,
     },
-    transpile: [/@fullcalendar.*/], // transpile ESM modules within all fullcalendar packages
+    transpile: [/@fullcalendar.*/, 'vee-validate/dist/rules'], // transpile ESM modules within all fullcalendar packages
   },
 
   // eslint: {

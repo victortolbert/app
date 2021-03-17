@@ -212,10 +212,7 @@ export default {
     </svg>
 
     <!-- Ēma 2-->
-    <div
-      v-if="name === 'ema2'"
-      class="flex items-center space-x-2 font-medium"
-    >
+    <div v-if="name === 'ema2'" class="flex items-center space-x-2 font-medium">
       <svg
         width="44"
         height="44"
@@ -350,7 +347,7 @@ export default {
 
     <!-- GA SPS -->
     <svg
-      v-if="name === 'ga_sps'"
+      v-if="['ga_sps', 'sps', 'gasps'].includes(name)"
       class="w-auto h-5"
       width="235"
       height="45"
@@ -441,7 +438,17 @@ export default {
     </svg>
 
     <!-- Promise Serves -->
-    <div v-if="['promise_serves', 'promise', 'pss', 'promiserves', 'promiseserves'].includes(name)">
+    <div
+      v-if="
+        [
+          'promise_serves',
+          'promise',
+          'pss',
+          'promiserves',
+          'promiseserves',
+        ].includes(name)
+      "
+    >
       <svg
         class="hidden lg:block"
         width="154"

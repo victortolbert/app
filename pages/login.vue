@@ -1,4 +1,3 @@
-
 <script>
 import AWS from 'aws-sdk'
 import {ref, reactive, defineComponent} from '@nuxtjs/composition-api'
@@ -11,10 +10,10 @@ export default defineComponent({
   setup() {
     const {isLoggedIn, login} = useUser()
     const isAdmin = ref(false)
-    return { isLoggedIn, login, isAdmin }
+    return {isLoggedIn, login, isAdmin}
   },
   data() {
-    return { albumBucketName: 'td-aws-bucket'}
+    return {albumBucketName: 'td-aws-bucket'}
   },
   methods: {
     handleSubmit() {
@@ -22,7 +21,7 @@ export default defineComponent({
       this.login()
     },
     loginError() {
-      this.showLoginError()
+      // this.showLoginError()
       this.$toast.error('Error toast')
       this.$sounds.error.play()
     },
@@ -152,9 +151,7 @@ export default defineComponent({
                     href="#"
                     class="inline-flex justify-center w-full px-4 py-2 text-sm font-medium text-gray-500 bg-white border border-gray-300 rounded-md shadow-sm hover:bg-gray-50"
                   >
-                    <span class="sr-only"
-                      >{{ $t('sign_in_with') }} GitHub</span
-                    >
+                    <span class="sr-only">{{ $t('sign_in_with') }} GitHub</span>
                     <svg
                       class="w-5 h-5"
                       fill="currentColor"
@@ -188,9 +185,14 @@ export default defineComponent({
           </div>
 
           <div class="mt-6">
-
             <!-- Form -->
-            <form @submit.prevent="handleSubmit" action="#" method="POST" class="space-y-6" novalidate>
+            <form
+              @submit.prevent="handleSubmit"
+              action="#"
+              method="POST"
+              class="space-y-6"
+              novalidate
+            >
               <div>
                 <label
                   for="email"
@@ -266,7 +268,6 @@ export default defineComponent({
                 <!-- <OButton >Show Error</OButton> -->
               </div>
             </form>
-
           </div>
         </div>
       </div>

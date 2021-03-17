@@ -525,24 +525,23 @@ export default {
   </svg>
 </template>
 
-
 <style lang="scss">
 #labels rect,
 #outlines path {
   &:hover {
-    // @apply text-gray-400 cursor-pointer
+    @apply text-gray-400 cursor-pointer;
   }
 }
 
 #labels path,
 #labels text {
-  //  @apply text-black
+  @apply text-black;
   color: #000;
 }
 
 #labels .active path,
 #labels .active text {
-  //  @apply text-white
+  @apply text-white;
   color: white;
 }
 

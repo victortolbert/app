@@ -47,7 +47,6 @@ export default {
     const showVolunteerView = ref(false)
     const slug = affiliate.name.toLowerCase()
 
-
     return {
       isLoggedIn,
       login,
@@ -154,12 +153,12 @@ export default {
     ]"
   >
     <div class="px-4 sm:px-6 lg:px-8">
-      <div class="flex h-16 justify-between">
+      <div class="flex justify-between h-16">
         <div class="flex">
-          <div class="flex mr-2 -ml-2 items-center md:hidden">
+          <div class="flex items-center mr-2 -ml-2 md:hidden">
             <!-- Mobile menu button -->
             <button
-              class="rounded-md p-2 text-gray-400 inline-flex items-center justify-center hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary-500"
+              class="inline-flex items-center justify-center p-2 text-gray-400 rounded-md hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary-500"
               aria-expanded="false"
               @click="showMenu = !showMenu"
             >
@@ -168,7 +167,7 @@ export default {
             </button>
           </div>
 
-          <div class="flex flex-shrink-0 items-center">
+          <div class="flex items-center flex-shrink-0">
             <NuxtLink
               class="flex items-center justify-center"
               :to="localePath({path: '/dashboard/'})"
@@ -182,50 +181,13 @@ export default {
               {{ $t('dashboard') }}
             </NuxtLink> -->
 
-            <ODropdown :triggers="['hover']" aria-role="list">
-              <div class="whitespace-nowrap" slot="trigger">
-                {{ $t('all_affiliates') }}
-              </div>
-              <ODropdownItem @click="show('affiliates')" aria-role="listitem">List Affiliates</ODropdownItem>
-              <ODropdownItem @click="show('regions')"  aria-role="listitem">Regions</ODropdownItem>
-              <ODropdownItem @click="show('staff')"  aria-role="listitem">Staff</ODropdownItem>
-              <ODropdownItem @click="show('agencies')"  aria-role="listitem">Agencies</ODropdownItem>
-              <ODropdownItem @click="show('churches')"  aria-role="listitem">Churches</ODropdownItem>
-              <ODropdownItem @click="show('import')"  aria-role="listitem">Import Data</ODropdownItem>
-            </ODropdown>
+            <AffiliatesMenu />
+            <AffiliateMenu />
+            <PeopleMenu />
 
-            <ODropdown :triggers="['hover']" aria-role="list">
-              <div class="whitespace-nowrap" slot="trigger">
-                Affiliate
-              </div>
-              <ODropdownItem @click="show('organizations')" aria-role="listitem">Edit Organization</ODropdownItem>
-              <ODropdownItem @click="show('regions')"  aria-role="listitem">Regions</ODropdownItem>
-              <ODropdownItem @click="show('staff')"  aria-role="listitem">Staff</ODropdownItem>
-              <ODropdownItem @click="show('agencies')"  aria-role="listitem">Agencies</ODropdownItem>
-              <ODropdownItem @click="show('churches')"  aria-role="listitem">Churches</ODropdownItem>
-              <ODropdownItem @click="show('reports')"  aria-role="listitem">Reports</ODropdownItem>
-              <ODropdownItem @click="show('import')"  aria-role="listitem">Import Data</ODropdownItem>
-            </ODropdown>
-
-            <ODropdown :triggers="['hover']" aria-role="list">
-              <div class="whitespace-nowrap" slot="trigger">
-                People
-              </div>
-              <ODropdownItem @click="show('advocates')" aria-role="listitem">Advocates</ODropdownItem>
-              <ODropdownItem @click="show('volunteers')"  aria-role="listitem">Volunteers</ODropdownItem>
-              <ODropdownItem @click="show('families')"  aria-role="listitem">Families</ODropdownItem>
-              <ODropdownItem @click="show('communities')"  aria-role="listitem">Communities</ODropdownItem>
-              <ODropdownItem @click="show('map')"  aria-role="listitem">People Map</ODropdownItem>
-            </ODropdown>
-
-            <ODropdown :triggers="['hover']" aria-role="list">
-              <div class="whitespace-nowrap" slot="trigger">
-                Events & Needs
-              </div>
-              <ODropdownItem @click="show('calendar')" aria-role="listitem">Calendar</ODropdownItem>
-              <ODropdownItem @click="show('events')"  aria-role="listitem">FAM Events</ODropdownItem>
-              <ODropdownItem @click="show('requests')"  aria-role="listitem">Care Requests</ODropdownItem>
-            </ODropdown>
+            <BaseMenu :items="['agencies', 'volunteers']">
+              {{ $t('all_affiliates') }}
+            </BaseMenu>
 
             <NuxtLink
               v-for="(route, index) in routes"
@@ -237,7 +199,7 @@ export default {
           </div>
         </div>
 
-        <div class="flex space-x-3 items-center">
+        <div class="flex items-center space-x-3">
           <!-- <div class="flex-shrink-0">
             <OButton
               size="small"
@@ -256,25 +218,24 @@ export default {
           </OptionsMenuButton> -->
 
           <div class="md:ml-4 md:flex-shrink-0 md:flex md:items-center">
-
             <!-- NotificationsButton -->
-            <span class="rounded-md shadow-sm relative inline-flex">
+            <span class="relative inline-flex rounded-md shadow-sm">
               <button
-                class="bg-white rounded-full p-1 text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500"
+                class="p-1 text-gray-400 bg-white rounded-full hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500"
                 @click="showAnnouncements = !showAnnouncements"
               >
                 <span class="sr-only">{{ $t('view_notifications') }}</span>
                 <BaseIconOutlined name="bell" />
               </button>
               <span
-                class="flex h-2 -mt-1 -mr-1 top-0 right-0 w-2 absolute"
+                class="absolute top-0 right-0 flex w-2 h-2 -mt-1 -mr-1"
                 style="margin: 8px 7px 0 0"
               >
                 <span
-                  class="rounded-full h-full bg-red-400 w-full opacity-75 animate-ping absolute inline-flex"
+                  class="absolute inline-flex w-full h-full bg-red-400 rounded-full opacity-75 animate-ping"
                 />
                 <span
-                  class="rounded-full bg-red-500 h-2 w-2 relative inline-flex"
+                  class="relative inline-flex w-2 h-2 bg-red-500 rounded-full"
                 />
               </span>
             </span>
@@ -307,49 +268,48 @@ export default {
                 {{ $t('admin') }}
               </NuxtLink>
             </div>
-
           </div>
         </div>
       </div>
     </div>
 
     <div v-if="showMenu" class="md:hidden">
-      <div class="space-y-1 pt-2 pb-3">
+      <div class="pt-2 pb-3 space-y-1">
         <!-- Current: "bg-primary-50 border-primary-500 text-primary-700", Default: "border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700" -->
         <NuxtLink
           :to="localePath({path: '/dashboard/'})"
-          class="font-medium bg-primary-50 border-l-4 border-primary-500 text-base py-2 pr-4 pl-3 text-primary-700 block sm:pl-5 sm:pr-6"
+          class="block py-2 pl-3 pr-4 text-base font-medium border-l-4 bg-primary-50 border-primary-500 text-primary-700 sm:pl-5 sm:pr-6"
         >
           {{ $t('dashboard') }}
         </NuxtLink>
       </div>
 
-      <div class="border-t border-gray-200 pt-4 pb-3">
-        <div class="flex px-4 items-center sm:px-6">
+      <div class="pt-4 pb-3 border-t border-gray-200">
+        <div class="flex items-center px-4 sm:px-6">
           <div class="flex-shrink-0">
             <img
               style="filter: grayscale(1)"
-              class="rounded-full h-10 w-10"
+              class="w-10 h-10 rounded-full"
               :src="user.avatarURL"
               :alt="user.name"
             />
           </div>
           <div class="ml-3">
-            <div class="font-medium text-base text-gray-800">
+            <div class="text-base font-medium text-gray-800">
               {{ user.name }}
             </div>
-            <div class="font-medium text-sm text-gray-500">
+            <div class="text-sm font-medium text-gray-500">
               {{ user.email }}
             </div>
           </div>
 
           <button
-            class="bg-white rounded-full ml-auto flex-shrink-0 p-1 text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500"
+            class="flex-shrink-0 p-1 ml-auto text-gray-400 bg-white rounded-full hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500"
           >
             <span class="sr-only">{{ $t('view_notifications') }}</span>
             <!-- Heroicon name: bell -->
             <svg
-              class="h-6 w-6"
+              class="w-6 h-6"
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"
@@ -366,7 +326,7 @@ export default {
           </button>
         </div>
 
-        <div class="space-y-1 mt-3" />
+        <div class="mt-3 space-y-1" />
       </div>
     </div>
 
@@ -382,20 +342,20 @@ export default {
       :open="showAnnouncements"
     >
       <section
-        class="divide-y bg-white flex flex-col h-full divide-gray-200 shadow-xl mt-16"
+        class="flex flex-col h-full mt-16 bg-white divide-y divide-gray-200 shadow-xl"
       >
         <div class="flex flex-col flex-1 min-h-0 overflow-y-scroll">
-          <header class="mt-4 px-4 sm:px-6">
+          <header class="px-4 mt-4 sm:px-6">
             <div class="flex items-start justify-between">
               <h2
                 id="slide-over-heading"
-                class="font-medium text-lg text-gray-900"
+                class="text-lg font-medium text-gray-900"
               >
                 {{ $t('announcements') }}
               </h2>
-              <div class="flex h-7 ml-3 items-center">
+              <div class="flex items-center ml-3 h-7">
                 <button
-                  class="bg-white rounded-md text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-primary-500"
+                  class="text-gray-400 bg-white rounded-md hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-primary-500"
                   @click="showAnnouncements = false"
                 >
                   <span class="sr-only">{{ $t('close_panel') }}</span>
@@ -405,7 +365,7 @@ export default {
             </div>
           </header>
 
-          <article class="flex-1 mt-4 px-4 relative sm:px-6">
+          <article class="relative flex-1 px-4 mt-4 sm:px-6">
             <!--
   This example requires Tailwind CSS v2.0+
 
@@ -423,16 +383,16 @@ export default {
   ```
 -->
             <div>
-              <div class="mt-6 flow-root">
-                <ul class="divide-y divide-gray-200 -my-5">
+              <div class="flow-root mt-6">
+                <ul class="-my-5 divide-y divide-gray-200">
                   <li class="py-5">
                     <div
                       class="relative focus-within:ring-2 focus-within:ring-primary-500"
                     >
-                      <h3 class="font-semibold text-sm text-gray-800">
+                      <h3 class="text-sm font-semibold text-gray-800">
                         <a href="#" class="hover:underline focus:outline-none">
                           <!-- Extend touch target to entire panel -->
-                          <span class="inset-0 absolute" aria-hidden="true" />
+                          <span class="absolute inset-0" aria-hidden="true" />
                           Office closed on July 2nd
                         </a>
                       </h3>
@@ -449,10 +409,10 @@ export default {
                     <div
                       class="relative focus-within:ring-2 focus-within:ring-primary-500"
                     >
-                      <h3 class="font-semibold text-sm text-gray-800">
+                      <h3 class="text-sm font-semibold text-gray-800">
                         <a href="#" class="hover:underline focus:outline-none">
                           <!-- Extend touch target to entire panel -->
-                          <span class="inset-0 absolute" aria-hidden="true" />
+                          <span class="absolute inset-0" aria-hidden="true" />
                           New password policy
                         </a>
                       </h3>
@@ -470,10 +430,10 @@ export default {
                     <div
                       class="relative focus-within:ring-2 focus-within:ring-primary-500"
                     >
-                      <h3 class="font-semibold text-sm text-gray-800">
+                      <h3 class="text-sm font-semibold text-gray-800">
                         <a href="#" class="hover:underline focus:outline-none">
                           <!-- Extend touch target to entire panel -->
-                          <span class="inset-0 absolute" aria-hidden="true" />
+                          <span class="absolute inset-0" aria-hidden="true" />
                           Office closed on July 2nd
                         </a>
                       </h3>
@@ -491,7 +451,7 @@ export default {
               <div class="mt-6">
                 <a
                   href="#"
-                  class="bg-white border rounded-md flex font-medium border-gray-300 shadow-sm text-sm w-full py-2 px-4 text-gray-700 items-center justify-center hover:bg-gray-50"
+                  class="flex items-center justify-center w-full px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md shadow-sm hover:bg-gray-50"
                 >
                   View all
                 </a>
@@ -500,16 +460,16 @@ export default {
           </article>
         </div>
 
-        <footer v-if="false" class="flex flex-shrink-0 py-4 px-4 justify-end">
+        <footer v-if="false" class="flex justify-end flex-shrink-0 px-4 py-4">
           <button
-            class="bg-white border rounded-md font-medium border-gray-300 shadow-sm text-sm py-2 px-4 text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500"
+            class="px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500"
             @click="showAnnouncements = false"
           >
             {{ $t('cancel') }}
           </button>
           <button
             type="submit"
-            class="border border-transparent rounded-md font-medium bg-primary-600 shadow-sm text-sm text-white ml-4 py-2 px-4 inline-flex justify-center hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500"
+            class="inline-flex justify-center px-4 py-2 ml-4 text-sm font-medium text-white border border-transparent rounded-md shadow-sm bg-primary-600 hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500"
           >
             {{ $t('save') }}
           </button>
@@ -527,12 +487,12 @@ export default {
       mobile="fullwidth"
     >
       <section
-        class="divide-y bg-white flex flex-col h-full divide-gray-200 shadow-xl"
+        class="flex flex-col h-full bg-white divide-y divide-gray-200 shadow-xl"
       >
-        <div class="inset-0 fixed overflow-hidden">
-          <div class="inset-0 absolute overflow-hidden">
+        <div class="fixed inset-0 overflow-hidden">
+          <div class="absolute inset-0 overflow-hidden">
             <section
-              class="flex max-w-full pl-10 inset-y-0 right-0 absolute sm:pl-16"
+              class="absolute inset-y-0 right-0 flex max-w-full pl-10 sm:pl-16"
               aria-labelledby="slide-over-heading"
             >
               <!--
@@ -545,20 +505,20 @@ export default {
           From: "translate-x-0"
           To: "translate-x-full"
       -->
-              <div class="max-w-md w-screen">
+              <div class="w-screen max-w-md">
                 <div
-                  class="bg-white flex flex-col h-full shadow-xl overflow-y-scroll"
+                  class="flex flex-col h-full overflow-y-scroll bg-white shadow-xl"
                 >
                   <!-- Header -->
                   <div class="p-6">
                     <div class="flex items-start justify-between">
                       <h2
                         id="slide-over-heading"
-                        class="font-medium text-lg text-gray-900"
+                        class="text-lg font-medium text-gray-900"
                       >
                         {{ $t('volunteers') }}
                       </h2>
-                      <div class="flex h-7 ml-3 items-center">
+                      <div class="flex items-center ml-3 h-7">
                         <button @click="showVolunteerView = false">
                           <BaseIconSolid name="x" />
                         </button>
@@ -573,7 +533,7 @@ export default {
                         <!-- Current: "border-primary-500 text-primary-600", Default: "border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300" -->
                         <a
                           href="#"
-                          class="font-medium border-b-2 border-primary-500 text-sm px-1 pb-4 text-primary-600 whitespace-nowrap"
+                          class="px-1 pb-4 text-sm font-medium border-b-2 border-primary-500 text-primary-600 whitespace-nowrap"
                           aria-current="page"
                         >
                           {{ $t('all') }}
@@ -581,14 +541,14 @@ export default {
 
                         <a
                           href="#"
-                          class="border-transparent font-medium border-b-2 text-sm px-1 pb-4 text-gray-500 hover:text-gray-700 hover:border-gray-300 whitespace-nowrap"
+                          class="px-1 pb-4 text-sm font-medium text-gray-500 border-b-2 border-transparent hover:text-gray-700 hover:border-gray-300 whitespace-nowrap"
                         >
                           {{ $t('certified') }}
                         </a>
 
                         <a
                           href="#"
-                          class="border-transparent font-medium border-b-2 text-sm px-1 pb-4 text-gray-500 hover:text-gray-700 hover:border-gray-300 whitespace-nowrap"
+                          class="px-1 pb-4 text-sm font-medium text-gray-500 border-b-2 border-transparent hover:text-gray-700 hover:border-gray-300 whitespace-nowrap"
                         >
                           {{ $t('in_training') }}
                         </a>
@@ -597,25 +557,25 @@ export default {
                   </div>
 
                   <!-- List -->
-                  <ul class="divide-y divide-gray-200 overflow-y-auto">
+                  <ul class="overflow-y-auto divide-y divide-gray-200">
                     <li
                       v-for="person in people"
                       :key="person.id"
-                      class="py-5 px-6 relative"
+                      class="relative px-6 py-5"
                     >
                       <div class="flex items-center justify-between group">
-                        <a href="#" class="-m-1 p-1 block">
+                        <a href="#" class="block p-1 -m-1">
                           <div
-                            class="inset-0 absolute group-hover:bg-gray-50"
+                            class="absolute inset-0 group-hover:bg-gray-50"
                             aria-hidden="true"
                           />
                           <div
-                            class="flex flex-1 min-w-0 relative items-center"
+                            class="relative flex items-center flex-1 min-w-0"
                           >
-                            <span class="flex-shrink-0 relative inline-block">
+                            <span class="relative flex-shrink-0 inline-block">
                               <img
                                 style="filter: grayscale(1)"
-                                class="rounded-full h-10 w-10"
+                                class="w-10 h-10 rounded-full"
                                 src="https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
                                 alt=""
                               />
@@ -631,7 +591,7 @@ export default {
                             </span>
                             <div class="ml-4 truncate">
                               <p
-                                class="font-medium text-sm text-gray-900 truncate"
+                                class="text-sm font-medium text-gray-900 truncate"
                               >
                                 {{ person.name }}
                               </p>
@@ -641,10 +601,10 @@ export default {
                             </div>
                           </div>
                         </a>
-                        <div class="text-left ml-2 relative inline-block">
+                        <div class="relative inline-block ml-2 text-left">
                           <button
                             id="options-menu-0"
-                            class="bg-white rounded-full h-8 w-8 relative inline-flex items-center justify-center group focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500"
+                            class="relative inline-flex items-center justify-center w-8 h-8 bg-white rounded-full group focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500"
                             aria-haspopup="true"
                             aria-expanded="false"
                           >
@@ -652,11 +612,11 @@ export default {
                               {{ $t('open_options_menu') }}
                             </span>
                             <span
-                              class="rounded-full flex h-full w-full items-center justify-center"
+                              class="flex items-center justify-center w-full h-full rounded-full"
                             >
                               <!-- Heroicon name: dots-vertical -->
                               <svg
-                                class="h-5 text-gray-400 w-5 group-hover:text-gray-500"
+                                class="w-5 h-5 text-gray-400 group-hover:text-gray-500"
                                 xmlns="http://www.w3.org/2000/svg"
                                 viewBox="0 0 20 20"
                                 fill="currentColor"
@@ -681,7 +641,7 @@ export default {
                   -->
                           <div
                             v-if="false"
-                            class="bg-white rounded-md shadow-lg ring-black origin-top-right top-0 right-9 ring-1 ring-opacity-5 w-48 z-10 absolute"
+                            class="absolute top-0 z-10 w-48 origin-top-right bg-white rounded-md shadow-lg ring-black right-9 ring-1 ring-opacity-5"
                             aria-label="options-menu"
                           >
                             <div
@@ -692,14 +652,14 @@ export default {
                             >
                               <a
                                 href="#"
-                                class="text-sm py-2 px-4 text-gray-700 block hover:bg-gray-100 hover:text-gray-900"
+                                class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
                                 role="menuitem"
                               >
                                 {{ $t('view_profile') }}
                               </a>
                               <a
                                 href="#"
-                                class="text-sm py-2 px-4 text-gray-700 block hover:bg-gray-100 hover:text-gray-900"
+                                class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
                                 role="menuitem"
                               >
                                 {{ $t('send_message') }}
@@ -718,8 +678,8 @@ export default {
       </section>
     </OSidebar>
 
-    <div v-if="showNewProjectView" class="inset-0 fixed overflow-hidden">
-      <div class="inset-0 absolute overflow-hidden">
+    <div v-if="showNewProjectView" class="fixed inset-0 overflow-hidden">
+      <div class="absolute inset-0 overflow-hidden">
         <!--
       Background overlay, show/hide based on slide-over state.
 
@@ -732,22 +692,22 @@ export default {
     -->
         <Transition
           enter-class="opacity-0"
-          enter-active-class="transition-medium ease-in-out duration-500"
+          enter-active-class="duration-500 ease-in-out transition-medium"
           enter-to-class="opacity-100"
           leave-class="opacity-100"
-          leave-active-class="transition-medium ease-in-out duration-500"
+          leave-active-class="duration-500 ease-in-out transition-medium"
           leave-to-class="opacity-0"
           appear
         >
           <div
             v-show="showNewProjectView"
-            class="bg-gray-500 bg-opacity-75 inset-0 transition-opacity absolute"
+            class="absolute inset-0 transition-opacity bg-gray-500 bg-opacity-75"
             aria-hidden="true"
           />
         </Transition>
 
         <section
-          class="flex max-w-full pl-10 inset-y-0 right-0 absolute"
+          class="absolute inset-y-0 right-0 flex max-w-full pl-10"
           aria-labelledby="slide-over-heading"
         >
           <!--
@@ -761,36 +721,36 @@ export default {
           To: "translate-x-full"
       -->
           <Transition
-            enter-active-class="transform transition ease-in-out duration-500 sm:duration-700"
+            enter-active-class="transition duration-500 ease-in-out transform sm:duration-700"
             enter-class="translate-x-full"
             enter-to-class="translate-x-0"
-            leave-active-class="transform transition ease-in-out duration-500 sm:duration-700"
+            leave-active-class="transition duration-500 ease-in-out transform sm:duration-700"
             leave-class="translate-x-0"
             leave-to-class="translate-x-full"
             appear
             mode="in-out"
           >
-            <div v-show="showNewProjectView" class="max-w-md w-screen">
+            <div v-show="showNewProjectView" class="w-screen max-w-md">
               <div
-                class="bg-white flex flex-col h-full shadow-xl py-6 overflow-y-scroll"
+                class="flex flex-col h-full py-6 overflow-y-scroll bg-white shadow-xl"
               >
                 <div class="px-4 sm:px-6">
                   <div class="flex items-start justify-between">
                     <h2
                       id="slide-over-heading"
-                      class="font-medium text-lg text-gray-900"
+                      class="text-lg font-medium text-gray-900"
                     >
                       Panel title
                     </h2>
-                    <div class="flex h-7 ml-3 items-center">
+                    <div class="flex items-center ml-3 h-7">
                       <button
-                        class="bg-white rounded-md text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500"
+                        class="text-gray-400 bg-white rounded-md hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500"
                         @click.stop="showNewProjectView = false"
                       >
                         <span class="sr-only">Close panel</span>
                         <!-- Heroicon name: x -->
                         <svg
-                          class="h-6 w-6"
+                          class="w-6 h-6"
                           xmlns="http://www.w3.org/2000/svg"
                           fill="none"
                           viewBox="0 0 24 24"
@@ -808,11 +768,11 @@ export default {
                     </div>
                   </div>
                 </div>
-                <div class="flex-1 mt-6 px-4 relative sm:px-6">
+                <div class="relative flex-1 px-4 mt-6 sm:px-6">
                   <!-- Replace with your content -->
-                  <div class="px-4 inset-0 absolute sm:px-6">
+                  <div class="absolute inset-0 px-4 sm:px-6">
                     <div
-                      class="border-dashed h-full border-gray-200"
+                      class="h-full border-gray-200 border-dashed"
                       aria-hidden="true"
                     />
                   </div>

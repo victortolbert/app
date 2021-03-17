@@ -3,9 +3,9 @@ import FullCalendar from '@fullcalendar/vue'
 import dayGridPlugin from '@fullcalendar/daygrid'
 import timeGridPlugin from '@fullcalendar/timegrid'
 import interactionPlugin from '@fullcalendar/interaction'
-import {INITIAL_EVENTS, createEventId} from '@/helpers/event-utils'
+import {INITIAL_EVENTS, createEventId} from '~/helpers/event-utils'
 import {defineComponent} from '@nuxtjs/composition-api'
-// import Directory from '@/components/Directory.vue'
+// import Directory from '~/components/Directory.vue'
 
 export default defineComponent({
   // layout: 'plain',
@@ -381,8 +381,6 @@ export default defineComponent({
     </section>
   </div>
 </template>
-
-
 
 <style>
 button.skeuomorph-flat {
