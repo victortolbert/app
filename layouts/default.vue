@@ -30,7 +30,7 @@ export default defineComponent({
       </div> -->
     <AppOfflineIndicator />
 
-    <AppNavbar />
+    <PromiseServesNavbar />
 
     <main class="flex-1">
       <!-- save fetch calls on pages already visited -->

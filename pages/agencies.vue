@@ -112,7 +112,7 @@ export default defineComponent({
       </div>
     </SectionWrapper>
 
-    <SectionWrapper>
+    <SectionWrapper class="mt-4">
       <article>
         <div class="overflow-hidden border-b border-gray-200">
           <div class="grid grid-cols-2 gap-8 md:grid-cols-3">

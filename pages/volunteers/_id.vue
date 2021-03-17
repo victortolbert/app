@@ -39,7 +39,7 @@ export default defineComponent({
 })
 </script>
 <template>
-  <section>
+  <SectionWrapper>
     <h1>{{ volunteer.firstName }} {{ volunteer.lastName }}</h1>
-  </section>
+  </SectionWrapper>
 </template>

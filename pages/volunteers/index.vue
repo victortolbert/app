@@ -13,7 +13,7 @@ export default {
   },
   computed: {
     slicedPeople() {
-      const size = 10;
+      const size = 10
       return this.volunteers.slice(0, size)
       // return this.volunteers.slice(-size)
     },
@@ -30,7 +30,10 @@ export default {
       })
       console.log(result)
       // Fix ids to be unique
-      this.volunteers.push({...result, id: Number(this.volunteers.slice(-1)[0].id) + 1})
+      this.volunteers.push({
+        ...result,
+        id: Number(this.volunteers.slice(-1)[0].id) + 1,
+      })
     },
   },
 }
@@ -40,21 +43,23 @@ export default {
     <ul v-if="volunteers.length">
       <li v-for="volunteer in slicedPeople" :key="volunteer.id">
         <NuxtLink
-          :to="localePath({
-            path: `/volunteers/${volunteer.id}/`,
-            query: {
-              lang: 'en',
-              plan: 'private'
-            }
-          })"
+          :to="
+            localePath({
+              path: `/volunteers/${volunteer.id}/`,
+              query: {
+                lang: 'en',
+                plan: 'private',
+              },
+            })
+          "
         >
-          {{volunteer.firstName}}
+          {{ volunteer.firstName }}
         </NuxtLink>
       </li>
     </ul>
     <div v-else>
       <svg
-        class="animate-spin -ml-1 mr-3 h-11 w-11 text-black"
+        class="mr-3 -ml-1 text-black animate-spin h-11 w-11"
         xmlns="http://www.w3.org/2000/svg"
         fill="none"
         viewBox="0 0 24 24"

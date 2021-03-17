@@ -54,14 +54,12 @@ export default {
               class="max-h-12"
               :src="`https://cominex.net/assets/img/affiliates/${affiliate.id}/logo_large.png`"
               :alt="affiliate.affiliate_name"
-            >
+            />
           </NuxtLink>
         </div>
       </div>
     </SectionWrapper>
 
-    <SectionWrapper v-else>
-      loading...
-    </SectionWrapper>
+    <SectionWrapper v-else> loading... </SectionWrapper>
   </PageWrapper>
 </template>

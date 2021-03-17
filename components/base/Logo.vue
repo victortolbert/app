@@ -444,6 +444,7 @@ export default {
           'promise_serves',
           'promise',
           'pss',
+          'P686',
           'promiserves',
           'promiseserves',
         ].includes(name)

@@ -190,7 +190,7 @@ PATCH user: https://demo.promiseserves.org/api/v1/people/101/?auth_key=1234ltp&n
 2:47
 These are just examples with an obvious week auth key. So I'll tighten that all up before we go live with it. -->
 
-    <SectionWrapper is-padded class="mt-4">
+    <SectionWrapper class="mt-4">
       <div class="lg:grid-cols-2 lg:gap-4 lg:grid">
         <CalendarMonthly />
 
@@ -215,16 +215,16 @@ These are just examples with an obvious week auth key. So I'll tighten that all 
       </div>
     </SectionWrapper>
 
-    <SectionWrapper is-padded class="mt-4">
+    <SectionWrapper class="mt-4">
       <StatsDisplay />
       <StatsPanels />
     </SectionWrapper>
 
-    <SectionWrapper is-padded class="mt-4">
+    <SectionWrapper class="mt-4">
       <CurrentNews />
     </SectionWrapper>
 
-    <SectionWrapper is-padded class="mt-4">
+    <SectionWrapper class="mt-4">
       <OField label="Description">
         <CKEditor
           :editor="editor"
@@ -234,18 +234,18 @@ These are just examples with an obvious week auth key. So I'll tighten that all 
       </OField>
     </SectionWrapper>
 
-    <SectionWrapper is-padded class="mt-4">
+    <SectionWrapper class="mt-4">
       <KeyboardShortcut />
       <BaseDirectory />
     </SectionWrapper>
 
-    <SectionWrapper is-padded class="mt-4">
+    <SectionWrapper class="mt-4">
       <button @click="increment">Increment</button>
       <p>Counter : {{ counter }}</p>
       <button @click="decrement">Decrement</button>
     </SectionWrapper>
 
-    <SectionWrapper is-padded>
+    <SectionWrapper>
       <FormLabel>
         <input type="text" placeholder="First name" />
       </FormLabel>

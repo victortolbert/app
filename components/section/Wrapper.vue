@@ -3,7 +3,7 @@ export default {
   props: {
     isPadded: {
       type: Boolean,
-      default: false,
+      default: true,
     },
   },
 }

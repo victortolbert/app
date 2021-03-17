@@ -1,6 +1,6 @@
 <!-- @vue-ignore-->
 <template>
-  <PageWapper>
+  <PageWrapper>
     <!-- <BaseHero
       :title="$t('profile')"
       cover-url="https://cominex.net/assets/img/backgrounds/liquid_cheese.svg"
@@ -8,5 +8,5 @@
     /> -->
 
     <ProfileHeader />
-  </PageWapper>
+  </PageWrapper>
 </template>

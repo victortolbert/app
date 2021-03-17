@@ -1,5 +1,5 @@
 <script>
-import { defineComponent, watchEffect } from '@nuxtjs/composition-api'
+import {defineComponent, watchEffect} from '@nuxtjs/composition-api'
 import ChurchService from '~/services/ChurchService'
 
 export default defineComponent({
@@ -27,7 +27,7 @@ export default defineComponent({
     watchEffect(() => {
       this.churches = null
       ChurchService.getChurches(this.perPage, this.page)
-        .then((response) => {
+        .then(response => {
           this.churches = response.data
           this.totalChurches = response.headers['x-total-count']
         })
@@ -42,7 +42,6 @@ export default defineComponent({
 <template>
   <PageWrapper>
     <PageHeading> {{ $t('churches') }} </PageHeading>
-
 
     <SectionWrapper class="tabs">
       <div>
