@@ -74,6 +74,13 @@ export default defineComponent({
           </div>
         </div>
       </SectionWrapper>
+
+      <SectionWrapper>
+        <img
+          :src="`https://cominex.net/assets/img/affiliates/${affiliate.id}/logo_large.png`"
+          :alt="affiliate.affiliate_name"
+        />
+      </SectionWrapper>
     </div>
 
     <SectionWrapper v-if="false" class="mt-4">
