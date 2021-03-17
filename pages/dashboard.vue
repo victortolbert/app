@@ -191,27 +191,27 @@ PATCH user: https://demo.promiseserves.org/api/v1/people/101/?auth_key=1234ltp&n
 These are just examples with an obvious week auth key. So I'll tighten that all up before we go live with it. -->
 
     <SectionWrapper is-padded class="mt-4">
-      <div class="grid grid-cols-2 gap-4">
+      <div class="lg:grid-cols-2 lg:gap-4 lg:grid">
         <CalendarMonthly />
-      </div>
-    </SectionWrapper>
 
-    <SectionWrapper class="swipper-example">
-      <!-- directive: render origin html on server & render Swiper on browser -->
-      <!-- You can get the swiper instance object in current component context by the name: "mySwiper"  -->
-      <div
-        class="swiper"
-        v-swiper:myDirectiveSwiper="swiperOptions"
-        @ready="onSwiperRedied"
-        @click-slide="onSwiperClickSlide"
-        @slide-change-transition-start="onSwiperSlideChangeTransitionStart"
-      >
-        <div class="swiper-wrapper">
-          <div class="swiper-slide" v-for="index in 6" :key="index">
-            <span>Slide {{ index }}</span>
+        <div class="swipper-example">
+          <!-- directive: render origin html on server & render Swiper on browser -->
+          <!-- You can get the swiper instance object in current component context by the name: "mySwiper"  -->
+          <div
+            class="swiper"
+            v-swiper:myDirectiveSwiper="swiperOptions"
+            @ready="onSwiperRedied"
+            @click-slide="onSwiperClickSlide"
+            @slide-change-transition-start="onSwiperSlideChangeTransitionStart"
+          >
+            <div class="mt-4 lg:mt-0 swiper-wrapper">
+              <div class="swiper-slide" v-for="index in 6" :key="index">
+                <span>Slide {{ index }}</span>
+              </div>
+            </div>
+            <div class="swiper-pagination swiper-pagination-bullets"></div>
           </div>
         </div>
-        <div class="swiper-pagination swiper-pagination-bullets"></div>
       </div>
     </SectionWrapper>
 

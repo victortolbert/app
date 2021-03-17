@@ -11,7 +11,7 @@ export default defineComponent({
   },
   mounted() {
     this.$jam('this.$jam plugin works in mounted...')
-    ctx.$icon(512)
+    // ctx.$icon(512)
   },
 })
 </script>
