@@ -66,7 +66,7 @@
     "@vueuse/rxjs": "4.4.1",
     "@vueuse/sound": "1.1.7",
     "aws-s3": "^2.0.5",
-    "aws-sdk": "^2.865.0",
+    "aws-sdk": "^2.866.0",
     "braintree-web": "^3.74.0",
     "camelcase-keys": "^6.2.2",
     "canvas-confetti": "^1.4.0",
