@@ -89,7 +89,7 @@
     "filepond-plugin-file-validate-type": "1.2.5",
     "filepond-plugin-image-exif-orientation": "^1.0.9",
     "filepond-plugin-image-preview": "4.6.5",
-    "firebase": "8.3.0",
+    "firebase": "8.3.1",
     "firebaseui": "^4.8.0",
     "fullcalendar": "5.5.1",
     "gsap": "3.6.0",
