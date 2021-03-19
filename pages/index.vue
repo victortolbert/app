@@ -1,5 +1,4 @@
 <script>
-// @ts-ignore
 export default {
   layout: 'plain',
   computed: {
@@ -49,15 +48,18 @@ export default {
     // ray({text: 'an object'})
     // ray('as', 'many', 'arguments', 'as', 'you', 'like')
     // ray('this is blue').color('blue')
-    // ray().newScreen('My debug screen')
+    // this.$ray().newScreen('My debug screen')
+    // console.log(process.env.VUE_APP_FIREBASE_CONFIG)
+    // console.log(this.$config)
+    console.log(this.$markdown('## Hello'))
   },
 }
 </script>
 
 <template>
-  <main class="flex items-center justify-center min-h-screen ">
+  <main class="flex items-center justify-center min-h-screen">
     <div
-      class="max-w-4xl overflow-hidden  divide-y divide-gray-200 rounded-lg sm:divide-y-0 sm:grid sm:grid-cols-2 sm:gap-px"
+      class="max-w-4xl overflow-hidden divide-y divide-gray-200 rounded-lg sm:divide-y-0 sm:grid sm:grid-cols-2 sm:gap-px"
     >
       <div
         v-for="section in sections"
@@ -74,10 +76,7 @@ export default {
 
         <div class="mt-8">
           <h3 class="text-lg font-medium capitalize">
-            <NuxtLink
-              :to="localePath({path: section.path})"
-              class="focus:outline-none"
-            >
+            <NuxtLink :to="`/${section.name}/`" class="focus:outline-none">
               <span
                 class="absolute inset-0"
                 aria-hidden="true"

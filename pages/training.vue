@@ -1,30 +1,79 @@
+<script>
+export default {
+  data() {
+    return {
+      activeTab: '0',
+      count: 1,
+    }
+  },
+  mounted() {
+    setTimeout(() => {
+      this.count++
+    }, 3 * 1000)
+  },
+}
+</script>
+
 <template>
   <article class="flex-1">
     <PageHeading> {{ $t('training') }} </PageHeading>
 
-    <div class="space-x-3">
-      <span class="rounded font-medium bg-warning-100 text-xs py-0.5 px-2 text-warning-800 inline-flex items-center"
-      >
-        {{ $t('badge') }}
-      </span>
-      <span
-        class="rounded font-medium bg-danger-100 text-xs py-0.5 px-2 text-danger-800 inline-flex items-center"
-      >
-        {{ $t('badge') }}
-      </span>
-      <span
-        class="rounded font-medium bg-info-100 text-xs py-0.5 px-2 text-info-800 inline-flex items-center"
-      >
-        {{ $t('badge') }}
-      </span>
-      <span
-        class="rounded font-medium bg-success-100 text-xs py-0.5 px-2 text-success-800 inline-flex items-center"
-      >
-        {{ $t('badge') }}
-      </span>
-    </div>
+    <SectionWrapper>
+      <div class="space-x-3">
+        <BaseTag class="font-bold tracking-wider uppercase">
+          {{ $t('new') }}
+        </BaseTag>
+      </div>
+    </SectionWrapper>
 
-    <section class="tabs">
+    <SectionWrapper>
+      <OTabs expanded :animated="false" v-model="activeTab">
+        <OTabItem>
+          <template #header>
+            <OIcon icon="information-outline" />
+            <span> Issues <BaseTag rounded> 3 </BaseTag> </span>
+          </template>
+        </OTabItem>
+
+        <OTabItem>
+          <template #header>
+            <OIcon icon="source-pull" />
+            <span>
+              Pull Requests <BaseTag rounded> {{ count }} </BaseTag>
+            </span>
+          </template>
+        </OTabItem>
+
+        <OTabItem value="0" label="My Account">
+          Lorem ipsum dolor sit amet.
+        </OTabItem>
+
+        <OTabItem :value="1" label="Company">
+          Lorem <br />
+          ipsum <br />
+          dolor <br />
+          sit <br />
+          amet.
+        </OTabItem>
+
+        <OTabItem value="2" label="Team Members">
+          What light is light, if Silvia be not seen? <br />
+          What joy is joy, if Silvia be not by— <br />
+          Unless it be to think that she is by <br />
+          And feed upon the shadow of perfection? <br />
+          Except I be by Silvia in the night, <br />
+          There is no music in the nightingale.
+        </OTabItem>
+
+        <OTabItem value="3" label="Billing" icon="video" disabled>
+          Nunc nec velit nec libero vestibulum eleifend. Curabitur pulvinar
+          congue luctus. Nullam hendrerit iaculis augue vitae ornare. Maecenas
+          vehicula pulvinar tellus, id sodales felis lobortis eget.
+        </OTabItem>
+      </OTabs>
+    </SectionWrapper>
+
+    <SectionWrapper class="tabs">
       <div>
         <div class="sm:hidden">
           <label for="tabs" class="sr-only">Select a tab</label>
@@ -91,6 +140,6 @@
           </nav>
         </div>
       </div>
-    </section>
+    </SectionWrapper>
   </article>
 </template>

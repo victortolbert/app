@@ -1,6 +1,12 @@
 @import '@oruga-ui/oruga/dist/oruga-full-vars.css';
 
 :root {
+  --color: #243746;
+  --color-secondary: #0e2233;
+  --bg: #f3f5f4;
+  --bg-secondary: #fff;
+  --border-color: #ddd;
+
   --font-serif: Georgia, serif;
   --font-sans: Helvetica, sans-serif;
   --metric-wrapper: 40rem;
@@ -95,7 +101,7 @@
   --oruga-variant-primary: theme('colors.primary.500');
   --oruga-variant-secondary: theme('colors.secondary.500');
   --oruga-variant-danger: var(--color-danger);
-  --oruga-button-background-color: transparent;
+  --oruga-button-background-color: var(--oruga-variant-primary);
 
   --oruga-base-border-radius: theme('borderRadius.lg');
   --oruga-color-primary: theme('colors.primary.500');
@@ -482,6 +488,23 @@
   --oruga-upload-draggable-disabled-opacity
   --oruga-upload-draggable-padding
   */
+}
+
+.dark {
+  --color: #ebf4f1;
+  --color-primary: #41b38a;
+  --color-secondary: #fdf9f3;
+  --bg: #091a28;
+  --bg-secondary: #071521;
+  --border-color: #0d2538;
+}
+
+.sepia {
+  --color: #433422;
+  --color-secondary: #504231;
+  --bg: #f1e7d0;
+  --bg-secondary: #eae0c9;
+  --border-color: #ded0bf;
 }
 
 /* inputClasses

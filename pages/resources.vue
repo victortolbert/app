@@ -1,7 +1,9 @@
 <template>
   <PageWrapper>
     <PageHeading> {{ $t('resources') }} </PageHeading>
-    <BaseBreadcrumb class="mt-2" />
+
+    <PageBreadcrumb class="mt-2" />
+
     <NuxtChild />
   </PageWrapper>
 </template>

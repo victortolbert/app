@@ -17,9 +17,9 @@ export default defineComponent({
 </script>
 
 <template>
-  <NuxtLink class="person-link" :to="localePath(`/people/${person.id}`)">
+  <NuxtLink class="person-link" :to="`/people/${person.id}/`">
     <div class="person-card">
-      <img class="rounded-full h-16 w-16" :src="person.avatarUrl" />
+      <img class="w-16 h-16 rounded-full" :src="person.avatarUrl" />
     </div>
   </NuxtLink>
 </template>

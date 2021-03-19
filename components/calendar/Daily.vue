@@ -5,6 +5,7 @@ import FullCalendar from '@fullcalendar/vue'
 import dayGridPlugin from '@fullcalendar/daygrid'
 import timeGridPlugin from '@fullcalendar/timegrid'
 import interactionPlugin from '@fullcalendar/interaction'
+import listPlugin from '@fullcalendar/list'
 
 export default {
   components: {
@@ -32,13 +33,13 @@ export default {
         dayMaxEvents: true,
         events: this.events,
         weekends: this.weekendsVisible,
-        plugins: [dayGridPlugin, timeGridPlugin, interactionPlugin],
+        plugins: [dayGridPlugin, timeGridPlugin, interactionPlugin, listPlugin],
         headerToolbar: {
           left: 'prev,next today',
           center: 'title',
           right: 'dayGridMonth,timeGridWeek,timeGridDay',
         },
-        // initialView: 'dayGridWeek',
+        initialView: 'listDay',
       }
     },
 

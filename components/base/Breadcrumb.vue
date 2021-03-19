@@ -34,7 +34,7 @@ export default {
       <ol class="flex items-center space-x-4">
         <li>
           <div>
-            <NuxtLink :to="localePath({path: '/dashboard/'})">
+            <NuxtLink to="/">
               <BaseIconOutlined name="home" />
               <span class="sr-only"> {{ $t('home') }} </span>
             </NuxtLink>
@@ -55,10 +55,7 @@ export default {
                 clip-rule="evenodd"
               />
             </svg>
-            <NuxtLink
-              :to="localePath({path: '/dashboard/'})"
-              class="ml-4 text-sm font-medium"
-            >
+            <NuxtLink to="/dashboard/" class="ml-4 text-sm font-medium">
               {{ $t('dashboard') }}
             </NuxtLink>
           </div>

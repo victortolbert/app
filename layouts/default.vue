@@ -1,12 +1,20 @@
 <script>
 import {getColors} from 'theme-colors'
-import {defineComponent} from '@nuxtjs/composition-api'
+import {defineComponent, computed} from '@nuxtjs/composition-api'
+import {css} from '@emotion/css'
+import theme from '~/theme'
 
 export default defineComponent({
   setup() {
     const colors = getColors('#090')
+    const applyStyles = computed(() => {
+      return css({})
+    })
+
     return {
+      applyStyles,
       colors,
+      theme,
     }
   },
   mounted() {
@@ -17,30 +25,26 @@ export default defineComponent({
 </script>
 
 <template>
-  <div id="app" class="relative flex flex-col min-h-screen">
-    <!-- <div class="fixed w-full h-full overflow-hidden">
-        <div class="scroll-bg" style="
-            width: 100%;
-            height: 400%;
-            background-image: url('/assets/img/bg.png');
-            will-change: transform;
-            background-repeat: repeat-y;
-            background-position: center;
-          "></div>
-      </div> -->
-    <AppOfflineIndicator />
+  <ThemeProvider :theme="theme">
+    <div
+      id="app"
+      :class="applyStyles"
+      class="relative flex flex-col min-h-screen"
+    >
+      <AppOfflineIndicator />
 
-    <PromiseServesNavbar />
+      <PromiseServesNavbar />
 
-    <main class="flex-1">
-      <!-- save fetch calls on pages already visited -->
-      <!-- <nuxt keep-alive /> -->
-      <nuxt />
-    </main>
+      <main class="flex-1" :class="[`body-${$store.state.class.bodyClass}`]">
+        <!-- save fetch calls on pages already visited -->
+        <!-- <nuxt keep-alive /> -->
+        <nuxt />
+      </main>
 
-    <!-- <AppFooter /> -->
-    <!-- <AppToolbar /> -->
-    <!-- <AppCookieConsent button-text="I understand" /> -->
-    <PortalTarget name="overlays" />
-  </div>
+      <AppFooter />
+      <AppToolbar />
+      <!-- <AppCookieConsent button-text="I understand" /> -->
+      <PortalTarget name="overlays" />
+    </div>
+  </ThemeProvider>
 </template>

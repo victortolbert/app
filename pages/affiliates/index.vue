@@ -4,7 +4,9 @@ import Affiliate from '~/models/Affiliate'
 
 export default {
   async fetch() {
-    const affiliates = await Affiliate.page(this.currentPage).get()
+    // const affiliates = await Affiliate.page(this.currentPage).get()
+    const affiliates = await this.$affiliateRepository.index()
+
     this.affiliates = this.affiliates.concat(affiliates)
   },
   data() {

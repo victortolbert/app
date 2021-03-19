@@ -15,11 +15,15 @@ export default defineComponent({
       type: Boolean,
       default: false,
     },
+    halfheight: {
+      type: Boolean,
+      default: false,
+    },
     bgCover: {
       type: Boolean,
       default: false,
     },
-    coverURL: {
+    coverUrl: {
       type: String,
       default: '',
     },
@@ -28,14 +32,16 @@ export default defineComponent({
       default: '',
     },
   },
-  setup(props, {slots}) {
-    const hasActionsSlot = computed(() => !!slots.actions)
-    const hasTitleSlot = computed(() => !!slots.title)
-    const hasSubtitleSlot = computed(() => !!slots.subtitle)
-    const hasFooterSlot = computed(() => !!slots.footer)
-    const affiliate = reactive({coverURL: 'https://cominex.net/assets/img/people/victor.jpeg'})
+  setup(props, context) {
+    const hasActionsSlot = computed(() => !!context.slots.actions)
+    const hasTitleSlot = computed(() => !!context.slots.title)
+    const hasSubtitleSlot = computed(() => !!context.slots.subtitle)
+    const hasFooterSlot = computed(() => !!context.slots.footer)
+    const affiliate = reactive({
+      coverUrl: `https://cominex.net/assets/img/people/victor.jpeg`,
+    })
     const backgroundImage = computed(() => {
-      return props.coverURL ? `url(${props.coverURL})` : 'none'
+      return props.coverUrl ? `url(${props.coverUrl})` : 'none'
     })
 
     return {
@@ -54,14 +60,14 @@ export default defineComponent({
   <section
     :style="`background-image: ${backgroundImage}`"
     :class="{
-      'min-h-screen': fullheight,
+      'h-screen': fullheight,
       'bg-cover': bgCover,
       'md:flex md:flex-col md:items-center md:justify-center': false,
     }"
     class="relative w-full bg-repeat"
   >
     <header
-      class="w-full relative z-10"
+      class="relative z-10 w-full"
       :class="{
         'max-w-screen-lg xl:max-w-screen-xl': false,
       }"

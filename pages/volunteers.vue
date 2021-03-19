@@ -1,7 +1,7 @@
 <template>
   <PageWrapper>
     <PageHeading> {{ $t('volunteers') }} </PageHeading>
-    <BaseBreadcrumb class="mt-2" />
+    <PromiseServesVolunteerBreadcrumb class="px-8 mt-2" />
     <NuxtChild />
   </PageWrapper>
 </template>

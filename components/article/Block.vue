@@ -1,51 +1,3 @@
-<template>
-  <article>
-    <template v-if="$fetchState.pending">
-      <content-placeholders rounded>
-        <content-placeholders-heading />
-        <content-placeholders-img />
-        <content-placeholders-text :lines="50" />
-      </content-placeholders>
-    </template>
-    <template v-else-if="$fetchState.error">
-      <inline-error-block :error="$fetchState.error" />
-    </template>
-    <template v-else>
-      <header>
-        <h1>{{ _article.title }}</h1>
-        <div class="tags">
-          <NuxtLink
-            v-for="tag in _article.tags"
-            :key="tag"
-            :to="{name: 't-tag___en', params: {tag}}"
-            class="tag"
-          >
-            #{{ tag }}
-          </NuxtLink>
-        </div>
-        <div v-if="_article.cover_image" class="image-wrapper">
-          <img :src="_article.cover_image" :alt="_article.title" />
-        </div>
-        <div class="meta">
-          <div class="scl">
-            <span>
-              HeartIcon
-              {{ _article.positive_reactions_count }}
-            </span>
-            <span class="comments" @click="scrollToComments">
-              CommentsIcon
-              {{ _article.comments_count }}
-            </span>
-          </div>
-          <time>{{ _article.readable_publish_date }}</time>
-        </div>
-      </header>
-      <!-- eslint-disable-next-line -->
-      <div class="content" v-html="_article.body_html" />
-    </template>
-  </article>
-</template>
-
 <script>
 import Article from '~/models/Article'
 
@@ -97,3 +49,51 @@ export default {
   },
 }
 </script>
+
+<template>
+  <article>
+    <template v-if="$fetchState.pending">
+      <content-placeholders rounded>
+        <content-placeholders-heading />
+        <content-placeholders-img />
+        <content-placeholders-text :lines="50" />
+      </content-placeholders>
+    </template>
+    <template v-else-if="$fetchState.error">
+      <inline-error-block :error="$fetchState.error" />
+    </template>
+    <template v-else>
+      <header>
+        <h1>{{ _article.title }}</h1>
+        <div class="tags">
+          <NuxtLink
+            v-for="tag in _article.tags"
+            :key="tag"
+            :to="{name: 't-tag___en', params: {tag}}"
+            class="tag"
+          >
+            #{{ tag }}
+          </NuxtLink>
+        </div>
+        <div v-if="_article.cover_image" class="image-wrapper">
+          <img :src="_article.cover_image" :alt="_article.title" />
+        </div>
+        <div class="meta">
+          <div class="scl">
+            <span>
+              HeartIcon
+              {{ _article.positive_reactions_count }}
+            </span>
+            <span class="comments" @click="scrollToComments">
+              CommentsIcon
+              {{ _article.comments_count }}
+            </span>
+          </div>
+          <time>{{ _article.readable_publish_date }}</time>
+        </div>
+      </header>
+      <!-- eslint-disable-next-line -->
+      <div class="content" v-html="_article.body_html" />
+    </template>
+  </article>
+</template>

@@ -1,5 +1,10 @@
+<script>
+export default {
+  name: 'PageWrapper',
+}
+</script>
 <template>
-  <article>
+  <div>
     <slot />
-  </article>
+  </div>
 </template>

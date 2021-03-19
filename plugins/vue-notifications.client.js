@@ -3,7 +3,7 @@ import VueNotifications from 'vue-notifications'
 // import swal from 'sweetalert' // https://github.com/t4t5/sweetalert
 
 import iziToast from 'izitoast' // https://github.com/dolce/iziToast
-// import 'izitoast/dist/css/iziToast.min.css'
+import 'izitoast/dist/css/iziToast.min.css'
 
 function toast({title, message, type, timeout, cb}) {
   if (type === VueNotifications.types.warn) type = 'warning'

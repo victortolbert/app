@@ -275,7 +275,7 @@ export default defineComponent({
             </header>
           </article>
 
-          <!-- <FamiliesAwaitingCommunities /> -->
+          <!-- <PromiseServesFamiliesAwaitingCommunities /> -->
           <article class="mt-8">
             <header class="px-4 py-5 border-b border-gray-200 sm:px-6">
               <div

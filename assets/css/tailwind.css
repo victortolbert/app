@@ -1,19 +1,22 @@
 @import 'tailwindcss/base';
 /* @import './fonts.pcss';
 @import './base/typography.css'; */
-@import './base.css';
+/* @import './base.css'; */
 @import './base/variables.css';
 
 @import './base/utilities.css';
 @import './base/transitions.css';
 
 @import 'tailwindcss/components';
-@import './components/codemirror.css';
+@import './components/vendor/codemirror.css';
+@import './components/vendor/izitoast.css';
+@import './components/vendor/vue-toastification.css';
 @import './components/transitions.pcss';
 @import './components/cover_button.css';
 @import './components/duotone_card.css';
 @import './components/keyboard.css';
 @import './components/switcher.css';
+@import './components/toast.css';
 @import './components/tooltips.pcss';
 
 /* @import './components.pcss';
@@ -29,28 +32,47 @@
 }
 
 @layer base {
+  ::-moz-selection {
+    background: theme('colors.primary.100');
+  }
+
+  ::selection {
+    background: theme('colors.primary.100');
+  }
+
+  html {
+    overflow-y: scroll;
+  }
+
+  [id] {
+    scroll-margin-top: 100px;
+  }
+
+  /* TODO: Copy color styles to a theming system */
   body {
-    @apply bg-white dark:bg-gray-900;
+    background-color: var(--bg);
+    color: var(--color);
+    transition: background-color 0.3s;
+    background-color: #fff;
+    color: rgba(0, 0, 0, 0.8);
   }
 
-  h1 {
-    @apply mt-10 mb-8 text-4xl font-extrabold leading-none tracking-tight sm:text-6xl lg:text-7xl text-primary-500 dark:text-primary-600 sm:mt-14 sm:mb-10;
+  .dark body {
+    background-color: #091a28;
+    color: #ebf4f1;
   }
 
-  h2 {
-    @apply text-3xl text-primary-500 dark:text-primary-600;
+  .sepia body {
+    background-color: #f1e7d0;
+    color: #433422;
   }
 
-  h3 {
-    @apply text-lg text-primary-500 dark:text-primary-600;
+  a {
+    color: var(--color-primary);
   }
 }
 
 @layer components {
-  .create-story {
-    @apply absolute bottom-0 flex items-center justify-center w-8 h-8 font-mono text-2xl font-semibold text-white bg-blue-500 border-4 border-white rounded-full right-1 hover:bg-blue-700;
-  }
-
   .media-embed,
   .video-embed {
     position: relative;
@@ -71,6 +93,23 @@
     left: 0;
     width: 100%;
     height: 100%;
+  }
+
+  /* Styling the Disclosure Widgets */
+  details.disclosure > summary {
+    background-color: #fdb;
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+  }
+
+  details.disclosure > summary > * {
+    display: inline;
+  }
+
+  details.disclosure > div {
+    border: 2px solid #fdb;
+    margin-top: 0;
+    padding: 1rem;
   }
 
   .shortcut-combo {
@@ -116,31 +155,6 @@
     margin: 0 0.25em;
     padding: 0 2px 2px;
   }
-}
-
-/* Styling the Disclosure Widgets */
-details.disclosure > summary {
-  background-color: #fdb;
-  cursor: pointer;
-  padding: 0.5rem 1rem;
-}
-
-details.disclosure > summary > * {
-  display: inline;
-}
-
-details.disclosure > div {
-  border: 2px solid #fdb;
-  margin-top: 0;
-  padding: 1rem;
-}
-
-html {
-  overflow-y: scroll;
-}
-
-[id] {
-  scroll-margin-top: 100px;
 }
 
 .themed {
@@ -228,23 +242,6 @@ html {
 
 th:nth-child(3) {
   text-align: center;
-}
-
-.VueTables__child-row-toggler {
-  width: 16px;
-  height: 16px;
-  line-height: 16px;
-  display: block;
-  margin: auto;
-  text-align: center;
-}
-
-.VueTables__child-row-toggler--closed::before {
-  content: '+';
-}
-
-.VueTables__child-row-toggler--open::before {
-  content: '-';
 }
 
 [v-cloak] {

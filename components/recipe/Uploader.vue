@@ -74,9 +74,9 @@ export default defineComponent({
 
 <template>
   <form
-    class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:shadow-md rounded sm:px-8 sm:pt-6 pb-8 mb-4 text-main"
+    class="grid grid-cols-1 gap-4 pb-8 mb-4 md:grid-cols-2 sm:px-8 sm:pt-6 text-main"
   >
-    <div class="mb-4 col-start-1 md:col-end-3">
+    <div class="col-start-1 mb-4 md:col-end-3">
       <OField
         label="Title"
         label-for="name"
@@ -92,7 +92,7 @@ export default defineComponent({
       </OField>
     </div>
 
-    <div class="mb-4 col-start-1 md:col-end-3">
+    <div class="col-start-1 mb-4 md:col-end-3">
       <OField
         label="Author"
         label-for="author"
@@ -108,7 +108,7 @@ export default defineComponent({
       </OField>
     </div>
 
-    <div class="mb-4 col-start-1">
+    <div class="col-start-1 mb-4">
       <OField
         label="Time (in minutes)"
         label-for="time"
@@ -142,7 +142,7 @@ export default defineComponent({
       </OField>
     </div>
 
-    <div class="mb-4 col-start-1 flex justify-between">
+    <div class="flex justify-between col-start-1 mb-4">
       <OField
         label="Image"
         label-for="image"
@@ -191,7 +191,7 @@ export default defineComponent({
         </div>
       </OField>
     </div>
-    <div class="mb-4 col-start-1 md:col-end-3">
+    <div class="col-start-1 mb-4 md:col-end-3">
       <OField
         label="Procedure"
         label-for="procedure"

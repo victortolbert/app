@@ -3,7 +3,8 @@
     <PageHeading> {{ $t('import') }} </PageHeading>
 
     <div class="space-x-3">
-      <span class="rounded font-medium bg-warning-100 text-xs py-0.5 px-2 text-warning-800 inline-flex items-center"
+      <span
+        class="rounded font-medium bg-warning-100 text-xs py-0.5 px-2 text-warning-800 inline-flex items-center"
       >
         {{ $t('badge') }}
       </span>

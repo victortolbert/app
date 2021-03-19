@@ -10,17 +10,17 @@ export default {
       people: [
         {
           id: 1,
-          firstName: 'Victor'
+          firstName: 'Victor',
         },
         {
           id: 2,
-          firstName: 'Reginald'
+          firstName: 'Reginald',
         },
         {
           id: 3,
-          firstName: 'Vincent'
+          firstName: 'Vincent',
         },
-      ]
+      ],
     }
   },
   computed: {
@@ -41,12 +41,14 @@ export default {
   },
   mounted() {
     console.log(this.group)
-  }
+  },
 }
 </script>
 
 <template>
-  <div class="content">
-    <NuxtContent :document="page" />
-  </div>
+  <PageWrapper>
+    <SectionWrapper class="content">
+      <NuxtContent :document="page" />
+    </SectionWrapper>
+  </PageWrapper>
 </template>

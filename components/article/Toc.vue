@@ -1,3 +1,14 @@
+<script>
+export default {
+  props: {
+    toc: {
+      type: Array,
+      required: true,
+    },
+  },
+}
+</script>
+
 <template>
   <div class="w-full py-4 lg:p-8">
     <div class="lg:sticky lg:top-0 lg:pt-24 lg:-mt-24">
@@ -37,14 +48,3 @@
     </div>
   </div>
 </template>
-
-<script>
-export default {
-  props: {
-    toc: {
-      type: Array,
-      required: true,
-    },
-  },
-}
-</script>

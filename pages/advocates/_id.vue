@@ -60,7 +60,7 @@ export default defineComponent({
 </script>
 
 <template>
-  <section>
+  <SectionWrapper>
     <h1>{{ advocate.firstName }} {{ advocate.lastName }}</h1>
-  </section>
+  </SectionWrapper>
 </template>

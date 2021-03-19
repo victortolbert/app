@@ -181,86 +181,9 @@ export default {
               {{ $t('dashboard') }}
             </NuxtLink> -->
 
-            <ODropdown :triggers="['hover']" aria-role="list">
-              <div class="whitespace-nowrap" slot="trigger">
-                {{ $t('all_affiliates') }}
-              </div>
-              <ODropdownItem @click="show('affiliates')" aria-role="listitem"
-                >List Affiliates</ODropdownItem
-              >
-              <ODropdownItem @click="show('regions')" aria-role="listitem"
-                >Regions</ODropdownItem
-              >
-              <ODropdownItem @click="show('staff')" aria-role="listitem"
-                >Staff</ODropdownItem
-              >
-              <ODropdownItem @click="show('agencies')" aria-role="listitem"
-                >Agencies</ODropdownItem
-              >
-              <ODropdownItem @click="show('churches')" aria-role="listitem"
-                >Churches</ODropdownItem
-              >
-              <ODropdownItem @click="show('import')" aria-role="listitem"
-                >Import Data</ODropdownItem
-              >
-            </ODropdown>
-
-            <ODropdown :triggers="['hover']" aria-role="list">
-              <div class="whitespace-nowrap" slot="trigger">Affiliate</div>
-              <ODropdownItem @click="show('organizations')" aria-role="listitem"
-                >Edit Organization</ODropdownItem
-              >
-              <ODropdownItem @click="show('regions')" aria-role="listitem"
-                >Regions</ODropdownItem
-              >
-              <ODropdownItem @click="show('staff')" aria-role="listitem"
-                >Staff</ODropdownItem
-              >
-              <ODropdownItem @click="show('agencies')" aria-role="listitem"
-                >Agencies</ODropdownItem
-              >
-              <ODropdownItem @click="show('churches')" aria-role="listitem"
-                >Churches</ODropdownItem
-              >
-              <ODropdownItem @click="show('reports')" aria-role="listitem"
-                >Reports</ODropdownItem
-              >
-              <ODropdownItem @click="show('import')" aria-role="listitem"
-                >Import Data</ODropdownItem
-              >
-            </ODropdown>
-
-            <ODropdown :triggers="['hover']" aria-role="list">
-              <div class="whitespace-nowrap" slot="trigger">People</div>
-              <ODropdownItem @click="show('advocates')" aria-role="listitem"
-                >Advocates</ODropdownItem
-              >
-              <ODropdownItem @click="show('volunteers')" aria-role="listitem"
-                >Volunteers</ODropdownItem
-              >
-              <ODropdownItem @click="show('families')" aria-role="listitem"
-                >Families</ODropdownItem
-              >
-              <ODropdownItem @click="show('communities')" aria-role="listitem"
-                >Communities</ODropdownItem
-              >
-              <ODropdownItem @click="show('map')" aria-role="listitem"
-                >People Map</ODropdownItem
-              >
-            </ODropdown>
-
-            <ODropdown :triggers="['hover']" aria-role="list">
-              <div class="whitespace-nowrap" slot="trigger">Events & Needs</div>
-              <ODropdownItem @click="show('calendar')" aria-role="listitem"
-                >Calendar</ODropdownItem
-              >
-              <ODropdownItem @click="show('events')" aria-role="listitem"
-                >FAM Events</ODropdownItem
-              >
-              <ODropdownItem @click="show('requests')" aria-role="listitem"
-                >Care Requests</ODropdownItem
-              >
-            </ODropdown>
+            <PromiseServesAffiliatesMenu />
+            <PromiseServesAffiliateMenu />
+            <PromiseServesPeopleMenu />
 
             <NuxtLink
               v-for="(route, index) in routes"

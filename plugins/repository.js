@@ -10,5 +10,6 @@ export default ({$axios}, inject) => {
   inject('personRepository', repositoryWithAxios('/people'))
   inject('postRepository', repositoryWithAxios('/posts'))
   inject('regionRepository', repositoryWithAxios('/regions'))
+  inject('employeeRepository', repositoryWithAxios('/employees'))
   inject('volunteerRepository', repositoryWithAxios('/volunteers'))
 }

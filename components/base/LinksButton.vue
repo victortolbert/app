@@ -5,8 +5,8 @@ export default {
       type: Array,
       default() {
         return []
-      }
-    }
+      },
+    },
   },
   data() {
     return {
@@ -41,13 +41,13 @@ export default {
     >
       <div
         v-show="isOpen"
-        class="absolute right-0 z-30 w-56 py-1 mt-2 origin-top-right bg-primary-50 rounded-md shadow-lg z-1 ring-1 ring-black ring-opacity-5"
+        class="absolute right-0 z-30 w-56 py-1 mt-2 origin-top-right rounded-md shadow-lg bg-primary-50 z-1 ring-1 ring-black ring-opacity-5"
         role="menu"
         aria-orientation="vertical"
         aria-labelledby="user-menu"
       >
         <NuxtLink
-          :to="localePath({path: '/profile/'})"
+          to="/profile/"
           class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
           role="menuitem"
         >
@@ -55,7 +55,7 @@ export default {
         </NuxtLink>
 
         <NuxtLink
-          :to="localePath({name: '/requests/'})"
+          to="/requests/"
           class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
           role="menuitem"
         >
@@ -63,7 +63,7 @@ export default {
         </NuxtLink>
 
         <NuxtLink
-          :to="localePath({name: 'requests'})"
+          to="/requests/"
           class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
           role="menuitem"
         >

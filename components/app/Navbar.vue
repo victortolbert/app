@@ -9,7 +9,7 @@ export default {
     const isAdmin = ref(false)
     const affiliate = reactive({
       id: 1,
-      name: 'promiseserves',
+      name: 'vti',
       theme: {
         nav: {
           class: 'bg-white text-gray-800',
@@ -172,7 +172,8 @@ export default {
               class="flex items-center justify-center"
               :to="localePath({path: '/dashboard/'})"
             >
-              <BaseLogo class="text-primary-500" :name="slug" />
+              <!-- <BaseLogo class="text-primary-500" :name="slug" /> -->
+              🍯
             </NuxtLink>
           </div>
 
@@ -180,10 +181,6 @@ export default {
             <!-- <NuxtLink :to="localePath({path: '/dashboard/'})">
               {{ $t('dashboard') }}
             </NuxtLink> -->
-
-            <AffiliatesMenu />
-            <AffiliateMenu />
-            <PeopleMenu />
 
             <BaseMenu :items="['agencies', 'volunteers']">
               {{ $t('all_affiliates') }}

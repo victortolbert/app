@@ -40,6 +40,8 @@ export default defineComponent({
 </script>
 <template>
   <SectionWrapper>
-    <h1>{{ volunteer.firstName }} {{ volunteer.lastName }}</h1>
+    <PromiseServesVolunteerProfileHeader>
+      {{ volunteer.firstName }} {{ volunteer.lastName }}
+    </PromiseServesVolunteerProfileHeader>
   </SectionWrapper>
 </template>

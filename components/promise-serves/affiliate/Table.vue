@@ -38,7 +38,7 @@ export default {
           </tr>
         </thead>
         <tbody>
-          <AffiliateItem
+          <PromiseServesAffiliateItem
             :affiliate="affiliate"
             v-for="affiliate in affiliates"
             :key="affiliate.id"

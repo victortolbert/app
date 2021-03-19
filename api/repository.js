@@ -3,7 +3,7 @@
 export default $axios => resource => ({
   index() {
     // console.log($axios)
-    return $axios.$get(`${resource}`)
+    return $axios.$get(`${resource}?id_affiliate=45`)
   },
 
   show(id) {

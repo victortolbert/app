@@ -1,3 +1,14 @@
+<script>
+export default {
+  props: {
+    article: {
+      type: Object,
+      default: null,
+    },
+  },
+}
+</script>
+
 <template>
   <NuxtLink
     :to="{
@@ -49,14 +60,3 @@
     </div>
   </NuxtLink>
 </template>
-
-<script>
-export default {
-  props: {
-    article: {
-      type: Object,
-      default: null,
-    },
-  },
-}
-</script>

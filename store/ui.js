@@ -1,4 +1,5 @@
 export const state = () => ({
+  bodyClass: '',
   list: [
     {
       id: 1,
@@ -24,3 +25,9 @@ export const state = () => ({
     },
   ],
 })
+
+export const mutations = {
+  SET_BODY_CLASS(state, bodyClass) {
+    state.bodyClass = bodyClass
+  },
+}

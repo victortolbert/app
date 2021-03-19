@@ -1,3 +1,40 @@
+export const parseTimestamp = (timestamp, format = '') => {
+  if (!timestamp) return
+
+  const date = timestamp.seconds
+    ? new Date(timestamp.seconds * 1000)
+    : timestamp
+
+  if (format === 'HH:mm') {
+    return `${zeroPad(date.getHours(), 2)}:${zeroPad(date.getMinutes(), 2)}`
+  } else if (format === 'DD MMMM YYYY') {
+    const options = {month: 'long', year: 'numeric', day: 'numeric'}
+    return `${new Intl.DateTimeFormat('en-GB', options).format(date)}`
+  } else if (format === 'DD/MM/YY') {
+    const options = {month: 'numeric', year: 'numeric', day: 'numeric'}
+    return `${new Intl.DateTimeFormat('en-GB', options).format(date)}`
+  } else if (format === 'DD MMMM, HH:mm') {
+    const options = {month: 'long', day: 'numeric'}
+    return `${new Intl.DateTimeFormat('en-GB', options).format(
+      date,
+    )}, ${zeroPad(date.getHours(), 2)}:${zeroPad(date.getMinutes(), 2)}`
+  }
+
+  return date
+}
+
+const zeroPad = (num, pad) => {
+  return String(num).padStart(pad, '0')
+}
+
+export const isSameDay = (d1, d2) => {
+  return (
+    d1.getFullYear() === d2.getFullYear() &&
+    d1.getMonth() === d2.getMonth() &&
+    d1.getDate() === d2.getDate()
+  )
+}
+
 export const currency = amount => {
   const formatter = new Intl.NumberFormat('en-US', {
     style: 'currency',
@@ -50,30 +87,30 @@ export const sortAndGroup = async () => {
 
   const reducedData = sortedData.reduce((items, dataElement) => {
     if (!items.find(item => item.header === dataElement.charAt(0))) {
-      items.push({ header: dataElement.charAt(0) });
+      items.push({header: dataElement.charAt(0)})
     }
-    items.push({ name: dataElement });
-    return items;
-  }, []);
-  return reducedData.map(item => item.header || item.name);
-};
+    items.push({name: dataElement})
+    return items
+  }, [])
+  return reducedData.map(item => item.header || item.name)
+}
 
 // sortAndGroup().then(result => console.log(result));
 
-export const binned = (wordsArray) =>  wordsArray.reduce((result, word) => {
-  // get the first letter. (this assumes no empty words in the list)
-  const letter = word[0];
+export const binned = wordsArray =>
+  wordsArray.reduce((result, word) => {
+    // get the first letter. (this assumes no empty words in the list)
+    const letter = word[0]
 
-  // ensure the result has an entry for this letter
-  result[letter] = result[letter] || [];
+    // ensure the result has an entry for this letter
+    result[letter] = result[letter] || []
 
-  // add the word to the letter index
-  result[letter].push(word);
+    // add the word to the letter index
+    result[letter].push(word)
 
-  // return the updated result
-  return result;
-}, {})
-
+    // return the updated result
+    return result
+  }, {})
 
 // export const groupByAlphabet = (data, field = 'lastName') => {
 //   data.sort((a, b) => a[field].localeCompare(b[field], 'en', { sensitivity: 'base' }))
@@ -96,7 +133,6 @@ export const binned = (wordsArray) =>  wordsArray.reduce((result, word) => {
 
 // let result = Object.values(data)
 // console.log(result)
-
 
 export async function init({app, store, error, isClient}) {
   if (isClient) return
@@ -135,7 +171,7 @@ export const toTitleCase = str => {
 
   return str
     .split(wordSeparators)
-    .map(function(current, index, array) {
+    .map(function (current, index, array) {
       if (
         /* Check for small words */
         current.search(smallWords) > -1 &&
@@ -163,7 +199,7 @@ export const toTitleCase = str => {
       }
 
       /* Capitalize the first letter */
-      return current.replace(alphanumericPattern, function(match) {
+      return current.replace(alphanumericPattern, function (match) {
         return match.toUpperCase()
       })
     })

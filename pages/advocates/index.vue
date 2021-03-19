@@ -41,10 +41,7 @@ export default {
   <SectionWrapper>
     <ul>
       <li :key="id" v-for="{id, firstName} in slicedAdvocates">
-        <NuxtLink
-          v-if="firstName !== 'foo'"
-          :to="localePath(`/advocates/${id}`)"
-        >
+        <NuxtLink v-if="firstName !== 'foo'" to="/advocates/">
           {{ firstName }}
         </NuxtLink>
         <p v-else>{{ firstName }}</p>

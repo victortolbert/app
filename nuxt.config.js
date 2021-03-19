@@ -1,6 +1,16 @@
+import global from './helpers/global'
+import getRoutes from './helpers/get-routes'
+import getSiteMeta from './helpers/get-site-meta'
+import {defineNuxtConfig} from '@nuxtjs/composition-api'
+
+const meta = getSiteMeta()
+
 import path from 'path'
 
-export default {
+export default defineNuxtConfig({
+  // publicRuntimeConfig: {
+  //   baseUrl: process.env.BASE_URL || 'http://localhost:3000',
+  // },
   publicRuntimeConfig: {
     apiURL: process.env.API_URL || 'http://localhost:8686',
     assetsURL:
@@ -85,9 +95,50 @@ export default {
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
 
+  // Target (https://go.nuxtjs.dev/config-target)
   target: 'static',
+
   ssr: false,
+
   // watch: ['~/config/*'],
+
+  // // Global page headers (https://go.nuxtjs.dev/config-head)
+  // head: {
+  //   htmlAttrs: {
+  //     lang: 'en-GB',
+  //     class: 'bg-black',
+  //   },
+  //   title: 'Nuxt Basic Blog',
+  //   meta: [
+  //     ...meta,
+  //     {charset: 'utf-8'},
+  //     {name: 'viewport', content: 'width=device-width, initial-scale=1'},
+  //     {
+  //       hid: 'description',
+  //       name: 'description',
+  //       content: global.siteDesc || '',
+  //     },
+  //     {property: 'og:site_name', content: global.siteName || ''},
+  //     {
+  //       hid: 'description',
+  //       name: 'description',
+  //       content: global.siteDesc || '',
+  //     },
+  //     {property: 'og:image:width', content: '740'},
+  //     {property: 'og:image:height', content: '300'},
+  //     {name: 'twitter:site', content: global.siteName || ''},
+  //     {name: 'twitter:card', content: 'summary_large_image'},
+  //   ],
+  //   link: [
+  //     {rel: 'icon', type: 'image/x-icon', href: '/favicon.ico'},
+  //     {
+  //       hid: 'canonical',
+  //       rel: 'canonical',
+  //       href: global.siteUrl,
+  //     },
+  //   ],
+  // },
+
   head: {
     title: 'My amazing Nuxt application',
     titleTemplate: 'Demo App | %s',
@@ -95,6 +146,7 @@ export default {
       lang: 'en',
     },
     meta: [
+      ...meta,
       {charset: 'utf-8'},
       {
         name: 'viewport',
@@ -205,11 +257,11 @@ export default {
       //     'https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js',
       //   defer: true,
       // },
-      {
-        src:
-          '//cdn.materialdesignicons.com/5.4.55/css/materialdesignicons.min.css',
-        defer: true,
-      },
+      // {
+      //   src:
+      //     '//cdn.materialdesignicons.com/5.4.55/css/materialdesignicons.min.css',
+      //   defer: true,
+      // },
     ],
     bodyAttrs: {
       // class: ['antialiased font-sans bg-gray-200'],
@@ -229,6 +281,7 @@ export default {
     'codemirror/lib/codemirror.css',
     'codemirror/theme/base16-dark.css',
     'swiper/swiper-bundle.css',
+    '@fortawesome/fontawesome-svg-core/styles.css',
   ],
 
   layoutTransition: {
@@ -252,9 +305,12 @@ export default {
     '@nuxtjs/style-resources',
 
     // Doc: https://oruga.io/documentation/#nuxt
-    '@oruga-ui/oruga/nuxt',
+    // '@oruga-ui/oruga/nuxt',
 
     'nuxt-i18n',
+
+    // '@nuxtjs/feed',
+    // '@nuxtjs/sitemap',
 
     // '@nuxtjs/auth-next',
     // '@nuxtjs/auth',
@@ -298,6 +354,7 @@ export default {
     // '~/modules/io',
   ],
 
+  // Modules for dev and build (recommended) (https://go.nuxtjs.dev/config-modules)
   buildModules: [
     '@nuxtjs/tailwindcss',
     '@nuxt/typescript-build',
@@ -337,27 +394,30 @@ export default {
     '~/plugins/filters',
     '~/plugins/fontawesome',
     '~/plugins/jam',
+    '~/plugins/oruga',
     '~/plugins/portal-vue',
     '~/plugins/particles.client',
     '~/plugins/repository',
     '~/plugins/vee-validate',
     '~/plugins/vue-api-query',
+    '~/plugins/vue-advanced-cropper.client',
     '~/plugins/vue-awesome-swiper.client',
     // '~/plugins/vue-chartkick.client',
-    '~/plugins/vue-codemirror',
+    '~/plugins/vue-codemirror.client',
     '~/plugins/vue-content-placeholders',
     '~/plugins/vue-drag-zone',
-    '~/plugins/vue-float-label',
-    '~/plugins/vue-notifications',
+    '~/plugins/vue-float-label.client',
+    '~/plugins/markdown',
+    '~/plugins/vue-notifications.client',
+    '~/plugins/vue-ray',
     '~/plugins/vue-scrollactive',
-    '~/plugins/vue-shortkey',
+    '~/plugins/vue-shortkey.client',
     '~/plugins/vue-toastification.client',
     '~/plugins/vue-touch-ripple',
     '~/plugins/vue-video-player.client',
     '~/plugins/vue-virtual-scroller.client',
     // {src: '~plugins/vue-video-player.js', ssr: false},
     // '~plugins/vue-gtm',
-    // '~plugins/vue-ray.client',
     // '~/plugins/vuelidate',
     // '~plugins/vue-introjs.client',
 
@@ -391,8 +451,6 @@ export default {
     // '~/plugins/dynamic-marquee.client',
     // '~/plugins/highcharts',
     // '~/plugins/inject-ww.client',
-    // '~/plugins/markdown',
-    // '~/plugins/oruga',
     // '~/plugins/polyfills.client',
     // '~/plugins/repositories',
     // '~/plugins/slick.client.js',
@@ -416,6 +474,8 @@ export default {
 
   // serverMiddleware: ['~/myServerMiddleware', '~/server'],
   router: {
+    // middleware: ['check-auth', 'ui'],
+    middleware: ['ui'],
     prefetchLinks: false,
     trailingSlash: true,
   },
@@ -455,6 +515,46 @@ export default {
   //   extendParser: {
   //     '.custom': file => ({body: file.split('\n').map(line => line.trim())}),
   //   },
+  // },
+
+  // // RSS Feed Configuration (https://github.com/nuxt-community/feed-module)
+  // feed() {
+  //   const baseUrlArticles = `${global.siteUrl}/articles`
+  //   const baseLinkFeedArticles = '/articles'
+  //   const feedFormats = {
+  //     rss: {type: 'rss2', file: 'rss.xml'},
+  //     json: {type: 'json1', file: 'feed.json'},
+  //   }
+  //   const {$content} = require('@nuxt/content')
+
+  //   const createFeedArticles = async function (feed) {
+  //     feed.options = {
+  //       title: global.siteName || '',
+  //       description: global.siteDesc || '',
+  //       link: baseUrlArticles,
+  //     }
+  //     const articles = await $content('articles').fetch()
+
+  //     articles.forEach(article => {
+  //       const url = `${baseUrlArticles}/${article.slug}`
+
+  //       feed.addItem({
+  //         title: article.title,
+  //         id: url,
+  //         link: url,
+  //         date: new Date(article.published),
+  //         description: article.description,
+  //         content: article.description,
+  //         author: global.twitterHandle,
+  //       })
+  //     })
+  //   }
+
+  //   return Object.values(feedFormats).map(({file, type}) => ({
+  //     path: `${baseLinkFeedArticles}/${file}`,
+  //     type,
+  //     create: createFeedArticles,
+  //   }))
   // },
 
   // feed: [
@@ -555,6 +655,14 @@ export default {
     },
   },
 
+  // // Sitemap Configuration (https://github.com/nuxt-community/sitemap-module)
+  // sitemap: {
+  //   hostname: global.siteUrl,
+  //   routes() {
+  //     return getRoutes()
+  //   },
+  // },
+
   sound: {
     back: {
       src: '/assets/sound/back.wav',
@@ -614,6 +722,7 @@ export default {
   //   },
   // },
 
+  // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {
     extend(config, context) {
       config.module.rules.push({
@@ -646,4 +755,4 @@ export default {
       return files.map(file => (file.path === '/index' ? '/' : file.path))
     },
   },
-}
+})

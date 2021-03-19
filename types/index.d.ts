@@ -196,5 +196,13 @@ export interface Status {
   message?: string
 }
 
+type TaskType = 'personal' | 'work' | 'miscellaneous'
+
+export interface TodoItem {
+  label: string
+  type: TaskType
+  isComplete: boolean
+}
+
 
 export type TodoInput = Pick<Todo, 'title' | 'assignee'>

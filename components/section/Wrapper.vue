@@ -1,7 +1,7 @@
 <script>
 export default {
   props: {
-    isPadded: {
+    padded: {
       type: Boolean,
       default: true,
     },
@@ -9,7 +9,7 @@ export default {
 }
 </script>
 <template>
-  <section :class="{'p-8': isPadded}">
+  <section :class="{'lg:p-8': padded}">
     <slot />
   </section>
 </template>

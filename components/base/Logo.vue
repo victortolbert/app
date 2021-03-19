@@ -347,7 +347,7 @@ export default {
 
     <!-- GA SPS -->
     <svg
-      v-if="['ga_sps', 'sps', 'gasps'].includes(name)"
+      v-if="['ga_sps', 'sps', 'gasps', 'ga-sps'].includes(name)"
       class="w-auto h-5"
       width="235"
       height="45"

@@ -1,104 +1,41 @@
 <script>
-import {computed} from '@nuxtjs/composition-api'
+import {css} from '@emotion/css'
+
+const getThemeStyles = theme => ({
+  light: {
+    color: theme.colors.indigo['700'],
+    backgroundColor: theme.colors.yellow['50'],
+  },
+  dark: {
+    backgroundColor: theme.colors.indigo['700'],
+    color: theme.colors.yellow['50'],
+  },
+})
 
 export default {
-  props: {
-    matched: {
-      type: Boolean,
-      default: false,
+  inject: ['$colorMode', '$toggleColorMode', '$theme'],
+  computed: {
+    colorMode() {
+      return this.$colorMode()
     },
-    position: {
-      type: Number,
-      required: true,
+    theme() {
+      return this.$theme()
     },
-    value: {
-      type: String,
-      required: true,
-    },
-    visible: {
-      type: Boolean,
-      default: false,
-    },
-  },
-  setup(props, context) {
-    const flippedStyles = computed(() => {
-      if (props.visible) return 'is-flipped'
-    })
-
-    const selectCard = () => {
-      context.emit('select-card', {
-        position: props.position,
-        faceValue: props.value,
+    cardClass() {
+      return css({
+        padding: '10px',
+        boxShadow:
+          '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
+        transition: 'all 0.2s ease-in-out',
+        ...getThemeStyles(this.theme)[this.colorMode],
       })
-    }
-
-    return {
-      flippedStyles,
-      selectCard,
-    }
+    },
   },
 }
 </script>
 
 <template>
-  <div class="card" :class="flippedStyles" @click="selectCard">
-    <div class="card-face is-front">
-      <img
-        class="card-image"
-        :srcset="`/assets/img/game/${value}@2x.png 2x, /assets/img/game/${value}.png 1x`"
-        :src="`/assets/img/game/${value}.png`"
-        :alt="value"
-      />
-      <img
-        v-if="matched"
-        src="/assets/img/game/checkmark.svg"
-        class="icon-checkmark"
-      />
-    </div>
-    <div class="card-face is-back" />
+  <div :class="cardClass">
+    <BaseButton @click.native="$toggleColorMode">Toggle Color Mode</BaseButton>
   </div>
 </template>
-
-<style>
-.card {
-  position: relative;
-  transition: 0.5s transform ease-in;
-  transform-style: preserve-3d;
-}
-
-.card.is-flipped {
-  transform: rotateY(180deg);
-}
-
-.card-face {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  backface-visibility: hidden;
-}
-
-.card-face.is-front {
-  background-image: url('/assets/img/game/card-bg.png');
-  color: white;
-  transform: rotateY(180deg);
-}
-
-.card-face.is-back {
-  background-image: url('/assets/img/game/card-bg-empty.png');
-  color: white;
-}
-
-.card-image {
-  max-width: 100%;
-}
-
-.icon-checkmark {
-  position: absolute;
-  right: 5px;
-  bottom: 5px;
-}
-</style>

@@ -10,7 +10,7 @@ export default {
       // locale.value = locales[(locales.indexOf(locale.value) + 1) % locales.length]
     }
     return {
-      toggleLocales
+      toggleLocales,
     }
   },
   computed: {
@@ -27,10 +27,12 @@ export default {
     <SocialMediaBar />
     <p>© Victor Tolbert {{ currentYear }}</p>
     Terms
+    <NewsletterSignupForm />
+
     <PrivacyPolicyButton />
-    <nav class="text-xl mt-6">
+    <nav class="mt-6 text-xl">
       <!-- <a
-        class="icon-btn mx-2"
+        class="mx-2 icon-btn"
         :title="t('button.toggle_dark')"
         @click="toggleDark"
         >
@@ -39,19 +41,19 @@ export default {
       </a> -->
 
       <!-- <a
-        class="icon-btn mx-2"
+        class="mx-2 icon-btn"
         :title="t('button.toggle_langs')"
         @click="toggleLocales"
         >
         <carbon-language />
       </a> -->
 
-      <!-- <router-link class="icon-btn mx-2" to="/about" :title="t('button.about')">
+      <!-- <router-link class="mx-2 icon-btn" to="/about" :title="t('button.about')">
         <carbon-dicom-overlay />
       </router-link> -->
 
       <!-- <a
-        class="icon-btn mx-2"
+        class="mx-2 icon-btn"
         rel="noreferrer"
         href="https://github.com/antfu/vitesse"
         target="_blank"

@@ -1,16 +1,15 @@
-import '@oruga-ui/oruga/dist/oruga.css'
+import '@oruga-ui/oruga/dist/oruga-full-vars.css'
 import Vue from 'vue'
 import Oruga from '@oruga-ui/oruga'
 
 Vue.use(Oruga, {
   iconPack: 'fas',
   iconComponent: 'FontAwesomeIcon',
-  // iconComponent: 'vue-fontawesome',
   statusIcon: false,
-  button: {
-    override: true,
-    rootClass: 'btn',
-  },
+  // button: {
+  //   override: true,
+  //   rootClass: 'btn',
+  // },
   radio: {
     rootClass: 'radio',
     labelClass: 'radio-label',

@@ -18,7 +18,8 @@ export default defineComponent({
   methods: {
     handleSubmit() {
       this.$toast.info('will handle login...')
-      this.login()
+      // this.login()
+      this.showLoginError()
     },
     loginError() {
       // this.showLoginError()
@@ -60,6 +61,26 @@ export default defineComponent({
     viewAlbum() {},
   },
   notifications: {
+    showSuccessMsg: {
+      type: 'Success',
+      title: 'Hello there',
+      message: "That's the success!",
+    },
+    showInfoMsg: {
+      type: 'Information',
+      title: 'Hey you',
+      message: 'Here is some info for you',
+    },
+    showWarnMsg: {
+      type: 'Warning',
+      title: 'Wow, man',
+      message: "That's the kind of warning",
+    },
+    showErrorMsg: {
+      type: 'Error',
+      title: 'Wow-wow',
+      message: "That's the error",
+    },
     showLoginError: {
       title: 'Login Failed',
       message: 'Failed to authenticate',
@@ -259,13 +280,11 @@ export default defineComponent({
 
               <div>
                 <button
-                  @click="login"
                   type="submit"
-                  class="flex justify-center w-full px-4 py-2 text-sm font-medium text-primary-50 border border-transparent rounded-md shadow-sm bg-primary-600 hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500"
+                  class="flex justify-center w-full px-4 py-2 text-sm font-medium border border-transparent rounded-md shadow-sm text-primary-50 bg-primary-600 hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500"
                 >
                   {{ $t('login') }}
                 </button>
-                <!-- <OButton >Show Error</OButton> -->
               </div>
             </form>
           </div>
