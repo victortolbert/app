@@ -262,14 +262,12 @@ export default {
         </OTabItem>
         <OTabItem>
           <template slot="header">
-            <OIcon icon="retweet" rootClass="custom-icon"></OIcon>
-            <span> Calendar {{ count }} </span>
+            <span> Calendar </span>
           </template>
         </OTabItem>
         <OTabItem>
           <template slot="header">
-            <OIcon icon="info-circle" rootClass="custom-icon"></OIcon>
-            <span> Recognition 3 </span>
+            <span> Recognition </span>
           </template>
         </OTabItem>
       </OTabs>

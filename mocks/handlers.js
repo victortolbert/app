@@ -1,10 +1,10 @@
 import {rest} from 'msw'
 
 export default [
-  rest.get('/message', (req, res, ctx) => {
+  rest.get('/comment', (req, res, ctx) => {
     return res(
       ctx.json({
-        message: 'it works :)',
+        comment: 'it works :)',
       }),
     )
   }),

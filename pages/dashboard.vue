@@ -79,6 +79,407 @@ export default defineComponent({
     /> -->
     <!-- <SvgLiquidCheese /> -->
     <!-- <BaseCard /> -->
+    <SectionWrapper>
+      <BaseStepNavigation class="max-w-2xl p-8 bg-white rounded shadow" />
+    </SectionWrapper>
+
+    <a
+      href="#"
+      class="flex items-center px-3 py-2 text-sm font-medium text-gray-600 rounded-md hover:bg-gray-50 group"
+      aria-current="false"
+    >
+      <svg
+        class="flex-shrink-0 w-6 h-6 mr-3 -ml-1 text-gray-400 group-hover:text-gray-500"
+        x-description="Heroicon name: outline/user-group"
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+        aria-hidden="true"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
+        ></path>
+      </svg>
+      <span class="truncate"> Communities </span>
+    </a>
+    <a
+      href="#"
+      class="flex items-center px-3 py-2 text-sm font-medium text-gray-600 rounded-md hover:bg-gray-50 group"
+      aria-current="false"
+    >
+      <svg
+        class="flex-shrink-0 w-6 h-6 mr-3 -ml-1 text-gray-400 group-hover:text-gray-500"
+        x-description="Heroicon name: outline/fire"
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+        aria-hidden="true"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.656 7.343A7.975 7.975 0 0120 13a7.975 7.975 0 01-2.343 5.657z"
+        ></path>
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M9.879 16.121A3 3 0 1012.015 11L11 14H9c0 .768.293 1.536.879 2.121z"
+        ></path>
+      </svg>
+      <span class="truncate"> Popular </span>
+    </a>
+
+    <a
+      href="#"
+      class="flex items-center px-3 py-2 text-sm font-medium text-gray-600 rounded-md hover:bg-gray-50 group"
+      aria-current="false"
+    >
+      <svg
+        class="flex-shrink-0 w-6 h-6 mr-3 -ml-1 text-gray-400 group-hover:text-gray-500"
+        x-description="Heroicon name: outline/trending-up"
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+        aria-hidden="true"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"
+        ></path>
+      </svg>
+      <span class="truncate"> Trending </span>
+    </a>
+
+    <a
+      href="#"
+      class="flex items-center px-2 py-2 text-sm font-medium text-gray-700 rounded-md hover:text-gray-900 hover:bg-gray-50 group"
+    >
+      <svg
+        class="w-6 h-6 mr-3 text-gray-400 group-hover:text-gray-500"
+        x-description="Heroicon name: outline/view-list"
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+        aria-hidden="true"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M4 6h16M4 10h16M4 14h16M4 18h16"
+        ></path>
+      </svg>
+      My tasks
+    </a>
+
+    <a
+      href="#"
+      class="flex items-center px-2 py-2 text-sm font-medium text-gray-700 rounded-md hover:text-gray-900 hover:bg-gray-50 group"
+    >
+      <svg
+        class="w-6 h-6 mr-3 text-gray-400 group-hover:text-gray-500"
+        x-description="Heroicon name: outline/clock"
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+        aria-hidden="true"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+        ></path>
+      </svg>
+      Recent
+    </a>
+
+    <button class="inline-flex space-x-2 text-gray-400 hover:text-gray-500">
+      <svg
+        class="w-5 h-5"
+        x-description="Heroicon name: solid/share"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 20 20"
+        fill="currentColor"
+        aria-hidden="true"
+      >
+        <path
+          d="M15 8a3 3 0 10-2.977-2.63l-4.94 2.47a3 3 0 100 4.319l4.94 2.47a3 3 0 10.895-1.789l-4.94-2.47a3.027 3.027 0 000-.74l4.94-2.47C13.456 7.68 14.19 8 15 8z"
+        ></path>
+      </svg>
+      <span class="font-medium text-gray-900">Share</span>
+    </button>
+
+    <div class="flex items-center space-x-2">
+      <svg
+        class="w-5 h-5 text-gray-400"
+        x-description="Heroicon name: solid/collection"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 20 20"
+        fill="currentColor"
+        aria-hidden="true"
+      >
+        <path
+          d="M7 3a1 1 0 000 2h6a1 1 0 100-2H7zM4 7a1 1 0 011-1h10a1 1 0 110 2H5a1 1 0 01-1-1zM2 11a2 2 0 012-2h12a2 2 0 012 2v4a2 2 0 01-2 2H4a2 2 0 01-2-2v-4z"
+        ></path>
+      </svg>
+      <span class="text-sm font-medium text-gray-500">8 Projects</span>
+    </div>
+
+    <span
+      class="inline-flex rounded-full items-center py-0.5 pl-2.5 pr-1 text-sm font-medium bg-indigo-100 text-indigo-700"
+    >
+      Large
+      <button
+        type="button"
+        class="flex-shrink-0 ml-0.5 h-4 w-4 rounded-full inline-flex items-center justify-center text-indigo-400 hover:bg-indigo-200 hover:text-indigo-500 focus:outline-none focus:bg-indigo-500 focus:text-white"
+      >
+        <span class="sr-only">Remove large option</span>
+        <svg
+          class="w-2 h-2"
+          stroke="currentColor"
+          fill="none"
+          viewBox="0 0 8 8"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-width="1.5"
+            d="M1 1l6 6m0-6L1 7"
+          />
+        </svg>
+      </button>
+    </span>
+
+    <div
+      x-data="{ open: false }"
+      @keydown.escape.stop="open = false"
+      @click.away="open = false"
+      class="relative flex items-center justify-end"
+    >
+      <button
+        type="button"
+        class="inline-flex items-center justify-center w-8 h-8 text-gray-400 bg-white rounded-full hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500"
+        id="project-options-menu-0"
+        @click="open = !open"
+        aria-haspopup="true"
+        x-bind:aria-expanded="open"
+      >
+        <span class="sr-only">Open options</span>
+        <svg
+          class="w-5 h-5"
+          x-description="Heroicon name: solid/dots-vertical"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 20 20"
+          fill="currentColor"
+          aria-hidden="true"
+        >
+          <path
+            d="M10 6a2 2 0 110-4 2 2 0 010 4zM10 12a2 2 0 110-4 2 2 0 010 4zM10 18a2 2 0 110-4 2 2 0 010 4z"
+          ></path>
+        </svg>
+      </button>
+
+      <div
+        x-description="Dropdown menu, show/hide based on menu state."
+        x-show="open"
+        x-transition:enter="transition ease-out duration-100"
+        x-transition:enter-start="transform opacity-0 scale-95"
+        x-transition:enter-end="transform opacity-100 scale-100"
+        x-transition:leave="transition ease-in duration-75"
+        x-transition:leave-start="transform opacity-100 scale-100"
+        x-transition:leave-end="transform opacity-0 scale-95"
+        class="absolute top-0 z-10 w-48 mx-3 mt-1 origin-top-right bg-white divide-y divide-gray-200 rounded-md shadow-lg right-7 ring-1 ring-black ring-opacity-5 focus:outline-none"
+        role="menu"
+        aria-orientation="vertical"
+        aria-labelledby="project-options-menu-0"
+        style="display: none"
+      >
+        <div class="py-1" role="none">
+          <a
+            href="#"
+            class="flex items-center px-4 py-2 text-sm text-gray-700 group hover:bg-gray-100 hover:text-gray-900"
+            role="menuitem"
+          >
+            <svg
+              class="w-5 h-5 mr-3 text-gray-400 group-hover:text-gray-500"
+              x-description="Heroicon name: solid/pencil-alt"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+              aria-hidden="true"
+            >
+              <path
+                d="M17.414 2.586a2 2 0 00-2.828 0L7 10.172V13h2.828l7.586-7.586a2 2 0 000-2.828z"
+              ></path>
+              <path
+                fill-rule="evenodd"
+                d="M2 6a2 2 0 012-2h4a1 1 0 010 2H4v10h10v-4a1 1 0 112 0v4a2 2 0 01-2 2H4a2 2 0 01-2-2V6z"
+                clip-rule="evenodd"
+              ></path>
+            </svg>
+            Edit
+          </a>
+          <a
+            href="#"
+            class="flex items-center px-4 py-2 text-sm text-gray-700 group hover:bg-gray-100 hover:text-gray-900"
+            role="menuitem"
+          >
+            <svg
+              class="w-5 h-5 mr-3 text-gray-400 group-hover:text-gray-500"
+              x-description="Heroicon name: solid/duplicate"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+              aria-hidden="true"
+            >
+              <path
+                d="M7 9a2 2 0 012-2h6a2 2 0 012 2v6a2 2 0 01-2 2H9a2 2 0 01-2-2V9z"
+              ></path>
+              <path
+                d="M5 3a2 2 0 00-2 2v6a2 2 0 002 2V5h8a2 2 0 00-2-2H5z"
+              ></path>
+            </svg>
+            Duplicate
+          </a>
+          <a
+            href="#"
+            class="flex items-center px-4 py-2 text-sm text-gray-700 group hover:bg-gray-100 hover:text-gray-900"
+            role="menuitem"
+          >
+            <svg
+              class="w-5 h-5 mr-3 text-gray-400 group-hover:text-gray-500"
+              x-description="Heroicon name: solid/user-add"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+              aria-hidden="true"
+            >
+              <path
+                d="M8 9a3 3 0 100-6 3 3 0 000 6zM8 11a6 6 0 016 6H2a6 6 0 016-6zM16 7a1 1 0 10-2 0v1h-1a1 1 0 100 2h1v1a1 1 0 102 0v-1h1a1 1 0 100-2h-1V7z"
+              ></path>
+            </svg>
+            Share
+          </a>
+        </div>
+        <div class="py-1" role="none">
+          <a
+            href="#"
+            class="flex items-center px-4 py-2 text-sm text-gray-700 group hover:bg-gray-100 hover:text-gray-900"
+            role="menuitem"
+          >
+            <svg
+              class="w-5 h-5 mr-3 text-gray-400 group-hover:text-gray-500"
+              x-description="Heroicon name: solid/trash"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+              aria-hidden="true"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z"
+                clip-rule="evenodd"
+              ></path>
+            </svg>
+            Delete
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="flex items-center">
+      <h1 class="flex-1 text-lg font-medium">Projects</h1>
+      <div
+        x-data="{ open: false }"
+        @keydown.escape.stop="open = false"
+        @click.away="open = false"
+        class="relative"
+      >
+        <button
+          type="button"
+          class="inline-flex justify-center w-full px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+          id="sort-menu"
+          @click="open = !open"
+          aria-haspopup="true"
+          x-bind:aria-expanded="open"
+        >
+          <svg
+            class="w-5 h-5 mr-3 text-gray-400"
+            x-description="Heroicon name: solid/sort-ascending"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 20 20"
+            fill="currentColor"
+            aria-hidden="true"
+          >
+            <path
+              d="M3 3a1 1 0 000 2h11a1 1 0 100-2H3zM3 7a1 1 0 000 2h5a1 1 0 000-2H3zM3 11a1 1 0 100 2h4a1 1 0 100-2H3zM13 16a1 1 0 102 0v-5.586l1.293 1.293a1 1 0 001.414-1.414l-3-3a1 1 0 00-1.414 0l-3 3a1 1 0 101.414 1.414L13 10.414V16z"
+            ></path>
+          </svg>
+          Sort
+          <svg
+            class="ml-2.5 -mr-1.5 h-5 w-5 text-gray-400"
+            x-description="Heroicon name: solid/chevron-down"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 20 20"
+            fill="currentColor"
+            aria-hidden="true"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+        <div
+          x-show="open"
+          x-description="Dropdown menu, show/hide based on menu state."
+          class="absolute right-0 z-10 w-56 mt-2 origin-top-right bg-white rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
+          role="menu"
+          aria-orientation="vertical"
+          aria-labelledby="sort-menu"
+          style="display: none"
+        >
+          <div class="py-1" role="none">
+            <a
+              href="#"
+              class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
+              role="menuitem"
+              >Name</a
+            >
+            <a
+              href="#"
+              class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
+              role="menuitem"
+              >Date modified</a
+            >
+            <a
+              href="#"
+              class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
+              role="menuitem"
+              >Date created</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <SectionWrapper>
+      <BaseActivityFeed />
+    </SectionWrapper>
+
     <SectionWrapper class="space-y-6">
       <OField label="Loading...">
         <v-select :loading="true">

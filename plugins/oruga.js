@@ -12,9 +12,10 @@ Vue.use(Oruga, {
   // },
   autocomplete: {
     override: true,
-    // rootClass: 'myautocomplete-root',
-    menuClass: 'border shadow bg-white max-h-72 overflow-auto',
-    itemClass: 'myautocomplete-item py-1 px-3',
+    rootClass: 'myautocomplete-root',
+    menuClass: 'border absolute shadow-lg mt-2 bg-white max-h-72 overflow-auto',
+    itemClass:
+      'py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900',
     itemHoverClass: 'bg-gray-100',
   },
   checkbox: {

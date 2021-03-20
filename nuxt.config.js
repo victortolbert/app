@@ -395,6 +395,7 @@ export default defineNuxtConfig({
     '~/plugins/fontawesome',
     '~/plugins/jam',
     '~/plugins/oruga',
+    '~/plugins/msw',
     '~/plugins/portal-vue',
     '~/plugins/particles.client',
     '~/plugins/repository',

@@ -107,17 +107,16 @@ export default {
                   class="flex items-center px-2 py-2 text-base font-medium text-gray-900 bg-gray-100 rounded-md group"
                 >
                   <!-- Current: "text-gray-500", Default: "text-gray-400 group-hover:text-gray-500" -->
-                  <BaseIconOutlined name="home" class="text-gray-500" />
+                  <BaseIconOutlined name="home" class="mr-4 text-gray-500" />
                   {{ $t('dashboard') }}
                 </a>
-
                 <a
                   href="#"
                   class="flex items-center px-2 py-2 text-base font-medium text-gray-600 rounded-md hover:bg-gray-50 hover:text-gray-900 group"
                 >
                   <BaseIconOutlined
                     name="calendar"
-                    class="mr-4 text-gray-400"
+                    class="mr-4 text-gray-400 group-hover:text-gray-500"
                   />
                   {{ $t('calendar') }}
                 </a>
@@ -128,7 +127,7 @@ export default {
                 >
                   <BaseIconOutlined
                     name="user-group"
-                    class="mr-4 text-gray-400"
+                    class="mr-4 text-gray-400 group-hover:text-gray-500"
                   />
                   {{ $t('teams') }}
                 </a>
@@ -139,7 +138,7 @@ export default {
                 >
                   <BaseIconOutlined
                     name="search-circle"
-                    class="mr-4 text-gray-400"
+                    class="mr-4 text-gray-400 group-hover:text-gray-500"
                   />
                   {{ $t('directory') }}
                 </a>
@@ -150,7 +149,7 @@ export default {
                 >
                   <BaseIconOutlined
                     name="speaker-phone"
-                    class="mr-4 text-gray-400"
+                    class="mr-4 text-gray-400 group-hover:text-gray-500"
                   />
                   {{ $t('announcements') }}
                 </a>
@@ -159,7 +158,10 @@ export default {
                   href="#"
                   class="flex items-center px-2 py-2 text-base font-medium text-gray-600 rounded-md hover:bg-gray-50 hover:text-gray-900 group"
                 >
-                  <BaseIconOutlined name="map" class="mr-4 text-gray-400" />
+                  <BaseIconOutlined
+                    name="map"
+                    class="mr-4 text-gray-400 group-hover:text-gray-500"
+                  />
                   {{ $t('office_map') }}
                 </a>
               </div>
@@ -171,7 +173,7 @@ export default {
                 >
                   <BaseIconOutlined
                     name="view-grid-add"
-                    class="mr-4 text-gray-400"
+                    class="mr-4 text-gray-400 group-hover:text-gray-500"
                   />
                   {{ $t('apps') }}
                 </a>
@@ -180,7 +182,10 @@ export default {
                   href="#"
                   class="flex items-center px-2 py-2 text-base font-medium text-gray-600 rounded-md hover:bg-gray-50 hover:text-gray-900 group"
                 >
-                  <BaseIconOutlined name="cog" class="mr-4 text-gray-400" />
+                  <BaseIconOutlined
+                    name="cog"
+                    class="mr-4 text-gray-400 group-hover:text-gray-500"
+                  />
                   {{ $t('settings') }}
                 </a>
               </div>
@@ -455,3 +460,9 @@ export default {
     </div>
   </div>
 </template>
+<!--
+<style>
+.o-tabs__nav-item-default--active {
+  border-bottom-width: 4px;
+}
+</style> -->
