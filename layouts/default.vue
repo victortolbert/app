@@ -1,12 +1,17 @@
 <script>
 import {getColors} from 'theme-colors'
+const {generate, presetPalettes} = require('@ant-design/colors')
 import {defineComponent, computed} from '@nuxtjs/composition-api'
 import {css} from '@emotion/css'
 import theme from '~/theme'
+// console.log(Object.values(theme.colors.oliveGreen))
+console.log()
 
 export default defineComponent({
   setup() {
-    const colors = getColors('#090')
+    // const colors = getColors('#da5d3f')
+    // const colors = generate('#1890ff')
+    const colors = generate(Object.values(theme.colors.paprika)[5])
     const applyStyles = computed(() => {
       return css({})
     })
@@ -15,6 +20,7 @@ export default defineComponent({
       applyStyles,
       colors,
       theme,
+      presetPalettes,
     }
   },
   mounted() {
@@ -33,7 +39,7 @@ export default defineComponent({
     >
       <AppOfflineIndicator />
 
-      <PromiseServesNavbar />
+      <DeveloperNavbar />
 
       <main class="flex-1" :class="[`body-${$store.state.class.bodyClass}`]">
         <!-- save fetch calls on pages already visited -->
@@ -43,7 +49,7 @@ export default defineComponent({
 
       <AppFooter />
       <AppToolbar />
-      <!-- <AppCookieConsent button-text="I understand" /> -->
+      <AppCookieConsent button-text="I understand" />
       <PortalTarget name="overlays" />
     </div>
   </ThemeProvider>

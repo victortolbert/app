@@ -64,8 +64,8 @@ export default {
 <template>
   <ul class="flex space-x-3">
     <li v-for="account in accounts" :key="`footer-social-${account.name}`">
-      <a class="social-media-item"  target="_blank" rel="noopener" :href="account.url">
-        <span class="social-media-label">{{ account.name }}</span>
+      <a target="_blank" rel="noopener" :href="account.url">
+        <BaseIconBrand :name="account.name.toLocaleLowerCase()" />
       </a>
     </li>
   </ul>

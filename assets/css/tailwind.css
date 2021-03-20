@@ -66,10 +66,6 @@
     background-color: #f1e7d0;
     color: #433422;
   }
-
-  a {
-    color: var(--color-primary);
-  }
 }
 
 @layer components {

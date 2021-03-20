@@ -1,13 +1,13 @@
 const {getColors} = require('theme-colors')
 const {generate, presetPalettes} = require('@ant-design/colors')
 
-console.log(getColors('#fbaa30'))
 module.exports = {
   seaBuckthorn: getColors('#fbaa30'), //
   flamePea: getColors('#da5d3f'), //
   malachite: getColors('#00be00'),
   monza: getColors('#ca0015'),
   moonMist: getColors('#dce0cf'),
+  paprika: getColors('#98002f'),
   peachSchnapps: getColors('#ffdbd2'),
   pomegranate: getColors('#fb4319'),
   scooter: getColors('#27c3e3'),

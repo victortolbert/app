@@ -33,8 +33,8 @@ export default defineComponent({
 </script>
 
 <template>
-  <div class="divide-y divide-gray-100 border-b border-gray-100">
-    <div class="flex space-x-2 py-3">
+  <div class="border-b border-gray-100 divide-y divide-gray-100">
+    <div class="flex py-3 space-x-4">
       <ORadio
         v-model="filter"
         name="all"
@@ -62,7 +62,7 @@ export default defineComponent({
     </div>
 
     <article
-      class="p-4 flex space-x-4"
+      class="flex p-4 space-x-4"
       v-for="(recipe, index) of filteredRecipes"
       :class="{hidden: !isLoading}"
       :key="`loading-${index}`"
@@ -88,13 +88,14 @@ export default defineComponent({
       <article
         slot="trigger"
         slot-scope="props"
-        class="card-header p-4 flex space-x-4 text-main dark:text-main-dark"
+        class="flex p-4 space-x-4 card-header text-main dark:text-main-dark"
       >
         <RecipeImage
           :src="recipe.image"
           :alt="`Image for recipe ${recipe.title}`"
         />
-        <div class="min-w-0 relative flex-auto sm:pr-20 lg:pr-0 xl:pr-20">
+
+        <div class="relative flex-auto min-w-0 sm:pr-20 lg:pr-0 xl:pr-20">
           <h2 class="text-lg font-semibold mb-0.5">
             {{ recipe.title }}
           </h2>
@@ -122,10 +123,9 @@ export default defineComponent({
             <div
               class="absolute top-0 right-0 rounded-full px-2 py-0.5 hidden sm:flex lg:hidden xl:flex items-center space-x-1"
             >
-              <dt class="">
-                <o-icon
-                  :icon="props.open ? 'caret-up' : 'caret-down'"
-                  size="large"
+              <dt class="text-gray-400">
+                <BaseIconOutlined
+                  :name="props.open ? 'chevron-up' : 'chevron-down'"
                 />
               </dt>
             </div>
