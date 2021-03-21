@@ -410,6 +410,7 @@ export default defineNuxtConfig({
     '~/plugins/vue-float-label.client',
     '~/plugins/markdown',
     '~/plugins/vue-notifications.client',
+    '~/plugins/vue-print-nb',
     '~/plugins/vue-ray',
     '~/plugins/vue-scrollactive',
     '~/plugins/vue-select',

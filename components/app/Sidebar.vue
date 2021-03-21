@@ -2,8 +2,12 @@
   <div class="flex flex-col flex-1 h-0 bg-gray-100 border-r border-gray-200">
     <div class="flex flex-col flex-1 pt-5 pb-4 overflow-y-auto">
       <div class="flex items-center flex-shrink-0 px-4">
-        <BaseLogo name="vti" class="w-auto h-8" />
+        <AppLogo
+          :name="$store.state.affiliate.name"
+          class="w-auto h-8 text-primary-500"
+        />
       </div>
+
       <nav class="flex-1 mt-5 space-y-1" aria-label="Sidebar">
         <div class="px-2 space-y-1">
           <!-- Current: "bg-gray-200 text-gray-900", Default: "text-gray-600 hover:bg-gray-50 hover:text-gray-900" -->
@@ -286,7 +290,7 @@
           <div>
             <img
               class="inline-block rounded-full h-9 w-9"
-              src="https://cominex.net/assets/img/people/marcus.jpeg"
+              :src="$store.state.auth.user.avatarUrl"
               alt=""
             />
           </div>
@@ -294,7 +298,8 @@
             <p
               class="text-sm font-medium text-gray-700 group-hover:text-gray-900"
             >
-              Marcus Bouligny
+              {{ $store.state.auth.user.firstName }}
+              {{ $store.state.auth.user.lastName }}
             </p>
             <p
               class="text-xs font-medium text-gray-500 group-hover:text-gray-700"

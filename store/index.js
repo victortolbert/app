@@ -5,6 +5,9 @@ import {addDays} from 'date-fns'
 import {getEventIndexById} from '~/helpers'
 
 export const state = () => ({
+  affiliate: {
+    name: 'ema',
+  },
   authenticated: false,
   categories: {},
   recipes: [

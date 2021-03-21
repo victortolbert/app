@@ -15,7 +15,7 @@ export default {
 </script>
 
 <template>
-  <section>
+  <SectionWrapper>
     <span>{{ person.firstName }}</span>
     <span>{{ person.lastName }}</span>
     <span>{{ person.email }}</span>
@@ -23,5 +23,5 @@ export default {
     <span>{{ person.avatarUrl }}</span>
     <p>{{ person.bio }}</p>
     <p>by Person with id {{ person.id }}</p>
-  </section>
+  </SectionWrapper>
 </template>

@@ -79,6 +79,13 @@ export default defineComponent({
     /> -->
     <!-- <SvgLiquidCheese /> -->
     <!-- <BaseCard /> -->
+
+    <!--
+     https://twitter.com/intent/tweet
+      ?text=Check%20out%20Heroicons%20by%20%40steveschoger%20and%20the%20%40tailwindcss%20team%20%F0%9F%98%8D
+      &amp;url=https%3A%2F%2Fheroicons.com
+    -->
+
     <SectionWrapper>
       <BaseStepNavigation class="max-w-2xl p-8 bg-white rounded shadow" />
     </SectionWrapper>

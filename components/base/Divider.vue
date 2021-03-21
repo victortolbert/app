@@ -5,7 +5,7 @@
     </div>
     <div class="relative flex justify-center">
       <span class="px-2 text-sm text-gray-500 bg-white">
-        OR
+        <slot>OR</slot>
       </span>
     </div>
   </div>

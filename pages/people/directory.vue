@@ -10,6 +10,12 @@ export default defineComponent({
       type: Number,
       default: 1,
     },
+    affiliate: {
+      type: Object,
+      default: () => ({
+        name: 'vticonsulting',
+      }),
+    },
   },
   data() {
     return {
@@ -102,8 +108,11 @@ export default defineComponent({
             </button>
           </div>
           <div class="flex-1 h-0 pt-5 pb-4 overflow-y-auto">
-            <div class="flex items-center flex-shrink-0 px-4">
-              <BaseLogo name="gasps" />
+            <div
+              v-if="affiliate.name"
+              class="flex items-center flex-shrink-0 px-4"
+            >
+              <BaseLogo :name="affiliate.name" />
             </div>
 
             <nav aria-label="Sidebar" class="mt-5">
@@ -234,7 +243,7 @@ export default defineComponent({
     <div class="hidden lg:flex lg:flex-shrink-0">
       <div class="flex flex-col w-64">
         <!-- Sidebar component, swap this element with another sidebar if you like -->
-        <GaSpsSidebar />
+        <AppSidebar />
       </div>
     </div>
     <div class="flex flex-col flex-1 min-w-0 overflow-hidden">
@@ -242,8 +251,8 @@ export default defineComponent({
         <div
           class="flex items-center justify-between bg-gray-50 border-b border-gray-200 px-4 py-1.5"
         >
-          <div>
-            <BaseLogo name="gasps" class="w-auto h-8" />
+          <div v-if="affiliate">
+            <BaseLogo :name="affiliate.name" class="w-auto h-8" />
           </div>
           <div>
             <button

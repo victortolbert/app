@@ -201,7 +201,7 @@ export default defineComponent({
           >
             <div class="flex flex-col flex-1 pt-5 pb-4 overflow-y-auto">
               <div v-if="false" class="flex items-center flex-shrink-0 px-4">
-                <BaseLogo name="promise-serves" />
+                <BaseLogo name="vticonsulting" />
               </div>
               <nav class="flex-1 mt-5" aria-label="Sidebar">
                 <div class="px-2 space-y-1">

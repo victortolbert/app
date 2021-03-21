@@ -4,14 +4,16 @@ export const namespaced = true
 export const state = () => ({
   isLogged: false,
   user: {
+    firstName: 'Charlee',
+    lastName: '',
     name: 'Charlee',
     email: 'tatyana@ema.promiseserves.org',
     profileUrl: null,
     avatarUrl: 'https://cominex.net/assets/img/people/charlee.jpeg',
     affiliate: {
       id: 45,
-      name: 'Ema'
-    }
+      name: 'Ema',
+    },
   },
   authUser: null,
   error: null,

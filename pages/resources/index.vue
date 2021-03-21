@@ -63,6 +63,12 @@ export default {
     <SectionWrapper :padded="false" class="p-8">
       <ResourceSearchField />
 
+      <BaseDivider>
+        This is slotted replacing 'OR' which is the default
+      </BaseDivider>
+
+      <BasePrintButton />
+
       <nav
         class="grid gap-2 mt-4 text-sm capitalize sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6"
       >

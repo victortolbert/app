@@ -138,6 +138,17 @@ export default {
       // .push({ path: 'register', query: { plan: 'private' } })
       this.$router.push(this.localePath(`/${path}/`))
     },
+    handleRightClick(e) {
+      e.preventDefault()
+      this.$oruga.modal.open({
+        parent: this,
+        component: ModalForm,
+        custom: true,
+        trapFocus: true,
+      })
+
+      // this.$oruga.modal.open('testing')
+    },
   },
 }
 </script>
@@ -168,13 +179,7 @@ export default {
           </div>
 
           <div class="flex items-center flex-shrink-0">
-            <NuxtLink
-              class="flex items-center justify-center"
-              :to="localePath({path: '/dashboard/'})"
-            >
-              <!-- <BaseLogo class="text-primary-500" :name="slug" /> -->
-              🍯
-            </NuxtLink>
+            <AffiliateDashboardLink />
           </div>
 
           <div class="items-center hidden md:ml-6 md:flex md:space-x-8">

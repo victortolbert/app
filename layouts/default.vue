@@ -39,7 +39,7 @@ export default defineComponent({
     >
       <AppOfflineIndicator />
 
-      <GaSpsNavbar />
+      <AppNavbar />
 
       <main class="flex-1" :class="[`body-${$store.state.class.bodyClass}`]">
         <!-- save fetch calls on pages already visited -->
