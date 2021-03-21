@@ -1,6 +1,14 @@
-<script>
-export default {
+<script lang="ts">
+import {defineComponent, watchEffect} from '@nuxtjs/composition-api'
+import {PersonItem} from '~/types'
+import PersonService from '~/services/PersonService'
+
+export default defineComponent({
   props: {
+    page: {
+      type: Number,
+      default: 1,
+    },
     person: {
       type: Object,
       default: () => ({
@@ -12,7 +20,43 @@ export default {
       }),
     },
   },
-}
+  data() {
+    return {
+      people: [] as PersonItem[],
+      totalPeople: 0,
+      perPage: 10,
+      paginationOptions: [5, 10, 25, 75, 100, 250],
+      currentPage: 1,
+      checkedRows: [],
+      selected: null,
+    }
+  },
+  computed: {
+    hasNextPage() {
+      const totalPages = Math.ceil(this.totalPeople / 2)
+
+      return this.page < totalPages
+    },
+  },
+  created() {
+    watchEffect(() => {
+      this.people = []
+      PersonService.getPeople(this.perPage, this.page)
+        .then(response => {
+          this.people = response.data
+          this.totalPeople = response.headers['x-total-count']
+        })
+        .catch(() => {
+          this.$router.push({name: 'network-error'})
+        })
+    })
+  },
+  methods: {
+    handleFilter() {
+      console.log('handle filter...')
+    },
+  },
+})
 </script>
 <template>
   <PageWrapper>
@@ -481,7 +525,7 @@ export default {
               </form>
             </div>
 
-            DirectoryList
+            <DirectoryList :people="people" />
           </aside>
         </div>
       </div>

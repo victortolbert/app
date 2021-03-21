@@ -9,7 +9,7 @@ export default {
     const isAdmin = ref(false)
     const affiliate = reactive({
       id: 1,
-      name: 'ecco',
+      name: 'vti',
       theme: {
         nav: {
           class: 'bg-white text-gray-800',
@@ -170,7 +170,7 @@ export default {
           <div class="flex items-center flex-shrink-0">
             <NuxtLink
               class="flex items-center justify-center"
-              :to="localePath({path: '/dashboard/'})"
+              :to="/dashboard/"
             >
               <BaseLogo class="text-primary-500" :name="slug" />
             </NuxtLink>
@@ -196,7 +196,7 @@ export default {
         </div>
 
         <div class="flex items-center space-x-3">
-          <!-- <div class="flex-shrink-0">
+          <div class="flex-shrink-0">
             <OButton
               size="small"
               variant="primary"
@@ -207,11 +207,7 @@ export default {
             >
               {{ $t('new_project') }}
             </OButton>
-          </div> -->
-
-          <!-- <OptionsMenuButton>
-            {{ $t('options') }}
-          </OptionsMenuButton> -->
+          </div>
 
           <div class="md:ml-4 md:flex-shrink-0 md:flex md:items-center">
             <!-- NotificationsButton -->
@@ -235,15 +231,6 @@ export default {
                 />
               </span>
             </span>
-
-            <!-- Help dropdown -->
-            <!-- <BaseHelpDropdownButton /> -->
-
-            <!-- Profile dropdown -->
-            <!-- <BaseProfileDropdownButton /> -->
-            <!-- <NuxtLink  v-if="!isLoggedIn" :to="localePath('/login/')">
-              {{ $t('login')}}
-            </NuxtLink> -->
 
             <div class="hidden lg:block">
               <button v-if="!isLoggedIn" @click="login">

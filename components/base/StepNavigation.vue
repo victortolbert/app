@@ -4,13 +4,13 @@
       <li class="relative pb-10">
         <!-- Complete Step -->
         <div
-          class="-ml-px absolute mt-0.5 top-4 left-4 w-0.5 h-full bg-indigo-600"
+          class="-ml-px absolute mt-0.5 top-4 left-4 w-0.5 h-full bg-primary-600"
           aria-hidden="true"
         ></div>
         <a href="#" class="relative flex items-start group">
           <span class="flex items-center h-9">
             <span
-              class="relative z-10 flex items-center justify-center w-8 h-8 bg-indigo-600 rounded-full group-hover:bg-indigo-800"
+              class="relative z-10 flex items-center justify-center w-8 h-8 rounded-full bg-primary-600 group-hover:bg-primary-800"
             >
               <!-- Heroicon name: solid/check -->
               <svg
@@ -48,14 +48,14 @@
         <a href="#" class="relative flex items-start group" aria-current="step">
           <span class="flex items-center h-9" aria-hidden="true">
             <span
-              class="relative z-10 flex items-center justify-center w-8 h-8 bg-white border-2 border-indigo-600 rounded-full"
+              class="relative z-10 flex items-center justify-center w-8 h-8 bg-white border-2 rounded-full border-primary-600"
             >
-              <span class="h-2.5 w-2.5 bg-indigo-600 rounded-full"></span>
+              <span class="h-2.5 w-2.5 bg-primary-600 rounded-full"></span>
             </span>
           </span>
           <span class="flex flex-col min-w-0 ml-4">
             <span
-              class="text-xs font-semibold tracking-wide text-indigo-600 uppercase"
+              class="text-xs font-semibold tracking-wide uppercase text-primary-600"
               >Profile information</span
             >
             <span class="text-sm text-gray-500"

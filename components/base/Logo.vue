@@ -442,6 +442,7 @@ export default {
       v-if="
         [
           'promise_serves',
+          'promise-serves',
           'promise',
           'pss',
           'P686',

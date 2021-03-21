@@ -68,7 +68,7 @@ self.addEventListener('message', async function (event) {
     case 'CLIENT_CLOSED': {
       activeClientIds.delete(clientId)
 
-      const remainingClients = allClients.filter(client => {
+      const remainingClients = allClients.filter((client) => {
         return client.id !== clientId
       })
 
@@ -96,11 +96,11 @@ async function resolveMasterClient(event) {
   const allClients = await self.clients.matchAll()
 
   return allClients
-    .filter(client => {
+    .filter((client) => {
       // Get only those clients that are currently visible.
       return client.visibilityState === 'visible'
     })
-    .find(client => {
+    .find((client) => {
       // Find the client ID that's recorded in the
       // set of clients that have registered the worker.
       return activeClientIds.has(client.id)
@@ -136,7 +136,7 @@ async function handleRequest(event, requestId) {
 }
 
 async function getResponse(event, client, requestId) {
-  const {request} = event
+  const { request } = event
   const requestClone = request.clone()
   const getOriginalResponse = () => fetch(requestClone)
 
@@ -205,7 +205,7 @@ async function getResponse(event, client, requestId) {
     }
 
     case 'NETWORK_ERROR': {
-      const {name, message} = clientMessage.payload
+      const { name, message } = clientMessage.payload
       const networkError = new Error(message)
       networkError.name = name
 
@@ -238,7 +238,7 @@ If you wish to mock an error response, please refer to this guide: https://mswjs
 }
 
 self.addEventListener('fetch', function (event) {
-  const {request} = event
+  const { request } = event
 
   // Bypass navigation requests.
   if (request.mode === 'navigate') {
@@ -261,7 +261,7 @@ self.addEventListener('fetch', function (event) {
   const requestId = uuidv4()
 
   return event.respondWith(
-    handleRequest(event, requestId).catch(error => {
+    handleRequest(event, requestId).catch((error) => {
       console.error(
         '[MSW] Failed to mock a "%s" request to "%s": %s',
         request.method,
@@ -286,7 +286,7 @@ function sendToClient(client, message) {
   return new Promise((resolve, reject) => {
     const channel = new MessageChannel()
 
-    channel.port1.onmessage = event => {
+    channel.port1.onmessage = (event) => {
       if (event.data && event.data.error) {
         return reject(event.data.error)
       }
@@ -299,7 +299,7 @@ function sendToClient(client, message) {
 }
 
 function delayPromise(cb, duration) {
-  return new Promise(resolve => {
+  return new Promise((resolve) => {
     setTimeout(() => resolve(cb()), duration)
   })
 }

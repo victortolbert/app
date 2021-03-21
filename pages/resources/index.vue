@@ -67,109 +67,109 @@ export default {
         class="grid gap-2 mt-4 text-sm capitalize sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6"
       >
         <button
-          class="flex items-center justify-center flex-none w-full text-xs font-medium leading-6 tracking-widest uppercase transition-colors duration-200 border border-transparent rounded shadow text-primary-500 bg-gray-50 sm:w-auto hover:bg-gray-100 focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-primary-500 focus:outline-none h-11"
+          class="flex items-center justify-center flex-none w-full text-xs font-medium leading-6 tracking-widest uppercase transition-colors duration-200 border border-transparent rounded shadow text-primary-700 bg-primary-100 hover:bg-primary-200 sm:w-auto focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-primary-500 focus:outline-none h-11"
           outlined
         >
           2021
         </button>
         <button
-          class="flex items-center justify-center flex-none w-full text-xs font-medium leading-6 tracking-widest uppercase transition-colors duration-200 border border-transparent rounded shadow text-primary-500 bg-gray-50 sm:w-auto hover:bg-gray-100 focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-primary-500 focus:outline-none h-11"
+          class="flex items-center justify-center flex-none w-full text-xs font-medium leading-6 tracking-widest uppercase transition-colors duration-200 border border-transparent rounded shadow text-primary-700 bg-primary-100 hover:bg-primary-200 sm:w-auto focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-primary-500 focus:outline-none h-11"
           outlined
         >
           Featured
         </button>
         <button
-          class="flex items-center justify-center flex-none w-full text-xs font-medium leading-6 tracking-widest uppercase transition-colors duration-200 border border-transparent rounded shadow text-primary-500 bg-gray-50 sm:w-auto hover:bg-gray-100 focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-primary-500 focus:outline-none h-11"
+          class="flex items-center justify-center flex-none w-full text-xs font-medium leading-6 tracking-widest uppercase transition-colors duration-200 border border-transparent rounded shadow text-primary-700 bg-primary-100 hover:bg-primary-200 sm:w-auto focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-primary-500 focus:outline-none h-11"
           outlined
         >
           Popular
         </button>
         <button
-          class="flex items-center justify-center flex-none w-full text-xs font-medium leading-6 tracking-widest uppercase transition-colors duration-200 border border-transparent rounded shadow text-primary-500 bg-gray-50 sm:w-auto hover:bg-gray-100 focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-primary-500 focus:outline-none h-11"
+          class="flex items-center justify-center flex-none w-full text-xs font-medium leading-6 tracking-widest uppercase transition-colors duration-200 border border-transparent rounded shadow text-primary-700 bg-primary-100 hover:bg-primary-200 sm:w-auto focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-primary-500 focus:outline-none h-11"
           outlined
         >
           Essentials
         </button>
         <button
-          class="flex items-center justify-center flex-none w-full text-xs font-medium leading-6 tracking-widest uppercase transition-colors duration-200 border border-transparent rounded shadow text-primary-500 bg-gray-50 sm:w-auto hover:bg-gray-100 focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-primary-500 focus:outline-none h-11"
+          class="flex items-center justify-center flex-none w-full text-xs font-medium leading-6 tracking-widest uppercase transition-colors duration-200 border border-transparent rounded shadow text-primary-700 bg-primary-100 hover:bg-primary-200 sm:w-auto focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-primary-500 focus:outline-none h-11"
           outlined
         >
           Evaluation
         </button>
         <button
-          class="flex items-center justify-center flex-none w-full text-xs font-medium leading-6 tracking-widest uppercase transition-colors duration-200 border border-transparent rounded shadow text-primary-500 bg-gray-50 sm:w-auto hover:bg-gray-100 focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-primary-500 focus:outline-none h-11"
+          class="flex items-center justify-center flex-none w-full text-xs font-medium leading-6 tracking-widest uppercase transition-colors duration-200 border border-transparent rounded shadow text-primary-700 bg-primary-100 hover:bg-primary-200 sm:w-auto focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-primary-500 focus:outline-none h-11"
           outlined
         >
           How To
         </button>
         <button
-          class="flex items-center justify-center flex-none w-full text-xs font-medium leading-6 tracking-widest uppercase transition-colors duration-200 border border-transparent rounded shadow text-primary-500 bg-gray-50 sm:w-auto hover:bg-gray-100 focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-primary-500 focus:outline-none h-11"
+          class="flex items-center justify-center flex-none w-full text-xs font-medium leading-6 tracking-widest uppercase transition-colors duration-200 border border-transparent rounded shadow text-primary-700 bg-primary-100 hover:bg-primary-200 sm:w-auto focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-primary-500 focus:outline-none h-11"
           outlined
         >
           Capacity
         </button>
         <button
-          class="flex items-center justify-center flex-none w-full text-xs font-medium leading-6 tracking-widest uppercase transition-colors duration-200 border border-transparent rounded shadow text-primary-500 bg-gray-50 sm:w-auto hover:bg-gray-100 focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-primary-500 focus:outline-none h-11"
+          class="flex items-center justify-center flex-none w-full text-xs font-medium leading-6 tracking-widest uppercase transition-colors duration-200 border border-transparent rounded shadow text-primary-700 bg-primary-100 hover:bg-primary-200 sm:w-auto focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-primary-500 focus:outline-none h-11"
           outlined
         >
           Needs Assessment
         </button>
         <button
-          class="flex items-center justify-center flex-none w-full text-xs font-medium leading-6 tracking-widest uppercase transition-colors duration-200 border border-transparent rounded shadow text-primary-500 bg-gray-50 sm:w-auto hover:bg-gray-100 focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-primary-500 focus:outline-none h-11"
+          class="flex items-center justify-center flex-none w-full text-xs font-medium leading-6 tracking-widest uppercase transition-colors duration-200 border border-transparent rounded shadow text-primary-700 bg-primary-100 hover:bg-primary-200 sm:w-auto focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-primary-500 focus:outline-none h-11"
           outlined
         >
           Environmental Strategies
         </button>
         <button
-          class="flex items-center justify-center flex-none w-full text-xs font-medium leading-6 tracking-widest uppercase transition-colors duration-200 border border-transparent rounded shadow text-primary-500 bg-gray-50 sm:w-auto hover:bg-gray-100 focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-primary-500 focus:outline-none h-11"
+          class="flex items-center justify-center flex-none w-full text-xs font-medium leading-6 tracking-widest uppercase transition-colors duration-200 border border-transparent rounded shadow text-primary-700 bg-primary-100 hover:bg-primary-200 sm:w-auto focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-primary-500 focus:outline-none h-11"
           outlined
         >
           Literature Review
         </button>
         <button
-          class="flex items-center justify-center flex-none w-full text-xs font-medium leading-6 tracking-widest uppercase transition-colors duration-200 border border-transparent rounded shadow text-primary-500 bg-gray-50 sm:w-auto hover:bg-gray-100 focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-primary-500 focus:outline-none h-11"
+          class="flex items-center justify-center flex-none w-full text-xs font-medium leading-6 tracking-widest uppercase transition-colors duration-200 border border-transparent rounded shadow text-primary-700 bg-primary-100 hover:bg-primary-200 sm:w-auto focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-primary-500 focus:outline-none h-11"
           outlined
         >
           Tool
         </button>
         <button
-          class="flex items-center justify-center flex-none w-full text-xs font-medium leading-6 tracking-widest uppercase transition-colors duration-200 border border-transparent rounded shadow text-primary-500 bg-gray-50 sm:w-auto hover:bg-gray-100 focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-primary-500 focus:outline-none h-11"
+          class="flex items-center justify-center flex-none w-full text-xs font-medium leading-6 tracking-widest uppercase transition-colors duration-200 border border-transparent rounded shadow text-primary-700 bg-primary-100 hover:bg-primary-200 sm:w-auto focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-primary-500 focus:outline-none h-11"
           outlined
         >
           Report
         </button>
         <button
-          class="flex items-center justify-center flex-none w-full text-xs font-medium leading-6 tracking-widest uppercase transition-colors duration-200 border border-transparent rounded shadow text-primary-500 bg-gray-50 sm:w-auto hover:bg-gray-100 focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-primary-500 focus:outline-none h-11"
+          class="flex items-center justify-center flex-none w-full text-xs font-medium leading-6 tracking-widest uppercase transition-colors duration-200 border border-transparent rounded shadow text-primary-700 bg-primary-100 hover:bg-primary-200 sm:w-auto focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-primary-500 focus:outline-none h-11"
           outlined
         >
           ECCO
         </button>
         <button
-          class="flex items-center justify-center flex-none w-full text-xs font-medium leading-6 tracking-widest uppercase transition-colors duration-200 border border-transparent rounded shadow text-primary-500 bg-gray-50 sm:w-auto hover:bg-gray-100 focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-primary-500 focus:outline-none h-11"
+          class="flex items-center justify-center flex-none w-full text-xs font-medium leading-6 tracking-widest uppercase transition-colors duration-200 border border-transparent rounded shadow text-primary-700 bg-primary-100 hover:bg-primary-200 sm:w-auto focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-primary-500 focus:outline-none h-11"
           outlined
         >
           SPF
         </button>
         <button
-          class="flex items-center justify-center flex-none w-full text-xs font-medium leading-6 tracking-widest uppercase transition-colors duration-200 border border-transparent rounded shadow text-primary-500 bg-gray-50 sm:w-auto hover:bg-gray-100 focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-primary-500 focus:outline-none h-11"
+          class="flex items-center justify-center flex-none w-full text-xs font-medium leading-6 tracking-widest uppercase transition-colors duration-200 border border-transparent rounded shadow text-primary-700 bg-primary-100 hover:bg-primary-200 sm:w-auto focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-primary-500 focus:outline-none h-11"
           outlined
         >
           Video
         </button>
         <button
-          class="flex items-center justify-center flex-none w-full text-xs font-medium leading-6 tracking-widest uppercase transition-colors duration-200 border border-transparent rounded shadow text-primary-500 bg-gray-50 sm:w-auto hover:bg-gray-100 focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-primary-500 focus:outline-none h-11"
+          class="flex items-center justify-center flex-none w-full text-xs font-medium leading-6 tracking-widest uppercase transition-colors duration-200 border border-transparent rounded shadow text-primary-700 bg-primary-100 hover:bg-primary-200 sm:w-auto focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-primary-500 focus:outline-none h-11"
           outlined
         >
           Webinar
         </button>
         <button
-          class="flex items-center justify-center flex-none w-full text-xs font-medium leading-6 tracking-widest uppercase transition-colors duration-200 border border-transparent rounded shadow text-primary-500 bg-gray-50 sm:w-auto hover:bg-gray-100 focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-primary-500 focus:outline-none h-11"
+          class="flex items-center justify-center flex-none w-full text-xs font-medium leading-6 tracking-widest uppercase transition-colors duration-200 border border-transparent rounded shadow text-primary-700 bg-primary-100 hover:bg-primary-200 sm:w-auto focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-primary-500 focus:outline-none h-11"
           outlined
         >
           Substance Abuse Prevention
         </button>
         <button
-          class="flex items-center justify-center flex-none w-full text-xs font-medium leading-6 tracking-widest uppercase transition-colors duration-200 border border-transparent rounded shadow text-primary-500 bg-gray-50 sm:w-auto hover:bg-gray-100 focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-primary-500 focus:outline-none h-11"
+          class="flex items-center justify-center flex-none w-full text-xs font-medium leading-6 tracking-widest uppercase transition-colors duration-200 border border-transparent rounded shadow text-primary-700 bg-primary-100 hover:bg-primary-200 sm:w-auto focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-primary-500 focus:outline-none h-11"
           outlined
         >
           Recommended Resources

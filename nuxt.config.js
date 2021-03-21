@@ -480,6 +480,14 @@ export default defineNuxtConfig({
     middleware: ['ui'],
     prefetchLinks: false,
     trailingSlash: true,
+    // base: '/beta/',
+    // extendRoutes(routes, resolve) {
+    //   routes.push({
+    //     name: 'bookmark',
+    //     path: '/:slug/:list/:id',
+    //     component: resolve(__dirname, 'components/pages/bookmark.vue'),
+    //   })
+    // },
   },
 
   // ackee: {
@@ -686,6 +694,14 @@ export default defineNuxtConfig({
     },
   },
 
+  storybook: {
+    port: 3006,
+    webpackFinal(config, {configDir}) {
+      // manipulate webpack config
+      return config
+    },
+  },
+
   styleResources: {
     scss: ['~/assets/scss/vars/*.scss', '~/assets/scss/abstracts/_mixins.scss'],
   },
@@ -702,7 +718,9 @@ export default defineNuxtConfig({
     // Or disable CSS injection
     // cssFile: false,
   },
-
+  typescript: {
+    typeCheck: false,
+  },
   // windicss: {
   //   scan: {
   //     dirs: ['./'],
@@ -723,7 +741,6 @@ export default defineNuxtConfig({
   //     },
   //   },
   // },
-
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {
     extend(config, context) {

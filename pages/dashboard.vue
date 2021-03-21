@@ -83,128 +83,312 @@ export default defineComponent({
       <BaseStepNavigation class="max-w-2xl p-8 bg-white rounded shadow" />
     </SectionWrapper>
 
-    <a
-      href="#"
-      class="flex items-center px-3 py-2 text-sm font-medium text-gray-600 rounded-md hover:bg-gray-50 group"
-      aria-current="false"
-    >
-      <svg
-        class="flex-shrink-0 w-6 h-6 mr-3 -ml-1 text-gray-400 group-hover:text-gray-500"
-        x-description="Heroicon name: outline/user-group"
-        xmlns="http://www.w3.org/2000/svg"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke="currentColor"
-        aria-hidden="true"
-      >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
-        ></path>
-      </svg>
-      <span class="truncate"> Communities </span>
-    </a>
-    <a
-      href="#"
-      class="flex items-center px-3 py-2 text-sm font-medium text-gray-600 rounded-md hover:bg-gray-50 group"
-      aria-current="false"
-    >
-      <svg
-        class="flex-shrink-0 w-6 h-6 mr-3 -ml-1 text-gray-400 group-hover:text-gray-500"
-        x-description="Heroicon name: outline/fire"
-        xmlns="http://www.w3.org/2000/svg"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke="currentColor"
-        aria-hidden="true"
-      >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.656 7.343A7.975 7.975 0 0120 13a7.975 7.975 0 01-2.343 5.657z"
-        ></path>
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          d="M9.879 16.121A3 3 0 1012.015 11L11 14H9c0 .768.293 1.536.879 2.121z"
-        ></path>
-      </svg>
-      <span class="truncate"> Popular </span>
-    </a>
+    <SectionWrapper class="prose">
+      <ComponentPropsTable />
+    </SectionWrapper>
+    <!-- This example requires Tailwind CSS v2.0+ -->
+    <div class="bg-white shadow sm:rounded-lg">
+      <div class="px-4 py-5 sm:p-6">
+        <h3 class="text-lg font-medium leading-6 text-gray-900">
+          Payment method
+        </h3>
+        <div class="mt-5">
+          <div
+            class="px-6 py-5 rounded-md bg-gray-50 sm:flex sm:items-start sm:justify-between"
+          >
+            <h4 class="sr-only">Visa</h4>
+            <div class="sm:flex sm:items-start">
+              <svg
+                class="w-auto h-8 sm:flex-shrink-0 sm:h-6"
+                viewBox="0 0 36 24"
+                aria-hidden="true"
+              >
+                <rect width="36" height="24" fill="#224DBA" rx="4" />
+                <path
+                  fill="#fff"
+                  d="M10.925 15.673H8.874l-1.538-6c-.073-.276-.228-.52-.456-.635A6.575 6.575 0 005 8.403v-.231h3.304c.456 0 .798.347.855.75l.798 4.328 2.05-5.078h1.994l-3.076 7.5zm4.216 0h-1.937L14.8 8.172h1.937l-1.595 7.5zm4.101-5.422c.057-.404.399-.635.798-.635a3.54 3.54 0 011.88.346l.342-1.615A4.808 4.808 0 0020.496 8c-1.88 0-3.248 1.039-3.248 2.481 0 1.097.969 1.673 1.653 2.02.74.346 1.025.577.968.923 0 .519-.57.75-1.139.75a4.795 4.795 0 01-1.994-.462l-.342 1.616a5.48 5.48 0 002.108.404c2.108.057 3.418-.981 3.418-2.539 0-1.962-2.678-2.077-2.678-2.942zm9.457 5.422L27.16 8.172h-1.652a.858.858 0 00-.798.577l-2.848 6.924h1.994l.398-1.096h2.45l.228 1.096h1.766zm-2.905-5.482l.57 2.827h-1.596l1.026-2.827z"
+                />
+              </svg>
+              <div class="mt-3 sm:mt-0 sm:ml-4">
+                <div class="text-sm font-medium text-gray-900">
+                  Ending with 4242
+                </div>
+                <div class="mt-1 text-sm text-gray-600 sm:flex sm:items-center">
+                  <div>Expires 12/20</div>
+                  <span class="hidden sm:mx-2 sm:inline" aria-hidden="true">
+                    &middot;
+                  </span>
+                  <div class="mt-1 sm:mt-0">Last updated on 22 Aug 2017</div>
+                </div>
+              </div>
+            </div>
+            <div class="mt-4 sm:mt-0 sm:ml-6 sm:flex-shrink-0">
+              <button
+                type="button"
+                class="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500"
+              >
+                Edit
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
-    <a
-      href="#"
-      class="flex items-center px-3 py-2 text-sm font-medium text-gray-600 rounded-md hover:bg-gray-50 group"
-      aria-current="false"
-    >
-      <svg
-        class="flex-shrink-0 w-6 h-6 mr-3 -ml-1 text-gray-400 group-hover:text-gray-500"
-        x-description="Heroicon name: outline/trending-up"
-        xmlns="http://www.w3.org/2000/svg"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke="currentColor"
-        aria-hidden="true"
-      >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"
-        ></path>
-      </svg>
-      <span class="truncate"> Trending </span>
-    </a>
+    <!-- This example requires Tailwind CSS v2.0+ -->
+    <div class="bg-gray-50 sm:rounded-lg">
+      <div class="px-4 py-5 sm:p-6">
+        <h3 class="text-lg font-medium leading-6 text-gray-900">
+          Need more bandwidth?
+        </h3>
+        <div class="max-w-xl mt-2 text-sm text-gray-500">
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Voluptatibus praesentium tenetur pariatur.
+          </p>
+        </div>
+        <div class="mt-5">
+          <button
+            type="button"
+            class="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500"
+          >
+            Contact sales
+          </button>
+        </div>
+      </div>
+    </div>
 
-    <a
-      href="#"
-      class="flex items-center px-2 py-2 text-sm font-medium text-gray-700 rounded-md hover:text-gray-900 hover:bg-gray-50 group"
-    >
-      <svg
-        class="w-6 h-6 mr-3 text-gray-400 group-hover:text-gray-500"
-        x-description="Heroicon name: outline/view-list"
-        xmlns="http://www.w3.org/2000/svg"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke="currentColor"
-        aria-hidden="true"
-      >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          d="M4 6h16M4 10h16M4 14h16M4 18h16"
-        ></path>
-      </svg>
-      My tasks
-    </a>
+    <!--
+  This example requires Tailwind CSS v2.0+
 
-    <a
-      href="#"
-      class="flex items-center px-2 py-2 text-sm font-medium text-gray-700 rounded-md hover:text-gray-900 hover:bg-gray-50 group"
-    >
-      <svg
-        class="w-6 h-6 mr-3 text-gray-400 group-hover:text-gray-500"
-        x-description="Heroicon name: outline/clock"
-        xmlns="http://www.w3.org/2000/svg"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke="currentColor"
-        aria-hidden="true"
+  This example requires some changes to your config:
+
+  ```
+  // tailwind.config.js
+  module.exports = {
+    // ...
+    plugins: [
+      // ...
+      require('@tailwindcss/forms'),
+    ]
+  }
+  ```
+-->
+    <div class="bg-white shadow sm:rounded-lg">
+      <div class="px-4 py-5 sm:p-6">
+        <h3 class="text-lg font-medium leading-6 text-gray-900">
+          Update your email
+        </h3>
+        <div class="max-w-xl mt-2 text-sm text-gray-500">
+          <p>Change the email address you want associated with your account.</p>
+        </div>
+        <form class="mt-5 sm:flex sm:items-center">
+          <div class="w-full max-w-xs">
+            <label for="email" class="sr-only">Email</label>
+            <input
+              id="email"
+              type="text"
+              name="email"
+              class="block w-full border-gray-300 rounded-md shadow-sm focus:ring-primary-500 focus:border-primary-500 sm:text-sm"
+              placeholder="you@example.com"
+            />
+          </div>
+          <button
+            type="submit"
+            class="inline-flex items-center justify-center w-full px-4 py-2 mt-3 font-medium text-white border border-transparent rounded-md shadow-sm bg-primary-600 hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm"
+          >
+            Save
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <!-- This example requires Tailwind CSS v2.0+ -->
+    <div class="bg-white shadow sm:rounded-lg">
+      <div class="px-4 py-5 sm:p-6">
+        <h3
+          id="renew-headline"
+          class="text-lg font-medium leading-6 text-gray-900"
+        >
+          Renew subscription automatically
+        </h3>
+        <div class="mt-2 sm:flex sm:items-start sm:justify-between">
+          <div class="max-w-xl text-sm text-gray-500">
+            <p id="renew-description">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo
+              totam non cumque deserunt officiis ex maiores nostrum.
+            </p>
+          </div>
+          <div
+            class="mt-5 sm:mt-0 sm:ml-6 sm:flex-shrink-0 sm:flex sm:items-center"
+          >
+            <!-- On: "bg-primary-600", Off: "bg-gray-200" -->
+            <button
+              type="button"
+              aria-pressed="false"
+              aria-labelledby="renew-headline"
+              class="relative inline-flex flex-shrink-0 h-6 transition-colors duration-200 ease-in-out bg-gray-200 border-2 border-transparent rounded-full cursor-pointer w-11 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500"
+            >
+              <span class="sr-only">Use setting</span>
+              <!-- On: "translate-x-5", Off: "translate-x-0" -->
+              <span
+                aria-hidden="true"
+                class="inline-block w-5 h-5 transition duration-200 ease-in-out transform translate-x-0 bg-white rounded-full shadow ring-0"
+              />
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- This example requires Tailwind CSS v2.0+ -->
+    <div class="bg-white shadow sm:rounded-lg">
+      <div class="px-4 py-5 sm:p-6">
+        <div class="sm:flex sm:items-start sm:justify-between">
+          <div>
+            <h3 class="text-lg font-medium leading-6 text-gray-900">
+              Manage subscription
+            </h3>
+            <div class="max-w-xl mt-2 text-sm text-gray-500">
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Recusandae voluptatibus corrupti atque repudiandae nam.
+              </p>
+            </div>
+          </div>
+          <div
+            class="mt-5 sm:mt-0 sm:ml-6 sm:flex-shrink-0 sm:flex sm:items-center"
+          >
+            <button
+              type="button"
+              class="inline-flex items-center px-4 py-2 text-sm font-medium text-white border border-transparent rounded-md shadow-sm bg-primary-600 hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500"
+            >
+              Change plan
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- This example requires Tailwind CSS v2.0+ -->
+    <div class="bg-white shadow sm:rounded-lg">
+      <div class="px-4 py-5 sm:p-6">
+        <h3 class="text-lg font-medium leading-6 text-gray-900">
+          Manage subscription
+        </h3>
+        <div class="mt-2 sm:flex sm:items-start sm:justify-between">
+          <div class="max-w-xl text-sm text-gray-500">
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Recusandae voluptatibus corrupti atque repudiandae nam.
+            </p>
+          </div>
+          <div
+            class="mt-5 sm:mt-0 sm:ml-6 sm:flex-shrink-0 sm:flex sm:items-center"
+          >
+            <button
+              type="button"
+              class="inline-flex items-center px-4 py-2 text-sm font-medium text-white border border-transparent rounded-md shadow-sm bg-primary-600 hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500"
+            >
+              Change plan
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- This example requires Tailwind CSS v2.0+ -->
+    <div class="bg-white shadow sm:rounded-lg">
+      <div class="px-4 py-5 sm:p-6">
+        <h3 class="text-lg font-medium leading-6 text-gray-900">
+          Continuous Integration
+        </h3>
+        <div class="max-w-xl mt-2 text-sm text-gray-500">
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi,
+            totam at reprehenderit maxime aut beatae ad.
+          </p>
+        </div>
+        <div class="mt-3 text-sm">
+          <a
+            href="#"
+            class="font-medium text-primary-600 hover:text-primary-500"
+          >
+            Learn more about our CI features
+            <span aria-hidden="true">&rarr;</span></a
+          >
+        </div>
+      </div>
+    </div>
+
+    <!-- This example requires Tailwind CSS v2.0+ -->
+    <div class="bg-white shadow sm:rounded-lg">
+      <div class="px-4 py-5 sm:p-6">
+        <h3 class="text-lg font-medium leading-6 text-gray-900">
+          Delete your account
+        </h3>
+        <div class="max-w-xl mt-2 text-sm text-gray-500">
+          <p>
+            Once you delete your account, you will lose all data associated with
+            it.
+          </p>
+        </div>
+        <div class="mt-5">
+          <button
+            type="button"
+            class="inline-flex items-center justify-center px-4 py-2 font-medium text-red-700 bg-red-100 border border-transparent rounded-md hover:bg-red-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 sm:text-sm"
+          >
+            Delete account
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- This example requires Tailwind CSS v2.0+ -->
+    <div class="flex items-center justify-between">
+      <span id="toggleLabel" class="flex flex-col flex-grow">
+        <span class="text-sm font-medium text-gray-900">Available to hire</span>
+        <span class="text-sm leading-normal text-gray-500"
+          >Nulla amet tempus sit accumsan. Aliquet turpis sed sit lacinia.</span
+        >
+      </span>
+      <!-- On: "bg-primary-600", Off: "bg-gray-200" -->
+      <button
+        type="button"
+        aria-pressed="false"
+        aria-labelledby="toggleLabel"
+        class="relative inline-flex flex-shrink-0 h-6 transition-colors duration-200 ease-in-out bg-gray-200 border-2 border-transparent rounded-full cursor-pointer w-11 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500"
       >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
-        ></path>
-      </svg>
-      Recent
-    </a>
+        <span class="sr-only">Use setting</span>
+        <!-- On: "translate-x-5", Off: "translate-x-0" -->
+        <span
+          aria-hidden="true"
+          class="inline-block w-5 h-5 transition duration-200 ease-in-out transform translate-x-0 bg-white rounded-full shadow pointer-events-none ring-0"
+        />
+      </button>
+    </div>
+
+    <!-- This example requires Tailwind CSS v2.0+ -->
+    <div class="flex items-center">
+      <!-- On: "bg-primary-600", Off: "bg-gray-200" -->
+      <button
+        type="button"
+        aria-pressed="false"
+        aria-labelledby="toggleLabel"
+        class="relative inline-flex flex-shrink-0 h-6 transition-colors duration-200 ease-in-out bg-gray-200 border-2 border-transparent rounded-full cursor-pointer w-11 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500"
+      >
+        <span class="sr-only">Use setting</span>
+        <!-- On: "translate-x-5", Off: "translate-x-0" -->
+        <span
+          aria-hidden="true"
+          class="inline-block w-5 h-5 transition duration-200 ease-in-out transform translate-x-0 bg-white rounded-full shadow pointer-events-none ring-0"
+        />
+      </button>
+      <span id="toggleLabel" class="ml-3">
+        <span class="text-sm font-medium text-gray-900">Annual billing </span>
+        <span class="text-sm text-gray-500">(Save 10%)</span>
+      </span>
+    </div>
 
     <button class="inline-flex space-x-2 text-gray-400 hover:text-gray-500">
       <svg

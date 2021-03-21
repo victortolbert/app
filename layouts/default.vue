@@ -39,12 +39,12 @@ export default defineComponent({
     >
       <AppOfflineIndicator />
 
-      <DeveloperNavbar />
+      <GaSpsNavbar />
 
       <main class="flex-1" :class="[`body-${$store.state.class.bodyClass}`]">
         <!-- save fetch calls on pages already visited -->
         <!-- <nuxt keep-alive /> -->
-        <nuxt />
+        <nuxt :nuxt-child-key="$route.fullPath" />
       </main>
 
       <AppFooter />

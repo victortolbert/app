@@ -1,58 +1,65 @@
-<script>
-// import {groupByAlphabet} from '~/helpers'
-export default {
+<script lang="ts">
+import {defineComponent, watchEffect} from '@nuxtjs/composition-api'
+import {PersonItem} from '~/types'
+import PersonService from '~/services/PersonService'
+
+export default defineComponent({
   layout: 'plain',
   props: {
-    people: {
-      type: Array,
-      default() {
-        return [
-          {id: 1, firstName: 'Victor', lastName: 'Tolbert', title: 'Volunteer'},
-          {
-            id: 2,
-            firstName: 'Reginald',
-            lastName: 'Tolbert',
-            title: 'Volunteer',
-          },
-          {
-            id: 3,
-            firstName: 'Victor',
-            lastName: 'Rodriquez',
-            title: 'Volunteer',
-          },
-          {id: 4, firstName: 'Ron', lastName: 'Johnson', title: 'Volunteer'},
-        ]
-      },
+    page: {
+      type: Number,
+      default: 1,
     },
+  },
+  data() {
+    return {
+      people: [] as PersonItem[],
+      totalPeople: 0,
+      nestedRoutes: [],
+      perPage: 10,
+      paginationOptions: [5, 10, 25, 75, 100, 250],
+      currentPage: 1,
+      checkedRows: [],
+      selected: null,
+    }
   },
   computed: {
-    peopleSortedByLastName() {
-      return [...this.people].sort((a, b) => {
-        // then check their last names
-        if (a.lastName < b.lastName) return -1
-        if (a.lastName > b.lastName) return 1
-        // then check their first names
-        if (a.firstName < b.firstName) return -1
-        if (a.firstName > b.firstName) return 1
-        return 0
-      })
-    },
-    peopleGroupedByLetter() {
-      return this.peopleSortedByLastName.reduce((result, person) => {
-        let alphabet = person.lastName[0]
+    hasNextPage() {
+      const totalPages = Math.ceil(this.totalPeople / 2)
 
-        // if there is no property in the accumulator with this letter, create it
-        if (!result[alphabet]) result[alphabet] = {alphabet, people: [person]}
-        // ...if there is, push current element to children array for that letter
-        else result[alphabet].people.push(person)
-
-        // return accumulator
-        return result
-      }, {})
+      return this.page < totalPages
     },
   },
-}
+  created() {
+    watchEffect(() => {
+      this.people = []
+      PersonService.getPeople(this.perPage, this.page)
+        .then(response => {
+          this.people = response.data
+          this.totalPeople = response.headers['x-total-count']
+        })
+        .catch(() => {
+          this.$router.push({name: 'network-error'})
+        })
+    })
+
+    this.$router.options.routes.forEach(routeOption => {
+      if (routeOption.path.startsWith(this.$route.path)) {
+        this.nestedRoutes.push({
+          name: routeOption.name,
+          path: routeOption.path,
+        })
+      }
+    })
+  },
+  methods: {
+    handleFilter() {
+      console.log('handle filter...')
+    },
+  },
+})
 </script>
+
 <template>
   <div class="flex h-screen overflow-hidden bg-white">
     <!-- Off-canvas menu for mobile, show/hide based on off-canvas menu state. -->
@@ -227,135 +234,7 @@ export default {
     <div class="hidden lg:flex lg:flex-shrink-0">
       <div class="flex flex-col w-64">
         <!-- Sidebar component, swap this element with another sidebar if you like -->
-        <div
-          class="flex flex-col flex-1 h-0 bg-gray-100 border-r border-gray-200"
-        >
-          <div class="flex flex-col flex-1 pt-5 pb-4 overflow-y-auto">
-            <div class="flex items-center flex-shrink-0 px-4">
-              <BaseLogo name="gasps" class="w-auto h-8" />
-            </div>
-            <nav class="flex-1 mt-5" aria-label="Sidebar">
-              <div class="px-2 space-y-1">
-                <!-- Current: "bg-gray-200 text-gray-900", Default: "text-gray-600 hover:bg-gray-50 hover:text-gray-900" -->
-                <a
-                  href="#"
-                  class="flex items-center px-2 py-2 text-sm font-medium text-gray-900 bg-gray-200 rounded-md group"
-                >
-                  <!-- Current: "text-gray-500", Default: "text-gray-400 group-hover:text-gray-500" -->
-                  <BaseIconOutlined
-                    name="home"
-                    class="mr-3 text-gray-400 group-hover:text-gray-500"
-                  />
-                  {{ $t('dashboard') }}
-                </a>
-
-                <a
-                  href="#"
-                  class="flex items-center px-2 py-2 text-sm font-medium text-gray-600 rounded-md hover:bg-gray-50 hover:text-gray-900 group"
-                >
-                  <BaseIconOutlined
-                    name="calendar"
-                    class="mr-3 text-gray-400 group-hover:text-gray-500"
-                  />
-                  {{ $t('calendar') }}
-                </a>
-
-                <a
-                  href="#"
-                  class="flex items-center px-2 py-2 text-sm font-medium text-gray-600 rounded-md hover:bg-gray-50 hover:text-gray-900 group"
-                >
-                  <BaseIconOutlined
-                    name="user-group"
-                    class="mr-3 text-gray-400 group-hover:text-gray-500"
-                  />
-                  {{ $t('teams') }}
-                </a>
-
-                <a
-                  href="#"
-                  class="flex items-center px-2 py-2 text-sm font-medium text-gray-600 rounded-md hover:bg-gray-50 hover:text-gray-900 group"
-                >
-                  <BaseIconOutlined
-                    name="search-circle"
-                    class="mr-3 text-gray-400 group-hover:text-gray-500"
-                  />
-                  {{ $t('directory') }}
-                </a>
-
-                <a
-                  href="#"
-                  class="flex items-center px-2 py-2 text-sm font-medium text-gray-600 rounded-md hover:bg-gray-50 hover:text-gray-900 group"
-                >
-                  <BaseIconOutlined
-                    name="speaker-phone"
-                    class="mr-3 text-gray-400 group-hover:text-gray-500"
-                  />
-                  {{ $t('announcements') }}
-                </a>
-
-                <a
-                  href="#"
-                  class="flex items-center px-2 py-2 text-sm font-medium text-gray-600 rounded-md hover:bg-gray-50 hover:text-gray-900 group"
-                >
-                  <BaseIconOutlined
-                    name="map"
-                    class="mr-3 text-gray-400 group-hover:text-gray-500"
-                  />
-                  {{ $t('office_map') }}
-                </a>
-              </div>
-              <hr class="my-5 border-t border-gray-200" aria-hidden="true" />
-              <div class="flex-1 px-2 space-y-1">
-                <a
-                  href="#"
-                  class="flex items-center px-2 py-2 text-sm font-medium text-gray-600 rounded-md hover:bg-gray-50 hover:text-gray-900 group"
-                >
-                  <BaseIconOutlined
-                    name="view-grid-add"
-                    class="mr-3 text-gray-400 group-hover:text-gray-500"
-                  />
-                  {{ $t('apps') }}
-                </a>
-
-                <a
-                  href="#"
-                  class="flex items-center px-2 py-2 text-sm font-medium text-gray-600 rounded-md hover:bg-gray-50 hover:text-gray-900 group"
-                >
-                  <BaseIconOutlined
-                    name="cog"
-                    class="mr-3 text-gray-400 group-hover:text-gray-500"
-                  />
-                  {{ $t('settings') }}
-                </a>
-              </div>
-            </nav>
-          </div>
-          <div class="flex flex-shrink-0 p-4 border-t border-gray-200">
-            <a href="#" class="flex-shrink-0 block w-full group">
-              <div class="flex items-center">
-                <div>
-                  <img
-                    class="inline-block rounded-full h-9 w-9"
-                    src="https://cominex.net/assets/img/people/marcus.jpeg"
-                    alt=""
-                  />
-                </div>
-                <div class="ml-3">
-                  <p
-                    class="text-sm font-medium text-gray-700 group-hover:text-gray-900"
-                  >
-                    Marcus Bouligny
-                  </p>
-                  <p
-                    class="text-xs font-medium text-gray-500 group-hover:text-gray-700"
-                  >
-                    {{ $t('view_profile') }}
-                  </p>
-                </div>
-              </div>
-            </a>
-          </div>
-        </div>
+        <GaSpsSidebar />
       </div>
     </div>
     <div class="flex flex-col flex-1 min-w-0 overflow-hidden">
@@ -397,7 +276,7 @@ export default {
           </nav>
 
           <article>
-            <NuxtChild :key="$route.path" />
+            <NuxtChild :key="$route.fullPath" />
           </article>
         </main>
 
@@ -439,8 +318,9 @@ export default {
             </form>
           </div>
 
-          <!-- Directory list -->
-          <nav class="relative h-full overflow-y-auto" aria-label="Directory">
+          <DirectoryList :people="people" />
+
+          <!-- <nav class="relative h-full overflow-y-auto" aria-label="Directory">
             <div v-for="(group, key) in peopleGroupedByLetter">
               <div
                 class="sticky top-0 z-10 px-6 py-1 text-sm font-medium text-gray-500 border-t border-b border-gray-200 bg-gray-50"
@@ -454,7 +334,7 @@ export default {
                 :key="person.id"
               />
             </div>
-          </nav>
+          </nav> -->
         </aside>
       </div>
     </div>
