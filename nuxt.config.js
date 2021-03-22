@@ -36,7 +36,7 @@ export default defineNuxtConfig({
     baseURL:
       process.env.NODE_ENV === 'production'
         ? 'https://app.vticonsulting.com'
-        : 'http://example-app.test',
+        : 'http://vticonsulting.test',
 
     ackeeDomainId:
       process.env.ACKEE_DOMAIN_ID || '601bbeb1-8a0a-4d5d-ba1f-a75ce1cefda3',
@@ -608,7 +608,9 @@ export default defineNuxtConfig({
       // based on cookie scheme and supports all scheme options.
       laravelSanctum: {
         provider: 'laravel/sanctum',
-        url: 'http://victortolbert.test',
+        url: process.env.NODE_ENV === 'production'
+          ? 'https://vticonsulting.com'
+          : 'http://vticonsulting.test',
         // endpoints: {
         //   // (optional) If set, we send a get request to this endpoint before login
         //   csrf: {
@@ -622,7 +624,9 @@ export default defineNuxtConfig({
   proxy: {
     '/laravel': {
       pathRewrite: {'^/laravel': '/'},
-      target: 'http://victortolbert.test',
+      target:  process.env.NODE_ENV === 'production'
+          ? 'https://vticonsulting.com'
+          : 'http://vticonsulting.test',
     },
   },
 
