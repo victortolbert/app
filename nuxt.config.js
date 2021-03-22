@@ -12,6 +12,10 @@ export default defineNuxtConfig({
   //   baseUrl: process.env.BASE_URL || 'http://localhost:3000',
   // },
   publicRuntimeConfig: {
+    baseURL:
+      process.env.NODE_ENV === 'production'
+        ? 'https://app.vticonsulting.com'
+        : 'http://vticonsulting.test',
     apiURL: process.env.API_URL || 'http://localhost:8686',
     assetsURL:
       process.env.ASSETS_URL ||
@@ -32,11 +36,6 @@ export default defineNuxtConfig({
       'kUYuz37F1+C7BjNL+R5WPV2wobFrGRddz46jd/s2',
     awsS3Bucket: process.env.AWS_S3_BUCKET || 'victortolbert',
     awsS3URL: process.env.AWS_S3_URL || 'https://the_url.s3.amazonaws.co',
-
-    baseURL:
-      process.env.NODE_ENV === 'production'
-        ? 'https://app.vticonsulting.com'
-        : 'http://vticonsulting.test',
 
     ackeeDomainId:
       process.env.ACKEE_DOMAIN_ID || '601bbeb1-8a0a-4d5d-ba1f-a75ce1cefda3',

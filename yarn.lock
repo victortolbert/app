@@ -4463,10 +4463,24 @@
   dependencies:
     mini-svg-data-uri "^1.2.3"
 
-"@tailwindcss/jit@^0.1.1", "@tailwindcss/jit@^0.1.5":
+"@tailwindcss/jit@^0.1.1":
   version "0.1.5"
   resolved "https://registry.yarnpkg.com/@tailwindcss/jit/-/jit-0.1.5.tgz#b4384e986a796eff8745b8b59662a00780474724"
   integrity sha512-f7Fdd93uD4J0hyaNWX7vrWF0pA39hh7oxHVzTqhwfUWmzWQBGevKfnniLe4GFxwfqYpYHxy5ycOWP76tzWhvrQ==
+  dependencies:
+    chokidar "^3.5.1"
+    dlv "^1.1.3"
+    fast-glob "^3.2.5"
+    lodash.topath "^4.5.2"
+    normalize-path "^3.0.0"
+    object-hash "^2.1.1"
+    postcss-selector-parser "^6.0.4"
+    quick-lru "^5.1.1"
+
+"@tailwindcss/jit@^0.1.6":
+  version "0.1.6"
+  resolved "https://registry.yarnpkg.com/@tailwindcss/jit/-/jit-0.1.6.tgz#bef9095513c56c7df7a13409d0a11af329d746b0"
+  integrity sha512-6tn2gKMajm1uFp0lEwhIcGje6AB9QmLnEjCqn+dzhzyB+EUXR2V1FpQoIcNVTuGzZg/s47AQs7N0+5wv8j7xPA==
   dependencies:
     chokidar "^3.5.1"
     dlv "^1.1.3"
@@ -6322,10 +6336,10 @@ aws-s3@^2.0.5:
     crypto-js "^3.1.9-1"
     short-uuid "^3.1.0"
 
-aws-sdk@^2.868.0:
-  version "2.868.0"
-  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.868.0.tgz#2c31f5d788e4487ac29f51498e46cc91b0d1de6a"
-  integrity sha512-ZayPsA/ycaAXqqa2oDyf8iUpl1WOLODZS8ZdvYj77L5owMQm0XC7yqiD+WHj9nToUECF9VAD+AKQMIN6695tVQ==
+aws-sdk@^2.869.0:
+  version "2.869.0"
+  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.869.0.tgz#f0fc6945979b7f675103424e1fe81688b90e67cf"
+  integrity sha512-Sj9H+OH1sizBJt6WyTFBvCthZ1hRNUi4qRFO922agf+cOfmq1r+PYLOcG/0qgLMe2aelRwfT2qE2AZ97mADiOw==
   dependencies:
     buffer "4.9.2"
     events "1.1.1"
@@ -7049,10 +7063,10 @@ braces@^3.0.1, braces@~3.0.2:
   dependencies:
     fill-range "^7.0.1"
 
-braintree-web@^3.75.0:
-  version "3.75.0"
-  resolved "https://registry.yarnpkg.com/braintree-web/-/braintree-web-3.75.0.tgz#0d6fadb8d0452724b6e208408f318a766aaeae6c"
-  integrity sha512-Q6hRrF5NyV2IqZN9PAoEdfZc530TcSENmD1vdKxfaJYATtk3hu3Fr1UiAgl4Ihx9g1UELKMy45swBMqX+CK6Rg==
+braintree-web@^3.76.0:
+  version "3.76.0"
+  resolved "https://registry.yarnpkg.com/braintree-web/-/braintree-web-3.76.0.tgz#f7a8f5cba320bb59a2b3478ba741e574a1455a0b"
+  integrity sha512-umyaQId7odkDmkvD3uay7f8zkmzt8FBQp+rMHNkPqiD/TKP6AKaLIL32pqBn57rkXWBKMz5gK49IllqAUJD1bw==
   dependencies:
     "@braintree/asset-loader" "0.4.4"
     "@braintree/browser-detection" "1.11.0"
@@ -9785,6 +9799,16 @@ eslint-plugin-vue@^7.1.0, eslint-plugin-vue@^7.7.0:
   version "7.7.0"
   resolved "https://registry.yarnpkg.com/eslint-plugin-vue/-/eslint-plugin-vue-7.7.0.tgz#a90df4595e670821bf243bd2750ededdb74948b8"
   integrity sha512-mYz4bpLGv5jx6YG/GvKkqbGSfV7uma2u1P3mLA41Q5vQl8W1MeuTneB8tfsLq6xxxesFubcrOC0BZBJ5R+eaCQ==
+  dependencies:
+    eslint-utils "^2.1.0"
+    natural-compare "^1.4.0"
+    semver "^7.3.2"
+    vue-eslint-parser "^7.6.0"
+
+eslint-plugin-vue@^7.8.0:
+  version "7.8.0"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-vue/-/eslint-plugin-vue-7.8.0.tgz#cb0e85d65b65fa8d15e783fbb03c049d2c4cfdae"
+  integrity sha512-OGrnPz+PuYL2HmVyBHxm4mRjxW2kfFCQE6Hw9G6qOHs/Pcu0srOlCCW0FMa8SLzIEqxl8WuKoBSPcMnrjUG2vw==
   dependencies:
     eslint-utils "^2.1.0"
     natural-compare "^1.4.0"
@@ -15761,13 +15785,13 @@ parsimmon@^1.13.0:
   resolved "https://registry.yarnpkg.com/parsimmon/-/parsimmon-1.16.0.tgz#2834e3db645b6a855ab2ea14fbaad10d82867e0f"
   integrity sha512-tekGDz2Lny27SQ/5DzJdIK0lqsWwZ667SCLFIDCxaZM7VNgQjyKLbaL7FYPKpbjdxNAXFV/mSxkq5D2fnkW4pA==
 
-particles.vue@2.5.1:
-  version "2.5.1"
-  resolved "https://registry.yarnpkg.com/particles.vue/-/particles.vue-2.5.1.tgz#25f8072de0354ae6973fdd1bb195ec42792f0b83"
-  integrity sha512-eTkgjDToA2oAilacGO426wh4GcPwsTlfE4/5p/ojO8Hf7E/iom7LMS8N8n3gmHmr9pAfAwFzF1LPwYOjCMIsgg==
+particles.vue@2.6.0:
+  version "2.6.0"
+  resolved "https://registry.yarnpkg.com/particles.vue/-/particles.vue-2.6.0.tgz#17964c337ef098b3e04074dbd1fafcad37fb234a"
+  integrity sha512-f8SERPv8L987WMbRGsFnH53ArPWlS7NOuh4YXQJcdM+KNvEOuJPQGYV/oVniYhbxgfpA1VEVT+OzJ+iy/YL/DA==
   dependencies:
     tslib "^2.0.3"
-    tsparticles "^1.22.1"
+    tsparticles "^1.23.0"
     vue "<3"
     vue-class-component "<8"
     vue-property-decorator "^9.0.2"
@@ -20614,10 +20638,10 @@ tsml@1.0.1:
   resolved "https://registry.yarnpkg.com/tsml/-/tsml-1.0.1.tgz#89f8218b9d9e257f47d7f6b56d01c5a4d2c68fc3"
   integrity sha1-ifghi52eJX9H1/a1bQHFpNLGj8M=
 
-tsparticles@^1.22.1:
-  version "1.22.1"
-  resolved "https://registry.yarnpkg.com/tsparticles/-/tsparticles-1.22.1.tgz#ddca8ee621b374a70568b366f4ce49afd0eb4c10"
-  integrity sha512-J34CRuYBkFOr3GY7Xi+qaf0DlMKEywpx7ybyTl5IxFJwVsu/H6mfTEIN6DaNeIu7fkxycg41V8Sw0hqxHY3TOA==
+tsparticles@^1.23.0:
+  version "1.23.0"
+  resolved "https://registry.yarnpkg.com/tsparticles/-/tsparticles-1.23.0.tgz#f41bf1600497503762ddd4920d489ccca90a3310"
+  integrity sha512-1lnQyq8n+RqLJQiw1XoNbpmPJlBjtpP6jmxhxqezvOJKechL3STQ6Fao3G1GjC4MM43LY3OSJmyfiHmmMR7JLQ==
   optionalDependencies:
     pathseg "^1.2.0"
 
