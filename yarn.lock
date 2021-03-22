@@ -8201,10 +8201,10 @@ filepond-plugin-image-preview@4.6.5:
   resolved "https://registry.yarnpkg.com/filepond-plugin-image-preview/-/filepond-plugin-image-preview-4.6.5.tgz#18ecf011522d3d8c72438e9961eab39ad6beeec6"
   integrity sha512-NssyAoy7zo/bGnwPpDrKHU6g64gjavf4fvxja1wIFu2zq57Sneevg0r15e1WHkAHL4hs0SwbX1YUpEEgJZ4gSg==
 
-filepond@4.25.3:
-  version "4.25.3"
-  resolved "https://registry.yarnpkg.com/filepond/-/filepond-4.25.3.tgz#7a6a793a9ffd2539fbbd1383d4864359f23bded4"
-  integrity sha512-xuY0a94jLs1je7ef5qjJJoOBnxvKk3dUo8inLfRk0aieaVqY37Xhkzx/ZYG1Tl70kuC6Yl5Ug9AJ6D4OaYvrxg==
+filepond@4.26.0:
+  version "4.26.0"
+  resolved "https://registry.yarnpkg.com/filepond/-/filepond-4.26.0.tgz#15ee2506e752e276b0c974be27564a0d46835bba"
+  integrity sha512-zDSKPQVdgieGZHPSZ6pUF8bjR62x0IXd1ixbJKZBxr4+PuaR6H2fMIhP3WfzKWJzHrm28aCk1nr2T6A5st0I0A==
 
 fill-range@^2.1.0:
   version "2.2.4"
