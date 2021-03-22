@@ -910,14 +910,14 @@ export default defineNuxtConfig({
   // },
 
   generate: {
-    interval: 2000,
+    // interval: 2000,
     fallback: '404.html',
     // routes: ['/'],
-    async routes() {
-      const {$content} = require('@nuxt/content')
-      const files = await $content('blog').fetch()
+    // async routes() {
+    //   const {$content} = require('@nuxt/content')
+    //   const files = await $content('blog').fetch()
 
-      return files.map(file => (file.path === '/index' ? '/' : file.path))
-    },
+    //   return files.map(file => (file.path === '/index' ? '/' : file.path))
+    // },
   },
 })
