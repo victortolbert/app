@@ -5,7 +5,8 @@ import useUser from '~/composables/useUser'
 
 export default defineComponent({
   name: 'LoginView',
-  // auth: 'guest',
+  middleware: 'auth',
+  auth: 'guest',
   layout: 'plain',
   setup() {
     const {isLoggedIn, login} = useUser()
@@ -13,13 +14,55 @@ export default defineComponent({
     return {isLoggedIn, login, isAdmin}
   },
   data() {
-    return {albumBucketName: 'td-aws-bucket'}
+    return {
+      albumBucketName: 'td-aws-bucket',
+      login: {
+        email: '',
+        password: '',
+      },
+    }
   },
   methods: {
+    async userLogin() {
+      await this.$auth.loginWith('laravelSanctum', {
+        data: {
+          email: this.login.email,
+          password: this.login.password,
+        },
+      })
+      this.$router.push('/dashboard/')
+    },
+    async userLogin2() {
+      try {
+        // let response = await this.$auth.loginWith('local', {data: this.login})
+        let response = await this.$auth
+          .loginWith('laravelSanctum', {
+            data: this.login,
+          })
+          .then(() => this.$toast.success('Logged In!'))
+
+        console.log(response)
+      } catch (err) {
+        console.log(err)
+      }
+    },
     handleSubmit() {
-      this.$toast.info('will handle login...')
+      this.userLogin()
+
+      // this.$axios
+      //   .get('http://example-app.test/sanctum/csrf-cookie')
+      //   .then(response => {
+      //     this.$axios
+      //       .post('http://example-app.test/login', this.formData)
+      //       .then(response => {
+      //         this.getSecrets()
+      //       })
+      //       .catch(error => console.log(error)) // credentials didn't match
+      //   })
+
+      // this.$toast.info(this.login.email)
       // this.login()
-      this.showLoginError()
+      // this.showLoginError()
     },
     loginError() {
       // this.showLoginError()
@@ -223,6 +266,7 @@ export default defineComponent({
                 </label>
                 <div class="mt-1">
                   <input
+                    v-model="login.email"
                     id="email"
                     name="email"
                     type="email"
@@ -242,6 +286,7 @@ export default defineComponent({
                 </label>
                 <div class="mt-1">
                   <input
+                    v-model="login.password"
                     id="password"
                     name="password"
                     type="password"

@@ -3,7 +3,7 @@ export default {
   methods: {
     show(path) {
       // .push({ path: 'register', query: { plan: 'private' } })
-      this.$router.push(this.localePath(`/${path}/`))
+      this.$router.push(`/${path}/`)
     },
   },
 }

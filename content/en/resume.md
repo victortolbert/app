@@ -1,6 +1,8 @@
 ---
 title: Resume
 description: 'Empower your NuxtJS application with @nuxt/content module: write in a content/ directory and fetch your Markdown, JSON, YAML and CSV files through a MongoDB like API, acting as a Git-based Headless CMS.'
+bios:
+ - Senior Full-Stack Web App Developer, UI/UX Engineer, Freelance Consultant & Entrepreneur
 bullets:
   - ● Successfully pitched execs on and led the UI Architecture
   - ● Created a UI Component Library that was adopted by engineering teams

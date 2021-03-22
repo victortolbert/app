@@ -398,7 +398,7 @@ export default defineNuxtConfig({
     '~/plugins/fontawesome',
     '~/plugins/jam',
     '~/plugins/maps.client',
-    '~/plugins/msw',
+    // '~/plugins/msw',
     '~/plugins/oruga',
     '~/plugins/particles.client',
     '~/plugins/portal-vue',
@@ -472,7 +472,7 @@ export default defineNuxtConfig({
   ],
 
   server: {
-    // host: '0.0.0.0',
+    host: '0.0.0.0',
     port: process.env.PORT || 3003,
   },
 
@@ -506,21 +506,123 @@ export default defineNuxtConfig({
   // },
 
   auth: {
-    rewriteRedirects: true,
     fullPathRedirect: true,
     redirect: {
-      login: '/login/',
-      logout: '/',
       callback: '/login/',
-      home: '/',
+      home: '/dashboard/',
+      login: '/login/',
+      logout: '/login/',
     },
+    rewriteRedirects: true,
     strategies: {
-      local: {
-        token: {
-          required: false,
-          type: false,
+      // the cookie scheme is based on `local` but modified for cookie based APIs.
+      // instead of using a token, depends on cookie set by auth provider.
+      // All local scheme options are also supported.
+      cookie: {
+        cookie: {
+          // (optional) If set we check this cookie exsistence for loggedIn check
+          name: 'XSRF-TOKEN',
+        },
+        endpoints: {
+          // (optional) If set, we send a get request to this endpoint before login
+          csrf: {
+            url: '',
+          },
         },
       },
+      // this.$auth.loginWith('facebook')
+      // This provider is based on oauth2 scheme and supports all scheme options.
+      facebook: {
+        endpoints: {
+          userInfo:
+            'https://graph.facebook.com/v6.0/me?fields=id,name,picture{url}',
+        },
+        clientId: '...',
+        scope: ['public_profile', 'email'],
+      },
+      // this.$auth.loginWith('github')
+      github: {
+        clientId: '...',
+        clientSecret: '...',
+      },
+      // this.$auth.loginWith('google')
+      google: {
+        clientId: '...',
+      },
+      // the default, credentials/token based scheme for flows like JWT
+      local: {
+        token: {
+          // used to specify which field of the response JSON to be
+          // used for value. It can be false to directly use API
+          // response or being more complicated like `auth.token`
+          property: 'token',
+          // Useful for Cookie only flows
+          // can be used to disable all token handling
+          // required: true,
+          required: false,
+          // Authorization header name to be used in axios requests
+          name: 'Authorization',
+          // the expiration time of the token, in seconds
+          // default is set to 30 minutes
+          // used if for some reason the token couldn't be decoded to get the expiration date
+          maxAge: 1800,
+          // Authorization header type to be used in axios requests
+          // type: 'Bearer'
+          type: false,
+        },
+        user: {
+          //  can be used to specify which field of the response JSON to
+          // be used for value.It can be false to directly use API
+          // response or being more complicated like auth.user.
+          property: 'user',
+          // autoFetch: true
+        },
+        clientId: false,
+        grantType: false,
+        scope: false,
+        // Each endpoint is used to make requests using axios.
+        // They are basically extending Axios Request Config.
+        // https://github.com/axios/axios#request-config
+        // To disable an endpoint, set its value to `false`
+        endpoints: {
+          login: {url: '/api/auth/login', method: 'post'},
+          logout: {url: '/api/auth/logout', method: 'post'},
+          user: {url: '/api/auth/user', method: 'get'},
+        },
+      },
+      laravelJWT: {
+        provider: 'laravel/jwt',
+        url: '<laravel url>',
+        endpoints: {
+          // ...
+        },
+        token: {
+          property: 'access_token',
+          maxAge: 60 * 60,
+        },
+        refreshToken: {
+          maxAge: 20160 * 60,
+        },
+      },
+      // this.$auth.loginWith('laravelSanctum', {data: {email: '', password: ''}})
+      // based on cookie scheme and supports all scheme options.
+      laravelSanctum: {
+        provider: 'laravel/sanctum',
+        url: 'http://victortolbert.test',
+        // endpoints: {
+        //   // (optional) If set, we send a get request to this endpoint before login
+        //   csrf: {
+        //     url: '/sanctum/csrf-cookie',
+        //   },
+        // },
+      },
+    },
+  },
+
+  proxy: {
+    '/laravel': {
+      pathRewrite: {'^/laravel': '/'},
+      target: 'http://victortolbert.test',
     },
   },
 
@@ -528,6 +630,7 @@ export default defineNuxtConfig({
   axios: {
     baseURL: process.env.apiURL || 'https://api.victortolbert.com/',
     credentials: true,
+    // proxy: true,
   },
 
   colorMode: {
@@ -717,18 +820,25 @@ export default defineNuxtConfig({
 
   storybook: {
     port: 3006,
-    addons: [
-      '@storybook/addon-docs',
-      '@storybook/addon-notes',
-      '@storybook/addon-controls',
-      'storybook-dark-mode',
+    stories: [
+      '~/components/**/*.stories.mdx',
+      '~/components/**/*.stories.@(js|jsx|ts|tsx)',
     ],
     parameters: {
       darkMode: {
         stylePreview: true,
       },
+      viewMode: 'docs',
+      actions: {argTypesRegex: '^on[A-Z].*'},
     },
-
+    addons: [
+      '@storybook/addon-a11y',
+      '@storybook/addon-storysource',
+      '@whitespace/storybook-addon-html',
+      // '@storybook/addon-docs',
+      '@storybook/addon-notes',
+      // 'storybook-dark-mode',
+    ],
     webpackFinal(config, {configDir}) {
       // manipulate webpack config
       return config

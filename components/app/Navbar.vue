@@ -1,5 +1,10 @@
 <script>
-import {ref, reactive, useRouter} from '@nuxtjs/composition-api'
+import {
+  defineComponent,
+  ref,
+  reactive,
+  useRouter,
+} from '@nuxtjs/composition-api'
 import useUser from '~/composables/useUser'
 
 export default {
@@ -40,7 +45,6 @@ export default {
         isOnline: false,
       },
     ])
-    const showAnnouncements = ref(false)
     const showMenu = ref(false)
     const showNewProjectView = ref(false)
     const showProfile = ref(false)
@@ -54,7 +58,6 @@ export default {
       affiliate,
       fullwidth,
       people,
-      showAnnouncements,
       showMenu,
       showNewProjectView,
       showProfile,
@@ -194,7 +197,7 @@ export default {
             <NuxtLink
               v-for="(route, index) in routes"
               :key="index"
-              :to="localePath({path: route.path})"
+              :to="route.path"
             >
               {{ route.label }}
             </NuxtLink>
@@ -220,31 +223,10 @@ export default {
           </OptionsMenuButton> -->
 
           <div class="md:ml-4 md:flex-shrink-0 md:flex md:items-center">
-            <GithubLoginLink />
-
-            <AppLanguageSwitcher />
-
-            <!-- NotificationsButton -->
-            <span class="relative inline-flex rounded-md shadow-sm">
-              <button
-                class="p-1 text-gray-400 bg-white rounded-full hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500"
-                @click="showAnnouncements = !showAnnouncements"
-              >
-                <span class="sr-only">{{ $t('view_notifications') }}</span>
-                <BaseIconOutlined name="bell" />
-              </button>
-              <span
-                class="absolute top-0 right-0 flex w-2 h-2 -mt-1 -mr-1"
-                style="margin: 8px 7px 0 0"
-              >
-                <span
-                  class="absolute inline-flex w-full h-full bg-red-400 rounded-full opacity-75 animate-ping"
-                />
-                <span
-                  class="relative inline-flex w-2 h-2 bg-red-500 rounded-full"
-                />
-              </span>
-            </span>
+            <div class="flex items-center space-x-3">
+              <AppLanguageSwitcher v-if="false" />
+              <AppAnnouncementsButton />
+            </div>
 
             <!-- Help dropdown -->
             <!-- <BaseHelpDropdownButton /> -->
@@ -254,18 +236,23 @@ export default {
             <!-- <NuxtLink  v-if="!isLoggedIn" :to="localePath('/login/')">
               {{ $t('login')}}
             </NuxtLink> -->
+            <div class="hidden space-x-3 lg:block">
+              <div class="space-x-3" v-if="$auth.loggedIn">
+                <NuxtLink :to="localePath({path: '/profile/'})" id="profile">
+                  {{ $t('my_profile') }}
+                </NuxtLink>
+                <button @click="$auth.logout()">
+                  {{ $t('logout') }}
+                </button>
+              </div>
 
-            <div class="hidden lg:block">
-              <button v-if="!isLoggedIn" @click="login">
-                {{ $t('login') }}
-              </button>
-              <NuxtLink
-                v-if="isLoggedIn"
-                :to="localePath({path: '/profile/'})"
-                id="profile"
-              >
-                {{ $t('my_profile') }}
-              </NuxtLink>
+              <div class="flex items-center space-x-3" v-else>
+                <NuxtLink to="/login/">
+                  {{ $t('login') }}
+                </NuxtLink>
+                <GithubLoginLink />
+              </div>
+
               <NuxtLink
                 v-if="isAdmin"
                 :to="localePath({path: '/admin/'})"
@@ -313,175 +300,13 @@ export default {
             class="flex-shrink-0 p-1 ml-auto text-gray-400 bg-white rounded-full hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500"
           >
             <span class="sr-only">{{ $t('view_notifications') }}</span>
-            <!-- Heroicon name: bell -->
-            <svg
-              class="w-6 h-6"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              aria-hidden="true"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"
-              />
-            </svg>
+            <BaseIconOutlined name="bell" />
           </button>
         </div>
 
         <div class="mt-3 space-y-1" />
       </div>
     </div>
-
-    <OSidebar
-      :fullwidth="fullwidth"
-      fullheight
-      right
-      position="fixed"
-      :overlay="false"
-      background-class=""
-      content-class=""
-      mobile="fullwidth"
-      :open="showAnnouncements"
-    >
-      <section
-        class="flex flex-col h-full mt-16 bg-white divide-y divide-gray-200 shadow-xl"
-      >
-        <div class="flex flex-col flex-1 min-h-0 overflow-y-scroll">
-          <header class="px-4 mt-4 sm:px-6">
-            <div class="flex items-start justify-between">
-              <h2
-                id="slide-over-heading"
-                class="text-lg font-medium text-gray-900"
-              >
-                {{ $t('announcements') }}
-              </h2>
-              <div class="flex items-center ml-3 h-7">
-                <button
-                  class="text-gray-400 bg-white rounded-md hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-primary-500"
-                  @click="showAnnouncements = false"
-                >
-                  <span class="sr-only">{{ $t('close_panel') }}</span>
-                  <BaseIconOutlined name="x" />
-                </button>
-              </div>
-            </div>
-          </header>
-
-          <article class="relative flex-1 px-4 mt-4 sm:px-6">
-            <!--
-  This example requires Tailwind CSS v2.0+
-
-  This example requires some changes to your config:
-
-  ```
-  // tailwind.config.js
-  module.exports = {
-    // ...
-    plugins: [
-      // ...
-      require('@tailwindcss/line-clamp'),
-    ]
-  }
-  ```
--->
-            <div>
-              <div class="flow-root mt-6">
-                <ul class="-my-5 divide-y divide-gray-200">
-                  <li class="py-5">
-                    <div
-                      class="relative focus-within:ring-2 focus-within:ring-primary-500"
-                    >
-                      <h3 class="text-sm font-semibold text-gray-800">
-                        <a href="#" class="hover:underline focus:outline-none">
-                          <!-- Extend touch target to entire panel -->
-                          <span class="absolute inset-0" aria-hidden="true" />
-                          Office closed on July 2nd
-                        </a>
-                      </h3>
-                      <p class="mt-1 text-sm text-gray-600 line-clamp-2">
-                        Cum qui rem deleniti. Suscipit in dolor veritatis sequi
-                        aut. Vero ut earum quis deleniti. Ut a sunt eum cum ut
-                        repudiandae possimus. Nihil ex tempora neque cum
-                        consectetur dolores.
-                      </p>
-                    </div>
-                  </li>
-
-                  <li class="py-5">
-                    <div
-                      class="relative focus-within:ring-2 focus-within:ring-primary-500"
-                    >
-                      <h3 class="text-sm font-semibold text-gray-800">
-                        <a href="#" class="hover:underline focus:outline-none">
-                          <!-- Extend touch target to entire panel -->
-                          <span class="absolute inset-0" aria-hidden="true" />
-                          New password policy
-                        </a>
-                      </h3>
-                      <p class="mt-1 text-sm text-gray-600 line-clamp-2">
-                        Alias inventore ut autem optio voluptas et repellendus.
-                        Facere totam quaerat quam quo laudantium cumque eaque
-                        excepturi vel. Accusamus maxime ipsam reprehenderit
-                        rerum id repellendus rerum. Culpa cum vel natus. Est sit
-                        autem mollitia.
-                      </p>
-                    </div>
-                  </li>
-
-                  <li class="py-5">
-                    <div
-                      class="relative focus-within:ring-2 focus-within:ring-primary-500"
-                    >
-                      <h3 class="text-sm font-semibold text-gray-800">
-                        <a href="#" class="hover:underline focus:outline-none">
-                          <!-- Extend touch target to entire panel -->
-                          <span class="absolute inset-0" aria-hidden="true" />
-                          Office closed on July 2nd
-                        </a>
-                      </h3>
-                      <p class="mt-1 text-sm text-gray-600 line-clamp-2">
-                        Tenetur libero voluptatem rerum occaecati qui est
-                        molestiae exercitationem. Voluptate quisquam iure
-                        assumenda consequatur ex et recusandae. Alias
-                        consectetur voluptatibus. Accusamus a ab dicta et.
-                        Consequatur quis dignissimos voluptatem nisi.
-                      </p>
-                    </div>
-                  </li>
-                </ul>
-              </div>
-              <div class="mt-6">
-                <a
-                  href="#"
-                  class="flex items-center justify-center w-full px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md shadow-sm hover:bg-gray-50"
-                >
-                  View all
-                </a>
-              </div>
-            </div>
-          </article>
-        </div>
-
-        <footer v-if="false" class="flex justify-end flex-shrink-0 px-4 py-4">
-          <button
-            class="px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500"
-            @click="showAnnouncements = false"
-          >
-            {{ $t('cancel') }}
-          </button>
-          <button
-            type="submit"
-            class="inline-flex justify-center px-4 py-2 ml-4 text-sm font-medium text-white border border-transparent rounded-md shadow-sm bg-primary-600 hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500"
-          >
-            {{ $t('save') }}
-          </button>
-        </footer>
-      </section>
-    </OSidebar>
 
     <OSidebar
       v-model:open="showVolunteerView"

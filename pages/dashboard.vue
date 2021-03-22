@@ -86,6 +86,17 @@ export default defineComponent({
       &amp;url=https%3A%2F%2Fheroicons.com
     -->
 
+    <pre class="text-sm">
+      {{ $auth.user }}
+    </pre>
+
+    <!-- this.$auth.setUser(user) -->
+    <!-- this.$auth.setUserToken(token, refreshToken).then(() => this.$toast.success('User set!')) -->
+    <!-- await this.$auth.logout(/* .... */) -->
+    <!-- await this.$auth.fetchUser() -->
+    <!-- this.$auth.hasScope('admin') -->
+    <!-- this.$auth.refreshTokens() -->
+
     <SectionWrapper>
       <BaseStepNavigation class="max-w-2xl p-8 bg-white rounded shadow" />
     </SectionWrapper>
