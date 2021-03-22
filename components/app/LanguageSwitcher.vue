@@ -14,7 +14,7 @@ export default {
       :key="locale.code"
       :to="switchLocalePath(locale.code)"
     >
-      {{ locale.name }}
+      {{ $t(locale.name) }}
     </NuxtLink>
   </div>
 </template>

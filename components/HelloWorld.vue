@@ -41,9 +41,9 @@ export default defineComponent({
     <h1 data-intro="This is your message">{{ msg }}</h1>
     <h5>{{ msgUpper }}</h5>
     <p>
-      <button @click="inc">Inc</button>
+      <button @click="inc">{{ $t('increment') }}</button>
       <span>{{ counter }}</span>
-      <button @click="dec">Dec</button>
+      <button @click="dec">{{ $t('decrement') }}</button>
     </p>
   </div>
 </template>

@@ -1,4 +1,4 @@
-import {unWrap, getErrorResponse} from '~/utils/fetchUtils'
+import {unWrap, getErrorResponse} from '~/helpers/fetch-utils'
 
 export default function ({$config}, inject) {
   const headers = {

@@ -60,7 +60,7 @@ export default defineComponent({
               name="twitter"
               class="w-6 h-6 text-white opacity-40"
             />
-            <p>Share<span class="sr-only sm:not-sr-only"> on Twitter</span></p>
+            <p>{{ $t('share')}} </p><span class="sr-only sm:not-sr-only"> on Twitter</span></p>
           </a>
         </slot>
       </div>

@@ -1,5 +1,7 @@
 <script>
-export default {
+import {defineComponent} from '@nuxtjs/composition-api'
+
+export default defineComponent({
   layout: 'plain',
   props: {
     error: {
@@ -15,7 +17,7 @@ export default {
   mounted() {
     // this.$sentry.captureException(this.error)
   },
-}
+})
 </script>
 
 <template>

@@ -1,12 +1,14 @@
-import EventService from '~/services/EventService.js'
+import EventService from '~/services/EventService'
 
 export const state = () => ({
-  events: [{
-    id: 1,
-    title: 'First Event',
-    time: '09:00',
-    date: '2021-03-22'
-  }],
+  events: [
+    {
+      id: 1,
+      title: 'First Event',
+      time: '09:00',
+      date: '2021-03-22',
+    },
+  ],
   eventsTotal: 0,
   event: {},
   perPage: 3,

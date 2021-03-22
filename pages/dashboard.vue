@@ -97,7 +97,7 @@ export default defineComponent({
     <div class="bg-white shadow sm:rounded-lg">
       <div class="px-4 py-5 sm:p-6">
         <h3 class="text-lg font-medium leading-6 text-gray-900">
-          Payment method
+          {{ $t('payment_method') }}
         </h3>
         <div class="mt-5">
           <div
@@ -134,7 +134,7 @@ export default defineComponent({
                 type="button"
                 class="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500"
               >
-                Edit
+                {{ $t('edit') }}
               </button>
             </div>
           </div>
@@ -184,14 +184,14 @@ export default defineComponent({
     <div class="bg-white shadow sm:rounded-lg">
       <div class="px-4 py-5 sm:p-6">
         <h3 class="text-lg font-medium leading-6 text-gray-900">
-          Update your email
+          {{ $t('update_your_email') }}
         </h3>
         <div class="max-w-xl mt-2 text-sm text-gray-500">
-          <p>Change the email address you want associated with your account.</p>
+          <p>{{ $t('change_associated_email') }}</p>
         </div>
         <form class="mt-5 sm:flex sm:items-center">
           <div class="w-full max-w-xs">
-            <label for="email" class="sr-only">Email</label>
+            <label for="email" class="sr-only">{{ $t('email') }}</label>
             <input
               id="email"
               type="text"
@@ -204,7 +204,7 @@ export default defineComponent({
             type="submit"
             class="inline-flex items-center justify-center w-full px-4 py-2 mt-3 font-medium text-white border border-transparent rounded-md shadow-sm bg-primary-600 hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm"
           >
-            Save
+            {{ $t('email') }}
           </button>
         </form>
       </div>
@@ -217,7 +217,7 @@ export default defineComponent({
           id="renew-headline"
           class="text-lg font-medium leading-6 text-gray-900"
         >
-          Renew subscription automatically
+          {{ $t('renew_subscription_automatically') }}
         </h3>
         <div class="mt-2 sm:flex sm:items-start sm:justify-between">
           <div class="max-w-xl text-sm text-gray-500">
@@ -236,7 +236,7 @@ export default defineComponent({
               aria-labelledby="renew-headline"
               class="relative inline-flex flex-shrink-0 h-6 transition-colors duration-200 ease-in-out bg-gray-200 border-2 border-transparent rounded-full cursor-pointer w-11 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500"
             >
-              <span class="sr-only">Use setting</span>
+              <span class="sr-only">{{ $t('use_setting') }}</span>
               <!-- On: "translate-x-5", Off: "translate-x-0" -->
               <span
                 aria-hidden="true"
@@ -254,7 +254,7 @@ export default defineComponent({
         <div class="sm:flex sm:items-start sm:justify-between">
           <div>
             <h3 class="text-lg font-medium leading-6 text-gray-900">
-              Manage subscription
+              {{ $t('manage_subscription') }}
             </h3>
             <div class="max-w-xl mt-2 text-sm text-gray-500">
               <p>
@@ -270,7 +270,7 @@ export default defineComponent({
               type="button"
               class="inline-flex items-center px-4 py-2 text-sm font-medium text-white border border-transparent rounded-md shadow-sm bg-primary-600 hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500"
             >
-              Change plan
+              {{ $t('change_plan') }}
             </button>
           </div>
         </div>
@@ -281,7 +281,7 @@ export default defineComponent({
     <div class="bg-white shadow sm:rounded-lg">
       <div class="px-4 py-5 sm:p-6">
         <h3 class="text-lg font-medium leading-6 text-gray-900">
-          Manage subscription
+          {{ $t('manage_subscription') }}
         </h3>
         <div class="mt-2 sm:flex sm:items-start sm:justify-between">
           <div class="max-w-xl text-sm text-gray-500">
@@ -297,7 +297,7 @@ export default defineComponent({
               type="button"
               class="inline-flex items-center px-4 py-2 text-sm font-medium text-white border border-transparent rounded-md shadow-sm bg-primary-600 hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500"
             >
-              Change plan
+              {{ $t('change_plan') }}
             </button>
           </div>
         </div>

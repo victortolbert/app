@@ -1,3 +1,16 @@
+<script>
+import {defineComponent} from '@nuxtjs/composition-api'
+
+export default defineComponent({
+  props: {
+    home: {
+      type: Object,
+      required: true,
+    },
+  },
+})
+</script>
+
 <template>
   <div>
     <img :src="home.images[0]" style="width: 200px" /><br />
@@ -8,14 +21,3 @@
     {{ home.pricePerNight }} / night<br />
   </div>
 </template>
-
-<script>
-export default {
-  props: {
-    home: {
-      type: Object,
-      required: true,
-    },
-  },
-}
-</script>

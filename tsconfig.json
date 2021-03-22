@@ -18,6 +18,7 @@
     "types": [
       "@nuxt/content",
       "@nuxt/types",
+      "@nuxtjs/auth-next",
       "@nuxtjs/axios",
       "@nuxtjs/color-mode",
       "@types/node"

@@ -297,6 +297,8 @@ export default defineNuxtConfig({
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
 
+    '@nuxtjs/auth-next',
+
     // '@nuxtjs/emotion,
 
     // https://go.nuxtjs.dev/pwa
@@ -390,25 +392,27 @@ export default defineNuxtConfig({
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
     '~/plugins/api',
+    '~/plugins/data-api',
     '~/plugins/demo',
     '~/plugins/filters',
     '~/plugins/fontawesome',
     '~/plugins/jam',
-    '~/plugins/oruga',
+    '~/plugins/maps.client',
     '~/plugins/msw',
-    '~/plugins/portal-vue',
+    '~/plugins/oruga',
     '~/plugins/particles.client',
+    '~/plugins/portal-vue',
     '~/plugins/repository',
     '~/plugins/vee-validate',
-    '~/plugins/vue-api-query',
     '~/plugins/vue-advanced-cropper.client',
+    '~/plugins/vue-api-query',
     '~/plugins/vue-awesome-swiper.client',
     // '~/plugins/vue-chartkick.client',
+    '~/plugins/markdown',
     '~/plugins/vue-codemirror.client',
     '~/plugins/vue-content-placeholders',
     '~/plugins/vue-drag-zone',
     '~/plugins/vue-float-label.client',
-    '~/plugins/markdown',
     '~/plugins/vue-notifications.client',
     '~/plugins/vue-print-nb',
     '~/plugins/vue-ray',
@@ -419,27 +423,24 @@ export default defineNuxtConfig({
     '~/plugins/vue-touch-ripple',
     '~/plugins/vue-video-player.client',
     '~/plugins/vue-virtual-scroller.client',
+
     // {src: '~plugins/vue-video-player.js', ssr: false},
     // '~plugins/vue-gtm',
     // '~/plugins/vuelidate',
     // '~plugins/vue-introjs.client',
 
     // '~/plugins/auth.client',
-    // '~/plugins/data-api',
     // '~/plugins/i18n.client',
     // '~/plugins/init-categories',
-    // '~/plugins/maps.client',
     // '~/plugins/menu.client',
     // '~/plugins/vue-observe-visibility.client',
     // '~/plugins/vue-scrollactive',
     // '~/plugins/vue-tables-2.client',
     // '~/plugins/vue-tippy',
     // '~/plugins/auth.client',
-    // '~/plugins/data-api',
     // '~/plugins/devto',
     // '~/plugins/i18n.client',
     // '~/plugins/init-categories',
-    // '~/plugins/maps.client',
     // '~/plugins/menu.client',
     // '~/plugins/portal-vue',
     // '~/plugins/vue-api-query',
@@ -503,6 +504,25 @@ export default defineNuxtConfig({
   //   ignoreOwnVisits: false,
   //   storageKey: 'nuxt-ackee',
   // },
+
+  auth: {
+    rewriteRedirects: true,
+    fullPathRedirect: true,
+    redirect: {
+      login: '/login/',
+      logout: '/',
+      callback: '/login/',
+      home: '/',
+    },
+    strategies: {
+      local: {
+        token: {
+          required: false,
+          type: false,
+        },
+      },
+    },
+  },
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
@@ -697,6 +717,18 @@ export default defineNuxtConfig({
 
   storybook: {
     port: 3006,
+    addons: [
+      '@storybook/addon-docs',
+      '@storybook/addon-notes',
+      '@storybook/addon-controls',
+      'storybook-dark-mode',
+    ],
+    parameters: {
+      darkMode: {
+        stylePreview: true,
+      },
+    },
+
     webpackFinal(config, {configDir}) {
       // manipulate webpack config
       return config

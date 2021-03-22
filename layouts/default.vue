@@ -5,7 +5,31 @@ import {defineComponent, computed} from '@nuxtjs/composition-api'
 import {css} from '@emotion/css'
 import theme from '~/theme'
 // console.log(Object.values(theme.colors.oliveGreen))
-console.log()
+
+// get variable from inline style
+// element.style.getPropertyValue("--my-var");
+
+// get variable from wherever
+// getComputedStyle(element).getPropertyValue("--my-var");
+
+// set variable on inline style
+// element.style.setProperty("--my-var", jsVar + 4);
+
+// const elm = document.documentElement;
+// elm.style.setProperty('--USER-THEME-COLOR', 'tomato');
+// const elm = document.querySelector('#note-uid');
+// elm.style.setProperty('--note-color', 'yellow');
+
+// :root {
+//   --lightness: 50;
+// }
+// body {
+//   background: hsl(25, 80%, calc(var(--lightness) * 1%));
+// }
+// body {
+//   --lightness: calc(var(--lightness * 0.8));
+//   background: hsl(25, 80%, calc(var(--lightness) * 1%));
+// }
 
 export default defineComponent({
   setup() {

@@ -220,6 +220,10 @@ export default {
           </OptionsMenuButton> -->
 
           <div class="md:ml-4 md:flex-shrink-0 md:flex md:items-center">
+            <GithubLoginLink />
+
+            <AppLanguageSwitcher />
+
             <!-- NotificationsButton -->
             <span class="relative inline-flex rounded-md shadow-sm">
               <button
@@ -749,7 +753,7 @@ export default {
                         class="text-gray-400 bg-white rounded-md hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500"
                         @click.stop="showNewProjectView = false"
                       >
-                        <span class="sr-only">Close panel</span>
+                        <span class="sr-only">{{ $t('close_panel') }}</span>
                         <!-- Heroicon name: x -->
                         <svg
                           class="w-6 h-6"

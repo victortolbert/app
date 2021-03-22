@@ -17,7 +17,7 @@ export default {
 }
 </script>
 <template>
-  <ODropdown :triggers="['hover']" aria-role="list">
+  <ODropdown aria-role="list">
     <div class="whitespace-nowrap" slot="trigger">
       <slot />
     </div>

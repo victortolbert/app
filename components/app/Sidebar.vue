@@ -290,7 +290,7 @@
           <div>
             <img
               class="inline-block rounded-full h-9 w-9"
-              :src="$store.state.auth.user.avatarUrl"
+              :src="$store.state.oldauth.user.avatarUrl"
               alt=""
             />
           </div>
@@ -298,8 +298,8 @@
             <p
               class="text-sm font-medium text-gray-700 group-hover:text-gray-900"
             >
-              {{ $store.state.auth.user.firstName }}
-              {{ $store.state.auth.user.lastName }}
+              {{ $store.state.oldauth.user.firstName }}
+              {{ $store.state.oldauth.user.lastName }}
             </p>
             <p
               class="text-xs font-medium text-gray-500 group-hover:text-gray-700"

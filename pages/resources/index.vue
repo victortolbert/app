@@ -1,4 +1,6 @@
 <script>
+import {launchConfetti} from '~/helpers/confetti'
+
 export default {
   async asyncData({$axios}) {
     return {
@@ -56,6 +58,11 @@ export default {
       },
     }
   },
+  methods: {
+    handleCelebration() {
+      launchConfetti()
+    },
+  },
 }
 </script>
 <template>
@@ -63,9 +70,15 @@ export default {
     <SectionWrapper :padded="false" class="p-8">
       <ResourceSearchField />
 
-      <BaseDivider>
-        This is slotted replacing 'OR' which is the default
-      </BaseDivider>
+      <button @click="handleCelebration">
+        <SvgCelebration />
+      </button>
+
+      <SectionWrapper>
+        <BaseDivider>
+          This is slotted replacing 'OR' which is the default
+        </BaseDivider>
+      </SectionWrapper>
 
       <BasePrintButton />
 
@@ -82,67 +95,67 @@ export default {
           class="flex items-center justify-center flex-none w-full text-xs font-medium leading-6 tracking-widest uppercase transition-colors duration-200 border border-transparent rounded shadow text-primary-700 bg-primary-100 hover:bg-primary-200 sm:w-auto focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-primary-500 focus:outline-none h-11"
           outlined
         >
-          Featured
+          {{ $t('featured') }}
         </button>
         <button
           class="flex items-center justify-center flex-none w-full text-xs font-medium leading-6 tracking-widest uppercase transition-colors duration-200 border border-transparent rounded shadow text-primary-700 bg-primary-100 hover:bg-primary-200 sm:w-auto focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-primary-500 focus:outline-none h-11"
           outlined
         >
-          Popular
+          {{ $t('popular') }}
         </button>
         <button
           class="flex items-center justify-center flex-none w-full text-xs font-medium leading-6 tracking-widest uppercase transition-colors duration-200 border border-transparent rounded shadow text-primary-700 bg-primary-100 hover:bg-primary-200 sm:w-auto focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-primary-500 focus:outline-none h-11"
           outlined
         >
-          Essentials
+          {{ $t('essentials') }}
         </button>
         <button
           class="flex items-center justify-center flex-none w-full text-xs font-medium leading-6 tracking-widest uppercase transition-colors duration-200 border border-transparent rounded shadow text-primary-700 bg-primary-100 hover:bg-primary-200 sm:w-auto focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-primary-500 focus:outline-none h-11"
           outlined
         >
-          Evaluation
+          {{ $t('evaluation') }}
         </button>
         <button
           class="flex items-center justify-center flex-none w-full text-xs font-medium leading-6 tracking-widest uppercase transition-colors duration-200 border border-transparent rounded shadow text-primary-700 bg-primary-100 hover:bg-primary-200 sm:w-auto focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-primary-500 focus:outline-none h-11"
           outlined
         >
-          How To
+          {{ $t('how_to') }}
         </button>
         <button
           class="flex items-center justify-center flex-none w-full text-xs font-medium leading-6 tracking-widest uppercase transition-colors duration-200 border border-transparent rounded shadow text-primary-700 bg-primary-100 hover:bg-primary-200 sm:w-auto focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-primary-500 focus:outline-none h-11"
           outlined
         >
-          Capacity
+          {{ $t('capacity') }}
         </button>
         <button
           class="flex items-center justify-center flex-none w-full text-xs font-medium leading-6 tracking-widest uppercase transition-colors duration-200 border border-transparent rounded shadow text-primary-700 bg-primary-100 hover:bg-primary-200 sm:w-auto focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-primary-500 focus:outline-none h-11"
           outlined
         >
-          Needs Assessment
+          {{ $t('needs_assessment') }}
         </button>
         <button
           class="flex items-center justify-center flex-none w-full text-xs font-medium leading-6 tracking-widest uppercase transition-colors duration-200 border border-transparent rounded shadow text-primary-700 bg-primary-100 hover:bg-primary-200 sm:w-auto focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-primary-500 focus:outline-none h-11"
           outlined
         >
-          Environmental Strategies
+          {{ $t('environmenta_strategies') }}
         </button>
         <button
           class="flex items-center justify-center flex-none w-full text-xs font-medium leading-6 tracking-widest uppercase transition-colors duration-200 border border-transparent rounded shadow text-primary-700 bg-primary-100 hover:bg-primary-200 sm:w-auto focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-primary-500 focus:outline-none h-11"
           outlined
         >
-          Literature Review
+          {{ $t('literature_review') }}
         </button>
         <button
           class="flex items-center justify-center flex-none w-full text-xs font-medium leading-6 tracking-widest uppercase transition-colors duration-200 border border-transparent rounded shadow text-primary-700 bg-primary-100 hover:bg-primary-200 sm:w-auto focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-primary-500 focus:outline-none h-11"
           outlined
         >
-          Tool
+          {{ $t('tool') }}
         </button>
         <button
           class="flex items-center justify-center flex-none w-full text-xs font-medium leading-6 tracking-widest uppercase transition-colors duration-200 border border-transparent rounded shadow text-primary-700 bg-primary-100 hover:bg-primary-200 sm:w-auto focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-primary-500 focus:outline-none h-11"
           outlined
         >
-          Report
+          {{ $t('report') }}
         </button>
         <button
           class="flex items-center justify-center flex-none w-full text-xs font-medium leading-6 tracking-widest uppercase transition-colors duration-200 border border-transparent rounded shadow text-primary-700 bg-primary-100 hover:bg-primary-200 sm:w-auto focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-primary-500 focus:outline-none h-11"
@@ -160,25 +173,25 @@ export default {
           class="flex items-center justify-center flex-none w-full text-xs font-medium leading-6 tracking-widest uppercase transition-colors duration-200 border border-transparent rounded shadow text-primary-700 bg-primary-100 hover:bg-primary-200 sm:w-auto focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-primary-500 focus:outline-none h-11"
           outlined
         >
-          Video
+          {{ $t('video') }}
         </button>
         <button
           class="flex items-center justify-center flex-none w-full text-xs font-medium leading-6 tracking-widest uppercase transition-colors duration-200 border border-transparent rounded shadow text-primary-700 bg-primary-100 hover:bg-primary-200 sm:w-auto focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-primary-500 focus:outline-none h-11"
           outlined
         >
-          Webinar
+          {{ $t('webinar') }}
         </button>
         <button
           class="flex items-center justify-center flex-none w-full text-xs font-medium leading-6 tracking-widest uppercase transition-colors duration-200 border border-transparent rounded shadow text-primary-700 bg-primary-100 hover:bg-primary-200 sm:w-auto focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-primary-500 focus:outline-none h-11"
           outlined
         >
-          Substance Abuse Prevention
+          {{ $t('substance_abuse_prevention') }}
         </button>
         <button
           class="flex items-center justify-center flex-none w-full text-xs font-medium leading-6 tracking-widest uppercase transition-colors duration-200 border border-transparent rounded shadow text-primary-700 bg-primary-100 hover:bg-primary-200 sm:w-auto focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-primary-500 focus:outline-none h-11"
           outlined
         >
-          Recommended Resources
+          {{ $t('recommended_resources') }}
         </button>
       </nav>
 

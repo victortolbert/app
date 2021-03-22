@@ -1,5 +1,5 @@
 import Cookie from 'js-cookie'
-import {unWrap} from '~/utils/fetchUtils'
+import {unWrap} from '~/helpers/fetch-utils'
 
 export default ({$config, store}, inject) => {
   window.initAuth = init

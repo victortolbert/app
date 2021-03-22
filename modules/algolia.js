@@ -1,5 +1,5 @@
 import fetch from 'node-fetch'
-import {unWrap, getErrorResponse} from '../utils/fetchUtils'
+import {unWrap, getErrorResponse} from '~/helpers/fetch-utils'
 
 export default function () {
   const algoliaConfig = this.options.privateRuntimeConfig.algolia

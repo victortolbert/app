@@ -1,16 +1,18 @@
 <script>
-export default {
+import {defineComponent} from '@nuxtjs/composition-api'
+
+export default defineComponent({
   props: {
     articles: {
       type: Array,
-      default: Array,
+      default: () => [],
     },
     total: {
       type: Number,
       default: 0,
     },
   },
-}
+})
 </script>
 
 <template>
@@ -37,7 +39,8 @@ export default {
             </h2>
             <p class="text-lg">{{ article.description }}</p>
             <p class="mt-2 font-bold text-indigo-600">
-              Read more<span class="text-indigo-600">&hellip;</span>
+              {{ $t('read_more') }}
+              <span class="text-indigo-600">&hellip;</span>
             </p>
           </div>
         </NuxtLink>

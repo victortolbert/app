@@ -17,7 +17,7 @@
           :to="switchLocalePath(locale.code)"
           class="flex items-center px-4 leading-7 hover:text-green-500"
         >
-          {{ locale.name }}
+          {{ $t(locale.name) }}
         </NuxtLink>
       </li>
     </ul>
