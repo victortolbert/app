@@ -29,7 +29,10 @@ export default {
 
       <SectionWrapper :padded="false" class="bg-gray-500">
         <div class="w-full">
-          <SvgLiquidCheese class="object-cover w-full h-32 lg:h-48" />
+          <SvgLiquidCheese
+            :color="$store.state.affiliate.theme.colors.primary.name"
+            class="object-cover w-full h-32 lg:h-48"
+          />
         </div>
       </SectionWrapper>
 
@@ -79,11 +82,35 @@ export default {
       </div>
     </header>
 
-    <SectionWrapper class="prose">
-      <!-- <span>{{ person.email }}</span> -->
-      <span>{{ person.phone }}</span>
-      <p>{{ person.bio }}</p>
-      <!-- <p>by Person with id {{ person.id }}</p> -->
-    </SectionWrapper>
+    <div class="mt-6 sm:mt-2 2xl:mt-5">
+      <div class="border-b border-gray-200">
+        <div class="max-w-5xl px-4 mx-auto sm:px-6 lg:px-8">
+          <nav class="flex -mb-px space-x-8" aria-label="Tabs">
+            <!-- Current: "border-pink-500 text-indigo-600", Default: "border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300" -->
+            <NuxtLink
+              :to="`/people/directory/${person.id}/`"
+              class="px-1 py-4 text-sm font-medium text-gray-900 border-b-2 border-primary-500 whitespace-nowrap"
+              aria-current="page"
+            >
+              {{ $t('profile') }}
+            </NuxtLink>
+            <NuxtLink
+              :to="`/people/directory/${person.id}/calendar/`"
+              class="px-1 py-4 text-sm font-medium text-gray-500 border-b-2 border-transparent hover:text-gray-700 hover:border-gray-300 whitespace-nowrap"
+            >
+              {{ $t('calendar') }}
+            </NuxtLink>
+            <NuxtLink
+              :to="`/people/directory/${person.id}/recognition/`"
+              class="px-1 py-4 text-sm font-medium text-gray-500 border-b-2 border-transparent hover:text-gray-700 hover:border-gray-300 whitespace-nowrap"
+            >
+              {{ $t('recognition') }}
+            </NuxtLink>
+          </nav>
+        </div>
+      </div>
+    </div>
+
+    <NuxtChild :person="person" />
   </PageWrapper>
 </template>

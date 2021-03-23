@@ -180,6 +180,16 @@ export default defineComponent({
                   />
                   {{ $t('office_map') }}
                 </a>
+                <a
+                  href="#"
+                  class="flex items-center px-2 py-2 text-base font-medium text-gray-600 rounded-md hover:bg-gray-50 hover:text-gray-900 group"
+                >
+                  <BaseIconOutlined
+                    name="chat"
+                    class="mr-4 text-gray-400 group-hover:text-gray-500"
+                  />
+                  {{ $t('messages') }}
+                </a>
               </div>
               <hr class="my-5 border-t border-gray-200" aria-hidden="true" />
               <div class="px-2 space-y-1">
@@ -208,12 +218,13 @@ export default defineComponent({
             </nav>
           </div>
           <div class="flex flex-shrink-0 p-4 border-t border-gray-200">
+            <!-- Profile Link -->
             <a href="#" class="flex-shrink-0 block group">
               <div class="flex items-center">
                 <div>
                   <img
                     class="inline-block w-10 h-10 rounded-full"
-                    src="https://cominex.net/assets/img/people/marcus.jpeg"
+                    :src="$auth.user.profile_photo_url"
                     alt=""
                   />
                 </div>
@@ -221,7 +232,7 @@ export default defineComponent({
                   <p
                     class="text-base font-medium text-gray-700 group-hover:text-gray-900"
                   >
-                    Marcus Bouligny
+                    {{ $auth.user.name }}
                   </p>
                   <p
                     class="text-sm font-medium text-gray-500 group-hover:text-gray-700"
@@ -294,10 +305,10 @@ export default defineComponent({
         >
           <div class="px-6 pt-6 pb-4">
             <h2 class="text-lg font-medium text-gray-900">
-              {{ $t('directory') }}
+              {{ $t('volunteer') }} {{ $t('directory') }}
             </h2>
             <p class="mt-1 text-sm text-gray-600">
-              {{ $t('search_directory_message', {count: 10}) }}
+              {{ $t('search_directory_message', {count: people.length}) }}
             </p>
             <form class="flex mt-6 space-x-4" action="#">
               <div class="flex-1 min-w-0">
@@ -318,6 +329,7 @@ export default defineComponent({
                 </div>
               </div>
               <button
+                @click.prevent=""
                 type="submit"
                 class="inline-flex justify-center px-3.5 py-2 border border-gray-300 shadow-sm text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500"
               >

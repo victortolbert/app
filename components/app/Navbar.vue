@@ -250,7 +250,7 @@ export default {
                 <NuxtLink to="/login/">
                   {{ $t('login') }}
                 </NuxtLink>
-                <GithubLoginLink />
+                <GithubLoginLink v-if="false" />
               </div>
 
               <NuxtLink

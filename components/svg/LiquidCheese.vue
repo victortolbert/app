@@ -4,8 +4,14 @@ import {generate} from '@ant-design/colors'
 import theme from '~/theme'
 
 export default defineComponent({
-  setup() {
-    const colors = generate(Object.values(theme.colors.paprika)[5])
+  props: {
+    color: {
+      type: String,
+      default: 'flamePea',
+    },
+  },
+  setup(props) {
+    const colors = generate(Object.values(theme.colors[props.color])[5])
     return {
       colors,
     }

@@ -163,6 +163,17 @@
             class="flex items-center px-3 py-2 text-sm font-medium text-gray-600 rounded-md hover:bg-gray-50 group"
             aria-current="false"
           >
+            <BaseIconOutlined
+              name="collection"
+              class="flex-shrink-0 mr-3 -ml-1 text-gray-400 group-hover:text-gray-500"
+            />
+            <span class="truncate"> Projects </span>
+          </a>
+          <a
+            href="#"
+            class="flex items-center px-3 py-2 text-sm font-medium text-gray-600 rounded-md hover:bg-gray-50 group"
+            aria-current="false"
+          >
             <svg
               class="flex-shrink-0 w-6 h-6 mr-3 -ml-1 text-gray-400 group-hover:text-gray-500"
               x-description="Heroicon name: outline/fire"
@@ -237,25 +248,123 @@
 
           <a
             href="#"
-            class="flex items-center px-2 py-2 text-sm font-medium text-gray-700 rounded-md hover:text-gray-900 hover:bg-gray-50 group"
+            class="flex items-center px-2 py-2 text-sm font-medium text-gray-600 rounded-md hover:bg-gray-50 hover:text-gray-900 group"
           >
-            <svg
-              class="w-6 h-6 mr-3 text-gray-400 group-hover:text-gray-500"
-              x-description="Heroicon name: outline/clock"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              aria-hidden="true"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
-              ></path>
-            </svg>
-            Recent
+            <BaseIconOutlined
+              name="clock"
+              class="mr-3 text-gray-400 group-hover:text-gray-500"
+            />
+            {{ $t('recent') }}
+          </a>
+          <a
+            href="#"
+            class="flex items-center px-2 py-2 text-sm font-medium text-gray-600 rounded-md hover:bg-gray-50 hover:text-gray-900 group"
+          >
+            <BaseIconOutlined
+              name="shield-check"
+              class="mr-3 text-gray-400 group-hover:text-gray-500"
+            />
+            {{ $t('privacy') }}
+          </a>
+          <a
+            href="#"
+            class="flex items-center px-2 py-2 text-sm font-medium text-gray-600 rounded-md hover:bg-gray-50 hover:text-gray-900 group"
+          >
+            <BaseIconOutlined
+              name="clock"
+              class="mr-3 text-gray-400 group-hover:text-gray-500"
+            />
+            {{ $t('history') }}
+          </a>
+          <a
+            href="#"
+            class="flex items-center px-2 py-2 text-sm font-medium text-gray-600 rounded-md hover:bg-gray-50 hover:text-gray-900 group"
+          >
+            <BaseIconOutlined
+              name="question-mark-circle"
+              class="mr-3 text-gray-400 group-hover:text-gray-500"
+            />
+            {{ $t('help') }}
+          </a>
+          <a
+            href="#"
+            class="flex items-center px-2 py-2 text-sm font-medium text-gray-600 rounded-md hover:bg-gray-50 hover:text-gray-900 group"
+          >
+            <BaseIconOutlined
+              name="user-circle"
+              class="mr-3 text-gray-400 group-hover:text-gray-500"
+            />
+            {{ $t('profile') }}
+          </a>
+          <a
+            href="#"
+            class="flex items-center px-2 py-2 text-sm font-medium text-gray-600 rounded-md hover:bg-gray-50 hover:text-gray-900 group"
+          >
+            <BaseIconOutlined
+              name="bell"
+              class="mr-3 text-gray-400 group-hover:text-gray-500"
+            />
+            {{ $t('notifications') }}
+          </a>
+          <a
+            href="#"
+            class="flex items-center px-2 py-2 text-sm font-medium text-gray-600 rounded-md hover:bg-gray-50 hover:text-gray-900 group"
+          >
+            <BaseIconOutlined
+              name="credit-card"
+              class="mr-3 text-gray-400 group-hover:text-gray-500"
+            />
+            {{ $t('plan_and_billing') }}
+          </a>
+          <a
+            href="#"
+            class="flex items-center px-2 py-2 text-sm font-medium text-gray-600 rounded-md hover:bg-gray-50 hover:text-gray-900 group"
+          >
+            <BaseIconOutlined
+              name="briefcase"
+              class="mr-3 text-gray-400 group-hover:text-gray-500"
+            />
+            {{ $t('briefcase') }}
+          </a>
+          <a
+            href="#"
+            class="flex items-center px-2 py-2 text-sm font-medium text-gray-600 rounded-md hover:bg-gray-50 hover:text-gray-900 group"
+          >
+            <BaseIconOutlined
+              name="key"
+              class="mr-3 text-gray-400 group-hover:text-gray-500"
+            />
+            {{ $t('password') }}
+          </a>
+          <a
+            href="#"
+            class="flex items-center px-2 py-2 text-sm font-medium text-gray-600 rounded-md hover:bg-gray-50 hover:text-gray-900 group"
+          >
+            <BaseIconOutlined
+              name="support"
+              class="mr-3 text-gray-400 group-hover:text-gray-500"
+            />
+            {{ $t('support') }}
+          </a>
+          <a
+            href="#"
+            class="flex items-center px-2 py-2 text-sm font-medium text-gray-600 rounded-md hover:bg-gray-50 hover:text-gray-900 group"
+          >
+            <BaseIconOutlined
+              name="document-search"
+              class="mr-3 text-gray-400 group-hover:text-gray-500"
+            />
+            {{ $t('resources') }}
+          </a>
+          <a
+            href="#"
+            class="flex items-center px-2 py-2 text-sm font-medium text-gray-600 rounded-md hover:bg-gray-50 hover:text-gray-900 group"
+          >
+            <BaseIconOutlined
+              name="chat"
+              class="mr-3 text-gray-400 group-hover:text-gray-500"
+            />
+            {{ $t('messages') }}
           </a>
         </div>
         <hr class="my-5 border-t border-gray-200" aria-hidden="true" />

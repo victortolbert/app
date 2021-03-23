@@ -382,6 +382,7 @@ export default {
   sign_in_with: 'Sign in with',
   sign_out: 'Sign out',
   signed_agreement_on: 'Signed Agreement on',
+  signup: 'Signup',
   sits: 'Sits',
   sms_link: 'Text Message',
   sponsor_information_title: 'Your Information',

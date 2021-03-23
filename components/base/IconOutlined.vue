@@ -11,14 +11,6 @@ export default {
       type: String,
       default: null,
     },
-    library: {
-      type: String,
-      default: 'heroicon',
-    },
-    isSmall: {
-      type: Boolean,
-      default: false,
-    },
     strokeWidth: {
       type: Number,
       default: 2,
@@ -28,28 +20,15 @@ export default {
     title() {
       return this.label || capitalize(this.name)
     },
-    viewBox() {
-      return this.isSmall ? '0 0 24 24' : '0 0 20 20'
-    },
-    description() {
-      return capitalize(`${this.library}: ${this.name}`)
-    },
-    width() {
-      return this.isSmall ? 20 : 24
-    },
-    height() {
-      return this.isSmall ? 20 : 24
-    },
   },
 }
 </script>
 
 <template>
   <svg
-    :width="height"
-    :height="height"
-    :x-description="description"
-    :view-box="viewBox"
+    width="24"
+    height="24"
+    view-box="0 0 24 24"
     fill="none"
     stroke="currentColor"
     aria-hidden="true"
@@ -127,6 +106,14 @@ export default {
     />
 
     <path
+      v-if="name === 'briefcase'"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+    />
+
+    <path
       v-if="name === 'calendar'"
       stroke-linecap="round"
       stroke-linejoin="round"
@@ -148,6 +135,14 @@ export default {
       stroke-linejoin="round"
       stroke-width="2"
       d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
+    />
+
+    <path
+      v-if="name === 'chat'"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"
     />
 
     <path
@@ -547,6 +542,14 @@ export default {
     />
 
     <path
+      v-if="name === 'phone'"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+    />
+
+    <path
       v-if="name === 'photograph'"
       stroke-linecap="round"
       stroke-linejoin="round"
@@ -618,6 +621,14 @@ export default {
     />
 
     <path
+      v-if="name === 'question-mark-circle'"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+    />
+
+    <path
       v-if="name === 'x'"
       stroke-linecap="round"
       stroke-linejoin="round"
@@ -655,6 +666,14 @@ export default {
       stroke-linejoin="round"
       stroke-width="2"
       d="M8 16l2.879-2.879m0 0a3 3 0 104.243-4.242 3 3 0 00-4.243 4.242zM21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+    />
+
+    <path
+      v-if="name === 'shield-check'"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
     />
 
     <path

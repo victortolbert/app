@@ -371,6 +371,7 @@ export default {
   sign_in_with: 'Inicia sesión con',
   sign_out: 'Desconectar',
   signed_agreement_on: 'Acuerdo firmado sobre',
+  signup: 'Inscribirse',
   sits: 'Se sienta',
   staff: 'Personal',
   staff_roles: 'Roles del personal',

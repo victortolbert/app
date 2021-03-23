@@ -412,6 +412,7 @@ export default defineNuxtConfig({
     '~/plugins/vue-content-placeholders',
     '~/plugins/vue-drag-zone',
     '~/plugins/vue-float-label.client',
+    '~/plugins/vue-instantsearch.client',
     '~/plugins/vue-notifications.client',
     '~/plugins/vue-print-nb',
     '~/plugins/vue-ray',
@@ -607,9 +608,10 @@ export default defineNuxtConfig({
       // based on cookie scheme and supports all scheme options.
       laravelSanctum: {
         provider: 'laravel/sanctum',
-        url: process.env.NODE_ENV === 'production'
-          ? 'https://vticonsulting.com'
-          : 'http://vticonsulting.test',
+        url:
+          process.env.NODE_ENV === 'production'
+            ? 'https://vticonsulting.com'
+            : 'http://vticonsulting.test',
         // endpoints: {
         //   // (optional) If set, we send a get request to this endpoint before login
         //   csrf: {
@@ -623,7 +625,8 @@ export default defineNuxtConfig({
   proxy: {
     '/laravel': {
       pathRewrite: {'^/laravel': '/'},
-      target:  process.env.NODE_ENV === 'production'
+      target:
+        process.env.NODE_ENV === 'production'
           ? 'https://vticonsulting.com'
           : 'http://vticonsulting.test',
     },
@@ -902,7 +905,12 @@ export default defineNuxtConfig({
     preset: {
       stage: 1,
     },
-    transpile: [/@fullcalendar.*/, 'vee-validate/dist/rules'], // transpile ESM modules within all fullcalendar packages
+    transpile: [
+      /@fullcalendar.*/, // transpile ESM modules within all fullcalendar packages
+      'vee-validate/dist/rules',
+      'vue-instantsearch',
+      'instantsearch.js/es',
+    ],
   },
 
   // eslint: {
@@ -918,6 +926,7 @@ export default defineNuxtConfig({
     //   const files = await $content('blog').fetch()
 
     //   return files.map(file => (file.path === '/index' ? '/' : file.path))
+    // },
     // },
   },
 })

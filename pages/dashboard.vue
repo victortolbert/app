@@ -85,12 +85,29 @@ export default defineComponent({
       ?text=Check%20out%20Heroicons%20by%20%40steveschoger%20and%20the%20%40tailwindcss%20team%20%F0%9F%98%8D
       &amp;url=https%3A%2F%2Fheroicons.com
     -->
+    <div class="relative pb-32 overflow-hidden bg-primary-700">
+      <ExampleNavbar />
+      <ExampleBreadcrumb />
+      <VolunteerProfile />
+    </div>
+
+    <BaseIconBrand name="pinia" class="w-20 h-20" />
+    <BaseIconBrand name="vite" class="w-20 h-20" />
+    <BaseIconSolid name="clock" class="text-gray-400" />
+    <BaseIconOutlined name="clock" :stroke-width="1" class="text-gray-400" />
+
+    Certified
+    <BaseIconOutlined
+      name="badge-checked"
+      :stroke-width="1"
+      class="text-gray-400"
+    />
 
     <pre class="text-sm">
       {{ $auth.user }}
     </pre>
 
-  <p>Our Url is: {{ $config.baseURL}}</p>
+    <p>Our Url is: {{ $config.baseURL }}</p>
 
     <!-- this.$auth.setUser(user) -->
     <!-- this.$auth.setUserToken(token, refreshToken).then(() => this.$toast.success('User set!')) -->

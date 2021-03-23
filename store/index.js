@@ -6,7 +6,14 @@ import {getEventIndexById} from '~/helpers'
 
 export const state = () => ({
   affiliate: {
-    name: 'ema',
+    name: 'promise-serves',
+    theme: {
+      colors: {
+        primary: {
+          name: 'oliveGreen',
+        },
+      },
+    },
   },
   authenticated: false,
   categories: {},
