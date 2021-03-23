@@ -7,6 +7,6 @@
       bg-cover
     /> -->
 
-    <ProfileHeader />
+    <ProfileHeader :person="$auth.user" />
   </PageWrapper>
 </template>

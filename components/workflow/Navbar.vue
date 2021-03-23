@@ -1,22 +1,46 @@
 <template>
-  <nav class="bg-primary-500" aria-label="Global">
+  <nav class="bg-white shadow">
     <div class="px-2 mx-auto max-w-7xl sm:px-4 lg:px-8">
       <div class="flex justify-between h-16">
-        <div class="flex items-center px-2 lg:px-0">
+        <div class="flex px-2 lg:px-0">
           <div class="flex items-center flex-shrink-0">
             <img
-              class="w-auto h-8"
-              src="https://tailwindui.com/img/logos/workflow-mark-white.svg"
+              class="block w-auto h-8 lg:hidden"
+              src="https://tailwindui.com/img/logos/workflow-mark-primary-600.svg"
+              alt="Workflow"
+            />
+            <img
+              class="hidden w-auto h-8 lg:block"
+              src="https://tailwindui.com/img/logos/workflow-logo-primary-600-mark-gray-800-text.svg"
               alt="Workflow"
             />
           </div>
-          <div class="hidden lg:ml-8 lg:flex lg:space-x-4">
-            <NuxtLink
-              to="/dashboard/"
-              class="px-3 py-2 text-sm font-medium text-white rounded-md hover:bg-primary-400"
+          <div class="hidden lg:ml-6 lg:flex lg:space-x-8">
+            <!-- Current: "border-primary-500 text-gray-900", Default: "border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700" -->
+            <a
+              href="#"
+              class="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-900 border-b-2 border-primary-500"
             >
               Dashboard
-            </NuxtLink>
+            </a>
+            <a
+              href="#"
+              class="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-500 border-b-2 border-transparent hover:border-gray-300 hover:text-gray-700"
+            >
+              Team
+            </a>
+            <a
+              href="#"
+              class="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-500 border-b-2 border-transparent hover:border-gray-300 hover:text-gray-700"
+            >
+              Projects
+            </a>
+            <a
+              href="#"
+              class="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-500 border-b-2 border-transparent hover:border-gray-300 hover:text-gray-700"
+            >
+              Calendar
+            </a>
           </div>
         </div>
         <div
@@ -24,13 +48,13 @@
         >
           <div class="w-full max-w-lg lg:max-w-xs">
             <label for="search" class="sr-only">Search</label>
-            <div class="relative text-white focus-within:text-gray-400">
+            <div class="relative">
               <div
                 class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none"
               >
                 <!-- Heroicon name: solid/search -->
                 <svg
-                  class="flex-shrink-0 w-5 h-5"
+                  class="w-5 h-5 text-gray-400"
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 20 20"
                   fill="currentColor"
@@ -46,7 +70,7 @@
               <input
                 id="search"
                 name="search"
-                class="block w-full py-2 pl-10 pr-3 text-base leading-5 placeholder-white border-transparent rounded-md bg-primary-400 focus:outline-none focus:bg-white focus:ring-0 focus:border-white focus:text-gray-900 focus:placeholder-gray-400 sm:text-sm"
+                class="block w-full py-2 pl-10 pr-3 leading-5 placeholder-gray-500 bg-white border border-gray-300 rounded-md focus:outline-none focus:placeholder-gray-400 focus:ring-1 focus:ring-primary-500 focus:border-primary-500 sm:text-sm"
                 placeholder="Search"
                 type="search"
               />
@@ -57,11 +81,11 @@
           <!-- Mobile menu button -->
           <button
             type="button"
-            class="inline-flex items-center justify-center p-2 rounded-md text-primary-200 hover:text-white hover:bg-primary-400 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
+            class="inline-flex items-center justify-center p-2 text-gray-400 rounded-md hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary-500"
             aria-controls="mobile-menu"
             aria-expanded="false"
           >
-            <span class="sr-only">Open menu</span>
+            <span class="sr-only">Open main menu</span>
             <!--
             Icon when menu is closed.
 
@@ -110,9 +134,9 @@
         </div>
         <div class="hidden lg:ml-4 lg:flex lg:items-center">
           <button
-            class="flex-shrink-0 p-1 rounded-full bg-primary-500 text-primary-200 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-primary-500 focus:ring-white"
+            class="flex-shrink-0 p-1 text-gray-400 bg-white rounded-full hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500"
           >
-            <span class="sr-only">Notificaitons</span>
+            <span class="sr-only">View notifications</span>
             <!-- Heroicon name: outline/bell -->
             <svg
               class="w-6 h-6"
@@ -136,7 +160,7 @@
             <div>
               <button
                 type="button"
-                class="flex text-sm rounded-full bg-primary-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-primary-500 focus:ring-white"
+                class="flex text-sm bg-white rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500"
                 id="user-menu"
                 aria-expanded="false"
                 aria-haspopup="true"
@@ -144,7 +168,7 @@
                 <span class="sr-only">Open user menu</span>
                 <img
                   class="w-8 h-8 rounded-full"
-                  src="https://images.unsplash.com/photo-1517365830460-955ce3ccd263?ixlib=rb-1.2.1&ixqx=iXNbLPGHnb&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=80"
+                  src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixqx=iXNbLPGHnb&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
                   alt=""
                 />
               </button>
@@ -173,14 +197,12 @@
                 role="menuitem"
                 >Your Profile</a
               >
-
               <a
                 href="#"
                 class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                 role="menuitem"
                 >Settings</a
               >
-
               <a
                 href="#"
                 class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
@@ -195,31 +217,44 @@
 
     <!-- Mobile menu, show/hide based on menu state. -->
     <div class="lg:hidden" id="mobile-menu">
-      <div class="px-2 pt-2 pb-3 space-y-1">
-        <NuxtLink
-          to="/dashboard/"
-          class="block px-3 py-2 text-base font-medium text-white rounded-md hover:text-white hover:bg-primary-400"
+      <div class="pt-2 pb-3 space-y-1">
+        <!-- Current: "bg-primary-50 border-primary-500 text-primary-700", Default: "border-transparent text-gray-600 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-800" -->
+        <a
+          href="#"
+          class="block py-2 pl-3 pr-4 text-base font-medium border-l-4 text-primary-700 border-primary-500 bg-primary-50"
+          >Dashboard</a
         >
-          {{ $t('dashboard') }}
-        </NuxtLink>
+        <a
+          href="#"
+          class="block py-2 pl-3 pr-4 text-base font-medium text-gray-600 border-l-4 border-transparent hover:bg-gray-50 hover:border-gray-300 hover:text-gray-800"
+          >Team</a
+        >
+        <a
+          href="#"
+          class="block py-2 pl-3 pr-4 text-base font-medium text-gray-600 border-l-4 border-transparent hover:bg-gray-50 hover:border-gray-300 hover:text-gray-800"
+          >Projects</a
+        >
+        <a
+          href="#"
+          class="block py-2 pl-3 pr-4 text-base font-medium text-gray-600 border-l-4 border-transparent hover:bg-gray-50 hover:border-gray-300 hover:text-gray-800"
+          >Calendar</a
+        >
       </div>
-      <div class="pt-4 pb-3 border-t border-primary-500">
+      <div class="pt-4 pb-3 border-t border-gray-200">
         <div class="flex items-center px-4">
           <div class="flex-shrink-0">
             <img
               class="w-10 h-10 rounded-full"
-              src="https://images.unsplash.com/photo-1517365830460-955ce3ccd263?ixlib=rb-1.2.1&ixqx=iXNbLPGHnb&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=80"
+              src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixqx=iXNbLPGHnb&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
               alt=""
             />
           </div>
           <div class="ml-3">
-            <div class="text-base font-medium text-white">Tom Cook</div>
-            <div class="text-sm font-medium text-primary-200">
-              tom@example.com
-            </div>
+            <div class="text-base font-medium text-gray-800">Tom Cook</div>
+            <div class="text-sm font-medium text-gray-500">tom@example.com</div>
           </div>
           <button
-            class="flex-shrink-0 p-1 ml-auto rounded-full bg-primary-500 text-primary-200 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-primary-500 focus:ring-white"
+            class="flex-shrink-0 p-1 ml-auto text-gray-400 bg-white rounded-full hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500"
           >
             <span class="sr-only">View notifications</span>
             <!-- Heroicon name: outline/bell -->
@@ -240,22 +275,20 @@
             </svg>
           </button>
         </div>
-        <div class="px-2 mt-3">
+        <div class="mt-3 space-y-1">
           <a
             href="#"
-            class="block px-3 py-2 text-base font-medium rounded-md text-primary-200 hover:text-white hover:bg-primary-400"
+            class="block px-4 py-2 text-base font-medium text-gray-500 hover:text-gray-800 hover:bg-gray-100"
             >Your Profile</a
           >
-
           <a
             href="#"
-            class="block px-3 py-2 text-base font-medium rounded-md text-primary-200 hover:text-white hover:bg-primary-400"
+            class="block px-4 py-2 text-base font-medium text-gray-500 hover:text-gray-800 hover:bg-gray-100"
             >Settings</a
           >
-
           <a
             href="#"
-            class="block px-3 py-2 text-base font-medium rounded-md text-primary-200 hover:text-white hover:bg-primary-400"
+            class="block px-4 py-2 text-base font-medium text-gray-500 hover:text-gray-800 hover:bg-gray-100"
             >Sign out</a
           >
         </div>

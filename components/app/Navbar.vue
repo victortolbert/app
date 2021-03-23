@@ -1,35 +1,15 @@
 <script>
-import {
-  defineComponent,
-  ref,
-  reactive,
-  useRouter,
-} from '@nuxtjs/composition-api'
+import {defineComponent, ref} from '@nuxtjs/composition-api'
 import useUser from '~/composables/useUser'
 
 export default {
   setup() {
     const {isLoggedIn, login} = useUser()
-    // const router = useRouter()
+    const showMenu = ref(false)
+    const showNewProjectView = ref(false)
+    const showProfile = ref(false)
+    const showVolunteerView = ref(false)
     const isAdmin = ref(false)
-    const affiliate = reactive({
-      id: 1,
-      name: 'vti',
-      theme: {
-        nav: {
-          class: 'bg-white text-gray-800',
-        },
-        logo_path: '',
-        colors: {
-          primary: '',
-          secondary: '',
-          danger: '',
-          warning: '',
-          success: '',
-          info: '',
-        },
-      },
-    })
     const fullwidth = ref(false)
     const people = ref([
       {
@@ -45,33 +25,26 @@ export default {
         isOnline: false,
       },
     ])
-    const showMenu = ref(false)
-    const showNewProjectView = ref(false)
-    const showProfile = ref(false)
-    const showVolunteerView = ref(false)
-    const slug = affiliate.name.toLowerCase()
 
     return {
       isLoggedIn,
       login,
       isAdmin,
-      affiliate,
       fullwidth,
       people,
       showMenu,
       showNewProjectView,
       showProfile,
       showVolunteerView,
-      slug,
     }
   },
   props: {
-    user: {
+    person: {
       type: Object,
       default: () => ({
         name: 'Tatyana McNish',
         email: 'tatyana@ema.promiseserves.org',
-        avatarURL: 'https://cominex.net/assets/img/people/tatyana.jpeg',
+        profile_photo_url: 'https://cominex.net/assets/img/people/tatyana.jpeg',
       }),
     },
   },
@@ -159,7 +132,7 @@ export default {
 <template>
   <nav
     :class="[
-      affiliate.theme.nav.class,
+      $store.state.affiliate.theme.nav.class,
       {
         'fixed top-0 z-40': false,
       },
@@ -283,16 +256,16 @@ export default {
             <img
               style="filter: grayscale(1)"
               class="w-10 h-10 rounded-full"
-              :src="user.avatarURL"
-              :alt="user.name"
+              :src="person.profile_photo_url"
+              :alt="person.name"
             />
           </div>
           <div class="ml-3">
             <div class="text-base font-medium text-gray-800">
-              {{ user.name }}
+              {{ person.name }}
             </div>
             <div class="text-sm font-medium text-gray-500">
-              {{ user.email }}
+              {{ person.email }}
             </div>
           </div>
 

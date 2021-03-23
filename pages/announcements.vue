@@ -41,7 +41,6 @@
     </SectionWrapper>
 
     <SectionWrapper class="mt-8 bg-white rounded-lg shadow">
-      <!-- This example requires Tailwind CSS v2.0+ -->
       <div class="px-4 py-5 bg-white sm:px-6">
         <div class="flex space-x-3">
           <div class="flex-shrink-0">
@@ -49,7 +48,7 @@
               class="w-10 h-10 rounded-full"
               src="https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=facearea&amp;facepad=2&amp;w=256&amp;h=256&amp;q=80"
               alt=""
-            >
+            />
           </div>
           <div class="flex-1 min-w-0">
             <p class="text-sm font-medium text-gray-900">

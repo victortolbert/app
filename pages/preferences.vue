@@ -1,189 +1,110 @@
+<script>
+import {defineComponent, ref} from '@nuxtjs/composition-api'
+
+export default defineComponent({
+  setup() {
+    const menuOpen = ref(false)
+    return {
+      menuOpen,
+    }
+  },
+})
+</script>
 <template>
-  <!--
-  This example requires Tailwind CSS v2.0+
-
-  This example requires some changes to your config:
-
-  ```
-  // tailwind.config.js
-  const colors = require('tailwindcss/colors')
-
-  module.exports = {
-    // ...
-    theme: {
-      extend: {
-        colors: {
-          'light-blue': colors.lightBlue,
-          teal: colors.teal,
-        }
-      }
-    },
-    plugins: [
-      // ...
-      require('@tailwindcss/forms'),
-    ]
-  }
-  ```
--->
   <div>
-    <div class="relative pb-32 overflow-hidden bg-light-blue-700">
-      <!-- Menu open: "bg-light-blue-900", Menu closed: "bg-transparent" -->
+    <div class="relative pb-32 overflow-hidden bg-primary-700">
+      <!-- Menu open: "bg-primary-900", Menu closed: "bg-transparent" -->
       <nav
-        class="relative z-10 bg-transparent border-b border-teal-500 border-opacity-25 lg:bg-transparent lg:border-none"
+        class="relative z-10 bg-transparent border-b border-opacity-25 border-primary-500 lg:bg-transparent lg:border-none"
       >
         <div class="px-2 mx-auto max-w-7xl sm:px-4 lg:px-8">
           <div
-            class="relative flex items-center justify-between h-16 lg:border-b lg:border-light-blue-800"
+            class="relative flex items-center justify-between h-16 lg:border-b lg:border-primary-800"
           >
             <div class="flex items-center px-2 lg:px-0">
               <div class="flex-shrink-0">
-                <img
-                  class="block w-auto h-8"
-                  src="https://tailwindui.com/img/logos/workflow-mark-teal-400.svg"
-                  alt="Workflow"
-                />
+                <BaseLogo name="vti" />
               </div>
               <div class="hidden lg:block lg:ml-6 lg:space-x-4">
                 <div class="flex">
-                  <!-- Current: "bg-black bg-opacity-25", Default: "hover:bg-light-blue-800" -->
+                  <!-- Current: "bg-black bg-opacity-25", Default: "hover:bg-primary-800" -->
                   <a
                     href="#"
                     class="px-3 py-2 text-sm font-medium text-white bg-black bg-opacity-25 rounded-md"
                     aria-current="page"
-                    >Dashboard</a
                   >
+                    Dashboard
+                  </a>
 
                   <a
                     href="#"
-                    class="px-3 py-2 text-sm font-medium text-white rounded-md hover:bg-light-blue-800"
-                    >Jobs</a
+                    class="px-3 py-2 text-sm font-medium text-white rounded-md hover:bg-primary-800"
                   >
+                    Jobs
+                  </a>
 
                   <a
                     href="#"
-                    class="px-3 py-2 text-sm font-medium text-white rounded-md hover:bg-light-blue-800"
-                    >Applicants</a
+                    class="px-3 py-2 text-sm font-medium text-white rounded-md hover:bg-primary-800"
                   >
+                    Applicants
+                  </a>
 
                   <a
                     href="#"
-                    class="px-3 py-2 text-sm font-medium text-white rounded-md hover:bg-light-blue-800"
-                    >Company</a
+                    class="px-3 py-2 text-sm font-medium text-white rounded-md hover:bg-primary-800"
                   >
+                    Company
+                  </a>
                 </div>
               </div>
             </div>
+
             <div class="flex justify-center flex-1 px-2 lg:ml-6 lg:justify-end">
               <div class="w-full max-w-lg lg:max-w-xs">
                 <label for="search" class="sr-only">Search</label>
                 <div
-                  class="relative text-light-blue-100 focus-within:text-gray-400"
+                  class="relative text-primary-100 focus-within:text-gray-400"
                 >
                   <div
                     class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none"
                   >
-                    <!-- Heroicon name: solid/search -->
-                    <svg
-                      class="flex-shrink-0 w-5 h-5"
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 20 20"
-                      fill="currentColor"
-                      aria-hidden="true"
-                    >
-                      <path
-                        fill-rule="evenodd"
-                        d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
-                        clip-rule="evenodd"
-                      />
-                    </svg>
+                    <BaseIconSolid name="search" class="flex-shrink-0" />
                   </div>
                   <input
                     id="search"
                     name="search"
-                    class="block w-full py-2 pl-10 pr-3 leading-5 bg-opacity-50 border border-transparent rounded-md bg-light-blue-700 placeholder-light-blue-100 focus:outline-none focus:bg-white focus:ring-white focus:border-white focus:placeholder-gray-500 focus:text-gray-900 sm:text-sm"
+                    class="block w-full py-2 pl-10 pr-3 leading-5 bg-opacity-50 border border-transparent rounded-md bg-primary-700 placeholder-primary-100 focus:outline-none focus:bg-white focus:ring-white focus:border-white focus:placeholder-gray-500 focus:text-gray-900 sm:text-sm"
                     placeholder="Search"
                     type="search"
                   />
                 </div>
               </div>
             </div>
+
             <div class="flex lg:hidden">
               <!-- Mobile menu button -->
               <button
                 type="button"
-                class="inline-flex items-center justify-center p-2 rounded-md text-light-blue-200 hover:text-white hover:bg-light-blue-800 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
+                class="inline-flex items-center justify-center p-2 rounded-md text-primary-200 hover:text-white hover:bg-primary-800 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
                 aria-controls="mobile-menu"
                 aria-expanded="false"
               >
                 <span class="sr-only">Open main menu</span>
-                <!--
-                Icon when menu is closed.
-
-                Heroicon name: outline/menu
-
-                Menu open: "hidden", Menu closed: "block"
-              -->
-                <svg
-                  class="flex-shrink-0 block w-6 h-6"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  aria-hidden="true"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M4 6h16M4 12h16M4 18h16"
-                  />
-                </svg>
-                <!--
-                Icon when menu is open.
-
-                Heroicon name: outline/x
-
-                Menu open: "block", Menu closed: "hidden"
-              -->
-                <svg
-                  class="flex-shrink-0 hidden w-6 h-6"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  aria-hidden="true"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M6 18L18 6M6 6l12 12"
-                  />
-                </svg>
+                <BaseIconOutlined
+                  :name="menuOpen ? 'x' : 'menu'"
+                  class="flex-shrink-0"
+                />
               </button>
             </div>
+
             <div class="hidden lg:block lg:ml-4">
               <div class="flex items-center">
                 <button
-                  class="flex-shrink-0 p-1 rounded-full text-light-blue-200 hover:bg-light-blue-800 hover:text-white focus:outline-none focus:bg-light-blue-900 focus:ring-2 focus:ring-offset-2 focus:ring-offset-light-blue-900 focus:ring-white"
+                  class="flex-shrink-0 p-1 rounded-full text-primary-200 hover:bg-primary-800 hover:text-white focus:outline-none focus:bg-primary-900 focus:ring-2 focus:ring-offset-2 focus:ring-offset-primary-900 focus:ring-white"
                 >
                   <span class="sr-only">View notifications</span>
-                  <!-- Heroicon name: outline/bell -->
-                  <svg
-                    class="w-6 h-6"
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    aria-hidden="true"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"
-                    />
-                  </svg>
+                  <BaseIconOutlined name="bell" class="flex-shrink-0" />
                 </button>
 
                 <!-- Profile dropdown -->
@@ -191,7 +112,7 @@
                   <div>
                     <button
                       type="button"
-                      class="flex text-sm text-white rounded-full focus:outline-none focus:bg-light-blue-900 focus:ring-2 focus:ring-offset-2 focus:ring-offset-light-blue-900 focus:ring-white"
+                      class="flex text-sm text-white rounded-full focus:outline-none focus:bg-primary-900 focus:ring-2 focus:ring-offset-2 focus:ring-offset-primary-900 focus:ring-white"
                       id="user-menu"
                       aria-expanded="false"
                       aria-haspopup="true"
@@ -225,22 +146,25 @@
                       href="#"
                       class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                       role="menuitem"
-                      >Your Profile</a
                     >
+                      Your Profile
+                    </a>
 
                     <a
                       href="#"
                       class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                       role="menuitem"
-                      >Settings</a
                     >
+                      Settings
+                    </a>
 
                     <a
                       href="#"
                       class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                       role="menuitem"
-                      >Sign out</a
                     >
+                      Sign out
+                    </a>
                   </div>
                 </div>
               </div>
@@ -249,35 +173,39 @@
         </div>
 
         <!-- Mobile menu, show/hide based on menu state. -->
-        <div class="bg-light-blue-900 lg:hidden" id="mobile-menu">
+        <div class="bg-primary-900 lg:hidden" id="mobile-menu">
           <div class="px-2 pt-2 pb-3 space-y-1">
-            <!-- Current: "bg-black bg-opacity-25", Default: "hover:bg-light-blue-800" -->
+            <!-- Current: "bg-black bg-opacity-25", Default: "hover:bg-primary-800" -->
             <a
               href="#"
               class="block px-3 py-2 text-base font-medium text-white bg-black bg-opacity-25 rounded-md"
               aria-current="page"
-              >Dashboard</a
             >
+              Dashboard
+            </a>
 
             <a
               href="#"
-              class="block px-3 py-2 text-base font-medium text-white rounded-md hover:bg-light-blue-800"
-              >Jobs</a
+              class="block px-3 py-2 text-base font-medium text-white rounded-md hover:bg-primary-800"
             >
+              Jobs
+            </a>
 
             <a
               href="#"
-              class="block px-3 py-2 text-base font-medium text-white rounded-md hover:bg-light-blue-800"
-              >Applicants</a
+              class="block px-3 py-2 text-base font-medium text-white rounded-md hover:bg-primary-800"
             >
+              Applicants
+            </a>
 
             <a
               href="#"
-              class="block px-3 py-2 text-base font-medium text-white rounded-md hover:bg-light-blue-800"
-              >Company</a
+              class="block px-3 py-2 text-base font-medium text-white rounded-md hover:bg-primary-800"
             >
+              Company
+            </a>
           </div>
-          <div class="pt-4 pb-3 border-t border-light-blue-800">
+          <div class="pt-4 pb-3 border-t border-primary-800">
             <div class="flex items-center px-4">
               <div class="flex-shrink-0">
                 <img
@@ -288,60 +216,49 @@
               </div>
               <div class="ml-3">
                 <div class="text-base font-medium text-white">Debbie Lewis</div>
-                <div class="text-sm font-medium text-light-blue-200">
+                <div class="text-sm font-medium text-primary-200">
                   debbielewis@example.com
                 </div>
               </div>
               <button
-                class="flex-shrink-0 p-1 ml-auto rounded-full text-light-blue-200 hover:bg-light-blue-800 hover:text-white focus:outline-none focus:bg-light-blue-900 focus:ring-2 focus:ring-offset-2 focus:ring-offset-light-blue-900 focus:ring-white"
+                class="flex-shrink-0 p-1 ml-auto rounded-full text-primary-200 hover:bg-primary-800 hover:text-white focus:outline-none focus:bg-primary-900 focus:ring-2 focus:ring-offset-2 focus:ring-offset-primary-900 focus:ring-white"
               >
                 <span class="sr-only">View notifications</span>
-                <!-- Heroicon name: outline/bell -->
-                <svg
-                  class="w-6 h-6"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  aria-hidden="true"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"
-                  />
-                </svg>
+                <BaseIconOutlined name="bell" />
               </button>
             </div>
             <div class="px-2 mt-3">
               <a
                 href="#"
-                class="block px-3 py-2 text-base font-medium rounded-md text-light-blue-200 hover:text-white hover:bg-light-blue-800"
-                >Your Profile</a
+                class="block px-3 py-2 text-base font-medium rounded-md text-primary-200 hover:text-white hover:bg-primary-800"
               >
+                Your Profile
+              </a>
 
               <a
                 href="#"
-                class="block px-3 py-2 text-base font-medium rounded-md text-light-blue-200 hover:text-white hover:bg-light-blue-800"
-                >Settings</a
+                class="block px-3 py-2 text-base font-medium rounded-md text-primary-200 hover:text-white hover:bg-primary-800"
               >
+                Settings
+              </a>
 
               <a
                 href="#"
-                class="block px-3 py-2 text-base font-medium rounded-md text-light-blue-200 hover:text-white hover:bg-light-blue-800"
-                >Sign out</a
+                class="block px-3 py-2 text-base font-medium rounded-md text-primary-200 hover:text-white hover:bg-primary-800"
               >
+                Sign out
+              </a>
             </div>
           </div>
         </div>
       </nav>
+
       <!-- Menu open: "bottom-0", Menu closed: "inset-y-0" -->
       <div
         class="absolute inset-x-0 inset-y-0 flex justify-center w-full overflow-hidden transform -translate-x-1/2 left-1/2 lg:inset-y-0"
         aria-hidden="true"
       >
-        <div class="flex-grow bg-opacity-75 bg-light-blue-900"></div>
+        <div class="flex-grow bg-opacity-75 bg-primary-900" />
         <svg
           class="flex-shrink-0"
           width="1750"
@@ -360,8 +277,9 @@
             fill="#0c4a6e"
           />
         </svg>
-        <div class="flex-grow bg-opacity-75 bg-light-blue-800"></div>
+        <div class="flex-grow bg-opacity-75 bg-primary-800"></div>
       </div>
+
       <header class="relative py-10">
         <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
           <h1 class="text-3xl font-bold text-white">Settings</h1>
@@ -377,16 +295,16 @@
           >
             <aside class="py-6 lg:col-span-3">
               <nav>
-                <!-- Current: "bg-teal-50 border-teal-500 text-teal-700 hover:bg-teal-50 hover:text-teal-700", Default: "border-transparent text-gray-900 hover:bg-gray-50 hover:text-gray-900" -->
+                <!-- Current: "bg-primary-50 border-primary-500 text-primary-700 hover:bg-primary-50 hover:text-primary-700", Default: "border-transparent text-gray-900 hover:bg-gray-50 hover:text-gray-900" -->
                 <a
                   href="#"
-                  class="flex items-center px-3 py-2 text-sm font-medium text-teal-700 border-l-4 border-teal-500 bg-teal-50 hover:bg-teal-50 hover:text-teal-700 group"
+                  class="flex items-center px-3 py-2 text-sm font-medium border-l-4 text-primary-700 border-primary-500 bg-primary-50 hover:bg-primary-50 hover:text-primary-700 group"
                   aria-current="page"
                 >
-                  <!-- Current: "text-teal-500 group-hover:text-teal-500", Default: "text-gray-400 group-hover:text-gray-500" -->
+                  <!-- Current: "text-primary-500 group-hover:text-primary-500", Default: "text-gray-400 group-hover:text-gray-500" -->
                   <!-- Heroicon name: outline/user-circle -->
                   <svg
-                    class="flex-shrink-0 w-6 h-6 mr-3 -ml-1 text-teal-500 group-hover:text-teal-500"
+                    class="flex-shrink-0 w-6 h-6 mr-3 -ml-1 text-primary-500 group-hover:text-primary-500"
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
                     viewBox="0 0 24 24"
@@ -563,7 +481,7 @@
                           name="username"
                           id="username"
                           autocomplete="username"
-                          class="flex-grow block w-full min-w-0 border-gray-300 rounded-none focus:ring-light-blue-500 focus:border-light-blue-500 rounded-r-md sm:text-sm"
+                          class="flex-grow block w-full min-w-0 border-gray-300 rounded-none focus:ring-primary-500 focus:border-primary-500 rounded-r-md sm:text-sm"
                           value="lisamarie"
                         />
                       </div>
@@ -581,7 +499,7 @@
                           id="about"
                           name="about"
                           rows="3"
-                          class="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:ring-light-blue-500 focus:border-light-blue-500 sm:text-sm"
+                          class="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:ring-primary-500 focus:border-primary-500 sm:text-sm"
                         ></textarea>
                       </div>
                       <p class="mt-2 text-sm text-gray-500">
@@ -614,7 +532,7 @@
                         </div>
                         <div class="ml-5 rounded-md shadow-sm">
                           <div
-                            class="relative flex items-center justify-center px-3 py-2 border border-gray-300 rounded-md group hover:bg-gray-50 focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-light-blue-500"
+                            class="relative flex items-center justify-center px-3 py-2 border border-gray-300 rounded-md group hover:bg-gray-50 focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-primary-500"
                           >
                             <label
                               for="user_photo"
@@ -671,7 +589,7 @@
                       name="first_name"
                       id="first_name"
                       autocomplete="given-name"
-                      class="block w-full px-3 py-2 mt-1 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-light-blue-500 focus:border-light-blue-500 sm:text-sm"
+                      class="block w-full px-3 py-2 mt-1 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-primary-500 focus:border-primary-500 sm:text-sm"
                     />
                   </div>
 
@@ -686,7 +604,7 @@
                       name="last_name"
                       id="last_name"
                       autocomplete="family-name"
-                      class="block w-full px-3 py-2 mt-1 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-light-blue-500 focus:border-light-blue-500 sm:text-sm"
+                      class="block w-full px-3 py-2 mt-1 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-primary-500 focus:border-primary-500 sm:text-sm"
                     />
                   </div>
 
@@ -700,7 +618,7 @@
                       type="text"
                       name="url"
                       id="url"
-                      class="block w-full px-3 py-2 mt-1 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-light-blue-500 focus:border-light-blue-500 sm:text-sm"
+                      class="block w-full px-3 py-2 mt-1 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-primary-500 focus:border-primary-500 sm:text-sm"
                     />
                   </div>
 
@@ -715,7 +633,7 @@
                       name="company"
                       id="company"
                       autocomplete="organization"
-                      class="block w-full px-3 py-2 mt-1 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-light-blue-500 focus:border-light-blue-500 sm:text-sm"
+                      class="block w-full px-3 py-2 mt-1 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-primary-500 focus:border-primary-500 sm:text-sm"
                     />
                   </div>
                 </div>
@@ -750,10 +668,10 @@
                           lacinia.
                         </p>
                       </div>
-                      <!-- Enabled: "bg-teal-500", Not Enabled: "bg-gray-200" -->
+                      <!-- Enabled: "bg-primary-500", Not Enabled: "bg-gray-200" -->
                       <button
                         type="button"
-                        class="relative inline-flex flex-shrink-0 h-6 ml-4 transition-colors duration-200 ease-in-out bg-gray-200 border-2 border-transparent rounded-full cursor-pointer w-11 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-light-blue-500"
+                        class="relative inline-flex flex-shrink-0 h-6 ml-4 transition-colors duration-200 ease-in-out bg-gray-200 border-2 border-transparent rounded-full cursor-pointer w-11 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500"
                         aria-pressed="true"
                         aria-labelledby="privacy-option-1-label"
                         aria-describedby="privacy-option-1-description"
@@ -782,10 +700,10 @@
                           cursus pharetra.
                         </p>
                       </div>
-                      <!-- Enabled: "bg-teal-500", Not Enabled: "bg-gray-200" -->
+                      <!-- Enabled: "bg-primary-500", Not Enabled: "bg-gray-200" -->
                       <button
                         type="button"
-                        class="relative inline-flex flex-shrink-0 h-6 ml-4 transition-colors duration-200 ease-in-out bg-gray-200 border-2 border-transparent rounded-full cursor-pointer w-11 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-light-blue-500"
+                        class="relative inline-flex flex-shrink-0 h-6 ml-4 transition-colors duration-200 ease-in-out bg-gray-200 border-2 border-transparent rounded-full cursor-pointer w-11 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500"
                         aria-pressed="false"
                         aria-labelledby="privacy-option-2-label"
                         aria-describedby="privacy-option-2-description"
@@ -814,10 +732,10 @@
                           ame
                         </p>
                       </div>
-                      <!-- Enabled: "bg-teal-500", Not Enabled: "bg-gray-200" -->
+                      <!-- Enabled: "bg-primary-500", Not Enabled: "bg-gray-200" -->
                       <button
                         type="button"
-                        class="relative inline-flex flex-shrink-0 h-6 ml-4 transition-colors duration-200 ease-in-out bg-gray-200 border-2 border-transparent rounded-full cursor-pointer w-11 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-light-blue-500"
+                        class="relative inline-flex flex-shrink-0 h-6 ml-4 transition-colors duration-200 ease-in-out bg-gray-200 border-2 border-transparent rounded-full cursor-pointer w-11 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500"
                         aria-pressed="true"
                         aria-labelledby="privacy-option-3-label"
                         aria-describedby="privacy-option-3-description"
@@ -846,10 +764,10 @@
                           gravid
                         </p>
                       </div>
-                      <!-- Enabled: "bg-teal-500", Not Enabled: "bg-gray-200" -->
+                      <!-- Enabled: "bg-primary-500", Not Enabled: "bg-gray-200" -->
                       <button
                         type="button"
-                        class="relative inline-flex flex-shrink-0 h-6 ml-4 transition-colors duration-200 ease-in-out bg-gray-200 border-2 border-transparent rounded-full cursor-pointer w-11 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-light-blue-500"
+                        class="relative inline-flex flex-shrink-0 h-6 ml-4 transition-colors duration-200 ease-in-out bg-gray-200 border-2 border-transparent rounded-full cursor-pointer w-11 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500"
                         aria-pressed="true"
                         aria-labelledby="privacy-option-4-label"
                         aria-describedby="privacy-option-4-description"
@@ -867,13 +785,13 @@
                 <div class="flex justify-end px-4 py-4 mt-4 sm:px-6">
                   <button
                     type="button"
-                    class="inline-flex justify-center px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-light-blue-500"
+                    class="inline-flex justify-center px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500"
                   >
                     Cancel
                   </button>
                   <button
                     type="submit"
-                    class="inline-flex justify-center px-4 py-2 ml-5 text-sm font-medium text-white border border-transparent rounded-md shadow-sm bg-light-blue-700 hover:bg-light-blue-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-light-blue-500"
+                    class="inline-flex justify-center px-4 py-2 ml-5 text-sm font-medium text-white border border-transparent rounded-md shadow-sm bg-primary-700 hover:bg-primary-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500"
                   >
                     Save
                   </button>

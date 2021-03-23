@@ -363,22 +363,6 @@ export default {
           </header>
 
           <article class="relative flex-1 px-4 mt-4 sm:px-6">
-            <!--
-  This example requires Tailwind CSS v2.0+
-
-  This example requires some changes to your config:
-
-  ```
-  // tailwind.config.js
-  module.exports = {
-    // ...
-    plugins: [
-      // ...
-      require('@tailwindcss/line-clamp'),
-    ]
-  }
-  ```
--->
             <div>
               <div class="flow-root mt-6">
                 <ul class="-my-5 divide-y divide-gray-200">

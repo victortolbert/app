@@ -11,6 +11,7 @@ import Markdown from '@ckeditor/ckeditor5-markdown-gfm/src/markdown'
 import Multiselect from 'vue-multiselect'
 
 export default {
+  middleware: 'auth',
   components: {
     CKEditor: CKEditor.component,
     Multiselect,

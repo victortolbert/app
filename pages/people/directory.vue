@@ -5,6 +5,7 @@ import PersonService from '~/services/PersonService'
 
 export default defineComponent({
   layout: 'plain',
+  middleware: 'auth',
   props: {
     page: {
       type: Number,

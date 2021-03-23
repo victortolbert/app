@@ -16,7 +16,7 @@ export default defineNuxtConfig({
       process.env.NODE_ENV === 'production'
         ? 'https://app.vticonsulting.com'
         : 'http://vticonsulting.test',
-    apiURL: process.env.API_URL || 'http://localhost:8686',
+    apiURL: process.env.API_URL || 'https://api.vticonsulting.com',
     assetsURL:
       process.env.ASSETS_URL ||
       'https://td-aws-bucket.s3.amazonaws.com/album2/',
@@ -419,6 +419,7 @@ export default defineNuxtConfig({
     '~/plugins/vue-scrollactive',
     '~/plugins/vue-select',
     '~/plugins/vue-shortkey.client',
+    '~/plugins/vue-textarea-autosize',
     '~/plugins/vue-toastification.client',
     '~/plugins/vue-touch-ripple',
     '~/plugins/vue-video-player.client',

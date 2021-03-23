@@ -37,8 +37,10 @@ Vue.use(Oruga, {
   field: {
     override: true,
     labelClass: 'block text-sm font-medium text-gray-700',
-    // messageClass: 'text-xs italic',
-    // variantClass: 'field-',
+    messageClass: 'mt-1 text-sm text-gray-500',
+    variantClassDanger: 'bg-red-500',
+    variantDanger: 'bg-red-500',
+    variantClass: 'text-',
   },
   input: {
     override: true,
@@ -53,7 +55,7 @@ Vue.use(Oruga, {
     iconRightSpaceClass: 'pr-10',
     roundedClass: 'rounded-full',
     // roundedClass: 'rounded',
-    // variantClass: 'input-',
+    variantClass: 'border-',
   },
   // dropdown: {
   //   menuClass: 'dropdown-menu',

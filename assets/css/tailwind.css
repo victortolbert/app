@@ -13,6 +13,7 @@
 @import './components/vendor/vue-toastification.css';
 @import './components/transitions.pcss';
 @import './components/cover_button.css';
+@import './components/cookie_consent.css';
 @import './components/duotone_card.css';
 @import './components/keyboard.css';
 @import './components/switcher.css';

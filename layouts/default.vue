@@ -63,7 +63,7 @@ export default defineComponent({
     >
       <AppOfflineIndicator />
 
-      <AppNavbar />
+      <AppNavbar :person="$auth.user" />
 
       <main class="flex-1" :class="[`body-${$store.state.class.bodyClass}`]">
         <!-- save fetch calls on pages already visited -->
@@ -71,7 +71,7 @@ export default defineComponent({
         <nuxt :nuxt-child-key="$route.fullPath" />
       </main>
 
-      <AppFooter />
+      <!-- <AppFooter /> -->
       <AppToolbar />
       <AppCookieConsent button-text="I understand" />
       <PortalTarget name="overlays" />

@@ -6,12 +6,20 @@ import {getEventIndexById} from '~/helpers'
 
 export const state = () => ({
   affiliate: {
-    name: 'promise-serves',
+    id: 1,
+    name: 'ema',
     theme: {
+      nav: {
+        class: 'bg-white text-gray-800',
+      },
+      logo_path: '',
       colors: {
-        primary: {
-          name: 'oliveGreen',
-        },
+        primary: 'flamePea',
+        secondary: '',
+        danger: '',
+        warning: '',
+        success: '',
+        info: '',
       },
     },
   },

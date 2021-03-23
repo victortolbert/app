@@ -58,6 +58,7 @@ export default defineComponent({
     ],
     name: '',
     selected: null,
+    value: '',
   }),
   computed: {
     filteredOptions() {
@@ -66,6 +67,11 @@ export default defineComponent({
           option.toString().toLowerCase().indexOf(this.name.toLowerCase()) >= 0
         )
       })
+    },
+  },
+  methods: {
+    handleBlur(event) {
+      console.log('blurred...')
     },
   },
 })
@@ -85,9 +91,170 @@ export default defineComponent({
       ?text=Check%20out%20Heroicons%20by%20%40steveschoger%20and%20the%20%40tailwindcss%20team%20%F0%9F%98%8D
       &amp;url=https%3A%2F%2Fheroicons.com
     -->
-    <div class="relative pb-32 overflow-hidden bg-primary-700">
+
+    <div class="mt-1 sm:mt-0 sm:col-span-2">
+      <div
+        class="flex justify-center max-w-lg px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-md"
+      >
+        <div class="space-y-1 text-center">
+          <PhotoUploadIcon />
+
+          <div class="flex text-sm text-gray-600">
+            <label
+              for="file-upload"
+              class="relative font-medium text-indigo-600 bg-white rounded-md cursor-pointer hover:text-indigo-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-indigo-500"
+            >
+              <span>Upload a file</span>
+              <input
+                id="file-upload"
+                name="file-upload"
+                type="file"
+                class="sr-only"
+              />
+            </label>
+            <p class="pl-1">or drag and drop</p>
+          </div>
+          <p class="text-xs text-gray-500">PNG, JPG, GIF up to 10MB</p>
+        </div>
+      </div>
+    </div>
+
+    <SectionWrapper>
+      <OField label="About" message="Write a few sentences about yourself.">
+        <textarea-autosize
+          placeholder="Type something here..."
+          class="block w-full max-w-lg border-gray-300 rounded-md shadow-sm focus:ring-primary-500 focus:border-primary-500 sm:text-sm"
+          ref="myTextarea"
+          v-model="value"
+          :min-height="30"
+          :max-height="350"
+          @blur.native="handleBlur($event)"
+        />
+      </OField>
+    </SectionWrapper>
+    <SectionWrapper>
+      <OField label="About" message="Write a few sentences about yourself.">
+        <OInput maxlength="200" type="textarea" />
+      </OField>
+    </SectionWrapper>
+
+    <div class="relative overflow-hidden">
+      <BillingOptions />
+      <ExampleRadioGroup />
+      <WorkflowRadioGroup />
+      <WorkflowNavbar />
+
+      <div>
+        <div class="sm:hidden">
+          <label for="tabs" class="sr-only">Select a tab</label>
+          <select
+            id="tabs"
+            name="tabs"
+            class="block w-full border-gray-300 rounded-md focus:ring-primary-500 focus:border-primary-500"
+          >
+            <option>My Account</option>
+            <option>Company</option>
+            <option selected>Team Members</option>
+            <option>Billing</option>
+          </select>
+        </div>
+        <div class="hidden sm:block">
+          <div class="border-b border-gray-200">
+            <nav class="flex -mb-px space-x-8" aria-label="Tabs">
+              <a
+                href="#"
+                class="inline-flex items-center px-1 py-4 text-sm font-medium text-gray-500 border-b-2 border-transparent hover:text-gray-700 hover:border-gray-300 group"
+              >
+                <!-- Heroicon name: solid/user -->
+                <svg
+                  class="text-gray-400 group-hover:text-gray-500 -ml-0.5 mr-2 h-5 w-5"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                  aria-hidden="true"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+                <span>My Account</span>
+              </a>
+              <a
+                href="#"
+                class="inline-flex items-center px-1 py-4 text-sm font-medium text-gray-500 border-b-2 border-transparent hover:text-gray-700 hover:border-gray-300 group"
+              >
+                <!-- Heroicon name: solid/office-building -->
+                <svg
+                  class="text-gray-400 group-hover:text-gray-500 -ml-0.5 mr-2 h-5 w-5"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                  aria-hidden="true"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M4 4a2 2 0 012-2h8a2 2 0 012 2v12a1 1 0 110 2h-3a1 1 0 01-1-1v-2a1 1 0 00-1-1H9a1 1 0 00-1 1v2a1 1 0 01-1 1H4a1 1 0 110-2V4zm3 1h2v2H7V5zm2 4H7v2h2V9zm2-4h2v2h-2V5zm2 4h-2v2h2V9z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+                <span>Company</span>
+              </a>
+              <!-- Current: "border-primary-500 text-primary-600", Default: "border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300" -->
+              <a
+                href="#"
+                class="inline-flex items-center px-1 py-4 text-sm font-medium border-b-2 text-primary-600 border-primary-500 group"
+                aria-current="page"
+              >
+                <!-- Current: "text-primary-500", Default: "text-gray-400 group-hover:text-gray-500" -->
+                <!-- Heroicon name: solid/users -->
+                <svg
+                  class="text-primary-500 -ml-0.5 mr-2 h-5 w-5"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z"
+                  />
+                </svg>
+                <span>Team Members</span>
+              </a>
+              <a
+                href="#"
+                class="inline-flex items-center px-1 py-4 text-sm font-medium text-gray-500 border-b-2 border-transparent hover:text-gray-700 hover:border-gray-300 group"
+              >
+                <!-- Heroicon name: solid/credit-card -->
+                <svg
+                  class="text-gray-400 group-hover:text-gray-500 -ml-0.5 mr-2 h-5 w-5"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                  aria-hidden="true"
+                >
+                  <path d="M4 4a2 2 0 00-2 2v1h16V6a2 2 0 00-2-2H4z" />
+                  <path
+                    fill-rule="evenodd"
+                    d="M18 9H2v5a2 2 0 002 2h12a2 2 0 002-2V9zM4 13a1 1 0 011-1h1a1 1 0 110 2H5a1 1 0 01-1-1zm5-1a1 1 0 100 2h1a1 1 0 100-2H9z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+                <span>Billing</span>
+              </a>
+            </nav>
+          </div>
+        </div>
+      </div>
+
       <ExampleNavbar />
       <ExampleBreadcrumb />
+      <SectionWrapper>
+        <ProjectCard />
+        <FormFieldset />
+      </SectionWrapper>
+
       <VolunteerProfile />
     </div>
 
@@ -107,7 +274,12 @@ export default defineComponent({
       {{ $auth.user }}
     </pre>
 
-    <p>Our Url is: {{ $config.baseURL }}</p>
+    <p>baseURL: {{ $config.baseURL }}</p>
+    <p>apiURL: {{ $config.apiURL }}</p>
+
+    <pre>
+      people/101/?auth_key=1234ltp&name_first=Jeremy2&name_last=Doublestein2
+    </pre>
 
     <!-- this.$auth.setUser(user) -->
     <!-- this.$auth.setUserToken(token, refreshToken).then(() => this.$toast.success('User set!')) -->
@@ -123,7 +295,6 @@ export default defineComponent({
     <SectionWrapper class="prose">
       <ComponentPropsTable />
     </SectionWrapper>
-    <!-- This example requires Tailwind CSS v2.0+ -->
     <div class="bg-white shadow sm:rounded-lg">
       <div class="px-4 py-5 sm:p-6">
         <h3 class="text-lg font-medium leading-6 text-gray-900">
@@ -172,7 +343,6 @@ export default defineComponent({
       </div>
     </div>
 
-    <!-- This example requires Tailwind CSS v2.0+ -->
     <div class="bg-gray-50 sm:rounded-lg">
       <div class="px-4 py-5 sm:p-6">
         <h3 class="text-lg font-medium leading-6 text-gray-900">
@@ -195,22 +365,6 @@ export default defineComponent({
       </div>
     </div>
 
-    <!--
-  This example requires Tailwind CSS v2.0+
-
-  This example requires some changes to your config:
-
-  ```
-  // tailwind.config.js
-  module.exports = {
-    // ...
-    plugins: [
-      // ...
-      require('@tailwindcss/forms'),
-    ]
-  }
-  ```
--->
     <div class="bg-white shadow sm:rounded-lg">
       <div class="px-4 py-5 sm:p-6">
         <h3 class="text-lg font-medium leading-6 text-gray-900">
@@ -240,7 +394,6 @@ export default defineComponent({
       </div>
     </div>
 
-    <!-- This example requires Tailwind CSS v2.0+ -->
     <div class="bg-white shadow sm:rounded-lg">
       <div class="px-4 py-5 sm:p-6">
         <h3
@@ -278,7 +431,6 @@ export default defineComponent({
       </div>
     </div>
 
-    <!-- This example requires Tailwind CSS v2.0+ -->
     <div class="bg-white shadow sm:rounded-lg">
       <div class="px-4 py-5 sm:p-6">
         <div class="sm:flex sm:items-start sm:justify-between">
@@ -307,7 +459,6 @@ export default defineComponent({
       </div>
     </div>
 
-    <!-- This example requires Tailwind CSS v2.0+ -->
     <div class="bg-white shadow sm:rounded-lg">
       <div class="px-4 py-5 sm:p-6">
         <h3 class="text-lg font-medium leading-6 text-gray-900">
@@ -334,7 +485,6 @@ export default defineComponent({
       </div>
     </div>
 
-    <!-- This example requires Tailwind CSS v2.0+ -->
     <div class="bg-white shadow sm:rounded-lg">
       <div class="px-4 py-5 sm:p-6">
         <h3 class="text-lg font-medium leading-6 text-gray-900">
@@ -358,7 +508,6 @@ export default defineComponent({
       </div>
     </div>
 
-    <!-- This example requires Tailwind CSS v2.0+ -->
     <div class="bg-white shadow sm:rounded-lg">
       <div class="px-4 py-5 sm:p-6">
         <h3 class="text-lg font-medium leading-6 text-gray-900">
@@ -381,7 +530,6 @@ export default defineComponent({
       </div>
     </div>
 
-    <!-- This example requires Tailwind CSS v2.0+ -->
     <div class="flex items-center justify-between">
       <span id="toggleLabel" class="flex flex-col flex-grow">
         <span class="text-sm font-medium text-gray-900">Available to hire</span>
@@ -405,7 +553,6 @@ export default defineComponent({
       </button>
     </div>
 
-    <!-- This example requires Tailwind CSS v2.0+ -->
     <div class="flex items-center">
       <!-- On: "bg-primary-600", Off: "bg-gray-200" -->
       <button
@@ -460,12 +607,12 @@ export default defineComponent({
     </div>
 
     <span
-      class="inline-flex rounded-full items-center py-0.5 pl-2.5 pr-1 text-sm font-medium bg-indigo-100 text-indigo-700"
+      class="inline-flex rounded-full items-center py-0.5 pl-2.5 pr-1 text-sm font-medium bg-primary-100 text-primary-700"
     >
       Large
       <button
         type="button"
-        class="flex-shrink-0 ml-0.5 h-4 w-4 rounded-full inline-flex items-center justify-center text-indigo-400 hover:bg-indigo-200 hover:text-indigo-500 focus:outline-none focus:bg-indigo-500 focus:text-white"
+        class="flex-shrink-0 ml-0.5 h-4 w-4 rounded-full inline-flex items-center justify-center text-primary-400 hover:bg-primary-200 hover:text-primary-500 focus:outline-none focus:bg-primary-500 focus:text-white"
       >
         <span class="sr-only">Remove large option</span>
         <svg
@@ -630,7 +777,7 @@ export default defineComponent({
       >
         <button
           type="button"
-          class="inline-flex justify-center w-full px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+          class="inline-flex justify-center w-full px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500"
           id="sort-menu"
           @click="open = !open"
           aria-haspopup="true"

@@ -1,3 +1,17 @@
+<script>
+import {defineComponent} from '@nuxtjs/composition-api'
+export default defineComponent({
+  props: {
+    person: {
+      type: Object,
+      default: () => ({
+        name: '',
+        profilePhotoUrl: '',
+      }),
+    },
+  },
+})
+</script>
 <template>
   <div>
     <div>
@@ -12,7 +26,7 @@
         <div class="flex">
           <img
             class="w-24 h-24 rounded-full ring-4 ring-white sm:h-32 sm:w-32"
-            src="https://images.unsplash.com/photo-1554151228-14d9def656e4?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=facearea&amp;crop=focalpoint&amp;fp-x=.5&amp;fp-y=.4&amp;fp-z=.5&amp;fp-debug=&amp;facepad=8&amp;w=400&amp;h=400&amp;q=80"
+            :src="person.profilePhotoUrl"
             alt=""
           />
         </div>
@@ -21,7 +35,7 @@
         >
           <div class="flex-1 min-w-0 mt-6 sm:hidden md:block">
             <h1 class="text-2xl font-bold text-gray-900 truncate">
-              Sarah Cooper
+              {{ person.name }}
             </h1>
           </div>
           <div
@@ -31,47 +45,22 @@
               type="button"
               class="inline-flex justify-center px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-pink-500"
             >
-              <svg
-                class="w-5 h-5 mr-2 -ml-1 text-gray-400"
-                x-description="Heroicon name: mail"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 20 20"
-                fill="currentColor"
-                aria-hidden="true"
-              >
-                <path
-                  d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"
-                />
-                <path
-                  d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"
-                />
-              </svg>
-              <span>Message</span>
+              <BaseIconSolid name="mail" class="mr-2 -ml-1 text-gray-400" />
+              <span>{{ $t('message') }}</span>
             </button>
             <button
               type="button"
               class="inline-flex justify-center px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-pink-500"
             >
-              <svg
-                class="w-5 h-5 mr-2 -ml-1 text-gray-400"
-                x-description="Heroicon name: phone"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 20 20"
-                fill="currentColor"
-                aria-hidden="true"
-              >
-                <path
-                  d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"
-                />
-              </svg>
-              <span>Call</span>
+              <BaseIconSolid name="phone" class="mr-2 -ml-1 text-gray-400" />
+              <span>{{ $t('call') }}</span>
             </button>
           </div>
         </div>
       </div>
       <div class="flex-1 hidden min-w-0 mt-6 sm:block md:hidden">
         <h1 class="text-2xl font-bold text-gray-900 truncate">
-          Ricardo Cooper
+          {{ person.name }}
         </h1>
       </div>
     </div>
