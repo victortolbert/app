@@ -4,7 +4,7 @@ export default {
 }
 </script>
 <template>
-  <div class="w-full">
+  <div>
     <slot />
   </div>
 </template>

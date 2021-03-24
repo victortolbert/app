@@ -52,7 +52,7 @@ export default defineComponent({
       <div class="flex flex-shrink-0 mt-4 space-x-2 md:mt-0 md:ml-4">
         <slot name="actions">
           <!-- <OptionsMenuButton /> -->
-          <!-- <a
+          <a
             href=""
             class="flex items-center space-x-2 font-semibold text-white transition-colors duration-150 hover:text-purple-200"
           >
@@ -61,7 +61,7 @@ export default defineComponent({
               class="w-6 h-6 text-white opacity-40"
             />
             <p>{{ $t('share')}} </p><span class="sr-only sm:not-sr-only"> on Twitter</span></p>
-          </a> -->
+          </a>
         </slot>
       </div>
     </header>

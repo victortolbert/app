@@ -65,7 +65,7 @@ export default defineComponent({
 
       <AppNavbar :person="$auth.user" />
 
-      <main class="flex-1" :class="[`body-${$store.state.class.bodyClass}`]">
+      <main class="flex-1" :class="[`body-${$store.state.ui.bodyClass}`]">
         <!-- save fetch calls on pages already visited -->
         <!-- <nuxt keep-alive /> -->
         <nuxt :nuxt-child-key="$route.fullPath" />

@@ -3,14 +3,9 @@ import Vue from 'vue'
 import {mapGetters} from 'vuex'
 
 import AppCopyButton from '~/components/app/CopyButton'
-// import {Howl, Howler} from 'howler'
 import {getColors} from 'theme-colors'
 
 const theme = getColors('#ABABAB')
-
-// const sound = new Howl({
-//   src: ['sound.webm', 'sound.mp3'],
-// })
 
 export default {
   // layout({store}) {
@@ -84,7 +79,6 @@ export default {
   },
 }
 </script>
-
 
 <template>
   <div
