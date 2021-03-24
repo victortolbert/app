@@ -51,6 +51,6 @@ export default {
 
 <template>
   <PageWrapper>
-    <section>{{ $t('dashboard') }}</section>
+    <PageHeading>{{ $t('dashboard') }}</PageHeading>
   </PageWrapper>
 </template>

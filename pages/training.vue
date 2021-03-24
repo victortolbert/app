@@ -16,6 +16,12 @@ export default {
 
 <template>
   <article class="flex-1">
-    <PageHeading> {{ $t('training') }} </PageHeading>
+    <PageWrapper>
+      <PageHeading> {{ $t('training') }} </PageHeading>
+
+      <PageBreadcrumb class="mt-2" />
+
+      <NuxtChild />
+    </PageWrapper>
   </article>
 </template>

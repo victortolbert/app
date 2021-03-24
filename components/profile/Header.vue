@@ -13,14 +13,9 @@ export default defineComponent({
 })
 </script>
 <template>
-  <div>
-    <div>
-      <img
-        class="object-cover w-full h-32 lg:h-48"
-        src="https://images.unsplash.com/photo-1430826473320-fc1ccf2ce791?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;crop=focalpoint&amp;fp-x=.5&amp;fp-y=.4&amp;fp-z=.5&amp;fp-debug=&amp;facepad=8&amp;w=2880&amp;h=384&amp;q=80"
-        alt=""
-      />
-    </div>
+  <PageWrapper>
+    <SvgLiquidCheese class="object-cover h-32 bg-cover lg:h-48" />
+
     <div class="max-w-5xl px-4 mx-auto sm:px-6 lg:px-8">
       <div class="-mt-12 sm:-mt-16 sm:flex sm:items-end sm:space-x-5">
         <div class="flex">
@@ -39,6 +34,7 @@ export default defineComponent({
             </h1>
           </div>
           <div
+            v-if="false"
             class="flex flex-col mt-6 space-y-3 justify-stretch sm:flex-row sm:space-y-0 sm:space-x-4"
           >
             <button
@@ -64,5 +60,5 @@ export default defineComponent({
         </h1>
       </div>
     </div>
-  </div>
+  </PageWrapper>
 </template>

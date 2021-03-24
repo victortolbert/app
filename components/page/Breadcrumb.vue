@@ -55,7 +55,7 @@ export default {
                 clip-rule="evenodd"
               />
             </svg>
-            <NuxtLink to="/dashboard/" class="ml-4 text-sm font-medium">
+            <NuxtLink to="/" class="ml-4 text-sm font-medium">
               {{ $t('dashboard') }}
             </NuxtLink>
           </div>

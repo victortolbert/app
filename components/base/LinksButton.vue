@@ -41,7 +41,7 @@ export default {
     >
       <div
         v-show="isOpen"
-        class="absolute right-0 z-30 w-56 py-1 mt-2 origin-top-right rounded-md shadow-lg bg-primary-50 z-1 ring-1 ring-black ring-opacity-5"
+        class="absolute right-0 z-30 w-56 py-1 mt-2 origin-top-right rounded-md shadow-lg z-1 ring-1 ring-black ring-opacity-5"
         role="menu"
         aria-orientation="vertical"
         aria-labelledby="user-menu"
