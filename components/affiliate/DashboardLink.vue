@@ -24,7 +24,7 @@ export default defineComponent({
 <template>
   <NuxtLink
     class="flex items-center justify-center"
-    :to="`/dashboard/`"
+    to="/"
     @contextmenu.native="handleRightClick"
   >
     <BaseLogo

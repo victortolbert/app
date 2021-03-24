@@ -30,7 +30,7 @@ export default defineComponent({
           password: this.login.password,
         },
       })
-      this.$router.push('/dashboard/')
+      this.$router.push('/')
     },
     async userLogin2() {
       try {
@@ -143,7 +143,7 @@ export default defineComponent({
           <!-- <LogoTolbertDesign class="w-11 h-11 text-primary-900" /> -->
           <BaseLogo name="ema" class="text-primary-500" />
 
-          <h2 class="mt-6 text-3xl font-extrabold text-gray-900">
+          <h2 v-if="false" class="mt-6 text-3xl font-extrabold text-gray-900">
             {{ $t('sign_in') }}
           </h2>
 
@@ -159,7 +159,7 @@ export default defineComponent({
         </div>
 
         <div class="mt-8">
-          <div v-if="true">
+          <div v-if="false">
             <div>
               <p class="text-sm font-medium text-gray-700">
                 {{ $t('sign_in_with') }}

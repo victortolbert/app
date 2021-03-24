@@ -51,11 +51,11 @@ export default {
   computed: {
     routes() {
       return [
-        // {
-        //   name: 'resources',
-        //   label: this.$t('resources'),
-        //   path: '/resources/',
-        // },
+        {
+          name: 'resources',
+          label: this.$t('resources'),
+          path: '/resources/',
+        },
         // {
         //   name: 'training',
         //   label: this.$t('training'),
@@ -159,26 +159,23 @@ export default {
           </div>
 
           <div class="items-center hidden md:ml-6 md:flex md:space-x-8">
-            <!-- <NuxtLink :to="localePath({path: '/dashboard/'})">
+            <!-- <NuxtLink :to="localePath({path: '/'})">
               {{ $t('dashboard') }}
             </NuxtLink> -->
 
-            <BaseMenu :items="['agencies', 'volunteers']">
+            <BaseMenu v-if="false" :items="['agencies', 'volunteers']">
               {{ $t('all_affiliates') }}
             </BaseMenu>
 
             <NuxtLink
+              v-if="false"
               v-for="(route, index) in routes"
               :key="index"
               :to="route.path"
             >
               {{ route.label }}
             </NuxtLink>
-
-            <NuxtLink
-              key="index"
-              to="/people/directory/"
-            >
+            <NuxtLink to="/people/directory/">
               {{ $t('directory') }}
             </NuxtLink>
           </div>
@@ -250,7 +247,7 @@ export default {
       <div class="pt-2 pb-3 space-y-1">
         <!-- Current: "bg-primary-50 border-primary-500 text-primary-700", Default: "border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700" -->
         <NuxtLink
-          :to="localePath({path: '/dashboard/'})"
+          to="/"
           class="block py-2 pl-3 pr-4 text-base font-medium border-l-4 bg-primary-50 border-primary-500 text-primary-700 sm:pl-5 sm:pr-6"
         >
           {{ $t('dashboard') }}

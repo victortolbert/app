@@ -474,7 +474,7 @@ export default defineNuxtConfig({
 
   server: {
     host: '0.0.0.0',
-    port: process.env.PORT || 3003,
+    port: process.env.PORT || 3000,
   },
 
   // serverMiddleware: ['~/myServerMiddleware', '~/server'],

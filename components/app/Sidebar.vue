@@ -1,14 +1,3 @@
-<script>
-  export default {
-    props: {
-      person: {
-        type: Object,
-        default: () => {}
-      }
-    }
-  }
-</script>
-
 <template>
   <div class="flex flex-col flex-1 h-0 bg-gray-100 border-r border-gray-200">
     <div class="flex flex-col flex-1 pt-5 pb-4 overflow-y-auto">
@@ -25,7 +14,7 @@
 
           <!-- Current: "bg-gray-200 text-gray-900", Default: "text-gray-600 hover:bg-gray-50 hover:text-gray-900" -->
           <NuxtLink
-            to="/dashboard/"
+            to="/"
             class="flex items-center px-3 py-2 text-sm font-medium text-gray-900 bg-gray-100 rounded-md group"
             aria-current="page"
           >
@@ -93,7 +82,6 @@
           </NuxtLink>
 
           <NuxtLink
-            v-if="false"
             to="/resources/"
             class="flex items-center px-3 py-2 text-sm font-medium text-gray-600 rounded-md hover:bg-gray-50 hover:text-gray-900 group"
           >
@@ -155,7 +143,7 @@
 
           <NuxtLink
             v-if="false"
-            to="/dashboard/"
+            to="/"
             class="flex items-center px-2 py-2 text-sm font-medium text-gray-600 rounded-md hover:bg-gray-50 hover:text-gray-900 group"
           >
             <BaseIconOutlined
@@ -191,7 +179,7 @@
           </NuxtLink>
           <NuxtLink
             v-if="false"
-            to="/dashboard/"
+            to="/"
             class="flex items-center px-3 py-2 text-sm font-medium text-gray-600 rounded-md hover:bg-gray-50 group"
             aria-current="false"
           >
@@ -367,7 +355,6 @@
 
         <div class="flex-1 px-2 space-y-1">
           <a
-            v-if="false"
             href="#"
             class="flex items-center px-2 py-2 text-sm font-medium text-gray-600 rounded-md hover:bg-gray-50 hover:text-gray-900 group"
           >
@@ -392,12 +379,12 @@
       </nav>
     </div>
     <div class="flex flex-shrink-0 p-4 border-t border-gray-200">
-      <NuxtLink to="/profile/" class="flex-shrink-0 block w-full group">
+      <a href="#" class="flex-shrink-0 block w-full group">
         <div class="flex items-center">
           <div>
             <img
               class="inline-block rounded-full h-9 w-9"
-              :src="$auth.user.profile_photo_url"
+              :src="$store.state.oldauth.user.avatarUrl"
               alt=""
             />
           </div>
@@ -405,7 +392,8 @@
             <p
               class="text-sm font-medium text-gray-700 group-hover:text-gray-900"
             >
-              {{ $auth.user.name }}
+              {{ $store.state.oldauth.user.firstName }}
+              {{ $store.state.oldauth.user.lastName }}
             </p>
             <p
               class="text-xs font-medium text-gray-500 group-hover:text-gray-700"
@@ -414,7 +402,7 @@
             </p>
           </div>
         </div>
-      </NuxtLink>
+      </a>
     </div>
   </div>
 </template>

@@ -66,13 +66,9 @@ export default defineComponent({
       <AppNavbar :person="$auth.user" />
 
       <main class="flex-1" :class="[`body-${$store.state.class.bodyClass}`]">
-        <!-- save fetch calls on pages already visited -->
-        <!-- <nuxt keep-alive /> -->
         <nuxt :nuxt-child-key="$route.fullPath" />
       </main>
 
-      <!-- <AppFooter /> -->
-      <AppToolbar />
       <AppCookieConsent button-text="I understand" />
       <PortalTarget name="overlays" />
     </div>
