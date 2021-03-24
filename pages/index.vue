@@ -51,6 +51,33 @@ export default {
 
 <template>
   <PageWrapper>
-    <PageHeading>{{ $t('dashboard') }}</PageHeading>
+    <div class="h-screen">
+      <BaseHero
+        halfheight
+        cover-url="https://cominex.net/assets/img/background.jpeg"
+        title="Welcome to the Georgia Strategic Prevention Services Hubsite"
+      />
+      <SectionWrapper class="grid grid-cols-3 gap-1">
+        <span
+          class="relative z-10 flex items-center justify-center w-8 h-8 bg-white border-2 border-gray-300 rounded-full group-hover:border-gray-400"
+        >
+          <span
+            class="h-2.5 w-2.5 bg-transparent rounded-full group-hover:bg-gray-300"
+          />
+        </span>
+        <span
+          class="relative z-10 flex items-center justify-center w-8 h-8 bg-white border-2 rounded-full border-primary-600"
+        >
+          <span class="h-2.5 w-2.5 bg-primary-600 rounded-full"></span>
+        </span>
+        <span class="flex items-center h-9">
+          <span
+            class="relative z-10 flex items-center justify-center w-8 h-8 rounded-full bg-primary-600 group-hover:bg-primary-800"
+          >
+            <BaseIconSolid name="check" class="text-white" />
+          </span>
+        </span>
+      </SectionWrapper>
+    </div>
   </PageWrapper>
 </template>

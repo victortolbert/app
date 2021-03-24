@@ -29,7 +29,7 @@ export default defineComponent({
   >
     <BaseLogo
       class="text-primary-500"
-      :name="$store.state.oldauth.user.affiliate.name.toLowerCase()"
+      :name="$store.state.affiliate.name"
     />
   </NuxtLink>
 </template>

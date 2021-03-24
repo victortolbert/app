@@ -14,7 +14,7 @@ export default defineComponent({
 </script>
 <template>
   <PageWrapper>
-    <SvgLiquidCheese class="object-cover h-32 bg-cover lg:h-48" />
+    <SvgLiquidCheese :colors="$store.getters.primaryColors" class="object-cover h-32 bg-cover lg:h-48" />
 
     <div class="max-w-5xl px-4 mx-auto sm:px-6 lg:px-8">
       <div class="-mt-12 sm:-mt-16 sm:flex sm:items-end sm:space-x-5">
@@ -23,6 +23,7 @@ export default defineComponent({
             class="w-24 h-24 rounded-full ring-4 ring-white sm:h-32 sm:w-32"
             :src="person.profile_photo_url"
             alt=""
+            style="filter: grayscale(1)"
           />
         </div>
         <div

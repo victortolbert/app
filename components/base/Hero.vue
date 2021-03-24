@@ -61,6 +61,7 @@ export default defineComponent({
     :style="`background-image: ${backgroundImage}`"
     :class="{
       'h-screen': fullheight,
+      'h-1/2': halfheight,
       'bg-cover': bgCover,
       'md:flex md:flex-col md:items-center md:justify-center': false,
     }"

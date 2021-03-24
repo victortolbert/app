@@ -2,10 +2,12 @@
   <div class="flex flex-col flex-1 h-0 bg-gray-100 border-r border-gray-200">
     <div class="flex flex-col flex-1 pt-5 pb-4 overflow-y-auto">
       <div class="flex items-center flex-shrink-0 px-4">
-        <AppLogo
-          :name="$store.state.affiliate.name.toLowerCase()"
-          class="w-auto h-8 text-primary-500"
-        />
+        <NuxtLink to="/">
+          <AppLogo
+            :name="$store.state.affiliate.name"
+            class="w-auto h-8 text-primary-500"
+          />
+        </NuxtLink>
       </div>
 
       <nav class="flex-1 mt-5 space-y-1" aria-label="Sidebar">
@@ -29,6 +31,7 @@
               class="inline-block rounded-full h-9 w-9"
               :src="$auth.user.profile_photo_url"
               alt=""
+              style="filter: grayscale(1)"
             />
           </div>
           <div class="ml-3">

@@ -55,11 +55,12 @@ export default defineComponent({
         aria-expanded="false"
         aria-haspopup="true"
       >
-        <span class="sr-only">Open user menu</span>
+        <span class="sr-only">{{ $t('open_user_menu')}}</span>
         <img
           class="w-8 h-8 rounded-full"
           :src="person.profile_photo_url"
           alt="person.name"
+          style="filter: grayscale(1)"
         />
       </button>
     </div>
@@ -86,10 +87,11 @@ export default defineComponent({
         class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
         role="menuitem"
       >
-        {{ $t('your_profile') }}
+        {{ $t('my_profile') }}
       </NuxtLink>
 
       <NuxtLink
+        v-if="false"
         to="/settings/"
         class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
         role="menuitem"

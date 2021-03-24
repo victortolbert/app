@@ -6,10 +6,11 @@ Vue.use(Oruga, {
   iconPack: 'fas',
   iconComponent: 'FontAwesomeIcon',
   // statusIcon: false,
-  // button: {
-  //   override: true,
-  //   rootClass: 'btn',
-  // },
+  button: {
+    override: true,
+    rootClass: 'button',
+    variantClass: 'is-'
+  },
   autocomplete: {
     override: true,
     rootClass: 'myautocomplete-root',

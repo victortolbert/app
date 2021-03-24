@@ -83,7 +83,7 @@ export default defineComponent({
       bg-cover
       :cover-url="`${$config.assetsURL}/img/backgrounds/liquid_cheese.svg`"
     /> -->
-    <!-- <SvgLiquidCheese /> -->
+    <!-- <SvgLiquidCheese :colors="$store.getters.primaryColors" /> -->
     <!-- <BaseCard /> -->
 
     <!--

@@ -13,8 +13,8 @@ export default {
     <!-- <p>by Person with id {{ person.id }}</p> -->
     <dl class="grid grid-cols-1 gap-x-4 gap-y-8 sm:grid-cols-2">
       <div class="sm:col-span-1">
-        <dt class="text-sm font-medium text-gray-500">Phone</dt>
-        <dd class="mt-1 text-sm text-gray-900">{{ person.phone }}</dd>
+        <dt class="text-sm font-medium text-gray-500">Title</dt>
+        <dd class="mt-1 text-sm text-gray-900">{{ person.title }}</dd>
       </div>
 
       <div class="sm:col-span-1">
@@ -23,8 +23,8 @@ export default {
       </div>
 
       <div class="sm:col-span-1">
-        <dt class="text-sm font-medium text-gray-500">Title</dt>
-        <dd class="mt-1 text-sm text-gray-900">{{ person.title }}</dd>
+        <dt class="text-sm font-medium text-gray-500">Phone</dt>
+        <dd class="mt-1 text-sm text-gray-900">{{ person.phone }}</dd>
       </div>
 
       <div class="sm:col-span-1">

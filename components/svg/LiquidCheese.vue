@@ -1,20 +1,12 @@
 <script>
 import {defineComponent} from '@nuxtjs/composition-api'
-import {generate} from '@ant-design/colors'
-import theme from '~/theme'
 
 export default defineComponent({
   props: {
-    color: {
-      type: String,
-      default: 'flamePea',
+    colors:{
+      type: Array,
+      default: () => [],
     },
-  },
-  setup(props) {
-    const colors = generate(Object.values(theme.colors[props.color])[5])
-    return {
-      colors,
-    }
   },
 })
 </script>

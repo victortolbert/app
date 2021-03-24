@@ -140,8 +140,7 @@ export default defineComponent({
     >
       <div class="w-full max-w-sm mx-auto lg:w-96">
         <div>
-          <!-- <LogoTolbertDesign class="w-11 h-11 text-primary-900" /> -->
-          <BaseLogo name="ema" class="text-primary-500" />
+          <BaseLogo :name="$store.state.affiliate.name.toLowerCase()" class="text-primary-500" />
 
           <h2 v-if="false" class="mt-6 text-3xl font-extrabold text-gray-900">
             {{ $t('sign_in') }}

@@ -18,19 +18,10 @@ export default {
   <PageWrapper>
     <!-- Profile header -->
     <header>
-      <div class="relative overflow-hidden">
-        <!-- <img
-          class="object-cover w-full h-32 lg:h-48"
-          src="https://images.unsplash.com/photo-1444628838545-ac4016a5418a?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=1950&amp;q=80"
-          alt=""
-        /> -->
-        <SvgLiquidCheese class="absolute object-cover h-32 bg-cover lg:h-48" />
-      </div>
-
       <SectionWrapper :padded="false" class="bg-gray-500">
         <div class="w-full">
           <SvgLiquidCheese
-            :color="$store.state.affiliate.theme.colors.primary.name"
+            :colors="$store.getters.primaryColors"
             class="object-cover w-full h-32 lg:h-48"
           />
         </div>
@@ -42,7 +33,8 @@ export default {
             <img
               class="w-24 h-24 rounded-full ring-4 ring-white sm:h-32 sm:w-32"
               :src="person.avatarUrl"
-              alt=""
+              :alt="person.name"
+              style="filter: grayscale(1)"
             />
           </div>
           <div
@@ -95,12 +87,14 @@ export default {
               {{ $t('profile') }}
             </NuxtLink>
             <NuxtLink
+              v-if="false"
               :to="`/people/directory/${person.id}/calendar/`"
               class="px-1 py-4 text-sm font-medium text-gray-500 border-b-2 border-transparent hover:text-gray-700 hover:border-gray-300 whitespace-nowrap"
             >
               {{ $t('calendar') }}
             </NuxtLink>
             <NuxtLink
+              v-if="false"
               :to="`/people/directory/${person.id}/recognition/`"
               class="px-1 py-4 text-sm font-medium text-gray-500 border-b-2 border-transparent hover:text-gray-700 hover:border-gray-300 whitespace-nowrap"
             >

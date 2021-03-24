@@ -3,19 +3,22 @@ import groupBy from 'lodash.groupby'
 import defu from 'defu'
 import {addDays} from 'date-fns'
 import {getEventIndexById} from '~/helpers'
+import {generate} from '@ant-design/colors'
+import theme from '~/theme'
 
 export const state = () => ({
   affiliate: {
     id: 1,
-    name: 'ema',
+    name: 'ga-sps',
     theme: {
       nav: {
         class: 'bg-white text-gray-800',
       },
       logo_path: '',
       colors: {
-        primary: 'flamePea',
+        primary: 'paprika',
         secondary: '',
+        tertiary: '',
         danger: '',
         warning: '',
         success: '',
@@ -129,6 +132,11 @@ export const state = () => ({
 })
 
 export const getters = {
+  primaryColors(state) {
+    return generate(
+      Object.values(theme.colors[state.affiliate.theme.colors.primary])[5],
+    )
+  },
   settings(state) {
     return state.settings
   },

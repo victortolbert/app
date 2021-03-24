@@ -39,6 +39,7 @@ export default {
             class="w-10 h-10 rounded-full"
             :src="avatarURL"
             :alt="person.firstName"
+            style="filter: grayscale()"
           />
         </div>
         <div class="flex-1 min-w-0">

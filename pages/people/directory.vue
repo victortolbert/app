@@ -4,6 +4,7 @@ import {PersonItem} from '~/types'
 import PersonService from '~/services/PersonService'
 
 export default defineComponent({
+  name: 'PeopleDirectoryPage',
   layout: 'plain',
   middleware: 'auth',
   props: {

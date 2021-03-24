@@ -58,18 +58,22 @@ export default defineComponent({
   <ThemeProvider :theme="theme">
     <div
       id="app"
-      :class="applyStyles"
+      :class="[
+        $store.state.affiliate.name.toLowerCase(),
+        applyStyles
+      ]"
       class="relative flex flex-col min-h-screen"
     >
       <AppOfflineIndicator />
 
       <AppNavbar :person="$auth.user" />
 
-      <main class="flex-1" :class="[`body-${$store.state.class.bodyClass}`]">
+      <main class="flex-1" >
         <nuxt :nuxt-child-key="$route.fullPath" />
       </main>
 
-      <!-- <AppCookieConsent button-text="I understand" /> -->
+      <AppFooter />
+      <AppCookieConsent button-text="I understand" />
       <PortalTarget name="overlays" />
     </div>
   </ThemeProvider>

@@ -1,7 +1,9 @@
 <script>
+import {kebabCase} from 'lodash'
+
 export default {
   props: {
-    items: {
+    paths: {
       type: Array,
       default() {
         return ['dashboard']
@@ -11,7 +13,7 @@ export default {
   methods: {
     show(path) {
       // .push({ path: 'register', query: { plan: 'private' } })
-      this.$router.push(`/${path}/`)
+      this.$router.push(`/${kebabCase(path)}/`)
     },
   },
 }
@@ -22,12 +24,12 @@ export default {
       <slot />
     </div>
     <ODropdownItem
-      v-for="item in items"
-      :key="item"
-      @click="show(item)"
+      v-for="path in paths"
+      :key="path"
+      @click="show(path)"
       aria-role="listitem"
     >
-      {{ $t(item) }}
+      {{ $t(path) }}
     </ODropdownItem>
   </ODropdown>
 </template>

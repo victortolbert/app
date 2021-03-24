@@ -52,14 +52,24 @@ export default {
     routes() {
       return [
         {
+          name: 'SPF Overview',
+          label: this.$t('spf_overview'),
+          path: '/spf-overview/',
+        },
+        {
           name: 'resources',
           label: this.$t('resources'),
           path: '/resources/',
         },
         {
-          name: 'training',
-          label: this.$t('training'),
-          path: '/training/',
+          name: 'media',
+          label: this.$t('media'),
+          path: '/media/',
+        },
+        {
+          name: 'calendar',
+          label: this.$t('calendar'),
+          path: '/calendar/',
         },
         // {
         //   name: 'events',
@@ -163,9 +173,15 @@ export default {
               {{ $t('dashboard') }}
             </NuxtLink> -->
 
-            <BaseMenu v-if="false" :items="['agencies', 'volunteers']">
-              {{ $t('all_affiliates') }}
+            <BaseMenu :paths="['about', 'contact', 'georgia_seow']">
+              {{ $t('about') }}
             </BaseMenu>
+
+            <EccoMenu>
+              <span>
+                {{ $t('new_to_ecco') }}
+              </span>
+            </EccoMenu>
 
             <NuxtLink
               v-for="(route, index) in routes"
@@ -175,34 +191,30 @@ export default {
             >
               {{ route.label }}
             </NuxtLink>
-            <NuxtLink to="/people/directory/" active-class="font-bold">
-              {{ $t('directory') }}
-            </NuxtLink>
           </div>
         </div>
 
         <div class="flex items-center space-x-3">
-          <!-- <div class="flex-shrink-0">
-            <OButton
-              size="small"
-              variant="primary"
-              icon-pack="fas"
-              icon-left="plus"
-              @click="showNewProjectView = !showNewProjectView"
-              :rounded="true"
-            >
-              {{ $t('new_project') }}
-            </OButton>
-          </div> -->
-
-          <!-- <OptionsMenuButton>
-            {{ $t('options') }}
-          </OptionsMenuButton> -->
-
           <div class="md:ml-4 md:flex-shrink-0 md:flex md:items-center">
-            <div class="flex items-center space-x-3">
-              <AppLanguageSwitcher v-if="false" />
-              <AppAnnouncementsButton />
+            <div class="flex items-center space-x-1">
+              <OButton
+                class="px-4 text-sm uppercase"
+                tag="a"
+                href="https://www.georgiamds.uga.edu/PublicHome/Index"
+                target="_blank"
+              >
+                MDS
+              </OButton>
+
+              <OButton
+                class="px-4 text-sm uppercase"
+                variant="secondary"
+                tag="a"
+                href="http://ecco.ga-sps.org/login.php"
+                target="_blank"
+              >
+                ecco
+              </OButton>
             </div>
 
             <!-- Help dropdown -->
