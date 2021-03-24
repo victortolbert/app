@@ -56,11 +56,11 @@ export default {
           label: this.$t('resources'),
           path: '/resources/',
         },
-        // {
-        //   name: 'training',
-        //   label: this.$t('training'),
-        //   path: '/training/',
-        // },
+        {
+          name: 'training',
+          label: this.$t('training'),
+          path: '/training/',
+        },
         // {
         //   name: 'events',
         //   label: this.$t('events'),
@@ -136,7 +136,7 @@ export default {
       {
         'fixed top-0 z-40': false,
       },
-      'w-full shadow',
+      'w-full shadow border-b',
     ]"
   >
     <div class="px-4 sm:px-6 lg:px-8">
@@ -168,14 +168,14 @@ export default {
             </BaseMenu>
 
             <NuxtLink
-              v-if="false"
               v-for="(route, index) in routes"
               :key="index"
               :to="route.path"
+              active-class="font-bold"
             >
               {{ route.label }}
             </NuxtLink>
-            <NuxtLink to="/people/directory/">
+            <NuxtLink to="/people/directory/" active-class="font-bold">
               {{ $t('directory') }}
             </NuxtLink>
           </div>
@@ -215,7 +215,7 @@ export default {
             </NuxtLink> -->
             <div class="hidden space-x-3 lg:block">
               <div class="space-x-3" v-if="$auth.loggedIn">
-                <NuxtLink to="/profile/" id="profile">
+                <NuxtLink to="/profile/" id="profile" active-class="font-bold">
                   {{ $t('my_profile') }}
                 </NuxtLink>
                 <button @click="$auth.logout()">
