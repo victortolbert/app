@@ -21663,12 +21663,14 @@ vue-gtag@^1.11.0:
   resolved "https://registry.yarnpkg.com/vue-gtag/-/vue-gtag-1.11.0.tgz#4c1eedfa6db7d5c0945a535198e460f105f94b10"
   integrity sha512-tIieh6aZoB/METabJlEHJ3e/SwHpR5ysK6tW1lzsG8NSrI7HUpy/Wf5tVdq1AHAHV6Pr8aK99g63rC5iDzf0TA==
 
-vue-gtm@^3.4.1:
-  version "3.4.1"
-  resolved "https://registry.yarnpkg.com/vue-gtm/-/vue-gtm-3.4.1.tgz#eb41baf407787a6fea1b38a583d4e0da5f5e9af1"
-  integrity sha512-ImKsIihUWY5DwVoaRlQp9pTuij4zIdzcAYbJ/mWc713dii2EhRPisHSk/MbhRmjIJ4Tf7hG71O5tnd4Wl3Hf2Q==
+vue-gtm@^3.5.0:
+  version "3.5.0"
+  resolved "https://registry.yarnpkg.com/vue-gtm/-/vue-gtm-3.5.0.tgz#a64843cec1c39aa57f07d25e114908d65b47f0d0"
+  integrity sha512-MJ0eqPm2NG1MjUJv8K3DghVzbXNONLd2rav0WbpuCfnD5r+SKyD+kxYnPo8exAg7zN+krY+swXoXKJuXtb2Acg==
   dependencies:
     url-search-params-polyfill "^8.1.0"
+  optionalDependencies:
+    vue-router "^4.0.0"
 
 vue-hot-reload-api@^2.3.0:
   version "2.3.4"
@@ -21796,6 +21798,11 @@ vue-router@^3.5.1:
   version "3.5.1"
   resolved "https://registry.yarnpkg.com/vue-router/-/vue-router-3.5.1.tgz#edf3cf4907952d1e0583e079237220c5ff6eb6c9"
   integrity sha512-RRQNLT8Mzr8z7eL4p7BtKvRaTSGdCbTy2+Mm5HTJvLGYSSeG9gDzNasJPP/yOYKLy+/cLG/ftrqq5fvkFwBJEw==
+
+vue-router@^4.0.0:
+  version "4.0.5"
+  resolved "https://registry.yarnpkg.com/vue-router/-/vue-router-4.0.5.tgz#dd0a4134bc950c37aef64b973e9ee1008428d8fa"
+  integrity sha512-AQq+pllb6FCc7rS6vh4PPcce3XA1jgK3hKNkQ4hXHwoVN7jOeAOMKCnX7XAX3etV9rmN7iNW8iIwgPk95ckBjw==
 
 vue-scroll-reveal@1.0.11:
   version "1.0.11"
