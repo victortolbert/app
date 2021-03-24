@@ -51,11 +51,11 @@ export default {
   computed: {
     routes() {
       return [
-        {
-          name: 'resources',
-          label: this.$t('resources'),
-          path: '/resources/',
-        },
+        // {
+        //   name: 'resources',
+        //   label: this.$t('resources'),
+        //   path: '/resources/',
+        // },
         // {
         //   name: 'training',
         //   label: this.$t('training'),
@@ -173,6 +173,13 @@ export default {
               :to="route.path"
             >
               {{ route.label }}
+            </NuxtLink>
+
+            <NuxtLink
+              key="index"
+              to="/people/directory/"
+            >
+              {{ $t('directory') }}
             </NuxtLink>
           </div>
         </div>

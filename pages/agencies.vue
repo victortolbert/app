@@ -3,6 +3,7 @@ import {defineComponent, watchEffect} from '@nuxtjs/composition-api'
 import AgencyService from '~/services/AgencyService'
 
 export default defineComponent({
+  layout: 'sidebar',
   props: {
     page: {
       type: Number,

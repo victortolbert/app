@@ -1,3 +1,7 @@
 <template>
-  <div>I'm going to keep trying...</div>
+  <PageWrapper>
+    <PageHeading>Directory Landing Page</PageHeading>
+    <SectionWrapper class="prose">
+    </SectionWrapper>
+  </PageWrapper>
 </template>
