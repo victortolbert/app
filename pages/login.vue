@@ -340,6 +340,7 @@ export default defineComponent({
       <BaseImage
         is-unsplash
         class="absolute inset-0 object-cover w-full h-full"
+        style="filter: grayscale(1)"
       />
     </div>
   </main>

@@ -21,7 +21,7 @@ export default defineComponent({
         <div class="flex">
           <img
             class="w-24 h-24 rounded-full ring-4 ring-white sm:h-32 sm:w-32"
-            :src="person.profilePhotoUrl"
+            :src="person.profile_photo_url"
             alt=""
           />
         </div>

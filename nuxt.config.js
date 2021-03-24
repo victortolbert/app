@@ -480,7 +480,7 @@ export default defineNuxtConfig({
   // serverMiddleware: ['~/myServerMiddleware', '~/server'],
   router: {
     // middleware: ['check-auth', 'ui'],
-    middleware: ['ui'],
+    middleware: ['auth', 'ui'],
     prefetchLinks: false,
     trailingSlash: true,
     // base: '/beta/',
