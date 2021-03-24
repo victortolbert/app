@@ -1,3 +1,13 @@
+<script>
+export default {
+  props: {
+    person: {
+      type: Object,
+      default: () => {},
+    },
+  },
+}
+</script>
 <template>
   <div class="flex flex-col mt-6 lg:flex-row">
     <div class="flex-grow space-y-6">

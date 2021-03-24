@@ -215,12 +215,13 @@ export default {
             </NuxtLink> -->
             <div class="hidden space-x-3 lg:block">
               <div class="space-x-3" v-if="$auth.loggedIn">
-                <NuxtLink to="/profile/" id="profile" active-class="font-bold">
+                <ProfileDropdown :person="$auth.user" />
+                <!-- <NuxtLink to="/profile/" id="profile" active-class="font-bold">
                   {{ $t('my_profile') }}
-                </NuxtLink>
-                <button @click="$auth.logout()">
+                </NuxtLink> -->
+                <!-- <button @click="$auth.logout()">
                   {{ $t('logout') }}
-                </button>
+                </button> -->
               </div>
 
               <div class="flex items-center space-x-3" v-else>

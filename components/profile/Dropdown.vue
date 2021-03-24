@@ -1,8 +1,31 @@
-<!-- @vue-ignore -->
 <script>
-export default {
-  name: 'ProfileDropdown',
-}
+import {defineComponent, ref} from '@nuxtjs/composition-api'
+import {mixin as clickaway} from 'vue-clickaway'
+
+export default defineComponent({
+  mixins: [clickaway],
+  props: {
+    person: {
+      type: Object,
+      default: () => {},
+    },
+  },
+  setup() {
+    const open = ref(false)
+    return {
+      open,
+    }
+  },
+  methods: {
+    toggle() {
+      this.open = !this.open
+    },
+
+    hide() {
+      this.open = false
+    },
+  },
+})
 </script>
 
 <template>
@@ -24,6 +47,8 @@ export default {
   <div class="relative flex-shrink-0 ml-4">
     <div>
       <button
+        v-on-clickaway="hide"
+        @click="open = !open"
         type="button"
         class="flex text-sm text-white rounded-full focus:outline-none focus:bg-primary-900 focus:ring-2 focus:ring-offset-2 focus:ring-offset-primary-900 focus:ring-white"
         id="user-menu"
@@ -33,8 +58,8 @@ export default {
         <span class="sr-only">Open user menu</span>
         <img
           class="w-8 h-8 rounded-full"
-          src="https://images.unsplash.com/photo-1517365830460-955ce3ccd263?ixlib=rb-1.2.1&ixqx=iXNbLPGHnb&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=80"
-          alt=""
+          :src="person.profile_photo_url"
+          alt="person.name"
         />
       </button>
     </div>
@@ -50,32 +75,36 @@ export default {
                     To: "transform opacity-0 scale-95"
                 -->
     <div
-      v-if="false"
+      v-if="open"
       class="absolute right-0 w-48 py-1 mt-2 origin-top-right bg-white rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
       role="menu"
       aria-orientation="vertical"
       aria-labelledby="user-menu"
     >
-      <a
-        href="#"
+      <NuxtLink
+        to="/profile/"
         class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
         role="menuitem"
-        >Your Profile</a
       >
+        {{ $t('your_profile') }}
+      </NuxtLink>
 
-      <a
-        href="#"
+      <NuxtLink
+        to="/settings/"
         class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
         role="menuitem"
-        >Settings</a
       >
+        {{ $t('settings') }}
+      </NuxtLink>
 
-      <a
-        href="#"
-        class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+      <button
+        type="button"
+        @click="$auth.logout()"
+        class="block w-full px-4 py-2 text-sm text-left text-gray-700 hover:bg-gray-100"
         role="menuitem"
-        >Sign out</a
       >
+        {{ $t('sign_out') }}
+      </button>
     </div>
   </div>
 </template>

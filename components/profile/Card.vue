@@ -1,3 +1,13 @@
+<script>
+export default {
+  props: {
+    person: {
+      type: Object,
+      default: () => {},
+    },
+  },
+}
+</script>
 <template>
   <WithDimensions>
     <div
@@ -26,9 +36,3 @@
     </div>
   </WithDimensions>
 </template>
-
-<script>
-export default {
-  name: 'ProfileCard',
-}
-</script>

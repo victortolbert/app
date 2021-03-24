@@ -69,7 +69,7 @@ export default defineComponent({
         <nuxt :nuxt-child-key="$route.fullPath" />
       </main>
 
-      <AppCookieConsent button-text="I understand" />
+      <!-- <AppCookieConsent button-text="I understand" /> -->
       <PortalTarget name="overlays" />
     </div>
   </ThemeProvider>

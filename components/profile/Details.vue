@@ -1,3 +1,14 @@
+<script>
+export default {
+  props: {
+    person: {
+      type: Object,
+      default: () => {},
+    },
+  },
+}
+</script>
+
 <template>
   <!-- Description list -->
   <div class="max-w-5xl px-4 mx-auto mt-6 sm:px-6 lg:px-8">
@@ -6,7 +17,7 @@
         <dt class="text-sm font-medium text-gray-500">
           {{ $t('phone') }}
         </dt>
-        <dd class="mt-1 text-sm text-gray-900">(555) 123-4567</dd>
+        <dd class="mt-1 text-sm text-gray-900">{{ person.phone }}</dd>
       </div>
 
       <div class="sm:col-span-1">
@@ -31,7 +42,7 @@
         <dt class="text-sm font-medium text-gray-500">
           {{ $t('team') }}
         </dt>
-        <dd class="mt-1 text-sm text-gray-900">Product Development</dd>
+        <dd class="mt-1 text-sm text-gray-900">{{}}</dd>
       </div>
 
       <div class="sm:col-span-1">
