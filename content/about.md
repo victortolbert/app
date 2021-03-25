@@ -2,8 +2,12 @@
 title: About Us
 steps:
   - Run `yalc publish` in your dependency package `my-package`
-  - yalc add `my-package`
+  - yalc add `my-package`, yalc add my-package@version
   - yarn publish --push (yalc push), yalc check, yalc retreat and yalc restore
+  - yalc installations clean my-package
+  - yalc installations show my-package
+  - yalc remove my-package, yalc remove --all
+  - yalc update my-package,  yalc update
 ---
 
 `(\d{4}-\d{2}-\d{2})(.)(\d{2}:\d{2}:\d{2})(.)\d{4}`

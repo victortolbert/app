@@ -75,6 +75,23 @@ export default {
 <template>
   <PageWrapper>
     <!-- <pre class="text-xs">{{ resources }}</pre> -->
+
+    <SectionWrapper>
+      <ResourceAutocompleteField />
+    </SectionWrapper>
+
+    <SectionWrapper class="max-w-xs mt-8">
+      <div class="flex items-center justify-between mt-8 text-sm text-gray-400">
+        <p>Design</p>
+        <p>3/8</p>
+      </div>
+      <div class="w-full h-3 mt-1 rounded-full bg-primary-100">
+        <div
+          class="w-1/3 h-full text-xs text-center text-white rounded-full bg-primary-400"
+        />
+      </div>
+    </SectionWrapper>
+
     <SectionWrapper class="w-full max-w-3xl mt-8 space-y-8 lg:max-w-7xl">
       <div class="flex w-full" v-for="resource in resources" :key="resource.id">
         <div
