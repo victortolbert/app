@@ -128,7 +128,7 @@ export default {
 
     <!-- Coca Cola -->
     <svg
-      v-if="['coca_cola', 'cocacola'].includes(name)"
+      v-if="['coca_cola', 'coca-cola', 'cocacola'].includes(name)"
       width="134"
       height="44"
       viewBox="0 0 134 44"
@@ -588,7 +588,7 @@ export default {
 
     <!-- SalesLoft Mark -->
     <svg
-      v-if="name === 'salesloft_mark'"
+      v-if="['salesloft', 'salesloft_mark'].includes(name)"
       width="44"
       height="44"
       viewBox="0 0 44 44"
@@ -824,7 +824,7 @@ export default {
 
     <!-- Turner Sports -->
     <svg
-      v-if="name === 'turner_sports'"
+      v-if="['turner', 'turner-sports'].includes(name)"
       width="250"
       height="44"
       viewBox="0 0 250 44"
@@ -859,7 +859,14 @@ export default {
 
     <!-- Victor Tolbert -->
     <svg
-      v-if="['victor_tolbert', 'victor', 'victortolbert'].includes(name)"
+      v-if="
+        [
+          'victor_tolbert',
+          'victor',
+          'victor-tolbert',
+          'victortolbert',
+        ].includes(name)
+      "
       width="149"
       height="25"
       viewBox="0 0 149 25"

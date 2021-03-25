@@ -386,8 +386,17 @@ export default defineNuxtConfig({
     // 'nuxt-svg-loader',
     // '@nuxt/http',
     // '@nuxtjs/sitemap'
+    // '@nuxtjs/router',
+    // ['domain',
+    //   {
+    //     subDomains: [], // List of directories to hold te pages for your subdomains
+    //     rootDomain: 'root-domain', //  directory to hold the pages for root domain
+    //   },
+    // ],
   ],
-
+  routerModule: {
+    keepDefaultRouter: true, // this line is mandatory...
+  },
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
     '~/plugins/api',
@@ -510,7 +519,7 @@ export default defineNuxtConfig({
     fullPathRedirect: true,
     redirect: {
       callback: '/login/',
-      home: '/dashboard/',
+      home: '/',
       login: '/login/',
       logout: '/login/',
     },

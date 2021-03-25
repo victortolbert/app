@@ -7,9 +7,11 @@ import {generate} from '@ant-design/colors'
 import theme from '~/theme'
 
 export const state = () => ({
+  subdomain: 'ga-sps',
   affiliate: {
     id: 1,
     name: 'ga-sps',
+    subdomain: '',
     theme: {
       nav: {
         class: 'bg-white text-gray-800',
@@ -183,6 +185,9 @@ export const mutations = {
   },
   SET_DEFAULT_BRANCH(state, branch) {
     state.settings.defaultBranch = branch
+  },
+  SET_SUBDOMAIN(state, subdomain) {
+    state.affiliate.subdomain = subdomain
   },
   SET_SETTINGS(state, settings) {
     state.settings = defu({filled: true}, settings, state.settings)

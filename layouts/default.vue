@@ -47,7 +47,17 @@ export default defineComponent({
       presetPalettes,
     }
   },
+  created() {
+    const parts = location.hostname.split('.')
+    const subdomain = parts.shift()
+    const upperleveldomain = parts.join('.')
+    const secondleveldomain = parts.slice(-2).join('.')
+
+    this.$store.commit('SET_SUBDOMAIN', subdomain)
+  },
   mounted() {
+    console.log(this.$store.state.subdomain)
+
     this.$jam('this.$jam plugin works in mounted...')
     // ctx.$icon(512)
   },
@@ -58,17 +68,14 @@ export default defineComponent({
   <ThemeProvider :theme="theme">
     <div
       id="app"
-      :class="[
-        $store.state.affiliate.name.toLowerCase(),
-        applyStyles
-      ]"
+      :class="[$store.state.affiliate.name.toLowerCase(), applyStyles]"
       class="relative flex flex-col min-h-screen"
     >
       <AppOfflineIndicator />
 
       <AppNavbar :person="$auth.user" />
 
-      <main class="flex-1" >
+      <main class="flex-1">
         <nuxt :nuxt-child-key="$route.fullPath" />
       </main>
 

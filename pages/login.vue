@@ -22,6 +22,29 @@ export default defineComponent({
       },
     }
   },
+  computed: {
+    logoName() {
+      const subdomain = this.$store.state.affiliate.subdomain
+      return [
+        'att',
+        'autotrader',
+        'booster',
+        'coca-cola',
+        'computerland',
+        'ecco',
+        'ecco-ui',
+        'ema',
+        'ga-sps',
+        'promise-serves',
+        'turner',
+        'victor',
+        'videa',
+        'webmd',
+      ].includes(subdomain)
+        ? subdomain
+        : 'vti'
+    },
+  },
   methods: {
     async userLogin() {
       await this.$auth.loginWith('laravelSanctum', {
@@ -140,7 +163,7 @@ export default defineComponent({
     >
       <div class="w-full max-w-sm mx-auto lg:w-96">
         <div>
-          <BaseLogo :name="$store.state.affiliate.name.toLowerCase()" class="text-primary-500" />
+          <BaseLogo :name="logoName" class="text-primary-500" />
 
           <h2 v-if="false" class="mt-6 text-3xl font-extrabold text-gray-900">
             {{ $t('sign_in') }}

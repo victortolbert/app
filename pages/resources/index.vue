@@ -5,7 +5,9 @@ import {formatRelative} from 'date-fns'
 export default {
   async asyncData({$axios}) {
     return {
-      resources: await $axios.$get('https://api.victortolbert.com/resources'),
+      resources: await $axios.$get(
+        'https://api.victortolbert.com/resources?_sort=modified_at&_order=desc',
+      ),
     }
   },
   data() {
@@ -129,7 +131,7 @@ export default {
           <div class="w-full mt-1">
             <div>{{ resource.description }}</div>
             <ul class="flex flex-wrap items-center mt-2">
-              <li :key="tag" v-for="tag in resource.tags">
+              <li :key="tag" v-for="tag in JSON.parse(resource.tags)">
                 <span
                   class="inline-flex mr-3 flex-wrap uppercase whitespace-nowrap tracking-wide items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800"
                 >
@@ -150,7 +152,7 @@ export default {
                 </span>
                 {{ formatDate(resource.modified_at) }}
               </div>
-              <div>
+              <div v-if="false">
                 <span class="text-xs font-medium tracking-wide uppercase">
                   Author
                 </span>
