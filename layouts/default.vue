@@ -56,8 +56,6 @@ export default defineComponent({
     this.$store.commit('SET_SUBDOMAIN', subdomain)
   },
   mounted() {
-    console.log(this.$store.state.subdomain)
-
     this.$jam('this.$jam plugin works in mounted...')
     // ctx.$icon(512)
   },

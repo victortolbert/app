@@ -3,15 +3,22 @@ import {launchConfetti} from '~/helpers/confetti'
 import {formatRelative} from 'date-fns'
 
 export default {
-  async asyncData({$axios}) {
-    return {
-      resources: await $axios.$get(
-        'https://api.victortolbert.com/resources?_sort=modified_at&_order=desc',
-      ),
-    }
+  // async asyncData({$axios}) {
+  //   return {
+  //     resources: await $axios.$get(
+  //       'https://api.victortolbert.com/resources?_sort=modified_at&_order=desc',
+  //     ),
+  //   }
+  // },
+  async fetch() {
+    const resources = await this.$axios.$get(
+      'resources?_sort=modified_at&_order=desc',
+    )
+    this.resources = this.resources.concat(resources)
   },
   data() {
     return {
+      resources: [],
       data: [
         {
           name: 'Board Games',
@@ -66,7 +73,6 @@ export default {
       launchConfetti()
     },
     formatDate(date) {
-      console.log(new Date(date))
       return formatRelative(new Date(date), new Date())
     },
   },
@@ -92,7 +98,10 @@ export default {
       </div>
     </SectionWrapper>
 
-    <SectionWrapper class="w-full max-w-3xl mt-8 space-y-8 lg:max-w-7xl">
+    <SectionWrapper
+      v-if="resources.length"
+      class="w-full max-w-3xl mt-8 space-y-8 lg:max-w-7xl"
+    >
       <div class="flex w-full" v-for="resource in resources" :key="resource.id">
         <div
           class="flex flex-col items-center flex-shrink-0 w-16 pt-2 mr-4 space-y-1"

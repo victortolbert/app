@@ -12,6 +12,8 @@ steps:
 
 `(\d{4}-\d{2}-\d{2})(.)(\d{2}:\d{2}:\d{2})(.)\d{4}`
 
+Authentication: you are who you say you are
+Authorization: you are allowed to access this information
 
 
 ## Our Mission

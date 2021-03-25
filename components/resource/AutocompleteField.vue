@@ -47,8 +47,9 @@ export default {
       // comments?_expand=post
       // comments/1?_expand=post
       // `https://api.victortolbert.com&query=${name}&page=${this.page}`,
-      fetch(`https://api.victortolbert.com/resources?q=${name}`)
-        .then(response => response.json())
+      this.$axios
+        .$get(`resources?q=${name}`)
+        // .then(response => response.json())
         .then(data => {
           data.forEach(item => this.data.push(item))
         })
