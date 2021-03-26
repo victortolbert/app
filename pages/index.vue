@@ -59,6 +59,10 @@ export default {
       />
       <SectionWrapper class="grid grid-cols-3 gap-1">
         <OButton @click="$auth.logout()">Logout</OButton>
+        <BaseIconOutlined name="id" />
+        <BaseIconOutlined name="omega" />
+        <BaseIconOutlined name="school" />
+        <BaseIconOutlined name="slideshow" />
 
         <span
           class="relative z-10 flex items-center justify-center w-8 h-8 bg-white border-2 border-gray-300 rounded-full group-hover:border-gray-400"

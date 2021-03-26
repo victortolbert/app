@@ -381,6 +381,21 @@ export default {
       d="M7 11.5V14m0-2.5v-6a1.5 1.5 0 113 0m-3 6a1.5 1.5 0 00-3 0v2a7.5 7.5 0 0015 0v-5a1.5 1.5 0 00-3 0m-6-3V11m0-5.5v-1a1.5 1.5 0 013 0v1m0 0V11m0-5.5a1.5 1.5 0 013 0v3m0 0V11"
     />
 
+    <g
+      v-if="name === 'id'"
+      fill="none"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      :stroke-width="strokeWidth"
+    >
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+      <rect x="3" y="4" width="18" height="16" rx="3"></rect>
+      <circle cx="9" cy="10" r="2"></circle>
+      <line x1="15" y1="8" x2="17" y2="8"></line>
+      <line x1="15" y1="12" x2="17" y2="12"></line>
+      <line x1="7" y1="16" x2="17" y2="16"></line>
+    </g>
+
     <path
       v-if="name === 'home'"
       stroke-linecap="round"
@@ -565,6 +580,18 @@ export default {
       d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
     />
 
+    <g
+      v-if="name === 'omega'"
+      stroke-width="2"
+      stroke="currentColor"
+      fill="none"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    >
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+      <path d="M4 19h5v-1a7.35 7.35 0 1 1 6 0v1h5"></path>
+    </g>
+
     <g v-if="name === 'play'">
       <path
         stroke-linecap="round"
@@ -660,11 +687,24 @@ export default {
       d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3"
     />
 
+    <svg
+      v-if="name === 'school'"
+      :stroke-width="strokeWidth"
+      stroke="currentColor"
+      fill="none"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    >
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+      <path d="M22 9l-10 -4l-10 4l10 4l10 -4v6"></path>
+      <path d="M6 10.6v5.4a6 3 0 0 0 12 0v-5.4"></path>
+    </svg>
+
     <path
       v-if="name === 'search-circle'"
       stroke-linecap="round"
       stroke-linejoin="round"
-      stroke-width="2"
+      :stroke-width="strokeWidth"
       d="M8 16l2.879-2.879m0 0a3 3 0 104.243-4.242 3 3 0 00-4.243 4.242zM21 12a9 9 0 11-18 0 9 9 0 0118 0z"
     />
 
@@ -672,9 +712,27 @@ export default {
       v-if="name === 'shield-check'"
       stroke-linecap="round"
       stroke-linejoin="round"
-      stroke-width="2"
+      :stroke-width="strokeWidth"
       d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
     />
+
+    <g
+      v-if="name === 'slideshow'"
+      :stroke-width="strokeWidth"
+      stroke="currentColor"
+      fill="none"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    >
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+      <line x1="15" y1="6" x2="15.01" y2="6"></line>
+      <rect x="3" y="3" width="18" height="14" rx="3"></rect>
+      <path d="M3 13l4 -4a3 5 0 0 1 3 0l4 4"></path>
+      <path d="M13 12l2 -2a3 5 0 0 1 3 0l3 3"></path>
+      <line x1="8" y1="21" x2="8.01" y2="21"></line>
+      <line x1="12" y1="21" x2="12.01" y2="21"></line>
+      <line x1="16" y1="21" x2="16.01" y2="21"></line>
+    </g>
 
     <path
       v-if="name === 'sparkles'"

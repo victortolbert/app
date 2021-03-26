@@ -68,6 +68,7 @@ export default {
 </script>
 
 <template>
+  <!-- @select="go($event)" -->
   <OField label="Find a resource">
     <OAutocomplete
       :data="data"
@@ -77,8 +78,12 @@ export default {
       check-infinite-scroll
       :debounce-typing="500"
       @typing="getAsyncData"
-      @select="go($event)"
       @infinite-scroll="getMoreAsyncData"
+      icon="search"
+      icon-pack="fal"
+      clearable
+      rounded
+      expanded
     >
       <template slot-scope="props">
         <div class="media">
