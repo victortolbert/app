@@ -109,7 +109,7 @@
     "msw": "^0.27.1",
     "nuxt": "^2.15.3",
     "nuxt-edge": "^2.16.0-26942438.7c86c11d",
-    "nuxt-i18n": "^6.21.1",
+    "nuxt-i18n": "^6.22.2",
     "object-to-formdata": "^4.1.0",
     "particles.vue": "2.6.0",
     "path-to-regexp": "6.2.0",
