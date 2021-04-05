@@ -16172,13 +16172,13 @@ parsimmon@^1.13.0:
   resolved "https://registry.yarnpkg.com/parsimmon/-/parsimmon-1.16.0.tgz#2834e3db645b6a855ab2ea14fbaad10d82867e0f"
   integrity sha512-tekGDz2Lny27SQ/5DzJdIK0lqsWwZ667SCLFIDCxaZM7VNgQjyKLbaL7FYPKpbjdxNAXFV/mSxkq5D2fnkW4pA==
 
-particles.vue@2.6.0:
-  version "2.6.0"
-  resolved "https://registry.yarnpkg.com/particles.vue/-/particles.vue-2.6.0.tgz#17964c337ef098b3e04074dbd1fafcad37fb234a"
-  integrity sha512-f8SERPv8L987WMbRGsFnH53ArPWlS7NOuh4YXQJcdM+KNvEOuJPQGYV/oVniYhbxgfpA1VEVT+OzJ+iy/YL/DA==
+particles.vue@2.8.0:
+  version "2.8.0"
+  resolved "https://registry.yarnpkg.com/particles.vue/-/particles.vue-2.8.0.tgz#0499ba6a3135699bdbb7796d89ffa89cefcb4e1e"
+  integrity sha512-XnuMLqYPKmUYblYMspeit+zPWHYjz+gUYiE9tkCgO7T6fvxZWhMK8A7+6oPF+AT/+pXrgcw9Lz6cO36AkWgcMw==
   dependencies:
     tslib "^2.0.3"
-    tsparticles "^1.23.0"
+    tsparticles "^1.25.0"
     vue "<3"
     vue-class-component "<8"
     vue-property-decorator "^9.0.2"
@@ -21032,10 +21032,10 @@ tsml@1.0.1:
   resolved "https://registry.yarnpkg.com/tsml/-/tsml-1.0.1.tgz#89f8218b9d9e257f47d7f6b56d01c5a4d2c68fc3"
   integrity sha1-ifghi52eJX9H1/a1bQHFpNLGj8M=
 
-tsparticles@^1.23.0:
-  version "1.24.1"
-  resolved "https://registry.yarnpkg.com/tsparticles/-/tsparticles-1.24.1.tgz#7807fe1ce8c9f7caa7b17e6f3ed5e6e6789fd6d8"
-  integrity sha512-swPu6qjssFEuM8IUWvrRV0Q35raL8FaCK17x9g7Wt2Rtz/cN5JXbxDtEtQfS6MslKvUQI71L/kWVrS43eCzoJg==
+tsparticles@^1.25.0:
+  version "1.25.0"
+  resolved "https://registry.yarnpkg.com/tsparticles/-/tsparticles-1.25.0.tgz#78103e31d34e841e62ebfe494b553b808510e813"
+  integrity sha512-e2sacId827yeiaU/bSj29w1Fa6ocUdDC5Mv18A3VuJvaHCIzFYH4NuCqhYgaNyQaGjf4G/K11d6nFNVnGGu04A==
   optionalDependencies:
     pathseg "^1.2.0"
 
