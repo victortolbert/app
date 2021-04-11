@@ -12,7 +12,7 @@
 @import './base/transitions.css';
 
 @import 'tailwindcss/components';
-@import './components/vendor/codemirror.css';
+/* @import './components/vendor/codemirror.css'; */
 @import './components/vendor/izitoast.css';
 @import './components/vendor/vue-toastification.css';
 @import './components/button.css';

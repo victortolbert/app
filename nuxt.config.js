@@ -1,16 +1,4 @@
-import global from './helpers/global'
-import getRoutes from './helpers/get-routes'
-import getSiteMeta from './helpers/get-site-meta'
-import {defineNuxtConfig} from '@nuxtjs/composition-api'
-
-const meta = getSiteMeta()
-
-import path from 'path'
-
-export default defineNuxtConfig({
-  // publicRuntimeConfig: {
-  //   baseUrl: process.env.BASE_URL || 'http://localhost:3000',
-  // },
+export default {
   publicRuntimeConfig: {
     baseURL:
       process.env.NODE_ENV === 'production'
@@ -36,15 +24,12 @@ export default defineNuxtConfig({
       'kUYuz37F1+C7BjNL+R5WPV2wobFrGRddz46jd/s2',
     awsS3Bucket: process.env.AWS_S3_BUCKET || 'victortolbert',
     awsS3URL: process.env.AWS_S3_URL || 'https://the_url.s3.amazonaws.co',
-
     ackeeDomainId:
       process.env.ACKEE_DOMAIN_ID || '601bbeb1-8a0a-4d5d-ba1f-a75ce1cefda3',
-
     calendlyApiKey:
       process.env.CALENDLY_API_KEY || 'LCCHKGMJC2UDJQM6TXZQF4IZUDOB7QO3',
     contentApiURL:
       process.env.CONTENT_API_URL || 'http://localhost:3000/_content',
-
     githubCallbackURL:
       process.env.GITHUB_CALLBACK_URL ||
       'http://laravel-7.test/login/github/callback',
@@ -71,12 +56,6 @@ export default defineNuxtConfig({
     sentryDsn:
       process.env.SENTRY_DSN ||
       'https://c30dc69c78434050aed6f64b97cbd645@o244691.ingest.sentry.io/1422222',
-    stripePublicKey:
-      process.env.STRIPE_PUBLIC_KEY || 'pk_test_HHvO5elQXBUhbNuZWt0ngNLx',
-    stripePublishableKey:
-      process.env.STRIPE_PUBLISHABLE_KEY || 'pk_test_HHvO5elQXBUhbNuZWt0ngNLx',
-    vueAppApiURL:
-      process.env.VUE_APP_API_URL || 'https://victortolbert-api.herokuapp.com',
   },
 
   privateRuntimeConfig: {
@@ -91,313 +70,100 @@ export default defineNuxtConfig({
     },
   },
 
-  // Auto import components: https://go.nuxtjs.dev/config-components
-  components: true,
-
-  // Target (https://go.nuxtjs.dev/config-target)
   target: 'static',
 
   ssr: false,
 
-  // watch: ['~/config/*'],
-
-  // // Global page headers (https://go.nuxtjs.dev/config-head)
-  // head: {
-  //   htmlAttrs: {
-  //     lang: 'en-GB',
-  //     class: 'bg-black',
-  //   },
-  //   title: 'Nuxt Basic Blog',
-  //   meta: [
-  //     ...meta,
-  //     {charset: 'utf-8'},
-  //     {name: 'viewport', content: 'width=device-width, initial-scale=1'},
-  //     {
-  //       hid: 'description',
-  //       name: 'description',
-  //       content: global.siteDesc || '',
-  //     },
-  //     {property: 'og:site_name', content: global.siteName || ''},
-  //     {
-  //       hid: 'description',
-  //       name: 'description',
-  //       content: global.siteDesc || '',
-  //     },
-  //     {property: 'og:image:width', content: '740'},
-  //     {property: 'og:image:height', content: '300'},
-  //     {name: 'twitter:site', content: global.siteName || ''},
-  //     {name: 'twitter:card', content: 'summary_large_image'},
-  //   ],
-  //   link: [
-  //     {rel: 'icon', type: 'image/x-icon', href: '/favicon.ico'},
-  //     {
-  //       hid: 'canonical',
-  //       rel: 'canonical',
-  //       href: global.siteUrl,
-  //     },
-  //   ],
-  // },
-
   head: {
-    title: 'My amazing Nuxt application',
-    titleTemplate: 'Demo App | %s',
-    htmlAttrs: {
-      lang: 'en',
-    },
+    title: '',
     meta: [
-      ...meta,
       {charset: 'utf-8'},
-      {
-        name: 'viewport',
-        content: 'width=device-width, initial-scale=1',
-      },
-      {
-        hid: 'description',
-        name: 'description',
-        content: 'An amazing Nuxt application created by @design_coder',
-      },
-
-      // Twitter
-      // Test on: https://cards-dev.twitter.com/validator
-      {
-        hid: 'twitter:card',
-        name: 'twitter:card',
-        content: 'summary_large_image',
-      },
-      {hid: 'twitter:site', name: 'twitter:site', content: '@victor_tolbert'},
-      {
-        hid: 'twitter:url',
-        name: 'twitter:url',
-        content: 'https://app.vticonsulting.com',
-      },
-      {
-        hid: 'twitter:title',
-        name: 'twitter:title',
-        content: 'An amazing Nuxt application created by @design_coder',
-      },
-      {
-        hid: 'twitter:description',
-        name: 'twitter:description',
-        content: 'An amazing Nuxt application created by @design_coder',
-      },
-      {
-        hid: 'twitter:image',
-        name: 'twitter:image',
-        content: 'https://cominex.net/assets/img/preview.png',
-      },
-
-      // Open Graph
-      // Test on: https://developers.facebook.com/tools/debug/
-      {hid: 'og:site_name', property: 'og:site_name', content: 'Demo App'},
-      {hid: 'og:type', property: 'og:type', content: 'website'},
-      {
-        hid: 'og:url',
-        property: 'og:url',
-        content: 'https://app.vticonsulting.com',
-      },
-      {
-        hid: 'og:title',
-        property: 'og:title',
-        content: 'An amazing Nuxt application created by @design_coder',
-      },
-      {
-        hid: 'og:description',
-        property: 'og:description',
-        content: 'An amazing Nuxt application created by @design_coder',
-      },
-      {
-        hid: 'og:image',
-        property: 'og:image',
-        content: 'https://cominex.net/assets/img/preview.png',
-      },
-      {
-        hid: 'og:image:secure_url',
-        property: 'og:image:secure_url',
-        content: 'https://cominex.net/assets/img/preview.png',
-      },
-      {
-        hid: 'og:image:alt',
-        property: 'og:image:alt',
-        content: 'NuxtJS',
-      },
+      {name: 'viewport', content: 'width=device-width, initial-scale=1'},
     ],
-    link: [
-      {rel: 'icon', type: 'image/x-icon', href: '/favicon.svg'},
-      {
-        rel: 'stylesheet',
-        href:
-          'https://fonts.googleapis.com/css?family=Josefin+Sans|Playfair+Display',
-      },
-      {rel: 'icon', type: 'image/x-icon', href: '/favicon.svg'},
-      {
-        hid: 'canonical',
-        rel: 'canonical',
-        href: `https://app.vticonsulting.com/examples`,
-      },
-      // {
-      //   rel: 'stylesheet',
-      //   href:
-      //     'https://fonts.googleapis.com/css?family=Inter:400,500,600&display=swap',
-      // },
-      // {
-      //   rel: 'stylesheet',
-      //   href:
-      //     'https://fonts.googleapis.com/css2?family=Caveat:wght@400;430&family=Markazi+Text&display=swap',
-      // },
-      // {
-      //   rel: 'stylesheet',
-      //   href:
-      //     '//cdn.materialdesignicons.com/5.4.55/css/materialdesignicons.min.css',
-      // },
-    ],
-    script: [
-      // {
-      //   src:
-      //     'https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js',
-      //   defer: true,
-      // },
-      // {
-      //   src:
-      //     '//cdn.materialdesignicons.com/5.4.55/css/materialdesignicons.min.css',
-      //   defer: true,
-      // },
-    ],
-    bodyAttrs: {
-      // class: ['antialiased font-sans bg-gray-200'],
-    },
   },
 
-  // Global CSS: https://go.nuxtjs.dev/config-css
-  css: [
-    // '~/assets/css/bulma.scss',
-    // '~/assets/css/app.scss',
-    // '~/assets/css/content.css',
-    // '~/assets/css/transitions.css',
-    // '~/assets/styles/oruga_tailwind.css',
-    // '@fortawesome/fontawesome-svg-core/styles.css',
-    'video.js/dist/video-js.css',
-    '~/assets/scss/vue-select.scss',
-    'codemirror/lib/codemirror.css',
-    'codemirror/theme/base16-dark.css',
-    'swiper/swiper-bundle.css',
-    '@fortawesome/fontawesome-svg-core/styles.css',
+  build: {
+    extend(config, context) {
+      config.module.rules.push({
+        test: /\.(ogg|mp3|wav|mpe?g)$/i,
+        loader: 'file-loader',
+        options: {
+          name: '[path][name].[ext]',
+        },
+      })
+    },
+
+    preset: {
+      stage: 1,
+    },
+
+    transpile: [
+      /vue-awesome/,
+      /@fullcalendar.*/, // transpile ESM modules within all fullcalendar packages
+      'vee-validate/dist/rules',
+      'vue-instantsearch',
+      'instantsearch.js/es',
+    ],
+  },
+
+  buildModules: [
+    '@nuxt/typescript-build',
+    '@nuxtjs/color-mode',
+    '@nuxtjs/composition-api',
+    '@nuxtjs/google-fonts',
+    '@nuxtjs/pwa',
+    '@nuxtjs/tailwindcss',
+    'nuxt-use-sound',
   ],
+
+  components: true,
+
+  generate: {
+    interval: 2000,
+    fallback: '404.html',
+    // routes: ['/'],
+    // async routes() {
+    //   const {$content} = require('@nuxt/content')
+    //   const files = await $content('blog').fetch()
+
+    //   return files.map(file => (file.path === '/index' ? '/' : file.path))
+    // },
+    // },
+  },
+
+  // hooks: {
+  //   'content:file:beforeInsert': document => {
+  //     if (document.extension === '.md') {
+  //       const {time} = require('reading-time')(document.text)
+  //       document.readingTime = time
+
+  //       // const regexp = new RegExp(`^/(${options.i18n.locales.map(locale => locale.code).join('|')})`, 'gi')
+  //       // const { dir, slug, category } = document
+  //       // const _dir = dir.replace(regexp, '')
+  //       // const _slug = slug.replace(/^index/, '')
+  //       // const _category = category && typeof category === 'string' ? category : ''
+
+  //       // document.to = `${_dir}/${_slug}`
+  //       // document.category = _category
+  //     }
+  //   },
+  // },
 
   layoutTransition: {
     name: 'layout',
     mode: 'out-in',
   },
 
-  // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
-    // https://go.nuxtjs.dev/content
     '@nuxt/content',
-
-    // https://go.nuxtjs.dev/axios
-    '@nuxtjs/axios',
-
     '@nuxtjs/auth-next',
-
-    // '@nuxtjs/emotion,
-
-    // https://go.nuxtjs.dev/pwa
+    '@nuxtjs/axios',
+    '@nuxtjs/emotion',
     '@nuxtjs/pwa',
-
     '@nuxtjs/style-resources',
-
-    // Doc: https://oruga.io/documentation/#nuxt
-    // '@oruga-ui/oruga/nuxt',
-
     'nuxt-i18n',
-
-    // '@nuxtjs/feed',
-    // '@nuxtjs/sitemap',
-
-    // '@nuxtjs/auth-next',
-    // '@nuxtjs/auth',
-    // '@nuxtjs/feed',
-
-    // '@nuxtjs/sentry',
-    // '~/modules/algolia',
-    // '~/modules/auth',
-    // 'nuxt-basic-auth-module',
-    // 'nuxt-use-sound',
-    // 'vue-toastification/nuxt',
-    // 'yamlful-nuxt',
-    // [
-    //   'nuxt-lazy-load',
-    //   {
-    //     // These are the default values
-    //     images: true,
-    //     videos: true,
-    //     audios: true,
-    //     iframes: true,
-    //     native: false,
-    //     polyfill: true,
-    //     directiveOnly: false,
-
-    //     // Default image must be in the static folder
-    //     // defaultImage: '/images/default-image.jpg',
-
-    //     // To remove class set value to false
-    //     loadingClass: 'isLoading',
-    //     loadedClass: 'isLoaded',
-    //     appendClass: 'lazyLoad',
-
-    //     observerConfig: {
-    //       // See IntersectionObserver documentation
-    //     },
-    //   },
-    // ],
-    // '@nuxtjs/sitemap',
-    // '~/modules/test',
-    // ['~/modules/module', {message: 'my module!!!!!!!!!!!!!!'}],
-    // '~/modules/io',
   ],
 
-  // Modules for dev and build (recommended) (https://go.nuxtjs.dev/config-modules)
-  buildModules: [
-    '@nuxtjs/tailwindcss',
-    '@nuxt/typescript-build',
-    '@nuxtjs/color-mode',
-    '@nuxtjs/composition-api',
-    '@nuxtjs/pwa',
-    'nuxt-use-sound',
-    // '@nuxtjs/ackee',
-    // 'nuxt-windicss',
-    // '@nuxtjs/google-analytics',
-    // '@nuxtjs/moment',
-    // '@nuxtjs/style-resources',
-    // '@nuxtjs/stylelint-module',
-    // '@nuxtjs/stylelint-module',
-    // '@nuxtjs/svg',
-    // '@nuxtjs/tailwindcss',
-    // '@nuxtjs/vuetify',
-    // https://go.nuxtjs.dev/stylelint
-    // https://go.nuxtjs.dev/typescript
-    // 'nuxt-ackee',
-    // [
-    //   '@nuxt/typescript-build',
-    //   {
-    //     ignoreNotFoundWarnings: true,
-    //   },
-    // ],
-    // '@nuxtjs/netlify-files',
-    // 'nuxt-svg-loader',
-    // '@nuxt/http',
-    // '@nuxtjs/sitemap'
-    // '@nuxtjs/router',
-    // ['domain',
-    //   {
-    //     subDomains: [], // List of directories to hold te pages for your subdomains
-    //     rootDomain: 'root-domain', //  directory to hold the pages for root domain
-    //   },
-    // ],
-  ],
-  routerModule: {
-    keepDefaultRouter: true, // this line is mandatory...
-  },
-  // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
     '~/plugins/api',
     '~/plugins/data-api',
@@ -406,22 +172,23 @@ export default defineNuxtConfig({
     '~/plugins/fontawesome',
     '~/plugins/jam',
     '~/plugins/maps.client',
-    // '~/plugins/msw',
+    '~/plugins/markdown',
     '~/plugins/oruga',
     '~/plugins/particles.client',
     '~/plugins/portal-vue',
     '~/plugins/repository',
     '~/plugins/vee-validate',
     '~/plugins/vue-advanced-cropper.client',
+    '~/plugins/vue-aos.client',
     '~/plugins/vue-api-query',
     '~/plugins/vue-awesome-swiper.client',
-    // '~/plugins/vue-chartkick.client',
-    '~/plugins/markdown',
-    '~/plugins/vue-codemirror.client',
+    '~/plugins/vue-awesome',
     '~/plugins/vue-content-placeholders',
     '~/plugins/vue-drag-zone',
     '~/plugins/vue-float-label.client',
+    '~/plugins/vue-infinite-loading.client',
     '~/plugins/vue-instantsearch.client',
+    '~/plugins/vue-masonry-css.client',
     '~/plugins/vue-notifications.client',
     '~/plugins/vue-print-nb',
     '~/plugins/vue-ray',
@@ -432,61 +199,8 @@ export default defineNuxtConfig({
     '~/plugins/vue-toastification.client',
     '~/plugins/vue-touch-ripple',
     '~/plugins/vue-video-player.client',
-    '~/plugins/vue-virtual-scroller.client',
-
-    // {src: '~plugins/vue-video-player.js', ssr: false},
-    // '~plugins/vue-gtm',
-    // '~/plugins/vuelidate',
-    // '~plugins/vue-introjs.client',
-
-    // '~/plugins/auth.client',
-    // '~/plugins/i18n.client',
-    // '~/plugins/init-categories',
-    // '~/plugins/menu.client',
-    // '~/plugins/vue-observe-visibility.client',
-    // '~/plugins/vue-scrollactive',
-    // '~/plugins/vue-tables-2.client',
-    // '~/plugins/vue-tippy',
-    // '~/plugins/auth.client',
-    // '~/plugins/devto',
-    // '~/plugins/i18n.client',
-    // '~/plugins/init-categories',
-    // '~/plugins/menu.client',
-    // '~/plugins/portal-vue',
-    // '~/plugins/vue-api-query',
-    // '~/plugins/vue-chartkick.client',
-    // '~/plugins/vue-content-placeholders',
-    // '~/plugins/vue-observe-visibility.client',
-    // '~/plugins/vue-tables-2.client',
-    // '~/plugins/vue-tippy',
-    // '~/plugins/vuelidate',
-    // '~/plugins/axios.plugin',
-    // '~/plugins/cookies',
-    // '~/plugins/dynamic-marquee.client',
-    // '~/plugins/highcharts',
-    // '~/plugins/inject-ww.client',
-    // '~/plugins/polyfills.client',
-    // '~/plugins/repositories',
-    // '~/plugins/slick.client.js',
-    // '~/plugins/socketio.client.js',
-    // '~/plugins/to-title-case',
-    // '~/plugins/v-tooltip',
-    // '~/plugins/vue-cocomaterial-image',
-    // '~/plugins/vue-feather-icons',
-    // '~/plugins/vue-good-table.client',
-    // '~/plugins/vue-notifications',
-    // '~/plugins/vue-scroll-reveal.client',
-    // '~/plugins/vue-select',
-    // '~/plugins/vue-trix.client',
-    // '~/plugins/vuebars',
   ],
 
-  server: {
-    host: '0.0.0.0',
-    port: process.env.PORT || 3000,
-  },
-
-  // serverMiddleware: ['~/myServerMiddleware', '~/server'],
   router: {
     // middleware: ['check-auth', 'ui'],
     middleware: ['auth', 'ui'],
@@ -502,18 +216,29 @@ export default defineNuxtConfig({
     // },
   },
 
-  // ackee: {
-  //   server: 'https://example.com',
-  //   domainId: 'aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee',
-  //   /* see configuration for more */
-  //   // do not gather detailed data unless user gives permission
-  //   detailed: true,
-  //   // also tracks when on localhost
-  //   ignoreLocalhost: false,
-  //   // also tracks your own visits
-  //   ignoreOwnVisits: false,
-  //   storageKey: 'nuxt-ackee',
+  // routerModule: {
+  //   keepDefaultRouter: true, // this line is mandatory...
   // },
+
+  server: {
+    host: '0.0.0.0',
+    port: process.env.PORT || 3000,
+  },
+
+  // serverMiddleware: ['~/server'],
+
+  /**
+   * Add on configuration
+   */
+
+  ackee: {
+    server: 'https://example.com',
+    domainId: 'aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee',
+    detailed: true,
+    ignoreLocalhost: true,
+    ignoreOwnVisits: true,
+    storageKey: 'nuxt-ackee',
+  },
 
   auth: {
     fullPathRedirect: true,
@@ -525,124 +250,16 @@ export default defineNuxtConfig({
     },
     rewriteRedirects: true,
     strategies: {
-      // the cookie scheme is based on `local` but modified for cookie based APIs.
-      // instead of using a token, depends on cookie set by auth provider.
-      // All local scheme options are also supported.
-      cookie: {
-        cookie: {
-          // (optional) If set we check this cookie exsistence for loggedIn check
-          name: 'XSRF-TOKEN',
-        },
-        endpoints: {
-          // (optional) If set, we send a get request to this endpoint before login
-          csrf: {
-            url: '',
-          },
-        },
-      },
-      // this.$auth.loginWith('facebook')
-      // This provider is based on oauth2 scheme and supports all scheme options.
-      facebook: {
-        endpoints: {
-          userInfo:
-            'https://graph.facebook.com/v6.0/me?fields=id,name,picture{url}',
-        },
-        clientId: '...',
-        scope: ['public_profile', 'email'],
-      },
-      // this.$auth.loginWith('github')
-      github: {
-        clientId: '...',
-        clientSecret: '...',
-      },
-      // this.$auth.loginWith('google')
-      google: {
-        clientId: '...',
-      },
-      // the default, credentials/token based scheme for flows like JWT
-      local: {
-        token: {
-          // used to specify which field of the response JSON to be
-          // used for value. It can be false to directly use API
-          // response or being more complicated like `auth.token`
-          property: 'token',
-          // Useful for Cookie only flows
-          // can be used to disable all token handling
-          // required: true,
-          required: false,
-          // Authorization header name to be used in axios requests
-          name: 'Authorization',
-          // the expiration time of the token, in seconds
-          // default is set to 30 minutes
-          // used if for some reason the token couldn't be decoded to get the expiration date
-          maxAge: 1800,
-          // Authorization header type to be used in axios requests
-          // type: 'Bearer'
-          type: false,
-        },
-        user: {
-          //  can be used to specify which field of the response JSON to
-          // be used for value.It can be false to directly use API
-          // response or being more complicated like auth.user.
-          property: 'user',
-          // autoFetch: true
-        },
-        clientId: false,
-        grantType: false,
-        scope: false,
-        // Each endpoint is used to make requests using axios.
-        // They are basically extending Axios Request Config.
-        // https://github.com/axios/axios#request-config
-        // To disable an endpoint, set its value to `false`
-        endpoints: {
-          login: {url: '/api/auth/login', method: 'post'},
-          logout: {url: '/api/auth/logout', method: 'post'},
-          user: {url: '/api/auth/user', method: 'get'},
-        },
-      },
-      laravelJWT: {
-        provider: 'laravel/jwt',
-        url: '<laravel url>',
-        endpoints: {
-          // ...
-        },
-        token: {
-          property: 'access_token',
-          maxAge: 60 * 60,
-        },
-        refreshToken: {
-          maxAge: 20160 * 60,
-        },
-      },
-      // this.$auth.loginWith('laravelSanctum', {data: {email: '', password: ''}})
-      // based on cookie scheme and supports all scheme options.
       laravelSanctum: {
         provider: 'laravel/sanctum',
         url:
           process.env.NODE_ENV === 'production'
             ? 'https://vticonsulting.com'
             : 'http://vticonsulting.test',
-        // endpoints: {
-        //   // (optional) If set, we send a get request to this endpoint before login
-        //   csrf: {
-        //     url: '/sanctum/csrf-cookie',
-        //   },
-        // },
       },
     },
   },
 
-  proxy: {
-    '/laravel': {
-      pathRewrite: {'^/laravel': '/'},
-      target:
-        process.env.NODE_ENV === 'production'
-          ? 'https://vticonsulting.com'
-          : 'http://vticonsulting.test',
-    },
-  },
-
-  // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
     baseURL: process.env.apiURL || 'https://api.victortolbert.com/',
     credentials: true,
@@ -653,8 +270,8 @@ export default defineNuxtConfig({
     classSuffix: '',
   },
 
-  // Content module configuration: https://go.nuxtjs.dev/config-content
   // content: {
+  //   liveEdit: false,
   //   markdown: {
   //     remarkPlugins: [['remark-emoji', {emoticon: true}]],
   //     prism: {
@@ -667,44 +284,8 @@ export default defineNuxtConfig({
   //   },
   // },
 
-  // // RSS Feed Configuration (https://github.com/nuxt-community/feed-module)
-  // feed() {
-  //   const baseUrlArticles = `${global.siteUrl}/articles`
-  //   const baseLinkFeedArticles = '/articles'
-  //   const feedFormats = {
-  //     rss: {type: 'rss2', file: 'rss.xml'},
-  //     json: {type: 'json1', file: 'feed.json'},
-  //   }
-  //   const {$content} = require('@nuxt/content')
-
-  //   const createFeedArticles = async function (feed) {
-  //     feed.options = {
-  //       title: global.siteName || '',
-  //       description: global.siteDesc || '',
-  //       link: baseUrlArticles,
-  //     }
-  //     const articles = await $content('articles').fetch()
-
-  //     articles.forEach(article => {
-  //       const url = `${baseUrlArticles}/${article.slug}`
-
-  //       feed.addItem({
-  //         title: article.title,
-  //         id: url,
-  //         link: url,
-  //         date: new Date(article.published),
-  //         description: article.description,
-  //         content: article.description,
-  //         author: global.twitterHandle,
-  //       })
-  //     })
-  //   }
-
-  //   return Object.values(feedFormats).map(({file, type}) => ({
-  //     path: `${baseLinkFeedArticles}/${file}`,
-  //     type,
-  //     create: createFeedArticles,
-  //   }))
+  // eslint: {
+  //   cache: false,
   // },
 
   // feed: [
@@ -744,23 +325,12 @@ export default defineNuxtConfig({
   //   id: process.env.GOOGLE_ANALYTICS_ID || 'UA-76464598-5', // Use as fallback if no runtime config is provided
   // },
 
-  // hooks: {
-  //   'content:file:beforeInsert': document => {
-  //     if (document.extension === '.md') {
-  //       const {time} = require('reading-time')(document.text)
-  //       document.readingTime = time
-
-  //       // const regexp = new RegExp(`^/(${options.i18n.locales.map(locale => locale.code).join('|')})`, 'gi')
-  //       // const { dir, slug, category } = document
-  //       // const _dir = dir.replace(regexp, '')
-  //       // const _slug = slug.replace(/^index/, '')
-  //       // const _category = category && typeof category === 'string' ? category : ''
-
-  //       // document.to = `${_dir}/${_slug}`
-  //       // document.category = _category
-  //     }
-  //   },
-  // },
+  googleFonts: {
+    families: {
+      Roboto: true,
+      'Roboto+Condensed': true,
+    },
+  },
 
   i18n: {
     locales: [
@@ -795,6 +365,16 @@ export default defineNuxtConfig({
     // },
   },
 
+  proxy: {
+    '/laravel': {
+      pathRewrite: {'^/laravel': '/'},
+      target:
+        process.env.NODE_ENV === 'production'
+          ? 'https://vticonsulting.com'
+          : 'http://vticonsulting.test',
+    },
+  },
+
   // PWA module configuration: https://go.nuxtjs.dev/pwa
   pwa: {
     manifest: {
@@ -805,7 +385,6 @@ export default defineNuxtConfig({
     },
   },
 
-  // // Sitemap Configuration (https://github.com/nuxt-community/sitemap-module)
   // sitemap: {
   //   hostname: global.siteUrl,
   //   routes() {
@@ -835,28 +414,9 @@ export default defineNuxtConfig({
   },
 
   storybook: {
-    port: 3006,
-    stories: [
-      '~/components/**/*.stories.mdx',
-      '~/components/**/*.stories.@(js|jsx|ts|tsx)',
-    ],
-    parameters: {
-      darkMode: {
-        stylePreview: true,
-      },
-      viewMode: 'docs',
-      actions: {argTypesRegex: '^on[A-Z].*'},
-    },
-    addons: [
-      '@storybook/addon-a11y',
-      '@storybook/addon-storysource',
-      '@whitespace/storybook-addon-html',
-      // '@storybook/addon-docs',
-      '@storybook/addon-notes',
-      // 'storybook-dark-mode',
-    ],
-    webpackFinal(config, {configDir}) {
-      // manipulate webpack config
+    port: 4000,
+    stories: ['~/components/**/*.stories.mdx'],
+    webpackFinal(config) {
       return config
     },
   },
@@ -866,7 +426,8 @@ export default defineNuxtConfig({
   },
 
   tailwindcss: {
-    jit: true,
+    // jit: true,
+    configPath: '~/config/tailwind.config.js',
   },
 
   toast: {
@@ -877,66 +438,8 @@ export default defineNuxtConfig({
     // Or disable CSS injection
     // cssFile: false,
   },
+
   typescript: {
     typeCheck: false,
   },
-  // windicss: {
-  //   scan: {
-  //     dirs: ['./'],
-  //     exclude: [
-  //       'node_modules',
-  //       '.git',
-  //       '.nuxt/**/*',
-  //       '*.template.html',
-  //       // Any classes added in app.html (that have not previously been referenced) will need to be added to the safelist
-  //       'app.html',
-  //     ],
-  //   },
-  //   transformCSS: 'pre',
-  //   preflight: {
-  //     alias: {
-  //       // add nuxt aliases
-  //       'nuxt-link': 'a',
-  //     },
-  //   },
-  // },
-  // Build Configuration (https://go.nuxtjs.dev/config-build)
-  build: {
-    extend(config, context) {
-      config.module.rules.push({
-        test: /\.(ogg|mp3|wav|mpe?g)$/i,
-        loader: 'file-loader',
-        options: {
-          name: '[path][name].[ext]',
-        },
-      })
-    },
-
-    preset: {
-      stage: 1,
-    },
-    transpile: [
-      /@fullcalendar.*/, // transpile ESM modules within all fullcalendar packages
-      'vee-validate/dist/rules',
-      'vue-instantsearch',
-      'instantsearch.js/es',
-    ],
-  },
-
-  // eslint: {
-  //   cache: false,
-  // },
-
-  generate: {
-    // interval: 2000,
-    fallback: '404.html',
-    // routes: ['/'],
-    // async routes() {
-    //   const {$content} = require('@nuxt/content')
-    //   const files = await $content('blog').fetch()
-
-    //   return files.map(file => (file.path === '/index' ? '/' : file.path))
-    // },
-    // },
-  },
-})
+}

@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import groupBy from 'lodash.groupby'
+import {groupBy} from 'lodash'
 import defu from 'defu'
 import {addDays} from 'date-fns'
 import {getEventIndexById} from '~/helpers'
