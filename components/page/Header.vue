@@ -1,4 +1,3 @@
-<!-- @vue-ignore -->
 <script>
 export default {
   props: {

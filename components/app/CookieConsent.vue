@@ -1,6 +1,7 @@
 <script>
 // https://github.com/apertureless/vue-cookie-law
 import * as Cookie from 'tiny-cookie'
+
 const STORAGE_TYPES = {
   local: 'localStorage',
   cookies: 'cookies',
@@ -79,7 +80,7 @@ export default {
     },
     cookieOptions: {
       type: Object,
-      default: () => {},
+      default: () => { },
       required: false,
     },
   },
@@ -242,24 +243,18 @@ export default {
             :href="buttonLink"
             v-if="externalButtonLink"
             :class="buttonClass"
-          >
-            {{ buttonLinkText }}
-          </a>
+          >{{ buttonLinkText }}</a>
           <OButton
             tag="router-link"
             :to="buttonLink"
             v-if="internalButtonLink"
             :class="buttonClass"
-          >
-            {{ buttonLinkText }}
-          </OButton>
+          >{{ buttonLinkText }}</OButton>
           <button
             v-if="buttonDecline"
             :class="buttonDeclineClass"
             @click="decline"
-          >
-            {{ buttonDeclineText }}
-          </button>
+          >{{ buttonDeclineText }}</button>
           <button :class="buttonClass" @click="accept">{{ buttonText }}</button>
         </div>
       </slot>

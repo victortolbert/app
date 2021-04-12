@@ -1,33 +1,3 @@
-<script>
-export default {
-  data() {
-    return {
-      isOpen: false,
-    }
-  },
-  methods: {
-    onClickAway(event) {
-      console.log(event)
-    },
-    open() {
-      this.isOpen = true
-      // this.$nextTick(() => {
-      //   this.$refs.search.focus()
-      // })
-    },
-    close() {
-      this.isOpen = false
-      // this.$nextTick(() => {
-      //   this.$refs.input.focus()
-      // })
-    },
-    cancel() {
-      this.close()
-    },
-  },
-}
-</script>
-
 <template>
   <header class="flex items-center justify-between px-4 mx-auto lg:px-8">
     <nav class="flex" aria-label="Breadcrumb">
@@ -36,7 +6,7 @@ export default {
           <div>
             <NuxtLink to="/">
               <BaseIconOutlined name="home" />
-              <span class="sr-only"> {{ $t('home') }} </span>
+              <span class="sr-only">{{ $t('home') }}</span>
             </NuxtLink>
           </div>
         </li>
@@ -55,24 +25,10 @@ export default {
                 clip-rule="evenodd"
               />
             </svg>
-            <NuxtLink to="/" class="ml-4 text-sm font-medium">
-              {{ $t('dashboard') }}
-            </NuxtLink>
+            <NuxtLink to="/" class="ml-4 text-sm font-medium">{{ $t('dashboard') }}</NuxtLink>
           </div>
         </li>
       </ol>
     </nav>
-
-    <BaseLinksButton
-      :options="[
-        {id: 1, name: 'affiliates', label: 'List Affiliates'},
-        {id: 1, name: 'regions', label: 'Regions'},
-        {id: 1, name: 'affiliates', label: 'Staff'},
-        {id: 1, name: 'agencies', label: 'Agencies'},
-        {id: 1, name: 'churches', label: 'Churches'},
-      ]"
-    >
-      {{ $t('quick_links') }}
-    </BaseLinksButton>
   </header>
 </template>

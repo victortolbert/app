@@ -1,6 +1,6 @@
 <script>
-import { courseParticipants } from '~/__mocks__'
-import { formatRelative } from 'date-fns'
+import {courseParticipants} from '~/__mocks__'
+import {formatRelative} from 'date-fns'
 
 export default {
   name: 'BaseTable',
@@ -103,7 +103,7 @@ export default {
           <template slot="searchable" slot-scope="props">
             <OInput
               v-model="props.filters[props.column.field]"
-              placeholder
+              placeholder=""
               icon="search"
               icon-pack="fas"
               expanded
@@ -113,7 +113,11 @@ export default {
           <template v-slot="props">
             <span class="flex items-center space-x-4">
               <span class="relative inline-block">
-                <img class="w-8 h-8 rounded-full" :src="props.row.imageUrl" :alt="props.row.name" />
+                <img
+                  class="w-8 h-8 rounded-full"
+                  :src="props.row.imageUrl"
+                  :alt="props.row.name"
+                />
                 <span
                   class="absolute top-0 right-0 block w-2 h-2 bg-green-400 rounded-full ring-2 ring-white"
                 />
@@ -122,7 +126,9 @@ export default {
                 type="button"
                 class="inline-flex items-center px-2.5 py-1.5 border border-gray-300 shadow-sm text-xs font-medium rounded text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500"
                 @click="showProfile = true"
-              >{{ props.row.name }}</button>
+              >
+                {{ props.row.name }}
+              </button>
             </span>
           </template>
         </OTableColumn>
@@ -139,7 +145,7 @@ export default {
           <template slot="searchable" slot-scope="props">
             <OInput
               v-model="props.filters[props.column.field]"
-              placeholder
+              placeholder=""
               icon="search"
               icon-pack="fas"
               expanded
@@ -151,13 +157,15 @@ export default {
               type="button"
               class="text-primary-600 hover:text-primary-900"
               @click="showCourseInformation = true"
-            >{{ props.row.course }}</button>
+            >
+              {{ props.row.course }}
+            </button>
           </template>
         </OTableColumn>
 
         <OTableColumn
           field="lastActivity"
-          label
+          label=""
           sortable
           width="150"
           numeric
@@ -173,10 +181,12 @@ export default {
               input-class="block w-full border-gray-300 rounded-md focus:ring-primary-500 focus:border-primary-500 sm:text-sm"
             />
           </template>
-          <template v-slot="props">{{ formatDate(props.row.lastActivity) }}</template>
+          <template v-slot="props">
+            {{ formatDate(props.row.lastActivity) }}
+          </template>
         </OTableColumn>
 
-        <OTableColumn width="160" label v-slot="props">
+        <OTableColumn width="160" label="" v-slot="props">
           <span>
             <BaseProgressMeter :first-meter="props.row.progress * 100" />
           </span>
@@ -204,9 +214,9 @@ export default {
               Something else with: {{ props.row.id }}</ODropdownItem
             >
           </ODropdown>
-        </OTableColumn>-->
+        </OTableColumn> -->
         <template v-slot:empty>
-          <BaseBlankState>There are no matching results</BaseBlankState>
+          <BaseBlankState> There are no matching results </BaseBlankState>
         </template>
       </OTable>
 
@@ -240,12 +250,25 @@ export default {
       </OModal>
 
       <!-- ProfileSidebar -->
-      <OSidebar fullheight right position="fixed" overlay :open.sync="showProfile">
-        <section class="flex flex-col h-full bg-white divide-y divide-gray-200 shadow-xl">
+      <OSidebar
+        fullheight
+        right
+        position="fixed"
+        overlay
+        :open.sync="showProfile"
+      >
+        <section
+          class="flex flex-col h-full bg-white divide-y divide-gray-200 shadow-xl"
+        >
           <div class="flex flex-col flex-1 min-h-0 overflow-y-scroll">
             <header class="px-4 mt-4 sm:px-6">
               <div class="flex items-start justify-between">
-                <h2 id="slide-over-heading" class="text-lg font-medium text-gray-900">Profile</h2>
+                <h2
+                  id="slide-over-heading"
+                  class="text-lg font-medium text-gray-900"
+                >
+                  Profile
+                </h2>
                 <div class="flex items-center ml-3 h-7">
                   <button
                     @click="showProfile = false"
@@ -260,7 +283,10 @@ export default {
 
             <article class="relative flex-1 px-4 mt-4 sm:px-6">
               <!-- Replace with your content -->
-              <div class="h-full border-2 border-gray-200 border-dashed" aria-hidden="true" />
+              <div
+                class="h-full border-2 border-gray-200 border-dashed"
+                aria-hidden="true"
+              />
               <!-- /End replace -->
             </article>
           </div>
@@ -269,11 +295,15 @@ export default {
             <button
               type="button"
               class="px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500"
-            >Cancel</button>
+            >
+              Cancel
+            </button>
             <button
               type="submit"
               class="inline-flex justify-center px-4 py-2 ml-4 text-sm font-medium text-white border border-transparent rounded-md shadow-sm bg-primary-600 hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500"
-            >Save</button>
+            >
+              Save
+            </button>
           </footer>
         </section>
       </OSidebar>

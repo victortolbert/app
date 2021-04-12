@@ -1,0 +1,84 @@
+:root {
+    --color-text-base: #ffffff;
+    --color-text-muted: c7d2fe;
+    --color-text-inverted: #4f4635;
+    --color-fill: #4338ca;
+    --color-button-accent: #ffffff;
+    --color-button-accent-hover: #eef2ff;
+    --color-button-muted: #6366f1;
+
+    --color-primary: #98002f;
+    --color-primary-50: #faf2f5;
+    --color-primary-100: #f5e6ea;
+    --color-primary-200: #e5bfcb;
+    --color-primary-300: #d699ac;
+    --color-primary-400: #b74d6d;
+    --color-primary-500: #98002f;
+    --color-primary-600: #89002a;
+    --color-primary-700: #720023;
+    --color-primary-800: #5b001c;
+    --color-primary-900: #4a0017;
+
+    --color-secondary: #16abe4;
+    --color-secondary-50: #f3fbfe;
+    --color-secondary-100: #e8f7fc;
+    --color-secondary-200: #c5eaf8;
+    --color-secondary-300: #a2ddf4;
+    --color-secondary-400: #5cc4ec;
+    --color-secondary-500: #16abe4;
+    --color-secondary-600: #149acd;
+    --color-secondary-700: #1180ab;
+    --color-secondary-800: #0d6789;
+    --color-secondary-900: #0b5470;
+
+    --color-tertiary: #0e50a9;
+    --color-tertiary-50: #f3f6fb;
+    --color-tertiary-100: #e7eef6;
+    --color-tertiary-200: #c3d3ea;
+    --color-tertiary-300: #9fb9dd;
+    --color-tertiary-400: #5685c3;
+    --color-tertiary-500: #0e50a9;
+    --color-tertiary-600: #0d4898;
+    --color-tertiary-700: #0b3c7f;
+    --color-tertiary-800: #083065;
+    --color-tertiary-900: #072753;
+
+    --color-pink: #faa7ed;
+    --color-navy: #0c1f72;
+    --color-navy-opaque: rgba(6, 0, 79, 0.77);
+    --color-light: #ffffff;
+    --color-dark: #252525;
+    --color-flush-valencia: #d4504c;
+    --color-flush-mahogany: #c23934;
+    --color-koromiko: #ffb75d;
+    --color-sunshade: #ff9e2c;
+    --color-emerald: #4bca81;
+    --color-salem: #04844b;
+    --color-kaitoke-green: #004a29;
+    --color-gorse: #fff03f;
+    --color-lemon-chiffon: #faffbd;
+
+    --color-firebrick: hsla(359, 70%, 43%, 1);
+    --color-lime-green: hsla(126, 69%, 43%, 1);
+    --color-casablanca: hsla(35, 85%, 62%, 1);
+    --color-viking: hsla(194, 67%, 62%, 1);
+    --color-light-gray: hsla(109, 0%, 67%, 1);
+    --color-raven: hsla(208, 7%, 46%, 1);
+    --color-biscay: hsla(221, 61%, 24%, 1);
+
+    --color-danger: var(--color-firebrick);
+    --color-warning: var(--color-casablanca);
+    --color-success: var(--color-lime-green);
+    --color-info: var(--color-biscay);
+
+    /* Oruga */
+
+    --oruga-variant-primary: var(--color-primary);
+    --oruga-color-primary-invert: var(--color-white);
+    --oruga-variant-secondary: var(--color-secondary);
+    --oruga-variant-danger: var(--color-danger);
+    --oruga-color-info: var(--color-info);
+    --oruga-color-info-invert: var(--color-info);
+
+    --oruga-button-background-color: var(--oruga-variant-primary);
+}

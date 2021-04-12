@@ -3,33 +3,39 @@
     "target": "ES2018",
     "module": "ESNext",
     "moduleResolution": "Node",
-    "lib": ["ESNext", "ESNext.AsyncIterable", "DOM"],
+    "lib": [
+      "ESNext",
+      "ESNext.AsyncIterable",
+      "DOM"
+    ],
     "esModuleInterop": true,
     "allowJs": true,
     "sourceMap": true,
     "strict": true,
     "noEmit": true,
-    "baseUrl": ".",
     "experimentalDecorators": true,
+    "baseUrl": ".",
     "paths": {
-      "~/*": ["./*"],
-      "@/*": ["./*"]
+      "~/*": [
+        "./*"
+      ],
+      "@/*": [
+        "./*"
+      ]
     },
     "types": [
       "@nuxt/content",
       "@nuxt/types",
-      "@nuxtjs/auth-next",
       "@nuxtjs/axios",
       "@nuxtjs/color-mode",
-      "@types/node"
+      "@nuxtjs/sentry",
+      "@types/node",
+      "nuxt-i18n",
     ]
   },
   "exclude": [
     "node_modules",
     ".nuxt",
-    "dist",
-    ".nuxt-storybook",
-    ".storybook",
-    ".yalc"
+    "dist"
   ]
 }

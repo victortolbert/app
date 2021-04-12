@@ -1,40 +1,12 @@
 <script>
-import {getColors} from 'theme-colors'
-const {generate, presetPalettes} = require('@ant-design/colors')
-import {defineComponent, computed} from '@nuxtjs/composition-api'
-import {css} from '@emotion/css'
-import theme from '~/theme'
-// console.log(Object.values(theme.colors.oliveGreen))
-
-// get variable from inline style
-// element.style.getPropertyValue("--my-var");
-
-// get variable from wherever
-// getComputedStyle(element).getPropertyValue("--my-var");
-
-// set variable on inline style
-// element.style.setProperty("--my-var", jsVar + 4);
-
-// const elm = document.documentElement;
-// elm.style.setProperty('--USER-THEME-COLOR', 'tomato');
-// const elm = document.querySelector('#note-uid');
-// elm.style.setProperty('--note-color', 'yellow');
-
-// :root {
-//   --lightness: 50;
-// }
-// body {
-//   background: hsl(25, 80%, calc(var(--lightness) * 1%));
-// }
-// body {
-//   --lightness: calc(var(--lightness * 0.8));
-//   background: hsl(25, 80%, calc(var(--lightness) * 1%));
-// }
+const { generate, presetPalettes } = require('@ant-design/colors')
+import { defineComponent } from '@nuxtjs/composition-api'
+import { css } from '@emotion/css'
+import theme from '~/config/theme'
 
 export default defineComponent({
+  name: 'DefaultLayout',
   setup() {
-    // const colors = getColors('#da5d3f')
-    // const colors = generate('#1890ff')
     const colors = generate(Object.values(theme.colors.paprika)[5])
     const applyStyles = computed(() => {
       return css({})
@@ -50,15 +22,10 @@ export default defineComponent({
   created() {
     const parts = location.hostname.split('.')
     const subdomain = parts.shift()
-    const upperleveldomain = parts.join('.')
-    const secondleveldomain = parts.slice(-2).join('.')
+    console.log({ subdomain })
+    this.$store.commit('SET_THEME', subdomain)
+  },
 
-    this.$store.commit('SET_SUBDOMAIN', subdomain)
-  },
-  mounted() {
-    this.$jam('this.$jam plugin works in mounted...')
-    // ctx.$icon(512)
-  },
 })
 </script>
 
@@ -66,7 +33,10 @@ export default defineComponent({
   <ThemeProvider :theme="theme">
     <div
       id="app"
-      :class="[$store.state.affiliate.name.toLowerCase(), applyStyles]"
+      :class="[
+        $store.state.affiliate.name.toLowerCase(),
+        applyStyles
+      ]"
       class="relative flex flex-col min-h-screen"
     >
       <AppOfflineIndicator />

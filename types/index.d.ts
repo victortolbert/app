@@ -1,5 +1,4 @@
 import { NuxtAxiosInstance } from "@nuxtjs/axios"
-import { ViteSSGContext } from 'vite-ssg'
 
 declare module "vue/types/vue" {
   interface Vue {
@@ -23,8 +22,6 @@ declare module "vuex/types/index" {
   }
 }
 
-export type UserModule = (ctx: ViteSSGContext) => void
-
 export type SchemaValue = 'auto' | 'dark' | 'light'
 
 export interface Advocate {}
@@ -36,7 +33,6 @@ export interface AgencyItem {
   agency_address_state: string
   state: number
 }
-
 
 
 

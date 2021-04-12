@@ -1,11 +1,11 @@
 <script>
-import Multiselect from 'vue-multiselect'
+import {useContext, defineComponent} from '@nuxtjs/composition-api'
 import CKEditor from '@ckeditor/ckeditor5-vue2'
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic'
+import Multiselect from 'vue-multiselect'
 import FullCalendar from '@fullcalendar/vue'
 // import {Octokit} from '@octokit/rest'
 // import {directive} from 'vue-awesome-swiper'
-import {useContext, defineComponent} from '@nuxtjs/composition-api'
 
 export default defineComponent({
   setup() {

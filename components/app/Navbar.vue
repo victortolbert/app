@@ -1,52 +1,27 @@
 <script>
-import {defineComponent, ref} from '@nuxtjs/composition-api'
+import { defineComponent, ref } from '@nuxtjs/composition-api'
 import useUser from '~/composables/useUser'
 
-export default {
+export default defineComponent({
   setup() {
-    const {isLoggedIn, login} = useUser()
+    const { isLoggedIn, login } = useUser()
     const showMenu = ref(false)
     const showNewProjectView = ref(false)
     const showProfile = ref(false)
     const showVolunteerView = ref(false)
     const isAdmin = ref(false)
     const fullwidth = ref(false)
-    const people = ref([
-      {
-        id: 1,
-        name: 'Jeremy Doublestein',
-        username: 'jdoublestein',
-        isOnline: true,
-      },
-      {
-        id: 2,
-        name: 'Victor Tolbert',
-        username: 'username',
-        isOnline: false,
-      },
-    ])
 
     return {
       isLoggedIn,
       login,
       isAdmin,
       fullwidth,
-      people,
       showMenu,
       showNewProjectView,
       showProfile,
       showVolunteerView,
     }
-  },
-  props: {
-    person: {
-      type: Object,
-      default: () => ({
-        name: 'Tatyana McNish',
-        email: 'tatyana@ema.promiseserves.org',
-        profile_photo_url: 'https://cominex.net/assets/img/people/tatyana.jpeg',
-      }),
-    },
   },
   computed: {
     routes() {
@@ -71,72 +46,28 @@ export default {
           label: this.$t('calendar'),
           path: '/calendar/',
         },
-        // {
-        //   name: 'events',
-        //   label: this.$t('events'),
-        //   path: '/events/',
-        // },
-        // {
-        //   name: 'about',
-        //   label: this.$t('about'),
-        //   path: '/about/',
-        // },
-        // {
-        //   name: 'learn',
-        //   label: this.$t('learn'),
-        //   path: '/learn/',
-        // },
-        // {
-        //   name: 'demos',
-        //   label: this.$t('demos'),
-        //   path: '/demos/',
-        // },
-        // {
-        //   name: 'blog',
-        //   label: this.$t('blog'),
-        //   path: '/blog/',
-        // },
-        // {
-        //   name: 'docs',
-        //   label: this.$t('docs'),
-        //   path: '/docs/',
-        // },
-        // {
-        //   name: 'uses',
-        //   label: this.$t('uses'),
-        //   path: '/uses/',
-        // },
-        // {
-        //   name: 'support',
-        //   label: this.$t('support'),
-        //   path: '/support/',
-        // },
-        // {
-        //   name: 'pricing',
-        //   label: this.$t('pricing'),
-        //   path: '/pricing/',
-        // },
       ]
     },
   },
   methods: {
     show(path) {
-      // .push({ path: 'register', query: { plan: 'private' } })
       this.$router.push(this.localePath(`/${path}/`))
     },
-    handleRightClick(e) {
-      e.preventDefault()
-      this.$oruga.modal.open({
-        parent: this,
-        component: ModalForm,
-        custom: true,
-        trapFocus: true,
-      })
+    handleRightClick(event) {
+      event.preventDefault()
+      this.$oruga.modal.open('testing')
+    },
 
-      // this.$oruga.modal.open('testing')
+    goToDocs() {
+      this.$sounds.back.play()
+      window.location = 'https://oruga.io/documentation/#nuxt-module'
+    },
+
+    goToGithub() {
+      window.location = 'https://github.com/oruga-ui/oruga'
     },
   },
-}
+})
 </script>
 
 <template>
@@ -150,7 +81,7 @@ export default {
     ]"
   >
     <div class="px-4 sm:px-6 lg:px-8">
-      <div class="flex justify-between h-16">
+      <div class="flex justify-between w-full h-16 mx-auto max-w-7xl">
         <div class="flex">
           <div class="flex items-center mr-2 -ml-2 md:hidden">
             <!-- Mobile menu button -->
@@ -165,22 +96,22 @@ export default {
           </div>
 
           <div class="flex items-center flex-shrink-0">
-            <AffiliateDashboardLink />
+            <NuxtLink
+              class="flex items-center justify-center"
+              to="/"
+              @contextmenu.native="handleRightClick"
+            >
+              <BaseLogo class="text-primary-500" :name="$store.state.theme" />
+            </NuxtLink>
           </div>
 
-          <div class="items-center hidden md:ml-6 md:flex md:space-x-8">
-            <!-- <NuxtLink :to="localePath({path: '/'})">
-              {{ $t('dashboard') }}
-            </NuxtLink> -->
+          <div class="items-center flex-1 hidden md:ml-6 md:flex md:space-x-8">
+            <BaseMenu :options="[{ id: 1, name: 'Testing' }]">Affiliates</BaseMenu>
 
-            <BaseMenu :paths="['about', 'contact', 'georgia_seow']">
-              {{ $t('about') }}
-            </BaseMenu>
+            <BaseMenu :paths="['about', 'contact', 'georgia_seow']">{{ $t('about') }}</BaseMenu>
 
             <EccoMenu>
-              <span>
-                {{ $t('new_to_ecco') }}
-              </span>
+              <span>{{ $t('new_to_ecco') }}</span>
             </EccoMenu>
 
             <NuxtLink
@@ -188,23 +119,19 @@ export default {
               :key="index"
               :to="route.path"
               active-class="font-bold"
-            >
-              {{ route.label }}
-            </NuxtLink>
+            >{{ route.label }}</NuxtLink>
           </div>
         </div>
 
         <div class="flex items-center space-x-3">
-          <div class="md:ml-4 md:flex-shrink-0 md:flex md:items-center">
+          <div class="space-x-3 md:ml-4 md:flex-shrink-0 md:flex md:items-center">
             <div class="flex items-center space-x-1">
               <OButton
                 class="px-4 text-sm uppercase"
                 tag="a"
                 href="https://www.georgiamds.uga.edu/PublicHome/Index"
                 target="_blank"
-              >
-                MDS
-              </OButton>
+              >MDS</OButton>
 
               <OButton
                 class="px-4 text-sm uppercase"
@@ -212,10 +139,11 @@ export default {
                 tag="a"
                 href="http://ecco.ga-sps.org/login.php"
                 target="_blank"
-              >
-                ecco
-              </OButton>
+              >ecco</OButton>
             </div>
+            <OButton @click="$sounds.back.play">{{ $t('back') }}</OButton>
+            <OButton variant="light" @click="goToDocs">{{ $t('documentation') }}</OButton>
+            <OButton variant="dark" @click="goToGithub">GitHub</OButton>
 
             <!-- Help dropdown -->
             <!-- <BaseHelpDropdownButton /> -->
@@ -224,32 +152,28 @@ export default {
             <!-- <BaseProfileDropdownButton /> -->
             <!-- <NuxtLink  v-if="!isLoggedIn" :to="localePath('/login/')">
               {{ $t('login')}}
-            </NuxtLink> -->
+            </NuxtLink>-->
             <div class="hidden space-x-3 lg:block">
               <div class="space-x-3" v-if="$auth.loggedIn">
                 <ProfileDropdown :person="$auth.user" />
                 <!-- <NuxtLink to="/profile/" id="profile" active-class="font-bold">
                   {{ $t('my_profile') }}
-                </NuxtLink> -->
+                </NuxtLink>-->
                 <!-- <button @click="$auth.logout()">
                   {{ $t('logout') }}
-                </button> -->
+                </button>-->
               </div>
 
               <div class="flex items-center space-x-3" v-else>
-                <NuxtLink to="/login/">
-                  {{ $t('login') }}
-                </NuxtLink>
+                <NuxtLink to="/login/">{{ $t('login') }}</NuxtLink>
                 <GithubLoginLink v-if="false" />
               </div>
 
               <NuxtLink
                 v-if="isAdmin"
-                :to="localePath({path: '/admin/'})"
+                :to="localePath({ path: '/admin/' })"
                 id="admin"
-              >
-                {{ $t('admin') }}
-              </NuxtLink>
+              >{{ $t('admin') }}</NuxtLink>
             </div>
           </div>
         </div>
@@ -262,9 +186,7 @@ export default {
         <NuxtLink
           to="/"
           class="block py-2 pl-3 pr-4 text-base font-medium border-l-4 bg-primary-50 border-primary-500 text-primary-700 sm:pl-5 sm:pr-6"
-        >
-          {{ $t('dashboard') }}
-        </NuxtLink>
+        >{{ $t('dashboard') }}</NuxtLink>
       </div>
 
       <div class="pt-4 pb-3 border-t border-gray-200">
@@ -278,12 +200,8 @@ export default {
             />
           </div>
           <div class="ml-3">
-            <div class="text-base font-medium text-gray-800">
-              {{ person.name }}
-            </div>
-            <div class="text-sm font-medium text-gray-500">
-              {{ person.email }}
-            </div>
+            <div class="text-base font-medium text-gray-800">{{ person.name }}</div>
+            <div class="text-sm font-medium text-gray-500">{{ person.email }}</div>
           </div>
 
           <button
@@ -307,9 +225,7 @@ export default {
       :overlay="false"
       mobile="fullwidth"
     >
-      <section
-        class="flex flex-col h-full bg-white divide-y divide-gray-200 shadow-xl"
-      >
+      <section class="flex flex-col h-full bg-white divide-y divide-gray-200 shadow-xl">
         <div class="fixed inset-0 overflow-hidden">
           <div class="absolute inset-0 overflow-hidden">
             <section
@@ -325,20 +241,16 @@ export default {
         Leaving: "transform transition ease-in-out duration-500 sm:duration-700"
           From: "translate-x-0"
           To: "translate-x-full"
-      -->
+              -->
               <div class="w-screen max-w-md">
-                <div
-                  class="flex flex-col h-full overflow-y-scroll bg-white shadow-xl"
-                >
+                <div class="flex flex-col h-full overflow-y-scroll bg-white shadow-xl">
                   <!-- Header -->
                   <div class="p-6">
                     <div class="flex items-start justify-between">
                       <h2
                         id="slide-over-heading"
                         class="text-lg font-medium text-gray-900"
-                      >
-                        {{ $t('volunteers') }}
-                      </h2>
+                      >{{ $t('volunteers') }}</h2>
                       <div class="flex items-center ml-3 h-7">
                         <button @click="showVolunteerView = false">
                           <BaseIconSolid name="x" />
@@ -356,141 +268,22 @@ export default {
                           href="#"
                           class="px-1 pb-4 text-sm font-medium border-b-2 border-primary-500 text-primary-600 whitespace-nowrap"
                           aria-current="page"
-                        >
-                          {{ $t('all') }}
-                        </a>
+                        >{{ $t('all') }}</a>
 
                         <a
                           href="#"
                           class="px-1 pb-4 text-sm font-medium text-gray-500 border-b-2 border-transparent hover:text-gray-700 hover:border-gray-300 whitespace-nowrap"
-                        >
-                          {{ $t('certified') }}
-                        </a>
+                        >{{ $t('certified') }}</a>
 
                         <a
                           href="#"
                           class="px-1 pb-4 text-sm font-medium text-gray-500 border-b-2 border-transparent hover:text-gray-700 hover:border-gray-300 whitespace-nowrap"
-                        >
-                          {{ $t('in_training') }}
-                        </a>
+                        >{{ $t('in_training') }}</a>
                       </nav>
                     </div>
                   </div>
 
                   <!-- List -->
-                  <ul class="overflow-y-auto divide-y divide-gray-200">
-                    <li
-                      v-for="person in people"
-                      :key="person.id"
-                      class="relative px-6 py-5"
-                    >
-                      <div class="flex items-center justify-between group">
-                        <a href="#" class="block p-1 -m-1">
-                          <div
-                            class="absolute inset-0 group-hover:bg-gray-50"
-                            aria-hidden="true"
-                          />
-                          <div
-                            class="relative flex items-center flex-1 min-w-0"
-                          >
-                            <span class="relative flex-shrink-0 inline-block">
-                              <img
-                                style="filter: grayscale(1)"
-                                class="w-10 h-10 rounded-full"
-                                src="https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                                alt=""
-                              />
-                              <span
-                                :class="[
-                                  person.isOnline
-                                    ? 'bg-gray-300'
-                                    : 'bg-green-400',
-                                  'absolute top-0 right-0 block h-2.5 w-2.5 rounded-full ring-2 ring-white',
-                                ]"
-                                aria-hidden="true"
-                              />
-                            </span>
-                            <div class="ml-4 truncate">
-                              <p
-                                class="text-sm font-medium text-gray-900 truncate"
-                              >
-                                {{ person.name }}
-                              </p>
-                              <p class="text-sm text-gray-500 truncate">
-                                @{{ person.username }}
-                              </p>
-                            </div>
-                          </div>
-                        </a>
-                        <div class="relative inline-block ml-2 text-left">
-                          <button
-                            id="options-menu-0"
-                            class="relative inline-flex items-center justify-center w-8 h-8 bg-white rounded-full group focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500"
-                            aria-haspopup="true"
-                            aria-expanded="false"
-                          >
-                            <span class="sr-only">
-                              {{ $t('open_options_menu') }}
-                            </span>
-                            <span
-                              class="flex items-center justify-center w-full h-full rounded-full"
-                            >
-                              <!-- Heroicon name: dots-vertical -->
-                              <svg
-                                class="w-5 h-5 text-gray-400 group-hover:text-gray-500"
-                                xmlns="http://www.w3.org/2000/svg"
-                                viewBox="0 0 20 20"
-                                fill="currentColor"
-                                aria-hidden="true"
-                              >
-                                <path
-                                  d="M10 6a2 2 0 110-4 2 2 0 010 4zM10 12a2 2 0 110-4 2 2 0 010 4zM10 18a2 2 0 110-4 2 2 0 010 4z"
-                                />
-                              </svg>
-                            </span>
-                          </button>
-
-                          <!--
-                    Dropdown panel, show/hide based on dropdown state.
-
-                    Entering: "transition ease-out duration-100"
-                      From: "transform opacity-0 scale-95"
-                      To: "transform opacity-100 scale-100"
-                    Leaving: "transition ease-in duration-75"
-                      From: "transform opacity-100 scale-100"
-                      To: "transform opacity-0 scale-95"
-                  -->
-                          <div
-                            v-if="false"
-                            class="absolute top-0 z-10 w-48 origin-top-right bg-white rounded-md shadow-lg ring-black right-9 ring-1 ring-opacity-5"
-                            aria-label="options-menu"
-                          >
-                            <div
-                              class="py-1"
-                              role="menu"
-                              aria-orientation="vertical"
-                              aria-labelledby="options-menu-0"
-                            >
-                              <a
-                                href="#"
-                                class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
-                                role="menuitem"
-                              >
-                                {{ $t('view_profile') }}
-                              </a>
-                              <a
-                                href="#"
-                                class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
-                                role="menuitem"
-                              >
-                                {{ $t('send_message') }}
-                              </a>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </li>
-                  </ul>
                 </div>
               </div>
             </section>
@@ -510,7 +303,7 @@ export default {
       Leaving: "ease-in-out duration-500"
         From: "opacity-100"
         To: "opacity-0"
-    -->
+        -->
         <Transition
           enter-class="opacity-0"
           enter-active-class="duration-500 ease-in-out transition-medium"
@@ -540,7 +333,7 @@ export default {
         Leaving: "transform transition ease-in-out duration-500 sm:duration-700"
           From: "translate-x-0"
           To: "translate-x-full"
-      -->
+          -->
           <Transition
             enter-active-class="transition duration-500 ease-in-out transform sm:duration-700"
             enter-class="translate-x-full"
@@ -552,17 +345,13 @@ export default {
             mode="in-out"
           >
             <div v-show="showNewProjectView" class="w-screen max-w-md">
-              <div
-                class="flex flex-col h-full py-6 overflow-y-scroll bg-white shadow-xl"
-              >
+              <div class="flex flex-col h-full py-6 overflow-y-scroll bg-white shadow-xl">
                 <div class="px-4 sm:px-6">
                   <div class="flex items-start justify-between">
                     <h2
                       id="slide-over-heading"
                       class="text-lg font-medium text-gray-900"
-                    >
-                      Panel title
-                    </h2>
+                    >Panel title</h2>
                     <div class="flex items-center ml-3 h-7">
                       <button
                         class="text-gray-400 bg-white rounded-md hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500"
@@ -592,10 +381,7 @@ export default {
                 <div class="relative flex-1 px-4 mt-6 sm:px-6">
                   <!-- Replace with your content -->
                   <div class="absolute inset-0 px-4 sm:px-6">
-                    <div
-                      class="h-full border-gray-200 border-dashed"
-                      aria-hidden="true"
-                    />
+                    <div class="h-full border-gray-200 border-dashed" aria-hidden="true" />
                   </div>
                   <!-- /End replace -->
                 </div>

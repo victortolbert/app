@@ -13,8 +13,6 @@ export default {
       v-for="locale in availableLocales"
       :key="locale.code"
       :to="switchLocalePath(locale.code)"
-    >
-      {{ $t(locale.name) }}
-    </NuxtLink>
+    >{{ $t(locale.name) }}</NuxtLink>
   </div>
 </template>

@@ -1,11 +1,6 @@
-# @victortolbert/nuxt-demo
+# testing
 
-## Developer Previews
-
-- <https://main--promise-serves.netlify.app>
-
-
-## Development / Build setup
+## Build Setup
 
 ```bash
 # install dependencies
@@ -22,19 +17,4 @@ $ yarn start
 $ yarn generate
 ```
 
-## Testing
-
-```bash
- # To run the test suite (using Jest for unit tests)
-$ yarn test
-```
-
----
-
-## Changelog
-
-Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed recently.
-
-
----
 For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).

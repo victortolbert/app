@@ -1,9 +1,9 @@
 <script>
-import {getColors} from 'theme-colors'
-const {generate, presetPalettes} = require('@ant-design/colors')
-import {defineComponent, computed} from '@nuxtjs/composition-api'
-import {css} from '@emotion/css'
-import theme from '~/theme'
+import { getColors } from 'theme-colors'
+const { generate, presetPalettes } = require('@ant-design/colors')
+import { defineComponent, computed } from '@nuxtjs/composition-api'
+import { css } from '@emotion/css'
+import theme from '~/config/theme'
 
 export default defineComponent({
   setup() {
@@ -34,7 +34,7 @@ export default defineComponent({
 </script>
 
 <template>
-  <div :class="['bg-gray-100', $store.state.affiliate.name.toLowerCase()]">
-    <nuxt />
+  <div :class="['bg-gray-100', $store.state.theme]">
+    <Nuxt />
   </div>
 </template>

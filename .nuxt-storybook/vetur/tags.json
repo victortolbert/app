@@ -1,0 +1,68 @@
+{
+  "ModalForm": {
+    "description": "Auto imported from components/ModalForm.vue"
+  },
+  "AppFooter": {
+    "description": "Auto imported from components/app/Footer.vue"
+  },
+  "AppLanguageSwitcher": {
+    "description": "Auto imported from components/app/LanguageSwitcher.vue"
+  },
+  "AppNavbar": {
+    "description": "Auto imported from components/app/Navbar.vue"
+  },
+  "AppThemeMenu": {
+    "description": "Auto imported from components/app/ThemeMenu.vue"
+  },
+  "BaseCheckbox": {
+    "description": "Auto imported from components/base/Checkbox.vue"
+  },
+  "BaseDatepicker": {
+    "description": "Auto imported from components/base/Datepicker.vue"
+  },
+  "BaseIconOutlined": {
+    "description": "Auto imported from components/base/IconOutlined.vue"
+  },
+  "BaseIconSolid": {
+    "description": "Auto imported from components/base/IconSolid.vue"
+  },
+  "BaseImage": {
+    "description": "Auto imported from components/base/Image.vue"
+  },
+  "BaseInput": {
+    "description": "Auto imported from components/base/Input.vue"
+  },
+  "BaseLogo": {
+    "description": "Auto imported from components/base/Logo.vue"
+  },
+  "BaseMenu": {
+    "description": "Auto imported from components/base/Menu.vue"
+  },
+  "BaseSelect": {
+    "description": "Auto imported from components/base/Select.vue"
+  },
+  "BaseToggleSwitch": {
+    "description": "Auto imported from components/base/ToggleSwitch.vue"
+  },
+  "UserSettingsForm": {
+    "description": "Auto imported from components/user/SettingsForm.vue"
+  },
+  "PageBreadcrumb": {
+    "description": "Auto imported from components/page/Breadcrumb.vue"
+  },
+  "PageHeader": {
+    "description": "Auto imported from components/page/Header.vue"
+  },
+  "PageHeading": {
+    "description": "Auto imported from components/page/Heading.vue"
+  },
+  "PageNavbar": {
+    "description": "Auto imported from components/page/Navbar.vue"
+  },
+  "PageWrapper": {
+    "description": "Auto imported from components/page/Wrapper.vue"
+  },
+  "SectionWrapper": {
+    "description": "Auto imported from components/section/Wrapper.vue"
+  }
+}

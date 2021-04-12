@@ -8,7 +8,6 @@ import {fal} from '@fortawesome/pro-light-svg-icons'
 import {far} from '@fortawesome/pro-regular-svg-icons'
 import {FontAwesomeIcon} from '@fortawesome/vue-fontawesome'
 
-// This is important, we are going to let Nuxt.js worry about the CSS
 config.autoAddCss = false
 
 library.add(fas)

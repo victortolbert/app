@@ -1,0 +1,30 @@
+[
+  {
+    "name": "index___es",
+    "path": "/es",
+    "component": "/Users/victortolbert/Code/boosterthon/testing/pages/index.vue",
+    "chunkName": "pages/index",
+    "_name": "_35a0ddd2"
+  },
+  {
+    "name": "login___en",
+    "path": "/login",
+    "component": "/Users/victortolbert/Code/boosterthon/testing/pages/login.vue",
+    "chunkName": "pages/login",
+    "_name": "_016efe2e"
+  },
+  {
+    "name": "login___es",
+    "path": "/es/login",
+    "component": "/Users/victortolbert/Code/boosterthon/testing/pages/login.vue",
+    "chunkName": "pages/login",
+    "_name": "_016efe2e"
+  },
+  {
+    "name": "index___en",
+    "path": "/",
+    "component": "/Users/victortolbert/Code/boosterthon/testing/pages/index.vue",
+    "chunkName": "pages/index",
+    "_name": "_35a0ddd2"
+  }
+]
