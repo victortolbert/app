@@ -1,3 +1,54 @@
+<script>
+import { defineComponent } from '@nuxtjs/composition-api'
+import {mapGetters} from 'vuex'
+
+export default defineComponent({
+  props: {
+    msg: {
+      type: String,
+      default: '👋 Welcome to Frontier, a themeable design system',
+    },
+  },
+
+  data() {
+    return {
+      email: '',
+      password: '',
+      error: '',
+    }
+  },
+
+  computed: {
+    ...mapGetters({
+      loggedIn: 'auth/loggedIn',
+    }),
+  },
+
+  methods: {
+    login() {
+      if (this.password.length > 0) {
+        this.$axios.get('/sanctum/csrf-cookie').then(() => {
+          this.$axios
+            .post('/login', {
+              email: this.email,
+              password: this.password,
+            })
+            .then(response => {
+              this.$axios.get('api/user').then(userFetch => {
+                this.$store.commit('auth/SET_USER_DATA', userFetch.data)
+                this.$router.push({name: 'dashboard'})
+              })
+            })
+            .catch(error => {
+              this.error = error
+            })
+        })
+      }
+    },
+  },
+})
+</script>
+
 <template>
   <div id="user-login">
     <header class="mb-6">
@@ -52,54 +103,3 @@
   </div>
 </template>
 
-<script>
-import {mapGetters} from 'vuex'
-
-export default {
-  name: 'UserLoginForm',
-
-  props: {
-    msg: {
-      type: String,
-      default: '👋 Welcome to Frontier, a themeable design system',
-    },
-  },
-
-  data() {
-    return {
-      email: '',
-      password: '',
-      error: '',
-    }
-  },
-
-  computed: {
-    ...mapGetters({
-      loggedIn: 'auth/loggedIn',
-    }),
-  },
-
-  methods: {
-    login() {
-      if (this.password.length > 0) {
-        this.$axios.get('/sanctum/csrf-cookie').then(() => {
-          this.$axios
-            .post('/login', {
-              email: this.email,
-              password: this.password,
-            })
-            .then(response => {
-              this.$axios.get('api/user').then(userFetch => {
-                this.$store.commit('auth/SET_USER_DATA', userFetch.data)
-                this.$router.push({name: 'dashboard'})
-              })
-            })
-            .catch(error => {
-              this.error = error
-            })
-        })
-      }
-    },
-  },
-}
-</script>

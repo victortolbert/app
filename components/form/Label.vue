@@ -1,15 +1,7 @@
-<template>
-  <div class="vfl-has-label">
-    <label class="vfl-label" :class="classObject" :for="inputId">
-      {{ floatLabel }}
-    </label>
-    <slot />
-  </div>
-</template>
-
 <script>
-export default {
-  name: 'float-label',
+import {defineComponent} from '@nuxtjs/composition-api'
+
+export default defineComponent({
   props: {
     on: {
       type: Boolean,
@@ -106,8 +98,16 @@ export default {
       }
     },
   },
-}
+})
 </script>
+
+<template>
+  <div class="vfl-has-label">
+    <label class="vfl-label" :class="classObject" :for="inputId">{{ floatLabel }}</label>
+    <slot />
+  </div>
+</template>
+
 
 <style>
 .vfl-has-label {

@@ -43,7 +43,9 @@ module.exports = {
         '2xs': '.625rem', // 10px
       },
       fontFamily: {
-        sans: ['Inter var', ...defaultTheme.fontFamily.sans],
+        sans: ['Roboto', 'Inter var', ...defaultTheme.fontFamily.sans],
+        serif: ['Merriweather',  ...defaultTheme.fontFamily.serif],
+        title: ['Roboto Condensed'],
         display: ['Pica'],
         mono: [
           'Roboto Mono',
@@ -165,6 +167,19 @@ module.exports = {
         warning: colors['sea-buckthorn'],
         success: colors.malachite,
         info: colors.scooter,
+
+
+        // dirtyBlue: "#b5dbe6",
+        // dirtyBluePink: "#9fb7c5",
+        // dirtyPink: "#b38ca7",
+        // "light-blue": "#9ac8c6",
+        // "light-purple": "#7077d8",
+        // "melon-red": "#eb636e",
+        // yellow: "#f8c433",
+        // "dark-purple": "#373056",
+        // "lime-green": "#81c448",
+        // "juicy-orange": "#f08f33",
+
 
         email: 'var(--color-emailer)',
         emailer: 'var(--color-emailer)',

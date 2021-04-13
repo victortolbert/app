@@ -4,13 +4,18 @@ import { defineComponent, ref } from '@nuxtjs/composition-api'
 export default defineComponent({
   name: 'Dashboard',
   setup() {
+    const chartData = [['Jan', 4], ['Feb', 2], ['Mar', 10], ['Apr', 5], ['May', 3]]
     const isEnabled = ref(false)
-    return { isEnabled }
+    return { chartData, isEnabled }
   }
 })
 </script>
 <template>
   <main class="flex-1">
+    <SectionWrapper>
+      <line-chart :data="chartData"></line-chart>
+    </SectionWrapper>
+
     <SectionWrapper>
       <UserSettingsForm />
     </SectionWrapper>

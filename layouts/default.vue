@@ -1,6 +1,6 @@
 <script>
 const { generate, presetPalettes } = require('@ant-design/colors')
-import { defineComponent } from '@nuxtjs/composition-api'
+import { computed, defineComponent } from '@nuxtjs/composition-api'
 import { css } from '@emotion/css'
 import theme from '~/config/theme'
 

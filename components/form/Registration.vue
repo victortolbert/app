@@ -1,132 +1,7 @@
-<template>
-  <div>
-    <h1 class="mt-8 mb-46px text-28 fw-200 d-block']">
-      {{ $t('participant_registration.register_student') }}
-    </h1>
-    <form @submit.prevent="submit">
-      <div
-        id="upload-photo"
-        :data-target="
-          ssvDisabled ? '#uploadPhotoModalSsvDisabled' : '#uploadPhotoModal'
-        "
-        data-toggle="modal"
-        class="cursor-pointer"
-        @click="uploadPhoto"
-      >
-        <img :src="photo" class="profile-picture btn-circle" />
-
-        <input
-          class="mx-auto avatar d-block"
-          name="profile_picture"
-          type="file"
-        />
-        <label
-          class="mx-auto cursor-pointer text-15 d-block font-weight-bold"
-          for="profile_picture"
-        >
-          <u>{{ photoText }}</u>
-          <p v-if="showOptional" class="text-12 fw-300">
-            {{ $t('participant_registration.optional') }}
-          </p>
-        </label>
-      </div>
-      <div v-if="errors">
-        <ul
-          v-for="(error, key) in errors"
-          :key="key"
-          class="p-4 alert alert-danger"
-        >
-          <li
-            v-for="(message, index) in error"
-            :key="index"
-            class="error-list-item text-danger"
-          >
-            {{ message }}
-          </li>
-        </ul>
-      </div>
-      <TextInput
-        :label="$t('participant_registration.student_first_name')"
-        v-model="firstName"
-        type="text"
-        name="first_name"
-        required
-        @invalid="resetSubmitButton"
-      />
-      <TextInput
-        :label="$t('participant_registration.student_last_name')"
-        v-model="lastName"
-        class="mb-28px"
-        type="text"
-        name="last_name"
-        required
-        @invalid="resetSubmitButton"
-      />
-
-      <SelectionInput
-        :default_value="null"
-        :default_text="$t('participant_registration.select_classroom')"
-        v-model="classroom"
-        class="mb-28px blue-rounded"
-        name="classroom"
-        required
-        @invalid="resetSubmitButton"
-      >
-        <template v-for="(grade, label) in classroomsByGrade">
-          <template v-if="label == 'Other'">
-            <option
-              v-for="classroomGrade in grade"
-              :key="classroomGrade.id"
-              :value="classroomGrade.id"
-            >
-              {{ classroomGrade.name }}
-            </option>
-          </template>
-          <template v-else>
-            <optgroup :label="label" :key="label">
-              <option
-                v-for="classroomGrade in grade"
-                :key="classroomGrade.id"
-                :value="classroomGrade.id.toString()"
-              >
-                {{ classroomGrade.name }}
-              </option>
-            </optgroup>
-          </template>
-        </template>
-      </SelectionInput>
-
-      <input ref="trueSubmitButton" type="submit" style="display: none" />
-
-      <input
-        v-model="terms"
-        :required="checkboxRequired"
-        class="checkbox"
-        name="participation_terms"
-        type="checkbox"
-        @invalid="resetSubmitButton"
-      />
-      <label class="text-12 mb-28px">
-        {{ $t('participant_registration.participation_terms_prefix') }}
-        <a id="print-terms" href="/v3/terms" target="_blank">
-          {{ $t('participant_registration.participation_terms_link') }}
-        </a>
-      </label>
-      <button
-        :disabled="submitting"
-        type="button"
-        class="mx-auto mb-1 btn btn-primary btn-round d-block w-200px btn-drop-shadow text-18"
-        @click="handleSubmit"
-      >
-        {{ $t('participant_registration.add_student') }}
-        <i v-if="submitting" class="fa fa-spinner fa-spin" />
-      </button>
-    </form>
-  </div>
-</template>
-
 <script>
-export default {
+import {defineComponent} from '@nuxtjs/composition-api'
+
+export default defineComponent({
   data() {
     return {
       firstName: '',
@@ -330,8 +205,135 @@ export default {
       this.gaEvent('Titan Registration', 'Participant Form', 'Upload Photo')
     },
   },
-}
+})
 </script>
+
+<template>
+  <div>
+    <h1 class="mt-8 mb-46px text-28 fw-200 d-block']">
+      {{ $t('participant_registration.register_student') }}
+    </h1>
+    <form @submit.prevent="submit">
+      <div
+        id="upload-photo"
+        :data-target="
+          ssvDisabled ? '#uploadPhotoModalSsvDisabled' : '#uploadPhotoModal'
+        "
+        data-toggle="modal"
+        class="cursor-pointer"
+        @click="uploadPhoto"
+      >
+        <img :src="photo" class="profile-picture btn-circle" />
+
+        <input
+          class="mx-auto avatar d-block"
+          name="profile_picture"
+          type="file"
+        />
+        <label
+          class="mx-auto cursor-pointer text-15 d-block font-weight-bold"
+          for="profile_picture"
+        >
+          <u>{{ photoText }}</u>
+          <p v-if="showOptional" class="text-12 fw-300">
+            {{ $t('participant_registration.optional') }}
+          </p>
+        </label>
+      </div>
+      <div v-if="errors">
+        <ul
+          v-for="(error, key) in errors"
+          :key="key"
+          class="p-4 alert alert-danger"
+        >
+          <li
+            v-for="(message, index) in error"
+            :key="index"
+            class="error-list-item text-danger"
+          >
+            {{ message }}
+          </li>
+        </ul>
+      </div>
+      <TextInput
+        :label="$t('participant_registration.student_first_name')"
+        v-model="firstName"
+        type="text"
+        name="first_name"
+        required
+        @invalid="resetSubmitButton"
+      />
+      <TextInput
+        :label="$t('participant_registration.student_last_name')"
+        v-model="lastName"
+        class="mb-28px"
+        type="text"
+        name="last_name"
+        required
+        @invalid="resetSubmitButton"
+      />
+
+      <SelectionInput
+        :default_value="null"
+        :default_text="$t('participant_registration.select_classroom')"
+        v-model="classroom"
+        class="mb-28px blue-rounded"
+        name="classroom"
+        required
+        @invalid="resetSubmitButton"
+      >
+        <template v-for="(grade, label) in classroomsByGrade">
+          <template v-if="label == 'Other'">
+            <option
+              v-for="classroomGrade in grade"
+              :key="classroomGrade.id"
+              :value="classroomGrade.id"
+            >
+              {{ classroomGrade.name }}
+            </option>
+          </template>
+          <template v-else>
+            <optgroup :label="label" :key="label">
+              <option
+                v-for="classroomGrade in grade"
+                :key="classroomGrade.id"
+                :value="classroomGrade.id.toString()"
+              >
+                {{ classroomGrade.name }}
+              </option>
+            </optgroup>
+          </template>
+        </template>
+      </SelectionInput>
+
+      <input ref="trueSubmitButton" type="submit" style="display: none" />
+
+      <input
+        v-model="terms"
+        :required="checkboxRequired"
+        class="checkbox"
+        name="participation_terms"
+        type="checkbox"
+        @invalid="resetSubmitButton"
+      />
+      <label class="text-12 mb-28px">
+        {{ $t('participant_registration.participation_terms_prefix') }}
+        <a id="print-terms" href="/v3/terms" target="_blank">
+          {{ $t('participant_registration.participation_terms_link') }}
+        </a>
+      </label>
+      <button
+        :disabled="submitting"
+        type="button"
+        class="mx-auto mb-1 btn btn-primary btn-round d-block w-200px btn-drop-shadow text-18"
+        @click="handleSubmit"
+      >
+        {{ $t('participant_registration.add_student') }}
+        <i v-if="submitting" class="fa fa-spinner fa-spin" />
+      </button>
+    </form>
+  </div>
+</template>
 
 <style scoped>
 .fp-icon {

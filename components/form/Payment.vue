@@ -1,351 +1,7 @@
-<template>
-  <form
-    id="payment-form"
-    class="payment-form"
-    :novalidate="!isIE11"
-    role="form"
-    @keydown.enter.prevent
-    @submit.prevent="submit"
-  >
-    <fieldset class="mb-16 donation-options">
-      <h2>{{ $t('donation_title') }}</h2>
-
-      <div
-        :class="[
-          'preselect-options',
-          preSelectedOptions.length > 4 ? 'max-w-xs' : 'max-w-sm',
-        ]"
-      >
-        <button
-          v-for="option in preSelectedOptions"
-          :key="option.amount"
-          type="button"
-          :value="option.amount"
-          :class="['amount-button', {'is-selected': option.isSelected}]"
-          @click.prevent="preSelect(option)"
-        >
-          ${{ option.amount }}
-        </button>
-      </div>
-
-      <div class="custom-donation">
-        <label for="custom-donation-input">
-          {{ $t('custom_donation_title') }}
-        </label>
-
-        <div class="relative w-32 mx-auto rounded-md shadow-sm">
-          <div
-            class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none"
-          >
-            <span class="text-gray-500 sm:text-2xl sm:leading-5"> $ </span>
-          </div>
-
-          <input
-            id="custom-donation-input"
-            v-model.trim="$v.form.customDonation.$model"
-            maxlength="7"
-            class="text-right form-input sm:text-2xl"
-            :class="[
-              'form-input placeholder-gray-400',
-              {
-                'is-invalid':
-                  focused === false &&
-                  !$v.form.customDonation.minimumValue &&
-                  $v.form.customDonation.$dirty,
-              },
-            ]"
-            @keypress="isNumber"
-            @focus="focused = true && $event.target.select()"
-            @blur="focused = false"
-            @input="moneyChanged"
-          />
-        </div>
-        <p
-          v-if="
-            focused === false &&
-            !$v.form.customDonation.minimumValue &&
-            $v.form.customDonation.$dirty
-          "
-          class="p-2 text-sm text-center text-red-500 help is-danger"
-        >
-          {{ $t('minimum_amount') }} $5
-        </p>
-      </div>
-    </fieldset>
-
-    <fieldset class="mb-4 space-y-4 sponsor-information">
-      <h2>{{ $t('sponsor_information_title') }}</h2>
-
-      <div class="first-name">
-        <div class="relative rounded-md shadow-sm">
-          <label for="first-name-input" class="sr-only">
-            {{ $t('first_name_label') }}
-          </label>
-
-          <input
-            id="first-name-input"
-            v-model.trim="$v.form.payer.firstName.$model"
-            :class="[
-              'form-input placeholder-gray-400',
-              {
-                'is-invalid':
-                  !$v.form.payer.firstName.required &&
-                  $v.form.payer.firstName.$dirty,
-              },
-            ]"
-            :placeholder="$t('first_name_placeholder')"
-          />
-        </div>
-
-        <p
-          v-if="
-            !$v.form.payer.firstName.required && $v.form.payer.firstName.$dirty
-          "
-          class="has-error"
-        >
-          {{ $t('first_name_label') }}
-          {{ $t('is_required') }}
-        </p>
-      </div>
-
-      <div class="last-name">
-        <div class="relative rounded-md shadow-sm">
-          <label for="last-name-input" class="sr-only">
-            {{ $t('last_name_label') }}
-          </label>
-
-          <input
-            id="last-name-input"
-            v-model.trim="$v.form.payer.lastName.$model"
-            :class="[
-              'form-input placeholder-gray-400',
-              {
-                'is-invalid':
-                  !$v.form.payer.lastName.required &&
-                  $v.form.payer.lastName.$dirty,
-              },
-            ]"
-            :placeholder="$t('last_name_placeholder')"
-          />
-        </div>
-
-        <p
-          v-if="
-            !$v.form.payer.lastName.required && $v.form.payer.lastName.$dirty
-          "
-          class="has-error"
-        >
-          {{ $t('last_name_label') }}
-          {{ $t('is_required') }}
-        </p>
-      </div>
-
-      <div class="email">
-        <div class="relative rounded-md shadow-sm">
-          <label for="email-input" class="sr-only">
-            {{ $t('email_label') }}
-          </label>
-
-          <input
-            id="email-input"
-            v-model.trim="$v.form.payer.email.$model"
-            :class="[
-              'form-input placeholder-gray-400',
-              {
-                'is-invalid':
-                  (!$v.form.payer.email.required || !$v.form.payer.email) &&
-                  $v.form.payer.email.$dirty,
-              },
-            ]"
-            :placeholder="$t('email_placeholder')"
-          />
-        </div>
-
-        <p
-          v-if="!$v.form.payer.email.required && $v.form.payer.email.$dirty"
-          class="has-error"
-        >
-          {{ $t('email_label') }}
-          {{ $t('is_required') }}
-        </p>
-
-        <p
-          v-if="!$v.form.payer.email && $v.form.payer.email.$dirty"
-          class="pl-2 text-xs text-red-500 help is-danger"
-        >
-          {{ $t('email_label') }} {{ $t('is_invalid') }}
-        </p>
-      </div>
-
-      <div v-if="onBehalfOfIsActive" class="on-behalf-of">
-        <div class="relative rounded-md shadow-sm">
-          <label for="on-behalf-of-input" class="sr-only">
-            {{ $t('behalf_of_label') }}
-          </label>
-
-          <input
-            id="on-behalf-of-input"
-            v-model.trim="$v.form.onBehalfOf.$model"
-            :class="[
-              'form-input placeholder-gray-400',
-              {
-                'is-invalid':
-                  !$v.form.onBehalfOf.required && $v.form.onBehalfOf.$dirty,
-              },
-            ]"
-            :placeholder="$t('behalf_of_placeholder')"
-          />
-        </div>
-
-        <p
-          v-if="!$v.form.onBehalfOf.required && $v.form.onBehalfOf.$dirty"
-          class="has-error"
-        >
-          {{ $t('behalf_of_label') }}
-          {{ $t('is_required') }}
-        </p>
-      </div>
-
-      <div class="relationship">
-        <label for="relationship-select" class="sr-only">
-          {{ $t('email_label') }}
-        </label>
-
-        <div class="rounded-md shadow-sm">
-          <select
-            id="relationship-select"
-            v-model="$v.form.payer.relationshipId.$model"
-            :class="[
-              'form-select',
-              {
-                'is-invalid':
-                  !$v.form.payer.relationshipId.required &&
-                  $v.form.payer.relationshipId.$dirty,
-              },
-            ]"
-            required
-          >
-            <option :value="null" disabled selected hidden>
-              {{ $t('relationship_placeholder') }}
-            </option>
-
-            <option
-              v-for="relationship in relationshipsWithoutCorporateMatching"
-              :key="relationship.id"
-              :value="relationship.id"
-            >
-              {{ relationship.sponsor_type }}
-            </option>
-          </select>
-        </div>
-
-        <p
-          v-if="
-            !$v.form.payer.relationshipId.required &&
-            $v.form.payer.relationshipId.$dirty
-          "
-          class="has-error"
-        >
-          {{ $t('relationship_label') }}
-          {{ $t('is_required') }}
-        </p>
-      </div>
-
-      <CreditCardInputs :error="cardError">
-        <input
-          id="postal-code-input"
-          v-model.trim="$v.form.payer.postalCode.$model"
-          :class="[
-            'h-11 form-input placeholder-gray-400',
-            {
-              'is-invalid':
-                !$v.form.payer.postalCode.required &&
-                $v.form.payer.postalCode.$dirty,
-            },
-          ]"
-          :placeholder="$t('zip')"
-        />
-      </CreditCardInputs>
-    </fieldset>
-
-    <table class="mb-8 donation-summary">
-      <tbody>
-        <tr>
-          <td>{{ $t('donation') }}</td>
-
-          <td class="text-right donation">
-            ${{ formatCurrency(form.amount) }}
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <div class="flex items-center">
-              <span class="mr-1">{{ $t('convenience_fee') }}</span>
-              <FontAwesomeIcon
-                v-tippy="{trigger: 'mouseenter', arrow: true}"
-                :icon="['fal', 'info-circle']"
-                :content="$t('convenience_fee_help')"
-                class="h-3 cursor-pointer text-secondary-500 focus:outline-none"
-              />
-            </div>
-          </td>
-
-          <td class="text-right convenience-fee">
-            ${{ formatCurrency($store.state.program.sponsor_convenience_fee) }}
-          </td>
-        </tr>
-      </tbody>
-
-      <tfoot>
-        <tr>
-          <td class="text-xl font-semibold border-t">
-            {{ $t('total_due') }}
-          </td>
-          <td
-            class="text-xl font-semibold text-right border-t donatation-total"
-          >
-            ${{ formatCurrency(total) }}
-          </td>
-        </tr>
-      </tfoot>
-    </table>
-    <p
-      v-if="hasBackendError"
-      class="px-2 mb-4 text-lg text-center text-red-700 text-danger"
-    >
-      {{ backendError }}
-    </p>
-    <button
-      id="submit-button"
-      :disabled="$v.$invalid || payPending || !creditCardFieldsAreValid"
-      type="submit"
-      :class="{
-        'opacity-50 cursor-not-allowed':
-          $v.$invalid || payPending || !creditCardFieldsAreValid,
-      }"
-      class="flex items-center justify-center mb-8 space-x-1 primary-button"
-    >
-      <span>{{ $t('submit_button') }}</span>
-
-      <FontAwesomeIcon v-if="payPending" :icon="['fas', 'circle-notch']" spin />
-    </button>
-
-    <footer class="mb-8 card-protection">
-      <svg class="inline h-3 mr-1 text-green-900" viewBox="0 0 448 512">
-        <path
-          d="M400 224h-24v-72C376 68.2 307.8 0 224 0S72 68.2 72 152v72H48c-26.5 0-48 21.5-48 48v192c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V272c0-26.5-21.5-48-48-48zm-104 0H152v-72c0-39.7 32.3-72 72-72s72 32.3 72 72v72z"
-          fill="currentColor"
-        />
-      </svg>
-
-      <span>{{ $t('card_protection') }}</span>
-    </footer>
-  </form>
-</template>
-
 <script>
-import {validationMixin} from 'vuelidate'
-import {required, email, requiredIf} from 'vuelidate/lib/validators'
+import {defineComponent} from '@nuxtjs/composition-api'
+import { validationMixin } from 'vuelidate'
+import { required, email, requiredIf } from 'vuelidate/lib/validators'
 import client from 'braintree-web/client'
 import hostedFields from 'braintree-web/hosted-fields'
 
@@ -365,8 +21,7 @@ const defaultCardError = {
   },
 }
 
-export default {
-  name: 'PaymentForm',
+export default defineComponent({
   mixins: [validationMixin],
   data() {
     return {
@@ -422,7 +77,7 @@ export default {
         minimumValue,
       },
       onBehalfOf: {
-        required: requiredIf(function () {
+        required: requiredIf(function() {
           return this.$store.state.program.enable_on_behalf_of_payments
         }),
       },
@@ -640,7 +295,7 @@ export default {
 
           this.$store.dispatch('setPledge', pledge)
           this.gaEvent('Direct Give', 'Program Donation', 'Submit Payment')
-          this.$router.push({name: 'thanks'})
+          this.$router.push({ name: 'thanks' })
         })
         .catch(error => {
           console.log(error)
@@ -653,10 +308,10 @@ export default {
               this.$t('errors.payment_error'),
             details:
               error.response.data.error.message === 'Gateway Rejected: cvv'
-                ? {invalidFieldKeys: ['cvv']}
+                ? { invalidFieldKeys: ['cvv'] }
                 : {
-                    invalidFieldKeys: ['number', 'expirationDate', 'cvv'],
-                  },
+                  invalidFieldKeys: ['number', 'expirationDate', 'cvv'],
+                },
           }
         })
         .finally(() => {
@@ -715,8 +370,316 @@ export default {
       }
     },
   },
-}
+})
 </script>
+
+<template>
+  <form
+    id="payment-form"
+    class="payment-form"
+    :novalidate="!isIE11"
+    role="form"
+    @keydown.enter.prevent
+    @submit.prevent="submit"
+  >
+    <fieldset class="mb-16 donation-options">
+      <h2>{{ $t('donation_title') }}</h2>
+
+      <div
+        :class="[
+          'preselect-options',
+          preSelectedOptions.length > 4 ? 'max-w-xs' : 'max-w-sm',
+        ]"
+      >
+        <button
+          v-for="option in preSelectedOptions"
+          :key="option.amount"
+          type="button"
+          :value="option.amount"
+          :class="['amount-button', { 'is-selected': option.isSelected }]"
+          @click.prevent="preSelect(option)"
+        >${{ option.amount }}</button>
+      </div>
+
+      <div class="custom-donation">
+        <label for="custom-donation-input">{{ $t('custom_donation_title') }}</label>
+
+        <div class="relative w-32 mx-auto rounded-md shadow-sm">
+          <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+            <span class="text-gray-500 sm:text-2xl sm:leading-5">$</span>
+          </div>
+
+          <input
+            id="custom-donation-input"
+            v-model.trim="$v.form.customDonation.$model"
+            maxlength="7"
+            class="text-right form-input sm:text-2xl"
+            :class="[
+              'form-input placeholder-gray-400',
+              {
+                'is-invalid':
+                  focused === false &&
+                  !$v.form.customDonation.minimumValue &&
+                  $v.form.customDonation.$dirty,
+              },
+            ]"
+            @keypress="isNumber"
+            @focus="focused = true && $event.target.select()"
+            @blur="focused = false"
+            @input="moneyChanged"
+          />
+        </div>
+        <p
+          v-if="
+            focused === false &&
+            !$v.form.customDonation.minimumValue &&
+            $v.form.customDonation.$dirty
+          "
+          class="p-2 text-sm text-center text-red-500 help is-danger"
+        >{{ $t('minimum_amount') }} $5</p>
+      </div>
+    </fieldset>
+
+    <fieldset class="mb-4 space-y-4 sponsor-information">
+      <h2>{{ $t('sponsor_information_title') }}</h2>
+
+      <div class="first-name">
+        <div class="relative rounded-md shadow-sm">
+          <label for="first-name-input" class="sr-only">{{ $t('first_name_label') }}</label>
+
+          <input
+            id="first-name-input"
+            v-model.trim="$v.form.payer.firstName.$model"
+            :class="[
+              'form-input placeholder-gray-400',
+              {
+                'is-invalid':
+                  !$v.form.payer.firstName.required &&
+                  $v.form.payer.firstName.$dirty,
+              },
+            ]"
+            :placeholder="$t('first_name_placeholder')"
+          />
+        </div>
+
+        <p
+          v-if="
+            !$v.form.payer.firstName.required && $v.form.payer.firstName.$dirty
+          "
+          class="has-error"
+        >
+          {{ $t('first_name_label') }}
+          {{ $t('is_required') }}
+        </p>
+      </div>
+
+      <div class="last-name">
+        <div class="relative rounded-md shadow-sm">
+          <label for="last-name-input" class="sr-only">{{ $t('last_name_label') }}</label>
+
+          <input
+            id="last-name-input"
+            v-model.trim="$v.form.payer.lastName.$model"
+            :class="[
+              'form-input placeholder-gray-400',
+              {
+                'is-invalid':
+                  !$v.form.payer.lastName.required &&
+                  $v.form.payer.lastName.$dirty,
+              },
+            ]"
+            :placeholder="$t('last_name_placeholder')"
+          />
+        </div>
+
+        <p
+          v-if="
+            !$v.form.payer.lastName.required && $v.form.payer.lastName.$dirty
+          "
+          class="has-error"
+        >
+          {{ $t('last_name_label') }}
+          {{ $t('is_required') }}
+        </p>
+      </div>
+
+      <div class="email">
+        <div class="relative rounded-md shadow-sm">
+          <label for="email-input" class="sr-only">{{ $t('email_label') }}</label>
+
+          <input
+            id="email-input"
+            v-model.trim="$v.form.payer.email.$model"
+            :class="[
+              'form-input placeholder-gray-400',
+              {
+                'is-invalid':
+                  (!$v.form.payer.email.required || !$v.form.payer.email) &&
+                  $v.form.payer.email.$dirty,
+              },
+            ]"
+            :placeholder="$t('email_placeholder')"
+          />
+        </div>
+
+        <p v-if="!$v.form.payer.email.required && $v.form.payer.email.$dirty" class="has-error">
+          {{ $t('email_label') }}
+          {{ $t('is_required') }}
+        </p>
+
+        <p
+          v-if="!$v.form.payer.email && $v.form.payer.email.$dirty"
+          class="pl-2 text-xs text-red-500 help is-danger"
+        >{{ $t('email_label') }} {{ $t('is_invalid') }}</p>
+      </div>
+
+      <div v-if="onBehalfOfIsActive" class="on-behalf-of">
+        <div class="relative rounded-md shadow-sm">
+          <label for="on-behalf-of-input" class="sr-only">{{ $t('behalf_of_label') }}</label>
+
+          <input
+            id="on-behalf-of-input"
+            v-model.trim="$v.form.onBehalfOf.$model"
+            :class="[
+              'form-input placeholder-gray-400',
+              {
+                'is-invalid':
+                  !$v.form.onBehalfOf.required && $v.form.onBehalfOf.$dirty,
+              },
+            ]"
+            :placeholder="$t('behalf_of_placeholder')"
+          />
+        </div>
+
+        <p v-if="!$v.form.onBehalfOf.required && $v.form.onBehalfOf.$dirty" class="has-error">
+          {{ $t('behalf_of_label') }}
+          {{ $t('is_required') }}
+        </p>
+      </div>
+
+      <div class="relationship">
+        <label for="relationship-select" class="sr-only">{{ $t('email_label') }}</label>
+
+        <div class="rounded-md shadow-sm">
+          <select
+            id="relationship-select"
+            v-model="$v.form.payer.relationshipId.$model"
+            :class="[
+              'form-select',
+              {
+                'is-invalid':
+                  !$v.form.payer.relationshipId.required &&
+                  $v.form.payer.relationshipId.$dirty,
+              },
+            ]"
+            required
+          >
+            <option :value="null" disabled selected hidden>{{ $t('relationship_placeholder') }}</option>
+
+            <option
+              v-for="relationship in relationshipsWithoutCorporateMatching"
+              :key="relationship.id"
+              :value="relationship.id"
+            >{{ relationship.sponsor_type }}</option>
+          </select>
+        </div>
+
+        <p
+          v-if="
+            !$v.form.payer.relationshipId.required &&
+            $v.form.payer.relationshipId.$dirty
+          "
+          class="has-error"
+        >
+          {{ $t('relationship_label') }}
+          {{ $t('is_required') }}
+        </p>
+      </div>
+
+      <CreditCardInputs :error="cardError">
+        <input
+          id="postal-code-input"
+          v-model.trim="$v.form.payer.postalCode.$model"
+          :class="[
+            'h-11 form-input placeholder-gray-400',
+            {
+              'is-invalid':
+                !$v.form.payer.postalCode.required &&
+                $v.form.payer.postalCode.$dirty,
+            },
+          ]"
+          :placeholder="$t('zip')"
+        />
+      </CreditCardInputs>
+    </fieldset>
+
+    <table class="mb-8 donation-summary">
+      <tbody>
+        <tr>
+          <td>{{ $t('donation') }}</td>
+
+          <td class="text-right donation">${{ formatCurrency(form.amount) }}</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="flex items-center">
+              <span class="mr-1">{{ $t('convenience_fee') }}</span>
+              <FontAwesomeIcon
+                v-tippy="{ trigger: 'mouseenter', arrow: true }"
+                :icon="['fal', 'info-circle']"
+                :content="$t('convenience_fee_help')"
+                class="h-3 cursor-pointer text-secondary-500 focus:outline-none"
+              />
+            </div>
+          </td>
+
+          <td
+            class="text-right convenience-fee"
+          >${{ formatCurrency($store.state.program.sponsor_convenience_fee) }}</td>
+        </tr>
+      </tbody>
+
+      <tfoot>
+        <tr>
+          <td class="text-xl font-semibold border-t">{{ $t('total_due') }}</td>
+          <td
+            class="text-xl font-semibold text-right border-t donatation-total"
+          >${{ formatCurrency(total) }}</td>
+        </tr>
+      </tfoot>
+    </table>
+    <p
+      v-if="hasBackendError"
+      class="px-2 mb-4 text-lg text-center text-red-700 text-danger"
+    >{{ backendError }}</p>
+    <button
+      id="submit-button"
+      :disabled="$v.$invalid || payPending || !creditCardFieldsAreValid"
+      type="submit"
+      :class="{
+        'opacity-50 cursor-not-allowed':
+          $v.$invalid || payPending || !creditCardFieldsAreValid,
+      }"
+      class="flex items-center justify-center mb-8 space-x-1 primary-button"
+    >
+      <span>{{ $t('submit_button') }}</span>
+
+      <FontAwesomeIcon v-if="payPending" :icon="['fas', 'circle-notch']" spin />
+    </button>
+
+    <footer class="mb-8 card-protection">
+      <svg class="inline h-3 mr-1 text-green-900" viewBox="0 0 448 512">
+        <path
+          d="M400 224h-24v-72C376 68.2 307.8 0 224 0S72 68.2 72 152v72H48c-26.5 0-48 21.5-48 48v192c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V272c0-26.5-21.5-48-48-48zm-104 0H152v-72c0-39.7 32.3-72 72-72s72 32.3 72 72v72z"
+          fill="currentColor"
+        />
+      </svg>
+
+      <span>{{ $t('card_protection') }}</span>
+    </footer>
+  </form>
+</template>
+
 
 <style lang="postcss">
 .payment-form {
@@ -740,15 +703,15 @@ export default {
 }
 
 .payment-form select:required:invalid {
-  color: theme('placeholderColor.gray.400');
+  color: theme("placeholderColor.gray.400");
 }
 
-.payment-form option[value='null'][disabled] {
+.payment-form option[value="null"][disabled] {
   display: none;
 }
 
 .payment-form option {
-  color: theme('colors.gray.800');
+  color: theme("colors.gray.800");
 }
 .payment-form .is-invalid {
   @apply border-red-200 text-red-200;

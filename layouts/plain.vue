@@ -25,7 +25,7 @@ export default defineComponent({
     const upperleveldomain = parts.join('.')
     const secondleveldomain = parts.slice(-2).join('.')
 
-    this.$store.commit('SET_SUBDOMAIN', subdomain)
+    this.$store.commit('SET_THEME', subdomain)
   },
   mounted() {
     console.dir(this.$store.state.affiliate)

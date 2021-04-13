@@ -43,6 +43,53 @@ export default {
     }
   },
 
+  /**
+   * -------------------------------------------------------------------------------
+   * Core configuration
+   * -------------------------------------------------------------------------------
+  */
+  build: {
+    postcss: {
+      plugins: {
+
+      }
+    },
+    extend(config, context) {
+      config.module.rules.push({
+        test: /\.(ogg|mp3|wav|mpe?g)$/i,
+        loader: 'file-loader',
+        options: {
+          name: '[path][name].[ext]',
+        },
+      })
+    },
+  },
+
+  buildModules: [
+    '@nuxt/typescript-build',
+    '@nuxtjs/color-mode',
+    '@nuxtjs/composition-api',
+    '@nuxtjs/google-fonts',
+    '@nuxtjs/tailwindcss',
+    'nuxt-use-sound',
+
+    // '@nuxt/http',
+    // '@nuxtjs/ackee',
+    // '@nuxtjs/google-analytics',
+    // '@nuxtjs/moment',
+    // '@nuxtjs/netlify-files',
+    // '@nuxtjs/pwa',
+    // '@nuxtjs/router',
+    // '@nuxtjs/sitemap'
+    // '@nuxtjs/style-resources',
+    // '@nuxtjs/stylelint-module',
+    // '@nuxtjs/svg',
+    // '@nuxtjs/tailwindcss',
+    // '@nuxtjs/vuetify',
+    // 'nuxt-svg-loader',
+    // 'nuxt-windicss',
+  ],
+
   components: true,
 
   css: [
@@ -50,6 +97,24 @@ export default {
     '~/assets/css/global.scss',
     '~/assets/css/components/cookie_consent.css',
   ],
+
+  // hooks: {
+  //   'content:file:beforeInsert': document => {
+  //     if (document.extension === '.md') {
+  //       const {time} = require('reading-time')(document.text)
+  //       document.readingTime = time
+
+  //       // const regexp = new RegExp(`^/(${options.i18n.locales.map(locale => locale.code).join('|')})`, 'gi')
+  //       // const { dir, slug, category } = document
+  //       // const _dir = dir.replace(regexp, '')
+  //       // const _slug = slug.replace(/^index/, '')
+  //       // const _category = category && typeof category === 'string' ? category : ''
+
+  //       // document.to = `${_dir}/${_slug}`
+  //       // document.category = _category
+  //     }
+  //   },
+  // },
 
   layoutTransition: {
     name: 'layout',
@@ -84,6 +149,7 @@ export default {
     '~/plugins/particles.client',
     '~/plugins/portal-vue',
     '~/plugins/repository',
+    '~/plugins/vee-validate',
     '~/plugins/vue-aos.client',
     '~/plugins/vue-api-query',
     '~/plugins/vue-awesome-swiper.client',
@@ -114,46 +180,24 @@ export default {
     // '~/plugins/vue-video-player.client',
   ],
 
-  build: {
-    postcss: {
-      plugins: {
+  /**
+   * -------------------------------------------------------------------------------
+   * Add on configuration
+   * -------------------------------------------------------------------------------
+  */
 
-      }
-    },
-    extend(config, context) {
-      config.module.rules.push({
-        test: /\.(ogg|mp3|wav|mpe?g)$/i,
-        loader: 'file-loader',
-        options: {
-          name: '[path][name].[ext]',
-        },
-      })
-    },
-  },
-
-  buildModules: [
-    '@nuxt/typescript-build',
-    '@nuxtjs/color-mode',
-    '@nuxtjs/composition-api',
-    '@nuxtjs/tailwindcss',
-    'nuxt-use-sound',
-    // "@nuxtjs/google-fonts",
-    // '@nuxt/http',
-    // '@nuxtjs/ackee',
-    // '@nuxtjs/google-analytics',
-    // '@nuxtjs/moment',
-    // '@nuxtjs/netlify-files',
-    // '@nuxtjs/pwa',
-    // '@nuxtjs/router',
-    // '@nuxtjs/sitemap'
-    // '@nuxtjs/style-resources',
-    // '@nuxtjs/stylelint-module',
-    // '@nuxtjs/svg',
-    // '@nuxtjs/tailwindcss',
-    // '@nuxtjs/vuetify',
-    // 'nuxt-svg-loader',
-    // 'nuxt-windicss',
-  ],
+  // ackee: {
+  //   server: 'https://example.com',
+  //   domainId: 'aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee',
+  //   /* see configuration for more */
+  //   // do not gather detailed data unless user gives permission
+  //   detailed: true,
+  //   // also tracks when on localhost
+  //   ignoreLocalhost: false,
+  //   // also tracks your own visits
+  //   ignoreOwnVisits: false,
+  //   storageKey: 'nuxt-ackee',
+  // },
 
   auth: {
     fullPathRedirect: true,
@@ -262,14 +306,29 @@ export default {
     classSuffix: '',
   },
 
-  content: {},
-
-  // googleFonts: {
-  //   families: {
-  //     Roboto: true,
-  //     "Roboto+Condensed": true,
+  // content: {
+  //   markdown: {
+  //     remarkPlugins: [['remark-emoji', {emoticon: true}]],
+  //     prism: {
+  //       theme: 'prism-themes/themes/prism-material-oceanic.css',
+  //     },
+  //   },
+  //   nestedProperties: ['author.name', 'categories.slug'],
+  //   extendParser: {
+  //     '.custom': file => ({body: file.split('\n').map(line => line.trim())}),
   //   },
   // },
+
+  // googleAnalytics: {
+  //   id: process.env.GOOGLE_ANALYTICS_ID || 'UA-76464598-5', // Use as fallback if no runtime config is provided
+  // },
+
+  googleFonts: {
+    families: {
+      Roboto: true,
+      "Roboto+Condensed": true,
+    },
+  },
 
   // gtm: {
   //   id: 'GTM-XXXXXXX', // Used as fallback if no runtime config is provided
@@ -327,6 +386,13 @@ export default {
   //   config: {},
   // },
 
+  // sitemap: {
+  //   hostname: global.siteUrl,
+  //   routes() {
+  //     return getRoutes()
+  //   },
+  // },
+
   sound: {
     back: {
       src: '/assets/sound/back.wav',
@@ -351,6 +417,15 @@ export default {
   tailwindcss: {
     exposeConfig: true,
     jit: true
+  },
+
+  toast: {
+    timeout: 2000,
+    closeOnClick: false,
+    // Use your own CSS file
+    // cssFile: 'path/to/your/file.scss',
+    // Or disable CSS injection
+    // cssFile: false,
   },
 
   typescript: {

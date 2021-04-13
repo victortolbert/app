@@ -1,3 +1,26 @@
+<script>
+import { defineComponent } from '@nuxtjs/composition-api'
+
+export default defineComponent({
+  props: {
+    accountId: {
+      type: Number
+    }
+  },
+  data() {
+    return {
+      email: 'jane@example.com',
+      receiveNewsletter: false,
+    }
+  },
+  methods: {
+    toggleNewsletter() {
+      this.receiveNewsletter = !this.receiveNewsletter
+    },
+  },
+})
+</script>
+
 <template>
   <div class="card">
     <h1 class="mb-6 text-2xl font-bold">Your Settings</h1>
@@ -28,19 +51,3 @@
   </div>
 </template>
 
-<script>
-export default {
-  props: ['accountId'],
-  data() {
-    return {
-      email: 'jane@example.com',
-      receiveNewsletter: false,
-    }
-  },
-  methods: {
-    toggleNewsletter() {
-      this.receiveNewsletter = !this.receiveNewsletter
-    },
-  },
-}
-</script>

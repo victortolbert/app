@@ -29,7 +29,7 @@ export default defineComponent({
 
 <template>
   <section class="p-8 bg-primary-700 text-primary-50">
-    <header class="md:flex md:items-center md:justify-between">
+    <header class="w-full max-w-7xl mx-auto md:flex md:items-center md:justify-between">
       <div class="flex-1 min-w-0">
         <h2 class="text-2xl font-bold leading-7 text-white sm:text-3xl sm:truncate">
           <span class="text-transparent bg-gradient-to-r bg-clip-text from-white to-white">

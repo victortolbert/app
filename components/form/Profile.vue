@@ -1,12 +1,12 @@
 <script>
+import {defineComponent} from '@nuxtjs/composition-api'
 import range from 'lodash/range'
 import required from 'vuelidate/lib/validators/required'
 import email from 'vuelidate/lib/validators/email'
 import {mask} from 'vue-the-mask'
 import {notBooster, meetsMinimumAge, isPhone} from '~/helpers/customValidators'
 
-export default {
-  name: 'EditProfileForm',
+export default defineComponent({
   directives: {mask},
   props: {
     user: {
@@ -343,7 +343,7 @@ export default {
       }
     },
   },
-}
+})
 </script>
 
 <template>

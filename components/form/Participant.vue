@@ -1,271 +1,8 @@
-<template>
-  <form :novalidate="!isIE11" @submit.prevent="submit">
-    <div class="pb-4 mx-4 md:mx-0">
-      <div class="pb-10 mb-10 border-b student-info">
-        <div class="max-w-md md:mx-auto">
-          <div class="mb-8 add-photo">
-            <div class="flex items-center justify-start">
-              <AvatarImage
-                :src="avatarSrc"
-                :should-emit="true"
-                alt="Edit Participant Profile Image"
-                class="cursor-pointer"
-                @open="openDashboardPhotoUpload"
-                @click.prevent="openDashboardPhotoUpload"
-              />
-
-              <button
-                class="ml-3 rounded-full button is-secondary"
-                @click.prevent="openDashboardPhotoUpload"
-              >
-                {{ $t('upload_photo') }}
-              </button>
-            </div>
-          </div>
-
-          <h2 class="mb-4 text-lg font-semibold">
-            {{ $t('form_title') }}
-          </h2>
-
-          <BaseInput
-            v-model.trim="form.firstName"
-            :v="$v.form.firstName"
-            :label="$t('first_name_label')"
-            :placeholder="$t('first_name_placeholder')"
-            required
-          />
-
-          <BaseInput
-            v-model.trim="form.lastName"
-            :v="$v.form.lastName"
-            :label="$t('last_name')"
-            :placeholder="$t('last_name_placeholder')"
-            required
-          />
-
-          <div class="field">
-            <label class="">{{ $t('classroom_label') }}</label>
-            <div class="control">
-              <div class="select is-fullwidth">
-                <select
-                  v-model="form.classroom.id"
-                  name="classroom"
-                  class="select"
-                  required
-                >
-                  <template v-for="(grade, label) in classroomsSorted">
-                    <template v-if="label == 'Other'">
-                      <option
-                        v-for="classroom in grade"
-                        :key="classroom.id"
-                        :value="classroom.id"
-                      >
-                        {{ classroom.name }}
-                      </option>
-                    </template>
-                    <template v-else>
-                      <optgroup :label="label" :key="label">
-                        <option
-                          v-for="classroom in grade"
-                          :key="classroom.id"
-                          :value="classroom.id.toString()"
-                        >
-                          {{ classroom.name }}
-                        </option>
-                      </optgroup>
-                    </template>
-                  </template>
-                </select>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div
-        v-if="displayFamilyPledging"
-        class="pb-10 mb-10 border-b family-pledging"
-      >
-        <div class="max-w-md md:mx-auto">
-          <div class="flex items-center mb-6">
-            <h2 class="mr-6 text-lg font-semibold">
-              {{ $t('edit_participant.family_pledging_header') }}
-            </h2>
-            <img
-              src="/v3-assets/dashboard/images/family-pledging.png"
-              style="width: 36px; height: 36px"
-              alt=""
-            />
-          </div>
-
-          <div class="field">
-            <BSwitch v-model="form.familyPledgingEnabled" type="is-tertiary" />
-          </div>
-
-          <p class="text-sm">
-            {{ $t('edit_participant.family_pledging_message') }}
-          </p>
-        </div>
-      </div>
-
-      <div class="pb-10 mb-10 border-b pledge-goal">
-        <div class="max-w-md md:mx-auto">
-          <h2 v-if="isFlat" class="mb-4 text-lg font-semibold">
-            {{ $t('pledge_goal') }}
-          </h2>
-          <h2 v-else class="mb-4 text-lg font-semibold capitalize">
-            {{ $t('pledge_goal') }}
-            <span v-if="!isFlat"
-              >: {{ form.unit.modifier }} {{ form.unit.name }}</span
-            >
-          </h2>
-          <div class="field">
-            <label class="text-sm" for="goal-amount">
-              {{ $t('goal_amount') }}
-            </label>
-            <div class="control">
-              <div class="flex items-center">
-                <div>
-                  <input
-                    id="goal-amount"
-                    v-model="$v.form.pledgeGoal.$model"
-                    step="1"
-                    min="0"
-                    type="number"
-                    class="w-16 font-bold input sm:w-32"
-                  />
-                </div>
-                <div v-if="!isFlat" class="flex items-center">
-                  <div class="px-2 text-lg font-bold sm:px-4">=</div>
-                  <div class="leading-none">
-                    <span class="text-lg font-bold">
-                      ${{
-                        (form.pledge_goal * form.unitRangeLow) | currency
-                      }}
-                      to ${{
-                        (form.pledge_goal * form.unitRangeHigh) | currency
-                      }}
-                    </span>
-                    <br />
-                    <span class="text-xs">
-                      $1
-                      <span class="capitalize"
-                        >{{ form.unit.modifier }} {{ form.unit.name }}</span
-                      >
-                      = ${{ form.unitRangeLow }} to ${{ form.unitRangeHigh }}
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <p
-              v-if="$v.form.pledge_goal.$invalid"
-              class="pl-2 text-xs text-red-500 help is-danger"
-            >
-              {{ $t('goal_amount') }} {{ $t('is_required') }}
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <div class="mb-10 pledge-page-message">
-        <div class="max-w-md md:mx-auto">
-          <h2 class="mb-2 text-lg font-semibold">
-            {{ $t('pledge_message') }}
-          </h2>
-
-          <div class="editor">
-            <EditorMenuBar :editor="editor">
-              <div
-                slot-scope="{commands, isActive}"
-                class="field has-addons"
-                style="margin-bottom: -1px"
-              >
-                <p class="control">
-                  <button
-                    :class="['button', {'is-active': isActive.bold()}]"
-                    @click.prevent="commands.bold"
-                  >
-                    <span class="icon is-small">
-                      <FontAwesomeIcon :icon="['fas', 'bold']" />
-                    </span>
-                    <span>{{ $t('bold') }}</span>
-                  </button>
-                </p>
-
-                <p class="control">
-                  <button
-                    :class="['button', {'is-active': isActive.italic()}]"
-                    @click.prevent="commands.italic"
-                  >
-                    <span class="icon is-small">
-                      <FontAwesomeIcon :icon="['fas', 'italic']" />
-                    </span>
-                    <span>{{ $t('italic') }}</span>
-                  </button>
-                </p>
-
-                <p class="control">
-                  <button
-                    :class="['button', {'is-active': isActive.underline()}]"
-                    @click.prevent="commands.underline"
-                  >
-                    <span class="icon is-small">
-                      <FontAwesomeIcon :icon="['fas', 'underline']" />
-                    </span>
-                    <span>{{ $t('underline') }}</span>
-                  </button>
-                </p>
-              </div>
-            </EditorMenuBar>
-
-            <EditorContent
-              :editor="editor"
-              class="p-2 mb-10 border editor__content"
-            />
-          </div>
-        </div>
-      </div>
-
-      <div class="pb-10 mb-10 text-center">
-        <div class="max-w-md md:mx-auto">
-          <div class="flex flex-col items-center justify-start">
-            <button
-              :disabled="$v.$invalid"
-              class="inline-block w-full py-2 mb-4 text-lg font-semibold leading-none text-white rounded-full shadow-md sm:w-64 focus:outline-none focus:shadow-outline bg-secondary"
-            >
-              {{ $t('save') }}
-            </button>
-            <a
-              href="/v3/home/dashboard"
-              class="inline-block w-full py-2 mb-4 text-lg font-semibold leading-none bg-white border rounded-full shadow-md sm:w-64 focus:outline-none focus:shadow-outline text-secondary hover:text-secondary-light border-secondary hover:border-secondary-light"
-            >
-              {{ $t('cancel') }}
-            </a>
-          </div>
-
-          <a class="inline-block mb-4" href="/v3/terms#" target="_new">
-            {{ $t('view_agreement') }} </a
-          ><br />
-          <button
-            v-tooltip="deleteTooltip"
-            :disabled="false"
-            class="text-red"
-            href="#"
-            @click.prevent="deleteStudent"
-          >
-            {{ $t('delete') }}
-          </button>
-        </div>
-      </div>
-    </div>
-  </form>
-</template>
-
 <script>
-import {mapState, mapGetters, mapMutations, mapActions} from 'vuex'
-import {Editor, EditorContent, EditorMenuBar} from 'tiptap'
-import {Bold, Italic, Link, Underline} from 'tiptap-extensions'
+import {defineComponent} from '@nuxtjs/composition-api'
+import { mapState, mapGetters, mapMutations, mapActions } from 'vuex'
+import { Editor, EditorContent, EditorMenuBar } from 'tiptap'
+import { Bold, Italic, Link, Underline } from 'tiptap-extensions'
 import required from 'vuelidate/lib/validators/required'
 
 const DEFAULT_IMAGE = '/v3-assets/dashboard/images/dashboard-avatar.svg'
@@ -277,10 +14,7 @@ const isEdge =
   '-ms-ime-align' in document.documentElement.style &&
   !window.navigator.msPointerEnabled
 
-export default {
-  name: 'EditParticipantForm',
-  status: 'prototype',
-  release: '1.0.0',
+export default defineComponent({
   components: {
     EditorContent,
     EditorMenuBar,
@@ -320,9 +54,9 @@ export default {
   }),
   validations: {
     form: {
-      firstName: {required},
-      lastName: {required},
-      pledgeGoal: {required},
+      firstName: { required },
+      lastName: { required },
+      pledgeGoal: { required },
     },
   },
   computed: {
@@ -440,18 +174,18 @@ export default {
             '/v3/tkdashboard/?redirect=' +
             encodeURI(
               'auth/login/' +
-                this.participant.fr_code +
-                '/view-participant/pledge',
+              this.participant.fr_code +
+              '/view-participant/pledge',
             ),
         },
       )
     },
   },
   mounted() {
-    const {firstName, lastName} = this.participant
-    const {classroom, familyPledgingEnabled} = this.participant.participant_info
-    const {pledgeGoal, pledgePageText, imageName} = this.participant.profile
-    const {unit, unitRangeLow, unitRangeHigh} = this.settings
+    const { firstName, lastName } = this.participant
+    const { classroom, familyPledgingEnabled } = this.participant.participant_info
+    const { pledgeGoal, pledgePageText, imageName } = this.participant.profile
+    const { unit, unitRangeLow, unitRangeHigh } = this.settings
 
     this.form = {
       firstName,
@@ -618,5 +352,231 @@ export default {
       // this.blur()
     },
   },
-}
+})
 </script>
+
+<template>
+  <form :novalidate="!isIE11" @submit.prevent="submit">
+    <div class="pb-4 mx-4 md:mx-0">
+      <div class="pb-10 mb-10 border-b student-info">
+        <div class="max-w-md md:mx-auto">
+          <div class="mb-8 add-photo">
+            <div class="flex items-center justify-start">
+              <AvatarImage
+                :src="avatarSrc"
+                :should-emit="true"
+                alt="Edit Participant Profile Image"
+                class="cursor-pointer"
+                @open="openDashboardPhotoUpload"
+                @click.prevent="openDashboardPhotoUpload"
+              />
+
+              <button
+                class="ml-3 rounded-full button is-secondary"
+                @click.prevent="openDashboardPhotoUpload"
+              >{{ $t('upload_photo') }}</button>
+            </div>
+          </div>
+
+          <h2 class="mb-4 text-lg font-semibold">{{ $t('form_title') }}</h2>
+
+          <BaseInput
+            v-model.trim="form.firstName"
+            :v="$v.form.firstName"
+            :label="$t('first_name_label')"
+            :placeholder="$t('first_name_placeholder')"
+            required
+          />
+
+          <BaseInput
+            v-model.trim="form.lastName"
+            :v="$v.form.lastName"
+            :label="$t('last_name')"
+            :placeholder="$t('last_name_placeholder')"
+            required
+          />
+
+          <div class="field">
+            <label class>{{ $t('classroom_label') }}</label>
+            <div class="control">
+              <div class="select is-fullwidth">
+                <select v-model="form.classroom.id" name="classroom" class="select" required>
+                  <template v-for="(grade, label) in classroomsSorted">
+                    <template v-if="label == 'Other'">
+                      <option
+                        v-for="classroom in grade"
+                        :key="classroom.id"
+                        :value="classroom.id"
+                      >{{ classroom.name }}</option>
+                    </template>
+                    <template v-else>
+                      <optgroup :label="label" :key="label">
+                        <option
+                          v-for="classroom in grade"
+                          :key="classroom.id"
+                          :value="classroom.id.toString()"
+                        >{{ classroom.name }}</option>
+                      </optgroup>
+                    </template>
+                  </template>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div v-if="displayFamilyPledging" class="pb-10 mb-10 border-b family-pledging">
+        <div class="max-w-md md:mx-auto">
+          <div class="flex items-center mb-6">
+            <h2
+              class="mr-6 text-lg font-semibold"
+            >{{ $t('edit_participant.family_pledging_header') }}</h2>
+            <img
+              src="/v3-assets/dashboard/images/family-pledging.png"
+              style="width: 36px; height: 36px"
+              alt
+            />
+          </div>
+
+          <div class="field">
+            <BSwitch v-model="form.familyPledgingEnabled" type="is-tertiary" />
+          </div>
+
+          <p class="text-sm">{{ $t('edit_participant.family_pledging_message') }}</p>
+        </div>
+      </div>
+
+      <div class="pb-10 mb-10 border-b pledge-goal">
+        <div class="max-w-md md:mx-auto">
+          <h2 v-if="isFlat" class="mb-4 text-lg font-semibold">{{ $t('pledge_goal') }}</h2>
+          <h2 v-else class="mb-4 text-lg font-semibold capitalize">
+            {{ $t('pledge_goal') }}
+            <span
+              v-if="!isFlat"
+            >: {{ form.unit.modifier }} {{ form.unit.name }}</span>
+          </h2>
+          <div class="field">
+            <label class="text-sm" for="goal-amount">{{ $t('goal_amount') }}</label>
+            <div class="control">
+              <div class="flex items-center">
+                <div>
+                  <input
+                    id="goal-amount"
+                    v-model="$v.form.pledgeGoal.$model"
+                    step="1"
+                    min="0"
+                    type="number"
+                    class="w-16 font-bold input sm:w-32"
+                  />
+                </div>
+                <div v-if="!isFlat" class="flex items-center">
+                  <div class="px-2 text-lg font-bold sm:px-4">=</div>
+                  <div class="leading-none">
+                    <span class="text-lg font-bold">
+                      ${{
+                        (form.pledge_goal * form.unitRangeLow) | currency
+                      }}
+                      to ${{
+                        (form.pledge_goal * form.unitRangeHigh) | currency
+                      }}
+                    </span>
+                    <br />
+                    <span class="text-xs">
+                      $1
+                      <span class="capitalize">{{ form.unit.modifier }} {{ form.unit.name }}</span>
+                      = ${{ form.unitRangeLow }} to ${{ form.unitRangeHigh }}
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <p
+              v-if="$v.form.pledge_goal.$invalid"
+              class="pl-2 text-xs text-red-500 help is-danger"
+            >{{ $t('goal_amount') }} {{ $t('is_required') }}</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="mb-10 pledge-page-message">
+        <div class="max-w-md md:mx-auto">
+          <h2 class="mb-2 text-lg font-semibold">{{ $t('pledge_message') }}</h2>
+
+          <div class="editor">
+            <EditorMenuBar :editor="editor">
+              <div
+                slot-scope="{commands, isActive}"
+                class="field has-addons"
+                style="margin-bottom: -1px"
+              >
+                <p class="control">
+                  <button
+                    :class="['button', { 'is-active': isActive.bold() }]"
+                    @click.prevent="commands.bold"
+                  >
+                    <span class="icon is-small">
+                      <FontAwesomeIcon :icon="['fas', 'bold']" />
+                    </span>
+                    <span>{{ $t('bold') }}</span>
+                  </button>
+                </p>
+
+                <p class="control">
+                  <button
+                    :class="['button', { 'is-active': isActive.italic() }]"
+                    @click.prevent="commands.italic"
+                  >
+                    <span class="icon is-small">
+                      <FontAwesomeIcon :icon="['fas', 'italic']" />
+                    </span>
+                    <span>{{ $t('italic') }}</span>
+                  </button>
+                </p>
+
+                <p class="control">
+                  <button
+                    :class="['button', { 'is-active': isActive.underline() }]"
+                    @click.prevent="commands.underline"
+                  >
+                    <span class="icon is-small">
+                      <FontAwesomeIcon :icon="['fas', 'underline']" />
+                    </span>
+                    <span>{{ $t('underline') }}</span>
+                  </button>
+                </p>
+              </div>
+            </EditorMenuBar>
+
+            <EditorContent :editor="editor" class="p-2 mb-10 border editor__content" />
+          </div>
+        </div>
+      </div>
+
+      <div class="pb-10 mb-10 text-center">
+        <div class="max-w-md md:mx-auto">
+          <div class="flex flex-col items-center justify-start">
+            <button
+              :disabled="$v.$invalid"
+              class="inline-block w-full py-2 mb-4 text-lg font-semibold leading-none text-white rounded-full shadow-md sm:w-64 focus:outline-none focus:shadow-outline bg-secondary"
+            >{{ $t('save') }}</button>
+            <a
+              href="/v3/home/dashboard"
+              class="inline-block w-full py-2 mb-4 text-lg font-semibold leading-none bg-white border rounded-full shadow-md sm:w-64 focus:outline-none focus:shadow-outline text-secondary hover:text-secondary-light border-secondary hover:border-secondary-light"
+            >{{ $t('cancel') }}</a>
+          </div>
+
+          <a class="inline-block mb-4" href="/v3/terms#" target="_new">{{ $t('view_agreement') }}</a>
+          <br />
+          <button
+            v-tooltip="deleteTooltip"
+            :disabled="false"
+            class="text-red"
+            href="#"
+            @click.prevent="deleteStudent"
+          >{{ $t('delete') }}</button>
+        </div>
+      </div>
+    </div>
+  </form>
+</template>

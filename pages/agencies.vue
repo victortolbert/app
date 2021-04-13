@@ -1,5 +1,5 @@
 <script>
-import {defineComponent, watchEffect} from '@nuxtjs/composition-api'
+import { defineComponent, watchEffect } from '@nuxtjs/composition-api'
 import AgencyService from '~/services/AgencyService'
 
 export default defineComponent({
@@ -32,7 +32,7 @@ export default defineComponent({
           this.totalAgencies = response.headers['x-total-count']
         })
         .catch(() => {
-          this.$router.push({name: 'network-error'})
+          this.$router.push({ name: 'network-error' })
         })
     })
   },
@@ -41,7 +41,7 @@ export default defineComponent({
 
 <template>
   <PageWrapper>
-    <PageHeading> {{ $t('agencies') }}</PageHeading>
+    <PageHeading>{{ $t('agencies') }}</PageHeading>
 
     <SectionWrapper class="tabs">
       <div>
@@ -69,10 +69,7 @@ export default defineComponent({
               class="relative flex-1 min-w-0 px-4 py-4 overflow-hidden text-sm font-medium text-center text-gray-900 bg-white rounded-l-lg group hover:bg-gray-50 focus:z-10"
             >
               <span>My Account</span>
-              <span
-                aria-hidden="true"
-                class="bg-primary-500 absolute inset-x-0 bottom-0 h-0.5"
-              />
+              <span aria-hidden="true" class="bg-primary-500 absolute inset-x-0 bottom-0 h-0.5" />
             </a>
             <a
               href="#"
@@ -80,10 +77,7 @@ export default defineComponent({
               class="relative flex-1 min-w-0 px-4 py-4 overflow-hidden text-sm font-medium text-center text-gray-500 bg-white hover:text-gray-700 group hover:bg-gray-50 focus:z-10"
             >
               <span>Company</span>
-              <span
-                aria-hidden="true"
-                class="bg-transparent absolute inset-x-0 bottom-0 h-0.5"
-              />
+              <span aria-hidden="true" class="bg-transparent absolute inset-x-0 bottom-0 h-0.5" />
             </a>
             <a
               href="#"
@@ -91,10 +85,7 @@ export default defineComponent({
               class="relative flex-1 min-w-0 px-4 py-4 overflow-hidden text-sm font-medium text-center text-gray-500 bg-white hover:text-gray-700 group hover:bg-gray-50 focus:z-10"
             >
               <span>Team Members</span>
-              <span
-                aria-hidden="true"
-                class="bg-transparent absolute inset-x-0 bottom-0 h-0.5"
-              />
+              <span aria-hidden="true" class="bg-transparent absolute inset-x-0 bottom-0 h-0.5" />
             </a>
             <a
               href="#"
@@ -102,10 +93,7 @@ export default defineComponent({
               class="relative flex-1 min-w-0 px-4 py-4 overflow-hidden text-sm font-medium text-center text-gray-500 bg-white rounded-r-lg hover:text-gray-700 group hover:bg-gray-50 focus:z-10"
             >
               <span>Billing</span>
-              <span
-                aria-hidden="true"
-                class="bg-transparent absolute inset-x-0 bottom-0 h-0.5"
-              />
+              <span aria-hidden="true" class="bg-transparent absolute inset-x-0 bottom-0 h-0.5" />
             </a>
           </nav>
         </div>
@@ -121,9 +109,7 @@ export default defineComponent({
               :key="agency.id"
               class="flex justify-center col-span-1 px-8 py-8 shadow bg-gray-50"
               :to="localePath(`/agencies/${agency.id}`)"
-            >
-              {{ agency.agency_name }}
-            </NuxtLink>
+            >{{ agency.agency_name }}</NuxtLink>
           </div>
         </div>
       </article>
