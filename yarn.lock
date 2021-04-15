@@ -3445,16 +3445,16 @@
     defu "^3.2.2"
     lodash.template "^4.5.0"
 
-"@nuxtjs/composition-api@0.22.3":
-  version "0.22.3"
-  resolved "https://registry.yarnpkg.com/@nuxtjs/composition-api/-/composition-api-0.22.3.tgz#fd715670bb0ae1b536b9b2c1aba359db16718063"
-  integrity sha512-yD3jiGMotMpUPsHh3bEEd+plJu63/lwJfd5rHHYpBjlkoopEacfIxYgFnGp479FoeIqXZlaAWGxEw4BG2E4b0A==
+"@nuxtjs/composition-api@0.23.1":
+  version "0.23.1"
+  resolved "https://registry.yarnpkg.com/@nuxtjs/composition-api/-/composition-api-0.23.1.tgz#50d00a51a29fd180bfa0bbe4267ac5c4b9e9dd28"
+  integrity sha512-AOkTUvJUmlNjom/DigfU3sLf5CbYNog58M/HXVm28/Bw+1aZprpyw+NW0ABNNKqlEb43sYyb8ePmWX6vsXU05A==
   dependencies:
-    "@vue/composition-api" "1.0.0-rc.5"
+    "@vue/composition-api" "1.0.0-rc.6"
     defu "^3.2.2"
     estree-walker "^2.0.2"
     magic-string "^0.25.7"
-    ufo "^0.6.10"
+    ufo "^0.6.11"
     upath "^2.0.1"
 
 "@nuxtjs/composition-api@^0.20.2":
@@ -5703,10 +5703,10 @@
   dependencies:
     tslib "^2.1.0"
 
-"@vue/composition-api@1.0.0-rc.5", "@vue/composition-api@>=1.0.0-rc.1":
-  version "1.0.0-rc.5"
-  resolved "https://registry.yarnpkg.com/@vue/composition-api/-/composition-api-1.0.0-rc.5.tgz#9b857743dd2692073b6df90fa2cfb9a75a1bb2f6"
-  integrity sha512-sFBUDZxwi5YOQqH//VSGenO6WH0JuW94+CWo1eUsGSTRue8POfwD4oeduVqi/c6QcwXg2tJL/m6aOD2t/IR6zg==
+"@vue/composition-api@1.0.0-rc.6", "@vue/composition-api@>=1.0.0-rc.1":
+  version "1.0.0-rc.6"
+  resolved "https://registry.yarnpkg.com/@vue/composition-api/-/composition-api-1.0.0-rc.6.tgz#21ce2c169dd4ff17a5bf60c6e98863dff1a36540"
+  integrity sha512-M3jsyDBozQFqAPYdM4GCoVZEljIHsTVdcq5fZx9axpKz9ChIlQngxNf1ziLVaJvWX7T+MO1rVTEx6Xjgg/gUcQ==
   dependencies:
     tslib "^2.1.0"
 
@@ -21169,10 +21169,10 @@ ua-parser-js@^0.7.24:
   resolved "https://registry.yarnpkg.com/ua-parser-js/-/ua-parser-js-0.7.25.tgz#67689fa263a87a52dabbc251ede89891f59156ce"
   integrity sha512-8NFExdfI24Ny8R3Vc6+uUytP/I7dpqk3JERlvxPWlrtx5YboqCgxAXYKPAifbPLV2zKbgmmPL53ufW7mUC/VOQ==
 
-ufo@^0.6.10, ufo@^0.6.6:
-  version "0.6.10"
-  resolved "https://registry.yarnpkg.com/ufo/-/ufo-0.6.10.tgz#c7ace9b8f72cb08c35e3a8c8edc76f062fbaa7d0"
-  integrity sha512-sMbJnrBcKKsbVyr6++hb0n9lCmrMqkJrNnJIOJ3sckeqY6NMfAULcRGbBWcASSnN1HDV3YqiGCPzi9RVs511bw==
+ufo@^0.6.10, ufo@^0.6.11, ufo@^0.6.6:
+  version "0.6.11"
+  resolved "https://registry.yarnpkg.com/ufo/-/ufo-0.6.11.tgz#69311ed4abc8ab671c83754b79ce0d396fea1075"
+  integrity sha512-Yu7TJThwlr23peOkX/+hm6LfkyBs+eDWV880468PTrjKBKjjsNWFFwIuOqDfmXngRo9TZ4+twFYueRH0OLl0Gw==
 
 uglify-js@^3.5.1:
   version "3.13.2"
