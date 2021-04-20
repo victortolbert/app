@@ -111,7 +111,7 @@
     "nuxt-edge": "^2.16.0-26942438.7c86c11d",
     "nuxt-i18n": "^6.21.1",
     "object-to-formdata": "^4.1.0",
-    "particles.vue": "2.6.0",
+    "particles.vue": "2.9.3",
     "path-to-regexp": "6.2.0",
     "prism-theme-vars": "0.2.2",
     "prism-themes": "^1.6.0",
