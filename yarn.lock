@@ -5792,12 +5792,12 @@
     popmotion "^9.3.4"
     vue-demi "0.7.3"
 
-"@vueuse/router@4.4.1":
-  version "4.4.1"
-  resolved "https://registry.yarnpkg.com/@vueuse/router/-/router-4.4.1.tgz#b2ac6665a418003637ca3df6ce0a4bc52ca7ed32"
-  integrity sha512-JgOw6essmMYfVTccX5Bf1cLCFSburpb8KmTEApQONvKMsRWGfzUYt7XwvvWH0X8RCPXpqxtQ0jUOr5qyQPqDAQ==
+"@vueuse/router@4.8.3":
+  version "4.8.3"
+  resolved "https://registry.yarnpkg.com/@vueuse/router/-/router-4.8.3.tgz#2b51a63737d631869a4ae2df5761b80e0fb5346b"
+  integrity sha512-0gfiAsO0PBIdJKvWwagOrNw7BmTy0ChD7spF0EA1SAB+SaI24kYQtYPOW8YMRe1nkD2A4S4k6zVSYRfzgl+RdQ==
   dependencies:
-    "@vueuse/shared" "4.4.1"
+    "@vueuse/shared" "4.8.3"
     vue-demi latest
 
 "@vueuse/rxjs@4.4.1":
@@ -5808,10 +5808,17 @@
     "@vueuse/shared" "4.4.1"
     vue-demi latest
 
-"@vueuse/shared@4.4.1", "@vueuse/shared@^4.0.4":
+"@vueuse/shared@4.4.1":
   version "4.4.1"
   resolved "https://registry.yarnpkg.com/@vueuse/shared/-/shared-4.4.1.tgz#8963740d1b8a036933ae5c02b461b430430e2433"
   integrity sha512-pY7bXgYaA9g25XNREE3zeuIWfOwbyiKeQ0IppE4nIRuro4gVGuLoV/BIU6D0VOTv7hYefv5eqE+WS03v61y8xA==
+  dependencies:
+    vue-demi latest
+
+"@vueuse/shared@4.8.3", "@vueuse/shared@^4.0.4":
+  version "4.8.3"
+  resolved "https://registry.yarnpkg.com/@vueuse/shared/-/shared-4.8.3.tgz#c5a7897d3a78a1cb5a36827cf470a00cb8cce270"
+  integrity sha512-yagqyvYYgsG5skbQJkqUr/H7ZsKZoLGR95MlGKf0p3fJrRTlbLmPlrHJICo/KQ2kMlx1gCuxDplmVXnnwyQj8Q==
   dependencies:
     vue-demi latest
 
