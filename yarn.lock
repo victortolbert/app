@@ -16172,16 +16172,16 @@ parsimmon@^1.13.0:
   resolved "https://registry.yarnpkg.com/parsimmon/-/parsimmon-1.16.0.tgz#2834e3db645b6a855ab2ea14fbaad10d82867e0f"
   integrity sha512-tekGDz2Lny27SQ/5DzJdIK0lqsWwZ667SCLFIDCxaZM7VNgQjyKLbaL7FYPKpbjdxNAXFV/mSxkq5D2fnkW4pA==
 
-particles.vue@2.6.0:
-  version "2.6.0"
-  resolved "https://registry.yarnpkg.com/particles.vue/-/particles.vue-2.6.0.tgz#17964c337ef098b3e04074dbd1fafcad37fb234a"
-  integrity sha512-f8SERPv8L987WMbRGsFnH53ArPWlS7NOuh4YXQJcdM+KNvEOuJPQGYV/oVniYhbxgfpA1VEVT+OzJ+iy/YL/DA==
+particles.vue@2.10.0:
+  version "2.10.0"
+  resolved "https://registry.yarnpkg.com/particles.vue/-/particles.vue-2.10.0.tgz#0be76ea627e673c5aabba7412b2b7f16565bbaff"
+  integrity sha512-j8sg/o4RJqhJN9qRrLQ+k+5hzrE7UZSdbTq9foSGEY9pTh2qWfmkpezpYdqZ6ehHZrbLP/vc9vuPOoE2LPWjdA==
   dependencies:
-    tslib "^2.0.3"
-    tsparticles "^1.23.0"
+    tslib "^2.1.0"
+    tsparticles "^1.27.0"
     vue "<3"
     vue-class-component "<8"
-    vue-property-decorator "^9.0.2"
+    vue-property-decorator "^9.1.2"
 
 pascal-case@^3.1.2:
   version "3.1.2"
@@ -21032,10 +21032,10 @@ tsml@1.0.1:
   resolved "https://registry.yarnpkg.com/tsml/-/tsml-1.0.1.tgz#89f8218b9d9e257f47d7f6b56d01c5a4d2c68fc3"
   integrity sha1-ifghi52eJX9H1/a1bQHFpNLGj8M=
 
-tsparticles@^1.23.0:
-  version "1.24.1"
-  resolved "https://registry.yarnpkg.com/tsparticles/-/tsparticles-1.24.1.tgz#7807fe1ce8c9f7caa7b17e6f3ed5e6e6789fd6d8"
-  integrity sha512-swPu6qjssFEuM8IUWvrRV0Q35raL8FaCK17x9g7Wt2Rtz/cN5JXbxDtEtQfS6MslKvUQI71L/kWVrS43eCzoJg==
+tsparticles@^1.27.0:
+  version "1.27.0"
+  resolved "https://registry.yarnpkg.com/tsparticles/-/tsparticles-1.27.0.tgz#0580fa5df6a2bf66a15eb7d944276f945e704712"
+  integrity sha512-7gBErOh21DNDbcflrxb7PT6eQPldTZURx6l099DRZbtbzzhT/N3Jyx80xsvjVPB52m30KiQswAsaMMg2lq+iFA==
   optionalDependencies:
     pathseg "^1.2.0"
 
@@ -22101,7 +22101,7 @@ vue-print-nb@^1.6.0:
     qrcodejs2 "0.0.2"
     vue "^2.6.11"
 
-vue-property-decorator@^9.0.2:
+vue-property-decorator@^9.1.2:
   version "9.1.2"
   resolved "https://registry.yarnpkg.com/vue-property-decorator/-/vue-property-decorator-9.1.2.tgz#266a2eac61ba6527e2e68a6933cfb98fddab5457"
   integrity sha512-xYA8MkZynPBGd/w5QFJ2d/NM0z/YeegMqYTphy7NJQXbZcuU6FC6AOdUAcy4SXP+YnkerC6AfH+ldg7PDk9ESQ==
