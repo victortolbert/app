@@ -21819,10 +21819,10 @@ vue-advanced-chat@^0.8.3:
   optionalDependencies:
     lamejs "^1.2.0"
 
-vue-advanced-cropper@^1.3.2:
-  version "1.3.3"
-  resolved "https://registry.yarnpkg.com/vue-advanced-cropper/-/vue-advanced-cropper-1.3.3.tgz#d40e5364b9128cc6f0bc8a9f161a76e1d941c594"
-  integrity sha512-bCuUpqPQAc6YZthLLFrDOwPs1IUSuQH63uphXkfcCk80E2vRD/32cJZOXv1G00m8ftSYgxTDX7fBasnfnixhzQ==
+vue-advanced-cropper@^1.6.0:
+  version "1.6.0"
+  resolved "https://registry.yarnpkg.com/vue-advanced-cropper/-/vue-advanced-cropper-1.6.0.tgz#69ab2272bee70101991d1eea4eaf2f99105ab29a"
+  integrity sha512-YPJhNH+nH3cOiNZcNIhqj1C3UPFA3p9Xlb0VXEPIssWorcTkhB5QxUX5wDywbmnwTexzTIkoN/ZWSH8DJFpL8Q==
   dependencies:
     classnames "^2.2.6"
     debounce "^1.2.0"
