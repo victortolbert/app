@@ -56,7 +56,7 @@
     "@nuxtjs/pwa": "^3.3.5",
     "@nuxtjs/sitemap": "^2.4.0",
     "@nuxtjs/style-resources": "^1.0.0",
-    "@octokit/rest": "18.3.5",
+    "@octokit/rest": "18.5.5",
     "@oruga-ui/oruga": "^0.3.5",
     "@sentry/browser": "6.2.3",
     "@sentry/integrations": "6.2.3",
