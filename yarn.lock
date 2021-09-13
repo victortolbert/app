@@ -5792,13 +5792,13 @@
     popmotion "^9.3.4"
     vue-demi "0.7.3"
 
-"@vueuse/router@4.4.1":
-  version "4.4.1"
-  resolved "https://registry.yarnpkg.com/@vueuse/router/-/router-4.4.1.tgz#b2ac6665a418003637ca3df6ce0a4bc52ca7ed32"
-  integrity sha512-JgOw6essmMYfVTccX5Bf1cLCFSburpb8KmTEApQONvKMsRWGfzUYt7XwvvWH0X8RCPXpqxtQ0jUOr5qyQPqDAQ==
+"@vueuse/router@6.3.3":
+  version "6.3.3"
+  resolved "https://registry.yarnpkg.com/@vueuse/router/-/router-6.3.3.tgz#2074a3b80cff37ef3d7ebcf54a667d2593507a99"
+  integrity sha512-EBuV7eLMvHuQJlvSU+k/uDQsUTxhoBsKQ+lbNRnNNhPo9P2rHciXpERl8qtETpRJL8In1GZ86VQdgmtPI+EVfg==
   dependencies:
-    "@vueuse/shared" "4.4.1"
-    vue-demi latest
+    "@vueuse/shared" "6.3.3"
+    vue-demi "*"
 
 "@vueuse/rxjs@4.4.1":
   version "4.4.1"
@@ -5814,6 +5814,13 @@
   integrity sha512-pY7bXgYaA9g25XNREE3zeuIWfOwbyiKeQ0IppE4nIRuro4gVGuLoV/BIU6D0VOTv7hYefv5eqE+WS03v61y8xA==
   dependencies:
     vue-demi latest
+
+"@vueuse/shared@6.3.3":
+  version "6.3.3"
+  resolved "https://registry.yarnpkg.com/@vueuse/shared/-/shared-6.3.3.tgz#4e5c600ad1ed5bf2a8630ad0bd38edb1f4269f37"
+  integrity sha512-2+YPRhFNUXEhhvKNTWBtNU6hGkft9+mfYSVjI4hZu2U8KDbNNKF/215lBPzMYI2twScDtPsAssQ+vu5t9PBy0g==
+  dependencies:
+    vue-demi "*"
 
 "@vueuse/sound@latest":
   version "1.1.7"
@@ -21907,6 +21914,11 @@ vue-croppa@^1.3.8:
   dependencies:
     canvas-exif-orientation "^0.4.0"
     object-assign "^4.1.1"
+
+vue-demi@*:
+  version "0.11.4"
+  resolved "https://registry.yarnpkg.com/vue-demi/-/vue-demi-0.11.4.tgz#6101992fe4724cf5634018a16e953f3052e94e2a"
+  integrity sha512-/3xFwzSykLW2HiiLie43a+FFgNOcokbBJ+fzvFXd0r2T8MYohqvphUyDQ8lbAwzQ3Dlcrb1c9ykifGkhSIAk6A==
 
 vue-demi@0.7.3:
   version "0.7.3"
