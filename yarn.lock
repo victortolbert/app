@@ -6622,10 +6622,10 @@ aws-s3@^2.0.5:
     crypto-js "^3.1.9-1"
     short-uuid "^3.1.0"
 
-aws-sdk@^2.869.0:
-  version "2.870.0"
-  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.870.0.tgz#fc5c0ff65d4564a58cc183059727c77ebbce46a9"
-  integrity sha512-pbNO+RuEx45aaEZind0Tl9NADxncLJf0mRAwof0szyYMB+FZm165yz7FCxFLumU4R9qw8vOG5YFACBaNoQkJdg==
+aws-sdk@^2.1001.0:
+  version "2.1001.0"
+  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.1001.0.tgz#c4da256aa0058438ba611ae06fa850f4f7d63abc"
+  integrity sha512-DpmslPU8myCaaRUwMzB/SqAMtD2zQckxYwq3CguIv8BI+JHxDLeTdPCLfA5jffQ8k6dcvISOuiqdpwCZucU0BA==
   dependencies:
     buffer "4.9.2"
     events "1.1.1"
