@@ -3844,13 +3844,13 @@
     "@sentry/utils" "6.2.3"
     tslib "^1.9.3"
 
-"@sentry/integrations@6.2.3":
-  version "6.2.3"
-  resolved "https://registry.yarnpkg.com/@sentry/integrations/-/integrations-6.2.3.tgz#4029866243a69d65cb9b24bf833e29a081b8e0bf"
-  integrity sha512-FVC+mttubnVY9YM2cINPI8TuNttBl2qpwODSoun+YIrXDA1uBzJjEQWfoM+QAq2dx0KPVtyFoZpUkVukvUNm+g==
+"@sentry/integrations@7.18.0":
+  version "7.18.0"
+  resolved "https://registry.yarnpkg.com/@sentry/integrations/-/integrations-7.18.0.tgz#6ebaa9973cbfbc8f0c47030293f44f4791b10a8b"
+  integrity sha512-vmJWfybbanfHoy47U8IU50FuEN3GwywP/jFvh7Owll9GuPP9B6spmndZwK+raTisDoDOp3201uC1Bfx0cjl4MQ==
   dependencies:
-    "@sentry/types" "6.2.3"
-    "@sentry/utils" "6.2.3"
+    "@sentry/types" "7.18.0"
+    "@sentry/utils" "7.18.0"
     localforage "^1.8.1"
     tslib "^1.9.3"
 
@@ -3868,12 +3868,25 @@
   resolved "https://registry.yarnpkg.com/@sentry/types/-/types-6.2.3.tgz#0c06a475a51d28c73a69b05f0d43db05310ec241"
   integrity sha512-BpA+9FherWgYlkMD/82bGFh/gAqZNlZX5UE8vWLKyyzNyOEEz3v9ScxE8dOSWE4v5iXJR1O3jjxaTcRQxPVgCA==
 
+"@sentry/types@7.18.0":
+  version "7.18.0"
+  resolved "https://registry.yarnpkg.com/@sentry/types/-/types-7.18.0.tgz#8b0eacd19cc9bcd1f14ca5dcaf7065ebd3186632"
+  integrity sha512-bOnyoK1S1chPJ+dAeWJo0srxZ9U48WE5dZFtvKeXoog6JNHY3nqAR/P/uxh9djB4bbwQRMdnGk1zm0bxhOOC6w==
+
 "@sentry/utils@6.2.3":
   version "6.2.3"
   resolved "https://registry.yarnpkg.com/@sentry/utils/-/utils-6.2.3.tgz#c96539571a67fb2eed56897133649f35309e3f74"
   integrity sha512-YnkJm97wSvck39eRpqWjIuuwbvzPilvAcMqhbUy9yK/UBQMDGUzAKCOKH40udw1DwMUCWjJ71mOCDgUorE4Fog==
   dependencies:
     "@sentry/types" "6.2.3"
+    tslib "^1.9.3"
+
+"@sentry/utils@7.18.0":
+  version "7.18.0"
+  resolved "https://registry.yarnpkg.com/@sentry/utils/-/utils-7.18.0.tgz#ede662acf8ac9af9a973d58e277d7afa77721b6c"
+  integrity sha512-nIIIF9FZ2rrw9OFIAfnSEK6TbHLii3ZtahVdcw6Jk9LscL2HMkgdmgroiNfFxhGYNqfWsaxVgMW+IdnkrHsqXQ==
+  dependencies:
+    "@sentry/types" "7.18.0"
     tslib "^1.9.3"
 
 "@shopify/draggable@1.0.0-beta.12":
