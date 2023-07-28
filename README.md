@@ -1,40 +1,23 @@
-# @victortolbert/nuxt-demo
+# Rapid View Prototyping Toolkit
 
-## Developer Previews
+design, prototype, and build your next great idea—fast.
 
-- <https://main--promise-serves.netlify.app>
+## Features
 
+- ✅ Composables
+- ✅ Bundled icons
+- ✅ Dark mode support
+- ✅ Fully typed
+- ✅ Continuous Integration (CI) and Continuous Deployment (CD)
+- ✅ Unit tests
+- ✅ End-to-end tests
+- ✅ Deploy previews
 
-## Development / Build setup
-
-```bash
-# install dependencies
-$ yarn install
-
-# serve with hot reload at localhost:3000
-$ yarn dev
-
-# build for production and launch server
-$ yarn build
-$ yarn start
-
-# generate static project
-$ yarn generate
-```
-
-## Testing
-
-```bash
- # To run the test suite (using Jest for unit tests)
-$ yarn test
-```
-
----
-
-## Changelog
-
-Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed recently.
-
-
----
-For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
+[1]: https://nuxt.com/docs/api/composables/use-async-data
+[2]: https://nuxt.com/docs/api/composables/use-fetch
+[3]: https://nuxt.com/docs/api/composables/use-state
+[4]: https://vueuse.org/core/useLocalStorage/
+[5]: https://vueuse.org/core/useAsyncState/
+[6]: https://vueuse.org/core/useMediaControls/
+[7]: https://vueuse.org/core/useMemory/
+[8]: https://vueuse.org/core/useEyeDropper/
