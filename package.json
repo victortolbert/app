@@ -41,7 +41,7 @@
     "@fullcalendar/google-calendar": "5.5.0",
     "@fullcalendar/icalendar": "5.5.1",
     "@fullcalendar/interaction": "5.5.0",
-    "@fullcalendar/list": "5.5.0",
+    "@fullcalendar/list": "5.11.5",
     "@fullcalendar/luxon": "5.5.0",
     "@fullcalendar/scrollgrid": "5.5.1",
     "@fullcalendar/timegrid": "5.5.1",
