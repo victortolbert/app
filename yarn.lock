@@ -9762,6 +9762,11 @@ emittery@^0.7.1:
   resolved "https://registry.yarnpkg.com/emittery/-/emittery-0.7.2.tgz#25595908e13af0f5674ab419396e2fb394cdfa82"
   integrity sha512-A8OG5SR/ij3SsJdWDJdkkSYUjQdCUx6APQXem0SaEePBSRg4eymGYwBkKo1Y6DU+af/Jn2dBQqDBvjnr9Vi8nQ==
 
+emoji-picker-element@1.12.1:
+  version "1.12.1"
+  resolved "https://registry.yarnpkg.com/emoji-picker-element/-/emoji-picker-element-1.12.1.tgz#854a9bbae4d9a04fa2b5cd0763845921f4904c83"
+  integrity sha512-F9AY/re8uqZmBcCXLHLGvyy7fxuMQdZl9R8OToLRH8Vnns+WMX8RYUbI2nSJklzl5+82qzpYWeus1/puDepWcQ==
+
 "emoji-regex@>=6.0.0 <=6.1.1":
   version "6.1.1"
   resolved "https://registry.yarnpkg.com/emoji-regex/-/emoji-regex-6.1.1.tgz#c6cd0ec1b0642e2a3c67a1137efc5e796da4f88e"
@@ -14000,7 +14005,7 @@ lines-and-columns@^1.1.6:
   resolved "https://registry.yarnpkg.com/lines-and-columns/-/lines-and-columns-1.1.6.tgz#1c00c743b433cd0a4e80758f7b64a57440d9ff00"
   integrity sha1-HADHQ7QzzQpOgHWPe2SldEDZ/wA=
 
-linkifyjs@^2.1.9:
+linkifyjs@2.1.9:
   version "2.1.9"
   resolved "https://registry.yarnpkg.com/linkifyjs/-/linkifyjs-2.1.9.tgz#af06e45a2866ff06c4766582590d098a4d584702"
   integrity sha512-74ivurkK6WHvHFozVaGtQWV38FzBwSTGNmJolEgFp7QgR2bl6ArUWlvT4GcHKbPe1z3nWYi+VUdDZk16zDOVug==
@@ -21577,11 +21582,6 @@ uuid@^3.3.2:
   resolved "https://registry.yarnpkg.com/uuid/-/uuid-3.4.0.tgz#b23e4358afa8a202fe7a100af1f5f883f02007ee"
   integrity sha512-HjSDRw6gZE5JMggctHBcjVak08+KEVhSIiDzFnT9S9aegmp85S/bReBVTb4QTFaRNptJ9kuYaNhnbNEOkbKb/A==
 
-v-click-outside@^3.1.2:
-  version "3.1.2"
-  resolved "https://registry.yarnpkg.com/v-click-outside/-/v-click-outside-3.1.2.tgz#1dbaa14bf09a21bd16f23a38f03bfa3988f71281"
-  integrity sha512-gMdRqfRE6m6XU6SiFi3dyBlFB2MWogiXpof8Aa3LQysrl9pzTndqp/iEaAphLoadaQUFnQ0ec6fLLaxr7LiY6A==
-
 v-scroll-lock@^1.1.0:
   version "1.3.1"
   resolved "https://registry.yarnpkg.com/v-scroll-lock/-/v-scroll-lock-1.3.1.tgz#f1db8e79af0c0337b46164faea5d1782016b3933"
@@ -21807,17 +21807,13 @@ void-elements@^3.1.0:
   resolved "https://registry.yarnpkg.com/void-elements/-/void-elements-3.1.0.tgz#614f7fbf8d801f0bb5f0661f5b2f5785750e4f09"
   integrity sha1-YU9/v42AHwu18GYfWy9XhXUOTwk=
 
-vue-advanced-chat@^0.8.3:
-  version "0.8.3"
-  resolved "https://registry.yarnpkg.com/vue-advanced-chat/-/vue-advanced-chat-0.8.3.tgz#4066516ec28844f2f97725d655dbf323bfe28c13"
-  integrity sha512-9KiAlwyUkw8TvDnQ4Ul1uNwHCosW5jY5Cw1IFqvMutdHfbVO5IPmvjMQlyvwNYUcvN+TbDQBL6lWc7t4Cosj+Q==
+vue-advanced-chat@^2.0.7:
+  version "2.0.7"
+  resolved "https://registry.yarnpkg.com/vue-advanced-chat/-/vue-advanced-chat-2.0.7.tgz#bd35830c19fc5eb4e26545dc554d88e7808913cc"
+  integrity sha512-s+6v+KtVT46lFM8YohneLLS/vN10sSTAPfZiqAczXf13Q8vQWD9rSeWAokL0zuJeQ+jguNgFI6oN2wbI/RC1iw==
   dependencies:
-    linkifyjs "^2.1.9"
-    v-click-outside "^3.1.2"
-    vue-emoji-picker "^1.0.1"
-    vue-infinite-loading "^2.4.5"
-  optionalDependencies:
-    lamejs "^1.2.0"
+    emoji-picker-element "1.12.1"
+    linkifyjs "2.1.9"
 
 vue-advanced-cropper@^1.3.2:
   version "1.3.3"
@@ -21955,11 +21951,6 @@ vue-drag-zone@^2.0.0-rc1:
   resolved "https://registry.yarnpkg.com/vue-drag-zone/-/vue-drag-zone-2.0.0-rc1.tgz#c53db44f98181ff797723e7262723742bcf20ab0"
   integrity sha512-euSSKLgfP1O7o2whURfq1svSCzjtuc/hInJWIc3V8kAOuRBHQUnH86OPgk7Q6WLOll3pBOdXZYOm43+q5x0ZYA==
 
-vue-emoji-picker@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/vue-emoji-picker/-/vue-emoji-picker-1.0.1.tgz#0c893b21fb2ac46c6b5803476d744ae3d420f98b"
-  integrity sha512-phisHAaSg+7xnpi7xlOxFGD46npaQXCLit2T6nAHMlEcFNT1ZUqu/NO3P5FDp6RgjP7o4ueduktnxk9ul0IS9Q==
-
 vue-eslint-parser@^7.1.1, vue-eslint-parser@^7.6.0:
   version "7.6.0"
   resolved "https://registry.yarnpkg.com/vue-eslint-parser/-/vue-eslint-parser-7.6.0.tgz#01ea1a2932f581ff244336565d712801f8f72561"
@@ -22012,11 +22003,6 @@ vue-inbrowser-compiler-utils@^4.33.6:
   integrity sha512-g9ErL/xuTtRAdT6+VmzR4Lqxlw4hpH7ObEBGk8VGQgNqdcs9Pza8AMzlns160IGzQw4sI8gvvbYEPeZ54Z5OfA==
   dependencies:
     camelcase "^5.3.1"
-
-vue-infinite-loading@^2.4.5:
-  version "2.4.5"
-  resolved "https://registry.yarnpkg.com/vue-infinite-loading/-/vue-infinite-loading-2.4.5.tgz#cc20fd40af7f20188006443c99b60470cf1de1b3"
-  integrity sha512-xhq95Mxun060bRnsOoLE2Be6BR7jYwuC89kDe18+GmCLVrRA/dU0jrGb12Xu6NjmKs+iTW0AA6saSEmEW4cR7g==
 
 vue-instantsearch@^3.5.0:
   version "3.5.0"
