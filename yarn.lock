@@ -2271,6 +2271,13 @@
   resolved "https://registry.yarnpkg.com/@francoischalifour/autocomplete-preset-algolia/-/autocomplete-preset-algolia-1.0.0-alpha.28.tgz#a5ad7996f42e43e4acbb4e0010d663746d0e9997"
   integrity sha512-bprfNmYt1opFUFEtD2XfY/kEsm13bzHQgU80uMjhuK0DJ914IjolT1GytpkdM6tJ4MBvyiJPP+bTtWO+BZ7c7w==
 
+"@fullcalendar/common@~5.11.5":
+  version "5.11.5"
+  resolved "https://registry.yarnpkg.com/@fullcalendar/common/-/common-5.11.5.tgz#1a30a852b33ab5c1b04f4ee558941bed3c72d07f"
+  integrity sha512-3iAYiUbHXhjSVXnYWz27Od2cslztUPsOwiwKlfGvQxBixv2Kl6a8IPwaijKFYJHXdwYmfPoEgK7rvqAGVoIYwA==
+  dependencies:
+    tslib "^2.1.0"
+
 "@fullcalendar/common@~5.5.0":
   version "5.5.1"
   resolved "https://registry.yarnpkg.com/@fullcalendar/common/-/common-5.5.1.tgz#cc3679408b625b35d6f3f05bdca73f3700d0d370"
@@ -2321,13 +2328,13 @@
     "@fullcalendar/common" "~5.5.0"
     tslib "^2.0.3"
 
-"@fullcalendar/list@5.5.0":
-  version "5.5.0"
-  resolved "https://registry.yarnpkg.com/@fullcalendar/list/-/list-5.5.0.tgz#8bc1523ad08e439cde366697acebe8bc4cf2fe5f"
-  integrity sha512-hC+EKrXtnj71rq4gq8vIhb12dlOxu07BuOTzU1kxgB3BdhuO1RiAPm1TCKdYpQjtUTCRT23Ocvs+m/Ei/xh90Q==
+"@fullcalendar/list@5.11.5":
+  version "5.11.5"
+  resolved "https://registry.yarnpkg.com/@fullcalendar/list/-/list-5.11.5.tgz#0440383f795a6a754f0b62d089ed3ffdf5603845"
+  integrity sha512-ZYMPT4CVt9tIYkVVNx7CKkB2xc+n9L56+vgXkurptgYgPsacXYkcpF/1Hy/B5LKlg0ROEF9Qfftjow8xjANqaA==
   dependencies:
-    "@fullcalendar/common" "~5.5.0"
-    tslib "^2.0.3"
+    "@fullcalendar/common" "~5.11.5"
+    tslib "^2.1.0"
 
 "@fullcalendar/luxon@5.5.0":
   version "5.5.0"
