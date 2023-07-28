@@ -112,7 +112,7 @@
     "nuxt-i18n": "^6.21.1",
     "object-to-formdata": "^4.1.0",
     "particles.vue": "2.6.0",
-    "path-to-regexp": "6.2.0",
+    "path-to-regexp": "6.2.1",
     "prism-theme-vars": "0.2.2",
     "prism-themes": "^1.6.0",
     "qrcode": "1.4.4",
