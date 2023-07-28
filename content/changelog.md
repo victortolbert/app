@@ -1,0 +1,7 @@
+---
+title: Changelog
+---
+
+Initial release
+
+-

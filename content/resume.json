@@ -1,0 +1,356 @@
+{
+  "$schema": "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json",
+  "basics": {
+    "name": "Victor Tolbert",
+    "label": "Lead User Interface Engineer",
+    "image": "https://avatars.githubusercontent.com/u/2476?v=3",
+    "email": "victor.tolbert@gmail.com",
+    "phone": "(678) 613-3400",
+    "url": "https://linkedin.com/in/victortolbert",
+    "summary": "I’m a front-end developer with expertise building responsive, standards-compliant solutions for some high-profile companies. My most relevant strengths include __ revenue generating web products for consumer-facing web platforms like AT&T, WebMD and AutoTrader. Currently, I’m seeking similar opportunities to continue to build delightful user experiences with a small team, using modern tooling and frameworks in an environment with others who are passionate about their craft.",
+    "location": {
+      "address": "1547 Boulder Walk Drive",
+      "postalCode": "30316",
+      "city": "Atlanta",
+      "countryCode": "US",
+      "region": "GA"
+    },
+    "profiles": [
+      {
+        "network": "GitHub",
+        "username": "victortolbert",
+        "url": "https://github.com/victortolbert"
+      },
+      {
+        "network": "LinkedIn",
+        "username": "victortolbert",
+        "url": "https://linkedin.com/in/victortolbert"
+      },
+      {
+        "network": "Twitter",
+        "username": "victortolbert",
+        "url": "https://twitter.com/victortolbert"
+      }
+    ]
+  },
+  "work": [
+    {
+      "name": "Hancock Claims Consultants",
+      "location": "Atlanta, GA",
+      "description": "Full Insurance Claims Lifecycle Support including Property Inspections and Estimating, Catastrophe Response, and Claims Management.",
+      "position": "Software Engineer",
+      "url": "http://hancockclaims.com",
+      "startDate": "2021-05-24"
+    }
+  ],
+  "projects": [
+    {
+      "name": "Exemplar Core",
+      "description": "Ambitious rewrite of a legacy product .NET C# to modern .NET Core platform utilizing Vue",
+      "highlights": [
+        "First time using Vue's, now abandoned, class component API and TypeScript"
+      ],
+      "keywords": [
+        "Azure Devops",
+        "Bootstrap",
+        "Entity Framework",
+        "Kendo UI",
+        "LINQ",
+        "SQL Server",
+        "Tailwind",
+        "Vue"
+      ],
+      "startDate": "2019-01-01",
+      "endDate": "2021-01-01",
+      "url": "https://portal.hancockclaims.com/",
+      "roles": [
+        "UI Lead"
+      ],
+      "entity": "Hancock Claims Consultants",
+      "type": "application"
+    },
+    {
+      "name": "Booster Enterprises",
+      "description": "A mapping engine that misguides you",
+      "highlights": [
+        "",
+        "",
+        ""
+      ],
+      "keywords": [
+        "Vue.js",
+        "Cypress",
+        "Jest",
+        "Laravel"
+      ],
+      "startDate": "2018-10-29",
+      "endDate": "2020-08-24",
+      "url": "https://funrun.com",
+      "roles": [
+        "Frontend Developer",
+        "Senior Full-stack Developer"
+      ],
+      "entity": "Smoogle",
+      "type": "application"
+    }
+  ],
+  "skills": [
+    {
+      "name": "UI/UX Design",
+      "level": "Master",
+      "keywords": [
+        "Accessibility",
+        "Information architecture",
+        "Interaction design",
+        "Prototyping",
+        "Research",
+        "Usability",
+        "Visual design"
+      ]
+    },
+    {
+      "name": "Front-end Development",
+      "level": "Master",
+      "keywords": [
+        "Bootstrap",
+        "CSS",
+        "Axure",
+        "Figma",
+        "HTML",
+        "JavaScript",
+        "jQuery",
+        "Sass",
+        "Sketch",
+        "Svelte",
+        "Tailwind",
+        "TypeScript",
+        "Vue",
+        "Web development",
+        "User experience design",
+        "Team management"
+      ]
+    },
+    {
+      "name": "Backend Development",
+      "level": "Master",
+      "keywords": [
+        "C#",
+        "JavaScript",
+        "PHP",
+        "Ruby"
+      ]
+    },
+    {
+      "name": "DevOps",
+      "level": "Master",
+      "keywords": [
+        "AWS",
+        "Azure",
+        "Heroku",
+        "Netlify"
+      ]
+    }
+  ],
+  "volunteer": [
+    {
+      "organization": "Laravel Atlanta",
+      "position": "",
+      "url": "",
+      "startDate": "",
+      "endDate": "",
+      "summary": "",
+      "highlights": [
+        ""
+      ]
+    },
+    {
+      "organization": "North Atlanta JavaScript",
+      "position": "",
+      "url": "",
+      "startDate": "",
+      "endDate": "",
+      "summary": "",
+      "highlights": [
+        ""
+      ]
+    },
+    {
+      "organization": "Atlanta Ruby Users Group",
+      "position": "",
+      "url": "",
+      "startDate": "",
+      "endDate": "",
+      "summary": "",
+      "highlights": [
+        ""
+      ]
+    },
+    {
+      "organization": "Project Open-hand",
+      "position": "",
+      "url": "",
+      "startDate": "",
+      "endDate": "",
+      "summary": "",
+      "highlights": [
+        ""
+      ]
+    }
+  ],
+  "education": [
+    {
+      "area": "Clean Code",
+      "studyType": "Domain Modeling with Mirage JS",
+      "endDate": "2020"
+    },
+    {
+      "area": "Testing",
+      "studyType": "Testing Javascript, Kent C. Dodds",
+      "endDate": "2020"
+    },
+    {
+      "area": "Product Management",
+      "studyType": "Product Management General Assembly, Atlanta, GA",
+      "endDate": "2017"
+    },
+    {
+      "area": "CSS, Animations, ES6",
+      "studyType": "CSSConf 2017, New Orleans, LA",
+      "endDate": "2017"
+    },
+    {
+      "area": "Style Guides, Design Systems",
+      "studyType": "SassConf 2015, Atlanta, GA",
+      "endDate": "2015"
+    },
+    {
+      "area": "JavaScript",
+      "studyType": "Mastering JavaScript and Advanced JavaScript Best Practices Accelerbrate, Atlanta, GA",
+      "endDate": "2012"
+    },
+    {
+      "area": "UI Engineering",
+      "studyType": "User Interface Engineer Conference, Monterey, CA",
+      "endDate": "2009"
+    },
+    {
+      "area": "Data Visualization",
+      "studyType": "Presenting Data and Information, Edward Tufte, Atlanta, GA",
+      "endDate": "2009-03"
+    },
+    {
+      "area": "Ruby, Rails",
+      "studyType": "RailsConf, Portland, OR",
+      "endDate": "2007-05"
+    },
+    {
+      "area": "Ruby, Rails",
+      "studyType": "Ruby on Rails The Pragmatic Studio, Pasadena, CA",
+      "endDate": "2006-01"
+    },
+    {
+      "area": "Entreprenuership",
+      "studyType": "The Building of Basecamp 37 Signals, Chicago, IL",
+      "endDate": "2004-09"
+    },
+    {
+      "area": "XML – A comprehensive Introduction Learning Tree International, Atlanta, GA",
+      "endDate": "2002-04"
+    },
+    {
+      "area": "B.A., Business Administration, Morehouse College, Atlanta, GA",
+      "endDate": "1987-05"
+    },
+    {
+      "institution": "Morehouse College",
+      "startDate": "1983",
+      "endDate": "1987",
+      "url": "https://morehouse.edu/",
+      "area": "Business Management",
+      "studyType": "Bachelor of Arts"
+    },
+    {
+      "institution": "Morehouse College",
+      "url": "https://www.morehouse.edu/",
+      "area": "Business Management",
+      "studyType": "Bachelor",
+      "startDate": "1983-08-01",
+      "endDate": "1987-05-01",
+      "score": "",
+      "courses": []
+    }
+  ],
+  "awards": [
+    {
+      "title": "Techie of the Month",
+      "date": "2014-11-01",
+      "awarder": "AutoTrader.com",
+      "summary": "There is no spoon."
+    }
+  ],
+  "interests": [
+    {
+      "name": "Frontend Development",
+      "keywords": [
+        "Design Systems",
+        "Modern JavaScript",
+        "Test Automation"
+      ]
+    },
+    {
+      "name": "Photography",
+      "keywords": [
+        "Food",
+        "Travel"
+      ]
+    }
+  ],
+  "references": [
+    {
+      "name": "Frankie Loscavio",
+      "reference": "Victor always showed me that there is something amazing to learn all the time. I found Victor's attitude refreshing and inspiring, while motivating me and others to be the same."
+    },
+    {
+      "name": "Phil Greco",
+      "reference": "I have had the opportunity to work with Victor at three different companies, AutoTrader, WebMD and most recently Videa. Victor is a passionate user interface engineer / architect who is skilled at determining good UI development approaches, best practices and then implementing them. For example, at Videa he successfully defined our interface standards, implemented an online code base style guide, constructed our interfaces, and worked well with the UX team to create great user interactions. Plus, without being asked he created a complete standalone demo application to ensure the company would have something functional to show at two NAB conferences. This proactive approach was outstanding and helped the company close a few deals. Besides being talented UI professional, Victor is also a great person to work with. Victor is very personable, funny, and has a positive team based approach to working. I look forward to hiring and working with him again"
+    },
+    {
+      "name": "Frankie Loscavio",
+      "reference": "Victor was great to work with at AT&T. I find myself learning something new every very time I speak to Victor. Whether it's a front-end development solution or a new design approach Victor always showed me that there is something amazing to learn all the time. I found Victor's attitude refreshing and inspiring, while motivating me and others to be the same. I feel he is an exceptionally skilled developer / designer as well as a leader and would really like to work with him again some day. I feel that his passion for learning and applying that knowledge to the front-end side of development / design is inspirational and think you'll be very fortunate to have him on your team. I hope I get to work with Victor again some day soon."
+    },
+    {
+      "name": "George Kovats",
+      "reference": "Victor has always demonstrated a great attitude toward new work, and helped us always plow through the ebbs and flows of operational projects that hit our team, often holding the lion's share of assignments. He's passionate about learning new technology especially regarding front-end web trends, and was one of our departments first promoters of GitHub and Sass. It was always a pleasure working with Victor, and I believe he's a strong asset as a front end developer for any web team."
+    },
+    {
+      "name": "Patrick Fitzgerald",
+      "reference": "Victor has a wide breadth of knowledge in web design and usability. He is extremely quick in mastering new tools and technologies, easily jumping between Windows, Mac, and Linux environments. It is a pleasure to work with him."
+    }
+  ],
+  "certificates": [
+    {
+      "name": "Certificate",
+      "date": "2021-11-07",
+      "issuer": "LinkedIn Learning",
+      "url": "https://certificate.com"
+    },
+    {
+      "name": "Testing JavaScript",
+      "date": "2021-11-07",
+      "issuer": "LinkedIn Learning",
+      "url": "https://certificate.com"
+    }
+  ],
+  "languages": [
+    {
+      "language": "English",
+      "fluency": "Native speaker"
+    }
+  ],
+  "meta": {
+    "canonical": "https://raw.githubusercontent.com/jsonresume/resume-schema/master/resume.json",
+    "version": "v1.0.0",
+    "lastModified": "2017-12-24T15:53:00",
+    "theme": "jsonresume-theme-even"
+  }
+}

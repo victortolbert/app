@@ -1,0 +1,68 @@
+{
+  "Vue Single File Component": {
+    "prefix": "vbase",
+    "body": [
+      "<script setup lang=\"ts\">",
+      "\t${0}",
+      "</script>",
+      "",
+      "<template>",
+      "\t<div>",
+      "",
+      "\t</div>",
+      "</template>"
+    ],
+    "description": "Base for Vue File"
+  },
+  "Vue Single File Component Template": {
+    "prefix": "vtemplate",
+    "body": [
+      "<template>",
+      "\t<div>",
+      "\t\t${0}",
+      "\t</div>",
+      "</template>"
+    ],
+    "description": "Template for Vue SFC"
+  },
+  "Vue Single File Component with Class based Typescript format": {
+    "prefix": "vbase-ts-class",
+    "body": [
+      "<script lang=\"ts\">",
+      "\timport { Component, Vue } from 'vue-property-decorator';",
+      "",
+      "\t@Component",
+      "\texport default class ${0} extends Vue {",
+      "\t\t",
+      "\t}",
+      "</script>",
+      "",
+      "<template>",
+      "\t<div>",
+      "",
+      "\t</div>",
+      "</template>"
+    ],
+    "description": "Base for Vue File with Class based Typescript format"
+  },
+
+  "Vue Single File Component with Style": {
+    "prefix": "vbase-style",
+    "body": [
+      "<script setup lang=\"ts\">",
+      "\t${0}",
+      "</script>",
+      "",
+      "<template>",
+      "\t<div>",
+      "",
+      "\t</div>",
+      "</template>",
+      "",
+      "<style scoped>",
+      "",
+      "</style>"
+    ],
+    "description": "Base for Vue File with CSS"
+  }
+}
