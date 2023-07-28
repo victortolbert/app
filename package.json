@@ -113,7 +113,7 @@
     "object-to-formdata": "^4.1.0",
     "particles.vue": "2.6.0",
     "path-to-regexp": "6.2.0",
-    "prism-theme-vars": "0.2.2",
+    "prism-theme-vars": "0.2.4",
     "prism-themes": "^1.6.0",
     "qrcode": "1.4.4",
     "rxjs": "6.6.6",
